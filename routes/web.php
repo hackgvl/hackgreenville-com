@@ -18,3 +18,7 @@
 Route::get('/', 'apiController@debug');
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
+
+Route::get('/test', function () {
+  return view('index');
+});
