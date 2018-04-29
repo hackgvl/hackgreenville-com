@@ -22,3 +22,27 @@ Route::get('/events', 'apiController@showEvents');
 Route::get('/test', function () {
   return view('index');
 });
+
+Route::get('/landing', function () {
+  return view('landing-page');
+});
+
+Route::get('/login', function () {
+  return view('login-page');
+});
+
+Route::get('/icons', function () {
+  return view('nucleo-icons');
+});
+
+Route::get('/profile', function () {
+  return view('profile-page');
+});
+
+Route::get('/template', function () {
+  return view('template');
+});
+
+Route::get('/tutorial', function () {
+  return view('tutorial-components');
+});
