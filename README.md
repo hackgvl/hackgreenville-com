@@ -87,4 +87,5 @@ Fulfill the user stories below using the Greenville Open Data API.
 - [ ] Format Orgs view to look more like [this](https://data.openupstate.org/organizations)
 - [ ] Create header and footer sections and include in layouts.page
 - [ ] Learn how to incorporate multiple templates in a view (head/foot/nav)
-- [ ] Choose a CSS framework for prettification
+- [x] Choose a CSS framework for prettification
+-   * Added Now UI Kit (Free Version) by Creative Tim
