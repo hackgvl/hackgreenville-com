@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../resources/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../resources/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Components Documentation - Now UI Kit by Creative Tim</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
+    <link href="../resources/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../resources/assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link href="../resources/assets/css/demo.css" rel="stylesheet" />
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://www.creative-tim.com/product/now-ui-kit" />
     <!--  Social tags      -->
@@ -143,7 +143,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" data-nav-image="../assets/img/blurred-image-1.jpg">
+            <div class="collapse navbar-collapse justify-content-end" data-nav-image="../resources/assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Back to Kit</a>
@@ -158,7 +158,7 @@
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header page-header-small clear-filter" filter-color="orange">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('../assets/img/header.jpg');">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('../resources/assets/img/header.jpg');">
             </div>
             <div class="container">
                 <div class="content-center">
@@ -603,45 +603,45 @@ now-ui-kit
                                             <div class="col-md-3">
                                                 <div class="dropdown">
                                                     <a href="#" class="btn btn-default dropdown-toggle " data-toggle="dropdown" id="navbarDropdownMenuLink2">
-                                                        <img src="../assets/img/flags/US.png" /> Flags
+                                                        <img src="../resources/assets/img/flags/US.png" /> Flags
                                                     </a>
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/DE.png" /> Deutsch</a>
+                                                                <img src="../resources/assets/img/flags/DE.png" /> Deutsch</a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/GB.png" /> English(UK)</a>
+                                                                <img src="../resources/assets/img/flags/GB.png" /> English(UK)</a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/FR.png" /> Français</a>
+                                                                <img src="../resources/assets/img/flags/FR.png" /> Français</a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/RO.png" /> Română</a>
+                                                                <img src="../resources/assets/img/flags/RO.png" /> Română</a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/IT.png" /> Italiano</a>
+                                                                <img src="../resources/assets/img/flags/IT.png" /> Italiano</a>
                                                         </li>
                                                         <li class="divider"></li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/ES.png" /> Español
+                                                                <img src="../resources/assets/img/flags/ES.png" /> Español
                                                                 <span class="label label-default">soon</span>
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/BR.png" /> Português
+                                                                <img src="../resources/assets/img/flags/BR.png" /> Português
                                                                 <span class="label label-default">soon</span>
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="#">
-                                                                <img src="../assets/img/flags/JP.png" /> 日本語
+                                                                <img src="../resources/assets/img/flags/JP.png" /> 日本語
                                                                 <span class="label label-default">soon</span>
                                                             </a>
                                                         </li>
@@ -1920,19 +1920,19 @@ $(&#39;[data-toggle=&quot;popover&quot;]&#39;).popover();
         </div>
 </body>
 <!--   Core JS Files   -->
-<script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="../resources/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="../resources/assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="../resources/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="../assets/js/plugins/bootstrap-switch.js"></script>
+<script src="../resources/assets/js/plugins/bootstrap-switch.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="../resources/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="../assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="../resources/assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
 <!-- Share Library etc -->
-<script src="../assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+<script src="../resources/assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+<script src="../resources/assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
 <script>
     var header_height;
     var fixed_section;

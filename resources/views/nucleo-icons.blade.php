@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./assets/css/now-ui-kit.css">
-    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="../resources/assets/css/now-ui-kit.css">
+    <link rel="shortcut icon" href="../resources/assets/img/favicon.png">
     <title>Nucleo Outline Web Font</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <style media="screen">
