@@ -1,7 +1,17 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="76x76" href="../resources/assets/img/apple-icon.png">
+<link rel="icon" type="image/png" href="../resources/assets/img/favicon.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+<!-- Fonts and icons -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+<!-- CSS Files -->
+<link href="../resources/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../resources/assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
 
 <title>@yield('title')</title>
