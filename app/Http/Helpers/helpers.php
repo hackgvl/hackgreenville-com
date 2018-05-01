@@ -29,7 +29,7 @@ function getEvents () {
  * Retrieve organization information from API
  */
 function getOrgs () {
-  $org_url = 'https://data.openupstate.org/rest/organizations';
+  $org_url = 'https://data.openupstate.org/rest/organizations?_format=json';
   $org_data = file_get_contents( $org_url );
   
   // Put the data into JSON format.
