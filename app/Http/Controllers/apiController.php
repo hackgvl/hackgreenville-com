@@ -14,6 +14,8 @@ class apiController extends Controller
 		$events = getEvents();
 		$orgs = getOrgs();
 		
+		dd($events);
+		
 		$event_organizers = array();
 		
     foreach ($events as $event):
