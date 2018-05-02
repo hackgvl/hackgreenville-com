@@ -1,16 +1,4 @@
 <?php
-// Attempting to use Guzzle to send PATCH request to API
-// Goal is to update organization names so that they match
-// exactly to event host names.
-
-// use GuzzleHttp\Client;
-
-// $client = new Client([
-//   // Base URI is used with relative requests
-//   'base_uri' => 'http://httpbin.org',
-//   // You can set any number of default request options.
-//   'timeout'  => 2.0,
-// ]);
 
 /**
  * Retrieve event information from API
