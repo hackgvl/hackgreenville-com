@@ -3,6 +3,8 @@
 @section('title', 'Organizations')
 
 @section('content')
+    <h1>Organizations</h1>
+
     @foreach ($orgs as $org)
         <li>
             <a href="{{ getOrgWebsite( $org ) }}">{{ $org->title }}</a>
