@@ -7,6 +7,17 @@ The HowTo may also be useful in setting up a VM profile (Docker / Homestead) ima
 
 -----
 # Bits and Pieces
+Making Apache work better with the Run Project button:
+Step 1:
+`sudo nano /etc/apache2/sites-enabled/001-cloud9.conf`
+
+Step 2:
+// Change this line
+DocumentRoot /home/ubuntu/workspace
+
+// To following
+DocumentRoot /home/ubuntu/workspace/public
+
 Git Aliases:
 * Easy access with `c9 open ~/.gitconfig`
 * Recommend adding the following:
