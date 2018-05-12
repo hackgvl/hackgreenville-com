@@ -7,11 +7,11 @@
 
     @foreach ($orgs as $org)
         <li>
-            <a href="{{ getOrgWebsite( $org ) }}">{{ $org->title }}</a>
+            <a class="btn-link btn-info" href="{{ getOrgWebsite( $org ) }}">{{ $org->title }}</a>
             @if ($org->field_org_status == "Active")
-                - {{ $org->field_city }}
+                {{ $org->field_city }}
             @else
-                - {{ $org->field_org_status }}
+                {{ $org->field_org_status }}
             @endif
         </li>
     @endforeach
