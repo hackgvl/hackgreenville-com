@@ -14,6 +14,19 @@ function getEvents () {
 }
 
 /**
+ * Retrieve event information from API in array format
+ */
+function getEventsArray () {
+  $event_url = 'https://nunes.online/api/gtc';
+  $event_data = file_get_contents( $event_url );
+  
+  // Put the data into JSON format.
+  $events = json_decode( $event_data , true );
+  
+  return $events;
+}
+
+/**
  * Retrieve organization information from API
  */
 function getOrgs () {
