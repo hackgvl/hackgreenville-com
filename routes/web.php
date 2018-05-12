@@ -14,6 +14,10 @@
 // General debugging route. Disable for production.
 // Route::get('/', 'apiController@debug');
 
+// Index level -> should go to landing page.
+// Without landing page, direct to Events.
+Route::get('/', 'apiController@showEvents');
+
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
 
