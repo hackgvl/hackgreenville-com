@@ -6,17 +6,23 @@
 	<h1>Events</h1>
 	<h3>Choose a month to filter</h3>
 	
-	<a href="<?= explode("?", $_SERVER['REQUEST_URI'])[0] ?>">
-	  Clear filter
-	</a>
-	<br />
-	
-	@foreach( $months as $month )
-	  <a href=<?= '?month=' . rawurlencode($month) ?>>
-	    <?= $month ?>
+	<form>
+    <select class="form-control" name="month" >
+	    @foreach( $months as $month )
+	      <option value="<?= $month ?>"><?= $month ?></option>
+	      <br/>
+	    @endforeach
+    </select>
+    
+    <button class="btn btn-primary btn-round" type="submit">Submit</button>
+  	<a href="<?= explode("?", $_SERVER['REQUEST_URI'])[0] ?>">
+    	<button class="btn btn-primary btn-round btn-simple" type="button">
+    		Clear filter
+    	</button>
     </a>
-    <br />
-	@endforeach
+  </form>
+	
+	<br />
 	
 	<ul>
 		@foreach( $events as $event )
@@ -37,3 +43,4 @@
 		@endforeach
 	</ul>
 @endsection
+
