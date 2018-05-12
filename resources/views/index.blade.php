@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../resources/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../resources/assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Now UI Kit by Creative Tim</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="../resources/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../resources/assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="../resources/assets/css/demo.css" rel="stylesheet" />
+    <link href="css/demo.css" rel="stylesheet" />
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://www.creative-tim.com/product/now-ui-kit" />
     <!--  Social tags      -->
@@ -60,7 +60,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" data-nav-image="../resources/assets/img/blurred-image-1.jpg">
+            <div class="collapse navbar-collapse justify-content-end" data-nav-image="img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
@@ -105,20 +105,20 @@
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('../resources/assets/img/header.jpg');">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('img/header.jpg');">
             </div>
             <div class="container">
                 <div class="content-center brand">
-                    <img class="n-logo" src="../resources/assets/img/now-logo.png" alt="">
+                    <img class="n-logo" src="img/now-logo.png" alt="">
                     <h1 class="h1-seo">Now UI Kit.</h1>
                     <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
                 </div>
                 <h6 class="category category-absolute">Designed by
                     <a href="http://invisionapp.com/" target="_blank">
-                        <img src="../resources/assets/img/invision-white-slim.png" class="invision-logo" />
+                        <img src="img/invision-white-slim.png" class="invision-logo" />
                     </a>. Coded by
                     <a href="https://www.creative-tim.com" target="_blank">
-                        <img src="../resources/assets/img/creative-tim-white-slim2.png" class="creative-tim-logo" />
+                        <img src="img/creative-tim-white-slim2.png" class="creative-tim-logo" />
                     </a>.</h6>
             </div>
         </div>
@@ -128,13 +128,13 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="hero-images-container">
-                                <img src="../resources/assets/img/hero-image-1.png" alt="">
+                                <img src="img/hero-image-1.png" alt="">
                             </div>
                             <div class="hero-images-container-1">
-                                <img src="../resources/assets/img/hero-image-2.png" alt="">
+                                <img src="img/hero-image-2.png" alt="">
                             </div>
                             <div class="hero-images-container-2">
-                                <img src="../resources/assets/img/hero-image-3.png" alt="">
+                                <img src="img/hero-image-3.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -312,7 +312,7 @@
                                         <span class="navbar-toggler-bar bar2"></span>
                                         <span class="navbar-toggler-bar bar3"></span>
                                     </button>
-                                    <div class="collapse navbar-collapse" id="example-navbar" data-nav-image="../resources/assets/img/blurred-image-1.jpg">
+                                    <div class="collapse navbar-collapse" id="example-navbar" data-nav-image="img/blurred-image-1.jpg">
                                         <ul class="navbar-nav">
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="#">
@@ -948,19 +948,19 @@
                         <div class="row">
                             <div class="col-sm-2">
                                 <p class="category">Image</p>
-                                <img src="../resources/assets/img/avatar.jpg" alt="Rounded Image" class="rounded">
+                                <img src="img/avatar.jpg" alt="Rounded Image" class="rounded">
                             </div>
                             <div class="col-sm-2">
                                 <p class="category">Circle Image</p>
-                                <img src="../resources/assets/img/avatar.jpg" alt="Circle Image" class="rounded-circle">
+                                <img src="img/avatar.jpg" alt="Circle Image" class="rounded-circle">
                             </div>
                             <div class="col-sm-2">
                                 <p class="category">Raised</p>
-                                <img src="../resources/assets/img/avatar.jpg" alt="Raised Image" class="rounded img-raised">
+                                <img src="img/avatar.jpg" alt="Raised Image" class="rounded img-raised">
                             </div>
                             <div class="col-sm-2">
                                 <p class="category">Circle Raised</p>
-                                <img src="../resources/assets/img/avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-raised">
+                                <img src="img/avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-raised">
                             </div>
                         </div>
                         <div class="row">
@@ -1038,19 +1038,19 @@
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
-                                        <img class="d-block" src="../resources/assets/img/bg1.jpg" alt="First slide">
+                                        <img class="d-block" src="img/bg1.jpg" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Nature, United States</h5>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block" src="../resources/assets/img/bg3.jpg" alt="Second slide">
+                                        <img class="d-block" src="img/bg3.jpg" alt="Second slide">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Somewhere Beyond, United States</h5>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block" src="../resources/assets/img/bg4.jpg" alt="Third slide">
+                                        <img class="d-block" src="img/bg4.jpg" alt="Third slide">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Yellowstone National Park, United States</h5>
                                         </div>
@@ -1076,7 +1076,7 @@
                                 Now UI Kit comes with 100 custom icons made by our friends from NucleoApp. The official package contains over 2.100 thin icons which are looking great in combination with Now UI Kit Make sure you check all of them and use those that you like the most.
                             </h5>
                             <!-- <div class="nucleo-container">
-							<img src="../resources/assets/img/nucleo.svg" alt="">
+							<img src="img/nucleo.svg" alt="">
 						</div> -->
                             <a href="nucleo-icons.html" class="btn btn-primary btn-round btn-lg" target="_blank">View Demo Icons</a>
                             <a href="https://nucleoapp.com/?ref=1712" class="btn btn-primary btn-simple btn-round btn-lg" target="_blank">View All Icons</a>
@@ -1176,13 +1176,13 @@
                     <div class="row">
                         <div class="col">
                             <a href="examples/landing-page.html" target="_blank">
-                                <img src="../resources/assets/img/landing.jpg" alt="Image" class="img-raised">
+                                <img src="img/landing.jpg" alt="Image" class="img-raised">
                             </a>
                             <a href="examples/landing-page.html" class="btn btn-simple btn-primary btn-round">View Landing Page</a>
                         </div>
                         <div class="col">
                             <a href="examples/profile-page.html" target="_blank">
-                                <img src="../resources/assets/img/profile.jpg" alt="Image" class="img-raised">
+                                <img src="img/profile.jpg" alt="Image" class="img-raised">
                             </a>
                             <a href="examples/profile-page.html" class="btn btn-simple btn-primary btn-round">View Profile Page</a>
                         </div>
@@ -1325,19 +1325,19 @@
     </div>
 </body>
 <!--   Core JS Files   -->
-<script src="../resources/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="../resources/assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="../resources/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="js/core/popper.min.js" type="text/javascript"></script>
+<script src="js/core/bootstrap.min.js" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="../resources/assets/js/plugins/bootstrap-switch.js"></script>
+<script src="js/plugins/bootstrap-switch.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="../resources/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="../resources/assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
 <!-- Share Library etc -->
-<script src="../resources/assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+<script src="js/plugins/jquery.sharrre.js" type="text/javascript"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="../resources/assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+<script src="js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // the body of this function is in assets/js/now-ui-kit.js
