@@ -19,6 +19,10 @@ Route::get('/', 'apiController@debug');
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
 
+Route::get('/calendar', function () {
+  return view('calendar');
+});
+
 /**
  * Example routes for Now UI Kit pages.
  */
