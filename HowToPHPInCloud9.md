@@ -1,8 +1,6 @@
 # Getting Started
 ## Configuring Cloud 9 for the SC Codes PHP Track
 
-IDEA: Create a standard C9 workspace that can be cloned at the start of the advanced track. ReadMe.md can explain all of the features that are in placed currently (software versions, global installs, etc.) and HowToCloud9.md can explain the steps to get create the stock C9 workspace from scratch.
-
 The HowTo may also be useful in setting up a VM profile (Docker / Homestead) image for later on.
 
 -----
@@ -76,11 +74,5 @@ Installing Laravel:
 
 # TODO list
 - [ ] Explain the scripts line by line?
-- [ ] Write explanation for cloning this workspace
-- [ ] Create 'stock' workspace for future students to clone and start with?
-- [ ] Update description for workspace:
-        This is my main workspace for the SC Codes Advanced Track for PHP. 
-        PHP is updated to version 7.2, with Composer and Laravel installed globally for ease of use. 
-        More details can be found in README.md.
 - [ ] Add info on using the standard php -S server and php artisan serve on C9 (0.0.0.0:8080)
 - [ ] Explain how to use Run Project instead of `php -S` or `php artisan serve`
