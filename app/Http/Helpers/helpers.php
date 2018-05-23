@@ -49,8 +49,8 @@ function printTime ($date) {
   $displayTime = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', 
                                             $date, 
                                             new DateTimeZone('UTC'));
-  
-  $displayTime->setTimezone(new DateTimeZone(getenv('TZ')));
+  $TZ = getenv('TZ');
+  $displayTime->setTimezone(new DateTimeZone($TZ));
 
   return $displayTime->format('g:i A, D j M y');
 }
