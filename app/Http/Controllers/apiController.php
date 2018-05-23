@@ -78,7 +78,7 @@ class apiController extends Controller
 	public function showEvents()
 	{
 		$events = getEvents();
-		dd(getenv('TZ'));
+
 		// Needed when sorting by OrgType.
 		// $orgs = getOrgs();
 		
