@@ -84,9 +84,9 @@ class apiController extends Controller
 		
 		// Sort the events by date.
 		usort( $events , 'compareTime');
-		dd($events);
 		
 		$months = getEventMonths( $events );
+		dd($months , $events);
 		
 		// Not currently needed, as only one OrgType hosts meetups.
 		// $orgTypes = getOrgTypes( $orgs );
