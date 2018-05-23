@@ -43,6 +43,19 @@ function getOrgs () {
 }
 
 /**
+ * Convert event timestamp into readable format for display.
+ */
+function printTime ($time) {
+  $displayTime = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', 
+                                            $time, 
+                                            new DateTimeZone('UTC'));
+  $displayTime->setTimezone(new DateTimeZone(getenv('TZ')));
+  
+  return $displayTime->format('g:i A, D j M y');
+}
+
+
+/**
  * Add general org info for Greenville SC Makers @ Synergy Mill 
  * Currently unused.
  */
