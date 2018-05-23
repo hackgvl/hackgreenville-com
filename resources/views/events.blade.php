@@ -6,8 +6,6 @@
 	<h1>Events</h1>
 	<h3>Choose a month to filter</h3>
 	
-	<?php dd($months) ?>
-	
 	<form>
     <select class="form-control" name="month">
 	    @foreach( $months as $month )
@@ -16,6 +14,8 @@
 	      </option>
 	    @endforeach
     </select>
+    
+    <?php dd($months) ?>
     
     <button class="btn btn-primary btn-round" type="submit">Submit</button>
   	<a href="<?= explode("?", $_SERVER['REQUEST_URI'])[0] ?>" class="btn btn-primary btn-round btn-simple" role="button">
