@@ -78,6 +78,7 @@ class apiController extends Controller
 	public function showEvents()
 	{
 		$events = getEvents();
+		dd($events);
 		
 		// Needed when sorting by OrgType.
 		// $orgs = getOrgs();
