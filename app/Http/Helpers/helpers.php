@@ -43,14 +43,15 @@ function getOrgs () {
 }
 
 /**
- * Convert event timestamp into readable format for display.
+ * Convert event timestamp into readable format for display
  */
 function printTime ($date) {
   $displayTime = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', 
                                             $date, 
                                             new DateTimeZone('UTC'));
-  // $displayTime->setTimezone(new DateTimeZone(getenv('TZ')));
-  dd(gettype(getenv('TZ')));
+  
+  $displayTime->setTimezone(new DateTimeZone('America/New_York'));
+
   return $displayTime->format('g:i A, D j M y');
 }
 
