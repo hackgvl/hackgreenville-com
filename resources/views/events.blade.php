@@ -21,8 +21,6 @@
     </a>
   </form>
 	
-	<?php dd( $_SERVER , $events ) ?>
-	
 	<br>
 	
 	<ul>
