@@ -15,13 +15,13 @@
 	    @endforeach
     </select>
     
-    <?php dd( $_SERVER , $events ) ?>
-    
     <button class="btn btn-primary btn-round" type="submit">Submit</button>
-  	<a href="<?= explode("?", $_SERVER['REQUEST_URI'])[0] ?>" class="btn btn-primary btn-round btn-simple" role="button">
+  	<a href="<?= explode('?', $_SERVER['REQUEST_URI'])[0] ?>" class="btn btn-primary btn-round btn-simple" role="button">
     		Clear filter
     </a>
   </form>
+	
+	<?php dd( $_SERVER , $events ) ?>
 	
 	<br>
 	
