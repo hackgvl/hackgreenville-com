@@ -86,7 +86,6 @@ class apiController extends Controller
 		usort( $events , 'compareTime');
 		
 		$months = getEventMonths( $events );
-		dd($months , $events);
 		
 		// Not currently needed, as only one OrgType hosts meetups.
 		// $orgTypes = getOrgTypes( $orgs );
@@ -94,7 +93,9 @@ class apiController extends Controller
 		if (isset($_GET['month'])) {
       $events = filterOnMonth( $events , $_GET['month']);
     }
-
+    
+    dd($months , $events);
+    
     // Filters orgs by type. Not currently needed.    
     // if (isset($_GET['type'])):
     //   $events = filterOnType( $events , $orgs , $_GET['type']);
