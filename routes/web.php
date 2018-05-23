@@ -28,9 +28,10 @@ Route::get('/calendar', function () {
 /**
  * Default Laravel view for debugging deployments.
  */
-Route::get('/', function () {
-  return view('welcome');
-});
+ 
+// Route::get('/', function () {
+//   return view('welcome');
+// });
 
 
 /**
