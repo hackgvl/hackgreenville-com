@@ -51,8 +51,8 @@ function printTime ($date) {
   $displayTime = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', 
                                             $date, 
                                             'UTC');
-  $TZ = getenv('TZ');
-  return $displayTime->tz($TZ)->format('g:i A, D j M y');
+                                            
+  return $displayTime->tz(getenv( 'TZ' ))->format('g:i A, D j M y');
 }
 
 
