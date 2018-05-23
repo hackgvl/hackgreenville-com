@@ -78,27 +78,33 @@ class apiController extends Controller
 	public function showEvents()
 	{
 		$events = getEvents();
-		$orgs = getOrgs();
+		
+		// Needed when sorting by OrgType.
+		// $orgs = getOrgs();
 		
 		// Sort the events by date.
 		usort( $events , 'compareTime');
 		
 		$months = getEventMonths( $events );
-		$orgTypes = getOrgTypes( $orgs );
 		
-		// $test = filterOnType( $events , $orgs , $orgTypes[0] );
-		// dd($test);
+		// Not currently needed, as only one OrgType hosts meetups.
+		// $orgTypes = getOrgTypes( $orgs );
 		
 		if (isset($_GET['month'])) {
       $events = filterOnMonth( $events , $_GET['month']);
     }
-    
-    if (isset($_GET['type'])):
-      $events = filterOnType( $events , $orgs , $_GET['type']);
-    endif;
+
+    // Filters orgs by type. Not currently needed.    
+    // if (isset($_GET['type'])):
+    //   $events = filterOnType( $events , $orgs , $_GET['type']);
+    // endif;
 		
 		return view( 'events' , [ 'events' => $events,
-		                          'months' => $months,
-		                          'orgTypes' => $orgTypes,]);
+		                          'months' => $months,]);
+
+    // Sends the OrgTypes to the view, but not currently needed.
+		// return view( 'events' , [ 'events' => $events,
+		//                           'months' => $months,
+		//                           'orgTypes' => $orgTypes,]);
 	}
 }
