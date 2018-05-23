@@ -94,8 +94,6 @@ class apiController extends Controller
       $events = filterOnMonth( $events , $_GET['month']);
     }
     
-    dd($months , $events);
-    
     // Filters orgs by type. Not currently needed.    
     // if (isset($_GET['type'])):
     //   $events = filterOnType( $events , $orgs , $_GET['type']);
