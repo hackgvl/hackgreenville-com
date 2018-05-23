@@ -6,6 +6,8 @@
 	<h1>Events</h1>
 	<h3>Choose a month to filter</h3>
 	
+	<?php dd($months) ?>
+	
 	<form>
     <select class="form-control" name="month">
 	    @foreach( $months as $month )
