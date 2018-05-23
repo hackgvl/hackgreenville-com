@@ -69,7 +69,7 @@ class apiController extends Controller
 	{
     $orgs = getOrgs();
 		
-		return view( 'orgs' , [ 'orgs' => $orgs ]);
+		return view( 'orgs' , [ 'orgs' => $orgs, ]);
 	}
 	
 	/**
