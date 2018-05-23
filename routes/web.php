@@ -16,7 +16,11 @@
 
 // Index level -> should go to landing page.
 // Without landing page, direct to Events.
-Route::get('/', 'apiController@showEvents');
+// Route::get('/', 'apiController@showEvents');
+
+Route::get('/', function () {
+  return view('welcome');
+});
 
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
