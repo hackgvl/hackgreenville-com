@@ -16,11 +16,7 @@
 
 // Index level -> should go to landing page.
 // Without landing page, direct to Events.
-// Route::get('/', 'apiController@showEvents');
-
-Route::get('/', function () {
-  return view('welcome');
-});
+Route::get('/', 'apiController@showEvents');
 
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
@@ -28,6 +24,14 @@ Route::get('/events', 'apiController@showEvents');
 Route::get('/calendar', function () {
   return view('calendar');
 });
+
+/**
+ * Default Laravel view for debugging deployments.
+ */
+Route::get('/', function () {
+  return view('welcome');
+});
+
 
 /**
  * Example routes for Now UI Kit pages.
