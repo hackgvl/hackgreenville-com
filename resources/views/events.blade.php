@@ -31,7 +31,11 @@
 		    </strong>
 		    
 		    <a href="<?= build_cal_url( $event ); ?>" target="_blank">
-  				Link goes here
+  				<ul>
+  					<li><strong>Time:</strong> <?= DateTime::
+  					  createFromFormat('Y-m-d\TH:i:s\Z', $event->time, new DateTimeZone('UTC')) ?>
+  					  </li>
+  				</ul>
 				</a>
 			</li>
 		@endforeach
