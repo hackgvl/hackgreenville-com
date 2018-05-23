@@ -44,15 +44,15 @@ function getOrgs () {
 
 /**
  * Convert event timestamp into readable format for display
+ * Use Carbon package for less DateTime headaches...
  */
+use Carbon\Carbon;
 function printTime ($date) {
-  $displayTime = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', 
+  $displayTime = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', 
                                             $date, 
-                                            new DateTimeZone('UTC'));
-  $TZ = getenv('TZ');
-  $displayTime->setTimezone(new DateTimeZone($TZ));
+                                            'UTC');
 
-  return $displayTime->format('g:i A, D j M y');
+  return $displayTime->tz( getenv( 'TZ' ) )->format('g:i A, D j M y');
 }
 
 
