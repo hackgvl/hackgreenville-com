@@ -50,7 +50,7 @@ function printTime ($date) {
                                             $date, 
                                             new DateTimeZone('UTC'));
   // $displayTime->setTimezone(new DateTimeZone(getenv('TZ')));
-  
+  dd(gettype(getenv('TZ')));
   return $displayTime->format('g:i A, D j M y');
 }
 
