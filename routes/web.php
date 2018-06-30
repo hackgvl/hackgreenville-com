@@ -23,9 +23,7 @@ Route::get('/', function() {
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
 
-Route::get('/calendar', function () {
-  return view('calendar');
-});
+Route::get('/calendar', 'CalendarController@show');
 
 /**
  * Default Laravel view for debugging deployments.
