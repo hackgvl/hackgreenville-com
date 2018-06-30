@@ -15,11 +15,14 @@ h3 {
   display: inline-block;
 }
 
-
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+}
 
 /*Begin Israel CSS*/
 
-#mainNav .navbar-toggler {
+#mainNav.navbar-toggler {
   font-size: 12px;
   right: 0;
   padding: 10px;

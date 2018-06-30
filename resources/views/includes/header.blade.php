@@ -1,21 +1,18 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary fixed-top">
-    <div class="container">
-        <div class="navbar-translate">
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+    <!--<div class="container">-->
+        <!--<div class="navbar-translate">-->
             <a class="navbar-brand" href="https://sccodes.org/" data-toggle="tooltip" title="LEARN PROGRAMMING. BUILD THE [FUTURE];" data-placement="bottom" target="_blank">
                 <i class="fa fa-graduation-cap"></i>
                 <span>SC Codes</span>
             </a>
             
-            <!-- I think this makes a menu bar on small screens. Not sure. -->
-            <!--<button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">-->
-            <!--    <span class="navbar-toggler-bar bar1"></span>-->
-            <!--    <span class="navbar-toggler-bar bar2"></span>-->
-            <!--    <span class="navbar-toggler-bar bar3"></span>-->
-            <!--</button>-->
+             <!--I think this makes a menu bar on small screens. Not sure. -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
         </div>
         
-        <div class="collapse navbar-collapse justify-content-end" data-nav-image="/img/blurred-image-1.jpg">
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/calendar">
@@ -65,7 +62,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
-    </div>
+        <!--</div>-->
+    <!--</div>-->
 </nav>
 <!-- End Navbar -->
