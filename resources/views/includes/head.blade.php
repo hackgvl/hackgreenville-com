@@ -38,8 +38,8 @@
 
 <script>
     $(document).ready(function() {
-        the body of this function is in assets/js/now-ui-kit.js
-        nowuiKit.initSliders();
+        // the body of this function is in assets/js/now-ui-kit.js
+        // nowuiKit.initSliders();
     });
 </script>
 
