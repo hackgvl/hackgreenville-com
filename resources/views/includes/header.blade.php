@@ -38,14 +38,14 @@
                         <i class="fa fa-slack"></i>
                         <p class="d-lg-none d-xl-none">Slack</p>
                     </a>
-                </li>
+                <!-- </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tooltip" title="Follow SC Codes on Twitter" data-placement="bottom" href="https://twitter.com/sc_codes" target="_blank">
                         <i class="fa fa-twitter"></i>
                         <p class="d-lg-none d-xl-none">Twitter</p>
                     </a>
                 </li>
-                
+                -->
                 <!-- Facebook boilerplate -->
                 
                 <!--<li class="nav-item">-->
