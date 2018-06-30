@@ -52,7 +52,7 @@ function printTime ($date) {
                                             $date, 
                                             'UTC');
                                             
-  return $displayTime->tz(getenv( 'TZ' ))->format('g:i A, D j M y');
+  return $displayTime->tz(config('app.timezone'))->format('g:i A, D j M y');
 }
 
 

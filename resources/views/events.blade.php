@@ -30,9 +30,9 @@
 			    {{ $event->event_name }} hosted by {{ $event->group_name }}
 		    </strong>
 		    
-		    <a href="<?= build_cal_url( $event ); ?>" target="_blank">
+		    <a href="{{ build_cal_url( $event ) }}" target="_blank">
   				<ul>
-  					<li><strong>Time: </strong><?= printTime( $event->time ) ?></li>
+  					<li><strong>Time: </strong>{{ printTime( $event->time ) }}</li>
   				</ul>
 				</a>
 			</li>
