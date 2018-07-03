@@ -2,9 +2,9 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
     <!--<div class="container">-->
         <!--<div class="navbar-translate">-->
-            <a class="navbar-brand" href="https://sccodes.org/" data-toggle="tooltip" title="LEARN PROGRAMMING. BUILD THE [FUTURE];" data-placement="bottom" target="_blank">
-                <i class="fa fa-graduation-cap"></i>
-                <span>SC Codes</span>
+            <a class="navbar-brand" href="/" data-placement="bottom" target="_blank">
+                <i class="fa fa-server"></i>
+                <span>HackGreenville</span>
             </a>
             
              <!--I think this makes a menu bar on small screens. Not sure. -->
@@ -39,13 +39,14 @@
                         <p class="d-lg-none d-xl-none">Slack</p>
                     </a>
                 </li>
+                <!--
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tooltip" title="Follow SC Codes on Twitter" data-placement="bottom" href="https://twitter.com/sc_codes" target="_blank">
                         <i class="fa fa-twitter"></i>
                         <p class="d-lg-none d-xl-none">Twitter</p>
                     </a>
                 </li>
-                
+                -->
                 <!-- Facebook boilerplate -->
                 
                 <!--<li class="nav-item">-->
@@ -54,13 +55,14 @@
                 <!--        <p class="d-lg-none d-xl-none">Facebook</p>-->
                 <!--    </a>-->
                 <!--</li>-->
-                
+               <!--scrollToDownload 
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tooltip" title="Follow SC Codes on Instagram" data-placement="bottom" href="https://www.instagram.com/sc_codes/" target="_blank">
                         <i class="fa fa-instagram"></i>
                         <p class="d-lg-none d-xl-none">Instagram</p>
                     </a>
                 </li>
+                -->
             </ul>
         <!--</div>-->
     <!--</div>-->
