@@ -18,9 +18,6 @@
 <script src="js/core/popper.min.js"></script>
 <script src="js/core/bootstrap.min.js"></script>
 
-<!-- Add widget for Net Neutrality awareness -->
-<script src="https://redalert.battleforthenet.com/widget.js" async></script>
-
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="js/plugins/bootstrap-switch.js"></script>
 
