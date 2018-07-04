@@ -2,7 +2,7 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
     <!--<div class="container">-->
         <!--<div class="navbar-translate">-->
-            <a class="navbar-brand" href="/" data-placement="bottom" target="_blank">
+            <a class="navbar-brand" href="/" data-placement="bottom">
                 <i class="fa fa-server"></i>
                 <span>HackGreenville</span>
             </a>
@@ -35,7 +35,7 @@
                 </li>
                     
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tooltip" title="Check out the Hack Greenville Slack" data-placement="bottom" href="https://hackgreenville.typeform.com/to/sBMjCF" target="_blank">
+                    <a class="nav-link" data-toggle="tooltip" title="Check out the Hack Greenville Slack" data-placement="bottom" href="https://hackgreenville.slack.com" target="_blank">
                         <i class="fa fa-slack"></i>
                         <p class="d-lg-none d-xl-none">Slack</p>
                     </a>
