@@ -28,7 +28,7 @@
 			<li>
 			    <a href="{{$event->url}}"><strong>{{ $event->event_name }}</strong></a> hosted by <strong>{{ $event->group_name }}</strong>
 		</strong>
-		<p>Time: </strong>{{ printTime( $event->time ) }} <br />
+		<p>Time: </strong>{{ $event->localtime->format('g:i A, D j M y') }} <br />
 			[<a href="{{$event->url}}">RSVP</a> ||
 			<a href="{{ build_cal_url( $event ) }}" target="_blank">Add to Google Calendar</a>]
 		</p>

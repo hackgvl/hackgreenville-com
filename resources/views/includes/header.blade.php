@@ -15,13 +15,13 @@
         
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
-<!--                <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="/calendar">
                         <i class="fa fa-calendar"></i>
                         <p>Calendar</p>
                     </a>
                 </li>
--->
+
                 <li class="nav-item">
                     <a class="nav-link" href="/events">
                         <i class="fa fa-calendar-check-o"></i>

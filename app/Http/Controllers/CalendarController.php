@@ -29,8 +29,8 @@ class CalendarController extends Controller
             $new_event = Calendar::event(
                 $event->group_name . ' ' . $event->event_name, //event title
                 false, //full day event?
-                $event->time, //start time (you can also use Carbon instead of DateTime)
-                $event->time, //end time (you can also use Carbon instead of DateTime)
+                $event->localtime, //start time (you can also use Carbon instead of DateTime)
+                $event->localtime, //end time (you can also use Carbon instead of DateTime)
                 $event->uuid, //optionally, you can specify an event ID
                 [
                     'url' => $google_url
