@@ -32,12 +32,9 @@ function getEventsArray () {
 function getOrgs () {
   $org_url = 'https://data.openupstate.org/rest/organizations?_format=json';
   $org_data = file_get_contents( $org_url );
-  
+
   // Put the data into JSON format.
 	$orgs = json_decode( $org_data );
-	
-	// Match event hosts with known orgs.
-	$orgs = convertOrgNames( $orgs );
 	
 	return $orgs;
 }
@@ -66,46 +63,6 @@ function addMissingOrgs ($orgs) {
   $newOrg->field_organization_type = "";
   
   $orgs[] = $newOrg;
-  
-  return $orgs;
-}
-
-/**
- * Transform organization names to match event hosts.
- */
-function convertOrgNames ($orgs) {
-  foreach ( $orgs as $org ):
-    $title = $org->title;
-
-    switch ($title) {
-      case "HackGreenville":
-        $title = "HackGreenville Community";
-        break;
-      case "GSP Developers Guild":
-        $title = "Greenville Spartanburg Developers' Guild";
-        break;
-      case "Code For Greenville":
-        $title = "Code for Greenville";
-        break;
-      case "Cocoaheads":
-        $title = "Greenville Cocoaheads";
-        break;
-      case "Upstate Elixir":
-        $title = "Upstate |> Elixir";
-        break;
-      case "Greenville SC WordPress Meetup Group":
-        $title = "Greenville South Carolina WordPress Group";
-        break;
-      case "ACM - Association for Computing Machinery":
-        $title = "ACM Greenville";
-        break;
-      case "Synergy Mill":
-        $title = "Greenville SC Makers @ Synergy Mill";
-        break;
-    }
-    
-    $org->title = $title;
-  endforeach;
   
   return $orgs;
 }
