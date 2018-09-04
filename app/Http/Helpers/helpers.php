@@ -9,7 +9,7 @@ function getEvents () {
   
   // Put the data into JSON format.
   $events = json_decode( $event_data );
-  
+
   return $events;
 }
 
