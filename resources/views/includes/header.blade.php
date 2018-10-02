@@ -21,6 +21,7 @@
                         <p>Calendar</p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/events">
                         <i class="fa fa-calendar-check-o"></i>

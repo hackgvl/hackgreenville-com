@@ -4,21 +4,28 @@
  * Retrieve event information from API
  */
 function getEvents () {
-  $event_url = 'https://nunes.online/api/gtc';
-  $event_data = file_get_contents( $event_url );
+    $event_url = 'https://nunes.online/api/gtc';
+    $event_data = file_get_contents( $event_url );
   
-  // Put the data into JSON format.
-  $events = json_decode( $event_data );
-  
-  return $events;
+    // Put the data into JSON format.
+    $events = json_decode( $event_data );
+
+    // loop through all events and add a local time using the apps timezone
+    foreach($events as $event) :
+        $displayTime = \Carbon\Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $event->time, 'UTC');
+        // store a local time so we don't have to do this conversion on every view
+        $event->localtime = $displayTime->tz(config('app.timezone'));
+    endforeach;
+
+    return $events;
 }
 
 /**
  * Retrieve event information from API in array format
  */
 function getEventsArray () {
-  $event_url = 'https://nunes.online/api/gtc';
-  $event_data = file_get_contents( $event_url );
+//  $event_url = 'https://nunes.online/api/gtc';
+  $event_data = getEvents();
   
   // Put the data into JSON format.
   $events = json_decode( $event_data , true );
@@ -32,83 +39,13 @@ function getEventsArray () {
 function getOrgs () {
   $org_url = 'https://data.openupstate.org/rest/organizations?_format=json';
   $org_data = file_get_contents( $org_url );
-  
+
   // Put the data into JSON format.
 	$orgs = json_decode( $org_data );
-	
-	// Match event hosts with known orgs.
-	$orgs = convertOrgNames( $orgs );
 	
 	return $orgs;
 }
 
-/**
- * Convert event timestamp into readable format for display
- * Use Carbon package for less DateTime headaches...
- */
-use Carbon\Carbon;
-function printTime ($date) {
-  $displayTime = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', 
-                                            $date, 
-                                            'UTC');
-                                            
-  return $displayTime->tz(config('app.timezone'))->format('g:i A, D j M y');
-}
-
-
-/**
- * Add general org info for Greenville SC Makers @ Synergy Mill 
- * Currently unused.
- */
-function addMissingOrgs ($orgs) {
-  $newOrg = new StdClass();
-  $newOrg->title = "";
-  $newOrg->field_organization_type = "";
-  
-  $orgs[] = $newOrg;
-  
-  return $orgs;
-}
-
-/**
- * Transform organization names to match event hosts.
- */
-function convertOrgNames ($orgs) {
-  foreach ( $orgs as $org ):
-    $title = $org->title;
-
-    switch ($title) {
-      case "HackGreenville":
-        $title = "HackGreenville Community";
-        break;
-      case "GSP Developers Guild":
-        $title = "Greenville Spartanburg Developers' Guild";
-        break;
-      case "Code For Greenville":
-        $title = "Code for Greenville";
-        break;
-      case "Cocoaheads":
-        $title = "Greenville Cocoaheads";
-        break;
-      case "Upstate Elixir":
-        $title = "Upstate |> Elixir";
-        break;
-      case "Greenville SC WordPress Meetup Group":
-        $title = "Greenville South Carolina WordPress Group";
-        break;
-      case "ACM - Association for Computing Machinery":
-        $title = "ACM Greenville";
-        break;
-      case "Synergy Mill":
-        $title = "Greenville SC Makers @ Synergy Mill";
-        break;
-    }
-    
-    $org->title = $title;
-  endforeach;
-  
-  return $orgs;
-}
 
 /**
  * Build a Google calendar url from an event object.
@@ -117,7 +54,9 @@ function build_cal_url( $event )
 {
   $event_time = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', 
   $event->time);
+
   $start_time = $event_time->format('Ymd\THis\Z');
+
   // Assume event is two hours long...
   $event_time->add(new DateInterval('PT2H'));
   $end_time = $event_time->format('Ymd\THis\Z');
