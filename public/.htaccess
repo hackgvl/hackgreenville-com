@@ -5,6 +5,15 @@
 
     RewriteEngine On
 
+# Force all traffic to use https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # To redirect all users to access the site WITH the 'www.' prefix,
+    RewriteCond %{HTTP_HOST} ^www.hackgreenville.com$ [NC]
+    RewriteRule ^(.*)$ https://hackgreenville.com/$1 [L,R=301]
+
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
