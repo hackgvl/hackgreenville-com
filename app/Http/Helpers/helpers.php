@@ -4,7 +4,7 @@
  * Retrieve event information from API
  */
 function getEvents () {
-    $event_url = 'https://nunes.online/api/gtc';
+    $event_url = 'https://greenville-cal-service.herokuapp.com/api/gtc';
     $event_data = file_get_contents( $event_url );
   
     // Put the data into JSON format.
@@ -24,7 +24,7 @@ function getEvents () {
  * Retrieve event information from API in array format
  */
 function getEventsArray () {
-//  $event_url = 'https://nunes.online/api/gtc';
+//  $event_url = 'https://greenville-cal-service.herokuapp.com/api/gtc';
   $event_data = getEvents();
   
   // Put the data into JSON format.
