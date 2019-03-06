@@ -1,13 +1,14 @@
 @extends('layouts.page')
 
-@section('title', 'Landing Page')
+@section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
 
 @section('content')
-    <title>HackGreenville Slack Group Signup</title> 
-    
-    <link href="css/slacksignup.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-xs-12">
+        <img class="img-responsive" src="/img/hackgreenville-banner.jpg" style="max-width:100%"/>
+    </div>
+</div>
 
-    <iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://hackgreenville.typeform.com/to/sBMjCF?typeform-embed=embed-fullpage"></iframe>
-    <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script> 
+
 @endsection
 
