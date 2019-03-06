@@ -18,3 +18,7 @@ Route::get('/', function() {
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
 Route::get('/calendar', 'CalendarController@show');
+
+Route::get('/join-slack', function() {
+    return view('slack-sign-up');
+});
