@@ -12,9 +12,10 @@ class apiController extends Controller
      */
     public function showOrgs()
     {
-        $orgs = getOrgs();
+        $activeOrgs = getActiveOrgs();
+        $inactiveOrgs = getInactiveOrgs();
 		
-        return view( 'orgs' , [ 'orgs' => $orgs, ]);
+        return view( 'orgs' , [ 'activeOrgs' => $activeOrgs, 'inactiveOrgs' => $inactiveOrgs ]);
     } // end of showOrgs()
 	
 

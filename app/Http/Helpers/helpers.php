@@ -34,10 +34,27 @@ function getEventsArray () {
 }
 
 /**
- * Retrieve organization information from API
+ * Retrieve active organization information from API
  */
-function getOrgs () {
-  $org_url = 'https://data.openupstate.org/rest/organizations?_format=json';
+function getActiveOrgs () {
+  $org_url = 'https://data.openupstate.org/rest/organizations?_format=json&org_status=active';
+  $org_data = file_get_contents( $org_url );
+
+  // Put the data into JSON format.
+  $orgs = json_decode( $org_data );
+
+  foreach ( $orgs as $org ) :
+    $groupedOrgs[$org->field_organization_type][] = $org;
+  endforeach;
+
+  return $groupedOrgs;
+}
+
+/**
+ * Retrieve inactive organization information from API
+ */
+function getInactiveOrgs () {
+  $org_url = 'https://data.openupstate.org/rest/organizations?_format=json&org_status=inactive';
   $org_data = file_get_contents( $org_url );
 
   // Put the data into JSON format.
