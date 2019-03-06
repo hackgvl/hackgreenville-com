@@ -34,38 +34,18 @@
       </li>
         
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" title="Check out the Hack Greenville Slack" data-placement="bottom" href="https://hackgreenville.slack.com" target="_blank">
+        <a class="nav-link" data-toggle="tooltip" title="Sign up for the Hack Greenville Slack" data-placement="bottom" href="/join-slack">
           <i class="fa fa-slack"></i>
-          <span>Slack</span>
+          <span>Join Slack</span>
         </a>
       </li>
 
-      <!--  Twitter boilerplate -->
-
-      <!--<li class="nav-item">-->
-      <!--    <a class="nav-link" data-toggle="tooltip" title="Follow SC Codes on Twitter" data-placement="bottom" href="https://twitter.com/sc_codes" target="_blank">-->
-      <!--        <i class="fa fa-twitter"></i>-->
-      <!--        <p class="d-lg-none d-xl-none">Twitter</p>-->
-      <!--    </a>-->
-      <!--</li>-->
-      
-      <!-- Facebook boilerplate -->
-      
-      <!--<li class="nav-item">-->
-      <!--    <a class="nav-link" title="Like us on Facebook" data-placement="bottom" href="#" target="_blank">-->
-      <!--        <i class="fa fa-facebook-square"></i>-->
-      <!--        <p class="d-lg-none d-xl-none">Facebook</p>-->
-      <!--    </a>-->
-      <!--</li>-->
-
-      <!-- Instagram boilerplate -->
-      
-      <!--<li class="nav-item">-->
-      <!--    <a class="nav-link" data-toggle="tooltip" title="Follow SC Codes on Instagram" data-placement="bottom" href="https://www.instagram.com/sc_codes/" target="_blank">-->
-      <!--        <i class="fa fa-instagram"></i>-->
-      <!--        <p class="d-lg-none d-xl-none">Instagram</p>-->
-      <!--    </a>-->
-      <!--</li>-->
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tooltip" title="Login to the Hack Greenville Slack" data-placement="bottom" href="https://hackgreenville.slack.com">
+          <i class="fa fa-slack"></i>
+          <span>Slack Login</span>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
