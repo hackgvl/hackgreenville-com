@@ -213,4 +213,16 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | API DOMAINS
+    |--------------------------------------------------------------------------
+    |
+    | 3rd Party Domains for APIs. May be useful for swapping out to test
+    |
+    */
+
+    'events_api_domain' => env('EVENTS_API_DOMAIN', 'example.com'),
+    'orgs_api_domain' => env('ORGS_API_DOMAIN', 'example.com'),
+
 ];
