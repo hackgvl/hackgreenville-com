@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function() {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
 Route::get('/calendar', 'CalendarController@show');
 
-Route::get('/join-slack', function() {
-    return view('slack-sign-up');
-});
+Route::get('/join-slack', 'SlackController@join');

@@ -1,21 +1,20 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use App\DateTime;
 use Illuminate\Database\Eloquent\Model;
+use MaddHatter\LaravelFullcalendar\Event;
 
-class CalendarEvent implements \MaddHatter\LaravelFullcalendar\Event
+class CalendarEvent extends Model implements Event
 {
-
     protected $dates = ['start', 'end'];
     protected $table = null;
-
 
     public function getEventOptions()
     {
         return [
             'color' => $this->background_color,
-            //etc
         ];
     }
 
@@ -24,7 +23,8 @@ class CalendarEvent implements \MaddHatter\LaravelFullcalendar\Event
      *
      * @return int
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
