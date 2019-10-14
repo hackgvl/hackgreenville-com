@@ -1,14 +1,9 @@
-@extends('layouts.page')
+@extends('layouts.app')
 
 @section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
 
 @section('content')
-<div class="row">
-    <div class="col-xs-12">
-        <img class="img-responsive" src="/img/hackgreenville-banner.jpg" style="max-width:100%; width:  100vw;"/>
-    </div>
-</div>
 
-
+    <img class="img-responsive" src="/img/hackgreenville-banner.jpg" style="width:  100vw;"/>
 @endsection
 

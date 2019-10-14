@@ -18,3 +18,7 @@ Route::get('/events', 'apiController@showEvents');
 Route::get('/calendar', 'CalendarController@show');
 
 Route::get('/join-slack', 'SlackController@join');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
