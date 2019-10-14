@@ -15,7 +15,6 @@ class apiController extends Controller
         return view('orgs', ['activeOrgs' => $activeOrgs, 'inactiveOrgs' => $inactiveOrgs]);
     } // end of showOrgs()
 
-
     /**
      * Display a list of events.
      */

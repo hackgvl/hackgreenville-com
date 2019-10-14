@@ -13,8 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/orgs', 'apiController@showOrgs');
-Route::get('/events', 'apiController@showEvents');
 Route::get('/calendar', 'CalendarController@show');
 
 Route::get('/join-slack', 'SlackController@join');
