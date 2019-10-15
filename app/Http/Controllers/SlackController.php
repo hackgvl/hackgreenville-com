@@ -6,6 +6,6 @@ class SlackController extends Controller
 {
     public function join()
     {
-        return view('slack-sign-up');
+        return view('slack.sign-up');
     }
 }

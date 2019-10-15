@@ -29,9 +29,11 @@ class PullEventsCommand extends Command
     {
         $this->warn('This command fails because the api does not return anything.');
 
-        return 1; // TODO :: remove this once the command is working
+//        return 1; // TODO :: remove this once the command is working
 
         $events = getEvents();
+
+        dd($events);
 
         // Needed when sorting by OrgType.
         // $orgs = getOrgs();

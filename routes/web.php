@@ -22,3 +22,5 @@ Route::get('/join-slack', 'SlackController@join');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/styles', 'StyleController@index')->name('styles.index');

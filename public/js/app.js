@@ -6001,8 +6001,10 @@
 
                 return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 
-            };
+            }
+
             var rsingleTag = (/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i);
+
 
 
 // Implement the identical functionality for filter and not
@@ -6385,6 +6387,7 @@
                 };
             });
             var rnothtmlwhite = (/[^\x20\t\r\n\f]+/g);
+
 
 
 // Convert String-formatted options into Object-formatted ones
@@ -7025,6 +7028,8 @@
             };
 
 
+
+
 // The deferred used on DOM ready
             var readyList = jQuery.Deferred();
 
@@ -7100,6 +7105,8 @@
                 // A fallback to window.onload, that will always work
                 window.addEventListener("load", completed);
             }
+
+
 
 
 // Multifunctional method to get and set values of a collection
@@ -7345,6 +7352,7 @@
             var dataPriv = new Data();
 
             var dataUser = new Data();
+
 
 
 //	Implementation Summary
@@ -7881,6 +7889,7 @@
             var rtagName = (/<([a-z][^\/\0>\x20\t\r\n\f]*)/i);
 
             var rscriptType = (/^$|^module$|\/(?:java|ecma)script/i);
+
 
 
 // We have to close these tags to support XHTML (#13200)
@@ -11523,6 +11532,8 @@
             });
 
 
+
+
 // Return jQuery for attributes-only inclusion
 
 
@@ -11760,6 +11771,7 @@
             var nonce = Date.now();
 
             var rquery = (/\?/);
+
 
 
 // Cross-browser xml parsing
@@ -13008,6 +13020,8 @@
             });
 
 
+
+
 // Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
             jQuery.ajaxPrefilter(function (s) {
                 if (s.crossDomain) {
@@ -13167,6 +13181,8 @@
             });
 
 
+
+
 // Support: Safari 8 only
 // In Safari 8 documents created via document.implementation.createHTMLDocument
 // collapse sibling forms: the second one becomes a child of the first one.
@@ -13292,6 +13308,8 @@
 
                 return this;
             };
+
+
 
 
 // Attach a bunch of functions for handling common AJAX events
@@ -13680,6 +13698,8 @@
             };
 
 
+
+
 // Register as a named AMD module, since jQuery can be concatenated with other
 // files that may use define, but not via a proper concatenation script that
 // understands anonymous AMD modules. A named AMD is safest and most robust
@@ -13795,7 +13815,7 @@
             } catch (e) {
                 cachedClearTimeout = defaultClearTimeout;
             }
-        }())
+        }());
 
         function runTimeout(fun) {
             if (cachedSetTimeout === setTimeout) {
@@ -13938,7 +13958,7 @@
 
         process.listeners = function (name) {
             return []
-        }
+        };
 
         process.binding = function (name) {
             throw new Error('process.binding is not supported');
@@ -14297,16 +14317,8 @@
 
         /* WEBPACK VAR INJECTION */
         (function (global, module) {
-            var __WEBPACK_AMD_DEFINE_RESULT__;/**
-             * @license
-             * Lodash <https://lodash.com/>
-             * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
-             * Released under MIT license <https://lodash.com/license>
-             * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-             * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-             */
-            ;(function () {
-
+            var __WEBPACK_AMD_DEFINE_RESULT__;
+            (function () {
                 /** Used as a safe reference for `undefined` in pre-ES5 environments. */
                 var undefined;
 
@@ -34219,8 +34231,8 @@
                 for (var i = 0, len = elements.length; i < len; i++) {
                     var _ret = _loop(i, len);
 
-                    if (_ret === "continue") continue;
-                }
+                    if (_ret === "continue")
+                        }
 
                 return createdDocument.body.innerHTML;
             }
@@ -37717,7 +37729,7 @@
                         case 'push':
                         case 'unshift':
                             inserted = args;
-                            break
+                            break;
                         case 'splice':
                             inserted = args.slice(2);
                             break
@@ -43837,28 +43849,28 @@
                         switch (c) {
                             case 0x22:
                                 inDouble = true;
-                                break         // "
+                                break;         // "
                             case 0x27:
                                 inSingle = true;
-                                break         // '
+                                break;         // '
                             case 0x60:
                                 inTemplateString = true;
-                                break // `
+                                break; // `
                             case 0x28:
                                 paren++;
-                                break                 // (
+                                break;                 // (
                             case 0x29:
                                 paren--;
-                                break                 // )
+                                break;                 // )
                             case 0x5B:
                                 square++;
-                                break                // [
+                                break;                // [
                             case 0x5D:
                                 square--;
-                                break                // ]
+                                break;                // ]
                             case 0x7B:
                                 curly++;
-                                break                 // {
+                                break;                 // {
                             case 0x7D:
                                 curly--;
                                 break                 // }
@@ -48541,6 +48553,7 @@
             /*  */
 
 
+
 // these keywords should not appear inside expressions, but operators like
 // typeof, instanceof and in are allowed
             var prohibitedKeywordRE = new RegExp('\\b' + (
@@ -49320,20 +49333,20 @@
     /* 39 */
     /***/ (function (module, exports, __webpack_require__) {
 
-        var disposed = false
-        var normalizeComponent = __webpack_require__(40)
+        var disposed = false;
+        var normalizeComponent = __webpack_require__(40);
         /* script */
-        var __vue_script__ = __webpack_require__(41)
+        var __vue_script__ = __webpack_require__(41);
         /* template */
-        var __vue_template__ = __webpack_require__(42)
+        var __vue_template__ = __webpack_require__(42);
         /* template functional */
-        var __vue_template_functional__ = false
+        var __vue_template_functional__ = false;
         /* styles */
-        var __vue_styles__ = null
+        var __vue_styles__ = null;
         /* scopeId */
-        var __vue_scopeId__ = null
+        var __vue_scopeId__ = null;
         /* moduleIdentifier (server only) */
-        var __vue_module_identifier__ = null
+        var __vue_module_identifier__ = null;
         var Component = normalizeComponent(
             __vue_script__,
             __vue_template__,
@@ -49341,16 +49354,16 @@
             __vue_styles__,
             __vue_scopeId__,
             __vue_module_identifier__
-        )
-        Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
+        );
+        Component.options.__file = "resources/assets/js/components/ExampleComponent.vue";
 
         /* hot reload */
         if (false) {
             (function () {
-                var hotAPI = require("vue-hot-reload-api")
-                hotAPI.install(require("vue"), false)
-                if (!hotAPI.compatible) return
-                module.hot.accept()
+                var hotAPI = require("vue-hot-reload-api");
+                hotAPI.install(require("vue"), false);
+                if (!hotAPI.compatible) return;
+                module.hot.accept();
                 if (!module.hot.data) {
                     hotAPI.createRecord("data-v-7168fb6a", Component.options)
                 } else {
@@ -49384,25 +49397,25 @@
             scopeId,
             moduleIdentifier /* server only */
         ) {
-            var esModule
-            var scriptExports = rawScriptExports = rawScriptExports || {}
+            var esModule;
+            var scriptExports = rawScriptExports = rawScriptExports || {};
 
             // ES6 modules interop
-            var type = typeof rawScriptExports.default
+            var type = typeof rawScriptExports.default;
             if (type === 'object' || type === 'function') {
-                esModule = rawScriptExports
+                esModule = rawScriptExports;
                 scriptExports = rawScriptExports.default
             }
 
             // Vue.extend constructor export interop
             var options = typeof scriptExports === 'function'
                 ? scriptExports.options
-                : scriptExports
+                : scriptExports;
 
             // render functions
             if (compiledTemplate) {
-                options.render = compiledTemplate.render
-                options.staticRenderFns = compiledTemplate.staticRenderFns
+                options.render = compiledTemplate.render;
+                options.staticRenderFns = compiledTemplate.staticRenderFns;
                 options._compiled = true
             }
 
@@ -49416,7 +49429,7 @@
                 options._scopeId = scopeId
             }
 
-            var hook
+            var hook;
             if (moduleIdentifier) { // server build
                 hook = function (context) {
                     // 2.3 injection

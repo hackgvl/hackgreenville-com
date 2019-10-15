@@ -11,24 +11,30 @@
             @foreach ($activeOrgs as $cat_inc => $category)
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-primary">
-                        <h2>{{$category[0]->category->label}}</h2>
+                        <h2>
+                            <div class="pull-right">
+                                {{$category->count()}}
+                            </div>
+                            {{$category[0]->category->label}}
+                        </h2>
                     </li>
 
                     @foreach($category as $org)
                         <li class="list-group-item">
-                            <a data-toggle="collapse" data-target="#org-{{$org->cache['nid']}}" href="#org-{{$org->cache['nid']}}" class=""> {{ $org->title }}</a>
-                            <div class="collapse" id="org-{{$org->cache['nid']}}">
-                                <p>
-                                    <a href="{{ $org->homepage}}" target="_blank">Homepage</a> |
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="{{ $org->homepage}}" target="_blank" title="Homepage">{{ $org->title }}</a>
+                                </div>
+                                <div class="col-md-6">
                                     <a href="{{$org->event_calendar_homepage }}" target="_blank">Events Site</a>
-                                </p>
+                                </div>
                             </div>
                         </li>
                     @endforeach
                 </ul>
 
                 @if($cat_inc < count($activeOrgs))
-                    <hr/>
+                    <hr class="hidden"/>
                 @endif
             @endforeach
         </div>

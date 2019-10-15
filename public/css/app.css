@@ -11646,6 +11646,47 @@ a.text-dark:focus {
   }
 }
 
+.slack-signup html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slack-signup iframe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border: 0;
+}
+
+.slack-signup .css-1l99lqu {
+  border-radius: 0;
+  display: block;
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+}
+
+.slack-signup .__typeform-embed-mobile-modal-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.slack-signup .css-bhl88l {
+  -webkit-transition: visibility 0s 0.25s, opacity 0.25s linear;
+  transition: visibility 0s 0.25s, opacity 0.25s linear;
+  visibility: hidden;
+  opacity: 0;
+}
+
 .homepage {
   margin-top: -1.5rem !important;
 }
@@ -11653,5 +11694,68 @@ a.text-dark:focus {
 .homepage.carousel .carousel-item img {
   min-height: 500px;
   height: 50vh;
+}
+
+.swatch-holder {
+  width: 88px;
+  height: 88px;
+  background: #e1e1e1;
+  border: solid 1px #e1e1e1;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-green {
+  background-color: #005b3c;
+}
+
+.bg-blue {
+  background-color: #201748;
+}
+
+.bg-yellow {
+  background-color: #ffa300;
+}
+
+.bg-purple {
+  background-color: #201647;
+}
+
+.bg-gray {
+  background-color: #c0c0c0;
+}
+
+.bg-off-white {
+  background-color: #f4f4f4;
+}
+
+.bg-green {
+  background-color: #006341;
+}
+
+.text-brown {
+  color: #222222;
+}
+
+.text-purple {
+  color: #201647;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-green {
+  color: #006341;
+}
+
+.text-gray {
+  color: #202020;
 }
 

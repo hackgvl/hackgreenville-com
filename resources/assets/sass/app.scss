@@ -1,12 +1,10 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import 'slack-sign-up';
 
 //.navbar-laravel {
 //  background-color: #fff;
@@ -23,5 +21,75 @@
         height: 50vh;
       }
     }
+  }
+}
+
+.swatch-holder {
+  width: 88px;
+  height: 88px;
+  background: #e1e1e1;
+  border: solid 1px #e1e1e1;
+}
+
+// Site colors
+.bg {
+
+  &-white {
+    background-color: #ffffff;
+  }
+
+  &-green {
+    background-color: #005b3c;
+  }
+
+  &-blue {
+    background-color: #201748;
+  }
+
+  &-yellow {
+    background-color: #ffa300;
+  }
+
+  &-purple {
+    background-color: #201647;
+  }
+
+  &-gray {
+    background-color: #c0c0c0;
+  }
+
+  &-off-white {
+    background-color: #f4f4f4;
+  }
+
+  &-green {
+    background-color: #006341;
+  }
+}
+
+.text {
+
+  &-brown {
+    color: #222222;
+  }
+
+  &-purple {
+    color: #201647;
+  }
+
+  &-white {
+    color: #ffffff;
+  }
+
+  &-black {
+    color: #000000;
+  }
+
+  &-green {
+    color: #006341;
+  }
+
+  &-gray {
+    color: #202020;
   }
 }
