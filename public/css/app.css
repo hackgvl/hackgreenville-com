@@ -169,13 +169,13 @@ sup {
 }
 
 a {
-  color: #2fff00;
+  color: #1b6b00;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #21b300;
+  color: #081f00;
   text-decoration: underline;
 }
 
@@ -3537,12 +3537,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #2fff00;
+  color: #1b6b00;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #21b300;
+  color: #081f00;
   text-decoration: underline;
 }
 
@@ -5608,14 +5608,14 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #2fff00;
+  color: #1b6b00;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #21b300;
+  color: #081f00;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
