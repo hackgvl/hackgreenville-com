@@ -16,7 +16,7 @@
 
                     @foreach($category as $org)
                         <li class="list-group-item">
-                            <a data-toggle="collapse" data-target="#org-{{$org->cache['nid']}}" href="#org-{{$org->cache['nid']}}" class="btn-link btn-info"> {{ $org->title }}</a>
+                            <a data-toggle="collapse" data-target="#org-{{$org->cache['nid']}}" href="#org-{{$org->cache['nid']}}" class=""> {{ $org->title }}</a>
                             <div class="collapse" id="org-{{$org->cache['nid']}}">
                                 <p>
                                     <a href="{{ $org->homepage}}" target="_blank">Homepage</a> |
@@ -39,7 +39,7 @@
             <ul>
                 @foreach ($inactiveOrgs as $org)
                     <li>
-                        <a class="btn-link btn-info" href="{{ $org->homepage }}" target="_blank">{{ $org->title }}</a>
+                        <a class="" href="{{ $org->homepage }}" target="_blank">{{ $org->title }}</a>
                         {{ $org->city }}
                     </li>
                 @endforeach
