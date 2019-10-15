@@ -7,7 +7,7 @@ use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 class CalendarController extends Controller
 {
 
-    public function show()
+    public function index()
     {
         $events = [];
 

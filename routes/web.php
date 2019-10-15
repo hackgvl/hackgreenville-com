@@ -13,7 +13,9 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/calendar', 'CalendarController@show');
+Route::get('/calendar', 'CalendarController@index')->name('calendar.index');
+Route::get('/events', 'EventsController@index')->name('events.index');
+Route::get('/orgs', 'OrgsController@index')->name('orgs.index');
 
 Route::get('/join-slack', 'SlackController@join');
 

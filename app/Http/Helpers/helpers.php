@@ -133,6 +133,8 @@ function compareTime($a, $b)
 
 /**
  * Return an array of months containing events.
+ * @param $events
+ * @return array
  */
 function getEventMonths($events)
 {
@@ -152,6 +154,9 @@ function getEventMonths($events)
 
 /**
  * Return only the events that occur in the given month.
+ * @param $events
+ * @param $month
+ * @return array
  */
 function filterOnMonth($events, $month)
 {
@@ -171,6 +176,10 @@ function filterOnMonth($events, $month)
 
 /**
  * Return only the events hosted by an organization of the given type.
+ * @param $events
+ * @param $orgs
+ * @param $type
+ * @return array
  */
 function filterOnType($events, $orgs, $type)
 {
@@ -191,6 +200,8 @@ function filterOnType($events, $orgs, $type)
 
 /**
  * Return an associative array of org name => org type.
+ * @param $orgs
+ * @return array
  */
 function getOrgTypeArray($orgs)
 {
@@ -206,14 +217,10 @@ function getOrgTypeArray($orgs)
 /**
  * Return a link to the org homepage.
  * If no homepage, return a link to the org description at data.openupstate
+ * @param $org
+ * @return mixed
  */
 function getOrgWebsite($org)
 {
-    if ($org->field_homepage == ""):
-        $link = $org->path;
-    else:
-        $link = $org->field_homepage;
-    endif;
-
-    return $link;
+    return $org->field_homepage == '' ? $org->path : $org->field_homepage;
 }
