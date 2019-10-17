@@ -7,7 +7,7 @@ use Carbon\Carbon;
  */
 function getEvents()
 {
-    $event_url  = 'https://greenville-cal-service.herokuapp.com/api/gtc';
+    $event_url  = 'https://events.openupstate.org/api/gtc';
     $event_data = file_get_contents($event_url);
 
     // Put the data into JSON format.
