@@ -13,14 +13,12 @@
     </title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
 {{--    <link rel="dns-prefetch" href="https://fonts.gstatic.com">--}}
 {{--    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">--}}
     <!-- Fonts and icons -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 
     <!-- CSS Files -->
 {{--    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>--}}
@@ -41,8 +39,12 @@
     <!-- Share Library etc -->
     <script src="{{ asset('js/plugins/jquery.sharrre.js') }}"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('head')
 </head>
 <body>
     <div id="app">
@@ -52,6 +54,7 @@
             @yield('content')
         </main>
 
+        @yield('js')
         @include('layouts.footer')
     </div>
 </body>

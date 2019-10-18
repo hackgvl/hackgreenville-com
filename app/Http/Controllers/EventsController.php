@@ -3,14 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
-use DB;
 
 class EventsController extends Controller
 {
     public function index()
     {
-        $events = Event::where('active_date', '>', DB::raw('UTC_DATE'))->get();
+        // Get the active events
+        $events = Event::getActive()->get();
 
-        return view('events.index', compact('events'));
+        // Collect unique months format Oct 2019 from the events.
+        $months = $events
+            ->map(function (Event $event) {
+                if (!$event->active_at) {
+                    return false;
+                }
+
+                return $event->active_at->format('M Y');
+            })->filter(function ($month) {
+                return !!$month;
+            })
+            ->unique();
+
+        return view('events.index', compact('events', 'months'));
     }
 }
