@@ -1,17 +1,16 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "upstatePHP/hackgreenville",
+    "description": "Website for the HackGreenville",
+    "keywords": ["updatePHP", "hack", "Greenville"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0",
-        "maddhatter/laravel-fullcalendar": "^1.3",
-        "nesbot/carbon": "^1.28"
+        "laravel/framework": "^6.0",
+        "laravel/helpers": "^1.1",
+        "laravel/tinker": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
