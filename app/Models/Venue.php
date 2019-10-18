@@ -23,6 +23,8 @@ class Venue extends Model
             'phone',
             'city',
             'state_id',
+            'lat',
+            'lng',
         ];
 
     public function getStateAttribute()

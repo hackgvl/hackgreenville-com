@@ -20,6 +20,8 @@ function getEvents()
         $event->localtime = $displayTime->tz(config('app.timezone'));
     endforeach;
 
+    usort($events, 'compareTime');
+
     return $events;
 }
 

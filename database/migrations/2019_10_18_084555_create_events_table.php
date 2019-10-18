@@ -16,15 +16,19 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('slug');
-            $table->string('name');
+            $table->longText('event_name');
+            $table->longText('group_name');
             $table->longText('description');
+
+            $table->integer('rsvp_count')->nullable()->default(0);
+
+            $table->dateTime('active_at')->nullable();
+            $table->string('uri');
 
             $table->unsignedBigInteger('venue_id');
 
-            $table->longText('cache');
+            $table->json('cache');
 
-            $table->dateTime('scheduled_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

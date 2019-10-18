@@ -2,6 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Event;
+use App\Models\State;
+use App\Models\Venue;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class PullEventsCommand extends Command
@@ -27,27 +31,60 @@ class PullEventsCommand extends Command
      */
     public function handle()
     {
-        $this->warn('This command fails because the api does not return anything.');
-
-//        return 1; // TODO :: remove this once the command is working
-
         $events = getEvents();
 
-        dd($events);
+        $bar = $this->output->createProgressBar(count($events));
+        $bar->start();
+        $events_missing_venue = [];
 
-        // Needed when sorting by OrgType.
-        // $orgs = getOrgs();
+        foreach ($events as $event) {
 
-        // Sort the events by date.
-        usort($events, 'compareTime');
+            if(!$event->venue){
+                $events_missing_venue[] = $event;
+                continue;
+            }
 
-//        $months = getEventMonths($events);
+            $state = State::where('abbr', 'like', $event->venue->state ?: 'SC')->first();
 
-        // Not currently needed, as only one OrgType hosts meetups.
-        // $orgTypes = getOrgTypes( $orgs );
+            $venue = Venue::firstOrCreate([
+                'address'  => $event->venue->address,
+                'zipcode'  => $event->venue->zip,
+                'state_id' => $state->id,
+            ], [
+                'address'  => $event->venue->address,
+                'zipcode'  => $event->venue->zip,
+                'state_id' => $state->id,
+                'city'     => $event->venue->city,
+                'name'     => $event->venue->name,
+                'lat'      => $event->venue->lat,
+                'lng'      => $event->venue->lon,
+            ]);
 
-        if (isset($_GET['month'])) {
-            $events = filterOnMonth($events, $_GET['month']);
+            $search_arr = [
+                'venue_id'         => $venue->id,
+                'active_at'        => new Carbon($event->time),
+                'group_name' => $event->group_name,
+            ];
+
+            Event::firstOrCreate($search_arr, [
+                'event_name'  => $event->event_name,
+                'group_name'  => $event->group_name,
+                'description' => $event->description,
+                'rsvp_count'  => $event->rsvp_count,
+                'active_at'   => new Carbon($event->time),
+                'uri'         => $event->url ?: 'https://www.meetup.com/Hack-Greenville/events/',
+                'venue_id'    => $venue->id,
+                'cache'       => $event,
+            ]);
+
+            $bar->advance();
         }
+        $bar->finish();
+
+        $this->info('Done importint');
+
+        $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information');
+
+        return 0;
     }
 }

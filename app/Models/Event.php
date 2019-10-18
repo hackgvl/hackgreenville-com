@@ -10,16 +10,18 @@ class Event extends Model
 {
     use SoftDeletes;
 
-    protected $table = '';
+    protected $table = 'events';
 
     protected $fillable
         = [
-            'slug',
-            'name',
+            'event_name',
+            'group_name',
             'description',
+            'rsvp_count',
+            'active_at',
+            'uri',
             'venue_id',
             'cache',
-            'scheduled_at',
         ];
 
     protected $casts
@@ -32,7 +34,7 @@ class Event extends Model
             'created_at',
             'updated_at',
             'deleted_at',
-            'scheduled_at',
+            'active_at',
         ];
 
     public function venue()
@@ -42,6 +44,21 @@ class Event extends Model
 
     public function scopeGetActive($query)
     {
-        return $query->where('scheduled_at', '>=', DB::raw('UTC_TIME'));
+        return $query->where('active_at', '>=', DB::raw('UTC_TIME'));
+    }
+
+
+    public function getStateAttribute()
+    {
+        if($this->active_at->isPast()){
+            return 'passed';
+        }
+
+        //TODO :: create the condition that returns the status of live
+        if (false) {
+            return 'live';
+        }
+
+        return 'upcoming';
     }
 }
