@@ -5,6 +5,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import 'slack-sign-up';
+// Calendar
+@import "~@fullcalendar/core/main.min.css";
+@import "~@fullcalendar/daygrid/main.min.css";
 
 //.navbar-laravel {
 //  background-color: #fff;

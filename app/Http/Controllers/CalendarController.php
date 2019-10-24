@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\CalendarContract;
 use App\Models\Event;
-use MaddHatter\LaravelFullcalendar\Facades\Calendar;
+//use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 
 class CalendarController extends Controller
 {
 
-    public function index()
+    public function index(CalendarContract $calendar)
     {
+        $calendar->addEvent('2019-10-22', '2019-10-25', 'testing event', 'just a random test', false);
+
+        $js = $calendar->js();
+        $html  = $calendar->html();
+
+        return view('testing', compact('js', 'html'));
+        dd($tst);
         // Get the active events.
         $events = Event::getActive()->get();
 

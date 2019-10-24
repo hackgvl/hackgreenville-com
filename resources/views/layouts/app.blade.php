@@ -44,6 +44,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link href='{{url('vendors/fullcalendar/packages/core/main.min.css')}}' rel='stylesheet'/>
+    <link href='{{url('vendors/fullcalendar/packages/daygrid/main.min.css')}}' rel='stylesheet'/>
+
+    <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
+    <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
+
     @yield('head')
 </head>
 <body>
