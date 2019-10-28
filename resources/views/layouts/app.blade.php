@@ -56,6 +56,14 @@
     <div id="app">
         @include('layouts.top-nav')
 
+        @if($__env->yieldContent('title'))
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                @yield('breadcrumbs')
+            </ol>
+        </nav>
+        @endif
+
         <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">
             @yield('content')
         </main>

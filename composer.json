@@ -1,18 +1,19 @@
 {
-    "name": "upstatePHP/hackgreenville",
+    "name": "upstate-php/hackgreenville",
     "description": "Website for the HackGreenville",
     "keywords": ["updatePHP", "hack", "Greenville"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": "^7.2",
+        "ext-json": "*",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^6.0",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^1.0",
-        "spatie/laravel-google-calendar": "^2.3",
-      "ext-json": "*"
+        "spatie/laravel-google-calendar": "^2.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

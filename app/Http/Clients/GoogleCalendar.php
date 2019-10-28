@@ -13,32 +13,13 @@ class GoogleCalendar extends CalendarContract
     {
         $events = $this->getEvent();
 
-        $js = <<<JS
-document.addEventListener('DOMContentLoaded', function() {
-    const calendarEl = document.getElementById('calendar');
-    
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: [ 'dayGrid' ],
-        eventSources: [{events: {$events}}],
-        eventClick: function(info) {
-            console.log(info);
-            // change the border color just for fun
-            
-            info.el.style.borderColor = info.el.style.borderColor == 'red'? 'black': 'red';
-        }
-    });
-    
-    calendar.render();
-});
-JS;
-
-        return $js;
+        return view('calendar.js', compact('events'));
 
     }
 
     public function html()
     {
-        return "<div id='calendar'></div>";
+        return view('calendar.html');
     }
 
     public function initialize($events = [])
