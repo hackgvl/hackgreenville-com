@@ -13,19 +13,19 @@
             <ul class="navbar-nav mr-auto">
                 <li>
                     <a class="nav-link" href="{{ route('calendar.index') }}">
-                        <i class="fa fa-calendar"></i>
+                        <i class="d-md-none d-lg-inline-block fa fa-calendar"></i>
                         {{ __('Calendar') }}
                     </a>
                 </li>
                 <li>
                     <a class="nav-link" href="{{ route('events.index') }}">
-                        <i class="fa fa-calendar-check-o"></i>
+                        <i class="d-md-none d-lg-inline-block fa fa-calendar-check-o"></i>
                         {{ __('Events') }}
                     </a>
                 </li>
                 <li>
                     <a class="nav-link" href="{{ route('orgs.index') }}">
-                        <i class="fa fa-users"></i>
+                        <i class="d-md-none d-lg-inline-block fa fa-users"></i>
                         {{ __('Organizations') }}
                     </a>
                 </li>
@@ -35,23 +35,23 @@
             <ul class="navbar-nav ml-auto">
                 <li>
                     <a class="nav-link" href="{{ route('styles.index') }}">
-                        <i class="fa fa-picture-o"></i>
+                        <i class="d-md-none d-lg-inline-block fa fa-picture-o"></i>
                         {{ __('Our Style') }}
                     </a>
                 </li>
-                <li>
+                <li class="d-none d-md-inline-block">
                     <div class="vertical-divider"></div>
                 </li>
                 <!-- Authentication Links -->
                 @guest
                     <li>
                         <a class="nav-link" href="{{ route('login') }}">
-                            <i class="fa fa-sign-in"></i>
+                            <i class="d-md-none d-lg-inline-block fa fa-sign-in"></i>
                             {{ __('Login') }}</a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ route('register') }}">
-                            <i class="fa fa-cloud"></i>
+                            <i class="d-md-none d-lg-inline-block fa fa-cloud"></i>
                             {{ __('Register') }}</a>
                     </li>
                 @else
@@ -65,7 +65,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fa fa-sign-out"></i>
+                                <i class="d-md-none d-lg-inline-block fa fa-sign-out"></i>
                                 {{ __('Logout') }}
                             </a>
 

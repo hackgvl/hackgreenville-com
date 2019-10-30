@@ -33,16 +33,28 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Calendar</a>
+                        <a href="{{route('calendar.index')}}">
+                            <i class="fa fa-calendar"></i>
+                            Calendar
+                        </a>
                     </li>
                     <li>
-                        <a href="#!">Events</a>
+                        <a href="{{route('events.index')}}">
+                            <i class="fa fa-calendar-check-o"></i>
+                            Events
+                        </a>
                     </li>
                     <li>
-                        <a href="#!">Contact US</a>
+                        <a href="#!">
+                            <i class="fa fa-phone"></i>
+                            Contact US
+                        </a>
                     </li>
                     <li>
-                        <a href="#!">Join Slack</a>
+                        <a href="#!">
+                            <i class="fa fa-slack"></i>
+                            Join Slack
+                        </a>
                     </li>
                 </ul>
 
