@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
+            <img class="navbar-brand-img" alt="PHP" src="{{asset('img/logo.png')}}" />
             {{ config('app.name', 'HackGreenville') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,10 +33,27 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link" href="{{ route('styles.index') }}">
+                        <i class="fa fa-picture-o"></i>
+                        {{ __('Our Style') }}
+                    </a>
+                </li>
+                <li>
+                    <div class="vertical-divider"></div>
+                </li>
                 <!-- Authentication Links -->
                 @guest
-                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    <li>
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="fa fa-sign-in"></i>
+                            {{ __('Login') }}</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <i class="fa fa-cloud"></i>
+                            {{ __('Register') }}</a>
+                    </li>
                 @else
                     <li>
                         <a href="{{route('authed.carousel.index')}}" class="nav-link">Carousel</a>
@@ -46,9 +64,8 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa fa-sign-out"></i>
                                 {{ __('Logout') }}
                             </a>
 

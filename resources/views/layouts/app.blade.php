@@ -56,7 +56,7 @@
     <div id="app">
         @include('layouts.top-nav')
 
-        @if($__env->yieldContent('title'))
+        @if($__env->yieldContent('breadcrumbs'))
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 @yield('breadcrumbs')

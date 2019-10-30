@@ -25,6 +25,6 @@
         "@fullcalendar/core": "^4.3.1",
         "@fullcalendar/daygrid": "^4.3.0",
         "browsersync": "^0.0.1-security",
-        "swal": "^0.1.0"
+        "sweetalert2": "^8.18.6"
     }
 }

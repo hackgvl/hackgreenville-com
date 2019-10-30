@@ -15,8 +15,9 @@ try {
 }
 
 try{
-    window.swal = require('swal');
+    window.swal = require('sweetalert2');
 }catch (e) {
+    console.log('swal include failed', {e});
 }
 
 /**

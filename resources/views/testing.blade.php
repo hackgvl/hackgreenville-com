@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container">
-        <script>
-            {!! $js !!}
-        </script>
-
         {!! $html !!}
     </div>
+@endsection
+
+@section('js')
+    {!! $js !!}
 @endsection
