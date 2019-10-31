@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', function() {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/orgs', 'apiController@showOrgs');
-Route::get('/events', 'apiController@showEvents');
-Route::get('/calendar', 'CalendarController@show');
+Route::get('/calendar', 'CalendarController@index')->name('calendar.index');
+Route::get('/events', 'EventsController@index')->name('events.index');
+Route::get('/orgs', 'OrgsController@index')->name('orgs.index');
 
-Route::get('/join-slack', function() {
-    return view('slack-sign-up');
-});
+Route::get('/join-slack', 'SlackController@join');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/styles', 'StyleController@index')->name('styles.index');

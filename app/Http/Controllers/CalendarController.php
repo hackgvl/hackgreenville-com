@@ -2,54 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\CalendarEvent;
-use Illuminate\Http\Request;
-use MaddHatter\LaravelFullcalendar\Facades\Calendar;
+use App\Contracts\CalendarContract;
+use App\Models\Event;
+//use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 
 class CalendarController extends Controller
 {
 
-    public function show()
+    public function index(CalendarContract $calendar)
     {
-        $events = [];
+        $calendar->addEvent('2019-10-22', '2019-10-25', 'testing event', 'just a random test', false);
 
-        $list = getEvents();
+        $js = $calendar->js();
+        $html  = $calendar->html();
 
-//        created_at
-//        time
-//        event_name
-//        url
-//        uuid
-//        group_name
+        return view('testing', compact('js', 'html'));
+        dd($tst);
+        // Get the active events.
+        $events = Event::getActive()->get();
 
-        foreach ($list as $event) {
-
-            $google_url = build_cal_url( $event );
-
-            $new_event = Calendar::event(
+        // Build out the calendar events to add to the calendar
+        $calendar_events = $events->map(function ($event) {
+            return Calendar::event(
                 $event->group_name . ' ' . $event->event_name, //event title
                 false, //full day event?
-                $event->localtime, //start time (you can also use Carbon instead of DateTime)
-                $event->localtime, //end time (you can also use Carbon instead of DateTime)
-                $event->uuid, //optionally, you can specify an event ID
+                $event->localActiveAt, //start time (you can also use Carbon instead of DateTime)
+                $event->localActiveAt, //end time (you can also use Carbon instead of DateTime)
+                array_get($event, 'cache.uuid'), //optionally, you can specify an event ID
                 [
-                    'url' => $google_url
+                    'url' => $event->gCalUrl,
                 ]
             );
+        });
 
-            $events[] = $new_event;
-        }
+        // Build out the calendar and javascript.
+        $calendar = \Calendar::addEvents($calendar_events)
+            ->setOptions(['firstDay' => 1, /* set fullcalendar options */])
+            ->setCallbacks([
+                //set fullcalendar callback options (will not be JSON encoded)
+                'viewRender' => 'function() {console.log("Callbacks!");}',
+                'eventClick' => 'function(calEvent, jsEvent, view) {
+                    // do stuff alert(\'Event: \' + calEvent.title);
+                  }',
+            ]);
 
-        $calendar = \Calendar::addEvents($events) //add an array with addEvents
-                             ->setOptions([ //set fullcalendar options
-            'firstDay' => 1
-        ])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
-            'viewRender' => 'function() {console.log("Callbacks!");}',
-            'eventClick' => 'function(calEvent, jsEvent, view) {
-                // do stuff alert(\'Event: \' + calEvent.title);
-            }'
-        ]);
-
-        return view('calendar', compact('calendar'));
+        return view('calendar.index', compact('calendar'));
     }
 }
