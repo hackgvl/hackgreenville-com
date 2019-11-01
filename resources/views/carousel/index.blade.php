@@ -53,12 +53,14 @@
                                             Edit
                                         </span>
                                         </a>
-                                        <a href="{{route('authed.carousel.destroy', $carousel)}}" title="Edit" class="btn btn-danger">
+                                        <a href="#" onclick="event.preventDefault(); document.getElementById('delete-carousel-{{$carousel->id}}').submit();" title="Delete" class="btn btn-danger">
                                             <i class="fa fa-trash"></i>
                                             <span class="d-none d-md-inline">
                                             Delete
                                         </span>
                                         </a>
+                                        {!! Form::open(['id' => "delete-carousel-{$carousel->id}", 'route' => ['authed.carousel.destroy', $carousel], 'method' => 'delete', 'class' => 'd-none']) !!}
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @empty
