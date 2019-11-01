@@ -4,8 +4,9 @@
     <li class="breadcrumb-item">{{__('Authed')}}</li>
     <li class="breadcrumb-item">
         <a href="{{route('authed.carousel.index')}}">
-        {{__('Carousel')}}</li>
-    </a>
+            {{__('Carousel')}}
+        </a>
+    </li>
     <li class="breadcrumb-item active">{{__('Create')}}</li>
 @endsection
 
