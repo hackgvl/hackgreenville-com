@@ -13580,6 +13580,26 @@ main {
   border: solid 1px #e1e1e1;
 }
 
+.table {
+  border-top: 0;
+}
+
+.table th {
+  border-top: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.table .number,
+.table .date {
+  text-align: center;
+}
+
+.table td.options {
+  text-align: right;
+}
+
 .bg-white {
   background-color: #ffffff;
 }

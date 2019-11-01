@@ -54,6 +54,27 @@ main{
   border: solid 1px #e1e1e1;
 }
 
+.table {
+  border-top: 0;
+
+  th {
+    border-top: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .number, .date {
+    text-align: center;
+  }
+
+  td {
+    &.options {
+      text-align: right;
+    }
+  }
+}
+
 // Site colors
 .bg {
 

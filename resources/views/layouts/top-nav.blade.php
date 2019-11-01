@@ -55,9 +55,25 @@
                             {{ __('Register') }}</a>
                     </li>
                 @else
-                    <li>
-                        <a href="{{route('authed.carousel.index')}}" class="nav-link">Carousel</a>
+                    {{-- Add condition here to check if the user has the role nesseesary to see this dropdown--}}
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-adjust"></i>
+                            {{__('Admin Stuff')}} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                            <a href="{{route('authed.carousel.index')}}" class="dropdown-item">
+                                {{__('Carousels')}}
+                            </a>
+                        </div>
                     </li>
+                    <li class="d-none d-md-inline-block">
+                        <div class="vertical-divider"></div>
+                    </li>
+                    {{-- End condition--}}
+
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>

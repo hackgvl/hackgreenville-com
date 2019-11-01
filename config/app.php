@@ -1,6 +1,18 @@
 <?php
 
+use App\Providers\CalendarProvider;
+
 return [
+
+    /*
+   |--------------------------------------------------------------------------
+   | Pagination
+   |--------------------------------------------------------------------------
+   |
+   | These are application globals for pagination
+   |
+   */
+    'paginate_default' => '50',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,7 +162,7 @@ return [
         /*
          * Package Service Providers...
          */
-//        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        //        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,7 +173,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        \App\Providers\CalendarProvider::class,
+        CalendarProvider::class,
 
     ],
 
