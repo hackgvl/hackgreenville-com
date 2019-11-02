@@ -12,9 +12,6 @@
         @yield('title', config('app.name'))
     </title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-
     <!-- Fonts -->
 {{--    <link rel="dns-prefetch" href="https://fonts.gstatic.com">--}}
 {{--    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">--}}
@@ -68,8 +65,9 @@
             @yield('content')
         </main>
 
-        @yield('js')
         @include('layouts.footer')
     </div>
+    <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+    @yield('js')
 </body>
 </html>

@@ -26,11 +26,20 @@ main{
   .navbar-brand-img{
     height: 3rem;
   }
+
+}
+
+a {
+  transition: 0.3s;
 }
 
 .page-footer{
   a{
     color: $gray-200
+  }
+
+  .active {
+    font-weight: 600;
   }
 }
 

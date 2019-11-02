@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +12,8 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', 'UserController@me');
+
+Route::get('carousel/{carousel}', 'CarouselController@show');
 
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');

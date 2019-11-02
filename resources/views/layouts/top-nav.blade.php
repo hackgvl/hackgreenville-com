@@ -12,19 +12,19 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li>
-                    <a class="nav-link" href="{{ route('calendar.index') }}">
+                    <a class="nav-link @if(Route::is('calendar.*')) active @endif" href="{{ route('calendar.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-calendar"></i>
                         {{ __('Calendar') }}
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('events.index') }}">
+                    <a class="nav-link @if(Route::is('events.*')) active @endif" href="{{ route('events.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-calendar-check-o"></i>
                         {{ __('Events') }}
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('orgs.index') }}">
+                    <a class="nav-link @if(Route::is('orgs.*')) active @endif" href="{{ route('orgs.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-users"></i>
                         {{ __('Organizations') }}
                     </a>
@@ -33,15 +33,6 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-                <li>
-                    <a class="nav-link" href="{{ route('styles.index') }}">
-                        <i class="d-md-none d-lg-inline-block fa fa-picture-o"></i>
-                        {{ __('Our Style') }}
-                    </a>
-                </li>
-                <li class="d-none d-md-inline-block">
-                    <div class="vertical-divider"></div>
-                </li>
                 <!-- Authentication Links -->
                 @guest
                     <li>

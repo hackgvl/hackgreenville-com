@@ -13560,8 +13560,17 @@ main {
   height: 3rem;
 }
 
+a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .page-footer a {
   color: #e9ecef;
+}
+
+.page-footer .active {
+  font-weight: 600;
 }
 
 .homepage {

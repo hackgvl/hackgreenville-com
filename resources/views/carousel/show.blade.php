@@ -29,9 +29,7 @@
 
                     <div class="card-body">
 
-                        <pre class="well well-sm">
-                            {!! var_dump($carousel->toArray()) !!}
-                        </pre>
+                        <carousel-images carousel_id="{{$carousel->id}}"></carousel-images>
                     </div>
                 </div>
             </div>
