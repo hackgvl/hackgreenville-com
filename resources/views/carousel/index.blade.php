@@ -48,7 +48,7 @@
                                         <a href="{{route('authed.carousel.show', $carousel)}}" title="Slide management" class="btn btn-primary">
                                             <i class="fa fa-eye"></i>
                                             <span class="d-none d-md-inline">
-                                            Show
+                                            Edit Slides
                                         </span>
                                         </a>
                                         <a href="{{route('authed.carousel.edit', $carousel)}}" title="Edit" class="btn btn-secondary">
@@ -57,12 +57,15 @@
                                             Edit
                                         </span>
                                         </a>
+                                        {{-- This is a protected slide. done let people delete the homepage slide --}}
+                                        @if($carousel->slug != 'homepage')
                                         <a href="#" onclick="event.preventDefault(); document.getElementById('delete-carousel-{{$carousel->id}}').submit();" title="Delete" class="btn btn-danger">
                                             <i class="fa fa-trash"></i>
                                             <span class="d-none d-md-inline">
                                             Delete
                                         </span>
                                         </a>
+                                        @endif
                                         {!! Form::open(['id' => "delete-carousel-{$carousel->id}", 'route' => ['authed.carousel.destroy', $carousel], 'method' => 'delete', 'class' => 'd-none']) !!}
                                         {!! Form::close() !!}
                                     </td>
