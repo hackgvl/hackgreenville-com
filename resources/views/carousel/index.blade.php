@@ -38,7 +38,11 @@
                             @forelse($carousels as $carousel)
                                 <tr>
                                     <td class="number">{{$carousel->id}}</td>
-                                    <td>{{$carousel->slug}}</td>
+                                    <td>
+                                        <a href="{{route('authed.carousel.show', $carousel)}}" title="Edit">
+                                            {{$carousel->slug}}
+                                        </a>
+                                    </td>
                                     <td>{{$carousel->name}}</td>
                                     <td class="options">
                                         <a href="{{route('authed.carousel.show', $carousel)}}" title="Slide management" class="btn btn-primary">

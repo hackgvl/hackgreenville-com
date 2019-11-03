@@ -1,34 +1,51 @@
 <template>
 	<div>
-		<button @click="load">Reload data</button>
 
 		<form @submit.prevent="upload">
-			<div v-if="loading>0">Loading . . .</div>
-			<div v-if="page_loaded == true">
+			<div v-if="loading>0">
+				<i class="fa fa-cloud-download"></i>
+				Loading . . .
+			</div>
 
-				<div class="form-group">
-					<label for="image">Upload a file</label>
-					<input
-							type="file"
-							ref="carousel_input"
-							:disabled="this.loading>0"
-							v-on:change="handleNewImage"
-							class="form-control-file"
-							name="image"
-							id="image"
-							aria-describedby="helpImage"
-							placeholder=""
-							multiple="multiple"
-					/>
-					<small id="helpImage" class="form-text text-muted">Upload a carousel image</small>
+			<div v-if="page_loaded == true">
+				<div class="row">
+					<div class="col-md-6">
+						<button @click="load" type="button" class="btn btn-secondary">
+							Reload data
+						</button>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="image">Upload a file</label>
+							<input
+									type="file"
+									ref="carousel_input"
+									:disabled="this.loading>0"
+									v-on:change="handleNewImage"
+									class="form-control-file"
+									name="image"
+									id="image"
+									aria-describedby="helpImage"
+									placeholder=""
+									multiple="multiple"
+							/>
+							<small id="helpImage" class="form-text text-muted">Upload a carousel image</small>
+						</div>
+					</div>
 				</div>
 
-				<button type="submit" class="btn btn-primary mb-3" :disabled="this.loading>0">
-					<i class="fa fa-floppy-o"></i>
-					<span>
-					Upload
-				</span>
-				</button>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="pull-right">
+							<button type="submit" class="btn btn-primary mb-3" :disabled="this.loading>0">
+								<i class="fa fa-floppy-o"></i>
+								<span>
+									Upload
+								</span>
+							</button>
+						</div>
+					</div>
+				</div>
 
 				<hr>
 			</div>
@@ -45,7 +62,7 @@
 					</div>
 					<div class="row">
 						<div class="col-1">
-							<img :src="slide" alt="Slide preview" height="50"/>
+							<img :src="slide" alt="Slide preview" width="75" height="75"/>
 						</div>
 						<div class="col-11">
 							{{index}} - {{slide}}
@@ -82,7 +99,7 @@
                 this.new_images = this.$refs.carousel_input.files;
                 this.upload();
             },
-            saveSort: _.debounce(async function (){
+            saveSort: _.debounce(async function () {
                 const carousel = this.carousel;
                 await this.$http.put(`/api/carousel/${carousel.id}`, {slides: carousel.slides});
 
@@ -98,12 +115,12 @@
                 const {data} = await this.$http.get(`/api/carousel/${this.carousel_id}`);
                 this.carousel = data;
                 this.loading--;
-                this.page_loaded=true;
+                this.page_loaded = true;
             },
-	        async remove_image(index){
-				this.carousel.slides.splice(index, 1);
-				this.saveSort();
-	        },
+            async remove_image(index) {
+                this.carousel.slides.splice(index, 1);
+                this.saveSort();
+            },
             async upload() {
                 this.loading++;
 
@@ -133,12 +150,14 @@
 </script>
 
 <style scoped lang="scss">
-	.form-control-file{
+	.form-control-file {
 		padding: 10px;
+
 		&:hover {
 			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
 		}
 	}
+
 	.draggable {
 		cursor: pointer;
 		padding: 3px;

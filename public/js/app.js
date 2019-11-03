@@ -52556,6 +52556,23 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -52727,8 +52744,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("button", { on: { click: _vm.load } }, [_vm._v("Reload data")]),
-    _vm._v(" "),
     _c(
       "form",
       {
@@ -52740,52 +52755,81 @@ var render = function() {
         }
       },
       [
-        _vm.loading > 0 ? _c("div", [_vm._v("Loading . . .")]) : _vm._e(),
+        _vm.loading > 0
+          ? _c("div", [
+              _c("i", { staticClass: "fa fa-cloud-download" }),
+              _vm._v("\n\t\t\tLoading . . .\n\t\t")
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _vm.page_loaded == true
           ? _c("div", [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "image" } }, [
-                  _vm._v("Upload a file")
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: { click: _vm.load }
+                    },
+                    [_vm._v("\n\t\t\t\t\t\tReload data\n\t\t\t\t\t")]
+                  )
                 ]),
                 _vm._v(" "),
-                _c("input", {
-                  ref: "carousel_input",
-                  staticClass: "form-control-file",
-                  attrs: {
-                    type: "file",
-                    disabled: this.loading > 0,
-                    name: "image",
-                    id: "image",
-                    "aria-describedby": "helpImage",
-                    placeholder: "",
-                    multiple: "multiple"
-                  },
-                  on: { change: _vm.handleNewImage }
-                }),
-                _vm._v(" "),
-                _c(
-                  "small",
-                  {
-                    staticClass: "form-text text-muted",
-                    attrs: { id: "helpImage" }
-                  },
-                  [_vm._v("Upload a carousel image")]
-                )
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "image" } }, [
+                      _vm._v("Upload a file")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      ref: "carousel_input",
+                      staticClass: "form-control-file",
+                      attrs: {
+                        type: "file",
+                        disabled: this.loading > 0,
+                        name: "image",
+                        id: "image",
+                        "aria-describedby": "helpImage",
+                        placeholder: "",
+                        multiple: "multiple"
+                      },
+                      on: { change: _vm.handleNewImage }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "small",
+                      {
+                        staticClass: "form-text text-muted",
+                        attrs: { id: "helpImage" }
+                      },
+                      [_vm._v("Upload a carousel image")]
+                    )
+                  ])
+                ])
               ]),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary mb-3",
-                  attrs: { type: "submit", disabled: this.loading > 0 }
-                },
-                [
-                  _c("i", { staticClass: "fa fa-floppy-o" }),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("\n\t\t\t\tUpload\n\t\t\t")])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "pull-right" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary mb-3",
+                        attrs: { type: "submit", disabled: this.loading > 0 }
+                      },
+                      [
+                        _c("i", { staticClass: "fa fa-floppy-o" }),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v("\n\t\t\t\t\t\t\t\tUpload\n\t\t\t\t\t\t\t")
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ]),
               _vm._v(" "),
               _c("hr")
             ])
@@ -52844,7 +52888,8 @@ var render = function() {
                               attrs: {
                                 src: slide,
                                 alt: "Slide preview",
-                                height: "50"
+                                width: "75",
+                                height: "75"
                               }
                             })
                           ]),
