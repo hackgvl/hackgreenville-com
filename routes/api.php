@@ -14,6 +14,7 @@
 Route::middleware('auth:api')->get('/user', 'UserController@me');
 
 Route::get('carousel/{carousel}', 'CarouselController@show');
+Route::put('carousel/{carousel}', 'CarouselController@update');
 
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');

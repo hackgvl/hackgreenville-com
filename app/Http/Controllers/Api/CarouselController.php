@@ -50,7 +50,7 @@ class CarouselController extends Controller
      */
     public function update(Request $request, Carousel $carousel)
     {
-        //
+        return \response()->json($request->files());
     }
 
     /**
