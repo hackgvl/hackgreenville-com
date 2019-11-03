@@ -28,3 +28,5 @@ Now you're ready to start tackling issues. Feel free to send us a pull request!
 - http://stylifyme.com/?stylify=https%3A%2F%2Fwww.greenvillesc.gov
 - https://sweetalert2.github.io/#examples
 - https://laravelcollective.com/docs/6.0/html
+- https://github.com/SortableJS/Vue.Draggable
+- https://codeseven.github.io/toastr/demo.html

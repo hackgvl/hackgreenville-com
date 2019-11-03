@@ -13,8 +13,8 @@
 
 Route::middleware('auth:api')->get('/user', 'UserController@me');
 
-Route::get('carousel/{carousel}', 'CarouselController@show');
-Route::put('carousel/{carousel}', 'CarouselController@update');
+Route::apiResource('carousel', 'CarouselController');
+Route::post('carousel/{carousel}/images', 'CarouselController@upload_image');
 
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');

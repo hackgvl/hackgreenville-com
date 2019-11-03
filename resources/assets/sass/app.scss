@@ -10,6 +10,8 @@
 @import "~@fullcalendar/daygrid/main.min.css";
 // Swal
 @import '~sweetalert2/src/sweetalert2';
+// Toastr
+@import "~toastr/toastr";
 
 .vertical-divider{
   background-color: $text-muted;
@@ -54,6 +56,15 @@ a {
       }
     }
   }
+}
+
+.carousel-indicators li {
+  background-color: $primary;
+  box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators .active {
+  background-color: $secondary;
 }
 
 .swatch-holder {

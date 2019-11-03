@@ -28,7 +28,6 @@
                     </div>
 
                     <div class="card-body">
-
                         <carousel-images carousel_id="{{$carousel->id}}"></carousel-images>
                     </div>
                 </div>

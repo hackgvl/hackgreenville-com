@@ -1,6 +1,7 @@
 <?php
 
 use App\Providers\CalendarProvider;
+use App\Providers\ViewServiceProvider;
 
 return [
 
@@ -174,6 +175,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         CalendarProvider::class,
+        ViewServiceProvider::class,
 
     ],
 
