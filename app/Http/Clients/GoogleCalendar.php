@@ -29,7 +29,7 @@ class GoogleCalendar extends CalendarContract
         return $this;
     }
 
-    public function addEvent($start, $end, $title, $description, $allDay = false, ...$attributes)
+    public function addEvent($start, $end, $title, $description, $allDay = false, $attributes)
     {
         $new_event = compact('start', 'end', 'title', 'description', 'allDay');
         $new_event = array_merge($new_event, $attributes);
