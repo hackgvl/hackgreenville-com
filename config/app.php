@@ -1,6 +1,18 @@
 <?php
 
+use App\Providers\CalendarProvider;
+
 return [
+
+    /*
+   |--------------------------------------------------------------------------
+   | Pagination
+   |--------------------------------------------------------------------------
+   |
+   | These are application globals for pagination
+   |
+   */
+    'paginate_default' => '50',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,7 +162,7 @@ return [
         /*
          * Package Service Providers...
          */
-//        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        //        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,7 +173,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        \App\Providers\CalendarProvider::class,
+        CalendarProvider::class,
 
     ],
 
@@ -214,5 +226,17 @@ return [
         'Calendar'     => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
 
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | API DOMAINS
+    |--------------------------------------------------------------------------
+    |
+    | 3rd Party Domains for APIs. May be useful for swapping out to test
+    |
+    */
+
+    'events_api_domain' => env('EVENTS_API_DOMAIN', 'example.com'),
+    'orgs_api_domain' => env('ORGS_API_DOMAIN', 'example.com'),
 
 ];
