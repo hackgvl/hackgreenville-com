@@ -19,13 +19,14 @@
         "laravel-mix": "^2.1.14",
         "lodash": "^4.17.15",
         "popper.js": "^1.12",
-        "popper.js": "^1.12",
         "vue": "^2.5.7"
     },
     "dependencies": {
         "@fullcalendar/core": "^4.3.1",
         "@fullcalendar/daygrid": "^4.3.0",
         "browsersync": "^0.0.1-security",
-        "sweetalert2": "^8.18.6"
+        "sweetalert2": "^8.18.6",
+        "toastr": "^2.1.4",
+        "vuedraggable": "^2.23.2"
     }
 }

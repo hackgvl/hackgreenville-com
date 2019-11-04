@@ -14,7 +14,7 @@ class CarouselObserver
      */
     public function created(Carousel $carousel)
     {
-        //
+        $carousel->update(['slug' => str_slug($carousel->name)]);
     }
 
     /**

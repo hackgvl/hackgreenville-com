@@ -13,6 +13,7 @@
         "laravel/framework": "^6.0",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^1.0",
+      "laravelcollective/html": "^6.0",
         "spatie/laravel-google-calendar": "^2.3"
     },
     "require-dev": {

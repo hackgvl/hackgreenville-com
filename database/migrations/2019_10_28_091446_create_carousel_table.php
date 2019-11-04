@@ -16,12 +16,13 @@ class CreateCarouselTable extends Migration
         Schema::create('carousels', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->longText('meta');
             $table->string('name');
-            $table->string('md5_sum', 50);
+            $table->longText('meta')->nullable();
+            $table->string('md5_sum', 50)->nullable();
             $table->integer('position')->nullable()->default(1);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

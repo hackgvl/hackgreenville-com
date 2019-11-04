@@ -12,19 +12,19 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li>
-                    <a class="nav-link" href="{{ route('calendar.index') }}">
+                    <a class="nav-link @if(Route::is('calendar.*')) active @endif" href="{{ route('calendar.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-calendar"></i>
                         {{ __('Calendar') }}
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('events.index') }}">
+                    <a class="nav-link @if(Route::is('events.*')) active @endif" href="{{ route('events.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-calendar-check-o"></i>
                         {{ __('Events') }}
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('orgs.index') }}">
+                    <a class="nav-link @if(Route::is('orgs.*')) active @endif" href="{{ route('orgs.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-users"></i>
                         {{ __('Organizations') }}
                     </a>
@@ -33,15 +33,6 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-                <li>
-                    <a class="nav-link" href="{{ route('styles.index') }}">
-                        <i class="d-md-none d-lg-inline-block fa fa-picture-o"></i>
-                        {{ __('Our Style') }}
-                    </a>
-                </li>
-                <li class="d-none d-md-inline-block">
-                    <div class="vertical-divider"></div>
-                </li>
                 <!-- Authentication Links -->
                 @guest
                     <li>
@@ -55,9 +46,25 @@
                             {{ __('Register') }}</a>
                     </li>
                 @else
-                    <li>
-                        <a href="{{route('authed.carousel.index')}}" class="nav-link">Carousel</a>
+                    {{-- Add condition here to check if the user has the role nesseesary to see this dropdown--}}
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-adjust"></i>
+                            {{__('Admin Stuff')}} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                            <a href="{{route('authed.carousel.index')}}" class="dropdown-item">
+                                {{__('Carousels')}}
+                            </a>
+                        </div>
                     </li>
+                    <li class="d-none d-md-inline-block">
+                        <div class="vertical-divider"></div>
+                    </li>
+                    {{-- End condition--}}
+
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
