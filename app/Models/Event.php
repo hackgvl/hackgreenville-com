@@ -56,7 +56,7 @@ class Event extends Model
 
     public function scopeGetActive($query)
     {
-        return $query->where('active_at', '>=', DB::raw('UTC_TIME'))->orderBy('active_at', 'asc');
+        return $query->where('active_at', '>=', DB::raw('NOW()'))->orderBy('active_at', 'asc');
     }
 
 

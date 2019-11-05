@@ -6,6 +6,7 @@
             plugins: ['dayGrid'],
             eventSources: [{events: {!! $events !!} }],
             eventClick: function (info) {
+                console.log({event: info.event});
                 let desc = info.event.extendedProps.description.replace(/\<a/, '<a target="_blank"');
                 swal.fire({
                     title: info.event.title,

@@ -43,16 +43,17 @@ class GoogleCalendar extends CalendarContract
     {
         if (!$end) {
             // Default to start + 2 hours.
-            $end = $start->addHours(2);
+            $end = $start->clone()->addHours(2);
         }
 
-        $google_format = 'Ymd\THms\Z';
-        $start_fmt     = $start->format($google_format);
-        $end_fmt       = $end->format($google_format);
+        // google calender when adding from a link expects the time to be in utc time with ISO formatting
+        $google_format = 'Ymd\THi00\Z';
+        $start_fmt     = $start->clone()->utc()->format($google_format);
+        $end_fmt       = $end->clone()->utc()->format($google_format);
 
-        $new_event = compact('start', 'end', 'title', 'description', 'allDay', 'start_fmt', 'end_fmt');
-        $new_event = array_merge($new_event, $attributes);
-
+        // push the data to the events
+        $new_event      = compact('start', 'end', 'title', 'description', 'allDay', 'start_fmt', 'end_fmt');
+        $new_event      = array_merge($new_event, $attributes);
         $this->events[] = $new_event;
 
         return $this;
