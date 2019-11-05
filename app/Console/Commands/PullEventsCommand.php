@@ -38,6 +38,7 @@ class PullEventsCommand extends Command
         $events_missing_venue = [];
 
         foreach ($events as $event) {
+            $bar->advance();
 
             if(!$event->venue){
                 $events_missing_venue[] = $event;
@@ -60,13 +61,11 @@ class PullEventsCommand extends Command
                 'lng'      => $event->venue->lon,
             ]);
 
-            $search_arr = [
-                'venue_id'         => $venue->id,
-                'active_at'        => new Carbon($event->time),
+            Event::firstOrCreate([
+                'venue_id'   => $venue->id,
+                'active_at'  => new Carbon($event->time),
                 'group_name' => $event->group_name,
-            ];
-
-            Event::firstOrCreate($search_arr, [
+            ], [
                 'event_name'  => $event->event_name,
                 'group_name'  => $event->group_name,
                 'description' => $event->description,
@@ -76,12 +75,10 @@ class PullEventsCommand extends Command
                 'venue_id'    => $venue->id,
                 'cache'       => $event,
             ]);
-
-            $bar->advance();
         }
         $bar->finish();
 
-        $this->info('Done importint');
+        $this->info('Done importing');
 
         $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information');
 

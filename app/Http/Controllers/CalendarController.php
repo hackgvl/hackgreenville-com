@@ -17,7 +17,7 @@ class CalendarController extends Controller
         $events = Event::getActive()->get();
 
         $events->each(function($e) use ($calendar){
-            $calendar->addEvent($e->active_at, $e->active_at, $e->event_name, $e->description, false, ['location' => $e->venue . ""]);
+            $calendar->addEvent($e->active_at, $e->expire_at, $e->event_name, $e->description, false, ['location' => $e->venue . '']);
         });
 
         $js = $calendar->js();
