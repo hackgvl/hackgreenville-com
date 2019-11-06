@@ -27,7 +27,7 @@
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#00a508',
                     confirmButtonText: 'Add to Google Calendar!',
-                    cancelButtonText: 'Visit event page',
+                    cancelButtonText: 'Visit Event Page',
                     showCloseButton: true,
                 }).then((result) => {
                     if (result.value) {
