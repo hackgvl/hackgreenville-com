@@ -7,7 +7,7 @@
                 <img src="{{asset('img/codey-face.png')}}" alt="codey" class="codey-face"/>
                 <div class="expression">404</div>
             </div>
-            <h2>OOPS! <strong>Codey</strong> says the page is missing?</h2>
+            <h2>OOPS! <strong>Codey</strong> says that page is missing.</h2>
             <h3>
                 <a href="{{url('/')}}" title="Home"><i class="fa fa-home"></i> Home</a>
             </h3>
