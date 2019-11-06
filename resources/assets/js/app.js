@@ -5,7 +5,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('bootstrap');
+// Without the ./ it tries to include the bootstrap4 js
+require('./bootstrap');
 
 window.Vue = require('vue');
 

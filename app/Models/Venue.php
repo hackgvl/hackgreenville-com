@@ -27,7 +27,12 @@ class Venue extends Model
             'lng',
         ];
 
-//    public function getStateAttribute()
+//    public function getStateAbbrAttribute()
+//    {
+//        return $this->state->abbr;
+//    }
+
+    public function getStateAbbrAttribute()
 //    {
 //        return $this->state->abbr;
 //    }
