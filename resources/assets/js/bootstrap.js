@@ -20,6 +20,12 @@ try{
     console.log('swal include failed', {e});
 }
 
+try {
+    window.moment = require('moment');
+} catch (e) {
+    console.log('moment include failed', {e});
+}
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

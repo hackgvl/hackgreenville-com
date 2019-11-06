@@ -14,7 +14,7 @@ class PullEventsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pull:events {--1|one : just import one event}';
+    protected $signature = 'pull:events {--1|one : just import one event} {--d|debug : dump the first response from the events api}';
 
     /**
      * The console command description.
@@ -31,6 +31,10 @@ class PullEventsCommand extends Command
     public function handle()
     {
         $events = getEvents();
+
+        if ($this->option('debug')) {
+            dd($events[0]);
+        }
 
         $bar = $this->output->createProgressBar(count($events));
         $bar->start();
