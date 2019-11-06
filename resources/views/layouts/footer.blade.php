@@ -33,27 +33,33 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="{{route('calendar.index')}}">
+                        <a class="@if(Route::is('calendar.*')) active @endif" href="{{route('calendar.index')}}">
                             <i class="fa fa-calendar"></i>
-                            Calendar
+                            {{__('Calendar')}}
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('events.index')}}">
+                        <a class="@if(Route::is('events.*')) active @endif" href="{{route('events.index')}}">
                             <i class="fa fa-calendar-check-o"></i>
-                            Events
+                            {{__('Events')}}
                         </a>
                     </li>
                     <li>
                         <a href="#!">
                             <i class="fa fa-phone"></i>
-                            Contact US
+                            {{__('Contact US')}}
                         </a>
                     </li>
                     <li>
                         <a href="#!">
                             <i class="fa fa-slack"></i>
-                            Join Slack
+                            {{__('Join Slack')}}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="@if(Route::is('styles.*')) active @endif" href="{{route('styles.index')}}">
+                            <i class="fa fa-picture-o"></i>
+                            {{ __('Our Style') }}
                         </a>
                     </li>
                 </ul>

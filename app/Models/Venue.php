@@ -27,7 +27,7 @@ class Venue extends Model
             'lng',
         ];
 
-    public function getStateAttribute()
+    public function getStateAbbrAttribute()
     {
         return $this->state->abbr;
     }
@@ -35,5 +35,10 @@ class Venue extends Model
     public function state()
     {
         return $this->belongsTo(State::class);
+    }
+
+    public function __toString()
+    {
+        return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
     }
 }

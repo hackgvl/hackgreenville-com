@@ -19,7 +19,6 @@
         "laravel-mix": "^2.1.14",
         "lodash": "^4.17.15",
         "popper.js": "^1.12",
-        "popper.js": "^1.12",
         "vue": "^2.5.7"
     },
     "dependencies": {

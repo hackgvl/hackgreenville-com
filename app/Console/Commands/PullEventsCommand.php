@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Models\Event;
 use App\Models\State;
 use App\Models\Venue;
-use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class PullEventsCommand extends Command
@@ -15,7 +14,7 @@ class PullEventsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pull:events';
+    protected $signature = 'pull:events {--1|one : just import one event}';
 
     /**
      * The console command description.
@@ -37,7 +36,12 @@ class PullEventsCommand extends Command
         $bar->start();
         $events_missing_venue = [];
 
-        foreach ($events as $event) {
+        foreach ($events as $inc => $event) {
+            $bar->advance();
+
+            if ($this->option('one') && $inc > 0) {
+                continue;
+            }
 
             if(!$event->venue){
                 $events_missing_venue[] = $event;
@@ -60,28 +64,25 @@ class PullEventsCommand extends Command
                 'lng'      => $event->venue->lon,
             ]);
 
-            $search_arr = [
-                'venue_id'         => $venue->id,
-                'active_at'        => new Carbon($event->time),
-                'group_name' => $event->group_name,
-            ];
-
-            Event::firstOrCreate($search_arr, [
+            Event::updateOrCreate([
+                'venue_id'    => $venue->id,
+                'event_name'  => $event->event_name,
+                'group_name'  => $event->group_name,
+                'cache->uuid' => $event->uuid,
+            ], [
                 'event_name'  => $event->event_name,
                 'group_name'  => $event->group_name,
                 'description' => $event->description,
                 'rsvp_count'  => $event->rsvp_count,
-                'active_at'   => new Carbon($event->time),
+                'active_at'   => $event->localtime,
                 'uri'         => $event->url ?: 'https://www.meetup.com/Hack-Greenville/events/',
                 'venue_id'    => $venue->id,
                 'cache'       => $event,
             ]);
-
-            $bar->advance();
         }
         $bar->finish();
 
-        $this->info('Done importint');
+        $this->info('Done importing');
 
         $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information');
 

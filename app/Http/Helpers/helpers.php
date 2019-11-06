@@ -7,7 +7,7 @@ use Carbon\Carbon;
  */
 function getEvents()
 {
-    $event_url  = 'https://events.openupstate.org/api/gtc';
+    $event_url  = config('app.events_api_domain') . '/api/gtc';
     $event_data = file_get_contents($event_url);
 
     // Put the data into JSON format.
@@ -30,7 +30,6 @@ function getEvents()
  */
 function getEventsArray()
 {
-//  $event_url = 'https://greenville-cal-service.herokuapp.com/api/gtc';
     $event_data = getEvents();
 
     // Put the data into JSON format.
@@ -44,7 +43,7 @@ function getEventsArray()
  */
 function getActiveOrgs()
 {
-    $org_url  = 'https://data.openupstate.org/rest/organizations?_format=json&org_status=active';
+    $org_url  = config('app.orgs_api_domain') . '/rest/organizations?_format=json&org_status=active';
     $org_data = file_get_contents($org_url);
 
     // Put the data into JSON format.
@@ -62,7 +61,7 @@ function getActiveOrgs()
  */
 function getInactiveOrgs()
 {
-    $org_url  = 'https://data.openupstate.org/rest/organizations?_format=json&org_status=inactive';
+    $org_url  = config('app.orgs_api_domain') . '/rest/organizations?_format=json&org_status=inactive';
     $org_data = file_get_contents($org_url);
 
     // Put the data into JSON format.
