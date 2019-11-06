@@ -5,10 +5,9 @@ use Carbon\Carbon;
 /**
  * Retrieve event information from API
  */
-function getEvents()
-{
-    $event_url  = config('app.events_api_domain') . '/api/gtc';
-    $event_data = file_get_contents($event_url);
+function getEvents () {
+    $event_url = config('app.events_api_domain') . '/api/gtc';
+    $event_data = file_get_contents( $event_url );
 
     // Put the data into JSON format.
     $events = json_decode($event_data);
@@ -28,14 +27,14 @@ function getEvents()
 /**
  * Retrieve event information from API in array format
  */
-function getEventsArray()
+function getEventsArray ()
 {
     $event_data = getEvents();
 
-    // Put the data into JSON format.
-    $events = json_decode($event_data, true);
+  // Put the data into JSON format.
+  $events = json_decode( $event_data , true );
 
-    return $events;
+  return $events;
 }
 
 /**

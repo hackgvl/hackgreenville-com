@@ -1,7 +1,6 @@
 <?php
 
 use App\Providers\CalendarProvider;
-use App\Providers\ViewServiceProvider;
 
 return [
 
