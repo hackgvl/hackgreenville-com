@@ -19,7 +19,6 @@
                 desc += "<br />";
                 desc += info.event.extendedProps.description.replace(/\<a/, '<a target="_blank"');
                 desc += "</div>";
-
                 swal.fire({
                     title: info.event.title,
                     html: desc,
