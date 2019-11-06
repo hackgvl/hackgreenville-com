@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img class="navbar-brand-img" alt="PHP" src="{{asset('img/logo.png')}}" />
-            {{ config('app.name', 'HackGreenville') }}
+            <img class="navbar-brand-img" alt="{{config('app.name', 'HackGreenville')}}" src="{{asset('img/top-logo.png')}}"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,9 +45,25 @@
                             {{ __('Register') }}</a>
                     </li>
                 @else
-                    <li>
-                        <a href="{{route('authed.carousel.index')}}" class="nav-link">Carousel</a>
+                    {{-- Add condition here to check if the user has the role nesseesary to see this dropdown--}}
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-adjust"></i>
+                            {{__('Admin Stuff')}} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                            <a href="{{route('authed.carousel.index')}}" class="dropdown-item">
+                                {{__('Carousels')}}
+                            </a>
+                        </div>
                     </li>
+                    <li class="d-none d-md-inline-block">
+                        <div class="vertical-divider"></div>
+                    </li>
+                    {{-- End condition--}}
+
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>

@@ -8,6 +8,12 @@
 // Calendar
 @import "~@fullcalendar/core/main.min.css";
 @import "~@fullcalendar/daygrid/main.min.css";
+
+// Full calendar events on the calendar don't use the right pointer
+.fc-content {
+  cursor: pointer;
+}
+
 // Swal
 @import '~sweetalert2/src/sweetalert2';
 

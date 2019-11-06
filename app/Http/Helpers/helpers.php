@@ -6,7 +6,7 @@ use Carbon\Carbon;
  * Retrieve event information from API
  */
 function getEvents () {
-    $event_url = config('app.events_api_domain').'/api/gtc';
+    $event_url = config('app.events_api_domain') . '/api/gtc';
     $event_data = file_get_contents( $event_url );
 
     // Put the data into JSON format.
@@ -29,7 +29,7 @@ function getEvents () {
  */
 function getEventsArray ()
 {
-  $event_data = getEvents();
+    $event_data = getEvents();
 
   // Put the data into JSON format.
   $events = json_decode( $event_data , true );
@@ -42,7 +42,7 @@ function getEventsArray ()
  */
 function getActiveOrgs()
 {
-    $org_url  = config('app.orgs_api_domain').'/rest/organizations?_format=json&org_status=active';
+    $org_url  = config('app.orgs_api_domain') . '/rest/organizations?_format=json&org_status=active';
     $org_data = file_get_contents($org_url);
 
     // Put the data into JSON format.
@@ -60,7 +60,7 @@ function getActiveOrgs()
  */
 function getInactiveOrgs()
 {
-    $org_url  = config('app.orgs_api_domain').'/rest/organizations?_format=json&org_status=inactive';
+    $org_url  = config('app.orgs_api_domain') . '/rest/organizations?_format=json&org_status=inactive';
     $org_data = file_get_contents($org_url);
 
     // Put the data into JSON format.

@@ -11689,6 +11689,10 @@ a.text-dark:focus {
   opacity: 0;
 }
 
+.fc-content {
+  cursor: pointer;
+}
+
 .swal2-popup.swal2-toast {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

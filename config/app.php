@@ -174,7 +174,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         CalendarProvider::class,
-
     ],
 
     /*
@@ -237,6 +236,6 @@ return [
     */
 
     'events_api_domain' => env('EVENTS_API_DOMAIN', 'example.com'),
-    'orgs_api_domain' => env('ORGS_API_DOMAIN', 'example.com'),
+    'orgs_api_domain'   => env('ORGS_API_DOMAIN', 'example.com'),
 
 ];

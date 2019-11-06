@@ -5,10 +5,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// Without the ./ it tries to include the bootstrap4 js
 require('./bootstrap');
 
 window.Vue = require('vue');
-Vue.prototype.$http = window.axios;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
