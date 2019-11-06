@@ -6,24 +6,25 @@
             plugins: ['dayGrid'],
             eventSources: [{events: {!! $events !!} }],
             eventClick: function (info) {
-                console.log(info);
-                // change the border color just for fun
+                let desc = info.event.extendedProps.description.replace(/\<a/, '<a target="_blank"');
 
                 swal.fire({
-                    title: 'Are you sure you would like to add this event to your calendar?',
-                    text: info.event.title,
-                    type: 'warning',
+                    title: info.event.title,
+                    html: desc,
+                    type: 'info',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Yes, add it!'
                 }).then((result) => {
                     if (result.value) {
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        );
+                        const link = "https://calendar.google.com/calendar/r/eventedit?" +
+                            `text=${info.event.title}&` +
+                            "dates=20180512T230000Z/20180513T030000Z&" +
+                            `details=${desc}&` +
+                            `location=${info.event.extendedProps.location}`;
+
+                        window.open(link, '_blank');
                     }
                 });
 
