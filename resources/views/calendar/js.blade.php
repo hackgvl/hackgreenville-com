@@ -32,7 +32,7 @@
                 }).then((result) => {
                     if (result.value) {
 
-                        let link = 'https://calendar.google.com/calendar/r/eventedit?text=${info.event.title}&';
+                        let link = `https://calendar.google.com/calendar/r/eventedit?text=${info.event.title}&`;
                         link += `dates=${info.event.extendedProps.start_fmt}/${info.event.extendedProps.end_fmt}&`;
                         link += `details=${calendar_desc}&`;
                         link += `location=${info.event.extendedProps.location}`;
