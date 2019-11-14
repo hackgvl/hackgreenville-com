@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,7 +11,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', 'UserController@me');
+Route::middleware('auth:api')->get('/user', 'UserController@me')->name('me');
 
-Route::get('/orgs', 'apiController@showOrgs');
-Route::get('/events', 'apiController@showEvents');
+Route::get('/orgs', 'apiController@showOrgs')->name('orgs');
+Route::get('/events', 'apiController@showEvents')->name('events');
+Route::get('/homepage/events', 'HomepageController@events')->name('homepage.timeline');
