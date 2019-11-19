@@ -1,0 +1,2 @@
+#For blocking bots from dev and stage server
+Disallow: /
