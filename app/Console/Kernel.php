@@ -28,9 +28,9 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-        // Schedule commands to import data every hour. Stagger the commands so they don't run at the same time.
+        // Schedule commands to import data every hour. Stagger the commands, so they don't run at the same time.
         $schedule->command('pull:orgs')->hourly();
-        $schedule->command('pull:orgs')->hourlyAt('15');
+        $schedule->command('pull:events')->hourlyAt('15');
 
     }
 
