@@ -49,6 +49,13 @@ class Event extends Model
             'active_at',
         ];
 
+    protected $appends
+        = [
+            'short_description',
+            'title',
+            'active_at_ftm',
+        ];
+
     public function venue()
     {
         return $this->belongsTo(Venue::class);
@@ -59,6 +66,12 @@ class Event extends Model
         return $query->where('active_at', '>=', DB::raw('NOW()'))->orderBy('active_at', 'asc');
     }
 
+    public function scopeIncludePast($query, $time = '1 month')
+    {
+        $date = date('Y-m-d 00:00:00', strtotime("-{$time}"));
+
+        return $query->where('created_at', '>=', $date);
+    }
 
     public function getStateAttribute()
     {
@@ -109,5 +122,25 @@ class Event extends Model
     public function getLocalActiveAtAttribute()
     {
         return $this->active_at->tz(config('app.timezone'));
+    }
+
+    public function getDescriptionAttribute()
+    {
+        return str_replace('<a', '<a target="_blank"', $this->attributes['description']);
+    }
+
+    public function getShortDescriptionAttribute()
+    {
+        return str_limit($this->description);
+    }
+
+    public function getActiveAtFtmAttribute()
+    {
+        return $this->active_at->diffForHumans();
+    }
+
+    public function getTitleAttribute()
+    {
+        return $this->event_name;
     }
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
 
-use App\Models\Event;
 use Illuminate\Http\Response;
 
 class HomeController extends Controller
@@ -16,8 +15,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events = Event::getActive()->take(10);
-
-        return view('welcome', compact('events'));
+        return view('index');
     }
 }
