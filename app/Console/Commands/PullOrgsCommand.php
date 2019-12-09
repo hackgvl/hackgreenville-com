@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Category;
 use App\Models\Org;
+use Exception;
 use Illuminate\Console\Command;
 
 class PullOrgsCommand extends Command
@@ -16,6 +17,7 @@ class PullOrgsCommand extends Command
     protected $signature = 'pull:orgs
                             {--a|active : only active organizations}
                             {--i|inactive : only inactive organizations}
+                            {--org-cleanup : clean out duplicate deleted orgs}
     ';
 
     /**
@@ -53,7 +55,7 @@ class PullOrgsCommand extends Command
             $category = Category::firstOrCreate(['label' => $category_name,], ['label' => $category_name,]);
 
             foreach ($activeOrgs as $activeOrg) {
-                $new_org = Org::firstOrCreate([
+                Org::firstOrCreate([
                     'title' => $activeOrg->title,
                     'city'  => $activeOrg->field_city,
                 ], [
@@ -75,7 +77,8 @@ class PullOrgsCommand extends Command
         $this->info('Importing inactive orgs');
 
         foreach ($inactiveOrgs as $inactiveOrg) {
-            $new_org = Org::firstOrCreate([
+            /** @var Org $new_org */
+            $new_org = Org::withTrashed()->firstOrCreate([
                 'title' => $inactiveOrg->title,
                 'city'  => $inactiveOrg->field_city,
             ], [
@@ -91,10 +94,39 @@ class PullOrgsCommand extends Command
                 'cache'                  => $inactiveOrg,
             ]);
 
-            $new_org->delete();
+            // Inactive org make sure it is deleted.
+            if (!$new_org->deleted_at === null) {
+                try {
+                    $new_org->delete();
+                } catch (Exception $e) {
+                }
+            }
         }
 
         $this->info('Done Importing');
+
+        if ($this->option('org-cleanup')) {
+            $this->info('cleaning up the orgs table');
+
+            // Find the first occurrence of a deleted org
+            $first = Org::onlyTrashed()->first();
+
+            if ($first) {
+                // Find the start of duplicates
+                $second = Org::onlyTrashed()->where('id', '>', $first->id + 1)->where('title', $first->title)->first();
+
+                if ($second) {
+                    // If there are any duplicates delete starting at the duplicate line
+                    $deleted = Org::onlyTrashed()->where('id', '>=', $second->id)->forceDelete();
+                    $this->info("Cleaned out {$deleted} orgs");
+                } else {
+                    $this->info('Nothing to clean out (a)');
+                }
+            } else {
+                $this->info('Nothing to clean out (b)');
+            }
+        }
+
 
         return 0;
     }
