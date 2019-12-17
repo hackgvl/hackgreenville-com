@@ -37,4 +37,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'tagmanager' => [
+            'id' => env('GOOGLE_TAG_MANAGER')
+        ],
+    ],
+
 ];
