@@ -51,6 +51,18 @@
     <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
     <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
 
+    @if(config('services.google.tagmanager.id'))
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{config('services.google.tagmanager.id')}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{config('services.google.tagmanager.id')}}');
+    </script>
+    @endif
+
     @yield('head')
 </head>
 <body>
