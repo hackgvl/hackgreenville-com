@@ -46,15 +46,23 @@ main {
 
 a {
   transition: 0.3s;
+
+  text-decoration: underline;
+}
+
+.navbar-nav, .page-footer {
+  a {
+    text-decoration: none;
+  }
+
+  .active {
+    font-weight: 600;
+  }
 }
 
 .page-footer {
   a {
     color: $gray-200
-  }
-
-  .active {
-    font-weight: 600;
   }
 }
 
