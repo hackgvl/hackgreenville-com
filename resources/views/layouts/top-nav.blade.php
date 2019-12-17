@@ -24,17 +24,23 @@
                 </li>
                 <li>
                     <a class="nav-link @if(Route::is('orgs.*')) active @endif" href="{{ route('orgs.index') }}">
-                        <i class="d-md-none d-lg-inline-block fa fa-users"></i>
+                        <i class="d-md-none d-lg-inline-block fa fa-building"></i>
                         {{ __('Organizations') }}
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link @if(Route::is('about')) active @endif" href="{{ route('about') }}">
+                        <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('About US') }}
                     </a>
                 </li>
             </ul>
 
+        @if(request('testing-123') == 'working')
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                    <li>
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li>
                         <a class="nav-link" href="{{ route('login') }}">
                             <i class="d-md-none d-lg-inline-block fa fa-sign-in"></i>
                             {{ __('Login') }}</a>
@@ -82,6 +88,7 @@
                     </li>
                 @endguest
             </ul>
+            @endif
         </div>
     </div>
 </nav>
