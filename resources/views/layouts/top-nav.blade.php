@@ -30,7 +30,7 @@
                 </li>
                 <li>
                     <a class="nav-link @if(Route::is('about')) active @endif" href="{{ route('about') }}">
-                        <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('About US') }}
+                        <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('About Us') }}
                     </a>
                 </li>
             </ul>
