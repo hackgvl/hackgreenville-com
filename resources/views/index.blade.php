@@ -13,10 +13,8 @@
             <div class="carousel-item active">
                 <img class="d-block align-center" src="{{asset('/img/hackgreenville-banner.jpg')}}" alt="Greenville works together"/>
                 <div class="carousel-caption text-center text-lg-right">
-                    <h1 class="p-3">Come watch our talks</h1>
-                    <span class="text bg-blue p-3">
-                            Fun and informative modern talks
-                        </span>
+                    <h1 class="p-3"></h1>
+                    <span class="text bg-blue p-3"></span>
                 </div>
             </div>
         </div>
@@ -32,9 +30,18 @@
 
     <div class="container-fluid">
         <div class="row my-5">
-            <div class="col-md-6 col-lg-7 text-center">
-                <h3 title="[content placeholder]">[<i>CONTENT</i> <strong>PLACEHOLDER</strong>]</h3>
-            </div>
+        <div class="col-md-6 col-lg-7 text-left">
+            <h3 title="title" style="padding-left: 100px;">What is Hack Greenville?</h3>
+            <br>
+            <p class="title-copy" style="padding: 0px 100px;">
+                HackGreenville is a community of "hackers" located in and around Greenville, SC. Our community exists to foster personal growth for community members through sharing and promoting local tech opportunities. Greenville is a great place to live and build community and <strong>HG is THE go-to resource for discovering and connecting with what is happening in the Upstate</strong> hacker, maker and tinkerer space! To the right is a feed of upcoming events, feel free to explore the site for more meetups and events, and make sure to join our active 
+                <a href="https://hackgreenville.com/join-slack">Slack community</a> to connect further!
+                </br />
+                <br />
+                <button type="button" class="btn btn-secondary"><a href="https://hackgreenville.com/join-slack" style="color:white; text-decoration:none">Join us on Slack</a></button>
+                </p>
+            
+        </div>
             <div class="col-md-6 col-lg-5">
                 <hg-timeline event_data_route="{{route('api.homepage.timeline', [], false)}}" title="Upcoming Events">
                     <ul>
