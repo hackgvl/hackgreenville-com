@@ -93,7 +93,7 @@
 
 	.timeline.p-3 {
 		max-height: 500px;
-    	overflow: scroll;
+    		overflow: auto;
 	}
 
 	.timeline:before {
