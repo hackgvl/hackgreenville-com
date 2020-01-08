@@ -31,15 +31,14 @@
     <div class="container-fluid">
         <div class="row my-5">
         <div class="col-md-6 col-lg-7 text-left">
-            <h3 title="title" style="padding-left: 100px;">What is Hack Greenville?</h3>
-            <br>
-            <p class="title-copy" style="padding: 0px 100px;">
+            <h3 title="title">What is Hack Greenville?</h3>
+            <p class="title-copy">
                 HackGreenville is a community of "hackers" located in and around Greenville, SC. Our community exists to foster personal growth for community members through sharing and promoting local tech opportunities. Greenville is a great place to live and build community and <strong>HG is THE go-to resource for discovering and connecting with what is happening in the Upstate</strong> hacker, maker and tinkerer space! To the right is a feed of upcoming events, feel free to explore the site for more meetups and events, and make sure to join our active 
                 <a href="/join-slack">Slack community</a> to connect further!
-                </br />
-                <br />
-                <button type="button" class="btn btn-secondary"><a href="/join-slack" style="color:white; text-decoration:none">Join us on Slack</a></button>
-                </p>
+            </p>
+            <p class="title-copy">
+                <button type="button" class="btn btn-secondary"><a href="/join-slack">Join us on Slack</a></button>
+            </p>
             
         </div>
             <div class="col-md-6 col-lg-5">
