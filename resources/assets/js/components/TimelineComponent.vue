@@ -91,6 +91,11 @@
 		position: relative;
 	}
 
+	.timeline.p-3 {
+		max-height: 500px;
+    		overflow: auto;
+	}
+
 	.timeline:before {
 		top: 0;
 		bottom: 0;
