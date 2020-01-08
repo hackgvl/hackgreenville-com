@@ -19,9 +19,9 @@
 					</div>
 					<div class="timeline-body">
 						<p>
-							{{event.short_description}}
-							<br>
-							<button @click="showMore(event)" class="btn btn-secondary" type="button">READ MORE</button>
+						<div v-html="event.short_description"/>
+						<br>
+						<button @click="showMore(event)" class="btn btn-secondary" type="button">READ MORE</button>
 						</p>
 					</div>
 				</div>
