@@ -35,10 +35,10 @@
             <br>
             <p class="title-copy" style="padding: 0px 100px;">
                 HackGreenville is a community of "hackers" located in and around Greenville, SC. Our community exists to foster personal growth for community members through sharing and promoting local tech opportunities. Greenville is a great place to live and build community and <strong>HG is THE go-to resource for discovering and connecting with what is happening in the Upstate</strong> hacker, maker and tinkerer space! To the right is a feed of upcoming events, feel free to explore the site for more meetups and events, and make sure to join our active 
-                <a href="https://hackgreenville.com/join-slack">Slack community</a> to connect further!
+                <a href="/join-slack">Slack community</a> to connect further!
                 </br />
                 <br />
-                <button type="button" class="btn btn-secondary"><a href="https://hackgreenville.com/join-slack" style="color:white; text-decoration:none">Join us on Slack</a></button>
+                <button type="button" class="btn btn-secondary"><a href="/join-slack" style="color:white; text-decoration:none">Join us on Slack</a></button>
                 </p>
             
         </div>
