@@ -22,4 +22,6 @@ You'll need [composer](https://getcomposer.org/download/) as well.
 
 Fork the project into your local environment, then run `composer install` to get the required packages set up.
 
+Typically, the easiest way to get the project up and running locally would be to run `php artisan serve` in the root directory of the site. This command is Laravel's wrapper over [PHP's built in web server](https://www.php.net/manual/en/features.commandline.webserver.php).
+
 Now you're ready to start tackling issues. Feel free to send us a pull request!
