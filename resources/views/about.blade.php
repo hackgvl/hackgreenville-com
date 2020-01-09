@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div id="about-us" class="container">
         <h1>About HackGreenville</h1>
         <p>HackGreenville was started as a <a href="https://hackgreenville.com/join-slack">Slack chat group</a> in March 2015 by Andrew Orr
             (@webdood)
