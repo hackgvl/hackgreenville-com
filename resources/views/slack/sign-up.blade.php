@@ -1,4 +1,4 @@
-@extends('layouts.page')
+@extends('layouts.app', ['remove_space' => true])
 
 @section('title', 'HackGreenville Slack Sign-up and Login Info')
 

@@ -1,18 +1,10 @@
 .slack-signup {
-  html {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-  }
+  margin: 0;
 
   iframe {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    border: 0;
-
+    height: 670px;
+    display: block;
+    margin: 0 auto;
   }
 
   .css-1l99lqu {
