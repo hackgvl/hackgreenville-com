@@ -120,7 +120,7 @@ a {
   }
 
   .page-title {
-    font-size: 80px;
+    font-size: 70px;
   }
 
   .summary {
@@ -129,6 +129,10 @@ a {
 }
 
 #about-us {
+  ul{
+    margin-left: -15px;
+  }
+
   p, li {
     font-size: 1.25rem;
   }
