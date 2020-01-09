@@ -32,7 +32,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" style="height: 20rem"/>
+                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" style="max-width: 100%; height: 20rem"/>
                         </div>
                         <div class="col-md-6">
                             <button onclick="location.href='/join-slack'" class="btn btn-outline-primary my-5">
@@ -43,14 +43,14 @@
 
                     <hr class="d-md-none">
 
-                    <p class="page-title mt-5">Sponsorship</p>
+                    <p class="page-title mt-5">Sponsors</p>
 
                     <div class="row">
                         <div class="col-md-6 my-5">
                             Our amazing sponsors help to make this possible.
                         </div>
                         <div class="col-md-6">
-                            <img src="{{url('img/icons/sponsors.png')}}" alt="Sponsors" style="height: 20rem"/>
+                            <img src="{{url('img/icons/sponsors.png')}}" alt="Sponsors" style="max-width: 100%; height: 20rem"/>
                         </div>
                     </div>
 

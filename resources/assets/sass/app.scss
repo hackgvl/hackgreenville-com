@@ -121,6 +121,10 @@ a {
 
   .page-title {
     font-size: 70px;
+
+    @media (max-width: 400px) {
+      font-size: 40px;
+    }
   }
 
   .summary {
