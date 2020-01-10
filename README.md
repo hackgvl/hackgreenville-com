@@ -43,7 +43,11 @@ Run the following command to generate your app key:
 artisan key:generate    
 ```   
 
-Then start your server:    
+Then start your server: 
+
+Typically, the easiest way to get the project up and running locally would be to run `php artisan serve` in the root directory of the site. This command is Laravel's wrapper over [PHP's built in web server](https://www.php.net/manual/en/features.commandline.webserver.php).   
+
+See the [Laravel installation documentation](https://laravel.com/docs/4.2/quick#installation) for more details.
     
 ```bash  
 php artisan serve    
