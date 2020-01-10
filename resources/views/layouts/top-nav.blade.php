@@ -35,60 +35,66 @@
                 </li>
             </ul>
 
-        @if(request('testing-123') == 'working')
             <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link btn btn-outline-secondary" href="{{ route('join-slack') }}">
+                        <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
+                        {{ __('Join Slack') }}</a>
+                </li>
+
+            @if(request('testing-123') == 'working')
+                <!-- Authentication Links -->
                     @guest
                         <li>
-                        <a class="nav-link" href="{{ route('login') }}">
-                            <i class="d-md-none d-lg-inline-block fa fa-sign-in"></i>
-                            {{ __('Login') }}</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ route('register') }}">
-                            <i class="d-md-none d-lg-inline-block fa fa-cloud"></i>
-                            {{ __('Register') }}</a>
-                    </li>
-                @else
-                    {{-- Add condition here to check if the user has the role nesseesary to see this dropdown--}}
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <i class="fa fa-adjust"></i>
-                            {{__('Admin Stuff')}} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
-                            <a href="{{route('authed.carousel.index')}}" class="dropdown-item">
-                                {{__('Carousels')}}
-                            </a>
-                        </div>
-                    </li>
-                    <li class="d-none d-md-inline-block">
-                        <div class="vertical-divider"></div>
-                    </li>
-                    {{-- End condition--}}
-
-
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="d-md-none d-lg-inline-block fa fa-sign-out"></i>
-                                {{ __('Logout') }}
+                            <a class="nav-link" href="{{ route('login') }}">
+                                <i class="d-md-none d-lg-inline-block fa fa-sign-in"></i>
+                                {{ __('Login') }}</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('register') }}">
+                                <i class="d-md-none d-lg-inline-block fa fa-cloud"></i>
+                                {{ __('Register') }}</a>
+                        </li>
+                    @else
+                        {{-- Add condition here to check if the user has the role nesseesary to see this dropdown--}}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fa fa-adjust"></i>
+                                {{__('Admin Stuff')}} <span class="caret"></span>
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                                <a href="{{route('authed.carousel.index')}}" class="dropdown-item">
+                                    {{__('Carousels')}}
+                                </a>
+                            </div>
+                        </li>
+                        <li class="d-none d-md-inline-block">
+                            <div class="vertical-divider"></div>
+                        </li>
+                        {{-- End condition--}}
+
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="d-md-none d-lg-inline-block fa fa-sign-out"></i>
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                @endif
             </ul>
-            @endif
         </div>
     </div>
 </nav>
