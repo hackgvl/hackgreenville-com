@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div id="about-us" class="container">
         <h1>About HackGreenville</h1>
-        <p>HackGreenville was started as a <a href="https://hackgreenville.com/join-slack">Slack chat group</a> in March 2015 by Andrew Orr
+        <p>HackGreenville was started as a <a href="/join-slack">Slack chat group</a> in March 2015 by Andrew Orr
             (@webdood)
             and Dave Brothers (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/davebrothers/hovercard" data-octo-click="hovercard-link-click"
                                   data-octo-dimensions="link_type:self" href="https://github.com/davebrothers">@davebrothers</a>).</p>
-        <p>The <a href="https://hackgreenville.com/join-slack">Slack community</a> has stood the "test of time" and continues to be a daily, active hub for countless and varied
+        <p>The <a href="/join-slack">Slack community</a> has stood the "test of time" and continues to be a daily, active hub for countless and varied
             conversations.</p>
         <p>The HackGreenville.com website was initially developed by the <a href="https://www.sccodes.org">SC Codes</a>
             pilot program and later adopted and expanded by <a href="https://codeforgreenville.org">Code
@@ -17,7 +17,7 @@
         <h2>Purpose</h2>
         <p>HackGreenville exists to foster personal growth among the "hackers" of Greenville, SC and the surrounding area.</p>
         <h2>Mission</h2>
-        <p>HackGreenville hosts an <a href="https://hackgreenville.com/join-slack">online community</a> and <a href="https://hackgreenville.com">discovery
+        <p>HackGreenville hosts an <a href="/join-slack">online community</a> and <a href="/">discovery
                 tools</a> to promote local, non-commercial tech opportunities for learning, sharing, and connecting.</p>
         <h2>Vision</h2>
         <p>HackGreenville desires to become the <code>GO TO</code> (pun intended!) brand and resource for tech people discovering the area's "hacker" culture and opportunities.</p>

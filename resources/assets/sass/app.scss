@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.btn {
+  text-decoration: none !important
+}
+
 // Swal
 @import '~sweetalert2/src/sweetalert2';
 .swal-wide {
@@ -64,31 +68,77 @@ a {
   a {
     color: $gray-200
   }
+
+  .footer-social-icons, .footer-technology-icons {
+    .footer-technology-icon-wrapper {
+      margin-left: 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .footer-technology-icon {
+        height: 35px;
+      }
+    }
+
+    .footer-social-icon-wrapper {
+      .footer-social-icon {
+        height: 65px;
+      }
+    }
+  }
 }
 
-.homepage {
-  &.carousel {
-    .carousel-item {
-      img {
-        height: 100%;
-        width: 100% !important;
-      }
 
-      height: 400px !important;
+#homepage {
 
-      @media (max-width: 768px) {
-        height: 295px !important;
-      }
+  #homepage-jumbotron {
+    color: white;
+    background: url(/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
 
-      @media (max-width: 480px) {
-        height: 218px !important;
-      }
-
-      @media (min-width: 1200px) {
-        height: 500px !important;
-      }
-
+    .overlay {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .5);
+      height: 100%;
+      width: 100%;
     }
+
+    .container {
+      z-index: 3;
+      position: relative;
+    }
+  }
+
+  .page-title {
+    font-size: 70px;
+
+    @media (max-width: 400px) {
+      font-size: 40px;
+    }
+  }
+
+  .summary {
+    font-size: 1.25rem;
+  }
+}
+
+#about-us {
+  ul{
+    margin-left: -15px;
+  }
+
+  p, li {
+    font-size: 1.25rem;
   }
 }
 

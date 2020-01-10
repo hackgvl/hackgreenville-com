@@ -11,8 +11,34 @@
             <div class="col-md-6 mt-md-0 mt-3">
 
                 <!-- Content -->
-                <h5 class="text-uppercase">Join US</h5>
-                <p>Where we do fun new things in a friendly smart environment.</p>
+                {{--<h5 class="text-uppercase">Join US</h5>--}}
+                {{--<h4 class="text-center">Where we do fun new things in a friendly smart environment.</h4>--}}
+
+                <div class="text-center footer-social-icons">
+                    <a href="/events" class="footer-social-icon-wrapper">
+                        <img src="{{url('img/icons/meetup.svg')}}" class="footer-social-icon" alt="Meetup"/>
+                    </a>
+                    <a href="/join-slack" class="footer-social-icon-wrapper ml-5">
+                        <img src="{{url('img/icons/slack.png')}}" class="footer-social-icon" alt="Slack"/>
+                    </a>
+                </div>
+
+                <h4 class="text-center m-3 mt-5">Some technology we like</h4>
+
+                <div class="text-center footer-technology-icons">
+                    <a href="https://laravel.com" class="footer-technology-icon-wrapper" rel="nofollow">
+                        <img src="{{url('img/icons/laravel-226015.png')}}" class="footer-technology-icon" alt="Laravel"/>
+                    </a>
+                    <a href="https://www.djangoproject.com" class="footer-technology-icon-wrapper" rel="nofollow">
+                        <img src="{{url('img/icons/django.jpg')}}" class="footer-technology-icon" alt="Django"/>
+                    </a>
+                    <a href="https://nuxtjs.org" class="footer-technology-icon-wrapper" rel="nofollow">
+                        <img src="{{url('img/icons/nuxt.png')}}" class="footer-technology-icon" alt="NuxtJS"/>
+                    </a>
+                    <a href="https://nextjs.org/" class="footer-technology-icon-wrapper" rel="nofollow">
+                        <img src="{{url('img/icons/nextjs.png')}}" class="footer-technology-icon" alt="NextJS"/>
+                    </a>
+                </div>
 
             </div>
             <!-- Grid column -->
