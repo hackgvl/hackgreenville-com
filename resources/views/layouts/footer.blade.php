@@ -15,7 +15,7 @@
                 {{--<h4 class="text-center">Where we do fun new things in a friendly smart environment.</h4>--}}
 
                 <div class="text-center footer-social-icons">
-                    <a href="https://www.meetup.com/Hack-Greenville/" class="footer-social-icon-wrapper">
+                    <a href="/events" class="footer-social-icon-wrapper">
                         <img src="{{url('img/icons/meetup.svg')}}" class="footer-social-icon" alt="Meetup"/>
                     </a>
                     <a href="/join-slack" class="footer-social-icon-wrapper ml-5">
