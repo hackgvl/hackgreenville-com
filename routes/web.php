@@ -18,7 +18,7 @@ Route::get('/events', 'EventsController@index')->name('events.index');
 Route::get('/orgs', 'OrgsController@index')->name('orgs.index');
 Route::get('/about', 'HomeController@about')->name('about');
 
-Route::get('/join-slack', 'SlackController@join');
+Route::get('/join-slack', 'SlackController@join')->name('join-slack');
 
 Auth::routes();
 
