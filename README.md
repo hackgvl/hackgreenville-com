@@ -87,3 +87,4 @@ Now you're ready to start tackling issues. Feel free to send us a pull request!
 - [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)  
 - [https://getbootstrap.com/docs/4.0/getting-started/introduction/](https://getbootstrap.com/docs/4.0/getting-started/introduction/)  
 - [https://lodash.com/](https://lodash.com/)
+- [Plugin DatePicker](https://github.com/uxsolutions/bootstrap-datepicker)

@@ -10,6 +10,10 @@
 @import "~@fullcalendar/daygrid/main.min.css";
 // Codey the computer
 @import "codey";
+// Bootstrap switch checkbox lib
+//@import "~bootstrap-switch/src/sass/bootstrap4/bootstrap-switch";
+// Sharrre sharing lib
+@import "~sharrre/src/sass/style";
 
 // Full calendar events on the calendar don't use the right pointer
 .fc-content {
