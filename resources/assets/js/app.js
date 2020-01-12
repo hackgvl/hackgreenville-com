@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -8,6 +7,8 @@
 // Without the ./ it tries to include the bootstrap4 js
 require('./bootstrap');
 
+require('sharrre/src/js/jquery.sharrre');
+
 window.Vue = require('vue');
 
 /**
@@ -16,7 +17,6 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('hg-timeline', require('./components/TimelineComponent'));
 
 new Vue({
