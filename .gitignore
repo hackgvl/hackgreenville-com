@@ -18,3 +18,4 @@ yarn-error.log
 .phpstorm.meta.php
 public/js/app.js
 public/css/app.css
+public/mix-manifest.json
