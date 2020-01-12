@@ -11,8 +11,6 @@ require('sharrre/src/js/jquery.sharrre');
 
 window.Vue = require('vue');
 
-Vue.use(window.axios);
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
