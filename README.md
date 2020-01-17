@@ -39,8 +39,8 @@ That `db:seed` command will create a default user *admin@admin.com* with a passw
     
 Run the following command to generate your app key:    
     
-``` php 
-artisan key:generate    
+``` bash 
+php artisan key:generate    
 ```   
 
 Then start your server: 
