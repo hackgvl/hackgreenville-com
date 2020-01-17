@@ -24,10 +24,10 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{ $org->homepage}}" target="_blank" title="Homepage">{{ $org->title }}</a>
+                                        <a href="{{ $org->url}}" target="_blank" title="Homepage">{{ $org->title }}</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="{{$org->event_calendar_homepage }}" target="_blank">Events Site</a>
+                                        <a href="{{$org->event_calendar_uri }}" target="_blank">Events Site</a>
                                     </div>
                                 </div>
                             </li>
@@ -46,7 +46,7 @@
                 <ul>
                     @foreach ($inactiveOrgs as $org)
                         <li>
-                            <a class="" href="{{ $org->homepage }}" target="_blank">{{ $org->title }}</a>
+                            <a class="" href="{{ $org->url }}" target="_blank">{{ $org->title }}</a>
                             {{ $org->city }}
                         </li>
                     @endforeach
