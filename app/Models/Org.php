@@ -44,6 +44,10 @@ class Org extends Model
         return $this->belongsTo(Category::class);
     }
 
+    /**
+     * accessor url to uri
+     * @return string
+     */
     public function getUrlAttribute()
     {
         return $this->uri;

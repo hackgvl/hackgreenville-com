@@ -73,6 +73,10 @@ class Event extends Model
         return $query->where('created_at', '>=', $date);
     }
 
+    /**
+     * accessor url to uri
+     * @return string
+     */
     public function getUrlAttribute()
     {
         return $this->uri;
