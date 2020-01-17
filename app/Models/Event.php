@@ -73,6 +73,11 @@ class Event extends Model
         return $query->where('created_at', '>=', $date);
     }
 
+    public function getUrlAttribute()
+    {
+        return $this->uri;
+    }
+
     public function getStateAttribute()
     {
         if ($this->active_at->isPast()) {

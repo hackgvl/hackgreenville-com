@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property string uri
+ */
 class Org extends Model
 {
     use SoftDeletes;
@@ -39,6 +42,11 @@ class Org extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function getUrlAttribute()
+    {
+        return $this->uri;
     }
 
     public function getHomePageAttribute()
