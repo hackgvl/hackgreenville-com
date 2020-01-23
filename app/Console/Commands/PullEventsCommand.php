@@ -105,6 +105,7 @@ class PullEventsCommand extends Command
                 $group->forget(0);
 
                 if ($group->count() > 0) {
+                    // if there are any dups just delete them out of the database. 
                     $group->each(function (Event $e) use (&$cleaupCount) {
                         $cleaupCount++;
                         $e->forceDelete();
