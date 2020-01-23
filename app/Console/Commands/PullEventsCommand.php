@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\State;
 use App\Models\Venue;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 
 class PullEventsCommand extends Command
 {
@@ -47,7 +48,7 @@ class PullEventsCommand extends Command
                 continue;
             }
 
-            if(!$event->venue){
+            if (!$event->venue) {
                 $events_missing_venue[] = $event;
                 continue;
             }
@@ -68,11 +69,11 @@ class PullEventsCommand extends Command
                 'lng'      => $event->venue->lon,
             ]);
 
-            Event::updateOrCreate([
-                'venue_id'    => $venue->id,
+            $venue->events()->updateOrCreate([
                 'event_name'  => $event->event_name,
                 'group_name'  => $event->group_name,
                 'cache->uuid' => $event->uuid,
+                'active_at'   => $event->localtime,
             ], [
                 'event_name'  => $event->event_name,
                 'group_name'  => $event->group_name,
@@ -80,7 +81,6 @@ class PullEventsCommand extends Command
                 'rsvp_count'  => $event->rsvp_count,
                 'active_at'   => $event->localtime,
                 'uri'         => $event->url ?: 'https://www.meetup.com/Hack-Greenville/events/',
-                'venue_id'    => $venue->id,
                 'cache'       => $event,
             ]);
         }
@@ -88,7 +88,31 @@ class PullEventsCommand extends Command
 
         $this->info('Done importing');
 
-        $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information');
+        // clear out duplicates
+        // For some reason duplicates are being imported. this piece of code is here to bandaid the problem
+        $cleaupCount = 0;
+        Event::get()
+            ->groupBy(function (Event $e) {
+                // group all elements by uuid and active date so we can remove them.
+                return $e->cache['uuid'] . $e->active_at;
+            })
+            ->filter(function ($group) {
+                // filter out events without duplicates
+                return $group->count() > 1;
+            })
+            ->each(function (Collection $group) use (&$cleaupCount) {
+                // remove the first element. We want to delete the others.
+                $group->forget(0);
+
+                if ($group->count() > 0) {
+                    $group->each(function (Event $e) use (&$cleaupCount) {
+                        $cleaupCount++;
+                        $e->forceDelete();
+                    });
+                }
+            });
+
+        $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information and cleaned up ' . $cleaupCount . ' duplicates');
 
         return 0;
     }

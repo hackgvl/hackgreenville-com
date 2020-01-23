@@ -37,6 +37,11 @@ class Venue extends Model
         return $this->belongsTo(State::class);
     }
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
     public function __toString()
     {
         return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
