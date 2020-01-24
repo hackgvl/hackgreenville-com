@@ -4,9 +4,8 @@
     <div id="about-us" class="container">
         <h1>About HackGreenville</h1>
         <p>HackGreenville was started as a <a href="/join-slack">Slack chat group</a> in March 2015 by Andrew Orr
-            (@webdood)
-            and Dave Brothers (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/davebrothers/hovercard" data-octo-click="hovercard-link-click"
-                                  data-octo-dimensions="link_type:self" href="https://github.com/davebrothers">@davebrothers</a>).</p>
+            <a class="user-mention" href="https://github.com/Soulfire86">(@Soulfire86)</a>
+            and Dave Brothers (<a class="user-mention" href="https://github.com/davebrothers">@davebrothers</a>).</p>
         <p>The <a href="/join-slack">Slack community</a> has stood the "test of time" and continues to be a daily, active hub for countless and varied
             conversations.</p>
         <p>The HackGreenville.com website was initially developed by the <a href="https://www.sccodes.org">SC Codes</a>
