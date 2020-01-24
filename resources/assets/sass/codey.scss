@@ -1,0 +1,23 @@
+.codey-container {
+  position: relative;
+  height: 10em;
+  width: 10em;
+  margin: 0 auto;
+
+  .codey-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .expression {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    font-size: 2em;
+    font-weight: 600;
+    color: #5BC82D;
+  }
+}

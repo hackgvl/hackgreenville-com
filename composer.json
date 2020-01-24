@@ -1,19 +1,23 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "upstate-php/hackgreenville",
+    "description": "Website for the HackGreenville",
+    "keywords": ["updatePHP", "hack", "Greenville"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2",
+        "ext-json": "*",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "5.6.*",
+        "intervention/image": "^2.5",
+        "laravel/framework": "^6.0",
+        "laravel/helpers": "^1.1",
         "laravel/tinker": "^1.0",
-        "maddhatter/laravel-fullcalendar": "^1.3",
-        "nesbot/carbon": "^1.28"
+        "spatie/laravel-google-calendar": "^2.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2",
+        "barryvdh/laravel-ide-helper": "^2.6",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
@@ -53,6 +57,19 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate",
+          "@php artisan ide-helper:meta",
+          "@php artisan migrate --seed",
+          "yarn install",
+          "yarn prod"
+        ],
+      "post-install-cmd": [
+        "@php artisan migrate",
+        "yarn install",
+        "yarn prod"
         ]
     },
     "config": {

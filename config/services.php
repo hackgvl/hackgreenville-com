@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+
 return [
 
     /*
@@ -20,7 +22,7 @@ return [
     ],
 
     'ses' => [
-        'key' => env('SES_KEY'),
+        'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
@@ -30,9 +32,15 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+        'model'  => User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+
+    'google' => [
+        'tagmanager' => [
+            'id' => env('GOOGLE_TAG_MANAGER')
+        ],
     ],
 
 ];

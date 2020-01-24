@@ -1,14 +1,221 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import 'slack-sign-up';
+// Calendar
+@import "~@fullcalendar/core/main.min.css";
+@import "~@fullcalendar/daygrid/main.min.css";
+// Codey the computer
+@import "codey";
+// Bootstrap switch checkbox lib
+//@import "~bootstrap-switch/src/sass/bootstrap4/bootstrap-switch";
+// Sharrre sharing lib
+@import "~sharrre/src/sass/style";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// Full calendar events on the calendar don't use the right pointer
+.fc-content {
+  cursor: pointer;
+}
+
+.btn {
+  text-decoration: none !important
+}
+
+// Swal
+@import '~sweetalert2/src/sweetalert2';
+.swal-wide {
+  width: 50em !important;
+}
+
+.vertical-divider {
+  background-color: $text-muted;
+  width: .2rem;
+  margin: 0.3rem;
+  height: 1.9rem;
+}
+
+body {
+  min-width: 320px;
+}
+
+main {
+  min-height: 500px;
+}
+
+.navbar-brand {
+  .navbar-brand-img {
+    height: 4rem;
+  }
+
+}
+
+a {
+  transition: 0.3s;
+
+  text-decoration: underline;
+}
+
+.navbar-nav, .page-footer {
+  a {
+    text-decoration: none;
+  }
+
+  .active {
+    font-weight: 600;
+  }
+}
+
+.page-footer {
+  a {
+    color: $gray-200
+  }
+
+  .footer-social-icons, .footer-technology-icons {
+    .footer-technology-icon-wrapper {
+      margin-left: 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .footer-technology-icon {
+        height: 35px;
+      }
+    }
+
+    .footer-social-icon-wrapper {
+      .footer-social-icon {
+        height: 65px;
+      }
+    }
+  }
+}
+
+
+#homepage {
+
+  #homepage-jumbotron {
+    color: white;
+    background: url(/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    .overlay {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .5);
+      height: 100%;
+      width: 100%;
+    }
+
+    .container {
+      z-index: 3;
+      position: relative;
+    }
+  }
+
+  .page-title {
+    font-size: 70px;
+
+    @media (max-width: 400px) {
+      font-size: 40px;
+    }
+  }
+
+  .summary {
+    font-size: 1.25rem;
+  }
+}
+
+#about-us {
+  ul{
+    margin-left: -15px;
+  }
+
+  p, li {
+    font-size: 1.25rem;
+  }
+}
+
+.align-center {
+  margin: 0 auto;
+}
+
+.swatch-holder {
+  width: 88px;
+  height: 88px;
+  background: #e1e1e1;
+  border: solid 1px #e1e1e1;
+}
+
+// Site colors
+.bg {
+
+  &-white {
+    background-color: #ffffff;
+  }
+
+  &-green {
+    background-color: #005b3c;
+  }
+
+  &-blue {
+    background-color: #201748;
+  }
+
+  &-yellow {
+    background-color: #ffa300;
+  }
+
+  &-purple {
+    background-color: #201647;
+  }
+
+  &-gray {
+    background-color: #c0c0c0;
+  }
+
+  &-off-white {
+    background-color: #f4f4f4;
+  }
+
+  &-green {
+    background-color: #006341;
+  }
+}
+
+.text {
+
+  &-brown {
+    color: #222222;
+  }
+
+  &-purple {
+    color: #201647;
+  }
+
+  &-white {
+    color: #ffffff;
+  }
+
+  &-black {
+    color: #000000;
+  }
+
+  &-green {
+    color: #006341;
+  }
+
+  &-gray {
+    color: #202020;
+  }
 }
