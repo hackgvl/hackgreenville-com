@@ -17,4 +17,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
 mix.version();
 
 
-mix.browserSync('localhost:8000');
+mix.browserSync('https://hackgreenville.local');

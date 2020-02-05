@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div id="main-holder" class="container_16 gray">
-            <div class="text-center">
+            <div class="mb-5">
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="text-muted">
@@ -18,15 +18,6 @@
                             <figcaption>
                                 HEX
                                 <span class="colour-hex bg-white">#ffffff</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-2" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(0, 91, 60);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-green text-white">#005b3c</span>
                             </figcaption>
                         </figure>
                     </div>
@@ -91,7 +82,6 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="col-md-1 offset-md-2 grid_2">
                         <figure id="text-color-1" class="swatch-wrap">
                             <div class="swatch-holder" style="background: rgb(34, 34, 34);"></div>
@@ -129,15 +119,6 @@
                         </figure>
                     </div>
                     <div class="col-md-1 grid_2">
-                        <figure id="text-color-5" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(0, 99, 65);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#006341</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
                         <figure id="text-color-6" class="swatch-wrap">
                             <div class="swatch-holder" style="background: rgb(32, 32, 32);"></div>
                             <figcaption>
@@ -167,33 +148,13 @@
                 </div>
             </div>
 
-
-            <h2 class="grid_16">Typography</h2>
-
-
-            <table class="grid_16 grid-dl">
+            <table class="table table-hover">
+                <legend>Typography</legend>
                 <tbody>
-                <tr>
-                    <th id="result-header-1-dt" class="first" scope="row"><strong style="opacity: 0.2;">N/A, N/A, N/A, N/A, N/A</strong> <span style="opacity: 0.2;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-header-1-dd" class="first">
-                        <div style="opacity: 0.2; background-color: transparent;">
-                            <div>The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th id="result-header-2-dt" scope="row"><strong style="opacity: 0.2;">N/A, N/A, N/A, N/A, N/A</strong> <span style="opacity: 0.2;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-header-2-dd">
-                        <div style="opacity: 0.2; background-color: transparent;">The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven</div>
-                    </td>
-                </tr>
                 <tr>
                     <th id="result-header-3-dt" scope="row"><strong style="opacity: 1;">Lato, normal, 21px, 29px, #00704a</strong> <span style="opacity: 1;">Font, Style, Size, Leading, Colour</span></th>
                     <td id="result-header-3-dd">
-                        <div style="opacity: 1; font-family: Lato; font-style: normal; font-size: 21px; line-height: 29px; background-color: transparent;">The quick brown fox jumps over the lazy
-                            dog
-                            and feels as if he were in the seventh heaven
-                        </div>
+                        <div style="opacity: 1; font-family: Lato; font-style: normal; font-size: 21px; line-height: 29px; background-color: transparent;">The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven</div>
                     </td>
                 </tr>
                 <tr>
@@ -203,18 +164,6 @@
                             dog
                             and feels as if he were in the seventh heaven
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th id="result-header-5-dt" scope="row"><strong style="opacity: 0.2;">N/A, N/A, N/A, N/A, N/A</strong> <span style="opacity: 0.2;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-header-5-dd">
-                        <div style="opacity: 0.2; background-color: transparent;">The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th id="result-header-6-dt" scope="row"><strong style="opacity: 0.2;">N/A, N/A, N/A, N/A, N/A</strong> <span style="opacity: 0.2;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-header-6-dd">
-                        <div style="opacity: 0.2; background-color: transparent;">The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven</div>
                     </td>
                 </tr>
                 <tr>
