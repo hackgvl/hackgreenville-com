@@ -1,5 +1,10 @@
 let mix = require('laravel-mix');
 
+const {
+    // If 'browserSync_host' is set in the .env file then use that value. If not default it.
+    browserSync_host = '0.0.0.0:8000',
+} = process.env || {}; /* process.env is set automatically if the .env file exists */
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -17,4 +22,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
 mix.version();
 
 
-mix.browserSync('localhost:8000');
+mix.browserSync(browserSync_host);

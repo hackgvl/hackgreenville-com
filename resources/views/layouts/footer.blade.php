@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small bg-primary btn-secondary  pt-4">
+<footer class="page-footer font-small bg-primary btn-secondary  pt-5 pb-3">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -23,7 +23,7 @@
                     </a>
                 </div>
 
-                <h4 class="text-center m-3 mt-5">Some technology we like</h4>
+                <h4 class="text-center mt-5 mb-4">Some technology we like</h4>
 
                 <div class="text-center footer-technology-icons">
                     <a href="https://laravel.com" class="footer-technology-icon-wrapper" rel="nofollow">
@@ -70,14 +70,14 @@
                             {{__('Events')}}
                         </a>
                     </li>
-                    <li>
+                    {{--<li>
                         <a href="#!">
                             <i class="fa fa-phone"></i>
                             {{__('Contact US')}}
                         </a>
-                    </li>
+                    </li>--}}
                     <li>
-                        <a href="#!">
+                        <a href="/join-slack">
                             <i class="fa fa-slack"></i>
                             {{__('Join Slack')}}
                         </a>
