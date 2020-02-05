@@ -49,7 +49,6 @@ main {
   .navbar-brand-img {
     height: 4rem;
   }
-
 }
 
 a {
@@ -161,15 +160,15 @@ a {
 .bg {
 
   &-white {
-    background-color: #ffffff;
+    background-color: $white;
   }
 
   &-green {
-    background-color: #005b3c;
+    background-color: $green;
   }
 
   &-blue {
-    background-color: #201748;
+    background-color: $blue;
   }
 
   &-yellow {
@@ -185,11 +184,11 @@ a {
   }
 
   &-off-white {
-    background-color: #f4f4f4;
+    background-color: $gray-100;
   }
 
   &-green {
-    background-color: #006341;
+    background-color: $green;
   }
 }
 
