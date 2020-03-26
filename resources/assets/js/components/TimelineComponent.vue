@@ -34,7 +34,7 @@
     import moment from 'moment';
 
     export default {
-        name: "TimelineComponent",
+        name: "HgTimeline",
         props: {
             event_data_route: {
                 type: String,
