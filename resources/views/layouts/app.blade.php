@@ -37,22 +37,28 @@
 @if(config('services.google.tagmanager.id'))
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{config('services.google.tagmanager.id')}}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag('config', '{{config('services.google.tagmanager.id')}}');
-    </script>
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', '{{config('services.google.tagmanager.id')}}');
+        </script>
     @endif
 
     @yield('head')
+
+    <script type="text/javascript" src="{{mix('js/app.js')}}" defer></script>
 </head>
 <body>
-    <div id="app">
-        @include('layouts.top-nav')
+<div id="app">
+    @include('layouts.top-nav')
 
-        @if($__env->yieldContent('breadcrumbs'))
+    @if($__env->yieldContent('breadcrumbs'))
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 @yield('breadcrumbs')
@@ -66,7 +72,6 @@
 
         @include('layouts.footer')
     </div>
-    <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
     @yield('js')
 </body>
 </html>

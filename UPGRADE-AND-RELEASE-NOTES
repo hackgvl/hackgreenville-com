@@ -1,5 +1,0 @@
-# clear Laravel Cache
-cd ~/public_html/hack && php artisan cache:clear
-
-# Compile Production SASS to CSS and JS
-cd ~/public_html/hack && npm run production

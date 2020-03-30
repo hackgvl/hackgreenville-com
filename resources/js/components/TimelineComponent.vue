@@ -32,6 +32,7 @@
 
 <script>
     import moment from 'moment';
+    // import swal from 'swal';
 
     export default {
         name: "HgTimeline",

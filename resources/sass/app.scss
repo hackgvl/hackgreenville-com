@@ -1,13 +1,17 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
 // Variables
-@import "variables";
+@import 'variables';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import 'slack-sign-up';
+
 // Calendar
 @import "~@fullcalendar/core/main.min.css";
 @import "~@fullcalendar/daygrid/main.min.css";
+
 // Codey the computer
 @import "codey";
 // Bootstrap switch checkbox lib
@@ -20,14 +24,15 @@
   cursor: pointer;
 }
 
-.btn {
-  text-decoration: none !important
-}
-
-// Swal
+//
 @import '~sweetalert2/src/sweetalert2';
 .swal-wide {
   width: 50em !important;
+}
+
+// Custom CSS
+.btn {
+  text-decoration: none !important
 }
 
 .vertical-divider {
