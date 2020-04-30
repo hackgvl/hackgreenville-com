@@ -54,7 +54,7 @@ php artisan serve
 ```    
  The HackGreenville project is now up and running! You should be able to open [localhost:8000](localhost:8000) in your browser.    
 
-The composer install command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project. 
+The `composer install` command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project. 
 To develop you'll want to run `php artisan serve` to start the applications php server and in another terminal you'll want to run `yarn watch` to watch for frontend resource changes and re-build them when detected. 
     
 ## Purpose 
