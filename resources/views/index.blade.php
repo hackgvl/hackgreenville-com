@@ -7,7 +7,7 @@
         <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid">
             <div class="overlay"></div>
             <div class="container font-weight-bold">
-                <h1 class="display-2">Build Stuff. Meet People.</h1>
+                <h1 class="display-4">Build Stuff. Meet People. Do cool things.</h1>
                 <p class="lead my-5">Meetups &middot; Talks &middot; Projects</p>
                 <p class="lead">
                     <a class="btn btn-success btn-lg" href="/join-slack" role="button">Request to Join Slack</a>

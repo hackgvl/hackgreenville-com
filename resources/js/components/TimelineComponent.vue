@@ -32,9 +32,10 @@
 
 <script>
     import moment from 'moment';
+    // import swal from 'swal';
 
     export default {
-        name: "TimelineComponent",
+        name: "HgTimeline",
         props: {
             event_data_route: {
                 type: String,
