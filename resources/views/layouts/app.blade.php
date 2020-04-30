@@ -51,8 +51,6 @@
     @endif
 
     @yield('head')
-
-    <script type="text/javascript" src="{{mix('js/app.js')}}" defer></script>
 </head>
 <body>
 <div id="app">
@@ -64,14 +62,16 @@
                 @yield('breadcrumbs')
             </ol>
         </nav>
-        @endif
+    @endif
 
-        <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">
-            @yield('content')
-        </main>
+    <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">
+        @yield('content')
+    </main>
 
-        @include('layouts.footer')
-    </div>
-    @yield('js')
+    @include('layouts.footer')
+</div>
+
+<script type="text/javascript" src="{{mix('js/app.js')}}"></script>
+@yield('js')
 </body>
 </html>

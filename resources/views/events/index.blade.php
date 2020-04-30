@@ -15,7 +15,7 @@
                                     Choose a month to filter
                                 </label>
                                 <select class="form-control col-md-9" name="month" id="month">
-                                    <option>Please select</option>
+                                    <option value="">Please select</option>
                                     @foreach( $months as $month )
                                         <option value="{{$month}}" @if(request('month') == $month) selected="selected" @endif>
                                             {{$month}}
@@ -41,7 +41,7 @@
 
         <ul>
             @foreach( $events as $event )
-                <li>
+                <li class="events" data-date="{{$event->active_at->format('M Y')}}">
                     <a href="{{$event->url}}"><strong>{{ $event->event_name }}</strong></a> hosted by <strong>{{ $event->group_name }}</strong>
                     </strong>
                     <p>Time: </strong>{{ $event->active_at }} <br/>
@@ -59,3 +59,24 @@
     </div>
 @endsection
 
+@section('js')
+    <script type="text/javascript">
+        $(function () {
+            /**
+             * on change filter the events. If there is nothing selected show all the events.
+             **/
+            $("#month").change(function () {
+                const val = $(this).children('option:selected').val();
+                const events = $(".events");
+                if (val) {
+                    events.hide();
+                    $(".events[data-date='" + val + "']").show();
+
+                    return true;
+                }
+
+                events.show();
+            })
+        });
+    </script>
+@endsection
