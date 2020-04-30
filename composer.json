@@ -1,82 +1,84 @@
 {
-    "name": "upstate-php/hackgreenville",
-    "description": "Website for the HackGreenville",
-    "keywords": ["updatePHP", "hack", "Greenville"],
-    "license": "MIT",
-    "type": "project",
-    "require": {
-        "php": "^7.2",
-        "ext-json": "*",
-        "fideloper/proxy": "^4.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "intervention/image": "^2.5",
-        "laravel/framework": "^6.0",
-        "laravel/helpers": "^1.1",
-        "laravel/tinker": "^1.0",
-        "spatie/laravel-google-calendar": "^2.3"
+  "name": "upstate-php/hackgreenville",
+  "description": "Website for the HackGreenville",
+  "keywords": [
+    "updatePHP",
+    "hack",
+    "Greenville"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": "^7.2.5",
+    "ext-json": "*",
+    "fideloper/proxy": ">=4 <5.0.0",
+    "fruitcake/laravel-cors": "^1.0",
+    "guzzlehttp/guzzle": ">=6.3 <7.0.0",
+    "intervention/image": ">=2.5 <3.0.0",
+    "laravel/framework": ">=7.0 <8.0.0",
+    "laravel/helpers": "^1.2",
+    "laravel/tinker": "^2.0",
+    "laravel/ui": "^2.0",
+    "spatie/laravel-google-calendar": "^2.5"
+  },
+  "require-dev": {
+    "barryvdh/laravel-debugbar": "^3.2",
+    "barryvdh/laravel-ide-helper": "^2.6",
+    "filp/whoops": "^2.7",
+    "fzaninotto/faker": "^1.9",
+    "mockery/mockery": "^1.3",
+    "nunomaduro/collision": "^4.1",
+    "phpunit/phpunit": "^8.5"
+  },
+  "autoload": {
+    "classmap": [
+      "database/seeds",
+      "database/factories"
+    ],
+    "psr-4": {
+      "App\\": "app/"
     },
-    "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.2",
-        "barryvdh/laravel-ide-helper": "^2.6",
-        "filp/whoops": "^2.0",
-        "fzaninotto/faker": "^1.4",
-        "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^2.0",
-        "phpunit/phpunit": "^7.0"
-    },
-    "autoload": {
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
-        "psr-4": {
-            "App\\": "app/"
-        },
-        "files": [
-        "app/Http/Helpers/helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": [
-            ]
-        }
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate"
-        ],
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "@php artisan ide-helper:generate",
-          "@php artisan ide-helper:meta",
-          "@php artisan migrate --seed",
-          "yarn install",
-          "yarn prod"
-        ],
-      "post-install-cmd": [
-        "@php artisan migrate",
-        "yarn install",
-        "yarn prod"
-        ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "files": [
+      "app/Http/Helpers/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": [
+      ]
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php artisan key:generate"
+    ],
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ],
+    "post-update-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+      "@php artisan ide-helper:generate",
+      "@php artisan ide-helper:meta",
+      "@php artisan migrate --seed"
+    ],
+    "post-install-cmd": [
+      "@php artisan migrate"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
