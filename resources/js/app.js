@@ -6,6 +6,9 @@
 
 require('./bootstrap');
 
+$(".loading").hide();
+$(".loading").removeClass('d-none');
+
 window.Vue = require('vue');
 
 /**

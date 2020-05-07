@@ -18,13 +18,18 @@ class HomeController extends Controller
         return view('index');
     }
 
-    /**
-     * Show the application about us page.
-     *
-     * @return View
-     */
-    public function about()
-    {
-        return view('about');
-    }
+	/**
+	 * Show the application about us page.
+	 *
+	 * @return View
+	 */
+	public function about()
+	{
+		return view('about');
+	}
+
+	public function testing()
+	{
+		return view('testing');
+	}
 }
