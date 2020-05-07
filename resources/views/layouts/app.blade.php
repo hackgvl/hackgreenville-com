@@ -64,6 +64,10 @@
         </nav>
     @endif
 
+    <div class="loading @if(!isset($show_loading)) d-none @endif">
+        <i class="fa fa-spin fa-spinner"></i>
+    </div>
+
     <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">
         @yield('content')
     </main>

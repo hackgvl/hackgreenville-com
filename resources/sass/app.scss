@@ -12,6 +12,10 @@
 @import "~@fullcalendar/core/main.min.css";
 @import "~@fullcalendar/daygrid/main.min.css";
 
+#calendar {
+  min-height: 800px;
+}
+
 // Codey the computer
 @import "codey";
 // Bootstrap switch checkbox lib
@@ -221,5 +225,24 @@ a {
 
   &-gray {
     color: #202020;
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+  z-index: 1000;
+
+  .fa-spin {
+    position: relative;
+    top: 50vh;
+    left: 50vw;
+    font-size: 50px;
   }
 }
