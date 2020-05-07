@@ -11,11 +11,7 @@ abstract class CalendarContract
 
     abstract public function addEvent($start, $end, $title, $description, $allDay = false, $attributes = []);
 
-    abstract public function getEvent();
-
-    abstract public function js();
-
-    abstract public function html();
+    abstract public function getEvents();
 
     abstract public function initialize();
 }

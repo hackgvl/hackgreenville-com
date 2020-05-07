@@ -10,19 +10,6 @@ use Carbon\Carbon;
 class GoogleCalendar extends CalendarContract
 {
 
-    public function js()
-    {
-        $events = $this->getEvent();
-
-        return view('calendar.js', compact('events'));
-
-    }
-
-    public function html()
-    {
-        return view('calendar.html');
-    }
-
     public function initialize($events = [])
     {
         $this->events = $events;
@@ -60,8 +47,9 @@ class GoogleCalendar extends CalendarContract
         return $this;
     }
 
-    public function getEvent()
+    public function getEvents()
     {
-        return json_encode($this->events);
+	    return $this->events;
+//        return json_encode($this->events);
     }
 }

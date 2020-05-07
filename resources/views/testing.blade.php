@@ -1,11 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        {!! $html !!}
-    </div>
-@endsection
-
-@section('js')
-    {!! $js !!}
+    <x-calendar start="2 months"/>
 @endsection
