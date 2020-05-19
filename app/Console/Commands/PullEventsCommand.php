@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Clients\UpstateClient;
 use App\Models\Event;
 use App\Models\State;
 use App\Models\Venue;
@@ -31,7 +32,7 @@ class PullEventsCommand extends Command
      */
     public function handle()
     {
-        $events = getEvents();
+        $events = collect(UpstateClient::getEvents());
 
         if ($this->option('debug')) {
             dd($events[0]);
@@ -41,6 +42,20 @@ class PullEventsCommand extends Command
         $bar->start();
         $events_missing_venue = [];
 
+        $current_active_events = Event::getActive()->get();
+
+        // Loop the current events, if they don't exist in the api response events then delete them.
+	    foreach($current_active_events as $event){
+	    	// TODO :: finish checking to see if the api response contains an active auction. If it does not then remove it from the database
+	    	$found_count = $events
+			    ->where('uuid', $event['uuid'])
+			    ->get('*');
+
+	    	print "Found count: " . $found_count . "\r\n";
+	    }
+
+	    dd('done');
+
         foreach ($events as $inc => $event) {
             $bar->advance();
 
@@ -48,72 +63,56 @@ class PullEventsCommand extends Command
                 continue;
             }
 
-            if (!$event->venue) {
+            if (!$event['venue']) {
                 $events_missing_venue[] = $event;
                 continue;
             }
 
-            $state = State::where('abbr', 'like', $event->venue->state ?: 'SC')->first();
+            // make sure to get a real state
+            $event_state = array_get($event, 'venue.state') ?: 'SC';
+            $state = State::where('abbr', 'like', $event_state)->first();
 
+	        // make sure the venue exists in the system
             $venue = Venue::firstOrCreate([
-                'address'  => $event->venue->address,
-                'zipcode'  => $event->venue->zip,
+                'address'  => array_get($event, 'venue.address'),
+                'zipcode'  => array_get($event, 'venue.zip'),
                 'state_id' => $state->id,
             ], [
-                'address'  => $event->venue->address,
-                'zipcode'  => $event->venue->zip,
+                'address'  => array_get($event, 'venue.address'),
+                'zipcode'  => array_get($event, 'venue.zip'),
                 'state_id' => $state->id,
-                'city'     => $event->venue->city,
-                'name'     => $event->venue->name,
-                'lat'      => $event->venue->lat,
-                'lng'      => $event->venue->lon,
+                'city'     => array_get($event, 'venue.city'),
+                'name'     => array_get($event, 'venue.name'),
+                'lat'      => array_get($event, 'venue.lat'),
+                'lng'      => array_get($event, 'venue.lon'),
             ]);
 
-            $venue->events()->updateOrCreate([
-                'event_name'  => $event->event_name,
-                'group_name'  => $event->group_name,
-                'cache->uuid' => $event->uuid,
-                'active_at'   => $event->localtime,
+            // insert or update the event
+            $test2 = $venue->events()->updateOrCreate([
+                'event_name'  => $event['event_name'],
+                'group_name'  => $event['group_name'],
+                'cache->uuid' => $event['uuid'],
             ], [
-                'event_name'  => $event->event_name,
-                'group_name'  => $event->group_name,
-                'description' => $event->description,
-                'rsvp_count'  => $event->rsvp_count,
-                'active_at'   => $event->localtime,
-                'uri'         => $event->url ?: 'https://www.meetup.com/Hack-Greenville/events/',
+                'event_name'  => $event['event_name'],
+                'group_name'  => $event['group_name'],
+                'description' => $event['description'],
+                'rsvp_count'  => $event['rsvp_count'],
+                'active_at'   => $event['localtime'],
+                'uri'         => $event['url'] ?: 'https://www.meetup.com/Hack-Greenville/events/',
                 'cache'       => $event,
+            ]);
+
+            // TODO :: remove
+            dd([
+            	'venue' => $venue->id,
+	            'event' => $test2->id,
             ]);
         }
         $bar->finish();
 
         $this->info('Done importing');
 
-        // clear out duplicates
-        // For some reason duplicates are being imported. this piece of code is here to bandaid the problem
-        $cleaupCount = 0;
-        Event::get()
-            ->groupBy(function (Event $e) {
-                // group all elements by uuid and active date so we can remove them.
-                return $e->cache['uuid'] . $e->active_at;
-            })
-            ->filter(function ($group) {
-                // filter out events without duplicates
-                return $group->count() > 1;
-            })
-            ->each(function (Collection $group) use (&$cleaupCount) {
-                // remove the first element. We want to delete the others.
-                $group->forget(0);
-
-                if ($group->count() > 0) {
-                    // if there are any dups just delete them out of the database. 
-                    $group->each(function (Event $e) use (&$cleaupCount) {
-                        $cleaupCount++;
-                        $e->forceDelete();
-                    });
-                }
-            });
-
-        $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information and cleaned up ' . $cleaupCount . ' duplicates');
+        $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information.');
 
         return 0;
     }
