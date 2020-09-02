@@ -15,7 +15,7 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">{{event.title}}</h4>
-                        <h5 class="timeline-subtitle">((event.group_name))</h5>
+                        <p class="timeline-subtitle h5">{{event.group_name}}</p>
                         <p><small :title="event.active_at" class="text-muted"><i class="fa fa-calendar"/> {{event.active_at_ftm}}</small></p>
                     </div>
                     <div class="timeline-body">
@@ -60,11 +60,11 @@
                 this.events = events;
                 this.loading--;
             },
-            showMore({title, active_at_ftm, active_at, description}) {
+            showMore({title, group_name, active_at_ftm, active_at, description}) {
                 const datetime_format = 'MM/DD hh:mm A';
                 const desc
                     = `<div class="text-center">`
-                    + `<h3>Hosted by ((group))</h3>`
+                    + `<p class="h4">Hosted by ${group_name}</p>`
                     + `</div>`
                     + `<div class="text-left">`
                     + `<strong>Starts:</strong> ${active_at_ftm} on ${moment(active_at).format(datetime_format)}`
