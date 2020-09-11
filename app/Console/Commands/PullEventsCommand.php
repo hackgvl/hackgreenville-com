@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Clients\UpstateClient;
 use App\Models\Event;
 use App\Models\State;
 use App\Models\Venue;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 
@@ -15,7 +17,9 @@ class PullEventsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pull:events {--1|one : just import one event} {--d|debug : dump the first response from the events api}';
+    protected $signature = 'pull:events ' .
+                           '{--1|one : just import one event} ' .
+                           '{--d|debug : dump the first response from the events api}';
 
     /**
      * The console command description.
@@ -31,7 +35,7 @@ class PullEventsCommand extends Command
      */
     public function handle()
     {
-        $events = getEvents();
+        $events = collect(UpstateClient::getEvents());
 
         if ($this->option('debug')) {
             dd($events[0]);
@@ -39,7 +43,6 @@ class PullEventsCommand extends Command
 
         $bar = $this->output->createProgressBar(count($events));
         $bar->start();
-        $events_missing_venue = [];
 
         foreach ($events as $inc => $event) {
             $bar->advance();
@@ -48,72 +51,47 @@ class PullEventsCommand extends Command
                 continue;
             }
 
-            if (!$event->venue) {
-                $events_missing_venue[] = $event;
-                continue;
+            // Start to format the event data. This array can be appended to in the venue conditional statement below
+            $event_data = [
+                'event_uuid'   => $event[ 'uuid' ],
+                'event_name'   => $event[ 'event_name' ],
+                'group_name'   => $event[ 'group_name' ],
+                'description'  => $event[ 'description' ],
+                'rsvp_count'   => $event[ 'rsvp_count' ],
+                'active_at'    => $event[ 'localtime' ],
+                'is_cancelled' => $event[ 'status' ] == 'canceled' ? new Carbon() : null,
+                'uri'          => $event[ 'url' ] ?: 'https://www.meetup.com/Hack-Greenville/events/',
+                'cache'        => $event,
+            ];
+
+            if (array_get($event, 'venue')) {
+                // make sure to get a real state
+                $event_state = array_get($event, 'venue.state') ?: 'SC';
+                $state       = State::where('abbr', 'like', $event_state)->first();
+
+                // make sure the venue exists in the system
+                $venue = Venue::firstOrCreate([
+                    'address'  => array_get($event, 'venue.address'),
+                    'zipcode'  => array_get($event, 'venue.zip'),
+                    'state_id' => $state->id,
+                ], [
+                    'address'  => array_get($event, 'venue.address'),
+                    'zipcode'  => array_get($event, 'venue.zip'),
+                    'state_id' => $state->id,
+                    'city'     => array_get($event, 'venue.city'),
+                    'name'     => array_get($event, 'venue.name'),
+                    'lat'      => array_get($event, 'venue.lat'),
+                    'lng'      => array_get($event, 'venue.lon'),
+                ]);
+
+                $event_data += ['venue_id' => $venue->id];
             }
 
-            $state = State::where('abbr', 'like', $event->venue->state ?: 'SC')->first();
-
-            $venue = Venue::firstOrCreate([
-                'address'  => $event->venue->address,
-                'zipcode'  => $event->venue->zip,
-                'state_id' => $state->id,
-            ], [
-                'address'  => $event->venue->address,
-                'zipcode'  => $event->venue->zip,
-                'state_id' => $state->id,
-                'city'     => $event->venue->city,
-                'name'     => $event->venue->name,
-                'lat'      => $event->venue->lat,
-                'lng'      => $event->venue->lon,
-            ]);
-
-            $venue->events()->updateOrCreate([
-                'event_name'  => $event->event_name,
-                'group_name'  => $event->group_name,
-                'cache->uuid' => $event->uuid,
-                'active_at'   => $event->localtime,
-            ], [
-                'event_name'  => $event->event_name,
-                'group_name'  => $event->group_name,
-                'description' => $event->description,
-                'rsvp_count'  => $event->rsvp_count,
-                'active_at'   => $event->localtime,
-                'uri'         => $event->url ?: 'https://www.meetup.com/Hack-Greenville/events/',
-                'cache'       => $event,
-            ]);
+            Event::updateOrCreate(['event_uuid' => $event[ 'uuid' ]], $event_data);
         }
         $bar->finish();
 
         $this->info('Done importing');
-
-        // clear out duplicates
-        // For some reason duplicates are being imported. this piece of code is here to bandaid the problem
-        $cleaupCount = 0;
-        Event::get()
-            ->groupBy(function (Event $e) {
-                // group all elements by uuid and active date so we can remove them.
-                return $e->cache['uuid'] . $e->active_at;
-            })
-            ->filter(function ($group) {
-                // filter out events without duplicates
-                return $group->count() > 1;
-            })
-            ->each(function (Collection $group) use (&$cleaupCount) {
-                // remove the first element. We want to delete the others.
-                $group->forget(0);
-
-                if ($group->count() > 0) {
-                    // if there are any dups just delete them out of the database. 
-                    $group->each(function (Event $e) use (&$cleaupCount) {
-                        $cleaupCount++;
-                        $e->forceDelete();
-                    });
-                }
-            });
-
-        $this->warn('Did not import ' . count($events_missing_venue) . ' because they are missing venue information and cleaned up ' . $cleaupCount . ' duplicates');
 
         return 0;
     }

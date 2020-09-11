@@ -27,15 +27,16 @@ class Event extends Model
 
 	protected $fillable
 		= [
-			'event_name',
-			'group_name',
-			'description',
-			'rsvp_count',
-			'active_at',
-			'uri',
-			'venue_id',
-			'cache',
-		];
+            'event_name',
+            'group_name',
+            'description',
+            'rsvp_count',
+            'active_at',
+            'uri',
+            'venue_id',
+            'cache',
+            'event_uuid',
+        ];
 
 	protected $casts
 		= [
