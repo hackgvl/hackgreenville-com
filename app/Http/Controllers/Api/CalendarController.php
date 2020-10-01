@@ -13,22 +13,19 @@ class CalendarController extends Controller
 {
 	public function index()
 	{
-        $calendar = new GoogleCalendar();
-        $date     = (new Carbon(request('start', '-1 months')))->addMonths(1);
+		$calendar = new GoogleCalendar();
+		$date     = (new Carbon(request('start', '-1 months')))->addMonths(1);
+		$events   = Event::dateIsLike($date)->get();
 
-        // TODO :: for now don't show the cancelled events but add them back in but show that its been cancelled on the calendar by
-        // TODO :: changing the background red or something
-        $events = Event::dateIsLike($date)->whereNull('cancelled_at')->get();
+		foreach ($events as $e) {
+			$attributes = [
+				'location'  => $e->venue . '',
+				'event_id'  => $e->id,
+				'event_url' => $e->uri,
+			];
 
-        foreach ($events as $e) {
-            $attributes = [
-                'location'  => $e->venue . '',
-                'event_id'  => $e->id,
-                'event_url' => $e->uri,
-            ];
-
-            $calendar->addEvent($e->active_at, $e->expire_at, $e->event_name, $e->description, false, $attributes);
-        }
+			$calendar->addEvent($e->active_at, $e->expire_at, $e->event_name, $e->description, false, $attributes);
+		}
 
 		return response()->json($calendar->getEvents());
 	}
