@@ -36,6 +36,7 @@ class Event extends Model
             'uri',
             'venue_id',
             'cache',
+            'event_uuid',
         ];
 
 	protected $casts
@@ -50,7 +51,7 @@ class Event extends Model
             'deleted_at',
             'active_at',
             'expire_at',
-        ];
+		];
 
 	protected $appends
 		= [
