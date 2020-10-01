@@ -15,6 +15,7 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">{{event.title}}</h4>
+                        <p class="timeline-subtitle h6">{{event.group_name}}</p>
                         <p><small :title="event.active_at" class="text-muted"><i class="fa fa-calendar"/> {{event.active_at_ftm}}</small></p>
                     </div>
                     <div class="timeline-body">
@@ -59,23 +60,35 @@
                 this.events = events;
                 this.loading--;
             },
-            showMore({title, active_at_ftm, active_at, description}) {
+            showMore({title, group_name, active_at_ftm, active_at, description, uri}) {
                 const datetime_format = 'MM/DD hh:mm A';
                 const desc
-                    = `<div class="text-left">`
+                    = `<div class="text-center">`
+                    + `<p class="h4">Hosted by ${group_name}</p>`
+                    + `</div>`
+                    + `<div class="text-left">`
                     + `<strong>Starts:</strong> ${active_at_ftm} on ${moment(active_at).format(datetime_format)}`
                     + "<br /><br />"
                     + description
                     + "</div>";
 
-                swal.fire({
+                let conf = {
                     title: title,
                     html: desc,
                     type: 'info',
                     showCancelButton: false,
                     customClass: 'swal-wide',
-                    showCloseButton: false,
-                })
+                    showCloseButton: true,
+                };
+
+                if(uri) {
+                    conf.confirmButtonText = "Visit Event Page";
+                    conf.preConfirm = () => {
+                        window.open(uri, "_blank");
+                    };
+                };
+
+                swal.fire(conf);
             }
         },
         async mounted() {
