@@ -32,6 +32,7 @@ class Event extends Model
             'description',
             'rsvp_count',
             'active_at',
+            'expire_at',
             'uri',
             'venue_id',
             'cache',
@@ -45,10 +46,11 @@ class Event extends Model
 
 	protected $dates
 		= [
-			'created_at',
-			'updated_at',
-			'deleted_at',
-			'active_at',
+            'created_at',
+            'updated_at',
+            'deleted_at',
+            'active_at',
+            'expire_at',
 		];
 
 	protected $appends
