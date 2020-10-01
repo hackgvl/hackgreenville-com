@@ -10,15 +10,16 @@ use Illuminate\Database\Eloquent\Factory;
 $factory->define(Event::class, function (Faker $faker) {
     $venue = factory(Venue::class);
     return [
-        'event_name'  => $event_name = $faker->name . ' tech talk',
-        'group_name'  => $group_name = $faker->name . ' tech group',
-        'description' => $description = $faker->text(100),
-        'rsvp_count'  => $rsvp_count = $faker->randomNumber(2),
-        'active_at'   => $active_at = $faker->dateTime('+2 hours'),
-        'uri'         => $url = $faker->url,
-        'venue_id'    => $venue,
-        'event_uuid'  => $uuid = $faker->uuid,
-        'expire_at'   => $expire_at = $faker->dateTimeBetween($active_at, '+2 days'),
+        'event_name'   => $event_name = $faker->name . ' tech talk',
+        'group_name'   => $group_name = $faker->name . ' tech group',
+        'description'  => $description = $faker->text(100),
+        'rsvp_count'   => $rsvp_count = $faker->randomNumber(2),
+        'active_at'    => $active_at = $faker->dateTime('+2 hours'),
+        'uri'          => $url = $faker->url,
+        'venue_id'     => $venue,
+        'event_uuid'   => $uuid = $faker->uuid,
+        'expire_at'    => $expire_at = $faker->dateTimeBetween($active_at, '+2 days'),
+        'cancelled_at' => null,
 
         'cache' => [
             [
