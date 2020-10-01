@@ -13,7 +13,7 @@ class HomepageController extends Controller
         // we only need a few events for the homepage
         return Event::getActive()
             ->take(5)
-            ->select(['event_name', 'description', 'active_at', 'expire_at'])
+            ->select(['event_name', 'group_name', 'description', 'active_at', 'expire_at', 'uri'])
             ->get();
     }
 }
