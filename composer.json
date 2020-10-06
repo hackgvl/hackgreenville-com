@@ -22,7 +22,8 @@
     "spatie/laravel-google-calendar": "^2.5"
   },
   "require-dev": {
-    "ext-sqlite3": "^7.4",
+    "ext-sqlite3": "^7.2",
+    "ext-pdo_sqlite": "^7.2",
     "barryvdh/laravel-debugbar": "^3.2",
     "barryvdh/laravel-ide-helper": "^2.6",
     "filp/whoops": "^2.7",
