@@ -34,7 +34,50 @@
         "financial",
         "content"
       ]
-    }
+    },
+    {
+      "login": "magoun",
+      "name": "Creighton Magoun",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6494252?v=4",
+      "profile": "https://github.com/magoun",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas"
+      ]
+    },
+    {
+      "login": "Jaaron0606",
+      "name": "James Aaron",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6494252?v=4",
+      "profile": "https://github.com/magoun",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas"
+      ]
+    },
+    {
+      "login": "kevindees",
+      "name": "Kevin Dees",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6494252?v=4",
+      "profile": "https://github.com/magoun",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "JSn1nj4 ",
+      "name": "Elliot Derhay",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6494252?v=4",
+      "profile": "https://github.com/magoun",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas"
+      ]
+    },
   ],
   "contributorsPerLine": 7,
   "projectName": "hackgreenville-com",
