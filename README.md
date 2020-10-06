@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
 ![HackGreenville](https://stage.hackgreenville.com/img/logo-v2.png)  
@@ -40,6 +40,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/magoun"><img src="https://avatars1.githubusercontent.com/u/6494252?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Dees</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=kevindees" title="Code">💻</a> <a href="https://github.com/codeforgreenville/hackgreenville-com/issues?q=author%3Akevindees" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/magoun"><img src="https://avatars1.githubusercontent.com/u/6494252?v=4" width="100px;" alt=""/><br /><sub><b>Elliot Derhay</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=JSn1nj4 " title="Code">💻</a> <a href="https://github.com/codeforgreenville/hackgreenville-com/issues?q=author%3AJSn1nj4 " title="Bug reports">🐛</a> <a href="#ideas-JSn1nj4 " title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="http://twitter.com/fancybike"><img src="https://avatars0.githubusercontent.com/u/4888730?v=4" width="100px;" alt=""/><br /><sub><b>Pamela</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=pamelawoodbrowne" title="Documentation">📖</a> <a href="#content-pamelawoodbrowne" title="Content">🖋</a> <a href="#ideas-pamelawoodbrowne" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-pamelawoodbrowne" title="Event Organizing">📋</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://linktr.ee/jeremywight"><img src="https://avatars1.githubusercontent.com/u/8245600?v=4" width="100px;" alt=""/><br /><sub><b>Jeremy Wight</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=jeremywight" title="Documentation">📖</a> <a href="#content-jeremywight" title="Content">🖋</a> <a href="#ideas-jeremywight" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-jeremywight" title="Event Organizing">📋</a> <a href="#financial-jeremywight" title="Financial">💵</a></td>
   </tr>
 </table>
 
