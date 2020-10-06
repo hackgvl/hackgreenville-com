@@ -1,8 +1,8 @@
-# Contribution Guidelines
+# Contributing to HackGreenville.com
 
-Welcome to HackGreenville.com's Git repository on Github.com.
+## Contribution Guidelines
 
-We strictly enforce our ["Code of Conduct"](https://codeforgreenville.org/about/code-of-conduct).
+Please play nice. We follow this ["Code of Conduct"](https://codeforgreenville.org/about/code-of-conduct).
 
 ## How to Help
 
@@ -83,6 +83,13 @@ You need a reference from your local copy to the `upstream` repository in additi
 
 <details><summary>Step 3: Launching Your Local Copy / Fork of the Project</summary>
 
+#### System Requirements
+
+* This site was built with PHP 7 and Laravel.
+* You'll need [composer](https://getcomposer.org/download/) as well.
+* You'll need [yarn](https://yarnpkg.com/lang/en/docs/install/) as well.
+* For running "tests", you'll need SQLite and its associated PHP extensions enabled (sqlite3 & pdo_sqlite)]
+
 #### Initial Setup / Configuration    
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root. 
 
@@ -124,7 +131,7 @@ To develop you'll want to run `php artisan serve` to start the applications php 
 
 As in the earlier setup steps, Laravel Artisan is heavily leveraged to execute framework and custom commands for development and administration tasks.
 
-- Running tests `php artisan test` [Note: testing requires: SQLite and PHP extensions (ext-sqlite3 & ext-pdo_sqlite)]
+- Running tests `php artisan test`
 - Refreshing events from the remote API: `php artisan pull:events`
 - Refreshing organizations from the remote API: `php artisan pull:orgs`
 
@@ -303,9 +310,7 @@ All contributions should be made from the develop branch.
     ```
 </details>
 
-<details><summary>Step 5: Proposing a Pull Request (PR)</summary>
-
-#### Proposing a Pull Request (PR)
+<details><summary>Step 3: Proposing a Pull Request (PR)</summary>
 
 1. Once the edits have been committed & pushed, you will be prompted to create a pull request on your fork's GitHub Page. Click on `Compare and Pull Request`.
 
@@ -326,19 +331,11 @@ You have successfully created a PR. Congratulations! :tada:
 </details>
 
 
-## System Requirements
-
-* This site was built with PHP 7 and Laravel.
-* You'll need [composer](https://getcomposer.org/download/) as well.
-* You'll need [yarn](https://yarnpkg.com/lang/en/docs/install/) as well.
-
-
-
 ## Frequently Asked Questions
 
 ### What do we need help with right now?
 
-We are in the very early stages of development on this new application. We value your insight and expertise.  In order to prevent duplicate issues, please search through our existing issues to see if there is one for which you would like to provide feedback. We are currently trying to consolidate many of the issues based on topics like documentation, user interface, API endpoints, and architecture. Please [join our Discord server](https://discord.gg/PXqYtEh) to stay in the loop.
+See our issues queue and pull requests for current and previously discussed tasks.
 
 ### I found a typo. Should I report an issue before I can make a pull request?
 
