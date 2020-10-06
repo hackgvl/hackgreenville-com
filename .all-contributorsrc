@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "kevindees",
+      "name": "Kevin Dees",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/348368?v=4",
+      "profile": "http://robojuice.com",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "hackgreenville-com",
+  "projectOwner": "codeforgreenville",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
