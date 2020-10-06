@@ -202,15 +202,18 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
 </details>
 
 <details><summary>Step 2: Creating and Pushing a Fresh Branch</summary>
+    
   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `develop` branch. This will soil your copy of HG and you may have to start over with a fresh clone or fork.
     
   All new branches / contributions should be made off of the `develop` branch, but not in it, as described below.
 
 1. Clean up before starting
   It's also good practice to clean up any orphaned branches from time to time.
-    ```git remote prune origin
+    ```sh
+    git remote prune origin
     git gc --prune
     ```
+
 2. Selecting a branch name
   Check that you are on `develop` as explained previously, and branch off from there by typing:
     ```sh
@@ -219,11 +222,11 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
   Your branch name should start with `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
   Some examples of good branch names are:
-    ```md
+    ```
     fix/update-nav-links
-    fix/sign-in
-    docs/typo-in-readme
-    feat/sponsors
+    fix/calendar-popup-css
+    docs/typos-in-readme
+    feat/add-sponsors
     ```
 
 3. Edit files and write code on your favorite editor. Then, check and confirm the files you are updating:
@@ -234,8 +237,8 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
 
     This should show a list of `unstaged` files that you have edited.
     ```sh
-    On branch feat/documentation
-    Your branch is up to date with 'upstream/feat/documentation'.
+    On branch docs/typos-in-readme
+    Your branch is up to date with 'upstream/docs/typos-in-readme'.
 
     Changes not staged for commit:
     (use "git add/rm <file>..." to update what will be committed)
@@ -268,8 +271,8 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
 
     Output:
     ```sh
-    On branch feat/documentation
-    Your branch is up to date with 'upstream/feat/documentation'.
+    On branch docs/typos-in-readme
+    Your branch is up to date with 'upstream/docs/typos-in-readme'.
 
     Changes to be committed:
     (use "git reset HEAD <file>..." to unstage)
@@ -295,27 +298,21 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
     ```
     Keep your commit messages short. You can always add additional information in the description of the commit message.
 
-6. Next, you can push your changes to your fork.
-
+6. Push the new branch to your fork / origin. For example, if the name of your branch is `docs/typos-in-readme`, then your command should be:
     ```sh
-    git push origin branch-name-here
-    ```
-
-    For example if the name of your branch is `fix/signin` then your command should be:
-    ```sh
-    git push origin fix/signin
+    git push origin docs/typos-in-readme
     ```
 </details>
 
 <details><summary>Step 3: Proposing a Pull Request (PR)</summary>
 
-1. Once the edits have been committed & pushed, you will be prompted to create a pull request on your fork's GitHub Page. Click on `Compare and Pull Request`.
+1. Once a branch of your changes has been committed & pushed to your fork / origin you will automatically see a message when you visit your GitHub fork page.
 
-2. By default, all pull requests should be against the HG main repo, `develop` branch.
+The message will appear near the top of the page saying `Compare and Pull Request` which has a link to start a pull request based on your most recently pushed branch.
 
-3. Submit the pull request from your branch to HG's `develop` branch.
+2. By default, all pull requests need to be matched against `base repository: codeforgreenville/hackgreenville-com` and `base: develop`, which should be the values set in the drop-downs on the left side of the "Comparing Changes" section at the top of the pull request creation page / form.
 
-4. In the body of your PR include a more detailed summary of the changes you made and why.
+3. In the body of your PR include a more detailed summary of the changes you made and why.
 
     - Fill in the details as they seem fit to you. This information will be reviewed and a decision will be made whether or not your pull request is going to be accepted.
 
