@@ -111,6 +111,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Mozillex",
+      "name": "Loren McClaflin",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25697042?v=4",
+      "profile": "https://github.com/Mozillex",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
