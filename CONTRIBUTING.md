@@ -6,17 +6,19 @@ Please play nice. We follow this ["Code of Conduct"](https://codeforgreenville.o
 
 ## How to Help
 
-1. Be part of the conversation and share your thoughts
+#### Be Part of the Conversation and Share Your Thoughts
 
 Our focused discussions take place within GitHub [Issues](https://github.com/codeforgreenville/hackgreenville-com/issues) and [Pull Requests](https://github.com/codeforgreenville/hackgreenville-com/pulls) (also known as PRs).
 
-Before opening a new issue, please search through current issues to verify that you are not creating a duplicate issue.
+You don't need to be a "coder" to contribute. Many issues have UI, UX, accessibility, SEO, content / copywriting, and all order of non-code related conversatations and improvements to be discussed.
 
-If you can't find what you were looking for then [open a new issue](https://github.com/codeforgreenville/hackgreenville-com/issues/new) to share your views or to report bugs.
+Before starting a new issue, please review and / or search the [current "open" issues](https://github.com/codeforgreenville/hackgreenville-com/issues/) to avoid duplicates.
 
-You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
+If you can't find what you were looking for then [open a new issue](https://github.com/codeforgreenville/hackgreenville-com/issues/new) to share your suggestions or bugs.
 
-2. Contribute to this open-source codebase
+You can also ask questions and connect with the development team in a less structured format by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
+
+#### Contribute Code
 
 If you feel ready to contribute code to this project, then follow the below steps.
 
