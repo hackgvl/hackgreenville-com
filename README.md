@@ -1,4 +1,7 @@
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   
 ![HackGreenville](https://stage.hackgreenville.com/img/logo-v2.png)  
   
@@ -20,3 +23,22 @@ The organization information is queried from Code for Greenville's [API](https:/
 
 * See this project's [CONTRIBUTING.md](CONTRIBUTING.md) before creating issues, forking, or submitting any pull requests.
 * You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/allella"><img src="https://avatars0.githubusercontent.com/u/1777776?v=4" width="100px;" alt=""/><br /><sub><b>Jim Ciallella</b></sub></a><br /><a href="#maintenance-allella" title="Maintenance">🚧</a> <a href="https://github.com/codeforgreenville/hackgreenville-com/pulls?q=is%3Apr+reviewed-by%3Aallella" title="Reviewed Pull Requests">👀</a> <a href="#question-allella" title="Answering Questions">💬</a> <a href="#ideas-allella" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=allella" title="Documentation">📖</a> <a href="#infra-allella" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#financial-allella" title="Financial">💵</a> <a href="#content-allella" title="Content">🖋</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
