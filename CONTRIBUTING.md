@@ -1,16 +1,12 @@
 # Contribution Guidelines
 
-Hello. :wave:
-
 Welcome to HackGreenville.com's Git repository on Github.com.
 
-We strictly enforce our ["Code of Conduct"](https://codeforgreenville.org/about/code-of-conduct). Please take a moment to read it to avoid being seen as a "troll".
+We strictly enforce our ["Code of Conduct"](https://codeforgreenville.org/about/code-of-conduct).
 
-You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
+## How to Help
 
-## Here are some ways to help us
-
-### 1. Take part in discussions and tell us your views
+### 1. Be part of the conversation and share your thoughts
 
 Our focused discussions take place within GitHub [Issues](https://github.com/codeforgreenville/hackgreenville-com/issues) and [Pull Requests](https://github.com/codeforgreenville/hackgreenville-com/pulls) (also known as PRs).
 
@@ -18,11 +14,15 @@ Before opening a new issue, please search through current issues to verify that 
 
 If you can't find what you were looking for then [open a new issue](https://github.com/codeforgreenville/hackgreenville-com/issues/new) to share your views or to report bugs.
 
-### 2. Contribute to this open source codebase
+You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
 
-If you feel ready to contribute code to this project then you should follow the below steps:
+### 2. Contribute to this open-source codebase
 
-<details><summary>Step 1: Fork the repository on GitHub</summary>
+If you feel ready to contribute code to this project, then follow the below steps.
+
+## Forking the Project and Getting it Running
+
+<details><summary>Step 1: Fork the Repository on GitHub</summary>
 
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of the repository (a.k.a repo) on GitHub.
 
@@ -34,7 +34,7 @@ Follow these steps to fork the `https://github.com/codeforgreenville/hackgreenvi
 3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/hackgreenville-com`.
 
 </details>
-<details><summary>Step 2: Preparing the development environment</summary>
+<details><summary>Step 2: Preparing the Development Environment</summary>
 
 Install [Git](https://git-scm.com/) and a code editor of your choice. We recommend using [VS Code](https://code.visualstudio.com/).
 
@@ -79,9 +79,7 @@ You need a reference from your local copy to the `upstream` repository in additi
     upstream    https://github.com/codeforgreenville/hackgreenville-com.git (fetch)
     upstream    https://github.com/codeforgreenville/hackgreenville-com.git (push)
     ```
-
 </details>
-
 
 <details><summary>Step 3: Launching Your Local Copy / Fork of the Project</summary>
 
@@ -132,21 +130,21 @@ As in the earlier setup steps, Laravel Artisan is heavily leveraged to execute f
 
 </details>
 
-<details><summary>Step 4: Contributing to the Project :fire:</summary>
+## Contributing Code to the Project
 
 > **Note: Always follow the below steps before you start coding or working on an issue.**
 
-Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern.  This allows anyone$
+Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern.  This allows anyone to suggest changes for review, commenting, and eventual merging into the main project.
 
-Save any uncommitted changes using `git stash` because the following steps will reset and sync wit the upstream.
-
-All contributions should be made from the develop branch.
+<details><summary>Step 1: Sync Up with the Upstream HackGreenville Repo</summary>
 
 Before creating a new git "branch" you'll want to sync up with the "remote upstream", which is just a fancy way of saying the main Hackgreenville.com GitHub repo.
 
-You are now almost ready to make changes to files but before that you should **always** follow these steps:
+All contributions should be made from the develop branch.
 
-1. Validate that you are on the `develop` branch
+1. Save any uncommitted changes using `git stash` because the following steps will reset and sync wit the upstream.
+
+2. Validate that you are on the `develop` branch
 
     ```sh
     git status
@@ -165,7 +163,9 @@ You are now almost ready to make changes to files but before that you should **a
     git checkout develop
     ```
 
-2. Sync the latest changes from the HG upstream `develop` branch to your local develop branch. This is very important to avoid conflicts later.
+3. Sync the latest changes from the HG upstream `develop` branch to your local develop branch.
+
+   This is very important to avoid conflicts later.
 
     > **Note:** If you have any outstanding Pull Request that you made from the `develop` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from develop.
 
@@ -197,24 +197,24 @@ You are now almost ready to make changes to files but before that you should **a
     ```
 
     If you don't get any output, you are good to go to the next step.
+</details>
 
-3. Create a fresh new branch
+<details><summary>Step 2: Creating and Pushing a Fresh Branch</summary>
+  Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `develop` branch. This will soil your copy of HG and you may have to start over with a fresh clone or fork.
 
-    Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `develop` branch. This will soil your copy of HG and you may have to start over with a fresh clone or fork.
-
-    Check that you are on `develop` as explained previously, and branch off from there by typing:
-    ```sh
-    git checkout -b fix/update-readme
-    ```
-
-    It's also good practice to clean up any orphaned branches from time to time.
+1. Clean up before starting
+  It's also good practice to clean up any orphaned branches from time to time.
     ```git remote prune origin
     git gc --prune
     ```
+2. Selecting a branch name
+  Check that you are on `develop` as explained previously, and branch off from there by typing:
+    ```sh
+    git checkout -b fix/update-readme
+    ```
+  Your branch name should start with `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-    Your branch name should start with `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
-
-    Some examples of good branch names are:
+  Some examples of good branch names are:
     ```md
     fix/update-nav-links
     fix/sign-in
@@ -222,7 +222,7 @@ You are now almost ready to make changes to files but before that you should **a
     feat/sponsors
     ```
 
-4. Edit files and write code on your favorite editor. Then check and confirm the files you are updating:
+3. Edit files and write code on your favorite editor. Then, check and confirm the files you are updating:
 
     ```sh
     git status
@@ -303,7 +303,7 @@ You are now almost ready to make changes to files but before that you should **a
     ```
 </details>
 
-<details><summary>Step 4: Proposing a Pull Request (PR)</summary>
+<details><summary>Step 5: Proposing a Pull Request (PR)</summary>
 
 #### Proposing a Pull Request (PR)
 
