@@ -6,6 +6,20 @@
   "commit": false,
   "contributors": [
     {
+      "login": "zach2825",
+      "name": "The Zach",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4049321?v=4",
+      "profile": "http://www.turtlebytes.com, https://storagetreasures.com/",
+      "contributions": [
+        "code",
+        "test",
+        "review",
+        "ideas",
+        "design",
+        "question"
+      ]
+    },
+    {    
       "login": "allella",
       "name": "Jim Ciallella",
       "avatar_url": "https://avatars0.githubusercontent.com/u/1777776?v=4",
