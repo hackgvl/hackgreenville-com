@@ -89,6 +89,19 @@
         "ideas",
         "eventOrganizing"
       ]
+    },
+    {
+      "login": "jeremywight",
+      "name": "Jeremy Wight",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8245600?v=4",
+      "profile": "http://linktr.ee/jeremywight",
+      "contributions": [
+        "doc",
+        "content",
+        "ideas",
+        "eventOrganizing",
+        "financial"
+      ]
     }
   ],
   "contributorsPerLine": 7,
