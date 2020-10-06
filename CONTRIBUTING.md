@@ -18,6 +18,14 @@ If you can't find what you were looking for then [open a new issue](https://gith
 
 You can also ask questions and connect with the development team in a less structured format by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
 
+When in doubt, you can reach out to current project lead(s):
+
+| Name            | GitHub | Role |
+|:----------------|:-------|:-----|
+| Zach | [@zach2825](https://github.com/zach2825) | Technical Lead, Laravel
+| Jim Ciallella | [@allella](https://github.com/allella) | Bugs, Documentation, Newcomer Help 
+
+
 #### Contribute Code
 
 If you feel ready to contribute code to this project, then follow the below steps.
@@ -337,19 +345,12 @@ For typos and other wording changes, you can directly open pull requests without
 
 ### I am new to GitHub and Open Source, where should I start?
 
-Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Read freeCodeCamp's [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
-We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
-
-When in doubt, you can reach out to current project lead(s):
-
-| Name            | GitHub | Role |
-|:----------------|:-------|:-----|
-| Zach | [@zach2825](https://github.com/zach2825)
-| Jim Ciallella | [@allella](https://github.com/allella) | Documentation
+Then, come back and see our ["How to Help"](#how-to-help) section on how to specificially get involved in this project.
 
 
-## Links
+## Related Links
 
 - [http://stylifyme.com/?stylify=https%3A%2F%2Fwww.greenvillesc.gov](http://stylifyme.com/?stylify=https%3A%2F%2Fwww.greenvillesc.gov)
 - [https://sweetalert2.github.io/#examples](https://sweetalert2.github.io/#examples)
