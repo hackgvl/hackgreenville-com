@@ -6,7 +6,7 @@ Please play nice. We follow this ["Code of Conduct"](https://codeforgreenville.o
 
 ## How to Help
 
-### 1. Be part of the conversation and share your thoughts
+1. Be part of the conversation and share your thoughts
 
 Our focused discussions take place within GitHub [Issues](https://github.com/codeforgreenville/hackgreenville-com/issues) and [Pull Requests](https://github.com/codeforgreenville/hackgreenville-com/pulls) (also known as PRs).
 
@@ -16,7 +16,7 @@ If you can't find what you were looking for then [open a new issue](https://gith
 
 You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
 
-### 2. Contribute to this open-source codebase
+2. Contribute to this open-source codebase
 
 If you feel ready to contribute code to this project, then follow the below steps.
 
@@ -139,17 +139,15 @@ As in the earlier setup steps, Laravel Artisan is heavily leveraged to execute f
 
 ## Contributing Code to the Project
 
-> **Note: Always follow the below steps before you start coding or working on an issue.**
+> **Note: Always follow the following steps before starting a new branch or pull request.**
 
-Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern.  This allows anyone to suggest changes for review, commenting, and eventual merging into the main project.
+Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern.  This allows anyone to suggest changes for review, commenting, and eventual apporval / merging into the main project's repo.
 
 <details><summary>Step 1: Sync Up with the Upstream HackGreenville Repo</summary>
 
-Before creating a new git "branch" you'll want to sync up with the "remote upstream", which is just a fancy way of saying the main Hackgreenville.com GitHub repo.
+Before creating a new git "branch" you'll want to sync up with the "remote upstream", which is just a fancy way of saying the main Hackgreenville.com (HG) GitHub repo.
 
-All contributions should be made from the develop branch.
-
-1. Save any uncommitted changes using `git stash` because the following steps will reset and sync wit the upstream.
+1. Save any uncommitted changes using `git stash` because the following steps can possibly reset / delete things in order to stay in sync with the upstream.
 
 2. Validate that you are on the `develop` branch
 
@@ -175,17 +173,12 @@ All contributions should be made from the develop branch.
    This is very important to avoid conflicts later.
 
     > **Note:** If you have any outstanding Pull Request that you made from the `develop` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from develop.
-
+    
     This step **will sync the latest changes** from the main repository of HG.
 
     Update your local copy of the HG upstream repository:
     ```sh
     git fetch upstream
-    ```
-
-    It's also good practice to clean up any orphaned branches from time to time.
-    ```git remote prune origin
-    git gc --prune
     ```
 
     Hard reset your develop branch with the HG develop:
@@ -208,6 +201,8 @@ All contributions should be made from the develop branch.
 
 <details><summary>Step 2: Creating and Pushing a Fresh Branch</summary>
   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `develop` branch. This will soil your copy of HG and you may have to start over with a fresh clone or fork.
+    
+  All new branches / contributions should be made off of the `develop` branch, but not in it, as described below.
 
 1. Clean up before starting
   It's also good practice to clean up any orphaned branches from time to time.
