@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
 ![HackGreenville](https://stage.hackgreenville.com/img/logo-v2.png)  
@@ -43,6 +43,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://linktr.ee/jeremywight"><img src="https://avatars1.githubusercontent.com/u/8245600?v=4" width="100px;" alt=""/><br /><sub><b>Jeremy Wight</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=jeremywight" title="Documentation">📖</a> <a href="#content-jeremywight" title="Content">🖋</a> <a href="#ideas-jeremywight" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-jeremywight" title="Event Organizing">📋</a> <a href="#financial-jeremywight" title="Financial">💵</a></td>
+    <td align="center"><a href="https://github.com/jadelbe418"><img src="https://avatars1.githubusercontent.com/u/5350758?v=4" width="100px;" alt=""/><br /><sub><b>Jacob</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=jadelbe418" title="Documentation">📖</a></td>
   </tr>
 </table>
 

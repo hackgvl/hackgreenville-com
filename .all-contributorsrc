@@ -102,6 +102,15 @@
         "eventOrganizing",
         "financial"
       ]
+    },
+    {
+      "login": "jadelbe418",
+      "name": "Jacob",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5350758?v=4",
+      "profile": "https://github.com/jadelbe418",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
