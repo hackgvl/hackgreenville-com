@@ -54,12 +54,11 @@
             </div>
         </div>
 
-        <p>
-            <small>
-                This data is sourced from <a href="https://data.openupstate.org" target="_blank">a community-curated REST API</a>.
-                To contribute or use the API connect with <a href="https://codeforgreenville.org" target="_blank">Code For Greenville.</a>
-            </small>
-        </p>
+        <ul>
+            <li>This data is sourced from <a href="https://data.openupstate.org" target="_blank">a community-curated REST API</a>.</li>
+            <li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" target="_blank">Code For Greenville.</a></li>
+            <li>To suggest an addition or update to the data, please submit a <a href="https://data.openupstate.org/contact/suggestions">suggestion</a>.</li>
+        </ul>
 
     </div>
 @endsection
