@@ -60,29 +60,30 @@ class Event extends Model
 			'active_at_ftm',
 		];
 
-	public function venue()
-	{
-		return $this->belongsTo(Venue::class);
-	}
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class);
+    }
 
-	public function scopeGetActive($query)
-	{
-		return $query->where('active_at', '>=', DB::raw('NOW()'))->orderBy('active_at', 'asc');
-	}
+    public function scopeGetActive($query)
+    {
+        return $query->where('active_at', '>=', DB::raw('NOW()'))->orderBy('active_at', 'asc');
+    }
 
-	public function scopeDateIsLike(Builder $query, $datetime)
-	{
-		$time  = strtotime($datetime);
-		$year  = date('Y', $time);
-		$month = date('m', $time);
+    public function scopeStartAndEndDatesAreLike(Builder $query, $start, $end)
+    {
+        return $query
+            ->whereBetween(
+                DB::raw('DATE(`active_at`)'),
+                [
+                    date('Y-m-d', strtotime($start)),
+                    date('Y-m-d', strtotime($end)),
+                ]
+            );
+    }
 
-		return $query
-			->whereYear('active_at', '=', $year)
-			->whereMonth('active_at', '=', $month);
-	}
-
-	/**
-	 * accessor url to uri
+    /**
+     * accessor url to uri
 	 * @return string
 	 */
 	public function getUrlAttribute()

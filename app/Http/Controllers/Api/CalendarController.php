@@ -11,21 +11,23 @@ use Carbon\Carbon;
 
 class CalendarController extends Controller
 {
-	public function index()
-	{
-		$calendar = new GoogleCalendar();
-		$date     = (new Carbon(request('start', '-1 months')))->addMonths(1);
-		$events   = Event::dateIsLike($date)->get();
+    public function index()
+    {
+        $calendar = new GoogleCalendar();
+        $start    = (new Carbon(request('start')));
+        $end      = (new Carbon(request('end')));
 
-		foreach ($events as $e) {
-			$attributes = [
-				'location'  => $e->venue . '',
-				'event_id'  => $e->id,
-				'event_url' => $e->uri,
-			];
+        $events = Event::startAndEndDatesAreLike($start, $end)->get();
 
-			$calendar->addEvent($e->active_at, $e->expire_at, $e->event_name, $e->description, false, $attributes);
-		}
+        foreach ($events as $e) {
+            $attributes = [
+                'location'  => $e->venue . '',
+                'event_id'  => $e->id,
+                'event_url' => $e->uri,
+            ];
+
+            $calendar->addEvent($e->active_at, $e->expire_at, $e->event_name, $e->description, false, $attributes);
+        }
 
 		return response()->json($calendar->getEvents());
 	}
