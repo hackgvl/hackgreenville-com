@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Carousel;
 use App\Observers\CarouselObserver;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Carousel::observe(CarouselObserver::class);
+        Paginator::useBootstrap();
     }
 
     /**

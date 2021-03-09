@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -21,17 +22,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Event extends Model
 {
-	use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
-	protected $table = 'events';
+    protected $table = 'events';
 
-	protected $fillable
-		= [
-            'event_name',
-            'group_name',
-            'description',
-            'rsvp_count',
-            'active_at',
+    protected $fillable
+            = [
+                    'event_name',
+                    'group_name',
+                    'description',
+                    'rsvp_count',
+                    'active_at',
             'expire_at',
             'uri',
             'venue_id',

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -11,15 +12,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class State extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $table = 'states';
 
     protected $fillable
-        = [
-            'abbr',
-            'name',
-        ];
+            = [
+                    'abbr',
+                    'name',
+            ];
 
     public function venues()
     {
