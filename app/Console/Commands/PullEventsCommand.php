@@ -52,15 +52,16 @@ class PullEventsCommand extends Command
 
             // Start to format the event data. This array can be appended to in the venue conditional statement below
             $event_data = [
-                'event_uuid'   => $event['uuid'],
-                'event_name'   => $event['event_name'],
-                'group_name'   => $event['group_name'],
-                'description'  => $event['description'],
-                'rsvp_count'   => $event['rsvp_count'],
-                'active_at'    => $event['localtime'],
-                'is_cancelled' => $event['status'] == 'canceled' ? new Carbon() : null,
-                'uri'          => $event['url'] ?: 'https://www.meetup.com/Hack-Greenville/events/',
-                'cache'        => $event,
+                    'event_uuid'   => $event['uuid'],
+                    'event_name'   => $event['event_name'],
+                    'group_name'   => $event['group_name'],
+                    'description'  => $event['description'],
+                    'rsvp_count'   => $event['rsvp_count'],
+                    'active_at'    => $event['localtime'],
+                    // The api should always return cancelled if the event was cancelled
+                    'is_cancelled' => $event['status'] == 'cancelled' ? new Carbon() : null,
+                    'uri'          => $event['url'] ?: 'https://www.meetup.com/Hack-Greenville/events/',
+                    'cache'        => $event,
             ];
 
             if (array_get($event, 'venue')) {
