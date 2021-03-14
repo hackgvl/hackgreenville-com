@@ -14,9 +14,13 @@
                 <div class="timeline-badge bg-success"><i class="fa fa-calendar"/></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="timeline-title">{{event.title}}</h4>
-                        <p class="timeline-subtitle h6">{{event.group_name}}</p>
-                        <p><small :title="event.active_at" class="text-muted"><i class="fa fa-calendar"/> {{event.active_at_ftm}}</small></p>
+                      <h4 class="timeline-title">
+                        <span v-if="event.cancelled" class="text-danger">[CANCELLED] </span>
+                        {{ event.title }}
+                      </h4>
+                      <p class="timeline-subtitle h6">{{ event.group_name }}</p>
+                      <p><small :title="event.active_at" class="text-muted"><i class="fa fa-calendar" />
+                        {{ event.active_at_ftm }}</small></p>
                     </div>
                     <div class="timeline-body">
                         <div>
@@ -60,33 +64,33 @@
                 this.events = events;
                 this.loading--;
             },
-            showMore({title, group_name, active_at_ftm, active_at, description, uri}) {
-                const datetime_format = 'MM/DD hh:mm A';
-                const desc
-                    = `<div class="text-center">`
-                    + `<p class="h4">Hosted by ${group_name}</p>`
-                    + `</div>`
-                    + `<div class="text-left">`
-                    + `<strong>Starts:</strong> ${active_at_ftm} on ${moment(active_at).format(datetime_format)}`
-                    + "<br /><br />"
-                    + description
-                    + "</div>";
+          showMore ({ title, group_name, active_at_ftm, active_at, description, uri, cancelled }) {
+            const datetime_format = 'MM/DD hh:mm A';
+            const desc
+                = `<div class="text-center">`
+                + `<p class="h4">Hosted by ${group_name}</p>`
+                + `</div>`
+                + `<div class="text-left">`
+                + `<strong>Starts:</strong> ${active_at_ftm} on ${moment(active_at).format(datetime_format)}`
+                + '<br /><br />'
+                + (cancelled ? '<h3 class="text-danger">This event has been cancelled</h3><br />' : '') + description
+                + '</div>';
 
                 let conf = {
-                    title: title,
-                    html: desc,
-                    type: 'info',
-                    showCancelButton: false,
-                    customClass: 'swal-wide',
-                    showCloseButton: true,
+                  title: (cancelled ? '<span class="text-danger">[CANCELLED] </span>' : '') + title,
+                  html: desc,
+                  type: 'info',
+                  showCancelButton: false,
+                  customClass: 'swal-wide',
+                  showCloseButton: true,
                 };
 
-                if(uri) {
-                    conf.confirmButtonText = "Visit Event Page";
-                    conf.preConfirm = () => {
-                        window.open(uri, "_blank");
-                    };
-                };
+            if (uri && !cancelled) {
+              conf.confirmButtonText = 'Visit Event Page';
+              conf.preConfirm = () => {
+                window.open(uri, '_blank');
+              };
+            }
 
                 swal.fire(conf);
             }

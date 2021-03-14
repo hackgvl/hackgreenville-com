@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\Carousel;
-use App\Observers\CarouselObserver;
+use App\Contracts\CalendarContract;
+use App\Http\Clients\GoogleCalendar;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Carousel::observe(CarouselObserver::class);
+        //
     }
 
     /**
@@ -25,6 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        JsonResource::withoutWrapping();
+
+        $this->app->singleton(
+                CalendarContract::class,
+                function () {
+                    return new GoogleCalendar();
+                }
+        );
     }
 }
