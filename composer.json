@@ -73,7 +73,8 @@
       "@php artisan migrate --seed"
     ],
     "post-install-cmd": [
-      "@php artisan migrate"
+      "Illuminate\\Foundation\\ComposerScripts::postInstall",
+      "@php artisan migrate --seed"
     ]
   },
   "config": {
