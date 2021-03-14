@@ -73,7 +73,7 @@
       "@php artisan migrate --seed"
     ],
     "post-install-cmd": [
-      "@php artisan migrate"
+      "@php artisan migrate --seed"
     ]
   },
   "config": {

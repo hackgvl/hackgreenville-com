@@ -65,8 +65,8 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
-                                <a href="{{route('authed.carousel.index')}}" class="dropdown-item">
-                                    {{__('Carousels')}}
+                                <a href="#" class="dropdown-item">
+                                    Placeholder
                                 </a>
                             </div>
                         </li>

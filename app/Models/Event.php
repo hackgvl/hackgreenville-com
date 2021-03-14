@@ -67,7 +67,9 @@ class Event extends Model
 
     public function scopeGetActive($query)
     {
-        return $query->where('active_at', '>=', DB::raw('NOW()'))->orderBy('active_at', 'asc');
+        return $query
+                ->where('active_at', '>=', DB::raw('NOW()'))
+                ->orderBy('active_at', 'asc');
     }
 
     public function scopeStartOfMonth($query)
@@ -75,7 +77,7 @@ class Event extends Model
         return $query->where('active_at', '>=', date('Y-m-1'))->orderBy('active_at', 'asc');
     }
 
-    public function scopeStartAndEndDatesAreLike(Builder $query, $start, $end)
+    public function scopeDatesBetween(Builder $query, $start, $end)
     {
         return $query
                 ->whereBetween(
@@ -84,7 +86,7 @@ class Event extends Model
                                 date('Y-m-d', strtotime($start)),
                                 date('Y-m-d', strtotime($end)),
                         ]
-            );
+                );
     }
 
     /**
