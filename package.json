@@ -11,7 +11,7 @@
       "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
       "prod": "npm run production",
       "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "hg:install": "yarn install; composer install",
+      "hg:install": "yarn install",
       "hg:deploy-prep": "yarn hg:install; yarn production",
       "hg:start": "pm2 start ecosystem.config.js",
       "hg:stop": "pm2 delete ecosystem.config.js",
