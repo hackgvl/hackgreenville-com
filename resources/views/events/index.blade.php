@@ -42,12 +42,19 @@
         <ul>
             @foreach( $events as $event )
                 <li class="events" data-date="{{$event->active_at->format('M Y')}}">
-                    <a href="{{$event->url}}"><strong>{{ $event->event_name }}</strong></a> hosted by <strong>{{ $event->group_name }}</strong>
-                    </strong>
-                    <p>Time: </strong>{{ $event->active_at }} <br/>
-                        [<a href="{{$event->url}}">RSVP</a> ||
-                        <a href="{{ $event->gCalUrl }}" target="_blank">Add to Google Calendar</a>]
-                    </p>
+                    @if($event->cancelled_at)
+                        <span class="text-danger">[CANCELLED] </span>
+                        <strong>{{ $event->event_name }}</strong></a> hosted by <strong>{{ $event->group_name }}
+                            @else
+                                <a href="{{$event->url}}"><strong>{{ $event->event_name }}</strong></a> hosted by
+                                <strong>{{ $event->group_name }}</strong>
+                            @endif
+                            <p>Time:</strong>{{ $event->active_at }} <br />
+                        @unless($event->cancelled_at)
+                            [<a href="{{$event->url}}">RSVP</a> ||
+                            <a href="{{ $event->gCalUrl }}" target="_blank">Add to Google Calendar</a>]
+                            @endunless
+                            </p>
 
                 </li>
             @endforeach
