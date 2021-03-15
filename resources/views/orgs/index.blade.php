@@ -8,6 +8,9 @@
         <h1>Local Tech Organizations</h1>
 
         <div class="row">
+            @if($inactiveOrgs->count() == 0)
+                <div class="col-md-3"></div>
+            @endif
             <div class="col-md-6">
                 @foreach ($activeOrgs as $cat_inc => $category)
                     <ul class="list-group">
@@ -40,6 +43,7 @@
                 @endforeach
             </div>
 
+            @if($inactiveOrgs)
             <div class="col-md-6">
                 <h2>Inactive Organizations</h2>
 
@@ -52,6 +56,7 @@
                     @endforeach
                 </ul>
             </div>
+            @endif
         </div>
 
         <ul>
