@@ -6,6 +6,7 @@ namespace App\Http\Clients;
 
 use App\Contracts\CalendarContract;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 
 class GoogleCalendar extends CalendarContract
 {
@@ -26,8 +27,14 @@ class GoogleCalendar extends CalendarContract
      * @param array  $attributes
      * @return GoogleCalendar
      */
-    public function addEvent($start, $end, $title, $description, $allDay = false, $attributes = [])
-    {
+    public function addEvent(
+            Carbon $start,
+            Carbon $end = null,
+            string $title,
+            string $description,
+            bool $allDay = false,
+            array $attributes = []
+    ) {
         if (!$end) {
             // Default to start + 2 hours.
             $end = $start->clone()->addHours(2);
@@ -49,7 +56,17 @@ class GoogleCalendar extends CalendarContract
 
     public function getEvents()
     {
-	    return $this->events;
-//        return json_encode($this->events);
+        return (new Collection($this->events))
+                ->map(
+                        function ($event) {
+                            if ($event['cancelled']) {
+                                $event['color']       = 'red';
+                                $event['title']       = '[CANCELLED] ' . $event['title'];
+                                $event['description'] = '<h3 class="text-danger">This event was cancelled</h3><br />' . $event['description'];
+                            }
+
+                            return $event;
+                        }
+                );
     }
 }
