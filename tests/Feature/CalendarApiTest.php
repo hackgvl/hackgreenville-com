@@ -23,11 +23,11 @@ class CalendarApiTest extends TestCase
         $start = Carbon::now()->firstOfMonth()->addDays(3)->toRfc3339String();
         $end   = Carbon::now()->lastOfMonth()->toRfc3339String();
 
-        factory(Event::class)->create(
-            [
-                'active_at' => $start,
-                'expire_at' => $end,
-            ]
+        Event::factory()->create(
+                [
+                        'active_at' => $start,
+                        'expire_at' => $end,
+                ]
         );
 
         $knownEvents = Event::all();
