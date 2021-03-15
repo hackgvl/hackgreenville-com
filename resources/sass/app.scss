@@ -246,3 +246,17 @@ a {
     font-size: 50px;
   }
 }
+
+.screaming-hackgreenville-question {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  margin-bottom: 1rem;
+
+  @media (max-width: 576px) {
+    line-height: .8;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+}
