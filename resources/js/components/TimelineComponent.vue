@@ -3,17 +3,17 @@
         <h3 class="text-center">
             {{title}}
         </h3>
-        <ul :class="{'timeline p-3': events.length>0}">
-            <li class="list-unstyled" v-if="loading>0">
-                Loading events <i class="fa fa-spinner fa-spin fa-2x"/>
-            </li>
-            <li v-else-if="events.length == 0">
-                <strong>No</strong> events to display.
-            </li>
-            <li class="timeline-inverted" v-for="event in events">
-                <div class="timeline-badge bg-success"><i class="fa fa-calendar"/></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
+        <ul :class="{'timeline': events.length>0}">
+          <li class="list-unstyled" v-if="loading>0">
+            Loading events <i class="fa fa-spinner fa-spin fa-2x" />
+          </li>
+          <li v-else-if="events.length == 0">
+            <strong>No</strong> events to display.
+          </li>
+          <li class="timeline-inverted" v-for="event in events">
+            <div class="timeline-badge bg-success"><i class="fa fa-calendar" /></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
                       <h4 class="timeline-title">
                         <span v-if="event.cancelled" class="text-danger">[CANCELLED] </span>
                         {{ event.title }}

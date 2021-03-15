@@ -15,14 +15,15 @@
             </div>
         </div>
 
-        <div class="container-fluid pl-5">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-lg-8 my-5">
                     <div class="text-center">
-                        <h3 class="display-2 mb-3">What is Hack Greenville?</h3>
+                        <h3 class="screaming-hackgreenville-question">What is Hack Greenville?</h3>
 
                         <p class="summary">
-                            Hack Greenville is a community of "hackers" located in and around Greenville, SC. Our community exists to foster personal growth for community
+                            Hack Greenville is a community of "hackers" located in and around Greenville, SC. Our
+                            community exists to foster personal growth for community
                             members through sharing and promoting local tech opportunities.
                         </p>
                     </div>
