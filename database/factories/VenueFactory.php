@@ -1,23 +1,38 @@
 <?php
 
-/** @var Factory $factory */
+namespace Database\Factories;
 
 use App\Models\State;
 use App\Models\Venue;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-$factory->define(Venue::class, function (Faker $faker) {
-    return [
-        'name'     => $name = implode(' ', $faker->words(5)),
-        'slug'     => Str::slug($name),
-        'address'  => $faker->address,
-        'zipcode'  => $faker->postcode,
-        'phone'    => $faker->phoneNumber,
-        'city'     => $faker->city,
-        'state_id' => factory(State::class),
-        'lat'      => $faker->latitude,
-        'lng'      => $faker->longitude,
-    ];
-});
+class VenueFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Venue::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+                'name'     => $name = implode(' ', $this->faker->words(5)),
+                'slug'     => Str::slug($name),
+                'address'  => $this->faker->address,
+                'zipcode'  => $this->faker->postcode,
+                'phone'    => $this->faker->phoneNumber,
+                'city'     => $this->faker->city,
+                'state_id' => State::factory(),
+                'lat'      => $this->faker->latitude,
+                'lng'      => $this->faker->longitude,
+        ];
+    }
+}

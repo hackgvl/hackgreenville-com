@@ -7,6 +7,7 @@ use App\Http\SearchPipeline\Month;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Routing\Pipeline;
@@ -24,7 +25,7 @@ use Illuminate\Routing\Pipeline;
  */
 class Event extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $table = 'events';
 
@@ -35,12 +36,12 @@ class Event extends Model
                     'description',
                     'rsvp_count',
                     'active_at',
-                    'expire_at',
-                    'uri',
-                    'venue_id',
-                    'cache',
-                    'event_uuid',
-            ];
+            'expire_at',
+            'uri',
+            'venue_id',
+            'cache',
+            'event_uuid',
+        ];
 
     protected $casts
             = [

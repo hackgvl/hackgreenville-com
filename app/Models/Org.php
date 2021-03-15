@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -10,34 +11,34 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Org extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $table = 'orgs';
     protected $primaryKey = 'id';
 
     protected $appends
-        = [
-            'nid',
-        ];
+            = [
+                    'nid',
+            ];
 
     protected $fillable
-        = [
-            'category_id',
-            'title',
-            'path',
-            'city',
-            'focus_area',
-            'uri',
-            'primary_contact_person',
-            'organization_type',
-            'event_calendar_uri',
-            'cache',
-        ];
+            = [
+                    'category_id',
+                    'title',
+                    'path',
+                    'city',
+                    'focus_area',
+                    'uri',
+                    'primary_contact_person',
+                    'organization_type',
+                    'event_calendar_uri',
+                    'cache',
+            ];
 
     protected $casts
-        = [
-            'cache' => 'json',
-        ];
+            = [
+                    'cache' => 'json',
+            ];
 
     public function category()
     {

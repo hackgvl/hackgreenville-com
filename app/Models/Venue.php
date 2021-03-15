@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -10,22 +11,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Venue extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $table = 'venues';
 
     protected $fillable
-        = [
-            'slug',
-            'name',
-            'address',
-            'zipcode',
-            'phone',
-            'city',
-            'state_id',
-            'lat',
-            'lng',
-        ];
+            = [
+                    'slug',
+                    'name',
+                    'address',
+                    'zipcode',
+                    'phone',
+                    'city',
+                    'state_id',
+                    'lat',
+                    'lng',
+            ];
 
     public function getStateAbbrAttribute()
     {
