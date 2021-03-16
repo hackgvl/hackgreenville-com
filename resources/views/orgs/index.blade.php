@@ -39,6 +39,8 @@
         </div>
 
         <ul>
+            <li>You can view <a href="{{ route('orgs.inactive') }}">inactive organizations here</a>.
+            </li>
             <li>This data is sourced from <a href="https://data.openupstate.org" target="_blank">a community-curated
                     REST API</a>.
             </li>
