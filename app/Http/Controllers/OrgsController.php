@@ -8,9 +8,15 @@ class OrgsController extends Controller
 {
     public function index()
     {
-        $activeOrgs   = Org::with('category')->get()->groupBy('category_id');
-        $inactiveOrgs = Org::with('category')->onlyTrashed()->get();
+        $activeOrgs = Org::with('category')->get()->groupBy('category_id');
 
-        return view('orgs.index', compact('activeOrgs', 'inactiveOrgs'));
+        return view('orgs.index', compact('activeOrgs'));
+    }
+
+    public function inactive()
+    {
+        $inactiveOrgs = Org::with('category')->onlyTrashed()->get()->groupBy('category_id');
+
+        return view('orgs.inactive', compact('inactiveOrgs'));
     }
 }

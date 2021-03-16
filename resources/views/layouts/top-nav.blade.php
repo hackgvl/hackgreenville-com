@@ -23,9 +23,16 @@
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link @if(Route::is('orgs.*')) active @endif" href="{{ route('orgs.index') }}">
+                    <a class="nav-link @if(Route::is('orgs.index')) active @endif" href="{{ route('orgs.index') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-building"></i>
                         {{ __('Organizations') }}
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link @if(Route::is('orgs.inactive')) active @endif"
+                       href="{{ route('orgs.inactive') }}">
+                        <i class="d-md-none d-lg-inline-block fa fa-building"></i>
+                        {{ __('Inactive Organizations') }}
                     </a>
                 </li>
                 <li>

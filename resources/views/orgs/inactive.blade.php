@@ -5,11 +5,11 @@
 @section('content')
     <div class="container">
 
-        <h1>Local Tech Organizations</h1>
+        <h1>Local Tech Organizations <span class="text-danger">(Inactive Groups)</span></h1>
 
         <div class="row">
-            @foreach ($activeOrgs as $cat_inc => $category)
-                <div class="col-md-6  mb-3">
+            @forelse ($inactiveOrgs as $cat_inc => $category)
+                <div class="col-md-6 mb-3">
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-primary">
                             <h2>
@@ -33,9 +33,20 @@
                             </li>
                         @endforeach
                     </ul>
-
                 </div>
-            @endforeach
+            @empty
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h3 class="text-white">
+                            YAY
+                        </h3>
+                        <h2>No inactive groups at this time</h2>
+                        <h3 class="text-white">
+                            Sorry to disappoint
+                        </h3>
+                    </div>
+                </div>
+            @endforelse
         </div>
 
         <ul>
