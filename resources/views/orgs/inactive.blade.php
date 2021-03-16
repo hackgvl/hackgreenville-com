@@ -9,7 +9,7 @@
 
         <div class="row">
             @forelse ($inactiveOrgs as $cat_inc => $category)
-                <div class="col-md-6 mb-3">
+                <div class="col-md-{{$inactiveOrgs->count() == 1? 12: 6}} mb-3">
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-primary">
                             <h2>
