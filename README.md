@@ -13,11 +13,12 @@ The official repository for Greenville, SC's tech community website, maintained 
     
 ## Purpose 
 
-Our goal is to connect people to the tech-related community in the Greenville area. We currently do this by providing information on meetups and tech organizations in the area, as well as directing people to the HackGreenville slack signup page.    
+Our goal is to connect people to the tech-related community in the Greenville area. We do this by providing information on events and organizations in the area, as well as directing people to [sign-up for the HackGreenville Slack](https://hackgreenville.com/join-slack).    
     
-The meetup information is queried from the [Upstate Tech Cal Service](https://github.com/codeforgreenville/upstate_tech_cal_service).    
-    
-The organization information is queried from Code for Greenville's [API](https://github.com/codeforgreenville/OpenData/issues/17).
+The organization data is queried from Code for Greenville's [organizations API](https://github.com/codeforgreenville/OpenData/blob/master/ORGANIZATIONS_API.md).
+
+Then, for all of these organization, the events can be are queried from the [events API](https://github.com/codeforgreenville/upstate_tech_cal_service).    
+
 
 ## Forking and Contributing
 
