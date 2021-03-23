@@ -49,6 +49,10 @@ class PullEventsCommand extends Command
 
             $dbEvents->each(
                 function ($e) use (&$fixed, &$dup_removed) {
+                    if (!$e->cache['service']) {
+                        return true;
+                    }
+
                     if (!$e->service) {
                         $fixed++;
                         $e->update(
