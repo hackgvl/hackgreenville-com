@@ -17,11 +17,14 @@ use Illuminate\Routing\Pipeline;
  * @property string group_name
  * @property string description
  * @property string uri
- * @property int    rsvp_count
- * @property int    venue_id
- * @property Venue  venue
+ * @property int rsvp_count
+ * @property int venue_id
+ * @property Venue venue
  * @property Carbon active_at
- * @property array  cache
+ * @property array cache
+ * @property string service
+ * @property string service_id
+ * @property string uniqueIdentifier
  */
 class Event extends Model
 {
@@ -30,39 +33,50 @@ class Event extends Model
     protected $table = 'events';
 
     protected $fillable
-            = [
-                    'event_name',
-                    'group_name',
-                    'description',
-                    'rsvp_count',
-                    'active_at',
+        = [
+            'event_name',
+            'group_name',
+            'description',
+            'rsvp_count',
+            'active_at',
             'expire_at',
+            'cancelled_at',
             'uri',
             'venue_id',
             'cache',
             'event_uuid',
+            'service',
+            'service_id',
         ];
 
     protected $casts
-            = [
-                    'cache' => 'json',
-            ];
+        = [
+            'cache' => 'json',
+        ];
 
     protected $dates
-            = [
-                    'created_at',
-                    'updated_at',
-                    'deleted_at',
-                    'active_at',
-                    'expire_at',
-            ];
+        = [
+            'created_at',
+            'updated_at',
+            'deleted_at',
+            'active_at',
+            'expire_at',
+        ];
 
     protected $appends
-            = [
-                    'short_description',
-                    'title',
-                    'active_at_ftm',
-            ];
+        = [
+            'short_description',
+            'title',
+            'active_at_ftm',
+        ];
+
+    public function getUniqueIdentifierAttribute()
+    {
+        $service    = $this->service;
+        $service_id = $this->service_id;
+
+        return json_encode(compact('service', 'service_id'));
+    }
 
     public function venue()
     {
@@ -72,8 +86,8 @@ class Event extends Model
     public function scopeGetActive($query)
     {
         return $query
-                ->where('active_at', '>=', DB::raw('NOW()'))
-                ->orderBy('active_at', 'asc');
+            ->where('active_at', '>=', DB::raw('NOW()'))
+            ->orderBy('active_at', 'asc');
     }
 
     public function scopeStartOfMonth($query)
@@ -84,27 +98,27 @@ class Event extends Model
     public function scopeDatesBetween(Builder $query, $start, $end)
     {
         return $query
-                ->whereBetween(
-                        DB::raw('DATE(`active_at`)'),
-                        [
-                                date('Y-m-d', strtotime($start)),
-                                date('Y-m-d', strtotime($end)),
-                        ]
-                );
+            ->whereBetween(
+                DB::raw('DATE(`active_at`)'),
+                [
+                    date('Y-m-d', strtotime($start)),
+                    date('Y-m-d', strtotime($end)),
+                ]
+            );
     }
 
     public function scopeSearch(Builder $query)
     {
         return app(Pipeline::class)
-                ->send($query)
-                ->through(
-                        [
-                            // Get the active events
-                            Active::class,
-                            Month::class,
-                        ]
-                )
-                ->thenReturn();
+            ->send($query)
+            ->through(
+                [
+                    // Get the active events
+                    Active::class,
+                    Month::class,
+                ]
+            )
+            ->thenReturn();
     }
 
     /**
