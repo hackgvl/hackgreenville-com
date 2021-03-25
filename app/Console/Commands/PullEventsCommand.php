@@ -39,7 +39,8 @@ class PullEventsCommand extends Command
         $events = collect(UpstateClient::getEvents());
 
         // get all upcoming events and set keys to uuid so I can set status
-        $dbEvents = Event::startOfmonth()->get();
+        $dbEvents = Event::where('active_at', '>=', date('Y-m-d'))
+            ->orderBy('active_at', 'asc')->get();
 
         if ($this->option('fix')) {
             // update mapping for service and service ids
