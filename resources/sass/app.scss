@@ -26,6 +26,9 @@
 // Full calendar events on the calendar don't use the right pointer
 .fc-content {
   cursor: pointer;
+
+  // Let the content in the calendar view wrap if need
+  white-space: unset !important;
 }
 
 //

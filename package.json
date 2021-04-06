@@ -18,7 +18,7 @@
     "hg:monit": "pm2 monit",
     "hg:dev": "yarn hg:delete; yarn hg:watch && yarn hg:serve",
     "test": "echo 'Running art test'",
-    "posttest": "php artisan test",
+    "posttest": "php artisan test --parallel",
     "postinstall": "composer install"
   },
   "devDependencies": {

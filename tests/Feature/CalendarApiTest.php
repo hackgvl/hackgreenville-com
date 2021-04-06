@@ -23,11 +23,12 @@ class CalendarApiTest extends TestCase
         $start = Carbon::now()->firstOfMonth()->addDays(3)->toRfc3339String();
         $end   = Carbon::now()->lastOfMonth()->toRfc3339String();
 
-        Event::factory()->create(
-                [
-                        'active_at' => $start,
-                        'expire_at' => $end,
-                ]
+        Event::factory()->create([
+                                     'active_at'  => $start,
+                                     'expire_at'  => $end,
+                                     'group_name' => 'hg-testers',
+                                     'event_name' => 'hg-test-event',
+                                 ]
         );
 
         $knownEvents = Event::all();
@@ -39,21 +40,22 @@ class CalendarApiTest extends TestCase
 
         $response->assertOk()
             ->assertJsonCount($knownEvents->count())
-            ->assertJsonStructure(
-                [
-                    [
-                        'start',
-                        'end',
-                        'title',
-                        'description',
-                        'allDay',
-                        'start_fmt',
-                        'end_fmt',
-                        'location',
-                        'event_id',
-                        'event_url',
-                    ],
-                ]
+            ->assertJsonStructure([
+                                      [
+                                          'start',
+                                          'end',
+                                          'title',
+                                          'description',
+                                          'allDay',
+                                          'start_fmt',
+                                          'end_fmt',
+                                          'location',
+                                          'event_id',
+                                          'event_url',
+                                      ],
+                                  ]
             );
+
+        self::assertEquals("hg-testers\nhg-test-event", $response->json('0.title'));
     }
 }
