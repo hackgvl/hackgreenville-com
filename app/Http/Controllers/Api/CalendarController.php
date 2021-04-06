@@ -26,17 +26,17 @@ class CalendarController extends Controller
                 ->each(
                         function ($e) use ($calendar) {
                             $calendar->addEvent(
-                                    $e->active_at,
-                                    $e->expire_at,
-                                    $e->event_name,
-                                    $e->description,
-                                    false,
-                                    [
-                                            'location'  => $e->venue . '',
-                                            'event_id'  => $e->id,
-                                            'event_url' => $e->uri,
-                                            'cancelled' => (bool)$e->cancelled_at,
-                                    ]
+                                $e->active_at,
+                                $e->expire_at,
+                                "{$e->group_name}\n{$e->event_name}",
+                                $e->description,
+                                false,
+                                [
+                                    'location'  => $e->venue . '',
+                                    'event_id'  => $e->id,
+                                    'event_url' => $e->uri,
+                                    'cancelled' => (bool)$e->cancelled_at,
+                                ]
                             );
                         }
                 );
