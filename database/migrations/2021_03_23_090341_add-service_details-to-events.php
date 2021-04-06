@@ -16,8 +16,8 @@ class AddServiceDetailsToEvents extends Migration
         Schema::table(
             'events',
             function (Blueprint $table) {
-                $table->string('service')->after('id');
-                $table->string('service_id')->after('service');
+                $table->string('service')->after('id')->default('hg');
+                $table->string('service_id')->after('service')->default(1);
             }
         );
     }
