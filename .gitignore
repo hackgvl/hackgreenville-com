@@ -21,3 +21,7 @@ public/css/app.css
 public/mix-manifest.json
 .phpunit.result.cache
 /public/js/app.js.LICENSE.txt
+
+# docker
+mysql/
+laravel.log

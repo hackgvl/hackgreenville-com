@@ -100,7 +100,7 @@ You need a reference from your local copy to the `upstream` repository in additi
 * You'll need [yarn](https://yarnpkg.com/lang/en/docs/install/) as well.
 * For running "tests", you'll need SQLite and its associated PHP extensions enabled (sqlite3 & pdo_sqlite)]
 
-#### Initial Setup / Configuration    
+#### Initial Setup / Configuration (Host Install)
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root. 
 
 Edit the new .env file and set your database settings.   
@@ -136,6 +136,24 @@ The HackGreenville project is now up and running! You should be able to open [lo
 
 The `composer install` command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project. 
 To develop you'll want to run `php artisan serve` to start the applications php server and in another terminal you'll want to run `yarn watch` to watch for frontend resource changes and re-build them when detected. 
+
+#### Initial Setup (Docker)
+The docker setup of this project should only be done for advanced users, or if
+needed for runtime compatibility issues.
+
+You need to make a copy of the `.env.docker` file and rename it to `.env` at the
+project root.
+
+The database will be created for you automatically by the mysql docker image.
+To initialize the project, do `docker-compose pull` to pull the necessary files, and then `docker-compose up` to being running the project later.
+On the first start, you will need to generate an `APP_KEY` secret, which you can do by `docker exec -it hackgreenville php artisan key:generate` while the original container is running.
+Make sure to set this in your `.env` file!
+If you get file permission errors, please make sure permissions are set to the same UID and GUID specified in `.env` as `WWWUSER` and `WWWGROUP`.
+I.e. if there are errors opening the log file, run `sudo chown -R www-data:www-data storage/`.
+If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
+Finally, you'll have to run `composer install` with docker exec like the following: `docker exec -it hackgreenville composer install` or `docker exec -it hackgreenville php artisan migrate --seed; yarn install; yarn prod`.
+After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose up` to run it again.
+
 
 #### Interacting with Your Running Copy of the Project
 
