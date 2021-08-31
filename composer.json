@@ -22,12 +22,13 @@
     "spatie/laravel-google-calendar": "^3.0"
   },
   "require-dev": {
-    "ext-sqlite3": "^7.2",
     "ext-pdo_sqlite": "^7.2",
+    "ext-sqlite3": "^7.2",
     "barryvdh/laravel-debugbar": "^3.2",
     "barryvdh/laravel-ide-helper": "^2.6",
     "filp/whoops": "^2.7",
     "fzaninotto/faker": "^1.9",
+    "laravel/sail": "^1.5",
     "mockery/mockery": "^1.3",
     "nunomaduro/collision": "^5.0",
     "phpunit/phpunit": "^9.0"
