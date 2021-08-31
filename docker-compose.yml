@@ -16,8 +16,10 @@ services:
       - .env
     volumes:
       - './:/var/www/html'
+    restart: always
     depends_on:
-      - hackgreenville-db
+    - hackgreenville-db
+    - hackgreenville-redis
    
   # If you change this service name, remember to change the
   # DB_HOST environment variable to match!
@@ -28,7 +30,20 @@ services:
       - 3306
     env_file:
       - .env
+    restart: always
     volumes:
       - './mysql:/var/lib/mysql'
     healthcheck:
       test: ["CMD", "mysqladmin", "ping"]
+      
+  hackgreenville-redis:
+    image: 'redis:alpine'
+    container_name: hackgreenville-redis
+    ports:
+        - '${FORWARD_REDIS_PORT:-6379}:6379'
+    restart: always
+    volumes:
+        - './redis:/data'
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+    

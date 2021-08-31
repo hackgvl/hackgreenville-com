@@ -24,4 +24,5 @@ public/mix-manifest.json
 
 # docker
 mysql/
+redis/
 laravel.log
