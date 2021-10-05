@@ -2,7 +2,7 @@
 version: '3'
 
 services:
-  laravel.test:
+  hackgreenville:
     build:
       context: ./vendor/laravel/sail/runtimes/8.0
       dockerfile: Dockerfile
