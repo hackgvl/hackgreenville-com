@@ -144,6 +144,9 @@ needed for runtime compatibility issues.
 You need to make a copy of the `.env.docker` file and rename it to `.env` at the
 project root.
 
+In addition, you'll need to generate the Laravel Sail docker files.
+You can do this by executing `composer install`, or if you want to avoid using `composer`, you can instead run `mkdir vendor`, `mkdir vendor/laravel` and `git clone https://github.com/laravel/sail.git vendor/laravel/sail/` from inside the project root.
+
 The database will be created for you automatically by the mysql docker image.
 To initialize the project, do `docker-compose pull` to pull the necessary files, and then `docker-compose up --build` to begin running the project later.
 On the first start, you will need to generate an `APP_KEY` secret, which you can do by `docker exec -it hackgreenville php artisan key:generate` while the original container is running.
