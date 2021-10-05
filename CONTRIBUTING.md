@@ -148,8 +148,8 @@ The database will be created for you automatically by the mysql docker image.
 To initialize the project, do `docker-compose pull` to pull the necessary files, and then `docker-compose up --build` to begin running the project later.
 On the first start, you will need to generate an `APP_KEY` secret, which you can do by `docker exec -it hackgreenville php artisan key:generate` while the original container is running.
 Make sure to set this in your `.env` file!
-If you get file permission errors, please make sure permissions are set to the same UID and GUID specified in `.env` as `WWWUSER` and `WWWGROUP`.
-I.e. if there are errors opening the log file, run `sudo chown -R www-data:www-data storage/`.
+If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP`.
+I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
 Finally, you'll have to run `composer install` with docker exec like the following: `docker exec -it hackgreenville composer install` or `docker exec -it hackgreenville php artisan migrate --seed; yarn install; yarn prod`.
 After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose up` to run it again.
