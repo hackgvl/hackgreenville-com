@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
       args:
         WWWGROUP: '${WWWGROUP:-www-data}'
-    image: sail-8.0/app
+    image: hackgreenville
     container_name: hackgreenville
     ports:
       - '${APP_PORT:-80}:80'
