@@ -1,0 +1,49 @@
+# For more information: https://laravel.com/docs/sail
+version: '3'
+
+services:
+  hackgreenville:
+    build:
+      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.0}'
+      dockerfile: Dockerfile
+      args:
+        WWWGROUP: '${WWWGROUP:-www-data}'
+    image: hackgreenville
+    container_name: hackgreenville
+    ports:
+      - '${APP_PORT:-80}:80'
+    env_file:
+      - .env
+    volumes:
+      - './:/var/www/html'
+    restart: always
+    depends_on:
+    - hackgreenville-db
+    - hackgreenville-redis
+   
+  # If you change this service name, remember to change the
+  # DB_HOST environment variable to match!
+  hackgreenville-db:
+    image: 'mysql:8.0'
+    container_name: hackgreenville-db
+    expose:
+      - 3306
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - './mysql:/var/lib/mysql'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping"]
+      
+  hackgreenville-redis:
+    image: 'redis:alpine'
+    container_name: hackgreenville-redis
+    ports:
+        - '${FORWARD_REDIS_PORT:-6379}:6379'
+    restart: always
+    volumes:
+        - './redis:/data'
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+    
