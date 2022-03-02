@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'About HackGreenville')
+@section('description', 'About the founding, mission, vision, and purpose of the HackGreenville community.')
+
 @section('content')
     <div id="about-us" class="container">
         <h1>About HackGreenville</h1>

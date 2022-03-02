@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
+@section('description', "HackGreenville exists to foster personal growth among the 'hackers' of Greenville, SC and the surrounding area.")
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

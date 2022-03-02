@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Organizations')
+@section('title', 'Tech Organizations near Greenville, SC')
+@section('description', 'A list of tech meetups, code schools, tech conferences / hack-a-thons near Greenville, SC, including inactive organizations.')
 
 @section('content')
     <div class="container">

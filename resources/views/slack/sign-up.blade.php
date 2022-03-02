@@ -1,6 +1,7 @@
 @extends('layouts.app', ['remove_space' => true])
 
 @section('title', 'HackGreenville Slack Sign-up and Login Info')
+@section('description', 'The sign-up form to request access to the HackGreenville Slack.')
 
 @section('content')
     <div class="slack-signup">
