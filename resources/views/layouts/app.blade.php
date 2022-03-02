@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
 
+    <meta name="description" content="HackGreenville exists to foster personal growth among the 'hackers' of Greenville, SC and the surrounding area." />
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -13,6 +15,18 @@
     </title>
 
     <link rel="shortcut icon" href="{{asset('favicon.png')}}?1"/>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hackgreenville.com/">
+    <meta property="og:title" content="HackGreenville - a Developer Community in the Greenville SC Area">
+    <meta property="og:description" content="HackGreenville exists to foster personal growth among the 'hackers' of Greenville, SC and the surrounding area.">
+    <meta property="og:image" content="https://hackgreenville.com/img/hackgreenville-banner-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hackgreenville.com/">
+    <meta property="twitter:title" content="HackGreenville - a Developer Community in the Greenville SC Area">
+    <meta property="twitter:description" content="HackGreenville exists to foster personal growth among the 'hackers' of Greenville, SC and the surrounding area.">
+    <meta property="twitter:image" content="https://hackgreenville.com/img/hackgreenville-banner-preview.png">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
