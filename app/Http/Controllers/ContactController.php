@@ -23,7 +23,7 @@ class ContactController extends Controller
      */
     public function submit(Request $request)
     {
-        $validator = $validator = Validator::make(
+        $validator = Validator::make(
             $request->all(),
             [
                 'name' => 'required|max:255',
