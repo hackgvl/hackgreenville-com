@@ -43,11 +43,6 @@ return [
         ],
     ],
 
-    'hcaptcha' => [
-        'sitekey' => env('HCAPTCHA_SITEKEY'),
-        'secret' => env('HCAPTCHA_SECRET')
-    ],
-
     'slack' => [
         'contact' => [
             'webhook' => env('SLACK_CONTACT_WEBHOOK')

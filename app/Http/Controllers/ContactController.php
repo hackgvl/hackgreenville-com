@@ -23,11 +23,19 @@ class ContactController extends Controller
      */
     public function submit(Request $request)
     {
-        $validator = $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'contact' => 'required|email:rfc,dns',
-            'message' => 'required|max:5000'
-        ]);
+        $validator = $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required|max:255',
+                'contact' => 'required|email:rfc,dns',
+                'message' => 'required|max:5000',
+                'h-captcha-response' => 'required|HCaptcha'
+            ],
+            [
+                'h-captcha-response.required' => __('Please verify that you are not a robot.'),
+                'h-captcha-response.captcha' => __('Captcha error! try again later or contact site admin.'),
+            ],
+        );
 
         if ($validator->fails()) {
             return redirect('contact')
@@ -36,9 +44,6 @@ class ContactController extends Controller
         }
 
         $validated = $validator->validated();
-        error_log($validated['name']);
-        error_log($validated['contact']);
-        error_log($validated['message']);
 
         Notification::route('slack', config('services.slack.contact.webhook'))
             ->notify(new ContactMessage($validated['name'], $validated['contact'], $validated['message']));

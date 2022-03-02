@@ -60,6 +60,13 @@
                     <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
                 @enderror
 
+                {!! HCaptcha::display(['class' => 'hcaptcha col-12 mt-4']) !!}
+                <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+                @error('h-captcha-response')
+                    <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
+                @enderror
+
                 <button type="submit" class="my-4 btn btn-outline-secondary">
                     {{ __('Submit') }}
                 </button>
