@@ -33,6 +33,11 @@
                         <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('About Us') }}
                     </a>
                 </li>
+                <li>
+                    <a class="nav-link @if(Route::is('contact')) active @endif" href="{{ route('contact') }}">
+                        <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('Contact') }}
+                    </a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
