@@ -35,7 +35,7 @@
                 </li>
                 <li>
                     <a class="nav-link @if(Route::is('contact')) active @endif" href="{{ route('contact') }}">
-                        <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('Contact') }}
+                        <i class="d-md-none d-lg-inline-block fa fa-paper-plane"></i> {{ __('Contact') }}
                     </a>
                 </li>
             </ul>
