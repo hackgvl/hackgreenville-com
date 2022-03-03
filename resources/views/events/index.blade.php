@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Events')
+@section('title', 'List of Greenville, SC Area Tech Events')
+@section('description', 'A list view of upcoming tech events happening in the Greenville, SC area.')
 
 @section('content')
     <div class="container">

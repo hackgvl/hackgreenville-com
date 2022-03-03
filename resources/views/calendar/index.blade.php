@@ -1,6 +1,7 @@
 @extends('layouts.app', ['show_loading' => true])
 
-@section('title', 'Calendar')
+@section('title', 'Calendar of Greenville, SC Area Tech Events')
+@section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
 
 @section('content')
     <div class="container">
