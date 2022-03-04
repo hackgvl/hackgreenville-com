@@ -21,24 +21,24 @@
 
         {!! Form::open(['url' => url()->secure('/contact'), 'class' => 'row mx-auto px-5 mb-4 text-center justify-content-center align-items-center', 'style' => 'max-width: 50em;']) !!}
             <div class="form-group col-12 row">
-                {{ Form::label('name', __('Name'), ['class' => 'col-12 form-label']) }}
-                {{ Form::text('name', old('name'), ['class' => 'col-12 form-control text-center mx-1 my-2' . ($errors->has('name') ? ' is-invalid' : null)]) }}
+                {{ Form::label('name', __('Name'), ['class' => 'form-label']) }}
+                {{ Form::text('name', old('name'), ['class' => 'form-control text-center' . ($errors->has('name') ? ' is-invalid' : null)]) }}
                 @error('name')
                     <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group col-12 row">
-                {{ Form::label('contact', __('Email'), ['class' => 'col-12 form-label']) }}
-                {{ Form::email('contact', old('contact'), ['class' => 'col-12 form-control text-center mx-1 my-2' . ($errors->has('contact') ? ' is-invalid' : null)]) }}
+                {{ Form::label('contact', __('Email'), ['class' => 'form-label']) }}
+                {{ Form::email('contact', old('contact'), ['class' => 'form-control text-center' . ($errors->has('contact') ? ' is-invalid' : null)]) }}
                 @error('contact')
                     <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group col-12 row">
-                {{ Form::label('message', __('Message'), ['class' => 'col-12 form-label']) }}
-                {{ Form::textarea('message', old('message'), ['class' => 'col-12 form-control text-center mx-1 my-2' . ($errors->has('message') ? ' is-invalid' : null)]) }}
+                {{ Form::label('message', __('Message'), ['class' => 'form-label']) }}
+                {{ Form::textarea('message', old('message'), ['class' => 'form-control text-center' . ($errors->has('message') ? ' is-invalid' : null)]) }}
                 @error('message')
                     <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
                 @enderror
