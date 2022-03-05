@@ -19,28 +19,28 @@
             <hr class="mx-auto w-100 px-4" style="max-width: 50em;">
         </div>
 
-        {!! Form::open(['url' => url()->secure('/contact'), 'class' => 'row mx-auto px-5 mb-4 text-center justify-content-center align-items-center', 'style' => 'max-width: 50em;']) !!}
+        {!! Form::open(['url' => url()->secure('/contact'), 'class' => 'row text-center mx-auto px-5 mb-4 justify-content-center align-items-center', 'style' => 'max-width: 50em;']) !!}
             <div class="form-group col-12 row">
                 {{ Form::label('name', __('Name'), ['class' => 'form-label']) }}
-                {{ Form::text('name', old('name'), ['class' => 'form-control text-center' . ($errors->has('name') ? ' is-invalid' : null)]) }}
+                {{ Form::text('name', old('name'), ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : null)]) }}
                 @error('name')
-                    <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
+                    <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group col-12 row">
                 {{ Form::label('contact', __('Email'), ['class' => 'form-label']) }}
-                {{ Form::email('contact', old('contact'), ['class' => 'form-control text-center' . ($errors->has('contact') ? ' is-invalid' : null)]) }}
+                {{ Form::email('contact', old('contact'), ['class' => 'form-control' . ($errors->has('contact') ? ' is-invalid' : null)]) }}
                 @error('contact')
-                    <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
+                    <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group col-12 row">
                 {{ Form::label('message', __('Message'), ['class' => 'form-label']) }}
-                {{ Form::textarea('message', old('message'), ['class' => 'form-control text-center' . ($errors->has('message') ? ' is-invalid' : null)]) }}
+                {{ Form::textarea('message', old('message'), ['class' => 'form-control' . ($errors->has('message') ? ' is-invalid' : null)]) }}
                 @error('message')
-                    <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
+                    <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -48,7 +48,7 @@
             <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
             @error('h-captcha-response')
-                <div class="col-12 mx-1 my-2 alert alert-danger justify-content-center align-items-center">{{ $message }}</div>
+                <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
             @enderror
 
             {{ Form::submit('Submit', ['class' => 'my-4 btn btn-outline-secondary']) }}
