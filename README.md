@@ -25,6 +25,15 @@ Then, for all of these organization, the events can be are queried from the [eve
 * See this project's [CONTRIBUTING.md](CONTRIBUTING.md) before creating issues, forking, or submitting any pull requests.
 * You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
 
+## Technical Notes
+This project uses the [Laravel PHP framework](https://laravel.com).
+
+[Laravel's Artisan command line tools](https://laravel.com/docs/master/artisan) is used to import events and organizations.  Run `php artisan` to see a full list of availabe commands. Select commands of note include:
+
+* Manually import the latest events from the API: `php artisan pull:events`
+* Manually import the latest events from the API: `php artisan pull:orgs`
+* Completely erase and rebuild the database: `php artisan migrate:fresh --seed`
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
