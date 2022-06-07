@@ -1,6 +1,7 @@
 @extends('layouts.app', ['remove_space' => true])
 
-@section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
+@section('title', 'Contact HackGreenville')
+@section('description', 'Send non-spammy questions or comments to the HackGreenville community.')
 
 @section('content')
 <div id="contact">
