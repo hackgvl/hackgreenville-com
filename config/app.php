@@ -222,7 +222,7 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
         'Calendar'     => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
-        'HCaptcha' => Scyllaly\HCaptcha\Facades\HCaptcha::class,
+        'HCaptcha'     => Scyllaly\HCaptcha\Facades\HCaptcha::class,
 
     ],
 
