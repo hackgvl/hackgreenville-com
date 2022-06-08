@@ -22,6 +22,7 @@ Route::get('/orgs/inactive', 'OrgsController@inactive')->name('orgs.inactive');
 Route::get('/about', 'HomeController@about')->name('about');
 
 Route::get('/join-slack', 'SlackController@join')->name('join-slack');
+Route::post('/join-slack', 'SlackController@submit')->name('join-slack.submit');
 
 Auth::routes();
 
