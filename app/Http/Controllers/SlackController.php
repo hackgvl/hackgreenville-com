@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\JoinMessageRequest;
-use Illuminate\Support\Facades\Validator;
 use App\Notifications\JoinMessage;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 class SlackController extends Controller
 {
@@ -18,8 +19,8 @@ class SlackController extends Controller
     /**
      * Submits a new request to join slack
      *
-     * @param  \Illuminate\Http\JoinMessageRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param  JoinMessageRequest  $request
+     * @return Application|Factory|View
      */
     public function submit(JoinMessageRequest $request)
     {
