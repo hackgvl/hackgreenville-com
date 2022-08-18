@@ -5,10 +5,10 @@
 		<div class="col-md-3 col-sm-6 col-xs-6">
 			<a href="{{ $event->gCalUrl }}" target="_blank" class="text-decoration-none">
 				<div class="font-weight-bold mr-2">
-					{{ $event->active_at->format('M jS \'y') }}
+					{{ $event->active_at->format('M jS Y') }}
 				</div>
 				<div class="">
-					{{ $event->active_at->format('D') }} • {{ $event->active_at->format('ga') }}
+					{{ $event->active_at->format('l') }} • {{ $event->active_at->format('g A') }}
 				</div>
 			</a>
 		</div>
