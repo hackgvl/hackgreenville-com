@@ -14,6 +14,8 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/calendar', 'CalendarController@index')->name('calendar.index');
+Route::get('/contact', 'ContactController@contact')->name('contact');
+Route::post('/contact', 'ContactController@submit')->name('contact.submit');
 Route::get('/events', 'EventsController@index')->name('events.index');
 Route::get('/orgs', 'OrgsController@index')->name('orgs.index');
 Route::get('/orgs/inactive', 'OrgsController@inactive')->name('orgs.inactive');
