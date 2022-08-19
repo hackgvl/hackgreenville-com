@@ -7,7 +7,8 @@
 				<div class="font-weight-bold mr-2">
 					{{ $event->active_at->format('M jS Y') }}
 				</div>
-				<div class="">
+				<div>
+					<i class="fa fa-calendar-plus-o"></i>
 					{{ $event->active_at->format('l') }} • {{ $event->active_at->format('g A') }}
 				</div>
 			</a>
