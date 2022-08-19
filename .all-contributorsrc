@@ -140,6 +140,19 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "oliviasculley",
+      "name": "Olivia Sculley",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88074048?v=4",
+      "profile": "https://olivia.sculley.dev",
+      "contributions": [
+        "code",
+        "ideas",
+        "infra",
+        "doc",
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
