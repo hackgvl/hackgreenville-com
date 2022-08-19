@@ -130,6 +130,16 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "bogdankharchenko",
+      "name": "Bogdan Kharchenko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32746389?v=4",
+      "profile": "https://github.com/bogdankharchenko",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
