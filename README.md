@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
 ![HackGreenville](https://stage.hackgreenville.com/img/logo-v2.png)  
@@ -57,6 +57,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Mozillex"><img src="https://avatars2.githubusercontent.com/u/25697042?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Loren McClaflin</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/issues?q=author%3AMozillex" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/MarkMcDaniels"><img src="https://avatars3.githubusercontent.com/u/8277379?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mark McDaniels</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=MarkMcDaniels" title="Code">💻</a> <a href="https://github.com/codeforgreenville/hackgreenville-com/issues?q=author%3AMarkMcDaniels" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/bogdankharchenko"><img src="https://avatars.githubusercontent.com/u/32746389?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bogdan Kharchenko</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=bogdankharchenko" title="Code">💻</a> <a href="#design-bogdankharchenko" title="Design">🎨</a></td>
+    <td align="center"><a href="https://olivia.sculley.dev"><img src="https://avatars.githubusercontent.com/u/88074048?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Olivia Sculley</b></sub></a><br /><a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=oliviasculley" title="Code">💻</a> <a href="#ideas-oliviasculley" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-oliviasculley" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/codeforgreenville/hackgreenville-com/commits?author=oliviasculley" title="Documentation">📖</a> <a href="#content-oliviasculley" title="Content">🖋</a></td>
   </tr>
 </table>
 
