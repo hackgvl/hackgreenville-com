@@ -17,8 +17,11 @@
     "intervention/image": ">=2.5 <3.0.0",
     "laravel/framework": "^8.0",
     "laravel/helpers": "^1.2",
+    "laravel/slack-notification-channel": "^2.4",
     "laravel/tinker": "^2.0",
     "laravel/ui": "^3.0",
+    "laravelcollective/html": "^6.3",
+    "scyllaly/hcaptcha": "^4.4",
     "spatie/laravel-google-calendar": "^3.0"
   },
   "require-dev": {

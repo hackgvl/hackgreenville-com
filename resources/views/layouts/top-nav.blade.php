@@ -33,12 +33,17 @@
                         <i class="d-md-none d-lg-inline-block fa fa-users"></i> {{ __('About Us') }}
                     </a>
                 </li>
+                <li>
+                    <a class="nav-link @if(Route::is('contact')) active @endif" href="{{ route('contact') }}">
+                        <i class="d-md-none d-lg-inline-block fa fa-paper-plane"></i> {{ __('Contact') }}
+                    </a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li>
-                    <a class="nav-link btn btn-outline-secondary" href="{{ route('join-slack') }}">
+                    <a class="nav-link btn btn-outline-secondary @if(Route::is('join-slack')) active @endif" href="{{ route('join-slack') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
                         {{ __('Join Slack') }}</a>
                 </li>
