@@ -3,7 +3,11 @@
 <div class="list-group-item mb-3 hover-bg border-0 shadow-sm">
 	<div class="row">
 		<div class="col-md-3 col-sm-6 col-xs-6">
-			<a href="{{ $event->gCalUrl }}" target="_blank" class="text-decoration-none">
+			<a href="{{ $event->gCalUrl }}"
+			   target="_blank"
+			   class="text-decoration-none"
+			   title="Add to Calendar"
+			   aria-label="Add to Calendar">
 				<div class="font-weight-bold mr-2">
 					{{ $event->active_at->format('M jS Y') }}
 				</div>
