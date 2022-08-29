@@ -95,10 +95,14 @@ You need a reference from your local copy to the `upstream` repository in additi
 
 #### System Requirements
 
-* This site was built with PHP 7 and Laravel.
+* [Requirements of Laravel 8](https://laravel.com/docs/8.x/releases), which include PHP 7.3+ or PHP 8+
 * You'll need [composer](https://getcomposer.org/download/) as well.
 * You'll need [yarn](https://yarnpkg.com/lang/en/docs/install/) as well.
-* For running "tests", you'll need SQLite and its associated PHP extensions enabled (sqlite3 & pdo_sqlite)]
+* For running "tests", you'll need SQLite and its associated PHP extensions enabled.
+    > The PHP install package names and commands will differ based on your operating system, source repository, and other variations. Here are examples:
+    > * RHEL / CentOS / Fedora: `yum install php-sqlite3 php-pdo_sqlite`
+    > * Ubuntu / Debian / Mint: `apt install php-sqlite3`
+* MariaDB 10+ / MySQL 5.6+ - MariaDB is a compatible fork of MySQL and the community version can be installed using [operating system repositories](https://mariadb.com/kb/en/mariadb-package-repository-setup-and-usage/). 
 
 #### Initial Setup / Configuration (Host Install)
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root. 
@@ -107,35 +111,36 @@ Edit the new .env file and set your database settings.
 
 You will need to create the database. This is a sample of the command you can run.  
 ```bash  
-mysql --user="dbusername" --password -e"create database hack_greenville"  
+mysql --user="dbusername" --password -e "create database hack_greenville"  
 ```  
 
+    When you download the project and after you run composer install; php artisan migrate --seed and yarn install; yarn dev then run php artisan serve you should be able to view the project.
+    
 ``` bash    
 composer install
-php artisan db:seed
-```   
+php artisan migrate --seed
+yarn install
+yarn dev
+```
+> Note: for production environments, `yarn prod` would be used.
 
-That `db:seed` command will create a default user *admin@admin.com* with a password of *admin* and fill the states table. 
-    
-Run the following command to generate your app key:    
+The `migrate --seed` command will generate a default user *admin@admin.com* with a password of *admin* and fill the states table. 
+
+Run the following command to generate your app key:
     
 ``` bash 
 php artisan key:generate    
 ```   
 
+To import events and organizations from the remote APIs (as set in the _.env_ file) run `php artisan pull:events` and `php artisan pull:orgs`
+    
 Then start your server: 
 
-Typically, the easiest way to get the project up and running locally would be to run `php artisan serve` in the root directory of the site. This command is Laravel's wrapper over [PHP's built in web server](https://www.php.net/manual/en/features.commandline.webserver.php).   
+Typically, the easiest way to get the project up and running locally would be to run `php artisan serve` in the root directory of the site. This command is Laravel's wrapper over [PHP's built in web server](https://www.php.net/manual/en/features.commandline.webserver.php). `yarn watch` can be used to watch for frontend resource changes and re-build them when detected. 
 
-See the [Laravel installation documentation](https://laravel.com/docs/4.2/quick#installation) for more details.
-    
-```bash  
-php artisan serve
-```    
 The HackGreenville project is now up and running! You should be able to open [localhost:8000](localhost:8000) in your browser.    
 
 The `composer install` command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project. 
-To develop you'll want to run `php artisan serve` to start the applications php server and in another terminal you'll want to run `yarn watch` to watch for frontend resource changes and re-build them when detected. 
 
 #### Initial Setup (Docker)
 The docker setup of this project should only be done for advanced users, or if
@@ -149,14 +154,22 @@ You can do this by executing `composer install`, or if you want to avoid using `
 
 The database will be created for you automatically by the mysql docker image.
 To initialize the project, do `docker-compose pull` to pull the necessary files, and then `docker-compose up --build` to begin running the project later.
+
 First, you'll have to run `composer install` with docker exec while the original container is running with `docker exec -it hackgreenville composer install`.
+
 The `composer install` command will help build the project by running migrations and initializing yarn, but you can also do this manually by running `docker exec -it hackgreenville php artisan migrate --seed; yarn install; yarn prod`.
+
 Now, shut down the container by hitting `ctrl-c` and re-build the container with `docker-compose up --build`.
+
 On the first start, you will need to generate an `APP_KEY` secret, which you can do by `docker exec -it hackgreenville php artisan key:generate` while the original container is running.
+
 Make sure to set this in your `.env` file!
+
 If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP`.
 I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
+
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
+
 After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose up --build` to run it again.
 
 If there are any changes in the application code, you will need to run `docker-compose up --build` to recreate the container with your changes.
@@ -173,7 +186,9 @@ As in the earlier setup steps, Laravel Artisan is heavily leveraged to execute f
 
 ## Contributing Code to the Project
 
-> **Note: Always follow the following steps before starting a new branch or pull request.**
+* See the [HackGreenville style guide](https://hackgreenville.com/styles) for theming suggestions for fonts, headings, colors, and such.
+* See the [Laravel installation documentation](https://laravel.com/docs/4.2/quick#installation) for more details.
+* Always follow the steps below when starting a new branch or pull request.**
 
 Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern.  This allows anyone to suggest changes for review, commenting, and eventual apporval / merging into the main project's repo.
 
