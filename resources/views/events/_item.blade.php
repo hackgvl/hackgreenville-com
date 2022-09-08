@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-md-3 col-sm-6 col-xs-6">
 			<a href="{{ $event->gCalUrl }}"
-			   target="_blank"
+			   rel="external"
 			   class="text-decoration-none"
 			   title="Add to Calendar"
 			   aria-label="Add to Calendar">
@@ -20,7 +20,7 @@
 		<div class="col-md-6 col-xs-6 col-sm-6">
 			<div class="d-flex">
 				<div class="flex-row">
-					<a href="{{ $event->url }}" target="_blank">
+					<a href="{{ $event->url }}" rel="external">
 						@if($event->cancelled_at)
 							<span class="text-danger">
 								[CANCELLED]
@@ -28,7 +28,7 @@
 						@endif
 						{{ $event->event_name }}
 					</a>
-					
+
 					<div class="text-muted">
 						{{ $event->group_name }}
 					</div>
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-12 text-center text-sm-center text-lg-right mt-sm-4 mt-lg-0">
-			
+
 			@if(!$event->cancelled_at)
 				<a href="{{ $event->url }}" class="btn">
 					View Event
@@ -46,7 +46,7 @@
 					Cancelled
 				</button>
 			@endif
-		
+
 		</div>
 	</div>
 </div>
