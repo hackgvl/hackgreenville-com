@@ -4,7 +4,7 @@ version: '3'
 services:
   hackgreenville:
     build:
-      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.0}'
+      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.1}'
       dockerfile: Dockerfile
       args:
         WWWGROUP: '${WWWGROUP:-www-data}'
@@ -20,7 +20,7 @@ services:
     depends_on:
     - hackgreenville-db
     - hackgreenville-redis
-   
+
   # If you change this service name, remember to change the
   # DB_HOST environment variable to match!
   hackgreenville-db:
@@ -35,7 +35,7 @@ services:
       - './mysql:/var/lib/mysql'
     healthcheck:
       test: ["CMD", "mysqladmin", "ping"]
-      
+
   hackgreenville-redis:
     image: 'redis:alpine'
     container_name: hackgreenville-redis
@@ -46,4 +46,3 @@ services:
         - './redis:/data'
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
-    
