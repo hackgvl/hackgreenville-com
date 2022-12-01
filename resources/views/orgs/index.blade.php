@@ -25,10 +25,10 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{ $org->url}}" target="_blank" title="Homepage">{{ $org->title }}</a>
+                                        <a href="{{ $org->url}}" rel="external" title="Homepage">{{ $org->title }}</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="{{$org->event_calendar_uri }}" target="_blank">Events Site</a>
+                                        <a href="{{$org->event_calendar_uri }}" rel="external">Events Site</a>
                                     </div>
                                 </div>
                             </li>
@@ -42,11 +42,11 @@
         <ul>
             <li>You can view <a href="{{ route('orgs.inactive') }}">inactive organizations here</a>.
             </li>
-            <li>This data is sourced from <a href="https://data.openupstate.org" target="_blank">a community-curated
+            <li>This data is sourced from <a href="https://data.openupstate.org" rel="external">a community-curated
                     REST API</a>.
             </li>
             <li>To contribute to this project, please connect with <a href="https://codeforgreenville.org"
-                                                                      target="_blank">Code For Greenville.</a></li>
+                                                                      rel="external">Code For Greenville.</a></li>
             <li>To suggest an addition or update to the data, please submit a <a
                         href="https://data.openupstate.org/contact/suggestions">suggestion</a>.
             </li>

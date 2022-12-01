@@ -6,10 +6,10 @@
 @section('content')
 	<div class="container">
 		<h1>Upcoming Events</h1>
-		
+
 		<div class="mb-4">
 			<form method="get">
-				
+
 				<select class="form-control col-md-9" name="month" id="month">
 					<option value="">Filter by month</option>
 					@foreach( $months->keys() as $month )
@@ -20,7 +20,7 @@
 				</select>
 			</form>
 		</div>
-		
+
 		@foreach($months as $month => $events)
 			<div class="events mb-4" data-date="{{ $month }}">
 				<h3 class="font-weight-bolder">
@@ -30,15 +30,15 @@
 					@include('events._item', ['event' => $event])
 				@endforeach
 			</div>
-		
+
 		@endforeach
-		
+
 		<ul>
-			<li>This data is sourced from <a href="https://data.openupstate.org" target="_blank">a community-curated REST API</a>.</li>
-			<li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" target="_blank">Code For Greenville.</a></li>
+			<li>This data is sourced from <a href="https://data.openupstate.org" rel="external">a community-curated REST API</a>.</li>
+			<li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" rel="external">Code For Greenville.</a></li>
 			<li>To suggest an addition or update to the data, please submit a <a href="https://data.openupstate.org/contact/suggestions">suggestion</a>.</li>
 		</ul>
-	
+
 	</div>
 @endsection
 
@@ -54,10 +54,10 @@
 			if (val) {
 				events.hide();
 				$(".events[data-date='" + val + "']").show();
-				
+
 				return true;
 			}
-			
+
 			events.show();
 		})
 	});

@@ -45,7 +45,7 @@
 		                format(`(dddd) ${datetime_format}`)} - ${moment(info.event.end).format(datetime_format)}`;
 	                desc += '<br />';
 	                desc += '<br />';
-	                desc += info.event.extendedProps.description.replace(/\<a/, '<a target="_blank"');
+	                desc += info.event.extendedProps.description.replace(/\<a/, '<a rel="external"');
 	                desc += '</div>';
 
 	                const swalProps = {
