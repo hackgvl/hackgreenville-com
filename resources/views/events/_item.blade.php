@@ -13,7 +13,7 @@
 				</div>
 				<div>
 					<i class="fa fa-calendar-plus-o"></i>
-					{{ $event->active_at->format('l') }} • {{ $event->active_at->format('g A') }}
+					{{ $event->active_at->format('l') }} • {{ $event->active_at->format('g:i A') }}
 				</div>
 			</a>
 		</div>
