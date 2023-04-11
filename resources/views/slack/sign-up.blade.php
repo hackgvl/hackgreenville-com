@@ -10,6 +10,12 @@
             <div class="col-12 mx-1 mt-5 text-center">
                 <h1>{{ __('Sign up for HackGreenville!') }}</h1>
 
+                <h4>
+                    <a href="https://hackgreenville.slack.com" class="badge badge-pill btn-success p-3" rel="noreferrer" target="_blank">
+                        Already Signed Up?  Log In to Slack
+                    </a>
+                </h4>
+
                 <p class="summary">
                     {{ __('Ready to get started? Fill out the sign up form below and we\'ll add you as soon as possible!') }}
                 </p>

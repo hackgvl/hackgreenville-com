@@ -43,13 +43,21 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li>
-                    <a class="nav-link btn btn-outline-secondary @if(Route::is('join-slack')) active @endif" href="{{ route('join-slack') }}">
+                    <a class="nav-link btn btn-outline-secondary @if(Route::is('join-slack')) active @endif"
+                       href="{{ route('join-slack') }}">
                         <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
                         {{ __('Join Slack') }}</a>
                 </li>
+                <li>
+                    <a href="https://hackgreenville.slack.com" class="nav-link btn btn-outline-success active ml-2" rel="noreferrer"
+                       target="_blank">
+                        <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
+                        Log In to Slack
+                    </a>
+                </li>
 
-            @if(request('testing-123') == 'working')
-                <!-- Authentication Links -->
+                @if(request('testing-123') == 'working')
+                    <!-- Authentication Links -->
                     @guest
                         <li>
                             <a class="nav-link" href="{{ route('login') }}">
