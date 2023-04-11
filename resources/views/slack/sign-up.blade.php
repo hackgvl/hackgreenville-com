@@ -12,7 +12,7 @@
 
                 <h4>
                     <a href="https://hackgreenville.slack.com" class="badge badge-pill btn-success p-3" rel="noreferrer" target="_blank">
-                        Already Signed Up?  Login to Slack
+                        Already Signed Up?  Log In to Slack
                     </a>
                 </h4>
 

@@ -52,7 +52,7 @@
                     <a href="https://hackgreenville.slack.com" class="nav-link btn btn-outline-success active ml-2" rel="noreferrer"
                        target="_blank">
                         <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
-                        Login to Slack
+                        Log In to Slack
                     </a>
                 </li>
 
