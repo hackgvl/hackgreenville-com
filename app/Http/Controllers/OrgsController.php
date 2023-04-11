@@ -8,7 +8,14 @@ class OrgsController extends Controller
 {
     public function index()
     {
-        $activeOrgs = Org::with('category')->get()->groupBy('category_id');
+        $activeOrgs = Org::with('category')
+            ->get()
+            ->sortBy(function (Org $org) {
+                return $org->category->isInactive()
+                    ? PHP_INT_MAX
+                    : $org->category->count();
+            })
+            ->groupBy('category_id');
 
         return view('orgs.index', compact('activeOrgs'));
     }

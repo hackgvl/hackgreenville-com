@@ -19,4 +19,9 @@ class Category extends Model
             'slug',
             'label',
         ];
+
+    public function isInactive(): bool
+    {
+        return 'Inactive' == $this->label;
+    }
 }
