@@ -1,0 +1,27 @@
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "trailingComma": "all",
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "proseWrap": "preserve",
+  "php": {
+    "useTabs": true,
+    "array": {
+      "syntax": "short",
+      "align": "vertical"
+    },
+    "match": {
+      "syntax": "explicit",
+      "align": "vertical"
+    },
+    "object": {
+      "align": "vertical"
+    }
+  }
+}

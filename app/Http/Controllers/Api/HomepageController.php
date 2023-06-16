@@ -19,9 +19,9 @@ class HomepageController extends Controller
     {
         // we only need a few events for the homepage
         $events = Event::getActive()
-                ->take(5)
-                ->select(['event_name', 'group_name', 'description', 'active_at', 'expire_at', 'uri', 'cancelled_at'])
-                ->get();
+            ->take(5)
+            ->select(['event_name', 'group_name', 'description', 'active_at', 'expire_at', 'uri', 'cancelled_at'])
+            ->get();
 
         return EventResource::collection($events);
     }

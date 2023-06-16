@@ -12,14 +12,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class State extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'states';
 
     protected $fillable
             = [
-                    'abbr',
-                    'name',
+                'abbr',
+                'name',
             ];
 
     public function venues()
@@ -32,7 +33,8 @@ class State extends Model
         return $this->abbr($abbr)->first() ?: 0;
     }
 
-    public function scopeAbbr($query, $abbr){
+    public function scopeAbbr($query, $abbr)
+    {
         return $query->where('abbr', 'like', $abbr);
     }
 }

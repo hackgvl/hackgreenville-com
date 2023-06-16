@@ -9,19 +9,19 @@
 @import 'slack-sign-up';
 
 // Calendar
-@import "~@fullcalendar/core/main.min.css";
-@import "~@fullcalendar/daygrid/main.min.css";
+@import '~@fullcalendar/core/main.min.css';
+@import '~@fullcalendar/daygrid/main.min.css';
 
 #calendar {
   min-height: 800px;
 }
 
 // Codey the computer
-@import "codey";
+@import 'codey';
 // Bootstrap switch checkbox lib
 //@import "~bootstrap-switch/src/sass/bootstrap4/bootstrap-switch";
 // Sharrre sharing lib
-@import "~sharrre/src/sass/style";
+@import '~sharrre/src/sass/style';
 
 // Full calendar events on the calendar don't use the right pointer
 .fc-content {
@@ -39,12 +39,12 @@
 
 // Custom CSS
 .btn {
-  text-decoration: none !important
+  text-decoration: none !important;
 }
 
 .vertical-divider {
   background-color: $text-muted;
-  width: .2rem;
+  width: 0.2rem;
   margin: 0.3rem;
   height: 1.9rem;
 }
@@ -69,7 +69,8 @@ a {
   text-decoration: underline;
 }
 
-.navbar-nav, .page-footer {
+.navbar-nav,
+.page-footer {
   a {
     text-decoration: none;
   }
@@ -81,10 +82,11 @@ a {
 
 .page-footer {
   a {
-    color: $gray-200
+    color: $gray-200;
   }
 
-  .footer-social-icons, .footer-technology-icons {
+  .footer-social-icons,
+  .footer-technology-icons {
     .footer-technology-icon-wrapper {
       margin-left: 1rem;
 
@@ -105,12 +107,11 @@ a {
   }
 }
 
-
 #homepage {
-
   #homepage-jumbotron {
     color: white;
-    background: url(/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+    background: url(/img/hackgreenville-banner.jpg) no-repeat center center
+      fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -123,7 +124,7 @@ a {
       position: absolute;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, .5);
+      background: rgba(0, 0, 0, 0.5);
       height: 100%;
       width: 100%;
     }
@@ -148,11 +149,12 @@ a {
 }
 
 #about-us {
-  ul{
+  ul {
     margin-left: -15px;
   }
 
-  p, li {
+  p,
+  li {
     font-size: 1.25rem;
   }
 }
@@ -170,7 +172,6 @@ a {
 
 // Site colors
 .bg {
-
   &-white {
     background-color: $white;
   }
@@ -205,7 +206,6 @@ a {
 }
 
 .text {
-
   &-brown {
     color: #222222;
   }
@@ -239,7 +239,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
 
   .fa-spin {
@@ -258,25 +258,24 @@ a {
   margin-bottom: 1rem;
 
   @media (max-width: 576px) {
-    line-height: .8;
+    line-height: 0.8;
     font-size: 3.5rem;
     margin-bottom: 3rem;
   }
 }
 
-
 .card-columns {
-    @include media-breakpoint-up(sm) {
-        column-count: 2;
-        orphans: 1;
-        widows: 1;
+  @include media-breakpoint-up(sm) {
+    column-count: 2;
+    orphans: 1;
+    widows: 1;
 
-        .card {
-            display: inline-block; // Don't let them vertically span multiple columns
-            width: 100%; // Don't let their width change
-        }
+    .card {
+      display: inline-block; // Don't let them vertically span multiple columns
+      width: 100%; // Don't let their width change
     }
+  }
 }
 .text-decoration-line-through {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }

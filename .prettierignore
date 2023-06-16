@@ -1,0 +1,9 @@
+vendor
+node_modules
+public
+storage
+.turbo
+app
+bootstrap
+database
+dist

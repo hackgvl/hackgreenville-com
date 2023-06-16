@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactMessageRequest;
-use Illuminate\Support\Facades\Validator;
 use App\Notifications\ContactMessage;
 use Illuminate\Support\Facades\Notification;
 
