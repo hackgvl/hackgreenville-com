@@ -29,25 +29,8 @@
           content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
     <meta property="twitter:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
-    <!-- Fonts and icons -->
-
-    <!-- CSS Files -->
-    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
-
-    <link href='{{url('vendors/fullcalendar/packages/core/main.min.css')}}' rel='stylesheet'/>
-    <link href='{{url('vendors/fullcalendar/packages/daygrid/main.min.css')}}' rel='stylesheet'/>
-
-    <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
-    <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
 
     @if(config('services.google.tagmanager.id'))
         <!-- Global site tag (gtag.js) - Google Analytics -->

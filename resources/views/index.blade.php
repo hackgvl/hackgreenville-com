@@ -4,20 +4,21 @@
 
 @section('content')
     <div id="homepage">
-        <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid">
+        <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid text-white bg-dark position-relative">
             <div class="overlay"></div>
-            <div class="container font-weight-bold">
+            <div class="container py-5 text-center">
                 <h1 class="display-4">Build Stuff. Meet People. Do cool things.</h1>
                 <p class="lead my-5">Meetups &middot; Talks &middot; Projects</p>
                 <p class="lead">
-                    <a class="btn btn-success btn-lg" href="/join-slack" role="button">Request to Join Slack</a>
+                    <a class="btn btn-success text-gray btn-lg" href="/join-slack" role="button">Request to Join
+                        Slack</a>
                 </p>
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container my-5">
             <div class="row">
-                <div class="col-md-6 col-lg-8 my-5">
+                <div class="col-md-6 col-lg-8">
                     <div class="text-center">
                         <h3 class="screaming-hackgreenville-question">What is Hack Greenville?</h3>
 
@@ -27,11 +28,12 @@
                             members through sharing and promoting local tech opportunities.
                         </p>
                     </div>
+
                     <hr class="d-md-none">
 
-                    <div class="row mt-5">
+                    <div class="row mt-5 align-items-center">
                         <div class="col-md-6 text-center">
-                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" style="max-width: 100%; height: 20rem"/>
+                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="img-fluid">
                         </div>
                         <div class="col-md-6">
                             <p class="summary">
@@ -42,7 +44,7 @@
                                 Explore the site for more meetups and events, and make sure to join our active <a
                                     href="/join-slack">Slack community</a> to connect further!
                             </p>
-                            <button onclick="location.href='/join-slack'" class="btn btn-outline-primary">
+                            <button onclick="location.href='/join-slack'" class="btn btn-outline-primary btn-lg">
                                 Join Us
                             </button>
                         </div>
@@ -65,9 +67,9 @@
                         </div>
                         <div class="col-md-6 text-center">
                             <a href="https://github.com/codeforgreenville/hackgreenville-com"
-                               class="text-decoration-none">
+                               class="text-decoration-none text-dark">
                                 <p style="line-height:1; font-size:15em;" class="mt-5">
-                                    <i class="fa fa-github"></i>
+                                    <i class="fab fa-github"></i>
                                 <p/>
                                 <p class="summary">Join the Project</p>
                             </a>
@@ -80,6 +82,4 @@
             </div>
         </div>
     </div>
-
 @endsection
-

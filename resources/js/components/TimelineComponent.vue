@@ -25,14 +25,12 @@
             <p class="timeline-subtitle h6">{{ event.group_name }}</p>
             <p>
               <small :title="event.active_at" class="text-muted"
-                ><i class="fa fa-calendar" /> {{ event.active_at_ftm }}</small
-              >
+                ><i class="fa fa-calendar" /> {{ event.active_at_ftm }}
+              </small>
             </p>
           </div>
           <div class="timeline-body">
             <div>
-              <!--<div v-html="event.short_description"/>
-                            <br>-->
               <button
                 @click="showMore(event)"
                 class="btn btn-secondary"

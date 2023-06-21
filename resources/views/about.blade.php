@@ -1,35 +1,44 @@
 @extends('layouts.app')
 
 @section('title', 'About HackGreenville')
-@section('description', 'About the founding, mission, vision, and purpose of the HackGreenville community.')
+@section('description', 'Discover the origins, mission, vision, and values of the HackGreenville community.')
 
 @section('content')
     <div id="about-us" class="container">
-        <h1>About HackGreenville</h1>
-        <p>HackGreenville was started as a <a href="/join-slack">Slack chat group</a> in March 2015 by Andrew Orr
+        <h1 class="title-heading">Uncover HackGreenville</h1>
+        <p class="lead-text">Our journey began as a humble <a href="/join-slack" class="highlight-link">Slack chat
+                group</a> back in March 2015, thanks to the efforts of Andrew Orr
             <a class="user-mention" href="https://github.com/Soulfire86">(@Soulfire86)</a>
             and Dave Brothers (<a class="user-mention" href="https://github.com/davebrothers">@davebrothers</a>).</p>
-        <p>The <a href="/join-slack">Slack community</a> has stood the "test of time" and continues to be a daily, active hub for countless and varied
-            conversations.</p>
-        <p>The HackGreenville.com website was initially developed by the <a href="https://www.sccodes.org">SC Codes</a>
-            pilot program and later adopted and expanded by <a href="https://codeforgreenville.org">Code
-                For Greenville</a>. The site leverages <a href="https://data.openupstate.org">open data APIs developed by Code For Greenville</a> to promote local, related meetup groups and
+        <p class="lead-text">Our <a href="/join-slack" class="highlight-link">Slack community</a> has proven to be a
+            resilient and vibrant hub for numerous insightful
+            conversations, standing the test of time.</p>
+        <p class="lead-text">The HackGreenville.com website was initially brought to life by the <a
+                href="https://www.sccodes.org" class="highlight-link">SC Codes</a>
+            pilot program and was later nurtured and expanded by <a href="https://codeforgreenville.org"
+                                                                    class="highlight-link">Code
+                For Greenville</a>. The site uses <a href="https://data.openupstate.org" class="highlight-link">open
+                data APIs developed by Code For Greenville</a> to promote local, tech-related meetup groups and
             events.</p>
-        <p>The following summarizes the overall community's purpose, mission, vision, and culture.</p>
-        <h2>Purpose</h2>
-        <p>HackGreenville exists to foster personal growth among the "hackers" of Greenville, SC and the surrounding area.</p>
-        <h2>Mission</h2>
-        <p>HackGreenville hosts an <a href="/join-slack">online community</a> and <a href="/">discovery
-                tools</a> to promote local, non-commercial tech opportunities for learning, sharing, and connecting.</p>
-        <h2>Vision</h2>
-        <p>HackGreenville desires to become the <code>GO TO</code> (pun intended!) brand and resource for tech people discovering the area's "hacker" culture and opportunities.</p>
-        <h2>Culture and Guiding Principles</h2>
-        <ul>
-            <li>We're open to all hackers, makers, and tinker types. We're not exclusive to software.</li>
-            <li>Be nice. Keep egos and biases in check.</li>
-            <li>Have fun. Trolling is not cool.</li>
-            <li>Pay-it-forward. You learned most of what you know from others.</li>
-            <li>Give more than you take. This is not a community for selfish pursuits.</li>
+        <p class="lead-text">Here's a snapshot of our community's purpose, mission, vision, and culture:</p>
+        <h2 class="section-heading">Our Purpose</h2>
+        <p class="lead-text">We are here to nurture personal growth amongst Greenville, SC's vibrant community of
+            "hackers" and beyond.</p>
+        <h2 class="section-heading">Our Mission</h2>
+        <p class="lead-text">Through our <a href="/join-slack" class="highlight-link">online community</a> and <a
+                href="/" class="highlight-link">discovery
+                tools</a>, we aim to spotlight local, non-commercial tech opportunities for learning, sharing, and
+            connecting.</p>
+        <h2 class="section-heading">Our Vision</h2>
+        <p class="lead-text">We aspire to be the first point of call -the <code class="highlight-code">GO TO</code>- for
+            tech enthusiasts exploring the area's vibrant "hacker" culture and opportunities.</p>
+        <h2 class="section-heading">Our Culture and Guiding Principles</h2>
+        <ul class="values-list">
+            <li>We welcome all hackers, makers, and tinker types. Our community extends beyond just software.</li>
+            <li>Be respectful. Egos and biases have no place here.</li>
+            <li>Enjoy the journey. Trolling isn't tolerated.</li>
+            <li>Pay it forward. Remember, your knowledge comes from others.</li>
+            <li>Give more than you take. This isn't a community for selfish pursuits.</li>
         </ul>
     </div>
 @endsection

@@ -1,4 +1,4 @@
-<!-- resources/views/livewire/hg-timeline.blade.php -->
+
 <div>
     <h3 class="text-center">
         {{ $title }}
@@ -6,7 +6,7 @@
     <ul class="{{ count($events) > 0 ? 'timeline' : '' }}">
         @if ($loading)
             <li class="list-unstyled">
-                Loading events <i class="fa fa-spinner fa-spin fa-2x" />
+                Loading events <i class="fa fa-spinner fa-spin fa-2x"  ></i>
             </li>
         @elseif (!count($events))
             <li>
@@ -16,7 +16,7 @@
             @foreach ($events as $event)
                 <li class="timeline-inverted">
                     <div class="timeline-badge bg-success">
-                        <i class="fa fa-calendar" />
+                        <i class="fa fa-calendar" ></i>
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -29,7 +29,7 @@
                             <p class="timeline-subtitle h6">{{ $event['group_name'] }}</p>
                             <p>
                                 <small class="text-muted">
-                                    <i class="fa fa-calendar" /> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/D hh:mm A') }}
+                                    <i class="fa fa-calendar"  ></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/D hh:mm A') }}
                                 </small>
                             </p>
                         </div>

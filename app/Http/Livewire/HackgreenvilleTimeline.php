@@ -21,7 +21,7 @@ class HackgreenvilleTimeline extends Component
         $this->loadEvents();
     }
 
-    public function showMore($eventId)
+    public function showMore($eventId): void
     {
         $event = $this->events->firstWhere('id', $eventId);
 
