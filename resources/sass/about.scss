@@ -1,0 +1,37 @@
+#about-us {
+    .title-heading {
+        color: #00704a; // Use the color from the brand guidelines
+        font-size: 2.5em;
+    }
+
+    .lead-text {
+        font-size: 1.1em;
+        margin-bottom: 1.5em;
+    }
+
+    .highlight-link {
+        color: #006341; // Use another color from the brand guidelines
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .section-heading {
+        color: #00704a; // Use the color from the brand guidelines
+        font-size: 2em;
+        margin-top: 2em;
+    }
+
+    .highlight-code {
+        color: #ffa300; // Use another color from the brand guidelines
+        font-family: monospace;
+        padding: 0 0.2em;
+    }
+
+    .values-list {
+        list-style-type: disc;
+        margin-left: 2em;
+    }
+}
