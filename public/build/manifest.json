@@ -1,0 +1,35 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "dynamicImports": [
+      "resources/js/components/TimelineComponent.vue"
+    ],
+    "file": "assets/app-7e39743b.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/components/TimelineComponent.css": {
+    "file": "assets/TimelineComponent-1a5ac931.css",
+    "src": "resources/js/components/TimelineComponent.css"
+  },
+  "resources/js/components/TimelineComponent.vue": {
+    "css": [
+      "assets/TimelineComponent-1a5ac931.css"
+    ],
+    "file": "assets/TimelineComponent-003810b9.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/components/TimelineComponent.vue"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-a282f094.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}

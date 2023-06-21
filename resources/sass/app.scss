@@ -5,12 +5,12 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 @import 'slack-sign-up';
 
 // Calendar
-@import '~@fullcalendar/core/main.min.css';
-@import '~@fullcalendar/daygrid/main.min.css';
+@import '@fullcalendar/core/main.min.css';
+@import '@fullcalendar/daygrid/main.min.css';
 
 #calendar {
   min-height: 800px;
@@ -21,7 +21,7 @@
 // Bootstrap switch checkbox lib
 //@import "~bootstrap-switch/src/sass/bootstrap4/bootstrap-switch";
 // Sharrre sharing lib
-@import '~sharrre/src/sass/style';
+@import 'sharrre/src/sass/style';
 
 // Full calendar events on the calendar don't use the right pointer
 .fc-content {
@@ -32,7 +32,8 @@
 }
 
 //
-@import '~sweetalert2/src/sweetalert2';
+@import 'sweetalert2/src/sweetalert2';
+
 .swal-wide {
   width: 50em !important;
 }

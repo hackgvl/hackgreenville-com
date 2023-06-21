@@ -7,7 +7,7 @@
       <li class="list-unstyled" v-if="loading > 0">
         Loading events <i class="fa fa-spinner fa-spin fa-2x" />
       </li>
-      <li v-else-if="events.length == 0">
+      <li v-else-if="!events.length">
         <strong>No</strong> events to display.
       </li>
       <li class="timeline-inverted" v-for="event in events">
@@ -48,11 +48,11 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
+import {defineComponent} from 'vue';
 import moment from 'moment';
-// import swal from 'swal';
 
-export default {
+export default  defineComponent({
   name: 'HgTimeline',
   props: {
     event_data_route: {
@@ -128,7 +128,7 @@ export default {
     await this.load();
     this.loading = 0;
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

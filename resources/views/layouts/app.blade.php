@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
 
-    <meta name="description" content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')" />
+    <meta name="description"
+          content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,13 +18,15 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{config('app.url')}}">
     <meta property="og:title" content="@yield('title', config('app.name'))">
-    <meta property="og:description" content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
+    <meta property="og:description"
+          content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
     <meta property="og:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{config('app.url')}}">
     <meta property="twitter:title" content="@yield('title', config('app.name'))">
-    <meta property="twitter:description" content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
+    <meta property="twitter:description"
+          content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
     <meta property="twitter:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
 
     <!-- Fonts -->
@@ -38,7 +41,7 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 
     <link href='{{url('vendors/fullcalendar/packages/core/main.min.css')}}' rel='stylesheet'/>
     <link href='{{url('vendors/fullcalendar/packages/daygrid/main.min.css')}}' rel='stylesheet'/>
@@ -46,9 +49,10 @@
     <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
     <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
 
-@if(config('services.google.tagmanager.id'))
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{config('services.google.tagmanager.id')}}"></script>
+    @if(config('services.google.tagmanager.id'))
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async
+                src="https://www.googletagmanager.com/gtag/js?id={{config('services.google.tagmanager.id')}}"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -63,6 +67,7 @@
     @endif
 
     @yield('head')
+    @livewireStyles
 </head>
 <body>
 <div id="app">
@@ -87,9 +92,9 @@
     @include('layouts.footer')
 </div>
 
-<script type="text/javascript" src="{{mix('js/app.js')}}"></script>
 @yield('js')
 
 @stack('scripts')
+@livewireScripts
 </body>
 </html>

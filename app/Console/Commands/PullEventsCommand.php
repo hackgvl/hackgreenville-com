@@ -40,7 +40,7 @@ class PullEventsCommand extends Command
 
         // get all upcoming events and set keys to uuid so I can set status
         $dbEvents = Event::where('active_at', '>=', date('Y-m-d'))
-                         ->orderBy('active_at', 'asc')->get();
+            ->orderBy('active_at', 'asc')->get();
 
         if ($this->option('fix')) {
             // update mapping for service and service ids
@@ -50,11 +50,11 @@ class PullEventsCommand extends Command
 
             $dbEvents->each(
                 function ($e) use (&$fixed, &$dup_removed) {
-                    if (!$e->cache['service']) {
+                    if ( ! $e->cache['service']) {
                         return true;
                     }
 
-                    if (!$e->service) {
+                    if ( ! $e->service) {
                         $fixed++;
                         $e->update(
                             [
@@ -81,7 +81,7 @@ class PullEventsCommand extends Command
         }
 
         $dbEventIdentifiers = $dbEvents->keyBy('uniqueIdentifier')->map(
-            fn(Event $e) => false,
+            fn (Event $e) => false,
         )->toArray();
 
         if ($this->option('debug')) {
@@ -157,7 +157,7 @@ class PullEventsCommand extends Command
         // get a list of uuids that are no longer in the database
         $no_longer_in_api = array_filter(
             $dbEventIdentifiers,
-            fn($e) => $e === false,
+            fn ($e) => $e === false,
         );
 
         if (count($no_longer_in_api) > 0) {
