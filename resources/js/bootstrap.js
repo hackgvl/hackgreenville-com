@@ -1,41 +1,41 @@
 // Importing third-party libraries
-import Lodash from 'lodash'
-import moment from 'moment'
-import axios from 'axios'
-import * as sweetalert2 from "sweetalert2";
-import jquery from "jquery";
-import popper from 'popper.js'
-import bootstrap from "bootstrap";
+import Lodash from 'lodash';
+import moment from 'moment';
+import axios from 'axios';
+import * as sweetalert2 from 'sweetalert2';
+import jquery from 'jquery';
+import popper from 'popper.js';
+import bootstrap from 'bootstrap';
 
 // Adding Lodash to the global scope so it can be used anywhere in the application
-window._ = Lodash
+window._ = Lodash;
 
 try {
-    // Setting Popper, jQuery and Bootstrap to the global scope.
-    // Popper is used for positioning tooltips and popovers in Bootstrap.
-    // jQuery is a fast, small, and feature-rich JavaScript library.
-    // Bootstrap is a powerful front-end framework for faster and easier web development.
-    window.Popper = popper.default;
-    window.$ = window.jQuery = jquery;
-    window.bootstrap = bootstrap;
+  // Setting Popper, jQuery and Bootstrap to the global scope.
+  // Popper is used for positioning tooltips and popovers in Bootstrap.
+  // jQuery is a fast, small, and feature-rich JavaScript library.
+  // Bootstrap is a powerful front-end framework for faster and easier web development.
+  window.Popper = popper.default;
+  window.$ = window.jQuery = jquery;
+  window.bootstrap = bootstrap;
 } catch (e) {
-    // An error occurred while setting Popper, jQuery or Bootstrap to the global scope
+  // An error occurred while setting Popper, jQuery or Bootstrap to the global scope
 }
 
 try {
-    // Setting Moment.js to the global scope.
-    // Moment.js is a JavaScript library to parse, validate, manipulate and display dates and times.
-    window.moment = moment;
+  // Setting Moment.js to the global scope.
+  // Moment.js is a JavaScript library to parse, validate, manipulate and display dates and times.
+  window.moment = moment;
 } catch (e) {
-    // An error occurred while setting Moment.js to the global scope
+  // An error occurred while setting Moment.js to the global scope
 }
 
 try {
-    // Setting SweetAlert2 to the global scope.
-    // SweetAlert2 is a library to create beautiful, responsive, customizable and accessible alert messages.
-    window.swal = sweetalert2;
+  // Setting SweetAlert2 to the global scope.
+  // SweetAlert2 is a library to create beautiful, responsive, customizable and accessible alert messages.
+  window.swal = sweetalert2;
 } catch (e) {
-    // An error occurred while setting SweetAlert2 to the global scope
+  // An error occurred while setting SweetAlert2 to the global scope
 }
 
 // Setting Axios to the global scope.
