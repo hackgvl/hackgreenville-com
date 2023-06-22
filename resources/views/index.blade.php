@@ -20,10 +20,10 @@
             <div class="row">
                 <div class="col-md-6 col-lg-8">
                     <div class="text-center">
-                        <h3 class="screaming-hackgreenville-question">What is Hack Greenville?</h3>
+                        <h3 class="screaming-hackgreenville-question">What is HackGreenville?</h3>
 
                         <p class="summary">
-                            Hack Greenville is a community of "hackers" located in and around Greenville, SC. Our
+                            HackGreenville is a community of "hackers" located in and around Greenville, SC. Our
                             community exists to foster personal growth for community
                             members through sharing and promoting local tech opportunities.
                         </p>

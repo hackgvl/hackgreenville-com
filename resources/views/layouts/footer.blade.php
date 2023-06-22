@@ -93,7 +93,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© {{date('Y')}} Copyright:
-        <a href="http://hackgreenville.com"> Hack Greenville</a>
+        <a href="http://hackgreenville.com"> HackGreenville</a>
     </div>
     <!-- End of Copyright -->
 
