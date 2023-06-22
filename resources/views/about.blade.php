@@ -18,7 +18,7 @@
             pilot program and was later nurtured and expanded by <a href="https://codeforgreenville.org"
                                                                     class="highlight-link">Code
                 For Greenville</a>. The site uses <a href="https://data.openupstate.org" class="highlight-link">open
-                data APIs developed by Code For Greenville</a> to promote local, tech-related meetup groups and
+                data APIs developed by HackGreenville Labs</a> to promote local, tech-related meetup groups and
             events.</p>
         <p class="lead-text">Here's a snapshot of our community's purpose, mission, vision, and culture:</p>
         <h2 class="section-heading">Our Purpose</h2>

@@ -12,7 +12,7 @@ You don't need to be a "coder" to contribute. Many issues have UI, UX, accessibi
 
 Our focused task-based discussions happen mostly within GitHub [Issues](https://github.com/codeforgreenville/hackgreenville-com/issues) and [Pull Requests](https://github.com/codeforgreenville/hackgreenville-com/pulls) (also known as PRs).
 
-You can also ask questions and connect with the development team in a less structured venue by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org)
+You can also ask questions and connect with the development team in a less structured venue by signing up for [HackGreenville Labs's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org)
 
 Before starting a new issue, please review and / or search the [current "open" issues](https://github.com/codeforgreenville/hackgreenville-com/issues/) to avoid duplicates.
 
