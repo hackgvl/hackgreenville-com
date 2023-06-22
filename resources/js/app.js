@@ -7,3 +7,12 @@
 import './bootstrap';
 
 $('.loading').hide().removeClass('d-none');
+
+window.showMoreTimeline = function (e) {
+    const event = JSON.parse(e);
+
+    Swal.fire({
+        title: event.title,
+        html: event.description,
+    })
+}

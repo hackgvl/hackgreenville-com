@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Resources\EventResource;
 use App\Models\Event;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -39,7 +40,7 @@ class HackgreenvilleTimeline extends Component
     {
         $events = Event::getActive()
             ->take(5)
-            ->select(['event_name', 'group_name', 'description', 'active_at', 'expire_at', 'uri', 'cancelled_at'])
+            ->select(['id', 'event_name', 'group_name', 'description', 'active_at', 'expire_at', 'uri', 'cancelled_at'])
             ->get();
 
         $this->events = $events;

@@ -36,7 +36,7 @@
                         <div class="timeline-body">
                             <div>
                                 <button
-                                    wire:click="showMore('{{ $event['id'] }}')"
+                                    onClick="showMoreTimeline('{{addslashes($event->toJson()) }}')"
                                     class="btn btn-secondary"
                                     type="button"
                                 >
