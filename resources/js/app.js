@@ -6,11 +6,4 @@
 
 import './bootstrap';
 
-// load full calendar and register it to the window object
-import FullCalendar from '@fullcalendar/core';
-import FullCalendarDayGrid from '@fullcalendar/daygrid';
-
-window.FullCalendar = FullCalendar;
-window.FullCalendarDayGrid = FullCalendarDayGrid;
-
 $('.loading').hide().removeClass('d-none');

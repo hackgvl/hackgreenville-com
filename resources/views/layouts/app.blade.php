@@ -49,6 +49,9 @@
         </script>
     @endif
 
+    <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
+    <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
+
     @yield('head')
     @livewireStyles
 </head>

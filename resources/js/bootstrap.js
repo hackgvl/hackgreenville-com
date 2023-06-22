@@ -2,7 +2,7 @@
 import Lodash from 'lodash';
 import moment from 'moment';
 import axios from 'axios';
-import * as sweetalert2 from 'sweetalert2';
+import Swal from 'sweetalert2';
 import jquery from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
@@ -33,7 +33,7 @@ try {
 try {
   // Setting SweetAlert2 to the global scope.
   // SweetAlert2 is a library to create beautiful, responsive, customizable and accessible alert messages.
-  window.swal = sweetalert2;
+  window.Swal = Swal;
 } catch (e) {
   // An error occurred while setting SweetAlert2 to the global scope
 }
