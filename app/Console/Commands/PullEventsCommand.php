@@ -2,13 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Clients\UpstateClient;
 use App\Models\Event;
 use App\Models\State;
 use App\Models\Venue;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use App\Http\Clients\UpstateClient;
 
 class PullEventsCommand extends Command
 {
@@ -18,9 +18,9 @@ class PullEventsCommand extends Command
      * @var string
      */
     protected $signature = 'pull:events ' .
-    '{--1|one : just import one event} ' .
-    '{--d|debug : dump the first response from the events api}' .
-    '{--f|fix : update event keys <info>from event cache</info>}';
+                           '{--1|one : just import one event} ' .
+                           '{--d|debug : dump the first response from the events api}' .
+                           '{--f|fix : update event keys <info>from event cache</info>}';
 
     /**
      * The console command description.
@@ -40,7 +40,7 @@ class PullEventsCommand extends Command
 
         // get all upcoming events and set keys to uuid so I can set status
         $dbEvents = Event::where('active_at', '>=', date('Y-m-d'))
-            ->orderBy('active_at', 'asc')->get();
+                         ->orderBy('active_at', 'asc')->get();
 
         if ($this->option('fix')) {
             // update mapping for service and service ids
@@ -60,29 +60,28 @@ class PullEventsCommand extends Command
                             [
                                 'service'    => $e->cache['service'],
                                 'service_id' => $e->cache['service_id'],
-                            ]
+                            ],
                         );
                     }
 
 
                     // find and remove duplicates
-                    $removed = Event::where([
-                                                'service'    => $e->cache['service'],
-                                                'service_id' => $e->cache['service_id'],
-                                            ]
+                    $removed = Event::where(
+                        [
+                            'service'    => $e->cache['service'],
+                            'service_id' => $e->cache['service_id'],
+                        ],
                     )->where('id', '>', $e->id)->forceDelete();
 
                     $dup_removed += $removed;
-                }
+                },
             );
             $this->info('fixed ' . $fixed . ' events');
             $this->info('remove ' . $dup_removed . ' duplicates');
         }
 
         $dbEventIdentifiers = $dbEvents->keyBy('uniqueIdentifier')->map(
-            function (Event $e) {
-                return false;
-            }
+            fn(Event $e) => false,
         )->toArray();
 
         if ($this->option('debug')) {
@@ -116,7 +115,7 @@ class PullEventsCommand extends Command
                 'rsvp_count'   => $event['rsvp_count'],
                 'active_at'    => $event['localtime'],
                 // The api should always return cancelled if the event was cancelled
-                'cancelled_at' => $event['status'] == 'cancelled' ? new Carbon() : null,
+                'cancelled_at' => $event['status'] === 'cancelled' ? new Carbon : null,
                 'uri'          => $event['url'] ?: 'https://www.meetup.com/Hack-Greenville/events/',
                 'cache'        => $event,
             ];
@@ -143,7 +142,7 @@ class PullEventsCommand extends Command
                         'name'     => array_get($event, 'venue.name'),
                         'lat'      => array_get($event, 'venue.lat'),
                         'lng'      => array_get($event, 'venue.lon'),
-                    ]
+                    ],
                 );
 
                 $event_data += ['venue_id' => $venue->id];
@@ -158,9 +157,7 @@ class PullEventsCommand extends Command
         // get a list of uuids that are no longer in the database
         $no_longer_in_api = array_filter(
             $dbEventIdentifiers,
-            function ($e) {
-                return $e == false;
-            }
+            fn($e) => $e === false,
         );
 
         if (count($no_longer_in_api) > 0) {
@@ -170,12 +167,12 @@ class PullEventsCommand extends Command
                 'Marking ' . count($no_longer_in_api) . ' ' .
                 Str::plural('event', count($no_longer_in_api)) .
                 ' cancelled in the database. These uuid ' .
-                implode(', ', $ids)
+                implode(', ', $ids),
             );
 
             foreach ($ids as $identifier) {
                 $find = json_decode($identifier, true);
-                Event::where($find)->update(['cancelled_at' => new Carbon()]);
+                Event::where($find)->update(['cancelled_at' => new Carbon]);
             }
         }
 

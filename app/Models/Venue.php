@@ -11,22 +11,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Venue extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'venues';
 
     protected $fillable
             = [
-                    'slug',
-                    'name',
-                    'address',
-                    'zipcode',
-                    'phone',
-                    'city',
-                    'state_id',
-                    'lat',
-                    'lng',
+                'slug',
+                'name',
+                'address',
+                'zipcode',
+                'phone',
+                'city',
+                'state_id',
+                'lat',
+                'lng',
             ];
+
+    public function __toString()
+    {
+        return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
+    }
 
     public function getStateAbbrAttribute()
     {
@@ -41,10 +47,5 @@ class Venue extends Model
     public function events()
     {
         return $this->hasMany(Event::class);
-    }
-
-    public function __toString()
-    {
-        return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
     }
 }

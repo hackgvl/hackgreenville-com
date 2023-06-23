@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use App\Models\User;
@@ -14,13 +15,13 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::firstOrCreate(
-                ['email' => 'admin@admin.com'],
-                [
-                        'first_name' => 'admin',
-                        'last_name'  => 'admin',
-                        'email'      => 'admin@admin.com',
-                        'password'   => bcrypt('admin'),
-                ]
+            ['email' => 'admin@admin.com'],
+            [
+                'first_name' => 'admin',
+                'last_name'  => 'admin',
+                'email'      => 'admin@admin.com',
+                'password'   => bcrypt('admin'),
+            ]
         );
     }
 }

@@ -37,12 +37,12 @@ class PullOrgsCommand extends Command
         $activeOrgsCategories = [];
         $inactiveOrgs         = [];
 
-        if (!$this->option('active') && !$this->option('inactive')) {
+        if ( ! $this->option('active') && ! $this->option('inactive')) {
             $activeOrgsCategories = getActiveOrgs();
             $inactiveOrgs         = getInactiveOrgs();
-        } elseif (!$this->option('active')) {
+        } elseif ( ! $this->option('active')) {
             $inactiveOrgs = getInactiveOrgs();
-        } elseif (!$this->option('inactive')) {
+        } elseif ( ! $this->option('inactive')) {
             $activeOrgsCategories = getActiveOrgs();
         }
 
@@ -95,7 +95,7 @@ class PullOrgsCommand extends Command
             ]);
 
             // Inactive org make sure it is deleted.
-            if (!$new_org->deleted_at === null) {
+            if ( ! $new_org->deleted_at === null) {
                 try {
                     $new_org->delete();
                 } catch (Exception $e) {

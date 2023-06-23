@@ -5,9 +5,10 @@ use Carbon\Carbon;
 /**
  * Retrieve event information from API
  */
-function getEvents () {
+function getEvents()
+{
     $event_url = config('app.events_api_domain') . '/api/gtc';
-    $event_data = file_get_contents( $event_url );
+    $event_data = file_get_contents($event_url);
 
     // Put the data into JSON format.
     $events = json_decode($event_data);
@@ -27,14 +28,14 @@ function getEvents () {
 /**
  * Retrieve event information from API in array format
  */
-function getEventsArray ()
+function getEventsArray()
 {
     $event_data = getEvents();
 
-  // Put the data into JSON format.
-  $events = json_decode( $event_data , true );
+    // Put the data into JSON format.
+    $events = json_decode($event_data, true);
 
-  return $events;
+    return $events;
 }
 
 /**
@@ -75,8 +76,10 @@ function getInactiveOrgs()
  */
 function build_cal_url($event)
 {
-    $event_time = DateTime::createFromFormat('Y-m-d\TH:i:s\Z',
-        $event->time);
+    $event_time = DateTime::createFromFormat(
+        'Y-m-d\TH:i:s\Z',
+        $event->time
+    );
 
     $start_time = $event_time->format('Ymd\THis\Z');
 
@@ -86,7 +89,7 @@ function build_cal_url($event)
 
     $location = '';
 
-    if (property_exists($event, 'venue') && $event->venue != null):
+    if (property_exists($event, 'venue') && $event->venue !== null):
         $location .= $event->venue->name . ', ';
         $location .= $event->venue->address . ', ';
         $location .= $event->venue->city . ', ';
@@ -95,7 +98,7 @@ function build_cal_url($event)
 
     $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
     $calendar_url .= 'text=' . urlencode($event->event_name) . '&';
-    $calendar_url .= "dates=$start_time/$end_time&";
+    $calendar_url .= "dates={$start_time}/{$end_time}&";
     $calendar_url .= 'details=' . urlencode(strip_tags($event->description)) . '&';
     $calendar_url .= 'location=' . urlencode($location) . '&';
     $calendar_url .= "trp=false&";
@@ -111,7 +114,7 @@ function getOrgTypes($orgs)
     $result = [];
 
     foreach ($orgs as $org) :
-        if (!in_array($org->field_organization_type, $result)):
+        if ( ! in_array($org->field_organization_type, $result)):
             $result[] = $org->field_organization_type;
         endif;
     endforeach;
@@ -124,7 +127,7 @@ function getOrgTypes($orgs)
  */
 function compareTime($a, $b)
 {
-    if ($a->time == $b->time):
+    if ($a->time === $b->time):
         return 0;
     endif;
 
@@ -141,10 +144,12 @@ function getEventMonths($events)
     $result = [];
 
     foreach ($events as $event) {
-        $event_month = DateTime::createFromFormat('Y-m-d\TH:i:s\Z',
-            $event->time)->format('F Y');
+        $event_month = DateTime::createFromFormat(
+            'Y-m-d\TH:i:s\Z',
+            $event->time
+        )->format('F Y');
 
-        if (!in_array($event_month, $result)) {
+        if ( ! in_array($event_month, $result)) {
             $result[] = $event_month;
         }
     }
@@ -163,10 +168,12 @@ function filterOnMonth($events, $month)
     $result = [];
 
     foreach ($events as $event):
-        $event_month = DateTime::createFromFormat('Y-m-d\TH:i:s\Z',
-            $event->time)->format('F Y');
+        $event_month = DateTime::createFromFormat(
+            'Y-m-d\TH:i:s\Z',
+            $event->time
+        )->format('F Y');
 
-        if ($event_month == $month):
+        if ($event_month === $month):
             $result[] = $event;
         endif;
     endforeach;
@@ -190,7 +197,7 @@ function filterOnType($events, $orgs, $type)
         $event_host = $event->group_name;
         $event_type = $orgTypeArray[$event_host];
 
-        if ($event_type == $type):
+        if ($event_type === $type):
             $result[] = $event;
         endif;
     endforeach;
@@ -222,5 +229,5 @@ function getOrgTypeArray($orgs)
  */
 function getOrgWebsite($org)
 {
-    return $org->field_homepage == '' ? $org->path : $org->field_homepage;
+    return $org->field_homepage === '' ? $org->path : $org->field_homepage;
 }

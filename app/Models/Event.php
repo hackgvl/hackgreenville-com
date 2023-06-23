@@ -28,7 +28,8 @@ use Illuminate\Routing\Pipeline;
  */
 class Event extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'events';
 
@@ -159,7 +160,7 @@ class Event extends Model
 
         $location = '';
 
-        if (property_exists($this, 'venue') && $this->venue != null):
+        if (property_exists($this, 'venue') && $this->venue !== null):
             $location .= $this->venue->name . ', ';
             $location .= $this->venue->address . ', ';
             $location .= $this->venue->city . ', ';
@@ -168,7 +169,7 @@ class Event extends Model
 
         $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
         $calendar_url .= 'text=' . urlencode($this->event_name) . '&';
-        $calendar_url .= "dates=$start_time/$end_time&";
+        $calendar_url .= "dates={$start_time}/{$end_time}&";
         $calendar_url .= 'details=' . urlencode(strip_tags($this->description)) . '&';
         $calendar_url .= 'location=' . urlencode($location) . '&';
         $calendar_url .= "trp=false&";

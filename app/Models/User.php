@@ -14,7 +14,9 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable
 {
-    use Notifiable, SoftDeletes, HasFactory;
+    use HasFactory;
+    use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -23,10 +25,10 @@ class User extends Authenticatable
      */
     protected $fillable
             = [
-                    'first_name',
-                    'last_name',
-                    'email',
-                    'password',
+                'first_name',
+                'last_name',
+                'email',
+                'password',
             ];
 
     /**
@@ -36,8 +38,8 @@ class User extends Authenticatable
      */
     protected $hidden
             = [
-                    'password',
-                    'remember_token',
+                'password',
+                'remember_token',
             ];
 
     public function getNameAttribute()

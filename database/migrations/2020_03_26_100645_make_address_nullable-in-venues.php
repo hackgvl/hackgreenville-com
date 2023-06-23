@@ -31,7 +31,7 @@ class MakeAddressNullableInVenues extends Migration
     public function down()
     {
         Schema::table('venues', function (Blueprint $table) {
-            //
+
         });
     }
 }

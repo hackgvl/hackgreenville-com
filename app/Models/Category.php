@@ -22,6 +22,6 @@ class Category extends Model
 
     public function isInactive(): bool
     {
-        return 'Inactive' == $this->label;
+        return 'Inactive' === $this->label;
     }
 }
