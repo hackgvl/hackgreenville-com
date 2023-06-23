@@ -21,7 +21,7 @@ If you can't find what you were looking for then [open a new issue](https://gith
 When in doubt, you can reach out to an active project contributor:
 
 | Name          | GitHub                                   | Role                               |
-| :------------ | :--------------------------------------- | :--------------------------------- |
+|:--------------|:-----------------------------------------|:-----------------------------------|
 | Zach          | [@zach2825](https://github.com/zach2825) | Technical Lead, Laravel            |
 | Jim Ciallella | [@allella](https://github.com/allella)   | Bugs, Documentation, Newcomer Help |
 
