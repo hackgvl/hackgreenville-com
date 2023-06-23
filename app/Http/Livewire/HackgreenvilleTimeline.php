@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Resources\EventResource;
 use App\Models\Event;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;

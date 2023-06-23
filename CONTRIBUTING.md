@@ -12,7 +12,7 @@ You don't need to be a "coder" to contribute. Many issues have UI, UX, accessibi
 
 Our focused task-based discussions happen mostly within GitHub [Issues](https://github.com/codeforgreenville/hackgreenville-com/issues) and [Pull Requests](https://github.com/codeforgreenville/hackgreenville-com/pulls) (also known as PRs).
 
-You can also ask questions and connect with the development team in a less structured venue by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org)
+You can also ask questions and connect with the development team in a less structured venue by signing up for [HackGreenville Slack and join the #hg-labs channel](https://codeforgreenville.org)
 
 Before starting a new issue, please review and / or search the [current "open" issues](https://github.com/codeforgreenville/hackgreenville-com/issues/) to avoid duplicates.
 
@@ -21,7 +21,7 @@ If you can't find what you were looking for then [open a new issue](https://gith
 When in doubt, you can reach out to an active project contributor:
 
 | Name          | GitHub                                   | Role                               |
-| :------------ | :--------------------------------------- | :--------------------------------- |
+|:--------------|:-----------------------------------------|:-----------------------------------|
 | Zach          | [@zach2825](https://github.com/zach2825) | Technical Lead, Laravel            |
 | Jim Ciallella | [@allella](https://github.com/allella)   | Bugs, Documentation, Newcomer Help |
 
@@ -96,7 +96,7 @@ You need a reference from your local copy to the `upstream` repository in additi
 
 #### System Requirements
 
-- [Requirements of Laravel 8](https://laravel.com/docs/8.x/releases), which include PHP 7.3+ or PHP 8+
+- [Requirements of Laravel 10](https://laravel.com/docs/10.x/deployment#server-requirements), which include PHP 7.3+ or PHP 8+
 - You'll need [composer](https://getcomposer.org/download/) as well.
 - You'll need [yarn](https://yarnpkg.com/lang/en/docs/install/) as well.
 - For running "tests", you'll need SQLite and its associated PHP extensions enabled.
@@ -193,7 +193,7 @@ As in the earlier setup steps, Laravel Artisan is heavily leveraged to execute f
 ## Contributing Code to the Project
 
 - See the [HackGreenville style guide](https://hackgreenville.com/styles) for theming suggestions for fonts, headings, colors, and such.
-- See the [Laravel installation documentation](https://laravel.com/docs/4.2/quick#installation) for more details.
+- See the [Laravel installation documentation](https://laravel.com/docs/10.x/installation) for more details.
 - Always follow the steps below when starting a new branch or pull request.\*\*
 
 Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern. This allows anyone to suggest changes for review, commenting, and eventual apporval / merging into the main project's repo.
