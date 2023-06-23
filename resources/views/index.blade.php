@@ -69,7 +69,7 @@
                             <a href="https://github.com/codeforgreenville/hackgreenville-com"
                                class="text-decoration-none text-dark">
                                 <p style="line-height:1; font-size:15em;" class="mt-5">
-                                    <i class="fab fa-github"></i>
+                                    <i class="fa fa-github"></i>
                                 <p/>
                                 <p class="summary">Join the Project</p>
                             </a>
