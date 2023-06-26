@@ -21,14 +21,14 @@
       </li>
 
         <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" title="Sign up for the Hack Greenville Slack" data-placement="bottom" href="/join-slack">
+        <a class="nav-link" data-toggle="tooltip" title="Sign up for the HackGreenville Slack" data-placement="bottom" href="/join-slack">
           <i class="fa fa-slack"></i>
           <span>Join Slack</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tooltip" title="Login to the Hack Greenville Slack" data-placement="bottom" href="https://hackgreenville.slack.com">
+        <a class="nav-link" data-toggle="tooltip" title="Login to the HackGreenville Slack" data-placement="bottom" href="https://hackgreenville.slack.com">
           <i class="fa fa-slack"></i>
           <span>Slack Login</span>
         </a>
