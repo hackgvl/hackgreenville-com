@@ -77,7 +77,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mt-sm-5 mt-md-3">
-                    <livewire:hackgreenville-timeline title="Upcoming Events"/>
+                    <livewire:hackgreenville-timeline
+                                 title="Upcoming Events"/>
                 </div>
             </div>
         </div>
