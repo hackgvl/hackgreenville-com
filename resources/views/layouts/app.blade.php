@@ -30,7 +30,7 @@
     <meta property="twitter:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 
     @if(config('services.google.tagmanager.id'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,7 +49,11 @@
         </script>
     @endif
 
+    <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
+    <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
+
     @yield('head')
+    @livewireStyles
 </head>
 <body>
 <div id="app">
@@ -74,9 +78,9 @@
     @include('layouts.footer')
 </div>
 
-<script type="text/javascript" src="{{mix('js/app.js')}}"></script>
 @yield('js')
 
 @stack('scripts')
+@livewireScripts
 </body>
 </html>

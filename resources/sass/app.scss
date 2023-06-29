@@ -7,14 +7,16 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 @import 'slack-sign-up';
 //@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
 
 // Calendar
-@import '~@fullcalendar/core/main.min.css';
-@import '~@fullcalendar/daygrid/main.min.css';
+@import '@fullcalendar/core/main.min.css';
+@import '@fullcalendar/daygrid/main.min.css';
+
+@import "timeline";
 
 #calendar {
     min-height: 800px;
@@ -25,7 +27,7 @@
 // Bootstrap switch checkbox lib
 //@import "~bootstrap-switch/src/sass/bootstrap4/bootstrap-switch";
 // Sharrre sharing lib
-@import '~sharrre/src/sass/style';
+@import 'sharrre/src/sass/style';
 
 // Full calendar events on the calendar don't use the right pointer
 .fc-content {
@@ -36,7 +38,8 @@
 }
 
 //
-@import '~sweetalert2/src/sweetalert2';
+@import 'sweetalert2/src/sweetalert2';
+
 .swal-wide {
     width: 50em !important;
 }
@@ -117,7 +120,7 @@ a {
 #homepage {
     #homepage-jumbotron {
         color: white;
-    background: url(/img/hackgreenville-banner.jpg) no-repeat center center
+    background: url(img/hackgreenville-banner.jpg) no-repeat center center
       fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;

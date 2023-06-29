@@ -96,7 +96,7 @@ You need a reference from your local copy to the `upstream` repository in additi
 
 #### System Requirements
 
-- [Requirements of Laravel 8](https://laravel.com/docs/8.x/releases), which include PHP 7.3+ or PHP 8+
+- [Requirements of Laravel 10](https://laravel.com/docs/10.x/deployment#server-requirements), which include PHP 7.3+ or PHP 8+
 - You'll need [composer](https://getcomposer.org/download/) as well.
 - You'll need [yarn](https://yarnpkg.com/lang/en/docs/install/) as well.
 - For running "tests", you'll need SQLite and its associated PHP extensions enabled.
@@ -193,7 +193,7 @@ As in the earlier setup steps, Laravel Artisan is heavily leveraged to execute f
 ## Contributing Code to the Project
 
 - See the [HackGreenville style guide](https://hackgreenville.com/styles) for theming suggestions for fonts, headings, colors, and such.
-- See the [Laravel installation documentation](https://laravel.com/docs/4.2/quick#installation) for more details.
+- See the [Laravel installation documentation](https://laravel.com/docs/10.x/installation) for more details.
 - Always follow the steps below when starting a new branch or pull request.\*\*
 
 Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern. This allows anyone to suggest changes for review, commenting, and eventual apporval / merging into the main project's repo.

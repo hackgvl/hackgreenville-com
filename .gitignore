@@ -27,3 +27,6 @@ public/mix-manifest.json
 mysql/
 redis/
 laravel.log
+
+# Compiled with `yarn build`
+public/build/

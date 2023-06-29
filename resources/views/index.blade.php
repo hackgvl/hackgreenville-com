@@ -69,7 +69,7 @@
                             <a href="https://github.com/codeforgreenville/hackgreenville-com"
                                class="text-decoration-none text-dark">
                                 <p style="line-height:1; font-size:15em;" class="mt-5">
-                                    <i class="fab fa-github"></i>
+                                    <i class="fa fa-github"></i>
                                 <p/>
                                 <p class="summary">Join the Project</p>
                             </a>
@@ -77,14 +77,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mt-sm-5 mt-md-3">
-                    <hg-timeline event_data_route="{{route('api.homepage.timeline', [], false)}}"
-                                 title="Upcoming Events">
-                        <ul>
-                            <li class="list-unstyled">
-                                Loading events <i class="fa fa-spinner fa-spin fa-2x"></i>
-                            </li>
-                        </ul>
-                    </hg-timeline>
+                    <livewire:hackgreenville-timeline
+                                 title="Upcoming Events"/>
                 </div>
             </div>
         </div>

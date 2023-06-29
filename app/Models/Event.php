@@ -25,6 +25,7 @@ use Illuminate\Routing\Pipeline;
  * @property string service
  * @property string service_id
  * @property string uniqueIdentifier
+ * @method static search()
  */
 class Event extends Model
 {
@@ -52,16 +53,12 @@ class Event extends Model
 
     protected $casts
         = [
-            'cache' => 'json',
-        ];
-
-    protected $dates
-        = [
-            'created_at',
-            'updated_at',
-            'deleted_at',
-            'active_at',
-            'expire_at',
+            'cache'      => 'json',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'deleted_at' => 'datetime',
+            'active_at'  => 'datetime',
+            'expire_at'  => 'datetime',
         ];
 
     protected $appends
@@ -104,7 +101,7 @@ class Event extends Model
                 [
                     date('Y-m-d', strtotime($start)),
                     date('Y-m-d', strtotime($end)),
-                ]
+                ],
             );
     }
 
@@ -117,7 +114,7 @@ class Event extends Model
                     // Get the active events
                     Active::class,
                     Month::class,
-                ]
+                ],
             )
             ->thenReturn();
     }
@@ -126,7 +123,7 @@ class Event extends Model
      * accessor url to uri
      * @return string
      */
-    public function getUrlAttribute()
+    public function getUrlAttribute(): string
     {
         return $this->uri;
     }
@@ -137,10 +134,6 @@ class Event extends Model
             return 'passed';
         }
 
-        //TODO :: create the condition that returns the status of live
-        if (false) {
-            return 'live';
-        }
 
         return 'upcoming';
     }
@@ -160,7 +153,7 @@ class Event extends Model
 
         $location = '';
 
-        if (property_exists($this, 'venue') && $this->venue !== null):
+        if (property_exists($this, 'venue') && ($this->venue !== null)):
             $location .= $this->venue->name . ', ';
             $location .= $this->venue->address . ', ';
             $location .= $this->venue->city . ', ';
