@@ -2,12 +2,13 @@
 
 namespace App\Console\Commands;
 
-use App\Enums\OrgStatuses;
 use App\Http\Clients\UpstateClient;
 use App\Models\Category;
 use App\Models\Org;
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Throwable;
 
 class PullOrgsCommand extends Command
@@ -42,99 +43,122 @@ class PullOrgsCommand extends Command
         $activeOrgsCategories = [];
         $inactiveOrgs         = [];
 
-        if ( ! $this->option('active') && ! $this->option('inactive')) {
-            $orgs = $upstateClient->getOrgs();
 
-            $activeOrgsCategories = $orgs->where('status', OrgStatuses::active->value);
-            $inactiveOrgs         = $orgs->where('status', OrgStatuses::inactive->value);
-        } elseif ( ! $this->option('active')) {
-            $inactiveOrgs = $upstateClient->getInactiveOrgs();
-        } elseif ( ! $this->option('inactive')) {
-            $activeOrgsCategories = $upstateClient->getActiveOrgs();
+        try {
+            if ( ! $this->option('active') && ! $this->option('inactive')) {
+                $activeOrgsCategories = $upstateClient->getActiveOrgs();
+                $inactiveOrgs         = $upstateClient->getInactiveOrgs();
+            } elseif ( ! $this->option('active')) {
+                $inactiveOrgs = $upstateClient->getInactiveOrgs();
+            } elseif ( ! $this->option('inactive')) {
+                $activeOrgsCategories = $upstateClient->getActiveOrgs();
+            }
+
+            $total_importing = $activeOrgsCategories->count() + $inactiveOrgs->count();
+
+            throw_if($total_importing === 0, 'No orgs returned from api');
+        } catch(Exception $e) {
+            $this->error($e->getMessage());
+            return self::FAILURE;
         }
-
-        $total_importing = $activeOrgsCategories->count() + $inactiveOrgs->count();
 
         $this->info("Importing {$total_importing} orgs");
 
-        foreach ($activeOrgsCategories as $category_name => $activeOrgs) {
-            $this->info('Importing active orgs category "' . $category_name . '"');
-            $category = Category::firstOrCreate(['label' => $category_name,], ['label' => $category_name,]);
-
-            foreach ($activeOrgs as $activeOrg) {
-                Org::firstOrCreate([
-                    'title' => $activeOrg->title,
-                    'city'  => $activeOrg->field_city,
-                ], [
-                    'title'                  => $activeOrg->title,
-                    'city'                   => $activeOrg->field_city,
-                    'category_id'            => $category->id,
-                    'path'                   => $activeOrg->path,
-                    'focus_area'             => $activeOrg->field_focus_area,
-                    'uri'                    => $activeOrg->field_homepage,
-                    'primary_contact_person' => $activeOrg->field_primary_contact_person,
-                    'organization_type'      => $activeOrg->field_organization_type,
-                    'event_calendar_uri'     => $activeOrg->field_event_calendar_homepage,
-                    'cache'                  => $activeOrg,
-                ]);
-            }
+        if($this->option('debug')) {
+            dump(compact('activeOrgsCategories', 'inactiveOrgs'));
+            return self::SUCCESS;
         }
 
-        $category = Category::firstOrCreate(['label' => 'Inactive'], ['label' => 'Inactive']);
-        $this->info('Importing inactive orgs');
 
-        foreach ($inactiveOrgs as $inactiveOrg) {
-            /** @var Org $new_org */
-            $new_org = Org::withTrashed()->firstOrCreate([
-                'title' => $inactiveOrg->title,
-                'city'  => $inactiveOrg->field_city,
-            ], [
-                'title'                  => $inactiveOrg->title,
-                'city'                   => $inactiveOrg->field_city,
-                'category_id'            => $category->id,
-                'path'                   => $inactiveOrg->path,
-                'focus_area'             => $inactiveOrg->field_focus_area,
-                'uri'                    => $inactiveOrg->field_homepage,
-                'primary_contact_person' => $inactiveOrg->field_primary_contact_person,
-                'organization_type'      => $inactiveOrg->field_organization_type,
-                'event_calendar_uri'     => $inactiveOrg->field_event_calendar_homepage,
-                'cache'                  => $inactiveOrg,
-            ]);
+        $active_counter = 0;
+        $inactive_counter = 0;
 
-            // Inactive org make sure it is deleted.
-            if ( ! $new_org->deleted_at === null) {
-                try {
-                    $new_org->delete();
-                } catch (Exception $e) {
-                }
-            }
-        }
+        $this->importActiveOrgs($activeOrgsCategories, $active_counter);
+        $this->handleImportInactiveOrgs($inactiveOrgs, $inactive_counter);
 
-        $this->info('Done Importing');
+        $this->info('Done Importing. Imported ' . $active_counter . ' active and ' . $inactive_counter . ' orgs.');
 
         if ($this->option('org-cleanup')) {
-            $this->info('cleaning up the orgs table');
-
-            // Find the first occurrence of a deleted org
-            $first = Org::onlyTrashed()->first();
-
-            if ($first) {
-                // Find the start of duplicates
-                $second = Org::onlyTrashed()->where('id', '>', $first->id + 1)->where('title', $first->title)->first();
-
-                if ($second) {
-                    // If there are any duplicates delete starting at the duplicate line
-                    $deleted = Org::onlyTrashed()->where('id', '>=', $second->id)->forceDelete();
-                    $this->info("Cleaned out {$deleted} orgs");
-                } else {
-                    $this->info('Nothing to clean out (a)');
-                }
-            } else {
-                $this->info('Nothing to clean out (b)');
-            }
+            $this->handleCleanup();
         }
 
+        return self::SUCCESS;
+    }
 
-        return 0;
+    public function importActiveOrgs(Collection $active_orgs_by_group, &$inc): void
+    {
+        $active_orgs_by_group
+            ->each(function ($orgs, $group_name) use (&$inc) {
+                $category = Category::firstOrCreate(['label' => $group_name], ['label' => $group_name]);
+
+                $this->info("Importing active orgs category \"{$group_name}\"");
+
+                foreach ($orgs as $org) {
+                    $this->handleUpdateOrCreateOrg($org, $category->id);
+                    $inc++;
+                }
+            });
+    }
+
+    public function handleImportInactiveOrgs($inactiveOrgs, &$inc): void
+    {
+        $inactiveCategory = Category::firstOrCreate(['label' => 'Inactive'], ['label' => 'Inactive']);
+
+        $inactiveOrgs->each(function ($inactiveOrg, $group_name) use ($inactiveCategory, &$inc) {
+            $this->info("Importing inactive orgs {$group_name} as inactive category id {$inactiveCategory->id}");
+
+            foreach ($inactiveOrg as $org) {
+                $this->handleUpdateOrCreateOrg($org, $inactiveCategory->id);
+
+                $inc++;
+            }
+        });
+    }
+
+    public function handleUpdateOrCreateOrg(array $org, $category_id): Model|Org
+    {
+        return Org::firstOrCreate([
+            'title' => $org['title'],
+            'city'  => $org['field_city'],
+        ], [
+            'title'                  => $org['title'],
+            'city'                   => $org['field_city'],
+            'category_id'            => $category_id,
+            'path'                   => $org['path'],
+            'focus_area'             => $org['field_focus_area'],
+            'uri'                    => $org['field_homepage'],
+            'primary_contact_person' => $org['field_primary_contact_person'],
+            'organization_type'      => $org['field_organization_type'],
+            'event_calendar_uri'     => $org['field_event_calendar_homepage'],
+            'cache'                  => $org,
+        ]);
+    }
+
+    public function handleCleanup(): void
+    {
+        $this->info('cleaning up the orgs table');
+
+        // Find the first occurrence of a deleted org
+        $first = Org::onlyTrashed()->first();
+
+        if ($first) {
+            // Find the start of duplicates
+            $second = Org::onlyTrashed()
+                ->where('id', '>', $first->id + 1)
+                ->where('title', $first->title)
+                ->first();
+
+            if ($second) {
+                // If there are any duplicates, delete starting at the duplicate line
+                $deleted = Org::onlyTrashed()
+                    ->where('id', '>=', $second->id)
+                    ->forceDelete();
+                $this->info("Cleaned out {$deleted} orgs");
+            } else {
+                $this->info('Nothing to clean out (a)');
+            }
+        } else {
+            $this->info('Nothing to clean out (b)');
+        }
     }
 }

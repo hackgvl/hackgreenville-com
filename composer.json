@@ -30,15 +30,14 @@
         "barryvdh/laravel-ide-helper": "*",
         "fakerphp/faker": "^1.9.1",
         "imanghafoori/laravel-microscope": "*",
-        "laravel/telescope": "^4.14",
-        "brianium/paratest": "^6.3",
         "laravel/pint": "^1.10",
         "laravel/sail": "^1.5",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^7.0",
-        "phpunit/phpunit": "^9.0",
-        "spatie/laravel-ignition": "^2.0",
-        "roave/security-advisories": "dev-latest"
+        "laravel/telescope": "^4.14",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^7.7",
+        "pestphp/pest": "^2.8",
+        "phpunit/phpunit": "^10.2",
+        "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
         "classmap": [
@@ -94,7 +93,10 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "minimum-stability": "stable",
     "prefer-stable": true

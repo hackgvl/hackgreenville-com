@@ -34,7 +34,7 @@ class UpstateClient
     /**
      * @throws Throwable
      */
-    public function getOrgs(?string $status = null)
+    public function getOrgs(?string $status = null): Collection
     {
         $org_url = config('app.orgs_api_domain') . '/rest/organizations?_format=json';
 
@@ -47,14 +47,17 @@ class UpstateClient
         // Throw an error if the api is down.
         throw_unless($data->ok(), new Exception('api-down'));
 
+        $test = $data->json();
         // Put the data into JSON format.
-        return collect($data->json());
+        $test1 = collect($data->json())->groupBy('field_organization_type');
+
+        return $test1;
     }
 
     /**
      * @throws Throwable
      */
-    public function getInactiveOrgs()
+    public function getInactiveOrgs(): Collection
     {
         return $this->getOrgs('inactive');
     }
@@ -62,7 +65,7 @@ class UpstateClient
     /**
      * @throws Throwable
      */
-    public function getActiveOrgs()
+    public function getActiveOrgs(): Collection
     {
         return $this->getOrgs('active');
     }

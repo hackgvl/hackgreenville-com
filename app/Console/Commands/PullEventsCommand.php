@@ -21,10 +21,11 @@ class PullEventsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pull:events ' .
-                           '{--d|debug : dump the first response from the events api}' .
-                           '{--0|dump : dump the response from the events api}' .
-                           '{--f|fix : update event keys <info>from event cache</info>}';
+    protected $signature = 'pull:events
+                            {--d|debug : dump the first response from the events api}
+                            {--0|dump : dump the response from the events api}
+                            {--f|fix : update event keys <info>from event cache</info>}
+    ';
 
     /**
      * The console command description.
@@ -74,11 +75,11 @@ class PullEventsCommand extends Command
          */
         if ($this->option('debug') || $this->option('dump')) {
             if ($this->option('dump')) {
-                dump($events);
+                print_r($events->toArray());
                 return self::SUCCESS;
             }
 
-            dump($events[0]);
+            print_r($events->first());
             return self::SUCCESS;
         }
 
@@ -153,10 +154,10 @@ class PullEventsCommand extends Command
         // get a list of uuids that are no longer in the database
         $dbEventIdentifiers
             ->filter(fn ($e) => $e === false)
-            ->each(function ($id) {
-                $this->info("Marking event id {$id} cancelled in the database.");
+            ->each(function ($value, $index) {
+                $this->info("Marking event id {$index} cancelled in the database.");
 
-                $find = json_decode($id, true);
+                $find = json_decode($index, true);
                 Event::where($find)->update(['cancelled_at' => new Carbon]);
             });
     }
@@ -171,7 +172,10 @@ class PullEventsCommand extends Command
     {
         // make sure to get a real state
         $event_state = Arr::get($event, 'venue.state') ?: 'SC';
-        $state       = State::where('abbr', 'like', $event_state)->first();
+        $state       = State::where('abbr', 'like', $event_state)->firstOrCreate([
+            'abbr' => $event_state,
+            'name' => $event_state,
+        ]);
 
         // make sure the venue exists in the system
         return Venue::firstOrCreate(
