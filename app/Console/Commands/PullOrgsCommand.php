@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Org;
 use Exception;
 use Illuminate\Console\Command;
+use Throwable;
 
 class PullOrgsCommand extends Command
 {
@@ -34,7 +35,7 @@ class PullOrgsCommand extends Command
      * Execute the console command.
      *
      * @return mixed
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function handle(UpstateClient $upstateClient): int
     {

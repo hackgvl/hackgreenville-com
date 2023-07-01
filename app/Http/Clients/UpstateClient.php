@@ -34,7 +34,7 @@ class UpstateClient
     /**
      * @throws Throwable
      */
-    public function getOrgs(string $status = null)
+    public function getOrgs(?string $status = null)
     {
         $org_url = config('app.orgs_api_domain') . '/rest/organizations?_format=json';
 
