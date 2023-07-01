@@ -157,7 +157,7 @@ class Event extends Model
 
         $location = '';
 
-        if (property_exists($this, 'venue') && $this->venue !== null) {
+        if (property_exists($this, 'venue') && ($this->venue !== null)):
             $location .= $this->venue->name . ', ';
             $location .= $this->venue->address . ', ';
             $location .= $this->venue->city . ', ';
