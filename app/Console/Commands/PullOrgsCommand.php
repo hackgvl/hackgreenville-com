@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Enums\OrgStatuses;
+use App\Http\Clients\UpstateClient;
 use App\Models\Category;
 use App\Models\Org;
 use Exception;
@@ -17,6 +19,7 @@ class PullOrgsCommand extends Command
     protected $signature = 'pull:orgs
                             {--a|active : only active organizations}
                             {--i|inactive : only inactive organizations}
+                            {--d|debug : dump the first response from the orgs api}
                             {--org-cleanup : clean out duplicate deleted orgs}
     ';
 
@@ -31,22 +34,25 @@ class PullOrgsCommand extends Command
      * Execute the console command.
      *
      * @return mixed
+     * @throws \Throwable
      */
-    public function handle()
+    public function handle(UpstateClient $upstateClient): int
     {
         $activeOrgsCategories = [];
         $inactiveOrgs         = [];
 
         if ( ! $this->option('active') && ! $this->option('inactive')) {
-            $activeOrgsCategories = getActiveOrgs();
-            $inactiveOrgs         = getInactiveOrgs();
+            $orgs = $upstateClient->getOrgs();
+
+            $activeOrgsCategories = $orgs->where('status', OrgStatuses::active->value);
+            $inactiveOrgs         = $orgs->where('status', OrgStatuses::inactive->value);
         } elseif ( ! $this->option('active')) {
-            $inactiveOrgs = getInactiveOrgs();
+            $inactiveOrgs = $upstateClient->getInactiveOrgs();
         } elseif ( ! $this->option('inactive')) {
-            $activeOrgsCategories = getActiveOrgs();
+            $activeOrgsCategories = $upstateClient->getActiveOrgs();
         }
 
-        $total_importing = count($activeOrgsCategories) + count($inactiveOrgs);
+        $total_importing = $activeOrgsCategories->count() + $inactiveOrgs->count();
 
         $this->info("Importing {$total_importing} orgs");
 

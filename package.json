@@ -17,6 +17,10 @@
         "lint": "prettier --write \"resources/{js,scss}/**/*.{ts,tsx,md,json,js,scss}\" --loglevel=error",
         "lint:php": "composer lint"
     },
+    "pre-commit": [
+        "lint",
+        "lint:php"
+    ],
     "devDependencies": {
         "axios": "^0.19.2",
         "bootstrap": "^4.0.0",
@@ -25,6 +29,7 @@
         "laravel-vite-plugin": "^0.7.8",
         "lodash": "^4.17.15",
         "popper.js": "^1.12",
+        "pre-commit": "^1.2.2",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",

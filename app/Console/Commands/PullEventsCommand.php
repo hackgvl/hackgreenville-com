@@ -2,13 +2,17 @@
 
 namespace App\Console\Commands;
 
+use App\Enums\EventStatuses;
 use App\Http\Clients\UpstateClient;
 use App\Models\Event;
 use App\Models\State;
 use App\Models\Venue;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Throwable;
 
 class PullEventsCommand extends Command
 {
@@ -18,8 +22,8 @@ class PullEventsCommand extends Command
      * @var string
      */
     protected $signature = 'pull:events ' .
-                           '{--1|one : just import one event} ' .
                            '{--d|debug : dump the first response from the events api}' .
+                           '{--0|dump : dump the response from the events api}' .
                            '{--f|fix : update event keys <info>from event cache</info>}';
 
     /**
@@ -34,148 +38,185 @@ class PullEventsCommand extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function handle(UpstateClient $upstateClient): int
     {
-        $events = collect(UpstateClient::getEvents());
+        try {
+            $events = $upstateClient->getEvents();
 
-        // get all upcoming events and set keys to uuid so I can set status
-        $dbEvents = Event::where('active_at', '>=', date('Y-m-d'))
-            ->orderBy('active_at', 'asc')->get();
+            throw_if(
+                $events->isEmpty(),
+                new Exception('No events returned from api'),
+            );
+        } catch (Exception $e) {
+            $this->error($e->getMessage());
+            return self::FAILURE;
+        } catch (Throwable $e) {
+            $this->error($e->getMessage());
+            return self::FAILURE;
+        }
+
+        // get all upcoming events and set keys to uuid, so I can set status
+        $dbEvents = Event::query()
+            ->where('active_at', '>=', date('Y-m-d'))
+            ->orderBy('active_at')
+            ->get();
 
         if ($this->option('fix')) {
-            // update mapping for service and service ids
-            $this->info('fixing events');
-            $fixed       = 0;
-            $dup_removed = 0;
-
-            $dbEvents->each(
-                function ($e) use (&$fixed, &$dup_removed) {
-                    if ( ! $e->cache['service']) {
-                        return true;
-                    }
-
-                    if ( ! $e->service) {
-                        $fixed++;
-                        $e->update(
-                            [
-                                'service'    => $e->cache['service'],
-                                'service_id' => $e->cache['service_id'],
-                            ],
-                        );
-                    }
-
-
-                    // find and remove duplicates
-                    $removed = Event::where(
-                        [
-                            'service'    => $e->cache['service'],
-                            'service_id' => $e->cache['service_id'],
-                        ],
-                    )->where('id', '>', $e->id)->forceDelete();
-
-                    $dup_removed += $removed;
-                },
-            );
-            $this->info('fixed ' . $fixed . ' events');
-            $this->info('remove ' . $dup_removed . ' duplicates');
+            $this->fixEvents($dbEvents);
         }
 
-        $dbEventIdentifiers = $dbEvents->keyBy('uniqueIdentifier')->map(
-            fn (Event $e) => false,
-        )->toArray();
+        $dbEventIdentifiers = $dbEvents
+            ->keyBy('uniqueIdentifier')
+            ->map(fn (Event $e) => false);
 
-        if ($this->option('debug')) {
-            dd($events[0]);
+        /**
+         * Debug output of an event returned from the api
+         */
+        if ($this->option('debug') || $this->option('dump')) {
+            if ($this->option('dump')) {
+                dump($events);
+                return self::SUCCESS;
+            }
+
+            dump($events[0]);
+            return self::SUCCESS;
         }
 
+        // create the progressbar object for cli
         $bar = $this->output->createProgressBar(count($events));
         $bar->start();
 
-        foreach ($events as $inc => $event) {
+        foreach ($events as $event) {
             $bar->advance();
 
-            if ($this->option('one') && $inc > 0) {
-                continue;
-            }
-
-            // Start to format the event data. This array can be appended to in the venue conditional statement below
-            $service    = $event['service'];
-            $service_id = $event['service_id'];
-
-            $event_find = compact('service', 'service_id');
-
             // the event key is a json string of service id and service
-            $eventKey = json_encode($event_find);
-
-            $event_data = [
-                'event_uuid'   => $event['uuid'],
-                'event_name'   => $event['event_name'],
-                'group_name'   => $event['group_name'],
-                'description'  => $event['description'],
-                'rsvp_count'   => $event['rsvp_count'],
-                'active_at'    => $event['localtime'],
-                // The api should always return cancelled if the event was cancelled
-                'cancelled_at' => $event['status'] === 'cancelled' ? new Carbon : null,
-                'uri'          => $event['url'] ?: 'https://www.meetup.com/Hack-Greenville/events/',
-                'cache'        => $event,
-            ];
-
+            $eventKey = json_encode([
+                'service'    => $event['service'],
+                'service_id' => $event['service_id'],
+            ]);
             $dbEventIdentifiers[$eventKey] = true;
 
-            if (array_get($event, 'venue')) {
-                // make sure to get a real state
-                $event_state = array_get($event, 'venue.state') ?: 'SC';
-                $state       = State::where('abbr', 'like', $event_state)->first();
-
-                // make sure the venue exists in the system
-                $venue = Venue::firstOrCreate(
-                    [
-                        'address'  => array_get($event, 'venue.address'),
-                        'zipcode'  => array_get($event, 'venue.zip'),
-                        'state_id' => $state->id,
-                    ],
-                    [
-                        'address'  => array_get($event, 'venue.address'),
-                        'zipcode'  => array_get($event, 'venue.zip'),
-                        'state_id' => $state->id,
-                        'city'     => array_get($event, 'venue.city'),
-                        'name'     => array_get($event, 'venue.name'),
-                        'lat'      => array_get($event, 'venue.lat'),
-                        'lng'      => array_get($event, 'venue.lon'),
-                    ],
-                );
-
-                $event_data += ['venue_id' => $venue->id];
-            }
-
-            Event::updateOrCreate($event_find, $event_find + $event_data);
+            $this->saveEvent($event);
         }
         $bar->finish();
 
         $this->info(' Done importing');
 
+        $this->processMissingResultsFromApi($dbEventIdentifiers);
+
+        return self::SUCCESS;
+    }
+
+    private function fixEvents(Collection $dbEvents): void
+    {
+        // update mapping for service and service ids
+        $this->info('fixing events');
+
+        $fixed       = 0;
+        $dup_removed = 0;
+
+        $dbEvents
+            ->filter(fn (Event $e) => $e->cache['service'])
+            ->tap(function (Event $event) use (&$fixed, &$dup_removed) {
+                // Try to find which service this event came from.
+
+                if ($event->service) {
+                    return;
+                }
+
+                $fixed++;
+                $event->update(
+                    [
+                        'service'    => $event->cache['service'],
+                        'service_id' => $event->cache['service_id'],
+                    ],
+                );
+            })
+            ->tap(function (Event $event) use (&$dup_removed) {
+                // find and remove duplicates
+                $removed = Event::where(
+                    [
+                        'service'    => $event->cache['service'],
+                        'service_id' => $event->cache['service_id'],
+                    ],
+                )->where('id', '>', $event->id)->forceDelete();
+
+                $dup_removed += $removed;
+            });
+
+        $this->info("fixed {$fixed} events");
+        $this->info("remove {$dup_removed} duplicates");
+    }
+
+    private function processMissingResultsFromApi(Collection $dbEventIdentifiers): void
+    {
         // get a list of uuids that are no longer in the database
-        $no_longer_in_api = array_filter(
-            $dbEventIdentifiers,
-            fn ($e) => $e === false,
-        );
+        $dbEventIdentifiers
+            ->filter(fn ($e) => $e === false)
+            ->each(function ($id) {
+                $this->info("Marking event id {$id} cancelled in the database.");
 
-        if (count($no_longer_in_api) > 0) {
-            $ids = array_keys($no_longer_in_api);
-
-            $this->info(
-                'Marking ' . count($no_longer_in_api) . ' ' .
-                Str::plural('event', count($no_longer_in_api)) .
-                ' cancelled in the database. These uuid ' .
-                implode(', ', $ids),
-            );
-
-            foreach ($ids as $identifier) {
-                $find = json_decode($identifier, true);
+                $find = json_decode($id, true);
                 Event::where($find)->update(['cancelled_at' => new Carbon]);
-            }
+            });
+    }
+
+    private function isEventCancelled($event): bool
+    {
+        // The api should always return "cancelled" if the event was canceled
+        return $event['status'] === EventStatuses::CANCELLED->value;
+    }
+
+    private function getVenueFromEvent($event): Venue
+    {
+        // make sure to get a real state
+        $event_state = Arr::get($event, 'venue.state') ?: 'SC';
+        $state       = State::where('abbr', 'like', $event_state)->first();
+
+        // make sure the venue exists in the system
+        return Venue::firstOrCreate(
+            attributes: [
+                'address'  => Arr::get($event, 'venue.address'),
+                'zipcode'  => Arr::get($event, 'venue.zip'),
+                'state_id' => $state->id,
+            ],
+            values: [
+                'address'  => Arr::get($event, 'venue.address'),
+                'zipcode'  => Arr::get($event, 'venue.zip'),
+                'state_id' => $state->id,
+                'city'     => Arr::get($event, 'venue.city'),
+                'name'     => Arr::get($event, 'venue.name'),
+                'lat'      => Arr::get($event, 'venue.lat'),
+                'lng'      => Arr::get($event, 'venue.lon'),
+            ],
+        );
+    }
+
+    private function saveEvent($event): void
+    {
+        $service    = $event['service'];
+        $service_id = $event['service_id'];
+        $event_find = compact('service', 'service_id');
+
+        // map api fields to the database
+        $event_data = [
+            'event_uuid'   => $event['uuid'],
+            'event_name'   => $event['event_name'],
+            'group_name'   => $event['group_name'],
+            'description'  => $event['description'],
+            'rsvp_count'   => $event['rsvp_count'] ?? 0,
+            'active_at'    => $event['localtime'],
+            'cancelled_at' => $this->isEventCancelled($event) ? new Carbon : null,
+            'uri'          => $event['url'] ?: '#no-url',
+            'cache'        => $event,
+        ];
+
+
+        if (Arr::get($event, 'venue')) {
+            $venue      = $this->getVenueFromEvent($event);
+            $event_data += ['venue_id' => $venue->id];
         }
 
-        return 0;
+        Event::updateOrCreate($event_find, $event_find + $event_data);
     }
 }

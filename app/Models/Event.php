@@ -9,11 +9,13 @@ use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Routing\Pipeline;
 
 /**
  * @property string event_name
+ * @property string title
  * @property string group_name
  * @property string description
  * @property string uri
@@ -68,7 +70,7 @@ class Event extends Model
             'active_at_ftm',
         ];
 
-    public function getUniqueIdentifierAttribute()
+    public function getUniqueIdentifierAttribute(): bool|string
     {
         $service    = $this->service;
         $service_id = $this->service_id;
@@ -76,24 +78,26 @@ class Event extends Model
         return json_encode(compact('service', 'service_id'));
     }
 
-    public function venue()
+    public function venue(): BelongsTo
     {
         return $this->belongsTo(Venue::class);
     }
 
-    public function scopeGetActive($query)
+    public function scopeGetActive(Builder $query): Builder
     {
         return $query
             ->where('active_at', '>=', DB::raw('NOW()'))
             ->orderBy('active_at', 'asc');
     }
 
-    public function scopeStartOfMonth($query)
+    public function scopeStartOfMonth(Builder $query): Builder
     {
-        return $query->where('active_at', '>=', date('Y-m-1'))->orderBy('active_at', 'asc');
+        return $query
+            ->where('active_at', '>=', date('Y-m-1'))
+            ->orderBy('active_at', 'asc');
     }
 
-    public function scopeDatesBetween(Builder $query, $start, $end)
+    public function scopeDatesBetween(Builder $query, $start, $end): Builder
     {
         return $query
             ->whereBetween(
@@ -128,7 +132,7 @@ class Event extends Model
         return $this->uri;
     }
 
-    public function getStateAttribute()
+    public function getStateAttribute(): string
     {
         if ($this->active_at->isPast()) {
             return 'passed';
@@ -142,7 +146,7 @@ class Event extends Model
      * build out the link that adds this event to the users personal calendar
      * @return string
      */
-    public function getGCalUrlAttribute()
+    public function getGCalUrlAttribute(): string
     {
         $event_time = $this->active_at->format('Y-m-d\TH:i:s\Z');
 
@@ -153,12 +157,12 @@ class Event extends Model
 
         $location = '';
 
-        if (property_exists($this, 'venue') && ($this->venue !== null)):
+        if (property_exists($this, 'venue') && $this->venue !== null) {
             $location .= $this->venue->name . ', ';
             $location .= $this->venue->address . ', ';
             $location .= $this->venue->city . ', ';
             $location .= $this->venue->state;
-        endif;
+        }
 
         $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
         $calendar_url .= 'text=' . urlencode($this->event_name) . '&';
@@ -170,27 +174,27 @@ class Event extends Model
         return $calendar_url;
     }
 
-    public function getLocalActiveAtAttribute()
+    public function getLocalActiveAtAttribute(): Carbon|string
     {
         return $this->active_at->tz(config('app.timezone'));
     }
 
-    public function getDescriptionAttribute()
+    public function getDescriptionAttribute(): array|string
     {
         return str_replace('<a', '<a target="_blank"', $this->attributes['description']);
     }
 
-    public function getShortDescriptionAttribute()
+    public function getShortDescriptionAttribute(): string
     {
         return str_limit($this->description);
     }
 
-    public function getActiveAtFtmAttribute()
+    public function getActiveAtFtmAttribute(): string
     {
         return $this->active_at->diffForHumans();
     }
 
-    public function getTitleAttribute()
+    public function getTitleAttribute(): string
     {
         return $this->event_name;
     }
