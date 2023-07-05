@@ -4,11 +4,7 @@
         {{ $title }}
     </h3>
     <ul class="{{ count($events) > 0 ? 'timeline' : '' }}">
-        @if ($loading)
-            <li class="list-unstyled">
-                Loading events <i class="fa fa-spinner fa-spin fa-2x"  ></i>
-            </li>
-        @elseif (!count($events))
+        @if (!count($events))
             <li>
                 <strong>No</strong> events to display.
             </li>
@@ -21,15 +17,17 @@
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4 class="timeline-title">
-                                <span class="{{ $event['cancelled'] ? 'text-danger' : '' }}">
+                                @if($event['cancelled_at'])
+                                <span class="text-danger">
                                     [CANCELLED]
                                 </span>
+                                @endif
                                 {{ $event['title'] }}
                             </h4>
                             <p class="timeline-subtitle h6">{{ $event['group_name'] }}</p>
                             <p>
                                 <small class="text-muted">
-                                    <i class="fa fa-calendar"  ></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/D hh:mm A') }}
+                                    <i class="fa fa-calendar"  ></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/D h:m A') }}
                                 </small>
                             </p>
                         </div>
