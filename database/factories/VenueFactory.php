@@ -24,15 +24,15 @@ class VenueFactory extends Factory
     public function definition()
     {
         return [
-                'name'     => $name = implode(' ', $this->faker->words(5)),
-                'slug'     => Str::slug($name),
-                'address'  => $this->faker->address,
-                'zipcode'  => $this->faker->postcode,
-                'phone'    => $this->faker->phoneNumber,
-                'city'     => $this->faker->city,
-                'state_id' => State::factory(),
-                'lat'      => $this->faker->latitude,
-                'lng'      => $this->faker->longitude,
+            'name'     => $name = implode(' ', $this->faker->words(5)),
+            'slug'     => Str::slug($name),
+            'address'  => $this->faker->address,
+            'zipcode'  => $this->faker->postcode,
+            'phone'    => $this->faker->phoneNumber,
+            'city'     => $this->faker->city,
+            'state_id' => State::factory(),
+            'lat'      => $this->faker->latitude,
+            'lng'      => $this->faker->longitude,
         ];
     }
 }

@@ -65,7 +65,7 @@
 		                swalProps['cancelButtonColor'] = '#00a508';
 	                }
 
-	                swal.fire(swalProps).then((result) => {
+                    Swal.fire(swalProps).then((result) => {
 
 		                if (cancelled) {
 			                return true;

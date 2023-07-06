@@ -1,40 +1,52 @@
-window._ = require('lodash');
+// Importing third-party libraries
+import Lodash from 'lodash';
+import moment from 'moment';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import jquery from 'jquery';
+import popper from 'popper.js';
+import bootstrap from 'bootstrap';
 
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
+// Adding Lodash to the global scope so it can be used anywhere in the application
+window._ = Lodash;
 
 try {
-    window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
+  // Setting Popper, jQuery and Bootstrap to the global scope.
+  // Popper is used for positioning tooltips and popovers in Bootstrap.
+  // jQuery is a fast, small, and feature-rich JavaScript library.
+  // Bootstrap is a powerful front-end framework for faster and easier web development.
+  window.Popper = popper.default;
+  window.$ = window.jQuery = jquery;
+  window.bootstrap = bootstrap;
 } catch (e) {
+  // An error occurred while setting Popper, jQuery or Bootstrap to the global scope
 }
 
 try {
-    window.moment = require('moment');
+  // Setting Moment.js to the global scope.
+  // Moment.js is a JavaScript library to parse, validate, manipulate and display dates and times.
+  window.moment = moment;
 } catch (e) {
+  // An error occurred while setting Moment.js to the global scope
 }
 
 try {
-    window.swal = require('sweetalert2');
+  // Setting SweetAlert2 to the global scope.
+  // SweetAlert2 is a library to create beautiful, responsive, customizable and accessible alert messages.
+  window.Swal = Swal;
 } catch (e) {
+  // An error occurred while setting SweetAlert2 to the global scope
 }
 
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
+// Setting Axios to the global scope.
+// Axios is a promise-based HTTP client for the browser and Node.js.
+window.axios = axios;
 
-window.axios = require('axios');
-
+// Setting a default header for all Axios requests
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
+ * The code below is commented out but can be used to set up Laravel Echo and Pusher.
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
@@ -46,7 +58,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     key: process.env.VITE_PUSHER_APP_KEY,
+//     cluster: process.env.VITE_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });

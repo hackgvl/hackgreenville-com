@@ -30,10 +30,8 @@ class AppServiceProvider extends ServiceProvider
         JsonResource::withoutWrapping();
 
         $this->app->singleton(
-                CalendarContract::class,
-                function () {
-                    return new GoogleCalendar();
-                }
+            CalendarContract::class,
+            fn () => new GoogleCalendar
         );
     }
 }

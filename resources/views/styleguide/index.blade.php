@@ -1,188 +1,185 @@
 @extends('layouts.app')
 
+@section('head')
+    <style>
+        .color-sample-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style-type: none;
+            flex-direction: column;
+        }
+
+        .color-sample-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .color-sample {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+            border: 1px solid black;
+        }
+
+        .color-sample:hover {
+            transform: scale(1.2);
+        }
+
+        .font-sample {
+            transition: font-size 0.3s ease;
+        }
+
+        .font-sample:hover {
+            font-size: 1.2em;
+        }
+
+        .style-guide.container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .style-guide section {
+            width: 95%;
+            border-bottom: 1px solid rgba(233, 215, 215, 0.51); /* change the color as needed */
+            padding-bottom: 20px; /* optional, add space below the content */
+            margin-bottom: 20px; /* optional, add space below the border */
+        }
+    </style>
+@endsection
+
 @section('content')
-    <div class="container">
-        <div id="main-holder" class="container_16 gray">
-            <div class="mb-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-muted">
-                            Background colors
-                        </h2>
+    <div class="style-guide container">
+        <h1>HackGreenville Style Guide</h1>
+
+        <section>
+            <h2>Voice and Tone</h2>
+            <p>The voice and tone of HackGreenville are inclusive, encouraging, and community-focused. The content aims
+                to
+                empower members and foster personal growth through sharing and promoting local tech opportunities. There
+                is
+                a strong focus on participation and contributions to the community. The language is straightforward and
+                conversational, with an energetic tone that motivates members to "Build Stuff, Meet People, and Do Cool
+                Things".</p>
+        </section>
+
+        <section>
+            <div class="card">
+                <div class="card-header">
+                    <div class="col-md-12 text-center">
+                        <h2>Colors</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1 offset-md-2 grid_2">
-                        <figure id="bg-color-1" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(255, 255, 255);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-white">#ffffff</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-3" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(32, 23, 72);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-blue text-white">#201748</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-4" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(255, 163, 0);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-yellow">#ffa300</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-5" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(32, 22, 71);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-purple text-white">#201647</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-6" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(192, 192, 192);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-gray">#c0c0c0</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-7" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(244, 244, 244);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-off-white">#f4f4f4</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="bg-color-8" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(0, 99, 65);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex bg-green text-white">#006341</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-muted">Text Colours</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1 offset-md-2 grid_2">
-                        <figure id="text-color-1" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(34, 34, 34);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#222222</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="text-color-2" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(32, 22, 71);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#201647</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="text-color-3" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(255, 255, 255);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#ffffff</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="text-color-4" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(0, 0, 0);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#000000</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="text-color-6" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(32, 32, 32);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#202020</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="text-color-7" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(0, 112, 74);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#00704a</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-1 grid_2">
-                        <figure id="text-color-8" class="swatch-wrap">
-                            <div class="swatch-holder" style="background: rgb(110, 114, 114);"></div>
-                            <figcaption>
-                                HEX
-                                <span class="colour-hex">#6e7272</span>
-                            </figcaption>
-                        </figure>
+                <div class="bard-body p-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Background Colors</h3>
+                            <ul class="color-sample-list">
+                                @php
+                                    $colors = [
+                                        '#ffffff',
+                                        '#201748',
+                                        '#ffa300',
+                                        '#201647',
+                                        '#c0c0c0',
+                                        '#f4f4f4',
+                                        '#006341',
+                                    ];
+                                @endphp
+
+                                @foreach($colors as $color)
+                                    <li class="color-sample-wrapper">
+                                        <div class="color-sample" style="background-color: {{$color}};"></div>
+                                        HEX {{$color}}
+                                    </li>
+                                @endforeach
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Text Colors</h3>
+                            <ul class="color-sample-list">
+                                @php
+                                    $font_colors = [
+                                        '#222222',
+                                        '#201647',
+                                        '#ffffff',
+                                        '#000000',
+                                        '#202020',
+                                        '#00704a',
+                                        '#6e7272',
+                                    ];
+                                @endphp
+
+                                @foreach($font_colors as $color)
+                                    <li class="color-sample-wrapper">
+                                        <div class="color-sample" style="background-color: {{$color}};"></div>
+                                        HEX {{$color}}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <table class="table table-hover">
-                <legend>Typography</legend>
-                <tbody>
-                <tr>
-                    <th id="result-header-3-dt" scope="row"><strong style="opacity: 1;">Lato, normal, 21px, 29px, #00704a</strong> <span style="opacity: 1;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-header-3-dd">
-                        <div style="opacity: 1; font-family: Lato; font-style: normal; font-size: 21px; line-height: 29px; background-color: transparent;">The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th id="result-header-4-dt" scope="row"><strong style="opacity: 1;">Lato, normal, 27px, 32px, #006341</strong> <span style="opacity: 1;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-header-4-dd">
-                        <div style="opacity: 1; font-family: Lato; font-style: normal; font-size: 27px; line-height: 32px; background-color: transparent;">The quick brown fox jumps over the lazy
-                            dog
-                            and feels as if he were in the seventh heaven
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th id="result-body-dt" class="last" scope="row"><strong style="opacity: 1;">sans-serif, normal, 16px, 22px, #222222</strong> <span style="opacity: 1;">Font, Style, Size, Leading, Colour</span></th>
-                    <td id="result-body-dd" class="last">
-                        <div style="opacity: 1; font-family: sans-serif; font-style: normal; font-size: 16px; line-height: 22px; color: rgb(34, 34, 34); background-color: transparent;">Lorem ipsum dolor sit amet,
-                            consectetur
-                            adipiscing elit. Fusce id tempus tellus. Ut consectetur congue turpis, nec vestibulum nulla ullamcorper a. Cras congue tellus et diam blandit porttitor. Aliquam elit orci, interdum vitae
-                            hendrerit
-                            id, semper non nisl. Quisque faucibus iaculis mauris, id lobortis lacus consequat sit amet. Phasellus arcu nunc, iaculis mollis sodales ut, blandit eget mauris. Nulla adipiscing feugiat
-                            sagittis.
-                            Mauris vel semper est.
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+        </section>
 
 
-        </div>
+        <section>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Typography</h2>
+                    <p>The website uses the following font styles:</p>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>
+                            <p class="font-sample"
+                               style="font-family: 'Lato',serif; font-size: 21px; line-height: 29px;">
+                                Lato,
+                                normal,
+                                21px, 29px, #00704a
+                            </p>
+                        </li>
+
+                        <li>
+                            <p class="font-sample"
+                               style="font-family: 'Lato',serif; font-size: 27px; line-height: 32px;">
+                                Lato,
+                                normal,
+                                27px, 32px, #006341
+                            </p>
+                        </li>
+
+                        <li>
+                            <p class="font-sample"
+                               style="font-family: 'sans-serif',serif; font-size: 16px; line-height: 22px;">
+                                Sans Serif,
+                                normal,
+                                16px, 22px, #222222
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p>
+                Please remember that this style guide should be considered a living document.
+                It is subject to change and should evolve as the HackGreenville brand,
+                and its community continues to grow and evolve.
+            </p>
+
+            <p>
+                To maintain consistency, always refer to this guide when creating content for HackGreenville.
+                If there are any uncertainties or if you're creating something that the guide doesn't cover,
+                please seek advice from the design team or relevant decision-makers.
+            </p>
+        </section>
     </div>
 @endsection

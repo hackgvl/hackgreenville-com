@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\JoinMessageRequest;
 use App\Notifications\JoinMessage;
-use Illuminate\Support\Facades\Notification;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Notification;
 
 class SlackController extends Controller
 {

@@ -1,38 +1,39 @@
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-  
-![HackGreenville](https://stage.hackgreenville.com/img/logo-v2.png)  
-  
+
+![HackGreenville](https://stage.hackgreenville.com/img/logo-v2.png)
+
 # HackGreenville.com
 
-The official repository for Greenville, SC's tech community website, maintained by [Code for Greenville](https://github.com/codeforgreenville).    
-    
+The official repository for Greenville, SC's tech community website, maintained by [HackGreenville Labs](https://github.com/codeforgreenville).
+
 [https://hackgreenville.com](https://hackgreenville.com/join-slack)
-    
-## Purpose 
 
-Our goal is to connect people to the tech-related community in the Greenville area. We do this by providing information on events and organizations in the area, as well as directing people to [sign-up for the HackGreenville Slack](https://hackgreenville.com/join-slack).    
-    
-The organization data is queried from Code for Greenville's [organizations API](https://github.com/codeforgreenville/OpenData/blob/master/ORGANIZATIONS_API.md).
+## Purpose
 
-Then, for all of these organization, the events can be are queried from the [events API](https://github.com/codeforgreenville/upstate_tech_cal_service).    
+Our goal is to connect people to the tech-related community in the Greenville area. We do this by providing information on events and organizations in the area, as well as directing people to [sign-up for the HackGreenville Slack](https://hackgreenville.com/join-slack).
 
+The organization data is queried from HackGreenville Labs's [organizations API](https://github.com/codeforgreenville/OpenData/blob/master/ORGANIZATIONS_API.md).
+
+Then, for all of these organization, the events can be are queried from the [events API](https://github.com/codeforgreenville/upstate_tech_cal_service).
 
 ## Forking and Contributing
 
-* See this project's [CONTRIBUTING.md](CONTRIBUTING.md) before creating issues, forking, or submitting any pull requests.
-* You can connect with the development team by signing up for [Code For Greenville's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
+- See this project's [CONTRIBUTING.md](CONTRIBUTING.md) before creating issues, forking, or submitting any pull requests.
+- You can connect with the development team by signing up for [HackGreenville Labs's Slack and visiting the #hackgreenville channel](https://codeforgreenville.org/)
 
 ## Tech Stack Notes
+
 This project uses the [Laravel PHP framework](https://laravel.com).
 
-[Laravel's Artisan command line tools](https://laravel.com/docs/master/artisan) is used to import events and organizations.  Run `php artisan` to see a full list of availabe commands. Select commands of note include:
+[Laravel's Artisan command line tools](https://laravel.com/docs/master/artisan) is used to import events and organizations. Run `php artisan` to see a full list of availabe commands. Select commands of note include:
 
-* Manually import the latest events from the API: `php artisan pull:events`
-* Manually import the latest organizations from the API: `php artisan pull:orgs`
-* Completely erase and rebuild the database: `php artisan migrate:fresh --seed`
+- Manually import the latest events from the API: `php artisan pull:events`
+- Manually import the latest organizations from the API: `php artisan pull:orgs`
+- Completely erase and rebuild the database: `php artisan migrate:fresh --seed`
 
 ## Contributors ✨
 

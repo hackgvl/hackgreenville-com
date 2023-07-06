@@ -23,23 +23,23 @@ class CalendarController extends Controller
         $end   = Carbon::parse(request('end'));
 
         Event::datesBetween($start, $end)
-                ->each(
-                        function ($e) use ($calendar) {
-                            $calendar->addEvent(
-                                $e->active_at,
-                                $e->expire_at,
-                                "{$e->group_name}\n{$e->event_name}",
-                                $e->description,
-                                false,
-                                [
-                                    'location'  => $e->venue . '',
-                                    'event_id'  => $e->id,
-                                    'event_url' => $e->uri,
-                                    'cancelled' => (bool)$e->cancelled_at,
-                                ]
-                            );
-                        }
-                );
+            ->each(
+                function ($e) use ($calendar) {
+                    $calendar->addEvent(
+                        $e->active_at,
+                        $e->expire_at,
+                        "{$e->group_name}\n{$e->event_name}",
+                        $e->description,
+                        false,
+                        [
+                            'location'  => $e->venue . '',
+                            'event_id'  => $e->id,
+                            'event_url' => $e->uri,
+                            'cancelled' => (bool)$e->cancelled_at,
+                        ]
+                    );
+                }
+            );
 
         return response()->json($calendar->getEvents());
     }

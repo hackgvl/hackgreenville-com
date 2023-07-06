@@ -5,7 +5,6 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -17,7 +16,7 @@ class Handler extends ExceptionHandler
      */
     protected $dontReport
         = [
-            //
+
         ];
 
     /**
@@ -31,26 +30,26 @@ class Handler extends ExceptionHandler
             'password_confirmation',
         ];
 
-	/**
-	 * Report or log an exception.
-	 *
-	 * @param Throwable $exception
-	 * @return void
-	 * @throws Exception
-	 */
+    /**
+     * Report or log an exception.
+     *
+     * @param Throwable $exception
+     * @return void
+     * @throws Exception
+     */
     public function report(Throwable $exception)
     {
         parent::report($exception);
     }
 
-	/**
-	 * Render an exception into an HTTP response.
-	 *
-	 * @param Request   $request
-	 * @param Throwable $exception
-	 * @return \Symfony\Component\HttpFoundation\Response
-	 * @throws Throwable
-	 */
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param Request   $request
+     * @param Throwable $exception
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws Throwable
+     */
     public function render($request, Throwable $exception)
     {
         return parent::render($request, $exception);

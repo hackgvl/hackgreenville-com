@@ -35,7 +35,7 @@
 
 		<ul>
 			<li>This data is sourced from <a href="https://data.openupstate.org" rel="external">a community-curated REST API</a>.</li>
-			<li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" rel="external">Code For Greenville.</a></li>
+			<li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" rel="external">HackGreenville Labs.</a></li>
 			<li>To suggest an addition or update to the data, please submit a <a href="https://data.openupstate.org/contact/suggestions">suggestion</a>.</li>
 		</ul>
 
