@@ -35,6 +35,8 @@ This project uses the [Laravel PHP framework](https://laravel.com).
 - Manually import the latest organizations from the API: `php artisan pull:orgs`
 - Completely erase and rebuild the database: `php artisan migrate:fresh --seed`
 
+Get this project up and running locally with the initial set up instructions at [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
