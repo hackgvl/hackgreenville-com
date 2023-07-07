@@ -118,14 +118,16 @@ You will need to create the database. This is a sample of the command you can ru
 mysql --user="dbusername" --password -e "create database hack_greenville"
 ```
 
-    When you download the project and after you run composer install; php artisan migrate --seed and yarn install; yarn dev then run php artisan serve you should be able to view the project.
+When you download the project and after you run composer install; `composer install` command will run `php artisan migrate --seed; yarn install;` then run php artisan serve you should be able to view the project.
 
 ```bash
-composer install
-php artisan migrate --seed
 yarn install
-yarn dev
+composer install
+yarn build
 ```
+or
+
+`yarn install && composer install && yarn build`
 
 > Note: for production environments, `yarn prod` would be used.
 
@@ -145,8 +147,6 @@ Typically, the easiest way to get the project up and running locally would be to
 
 The HackGreenville project is now up and running! You should be able to open [localhost:8000](localhost:8000) in your browser.
 
-The `composer install` command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project.
-
 #### Initial Setup (Docker)
 
 The docker setup of this project should only be done for advanced users, or if
@@ -164,6 +164,17 @@ To initialize the project, do `docker-compose pull` to pull the necessary files,
 First, you'll have to run `composer install` with docker exec while the original container is running with `docker exec -it hackgreenville composer install`.
 
 The `composer install` command will help build the project by running migrations and initializing yarn, but you can also do this manually by running `docker exec -it hackgreenville php artisan migrate --seed; yarn install; yarn prod`.
+
+When you download the project and after you run composer install; `composer install` command will run `php artisan migrate --seed; yarn install;` then run php artisan serve you should be able to view the project.
+
+```bash
+yarn install
+composer install
+yarn build
+```
+or
+
+`yarn install && composer install && yarn build`
 
 Now, shut down the container by hitting `ctrl-c` and re-build the container with `docker-compose up --build`.
 
