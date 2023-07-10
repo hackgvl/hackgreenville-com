@@ -7,14 +7,14 @@
 	<div class="no-gutters row text-black bg-white">
 		<div class="col-sm-12 offset-md-2 col-md-4 container py-5 d-flex flex-column justify-content-center text-center">
 			<h1>{{ __('HackGreenville Labs') }}</h1>
-			<p class="lead my-0">
+			<p class="lead my-1">
 				Mentoring, Inspiring and Innovating
 				<span class="font-weight-bold text-success">Local Tech</span>
 			</p>
-			<p class="lead my-0">
+			<p class="lead my-1">
 				We are the
 				<span class="font-weight-bold text-success">#YeahThatGreenville</span>
-				tech brigade
+				tech community
 			</p>
 		</div>
 		<div id="jumbotron-image" class="m-0 p-0 col-md-6 d-none d-md-block"></div>

@@ -9,28 +9,28 @@ class LabsController extends Controller
         $remove_space = true;
         $projects = [
             [
-                'name' => __('Open Data Organizations API'),
-                'description' => __('Public API for Open Data organization information'),
-                'link' => 'https://github.com/hackgvl/OpenData',
-                'linkType' => 'github',
+                'name' => __('Organizations API'),
+                'description' => __('Public API for organization information'),
+                'link' => 'https://data.openupstate.org/organizations',
+                'linkType' => 'website',
                 'status' => 'active',
             ],
             [
                 'name' => __('Events API'),
-                'description' => __('Public API for event information'),
+                'description' => __('Public API for tech event information'),
                 'link' => 'https://github.com/hackgvl/OpenData',
                 'linkType' => 'github',
                 'status' => 'active',
             ],
             [
-                'name' => __('Open Data API and Map Layers'),
+                'name' => __('Map Layers API'),
                 'description' => __('Public API for Upstate location data'),
                 'link' => 'https://github.com/hackgvl/OpenData/blob/master/MAPS_API.md',
                 'linkType' => 'github',
                 'status' => 'active',
             ],
             [
-                'name' => __('HackGreenville'),
+                'name' => __('HackGreenville.com'),
                 'description' => __('Tech events in Greenville, SC'),
                 'link' => 'https://github.com/hackgvl/hackgreenville-com#readme',
                 'linkType' => 'github',
@@ -44,33 +44,12 @@ class LabsController extends Controller
                 'status' => 'active',
             ],
             [
-                'name' => __('Clear My Record'),
-                'description' => __('Criminal record expungement'),
-                'link' => 'https://medium.com/code-for-america/closing-the-delivery-gap-making-good-on-the-promise-of-californias-record-clearance-laws-5968b4b9278b',
+                'name' => __('Open Map Data Multi Layers Demo'),
+                'description' => __('A bookmarkable map displaying all layers from the Map Layers API'),
+                'link' => 'https://hackgvl.github.io/open-map-data-multi-layers-demo/',
                 'linkType' => 'website',
-                'status' => 'considering',
+                'status' => 'active',
             ],
-            [
-                'name' => __('Integrated/Interactive Street Art'),
-                'description' => __('Augumented reality art project'),
-                'link' => 'https://github.com/hackgvl/public-art/issues',
-                'linkType' => 'github',
-                'status' => 'considering',
-            ],
-            [
-                'name' => __('Greenville Codes'),
-                'description' => __('Free, part-time coding education'),
-                'link' => 'https://greenvillecodes.org/',
-                'linkType' => 'website',
-                'status' => 'considering',
-            ],
-            [
-                'name' => __('Trolley Tracker Web App'),
-                'description' => __('Live trolley tracking app (2014-2021)'),
-                'link' => 'https://github.com/hackgvl/trolley-tracker',
-                'linkType' => 'github',
-                'status' => 'retired',
-            ]
         ];
 
         return view('labs.index', compact('projects', 'remove_space'));
