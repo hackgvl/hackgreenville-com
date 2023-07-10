@@ -15,6 +15,7 @@
                 <x-nav-link route="calendar.index" icon="fa-calendar">{{ __('Calendar') }}</x-nav-link>
                 <x-nav-link route="events.index" icon="fa-calendar-check-o">{{ __('Events') }}</x-nav-link>
                 <x-nav-link route="orgs.index" icon="fa-building">{{ __('Organizations') }}</x-nav-link>
+                <x-nav-link route="labs.index" icon="fa-flask">{{ __('Labs') }}</x-nav-link>
                 <x-nav-link route="about" icon="fa-users">{{ __('About Us') }}</x-nav-link>
                 <x-nav-link route="contact" icon="fa-paper-plane">{{ __('Contact') }}</x-nav-link>
             </ul>
@@ -28,7 +29,7 @@
                        class="nav-link btn btn-outline-success active ml-2" style="color: #202020;"
                        rel="noreferrer" target="_blank">
                         <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
-                        Log In to Slack
+                        {{ __('Log In to Slack') }}
                     </a>
                 </li>
 

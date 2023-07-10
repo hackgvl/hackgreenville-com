@@ -120,8 +120,7 @@ a {
 #homepage {
     #homepage-jumbotron {
         color: white;
-    background: url(img/hackgreenville-banner.jpg) no-repeat center center
-      fixed;
+        background: url(img/hackgreenville-banner.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -214,7 +213,6 @@ a {
         background-color: $green;
     }
 }
-
 .text {
     &-brown {
         color: #222222;
@@ -304,3 +302,4 @@ a {
 }
 
 @import 'about';
+@import 'labs';
