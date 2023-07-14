@@ -27,7 +27,7 @@
                             <p class="timeline-subtitle h6">{{ $event['group_name'] }}</p>
                             <p>
                                 <small class="text-muted">
-                                    <i class="fa fa-calendar"  ></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/D h:m A') }}
+                                    <i class="fa fa-calendar"  ></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/d h:i A') }}
                                 </small>
                             </p>
                         </div>
