@@ -2,21 +2,13 @@
 
 namespace App\Console;
 
+use App\Console\Commands\PullEventsCommand;
+use App\Console\Commands\PullOrgsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-    protected $commands
-        = [
-
-        ];
-
     /**
      * Define the application's command schedule.
      *
@@ -25,13 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
-
-        // Schedule commands to import data every hour. Stagger the commands, so they don't run at the same time.
-        $schedule->command('pull:orgs')->hourly();
-        $schedule->command('pull:events')->hourlyAt('15');
-
+        $schedule->command(PullOrgsCommand::class)->hourly();
+        $schedule->command(PullEventsCommand::class)->hourlyAt('15');
     }
 
     /**

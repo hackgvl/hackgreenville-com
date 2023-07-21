@@ -16,13 +16,13 @@ it('marks event as canceled if not in the API response', function () {
     $event = Event::factory()->create([
         'cancelled_at' => null,  // Assuming events have a 'status' field
         'active_at' => now()->addDays(1),
+        'expire_at' => now()->addDays(2),
     ]);
 
     // Mock the API response to not include the event
     Http::fake([
-        '*' => Http::response([
+        config('app.events_api_domain') => Http::response([
             [
-
                 'event_name' => 'Weekly Friday Afternoon Garden Tending',
                 'group_name' => 'SynergyMill Community Workshop',
                 'group_url' => 'https://synergymill.com',

@@ -15,12 +15,6 @@ class Org extends Model
     use SoftDeletes;
 
     protected $table = 'orgs';
-    protected $primaryKey = 'id';
-
-    protected $appends
-            = [
-                'nid',
-            ];
 
     protected $fillable
             = [
@@ -46,10 +40,6 @@ class Org extends Model
         return $this->belongsTo(Category::class);
     }
 
-    /**
-     * accessor url to uri
-     * @return string
-     */
     public function getUrlAttribute()
     {
         return $this->uri;
@@ -58,10 +48,5 @@ class Org extends Model
     public function getHomePageAttribute()
     {
         return $this->uri ?: $this->path;
-    }
-
-    public function getNidAttribute()
-    {
-        return $this->cache['nid'];
     }
 }
