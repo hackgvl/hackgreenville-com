@@ -137,6 +137,8 @@ yarn install
 php artisan migrate --seed
 ```
 
+The `migrate --seed` command will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
+
 #### **Running the app**
 
 In one terminal, run the following command to start the Vite local development server:
@@ -145,24 +147,30 @@ In one terminal, run the following command to start the Vite local development s
 yarn dev
 ```
 
+> Note: for production environments, `yarn prod` would be used.
+
 In another terminal, run the following command to start the Laravel server (will open on port `8000`)
 
 ```bash
 php artisan serve
 ```
 
-> Note: for production environments, `yarn prod` would be used.
+The app should now be accessible by visting `http://localhost:8000` in your browser.
 
-The `migrate --seed` command will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
+#### **Generate app key and pull events + organizations**
 
-Run the following command to generate your app key:
+Once the app is running, run the following command to generate your app key:
 
 ```bash
 php artisan key:generate
 ```
 
-To import events and organizations from the remote APIs (as set in the _.env_ file) run `php artisan pull:events` and `php artisan pull:orgs`
+Then, to pull events and organizations into your application, run the following to import them calling the events and organizations API:
 
+```bash
+php artisan pull:events
+php artisan pull:orgs
+```
 
 #### Initial Setup (Docker)
 
