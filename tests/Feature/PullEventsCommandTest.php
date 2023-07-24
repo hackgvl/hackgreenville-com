@@ -60,5 +60,5 @@ it("it imports events from api", function () {
         'lng' => -82.414642333984,
     ]);
 
-    Http::assertSent(fn($request) => $request->url() === config('app.events_api_domain') . '/api/gtc');
+    Http::assertSent(fn ($request) => $request->url() === config('app.events_api_domain') . '/api/gtc');
 });
