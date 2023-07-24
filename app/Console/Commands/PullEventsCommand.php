@@ -55,6 +55,7 @@ class PullEventsCommand extends Command
 
         Event::query()
             ->whereNotIn('event_uuid', $event_uuids)
+            ->where('active_at', '>', now())
             ->update([
                 'cancelled_at' => now(),
             ]);
