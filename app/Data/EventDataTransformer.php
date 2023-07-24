@@ -21,7 +21,7 @@ class EventDataTransformer extends Data
         public string     $group_name,
         public string     $description,
         public string     $status,
-        #[WithCast(DateTimeInterfaceCast::class, setTimeZone: 'UTC')]
+        #[WithCast(DateTimeInterfaceCast::class, setTimeZone: 'EDT')]
         public DateTime   $time,
         public ?int       $rsvp_count = 0,
         #[Computed]
