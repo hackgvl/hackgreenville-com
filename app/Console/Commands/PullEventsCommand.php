@@ -23,7 +23,7 @@ class PullEventsCommand extends Command
 
         return $client
             ->getEvents()
-            ->map(fn($event_from_api) => EventDataTransformer::from($event_from_api));
+            ->map(fn ($event_from_api) => EventDataTransformer::from($event_from_api));
     }
 
     public function handleRow(EventDataTransformer $data)
@@ -41,7 +41,9 @@ class PullEventsCommand extends Command
             'active_at' => $data->time,
             'cancelled_at' => $data->getCancelledAtOrNull(),
             'uri' => $data->url,
-            'venue_id' => $data->resolveVenue()?->id,
+            'venue_id' => $data->hasVenue()
+                ? $data->resolveVenue()->id
+                : null,
             'cache' => [],
         ]);
     }

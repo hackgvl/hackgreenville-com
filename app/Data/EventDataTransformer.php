@@ -46,6 +46,11 @@ class EventDataTransformer extends Data
         ];
     }
 
+    public function hasVenue(): bool
+    {
+        return $this->venue instanceof VenueData;
+    }
+
     public function resolveVenue(): Venue
     {
         return Venue::updateOrCreate(
