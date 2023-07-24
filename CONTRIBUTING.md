@@ -112,19 +112,43 @@ You need to make a copy of the `.env.example` file and rename it to `.env` at yo
 
 Edit the new .env file and set your database settings.
 
-You will need to create the database. This is a sample of the command you can run.
+#### **Running the database**
+
+
+**Option 1: Bare Metal** You will need to create the database. This is a sample of the command you can run.
 
 ```bash
 mysql --user="dbusername" --password -e "create database hack_greenville"
 ```
 
-    When you download the project and after you run composer install; php artisan migrate --seed and yarn install; yarn dev then run php artisan serve you should be able to view the project.
+**Option 2: Docker** If you want to run the MySQL instance out of Docker instead of using bare metal, you can spin up the MySQL instance using the following:
+
+```bash
+docker-compose -f docker-compose.yml up hackgreenville-db --build
+```
+
+#### **Installing Dependencies and Seeding Database**
+
+Run the following scripts to install dependencies and seed the database:
 
 ```bash
 composer install
-php artisan migrate --seed
 yarn install
+php artisan migrate --seed
+```
+
+#### **Running the app**
+
+In one terminal, run the following command to start the Vite local development server:
+
+```bash
 yarn dev
+```
+
+In another terminal, run the following command to start the Laravel server (will open on port `8000`)
+
+```bash
+php artisan serve
 ```
 
 > Note: for production environments, `yarn prod` would be used.
@@ -139,13 +163,6 @@ php artisan key:generate
 
 To import events and organizations from the remote APIs (as set in the _.env_ file) run `php artisan pull:events` and `php artisan pull:orgs`
 
-Then start your server:
-
-Typically, the easiest way to get the project up and running locally would be to run `php artisan serve` in the root directory of the site. This command is Laravel's wrapper over [PHP's built in web server](https://www.php.net/manual/en/features.commandline.webserver.php). `yarn watch` can be used to watch for frontend resource changes and re-build them when detected.
-
-The HackGreenville project is now up and running! You should be able to open [localhost:8000](localhost:8000) in your browser.
-
-The `composer install` command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project.
 
 #### Initial Setup (Docker)
 
