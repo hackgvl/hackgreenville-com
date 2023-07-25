@@ -157,15 +157,15 @@ php artisan serve
 
 The app should now be accessible by visting `http://localhost:8000` in your browser.
 
-#### **Generate app key and pull events + organizations**
+#### **Generate app key and seed events + organizations**
 
-Once the app is running, run the following command to generate your app key:
+Once the app is running, run the following command to generate your [app encryption key](https://laravel.com/docs/10.x/encryption):
 
 ```bash
 php artisan key:generate
 ```
 
-Then, to pull events and organizations into your application, run the following to import them calling the events and organizations API:
+Then, to seed events and organizations into your application, run the following to import events and organizations from the Open Upstate API:
 
 ```bash
 php artisan pull:events
