@@ -115,16 +115,10 @@ Edit the new .env file and set your database settings.
 #### **Running the database**
 
 
-**Option 1: Bare Metal** You will need to create the database. This is a sample of the command you can run.
+If it does not already exist, you will need to create the `hack_greenville` database in your local MySQL server.
 
 ```bash
 mysql --user="dbusername" --password -e "create database hack_greenville"
-```
-
-**Option 2: Docker** If you want to run the MySQL instance out of Docker instead of using bare metal, you can spin up the MySQL instance using the following:
-
-```bash
-docker-compose -f docker-compose.yml up hackgreenville-db --build
 ```
 
 #### **Installing Dependencies and Seeding Database**
