@@ -17,8 +17,7 @@ class OrganizationData extends Data
         public string $field_primary_contact_person,
         public string $field_organization_type,
         public string $field_event_calendar_homepage,
-    )
-    {
+    ) {
     }
 
     public function isOrganizationInactive(): bool
