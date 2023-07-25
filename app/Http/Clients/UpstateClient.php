@@ -10,8 +10,8 @@ class UpstateClient
     public function getEvents(): Collection
     {
         return Http::baseUrl(config('app.events_api_domain'))
-            ->get('/api/gtc')
             ->throw()
+            ->get('/api/gtc')
             ->collect();
     }
 
