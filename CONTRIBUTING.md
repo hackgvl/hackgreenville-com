@@ -147,29 +147,70 @@ The HackGreenville project is now up and running! You should be able to open [lo
 
 The `composer install` command will run `php artisan migrate --seed; yarn install; yarn prod` which will build the project.
 
+-----------------
+
 #### Initial Setup (Docker)
 
 The docker setup of this project should only be done for advanced users, or if
 needed for runtime compatibility issues.
 
-You need to make a copy of the `.env.docker` file and rename it to `.env` at the
-project root.
+#### **Copying Docker environment variables**
 
-In addition, you'll need to generate the Laravel Sail docker files.
-You can do this by executing `composer install`, or if you want to avoid using `composer`, you can instead run `mkdir vendor`, `mkdir vendor/laravel` and `git clone https://github.com/laravel/sail.git vendor/laravel/sail/` from inside the project root.
+First, you need to make a copy of the `.env.docker` file and rename it to `.env` at the
+project root. This can be accomplished by running `cp .env.docker .env` from the project root. 
 
-The database will be created for you automatically by the mysql docker image.
-To initialize the project, do `docker-compose pull` to pull the necessary files, and then `docker-compose up --build` to begin running the project later.
+#### **Installing the Dockerfile**
 
-First, you'll have to run `composer install` with docker exec while the original container is running with `docker exec -it hackgreenville composer install`.
+To run the Docker container for the web application, you'll need to generate the Laravel Sail docker files. You can generate the Laravel Sail docker files with either of the two options:
 
-The `composer install` command will help build the project by running migrations and initializing yarn, but you can also do this manually by running `docker exec -it hackgreenville php artisan migrate --seed; yarn install; yarn prod`.
+**Option 1: Using Composer**
+If you have `composer` installed on your machine, you can run the following script to install the application dependencies, including Laravel Sail.
 
-Now, shut down the container by hitting `ctrl-c` and re-build the container with `docker-compose up --build`.
+```bash
+composer install
+```
 
-On the first start, you will need to generate an `APP_KEY` secret, which you can do by `docker exec -it hackgreenville php artisan key:generate` while the original container is running.
+**Option 2: Installing Laravel Sail directly**
+If you do not have `composer` installed on your machine, you can install Laravel Sail directly using the following scripts:
 
-Make sure to set this in your `.env` file!
+```bash
+mkdir -p vendor/laravel
+git clone https://github.com/laravel/sail.git vendor/laravel/sail/
+```
+
+#### **Running the Docker services**
+
+To run the Docker services, run Docker Compose from the root directory:
+
+```bash
+docker-compose -f docker-compose.yml up --build
+```
+
+#### **Conditional: Install application dependencies**
+
+If you followed `Option 2` on the `Installing the Dockerfile` step, you'll need to run `composer install` on the web application Docker container to install the rest of the application dependencies. This can be done by running the following:
+
+```bash
+docker exec -it hackgreenville composer install
+```
+
+#### **Seeding the application database**
+
+Now that we have the application dependencies installed, we can seed the MySQL database using the following command:
+
+```bash
+docker exec -it hackgreenville php artisan migrate --seed
+```
+
+#### **Generating an application encryption key**
+
+On the first start, you will need to generate an `APP_KEY` secret, which serve as your application encryption key. This can be generated running the following command:
+
+```bash
+docker exec -it hackgreenville php artisan key:generate
+```
+
+This command should populate the `APP_KEY` environment variable within your `.env` file.
 
 If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP`.
 I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
@@ -179,6 +220,14 @@ If you run into "The Mix manifest does not exist", then run `docker exec -it hac
 After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose up --build` to run it again.
 
 If there are any changes in the application code, you will need to run `docker-compose up --build` to recreate the container with your changes.
+
+#### **Seeding events + organizations**
+
+To seed events and organizations into your application, run the following to import events and organizations from the Open Upstate API:
+
+```bash
+docker exec "hackgreenville" /bin/bash -c "php artisan pull:events && php artisan pull:orgs"
+```
 
 #### Interacting with Your Running Copy of the Project
 
