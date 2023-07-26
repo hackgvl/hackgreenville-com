@@ -14,7 +14,7 @@ class OrgsController extends Controller
                 return $org->category->isInactive()
                     ? PHP_INT_MAX
                     : $org->category->count();
-            })
+            }, SORT_NUMERIC)
             ->groupBy('category_id');
 
         return view('orgs.index', compact('activeOrgs'));

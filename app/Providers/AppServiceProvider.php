@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Contracts\CalendarContract;
 use App\Http\Clients\GoogleCalendar;
+use App\Http\Clients\UpstateClient;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -33,5 +34,7 @@ class AppServiceProvider extends ServiceProvider
             CalendarContract::class,
             fn () => new GoogleCalendar
         );
+
+        $this->app->singleton('UpstateClient', fn () => new UpstateClient);
     }
 }

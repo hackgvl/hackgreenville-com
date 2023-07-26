@@ -34,6 +34,10 @@ This project uses the [Laravel PHP framework](https://laravel.com).
 - Manually import the latest organizations from the API: `php artisan pull:orgs`
 - Completely erase and rebuild the database: `php artisan migrate:fresh --seed`
 
+## Repo notes
+
+We use an npm package called [pre-commit](https://www.npmjs.com/package/pre-commit). If you want to commit without running the pre-commit hook just add the switch `--no-verify` 
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

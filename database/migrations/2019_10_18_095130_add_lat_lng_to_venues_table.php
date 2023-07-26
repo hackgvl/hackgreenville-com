@@ -28,6 +28,9 @@ class AddLatLngToVenuesTable extends Migration
     {
         Schema::table('venues', function (Blueprint $table) {
             $table->dropColumn('lat');
+        });
+
+        Schema::table('venues', function (Blueprint $table) {
             $table->dropColumn('lng');
         });
     }
