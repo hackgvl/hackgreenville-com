@@ -6,37 +6,34 @@
 
 # [HackGreenville.com](https://hackgreenville.com)
 
-The official repository for Greenville, SC's tech community website, maintained by the volunteers of [HackGreenville Labs](https://hackgreenville.com/labs).
+The official repository for HackGreenville.com tech community website, maintained by the volunteers of [HackGreenville Labs](https://hackgreenville.com/labs).
 
-## Purpose
+# Purpose
 
-Our goal is to connect people to the tech-related community in the Greenville area. We do this by discovery tools for the area's events and organizations, as well as directing people to [sign-up for the HackGreenville Slack](https://hackgreenville.com/join-slack).
+Our goal is to connect people to the tech-related community in the Greenville area. We do this by supporting discovery applications to promote the area's events and organizations and hosting a vibrant [HackGreenville Slack](https://hackgreenville.com/join-slack).
 
 
-## Forking and Contributing
+# Forking, Contributing, and Synchronizing Changes
 
-- See this project's [CONTRIBUTING.md](CONTRIBUTING.md) before creating issues, forking, or submitting any pull requests.
+- See the [CONTRIBUTING.md](CONTRIBUTING.md) before creating issues, forking, or submitting any pull requests.
 - You can connect with the development team by signing up for [HackGreenville Labs's Slack and visiting the #hg-labs channel](https://hackgreenville.com/join-slack)
 
-## Tech Stack Notes
+# Running the App
 
+See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running and administering the running application.
+
+# Tech Stack Notes
+
+## APIs
 The organization data is queried from HackGreenville Labs's [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md).
 
 Then, for all of these organization, the events can be are queried from the [Events API](https://github.com/hackgvl/events-api).
 
-This project uses the [Laravel PHP framework](https://laravel.com).
+## Laravel
+This project uses the [Laravel PHP framework](https://laravel.com). The [CONTRIBUTING.md](CONTRIBUTING.md) goes into more technical details.
 
-[Laravel's Artisan command line tools](https://laravel.com/docs/master/artisan) is used to import events and organizations. Run `php artisan` to see a full list of availabe commands. Select commands of note include:
 
-- Manually import the latest events from the API: `php artisan pull:events`
-- Manually import the latest organizations from the API: `php artisan pull:orgs`
-- Completely erase and rebuild the database: `php artisan migrate:fresh --seed`
-
-## Repo notes
-
-We use an npm package called [pre-commit](https://www.npmjs.com/package/pre-commit). If you want to commit without running the pre-commit hook just add the switch `--no-verify` 
-
-## Contributors ✨
+# Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
