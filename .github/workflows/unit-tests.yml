@@ -25,10 +25,10 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_DATABASE: homestead
-          MYSQL_USER: homestead
-          MYSQL_ROOT_PASSWORD: secret
-          MYSQL_PASSWORD: secret
+          MYSQL_DATABASE: hackgreenville
+          MYSQL_USER: hackgreenville
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_PASSWORD: test
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
         ports:
           - 3306:3306
@@ -39,7 +39,7 @@ jobs:
       - name: install dependencies
         run: composer install
       - name: copy environment variables to .env
-        run: cp .env.example .env
+        run: cp .env.ci .env
       - name: migrate database
         run: php artisan migrate --seed
       - name: run tests
