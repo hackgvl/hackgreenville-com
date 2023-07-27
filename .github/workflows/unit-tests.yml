@@ -26,6 +26,10 @@ jobs:
       - uses: KengoTODA/actions-setup-docker-compose@v1
         with:
           version: '2.10.2'
+      - uses: docker-practice/actions-setup-docker@master
+        with: 
+          docker_version: '20.10'
+          docker_channel: 'stable'
       - name: install dependencies
         run: |
           composer install
