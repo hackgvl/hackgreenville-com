@@ -1,3 +1,14 @@
+- [Contribution Guidelines](#contribution-guidelines)
+- [Ways to Help](#ways-to-help)
+- [Forking the Project](#forking-the-project)
+- [Running the App](#running-the-app)
+- [Interacting with Your Running App](#interacting-with-your-running-app)
+- [Synchronizing Your Fork with the Latest Development Code Changes](#synchronizing-your-fork-with-the-latest-development-code-changes)
+- [Contributing Code to the Project](#contributing-code-to-the-project)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Kudos](#kudos)
+
+
 # Contribution Guidelines
 
 Please play nice. We follow the ["Code of Conduct" mentioned on our Join Slack form](https://hackgreenville.com/join-slack).
@@ -38,7 +49,7 @@ This is essential as it allows you to work on your own copy of the code. It allo
 
 Follow these steps to fork the `https://github.com/hackgvl/hackgreenville-com` repository:
 
-1. Go to the HackGreenville.com (HG) repository on GitHub: https://github.com/hackgvl/hackgreenville-com>.
+1. Go to the HackGreenville.com (HG) repository on GitHub: https://github.com/hackgvl/hackgreenville-com.
 2. Click the "Fork" Button in the upper right-hand corner of the interface ([Need help?](https://help.github.com/articles/fork-a-repo/)).
 3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/hackgreenville-com`.
 
@@ -114,7 +125,7 @@ You need a reference from your local copy to the `upstream` repository in additi
 
 ## Setup & Configuration Options
 
-### Option 1 - Native Host
+### Option 1 - Run via Native Host
 <details><summary>Native Host Details</summary>
 
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root.
@@ -179,14 +190,14 @@ php artisan pull:events
 
 </details>
 
-### Option 2 - VS Code / GitHub Codespaces Dev Container Setup & Configuration
-<details><summary>VS Code / GitHub Codespaces Dev Container Details</summary>
+### Option 2 - Run via VS Code and GitHub Codespaces Dev Container
+<details><summary>VS Code and GitHub Codespaces Dev Container Details</summary>
 
 See [VS Code + GitHub Codespaces Dev Container documentation](https://github.com/microsoft/vscode-dev-containers#vs-code--github-codespaces-dev-container-definitions).
 
 </details>
 
-### Option 3 - Docker / Laravel Sail Setup & Configuration
+### Option 3 - Run via Docker & Laravel Sail
 <details><summary>Docker / Laravel Sail Details</summary>
 
 The Docker setup of this project should only be done for advanced users, or if needed for runtime compatibility issues.
