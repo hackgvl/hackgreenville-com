@@ -295,7 +295,7 @@ sh scripts/handle-deploy-update.sh
 - Always follow the steps below when starting a new branch or pull request.
 - We use an npm package called [pre-commit](https://www.npmjs.com/package/pre-commit). If you want to commit without running the pre-commit hook just add the switch `--no-verify` 
 
-Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern. This allows anyone to suggest changes for review, commenting, and eventual apporval / merging into the main project's repo.
+Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern. This allows anyone to suggest changes for review, commenting, and eventual approval / merging into the main project's repo.
 
 <details><summary>Step 1: Sync Up with the Upstream HackGreenville Repo</summary>
 
