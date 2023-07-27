@@ -24,8 +24,12 @@ jobs:
     services:
       mysql:
         image: mysql:8.0
-        env_file:
-          - .env.github
+        env:
+          - MYSQL_DATABASE: homestead
+          - MYSQL_USER: homestead
+          - MYSQL_ROOT_PASSWORD: secret
+          - MYSQL_PASSWORD: secret
+          - MYSQL_ALLOW_EMPTY_PASSWORD: yes
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -35,7 +39,7 @@ jobs:
       - name: install dependencies
         run: composer install
       - name: copy environment variables to .env
-        run: cp .env.docker .env
+        run: cp .env.example .env
       - name: migrate database
         run: php artisan migrate --seed
       - name: run tests
