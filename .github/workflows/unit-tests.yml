@@ -23,6 +23,9 @@ jobs:
     container: lorisleiva/laravel-docker:8.1
     steps:
       - uses: actions/checkout@v2
+      - uses: KengoTODA/actions-setup-docker-compose@v1
+        with:
+          version: '2.10.2'
       - name: install dependencies
         run: |
           composer install
