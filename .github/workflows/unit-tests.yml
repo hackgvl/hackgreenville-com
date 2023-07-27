@@ -21,30 +21,22 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     container: lorisleiva/laravel-docker:8.1
+    services:
+      mysql:
+        image: mysql:8.0
+        env_file:
+          - .env.github
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - uses: actions/checkout@v2
-      - uses: KengoTODA/actions-setup-docker-compose@v1
-        with:
-          version: '2.10.2'
-      - uses: docker-practice/actions-setup-docker@master
-        with: 
-          docker_version: '20.10'
-          docker_channel: 'stable'
       - name: install dependencies
-        run: |
-          composer install
-      - name: start docker containers
-        run: |
-          cp .env.docker .env
-          docker-compose -f docker-compose.yml up --build -d
-      - name: give time for database to become available
-        run: |
-          SLEEP_DURATION=10
-          echo "Sleeping for $SLEEP_DURATION seconds..."
-          sleep $SLEEP_DURATION
+        run: composer install
+      - name: copy environment variables to .env
+        run: cp .env.docker .env
       - name: migrate database
-        run: |
-          docker exec "hackgreenville" /bin/bash -c "php artisan migrate --seed"
+        run: php artisan migrate --seed
       - name: run tests
-        run: |
-          docker exec "hackgreenville" /bin/bash -c "php artisan test"
+        run: php artisan test
