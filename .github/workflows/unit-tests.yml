@@ -2,7 +2,9 @@ name: Run unit tests
 
 on:
   pull_request:
-    branches: [ master ]
+    branches:
+     - master
+     - develop
     paths:
       - 'app/**'
       - 'bootstrap/**'
