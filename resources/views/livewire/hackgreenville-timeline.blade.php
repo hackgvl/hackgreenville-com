@@ -18,7 +18,7 @@
                         <div class="timeline-heading">
                             <h4 class="timeline-title">
                                 @if($event['cancelled_at'])
-                                    <span class="text-danger">
+                                <span class="text-danger">
                                     [CANCELLED]
                                 </span>
                                 @endif

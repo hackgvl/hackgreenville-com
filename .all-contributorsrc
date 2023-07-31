@@ -153,12 +153,26 @@
         "doc",
         "content"
       ]
+    },
+    {
+      "login": "irby",
+      "name": "Matthew H. Irby",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10983811?v=4",
+      "profile": "https://irby.io/",
+      "contributions": [
+        "code",
+        "review",
+        "bug",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "hackgreenville-com",
-  "projectOwner": "codeforgreenville",
+  "projectOwner": "hackgvl",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs",
+  "commitConvention": "angular"
 }

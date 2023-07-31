@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
+        "glhd/conveyor-belt": "*",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": ">=2.5 <3.0.0",
         "laravel/framework": "^10.0",
@@ -21,6 +22,7 @@
         "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.12",
         "scyllaly/hcaptcha": "^4.4",
+        "spatie/laravel-data": "*",
         "spatie/laravel-google-calendar": "^3.0"
     },
     "require-dev": {
@@ -30,15 +32,14 @@
         "barryvdh/laravel-ide-helper": "*",
         "fakerphp/faker": "^1.9.1",
         "imanghafoori/laravel-microscope": "*",
-        "laravel/telescope": "^4.14",
-        "brianium/paratest": "^6.3",
         "laravel/pint": "^1.10",
         "laravel/sail": "^1.5",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^7.0",
-        "phpunit/phpunit": "^9.0",
-        "spatie/laravel-ignition": "^2.0",
-        "roave/security-advisories": "dev-latest"
+        "laravel/telescope": "^4.14",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^7.7",
+        "pestphp/pest": "^2.8",
+        "phpunit/phpunit": "^10.2",
+        "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
         "classmap": [
@@ -47,10 +48,7 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        },
-        "files": [
-            "app/Http/Helpers/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -90,14 +88,16 @@
             "@php artisan migrate --seed"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "@php artisan migrate --seed"
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
         ]
     },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "minimum-stability": "stable",
     "prefer-stable": true
