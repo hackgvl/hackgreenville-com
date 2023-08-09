@@ -43,7 +43,7 @@
 @endsection
 
 @section('js')
-	<script type="text/javascript">
+	<script type="module">
 	$(function () {
 		/**
 		 * on change filter the events. If there is nothing selected show all the events.
