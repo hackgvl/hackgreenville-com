@@ -1,0 +1,46 @@
+name: Run unit tests
+
+on:
+  pull_request:
+    branches:
+     - master
+     - develop
+    paths:
+      - 'app/**'
+      - 'bootstrap/**'
+      - 'config/**'
+      - 'database/**'
+      - 'public/**'
+      - 'resources/**'
+      - 'routes/**'
+      - 'storage/**'
+      - 'style-guide/**'
+      - 'tests/**'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    container: lorisleiva/laravel-docker:8.1
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: hackgreenville
+          MYSQL_USER: hackgreenville
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_PASSWORD: test
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: composer install
+      - name: copy environment variables to .env
+        run: cp .env.ci .env
+      - name: migrate database
+        run: php artisan migrate --seed
+      - name: run tests
+        run: php artisan test
