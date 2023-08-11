@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ rout('home') }}">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img class="navbar-brand-img" alt="{{ config('app.name', 'HackGreenville') }}"
                  src="{{ asset('img/logo-v2.png') }}"/>
         </a>
