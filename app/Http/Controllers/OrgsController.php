@@ -9,6 +9,7 @@ class OrgsController extends Controller
     public function index()
     {
         $activeOrgs = Org::with('category')
+            ->orderBy('title')
             ->get()
             ->sortBy(function (Org $org) {
                 return $org->category->isInactive()
