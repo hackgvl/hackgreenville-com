@@ -32,7 +32,6 @@ Then, for all of these organization, the events can be are queried from the [Eve
 ## Laravel
 This project uses the [Laravel PHP framework](https://laravel.com). The [CONTRIBUTING.md](CONTRIBUTING.md) goes into more technical details.
 
-
 # Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

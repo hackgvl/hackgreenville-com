@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-
 Route::get('/calendar', 'CalendarController@index')->name('calendar.index');
 Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@submit')->name('contact.submit');
@@ -27,7 +25,7 @@ Route::post('/join-slack', 'SlackController@submit')->name('join-slack.submit');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/styles', 'StyleController@index')->name('styles.index');
 Route::get('/style-guide', 'StyleController@styleGuide')->name('styles.styleGuide');
