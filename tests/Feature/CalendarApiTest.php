@@ -4,29 +4,19 @@ namespace Tests\Feature;
 
 use App\Models\Event;
 use Carbon\Carbon;
-use Exception;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 
-class CalendarApiTest extends TestCase
-{
-    use RefreshDatabase;
+uses(RefreshDatabase::class);
 
-    /**
-     * Create known data and make an api call to make sure the event is being returned as expected.
-     *
-     * @return void
-     * @throws Exception
-     */
-    public function testGetApiCalendarEvents()
+it('calendar api returns events', function () {
     {
         $start = Carbon::now()->firstOfMonth()->addDays(3)->toRfc3339String();
-        $end   = Carbon::now()->lastOfMonth()->toRfc3339String();
+        $end = Carbon::now()->lastOfMonth()->toRfc3339String();
 
         Event::factory()->create(
             [
-                'active_at'  => $start,
-                'expire_at'  => $end,
+                'active_at' => $start,
+                'expire_at' => $end,
                 'group_name' => 'hg-testers',
                 'event_name' => 'hg-test-event',
             ]
@@ -35,7 +25,7 @@ class CalendarApiTest extends TestCase
         $knownEvents = Event::all();
 
         $start = (new Carbon($start))->subMonth()->toRfc3339String();
-        $end   = (new Carbon($end))->endOfMonth()->toRfc3339String();
+        $end = (new Carbon($end))->endOfMonth()->toRfc3339String();
 
         $response = $this->call('GET', '/api/calendar', compact('start', 'end'));
 
@@ -58,6 +48,6 @@ class CalendarApiTest extends TestCase
                 ]
             );
 
-        self::assertEquals("hg-testers\nhg-test-event", $response->json('0.title'));
+        expect($response->json('0.title'))->toBe("hg-testers\nhg-test-event");
     }
-}
+});
