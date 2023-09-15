@@ -29,6 +29,8 @@
           content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
     <meta property="twitter:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
 
+    @yield('canonical')
+
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 
