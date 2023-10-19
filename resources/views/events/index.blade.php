@@ -2,6 +2,7 @@
 
 @section('title', 'List of Greenville, SC Area Tech Events')
 @section('description', 'A list view of upcoming tech events happening in the Greenville, SC area.')
+@section('canonical')<link rel="canonical" href="/events" />@endsection
 
 @section('content')
 	<div class="container">
