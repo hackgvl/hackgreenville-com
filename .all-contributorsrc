@@ -174,6 +174,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Alex-Grimes",
+      "name": "Alexander Grimes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66704965?v=4",
+      "profile": "https://github.com/Alex-Grimes",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
