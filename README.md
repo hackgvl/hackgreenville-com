@@ -1,5 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![HackGreenville](https://www.hackgreenville.com/img/logo-v2.png)
@@ -58,6 +58,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/bogdankharchenko"><img src="https://avatars.githubusercontent.com/u/32746389?v=4?s=100" width="100px;" alt="Bogdan Kharchenko"/><br /><sub><b>Bogdan Kharchenko</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=bogdankharchenko" title="Code">💻</a> <a href="#design-bogdankharchenko" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://olivia.sculley.dev"><img src="https://avatars.githubusercontent.com/u/88074048?v=4?s=100" width="100px;" alt="Olivia Sculley"/><br /><sub><b>Olivia Sculley</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=oliviasculley" title="Code">💻</a> <a href="#ideas-oliviasculley" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-oliviasculley" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/hackgvl/hackgreenville-com/commits?author=oliviasculley" title="Documentation">📖</a> <a href="#content-oliviasculley" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://irby.io/"><img src="https://avatars.githubusercontent.com/u/10983811?v=4?s=100" width="100px;" alt="Matthew H. Irby"/><br /><sub><b>Matthew H. Irby</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=irby" title="Code">💻</a> <a href="https://github.com/hackgvl/hackgreenville-com/pulls?q=is%3Apr+reviewed-by%3Airby" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3Airby" title="Bug reports">🐛</a> <a href="https://github.com/hackgvl/hackgreenville-com/commits?author=irby" title="Tests">⚠️</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AbolfazlAkhtari"><img src="https://avatars.githubusercontent.com/u/68465524?v=4?s=100" width="100px;" alt="Abolfazl Akhtari"/><br /><sub><b>Abolfazl Akhtari</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=AbolfazlAkhtari" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alex-Grimes"><img src="https://avatars.githubusercontent.com/u/66704965?v=4?s=100" width="100px;" alt="Alexander Grimes"/><br /><sub><b>Alexander Grimes</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=Alex-Grimes" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
