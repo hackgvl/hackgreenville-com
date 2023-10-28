@@ -1,0 +1,24 @@
+{
+	"name": "hack-greenville/event-importer",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"HackGreenville\\EventImporter\\": "src/",
+			"HackGreenville\\EventImporter\\Tests\\": "tests/",
+			"HackGreenville\\EventImporter\\Database\\Factories\\": "database/factories/",
+			"HackGreenville\\EventImporter\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"HackGreenville\\EventImporter\\Providers\\EventImporterServiceProvider"
+			]
+		}
+	}
+}

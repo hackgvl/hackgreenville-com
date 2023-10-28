@@ -11,8 +11,12 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
+        "brick/schema": "^0.1.1",
         "glhd/conveyor-belt": "*",
         "guzzlehttp/guzzle": "^7.0.1",
+        "hack-greenville/api": "*",
+        "hack-greenville/event-importer": "*",
+        "internachi/modular": "^2.0",
         "intervention/image": ">=2.5 <3.0.0",
         "laravel/framework": "^10.0",
         "laravel/helpers": "^1.2",
@@ -100,5 +104,14 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "app-modules/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
 }

@@ -2,38 +2,26 @@
 
 namespace App\Models;
 
+use App\Enums\EventServices;
+use App\Enums\OrganizationStatus;
+use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property string uri
  */
-class Org extends Model
+class Org extends BaseModel
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'orgs';
-
-    protected $fillable
-            = [
-                'category_id',
-                'title',
-                'path',
-                'city',
-                'focus_area',
-                'uri',
-                'primary_contact_person',
-                'organization_type',
-                'event_calendar_uri',
-                'cache',
-            ];
-
-    protected $casts
-            = [
-                'cache' => 'json',
-            ];
+    protected $casts = [
+        'cache' => 'json',
+        'status' => OrganizationStatus::class,
+        'service' => EventServices::class,
+        'established_at' => 'datetime',
+    ];
 
     public function category()
     {
@@ -48,5 +36,14 @@ class Org extends Model
     public function getHomePageAttribute()
     {
         return $this->uri ?: $this->path;
+    }
+
+    public function getEventImporterHandler(): AbstractEventHandler
+    {
+        /** @var AbstractEventHandler $handler */
+        $handler = collect(config('event-import-handlers.handlers'))
+            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
+
+        return new $handler($this);
     }
 }

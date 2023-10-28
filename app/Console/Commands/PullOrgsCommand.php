@@ -41,8 +41,12 @@ class PullOrgsCommand extends Command
             'uri' => $data->field_homepage,
             'primary_contact_person' => $data->field_primary_contact_person,
             'organization_type' => $data->field_organization_type,
+            'established_at' => $data->established_at,
             'event_calendar_uri' => $data->field_event_calendar_homepage,
             'cache' => '',
+            'status' => $data->mapStatus(),
+            'service' => $data->mapService(),
+            'service_api_key' => $data->field_events_api_key,
         ]);
     }
 }

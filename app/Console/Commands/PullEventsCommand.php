@@ -33,7 +33,7 @@ class PullEventsCommand extends Command
         $this->progressSubMessage($data->event_name);
 
         Event::updateOrCreate($data->uniqueIdentifier(), [
-            'event_uuid' => $data->uuid,
+            'event_uuid' => $data->uniqueIdentifierHash(),
             'event_name' => $data->event_name,
             'group_name' => $data->group_name,
             'description' => $data->description,
