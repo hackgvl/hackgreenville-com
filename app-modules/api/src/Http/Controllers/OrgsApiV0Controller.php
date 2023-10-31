@@ -14,7 +14,7 @@ class OrgsApiV0Controller extends Controller
     {
         return new OrganizationsCollection(
             resource: Org::query()
-                ->when($request->filled('tags'), function(Builder $query) use ($request) {
+                ->when($request->filled('tags'), function (Builder $query) use ($request) {
                     $query->where('tags', $request->integer('tags'));
                 })
                 ->get()
