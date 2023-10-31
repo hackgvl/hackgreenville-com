@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->integer('organization_id')->unsigned()->after('id');
+            $table->integer('organization_id')->unsigned()->nullable()->after('id');
         });
     }
 
