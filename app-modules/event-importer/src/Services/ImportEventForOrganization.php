@@ -11,7 +11,7 @@ class ImportEventForOrganization
 {
     public static function process(EventData $data, Org $org): void
     {
-        DB::transaction(function() use ($data, $org) {
+        DB::transaction(function () use ($data, $org) {
             Event::updateOrCreate(
                 attributes: $data->uniqueIdentifier(),
                 values: [
