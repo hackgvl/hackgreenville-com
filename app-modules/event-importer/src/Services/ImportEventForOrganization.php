@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class ImportEventForOrganization
 {
-    public static function process(EventData $data, Org $org): Event
+    public static function process(EventData $data, Org $org): void
     {
-        return DB::transaction(function () use ($data, $org) {
-            return Event::updateOrCreate(
+        DB::transaction(function() use ($data, $org) {
+            Event::updateOrCreate(
                 attributes: $data->uniqueIdentifier(),
                 values: [
                     'event_name' => $data->name,

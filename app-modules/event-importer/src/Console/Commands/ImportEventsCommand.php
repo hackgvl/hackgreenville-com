@@ -13,14 +13,7 @@ class ImportEventsCommand extends Command
 {
     use IteratesIdQuery;
 
-    public array $event_ids;
-
     protected $signature = 'import:events';
-
-    public function beforeFirstRow()
-    {
-        $this->event_ids = [];
-    }
 
     public function query()
     {
@@ -46,9 +39,7 @@ class ImportEventsCommand extends Command
             foreach ($events as $event_data) {
                 $this->info("Importing event: {$event_data->name}");
 
-                $event = ImportEventForOrganization::process($event_data, $org);
-
-                $this->event_ids[] = $event->id;
+                ImportEventForOrganization::process($event_data, $org);
             }
 
         } while ($current_page++ < $last_page);
