@@ -31,7 +31,7 @@ class Event extends BaseModel
         'active_at' => 'datetime',
         'expire_at' => 'datetime',
         'cancelled_at' => 'datetime',
-        'service_id' => 'int',
+        'service_id' => 'string',
         'service' => EventServices::class,
     ];
 
