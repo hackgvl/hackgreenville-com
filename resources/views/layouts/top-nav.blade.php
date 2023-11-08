@@ -16,6 +16,7 @@
                 <x-nav-link route="events.index" icon="fa-calendar-check-o">{{ __('Events') }}</x-nav-link>
                 <x-nav-link route="orgs.index" icon="fa-building">{{ __('Organizations') }}</x-nav-link>
                 <x-nav-link route="labs.index" icon="fa-flask">{{ __('Labs') }}</x-nav-link>
+                <x-nav-link route="hg-nights.index" icon="fa-moon-o">{{ __('HG Nights') }}</x-nav-link>
                 <x-nav-link route="about" icon="fa-users">{{ __('About Us') }}</x-nav-link>
                 <x-nav-link route="contact" icon="fa-paper-plane">{{ __('Contact') }}</x-nav-link>
             </ul>
