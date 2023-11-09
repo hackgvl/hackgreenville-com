@@ -11,7 +11,6 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
-        "brick/schema": "^0.1.1",
         "glhd/conveyor-belt": "*",
         "guzzlehttp/guzzle": "^7.0.1",
         "hack-greenville/api": "*",

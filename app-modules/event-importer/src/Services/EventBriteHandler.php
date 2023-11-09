@@ -4,9 +4,6 @@ namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
 use App\Enums\EventType;
-use Brick\Schema\Interfaces\EducationEvent;
-use Brick\Schema\Interfaces\SocialEvent;
-use Brick\Schema\SchemaReader;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -30,7 +27,7 @@ class EventBriteHandler extends AbstractEventHandler
             'url' => $data['url'],
             'starts_at' => Carbon::parse($data['start']['local']),
             // Yes "canceled" is misspelled
-            'cancelled_at' => 'canceled' === $data['status']
+            'cancelled_at' => 'canceled' === $data['status'] || 'sales_ended' === Arr::get($data, 'event_sales_status.sales_status')
                 ? now()
                 : null,
             'event_type' => match ($data['online_event']) {
@@ -44,14 +41,14 @@ class EventBriteHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        if ( ! isset($data['venue_id'])) {
+        if (!isset($data['venue_id'])) {
             return null;
         }
 
         $venue_id = $data['venue_id'];
 
         // Cache to prevent unnecessary api calls for same venue id
-        $venue = Cache::remember(__CLASS__ . __FUNCTION__ . $venue_id, now()->addHour(), function () use ($venue_id) {
+        $venue = Cache::remember(__CLASS__.__FUNCTION__.$venue_id, now()->addHour(), function() use ($venue_id) {
             return $this->client()
                 ->get("v3/venues/{$venue_id}")
                 ->object();
@@ -76,41 +73,17 @@ class EventBriteHandler extends AbstractEventHandler
             ->get("v3/organizers/{$this->org->service_api_key}/events/", [
                 'status' => 'all',
                 'order_by' => 'start_desc',
+                'expand' => 'event_sales_status',
                 'start_date.range_start' => now()->subMonths(1)->format('Y-m-d\TH:i:s'),
-                'start_date.range_end' => now()->addMonths(3)->format('Y-m-d\TH:i:s'),
+                'start_date.range_end' => now()->addMonths(6)->format('Y-m-d\TH:i:s'),
             ])
             ->collect()
-            ->tap(function ($data) {
+            ->tap(function($data) {
                 $this->page_count = data_get($data, 'pagination.page_count', 1);
             })
             ->only('events')
             ->collapse()
-            ->filter(fn ($data) => Arr::has($data, ['id', 'name', 'description', 'url']))
-            ->map(function ($data) {
-
-                // If the event is already over, we no longer need to look into the cancellation status
-                if (Carbon::parse($data['start']['local'])->isPast()) {
-                    return $data;
-                }
-
-                // Eventbrite API does not show events which were "cancelled"
-                // We need to visit the event page, and pull json-ld data from the page.
-                $response = Http::get($data['url'])
-                    ->body();
-
-                $schemaReader = SchemaReader::forJsonLd();
-                $things = $schemaReader->readHtml($response, $data['url']);
-
-                /** @var SocialEvent|EducationEvent $social_event */
-                $social_event = Arr::first($things, fn ($thing) => $thing instanceof SocialEvent || $thing instanceof EducationEvent);
-
-                return [
-                    ...$data,
-                    'status' => $social_event->eventStatus->toString() === 'https://schema.org/EventCancelled'
-                        ? 'canceled'
-                        : 'upcoming',
-                ];
-            });
+            ->filter(fn($data) => Arr::has($data, ['id', 'name', 'description', 'url']));
     }
 
     protected function client()

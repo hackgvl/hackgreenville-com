@@ -20,7 +20,7 @@ class EventBriteTest extends DatabaseTestCase
         config(['services.eventbrite.private_token' => 'ABC']);
 
         Http::fake([
-            'https://www.eventbriteapi.com/v3/organizers/15516951616/events/?token=ABC&status=all&order_by=start_desc&start_date.range_start=2019-12-01T00%3A00%3A00&start_date.range_end=2020-04-01T00%3A00%3A00' => Http::response($this->apiResponse('live-event-in-past.json')),
+            'https://www.eventbriteapi.com/v3/organizers/15516951616/events/?token=ABC&status=all&order_by=start_desc&expand=event_sales_status&start_date.range_start=2019-12-01T00%3A00%3A00&start_date.range_end=2020-07-01T00%3A00%3A00' => Http::response($this->apiResponse('live-event-in-past.json')),
             'https://www.eventbriteapi.com/v3/venues/21742454?token=ABC' => Http::response($this->apiResponse('live-event-in-past-venue.json')),
         ]);
 
