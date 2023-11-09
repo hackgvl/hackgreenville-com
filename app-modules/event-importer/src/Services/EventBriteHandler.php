@@ -27,7 +27,7 @@ class EventBriteHandler extends AbstractEventHandler
             'url' => $data['url'],
             'starts_at' => Carbon::parse($data['start']['local']),
             // Yes "canceled" is misspelled
-            'cancelled_at' => 'canceled' === $data['status'] || 'sales_ended' === Arr::get($data, 'event_sales_status.sales_status')
+            'cancelled_at' => 'canceled' === $data['status'] || 'event_cancelled' === Arr::get($data, 'event_sales_status.sales_status')
                 ? now()
                 : null,
             'event_type' => match ($data['online_event']) {
