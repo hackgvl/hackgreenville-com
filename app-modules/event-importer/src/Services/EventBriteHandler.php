@@ -41,14 +41,14 @@ class EventBriteHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        if (!isset($data['venue_id'])) {
+        if ( ! isset($data['venue_id'])) {
             return null;
         }
 
         $venue_id = $data['venue_id'];
 
         // Cache to prevent unnecessary api calls for same venue id
-        $venue = Cache::remember(__CLASS__.__FUNCTION__.$venue_id, now()->addHour(), function() use ($venue_id) {
+        $venue = Cache::remember(__CLASS__ . __FUNCTION__ . $venue_id, now()->addHour(), function () use ($venue_id) {
             return $this->client()
                 ->get("v3/venues/{$venue_id}")
                 ->object();
@@ -78,12 +78,12 @@ class EventBriteHandler extends AbstractEventHandler
                 'start_date.range_end' => now()->addMonths(6)->format('Y-m-d\TH:i:s'),
             ])
             ->collect()
-            ->tap(function($data) {
+            ->tap(function ($data) {
                 $this->page_count = data_get($data, 'pagination.page_count', 1);
             })
             ->only('events')
             ->collapse()
-            ->filter(fn($data) => Arr::has($data, ['id', 'name', 'description', 'url']));
+            ->filter(fn ($data) => Arr::has($data, ['id', 'name', 'description', 'url']));
     }
 
     protected function client()
