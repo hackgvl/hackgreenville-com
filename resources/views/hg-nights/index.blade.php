@@ -28,7 +28,7 @@
                   <h4 class="">{{$event['date']}} at {{$event['venue']}}</h4>
                 </div>
               </div>
-              <div class="accordion" id="accordion{{$eventIndex}}">
+              <div class="accordion mb-3 p-0" id="accordion{{$eventIndex}}">
                 @foreach($event['talks'] as $talkIndex => $talk)
                   @include('partials.event-card', [
                     'id' => $eventIndex . $talkIndex,
