@@ -5,8 +5,8 @@
 
 @section('content')
   <div class="container">
-    <div class="no-gutters row text-black bg-white">
-      <div class="col-sm-12 offset-md-2 col-md-4 py-5 d-flex flex-column justify-content-center text-center">
+    <div id="hg-nights-jumbotron" class="row text-white bg-white jumbotron jumbotron-fluid d-flex flex-column align-items-stretch">
+      <div class="col-sm-12 offset-md-2 col-md-4 py-5  justify-content-center text-center shaded-bg">
         <h1>{{ __('HackGreenville Nights') }}</h1>
         <p class="lead">
           A “Quarterly-ish” Gathering of Greenville's Tech Community Coming
@@ -22,7 +22,7 @@
         </a>
       </div>
     </div>
-    <div class="col-10 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 mt-5 mx-auto d-flex flex-column">
+    <div class="col-10 px-5 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 mt-5 mx-auto d-flex flex-column">
       <h2 class="font-weight-bold">{{ __('Past Talks') }}</h2>
       @foreach($events as $eventIndex => $event)
         <div class="row col-10">
