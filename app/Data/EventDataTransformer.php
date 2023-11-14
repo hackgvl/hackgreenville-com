@@ -11,6 +11,10 @@ use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
 use Spatie\LaravelData\Data;
 
+// Coerces the config expression into a constant so that it can
+// be used in attributes.
+define('EVENTS_TIMEZONE', config('app.timezone'));
+
 class EventDataTransformer extends Data
 {
     public function __construct(
@@ -21,7 +25,7 @@ class EventDataTransformer extends Data
         public string     $group_name,
         public string     $description,
         public string     $status,
-        #[WithCast(DateTimeInterfaceCast::class, setTimeZone: 'America/New_York')]
+        #[WithCast(DateTimeInterfaceCast::class, setTimeZone: EVENTS_TIMEZONE)]
         public DateTime   $time,
         public ?int       $rsvp_count = 0,
         #[Computed]
