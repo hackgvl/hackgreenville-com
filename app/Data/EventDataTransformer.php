@@ -13,7 +13,7 @@ use Spatie\LaravelData\Data;
 
 // Coerces the config expression into a constant so that it can
 // be used in attributes.
-define('EVENTS_TIMEZONE', config('app.timezone'));
+define(__NAMESPACE__ . '\EVENTS_TIMEZONE', config('app.timezone'));
 
 class EventDataTransformer extends Data
 {
