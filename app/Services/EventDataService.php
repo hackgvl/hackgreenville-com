@@ -14,7 +14,7 @@ class EventDataService
      */
     public function eventsData()
     {
-        $event_files = self::gatherEventFiles();
+        $event_files = $this->gatherEventFiles();
 
         return array_map([$this, 'parseEvent'], $event_files);
     }

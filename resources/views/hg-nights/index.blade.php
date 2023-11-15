@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['remove_space' => true])
 
 @section('title', 'HackGreenville Nights')
 @section('description', 'An evening where Greenville\'s tech community gathers for fellowship and short-format talks')
