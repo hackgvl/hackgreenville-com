@@ -7,12 +7,14 @@
 	"require": {},
 	"autoload": {
 		"psr-4": {
-			"HackGreenville\\Api\\": "src/",
-			"HackGreenville\\Api\\Tests\\": "tests/",
-			"HackGreenville\\Api\\Database\\Factories\\": "database/factories/",
-			"HackGreenville\\Api\\Database\\Seeders\\": "database/seeders/"
-		}
+			"HackGreenville\\Api\\": "src/"
+        }
 	},
+    "autoload-dev": {
+        "psr-4": {
+            "HackGreenville\\Api\\Tests\\": "tests/"
+        }
+    },
 	"minimum-stability": "stable",
 	"extra": {
 		"laravel": {

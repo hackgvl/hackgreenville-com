@@ -1957,7 +1957,7 @@
             "dist": {
                 "type": "path",
                 "url": "app-modules/api",
-                "reference": "8f20a1858b1f9c8644834da8aa13c6b020223a05"
+                "reference": "e24852b45c718b7a944e29d395d2c012535be91b"
             },
             "type": "library",
             "extra": {
@@ -1969,10 +1969,12 @@
             },
             "autoload": {
                 "psr-4": {
-                    "HackGreenville\\Api\\": "src/",
-                    "HackGreenville\\Api\\Tests\\": "tests/",
-                    "HackGreenville\\Api\\Database\\Factories\\": "database/factories/",
-                    "HackGreenville\\Api\\Database\\Seeders\\": "database/seeders/"
+                    "HackGreenville\\Api\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "HackGreenville\\Api\\Tests\\": "tests/"
                 }
             },
             "license": [
@@ -1989,7 +1991,7 @@
             "dist": {
                 "type": "path",
                 "url": "app-modules/event-importer",
-                "reference": "17a8265a21f116671906ebb24426538e2ba1117f"
+                "reference": "9fa84244a6c83c248d47faa46b23e39c153e99a6"
             },
             "type": "library",
             "extra": {
@@ -2001,10 +2003,12 @@
             },
             "autoload": {
                 "psr-4": {
-                    "HackGreenville\\EventImporter\\": "src/",
-                    "HackGreenville\\EventImporter\\Tests\\": "tests/",
-                    "HackGreenville\\EventImporter\\Database\\Factories\\": "database/factories/",
-                    "HackGreenville\\EventImporter\\Database\\Seeders\\": "database/seeders/"
+                    "HackGreenville\\EventImporter\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "HackGreenville\\EventImporter\\Tests\\": "tests/"
                 }
             },
             "license": [
