@@ -3,6 +3,7 @@
 namespace HackGreenville\Api\Tests\Feature;
 
 use App\Models\Org;
+use App\Models\Tag;
 use Tests\DatabaseTestCase;
 
 class OrganizationsApiV0Test extends DatabaseTestCase
@@ -13,6 +14,8 @@ class OrganizationsApiV0Test extends DatabaseTestCase
         $this->travelTo(now());
 
         $org = Org::factory()->create();
+
+        Tag::factory()->create()->orgs()->attach($org);
 
         $this->getJson(route('api.v0.orgs.index'))
             ->assertSessionDoesntHaveErrors()
@@ -35,7 +38,7 @@ class OrganizationsApiV0Test extends DatabaseTestCase
                     'field_year_established' => $org->established_at->year,
                     // 'field_year_inactive' => '', // TBD
                     'uuid' => $org->id,
-                    // 'field_org_tags' => '', // TBD
+                    'field_org_tags' => $org->tags->first()->id,
                 ],
             ]);
     }

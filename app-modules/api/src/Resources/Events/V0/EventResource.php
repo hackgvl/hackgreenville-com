@@ -16,11 +16,10 @@ class EventResource extends JsonResource
         return [
             'event_name' => $this->resource->event_name,
             'group_name' => $this->resource->group_name,
-            'group_url' => 'TBD', // TODO
+            'group_url' => $this->resource->organization->home_page,
             'url' => $this->resource->url,
             'time' => $this->resource->active_at->toISOString(),
-            'tags' => '1', // TODO,
-            'nid' => '1', // TODO,
+            'tags' => $this->resource->organization->tags->first()?->id ?? '',
             'status' => $this->resource->getStatusAttribute(),
             'rsvp_count' => $this->resource->rsvp_count,
             'description' => $this->resource->description,

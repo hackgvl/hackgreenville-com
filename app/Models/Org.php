@@ -28,6 +28,11 @@ class Org extends BaseModel
         return $this->belongsTo(Category::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function getUrlAttribute()
     {
         return $this->uri;
@@ -42,7 +47,7 @@ class Org extends BaseModel
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }

@@ -28,6 +28,7 @@ class OrganizationData extends Data
         public string $field_event_calendar_homepage,
         public string $field_event_service,
         public string $field_events_api_key,
+        public string $field_org_tags,
     ) {
         $this->established_at = Carbon::create($field_year_established);
     }

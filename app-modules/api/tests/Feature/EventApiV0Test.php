@@ -3,6 +3,7 @@
 namespace HackGreenville\Api\Tests\Feature;
 
 use App\Models\Event;
+use App\Models\Tag;
 use Tests\DatabaseTestCase;
 
 class EventApiV0Test extends DatabaseTestCase
@@ -16,17 +17,20 @@ class EventApiV0Test extends DatabaseTestCase
             'cancelled_at' => now(),
         ]);
 
+        $tag = Tag::factory()->create();
+
+        $event->organization->tags()->attach($tag->id);
+
         $this->getJson(route('api.v0.events.index'))
             ->assertSessionDoesntHaveErrors()
             ->assertExactJson([
                 [
                     'event_name' => $event->event_name,
                     'group_name' => $event->group_name,
-                    'group_url' => 'TBD', //FIXME
+                    'group_url' => $event->organization->home_page,
                     'url' => $event->url,
                     'time' => $event->active_at->toISOString(),
-                    'tags' => '1', // TODO,
-                    'nid' => '1', // TODO,
+                    'tags' => $event->organization->tags->first()->id,
                     'rsvp_count' => $event->rsvp_count,
                     'created_at' => $event->created_at->toISOString(),
                     'description' => $event->description,

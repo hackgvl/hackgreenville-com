@@ -27,6 +27,7 @@ class OrgResource extends JsonResource
             'field_org_status' => $this->resource->status,
             'field_organization_type' => $this->resource->organization_type,
             'field_year_established' => $this->resource->established_at->year,
+            'field_org_tags' => $this->resource->tags->first()?->id ?? '',
             'uuid' => $this->resource->id,
         ];
     }

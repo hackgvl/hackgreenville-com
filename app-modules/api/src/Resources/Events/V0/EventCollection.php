@@ -18,9 +18,4 @@ class EventCollection extends ResourceCollection
     {
         return $this->collection->toArray();
     }
-
-    public function paginationInformation($request, $paginated, $default)
-    {
-        return [];
-    }
 }

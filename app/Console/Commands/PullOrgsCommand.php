@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Data\OrganizationData;
 use App\Http\Clients\UpstateClient;
 use App\Models\Org;
+use App\Models\Tag;
 use Glhd\ConveyorBelt\IteratesEnumerable;
 use Illuminate\Console\Command;
 use Illuminate\Support\Enumerable;
@@ -19,9 +20,9 @@ class PullOrgsCommand extends Command
 
     public function collect(): Enumerable
     {
-        return (new UpstateClient)
+        return (new UpstateClient())
             ->getOrgs()
-            ->transform(fn ($org_from_api) => OrganizationData::from($org_from_api));
+            ->transform(fn($org_from_api) => OrganizationData::from($org_from_api));
     }
 
     public function handleRow(OrganizationData $data)
@@ -29,7 +30,7 @@ class PullOrgsCommand extends Command
         $this->progressMessage('Importing Organizations');
         $this->progressSubMessage($data->title);
 
-        Org::updateOrCreate([
+        $org = Org::updateOrCreate([
             'title' => $data->title,
             'city' => $data->field_city,
         ], [
@@ -48,5 +49,16 @@ class PullOrgsCommand extends Command
             'service' => $data->mapService(),
             'service_api_key' => $data->field_events_api_key,
         ]);
+
+        if (!empty($data->field_org_tags)) {
+            // Tags
+            $tag = Tag::updateOrCreate([
+                'id' => $data->field_org_tags,
+            ], [
+                'name' => "Unknown - {$data->field_org_tags}",
+            ]);
+
+            $org->tags()->sync($tag);
+        }
     }
 }
