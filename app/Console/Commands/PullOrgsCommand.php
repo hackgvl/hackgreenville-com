@@ -20,9 +20,9 @@ class PullOrgsCommand extends Command
 
     public function collect(): Enumerable
     {
-        return (new UpstateClient())
+        return (new UpstateClient)
             ->getOrgs()
-            ->transform(fn($org_from_api) => OrganizationData::from($org_from_api));
+            ->transform(fn ($org_from_api) => OrganizationData::from($org_from_api));
     }
 
     public function handleRow(OrganizationData $data)
@@ -50,7 +50,7 @@ class PullOrgsCommand extends Command
             'service_api_key' => $data->field_events_api_key,
         ]);
 
-        if (!empty($data->field_org_tags)) {
+        if ( ! empty($data->field_org_tags)) {
             // Tags
             $tag = Tag::updateOrCreate([
                 'id' => $data->field_org_tags,

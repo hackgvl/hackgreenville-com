@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('org_tag', function(Blueprint $table) {
+        Schema::create('org_tag', function (Blueprint $table) {
             $table->foreignIdFor(\App\Models\Org::class);
             $table->foreignIdFor(\App\Models\Tag::class);
         });
