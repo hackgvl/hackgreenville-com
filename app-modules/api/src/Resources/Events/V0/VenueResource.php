@@ -21,7 +21,7 @@ class VenueResource extends JsonResource
             'zip' => $this->resource->zipcode,
             'country' => $this->resource->country,
             'lat' => $this->resource->lat,
-            'lon' => $this->resource->lon,
+            'lon' => $this->resource->lng,
         ];
     }
 }
