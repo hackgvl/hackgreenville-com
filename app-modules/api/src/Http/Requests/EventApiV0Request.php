@@ -17,14 +17,15 @@ class EventApiV0Request extends FormRequest
             'start_date' => [
                 'nullable',
                 'sometimes',
-                'date',
-                'before_or_equal::end_date',
+                'date_format:Y-m-d',
+                'before_or_equal:end_date',
             ],
             'end_date' => [
                 'nullable',
                 'sometimes',
                 'date',
-                'after_or_equal:start_date'
+                'date_format:Y-m-d',
+                'after_or_equal:start_date',
             ],
         ];
     }
