@@ -24,7 +24,7 @@ class EventApiV0Controller
                         $query->where('id', $request->integer('tags'));
                     });
                 })
-                ->latest()
+                ->latest('active_at')
                 ->get()
         );
     }
