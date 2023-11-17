@@ -28,4 +28,3 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/styles', 'StyleController@index')->name('styles.index');
-Route::get('/style-guide', 'StyleController@styleGuide')->name('styles.styleGuide');
