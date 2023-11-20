@@ -74,8 +74,8 @@ class EventBriteHandler extends AbstractEventHandler
                 'status' => 'all',
                 'order_by' => 'start_desc',
                 'expand' => 'event_sales_status',
-                'start_date.range_start' => now()->subMonths(1)->format('Y-m-d\TH:i:s'),
-                'start_date.range_end' => now()->addMonths(6)->format('Y-m-d\TH:i:s'),
+                'start_date.range_start' => now()->subDays($this->max_days_in_past)->format('Y-m-d\TH:i:s'),
+                'start_date.range_end' => now()->addDays($this->max_days_in_future)->format('Y-m-d\TH:i:s'),
             ])
             ->collect()
             ->tap(function ($data) {

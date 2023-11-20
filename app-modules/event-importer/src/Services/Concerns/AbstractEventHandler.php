@@ -11,9 +11,16 @@ abstract class AbstractEventHandler
 {
     public int $page_count = 1;
 
+    protected int $max_days_in_past;
+
+    protected int $max_days_in_future;
+
     public function __construct(
         public Org $org
-    ) {
+    )
+    {
+        $this->max_days_in_past = config('event-import-handlers.max_days_in_past');
+        $this->max_days_in_future = config('event-import-handlers.max_days_in_future');
     }
 
     abstract protected function mapIntoEventData(array $data): EventData;
@@ -26,8 +33,8 @@ abstract class AbstractEventHandler
     public function getPaginatedData(int $page): array
     {
         return [
+            $this->eventResults($page)->map(fn($data) => $this->mapIntoEventData($data)),
             $this->page_count,
-            $this->eventResults($page)->map(fn ($data) => $this->mapIntoEventData($data)),
         ];
     }
 }

@@ -28,20 +28,20 @@ class ImportEventsCommand extends Command
     {
         $handler = $org->getEventImporterHandler();
 
-        do {
-            $current_page = 1;
+        $current_page = 1;
 
-            [$last_page, $events] = $handler->getPaginatedData($current_page);
+        do {
+            [$events, $last_page] = $handler->getPaginatedData($current_page);
 
             $this->info("Processing Page <{$current_page}> from {$org->service->name} for {$org->title}");
 
             /** @var EventData $event_data */
             foreach ($events as $event_data) {
-                $this->info("Importing event: {$event_data->name}");
+                $this->info("Importing event: {$event_data->name} @ {$event_data->starts_at->toDateTimeString()}");
 
                 ImportEventForOrganization::process($event_data, $org);
             }
 
-        } while ($current_page++ < $last_page);
+        } while (++$current_page < $last_page);
     }
 }

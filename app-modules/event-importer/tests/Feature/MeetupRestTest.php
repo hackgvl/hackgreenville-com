@@ -14,7 +14,7 @@ class MeetupRestTest extends DatabaseTestCase
     public function test_meet_up_event_is_imported_correctly(): void
     {
         Http::fake([
-            'https://api.meetup.com/code-for-the-carolinas-greenville/events?&sign=true&photo-host=public' => Http::response($this->apiResponse('online-event-in-future.json'), 200),
+            'https://api.meetup.com/code-for-the-carolinas-greenville/events?sign=1&photo-host=public&status=upcoming%2Ccancelled%2Cpast&page=100&no_earlier_than=2023-10-21T00%3A00%3A00&no_later_than=2024-05-18T23%3A59%3A59' => Http::response($this->apiResponse('online-event-in-future.json'), 200),
         ]);
 
         $organization = Org::factory()->create([
