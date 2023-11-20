@@ -20,6 +20,27 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected int $per_page_limit = 100;
 
+    public function initialApiCall(): Response
+    {
+        $response = Http::baseUrl('https://api.meetup.com/')
+            ->withQueryParameters([
+                'sign' => true,
+                'photo-host' => 'public',
+                'status' => 'upcoming,cancelled,past',
+                'page' => $this->per_page_limit,
+                'no_earlier_than' => now()->subDays($this->max_days_in_past)->startOfDay()->format('Y-m-d\TH:i:s'),
+                'no_later_than' => now()->addDays($this->max_days_in_future)->endOfDay()->format('Y-m-d\TH:i:s'),
+            ])
+            ->throw()
+            ->get("{$this->org->service_api_key}/events");
+
+        if ($total_results = $response->header('X-Total-Count')) {
+            $this->page_count = ceil($total_results / $this->per_page_limit);
+        }
+
+        return $response;
+    }
+
     protected function mapIntoEventData(array $data): EventData
     {
         return EventData::from([
@@ -42,7 +63,7 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        if (!isset($data['venue'])) {
+        if ( ! isset($data['venue'])) {
             return null;
         }
 
@@ -80,32 +101,11 @@ class MeetupRestHandler extends AbstractEventHandler
         return $response->collect();
     }
 
-    public function initialApiCall(): Response
-    {
-        $response = Http::baseUrl('https://api.meetup.com/')
-            ->withQueryParameters([
-                'sign' => true,
-                'photo-host' => 'public',
-                'status' => 'upcoming,cancelled,past',
-                'page' => $this->per_page_limit,
-                'no_earlier_than' => now()->subDays($this->max_days_in_past)->startOfDay()->format('Y-m-d\TH:i:s'),
-                'no_later_than' => now()->addDays($this->max_days_in_future)->endOfDay()->format('Y-m-d\TH:i:s'),
-            ])
-            ->throw()
-            ->get("{$this->org->service_api_key}/events");
-
-        if ($total_results = $response->header('X-Total-Count')) {
-            $this->page_count = ceil($total_results / $this->per_page_limit);
-        }
-
-        return $response;
-    }
-
     protected function determineNextPage(Response $response): void
     {
         if ($links = $response->header('Link')) {
             $link = collect($links)
-                ->flatMap(fn($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
+                ->flatMap(fn ($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
                 ->implode('');
 
             if (empty($link)) {
