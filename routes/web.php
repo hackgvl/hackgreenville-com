@@ -16,6 +16,7 @@ Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@submit')->name('contact.submit');
 Route::get('/events', 'EventsController@index')->name('events.index');
 Route::get('/labs', 'LabsController@index')->name('labs.index');
+Route::get('/hg-nights', 'HGNightsController@index')->name('hg-nights.index');
 Route::get('/orgs', 'OrgsController@index')->name('orgs.index');
 Route::get('/orgs/inactive', 'OrgsController@inactive')->name('orgs.inactive');
 Route::get('/about', 'HomeController@about')->name('about');
@@ -28,4 +29,3 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/styles', 'StyleController@index')->name('styles.index');
-Route::get('/style-guide', 'StyleController@styleGuide')->name('styles.styleGuide');
