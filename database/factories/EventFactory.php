@@ -31,7 +31,7 @@ class EventFactory extends Factory
             'group_name' => $group_name = $this->faker->name . ' tech group',
             'description' => $description = $this->faker->text(100),
             'rsvp_count' => $rsvp_count = $this->faker->randomNumber(2),
-            'active_at' => $active_at = $this->faker->dateTime('+2 hours'),
+            'active_at' => $active_at = $this->faker->dateTimeThisMonth(),
             'uri' => $url = $this->faker->url,
             'venue_id' => $venue,
             'event_uuid' => $uuid = $this->faker->uuid,
