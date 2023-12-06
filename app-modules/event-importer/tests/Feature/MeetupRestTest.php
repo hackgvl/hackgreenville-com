@@ -13,8 +13,13 @@ class MeetupRestTest extends DatabaseTestCase
 {
     public function test_meet_up_event_is_imported_correctly(): void
     {
+        $meetup_request_url = 'https://api.meetup.com/code-for-the-carolinas-greenville/events?sign=1&photo-host=public' .
+            '&status=upcoming%2Ccancelled%2Cpast&page=100&' .
+            'no_earlier_than=' . now()->subDays(env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30))->format('Y-m-d') . 'T00%3A00%3A00' .
+            '&no_later_than=' . now()->addDays(180)->format('Y-m-d') . 'T23%3A59%3A59';
+
         Http::fake([
-            'https://api.meetup.com/code-for-the-carolinas-greenville/events?sign=1&photo-host=public&status=upcoming%2Ccancelled%2Cpast&page=100&no_earlier_than=2023-10-21T00%3A00%3A00&no_later_than=2024-05-18T23%3A59%3A59' => Http::response($this->apiResponse('online-event-in-future.json'), 200),
+            $meetup_request_url => Http::response($this->apiResponse('online-event-in-future.json'), 200),
         ]);
 
         $organization = Org::factory()->create([
