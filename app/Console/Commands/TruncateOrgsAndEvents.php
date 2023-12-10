@@ -8,21 +8,21 @@ use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\Isolatable;
 use Symfony\Component\Console\Helper\ProgressBar;
 
-class ClearOrgsAndEvents extends Command implements Isolatable
+class TruncateOrgsAndEvents extends Command implements Isolatable
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'app:clear-orgs-and-events';
+    protected $signature = 'app:truncate-orgs-and-events';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Clears out the events and orgs tables for debugging purposes.';
+    protected $description = 'Truncates the events and orgs tables for debugging purposes.';
 
     /*
      * Lock timeout for the command.
@@ -37,24 +37,24 @@ class ClearOrgsAndEvents extends Command implements Isolatable
      */
     public function handle()
     {
-        $models_to_reset = [
+        $models_to_truncate = [
             "Events" => "App\Models\Event",
             "Orgs" => "App\Models\Org"
         ];
 
-        ProgressBar::setFormatDefinition('simplified', '%current% of %max% tables wiped --- %message%');
-        $progressIndicator = $this->output->createProgressBar(sizeof($models_to_reset));
+        ProgressBar::setFormatDefinition('simplified', '%current% of %max% tables truncated --- %message%');
+        $progressIndicator = $this->output->createProgressBar(sizeof($models_to_truncate));
         $progressIndicator->setFormat('simplified');
 
         $progressIndicator->start();
 
-        foreach ($models_to_reset as $model_name => $model_namespace) {
-            $progressIndicator->setMessage("Resetting " . $model_name);
+        foreach ($models_to_truncate as $model_name => $model_namespace) {
+            $progressIndicator->setMessage("Truncating " . $model_name);
             $model_namespace::truncate();
             $progressIndicator->advance();
         }
 
-        $progressIndicator->setMessage("Events and Orgs have been successfully wiped.");
+        $progressIndicator->setMessage("Events and Orgs have been successfully truncated.");
         $progressIndicator->finish();
     }
 }

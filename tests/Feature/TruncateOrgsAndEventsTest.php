@@ -1,6 +1,6 @@
 <?php
 
-use App\Console\Commands\ClearOrgsAndEvents;
+use App\Console\Commands\TruncateOrgsAndEvents;
 use App\Models\Event;
 use App\Models\Org;
 
@@ -11,7 +11,6 @@ uses(RefreshDatabase::class);
 it('wipes the events and orgs tables', function () {
     $expected_count = 10;
 
-    // This will also create 10 orgs
     Event::factory()->count($expected_count)->create();
 
     // Check pre-wipe count
@@ -19,7 +18,7 @@ it('wipes the events and orgs tables', function () {
     expect(Org::count())->toEqual($expected_count);
 
 
-    Artisan::call(ClearOrgsAndEvents::class);
+    Artisan::call(TruncateOrgsAndEvents::class);
 
     // Ensure tables are squeaky clean
     expect(Event::count())->toEqual(0);
