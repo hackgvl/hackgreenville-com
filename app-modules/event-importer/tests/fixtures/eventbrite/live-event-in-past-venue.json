@@ -1,0 +1,25 @@
+{
+    "address": {
+        "address_1": "100 Fluor Daniel Drive",
+        "address_2": "",
+        "city": "Greenville",
+        "region": "SC",
+        "postal_code": "29607",
+        "country": "US",
+        "latitude": "34.8442668",
+        "longitude": "-82.3340627",
+        "localized_address_display": "100 Fluor Daniel Drive, Greenville, SC 29607",
+        "localized_area_display": "Greenville, SC",
+        "localized_multi_line_address_display": [
+            "100 Fluor Daniel Drive",
+            "Greenville, SC 29607"
+        ]
+    },
+    "resource_uri": "https://www.eventbriteapi.com/v3/venues/21742454/",
+    "id": "21742454",
+    "age_restriction": null,
+    "capacity": null,
+    "name": "Fluor Management Center",
+    "latitude": "34.8442668",
+    "longitude": "-82.3340627"
+}

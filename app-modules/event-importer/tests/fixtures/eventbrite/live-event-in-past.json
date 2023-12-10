@@ -1,0 +1,90 @@
+{
+    "pagination": {
+        "object_count": 3,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 1,
+        "has_more_items": false
+    },
+    "events": [
+        {
+            "name": {
+                "text": "BSides Greenville 2018",
+                "html": "BSides Greenville 2018"
+            },
+            "description": {
+                "text": "Security BSides is coming to Greenville?\nThat's right - the BSides Security conference is coming on December 9th to Greenville, SC!\nThis year we are proud to have the BSides Security conference come to Greenville to help further the conversations around cyber security in not only the greater region, but the growing community in Greenville and the surrounding area, in a relaxed and casual environment.\nEach BSides is a community-driven framework for building events for and by information security community members.  The goal is to expand the spectrum of conversation beyond the traditional confines of space and time.  It creates opportunities for individuals to both present and participate in an intimate atmosphere that encourages collaboration. It is an intense event with discussions, demos, and interaction from participants. It is where conversations for the next-big-thing are happening. \nThis will be an all day event which will kick off with our opening keynote being delivered by Tim Tomes (@LaNMaSteR53), Upstate native and author of the extremely popular recon-ng open source tool (amongst others).\nThe main event page can be found at https://goo.gl/HSKBt4.\n\n",
+                "html": "<P>Security BSides is coming to Greenville?<BR><\/P>\n<P>That's right - the BSides Security conference is coming on December 9th to Greenville, SC!<\/P>\n<P>This year we are proud to have the BSides Security conference come to Greenville to help further the conversations around cyber security in not only the greater region, but the growing community in Greenville and the surrounding area, in a relaxed and casual environment.<BR><\/P>\n<P>Each BSides is a community-driven framework for building events for and by information security community members.  The goal is to expand the spectrum of conversation beyond the traditional confines of space and time.  It creates opportunities for individuals to both present and participate in an intimate atmosphere that encourages collaboration. It is an intense event with discussions, demos, and interaction from participants. It is where conversations for the next-big-thing are happening. <BR><\/P>\n<P>This will be an all day event which will kick off with our opening keynote being delivered by Tim Tomes (@LaNMaSteR53), Upstate native and author of the extremely popular recon-ng open source tool (amongst others).<\/P>\n<P>The main event page can be found at https://goo.gl/HSKBt4.<\/P>\n<P><BR><\/P>\n<P><BR><\/P>"
+            },
+            "url": "https://www.eventbrite.com/e/bsides-greenville-2018-tickets-39146789100",
+            "start": {
+                "timezone": "America/New_York",
+                "local": "2018-03-10T08:30:00",
+                "utc": "2018-03-10T13:30:00Z"
+            },
+            "end": {
+                "timezone": "America/New_York",
+                "local": "2018-03-10T17:30:00",
+                "utc": "2018-03-10T22:30:00Z"
+            },
+            "organization_id": "220384806859",
+            "created": "2017-10-21T16:08:38Z",
+            "changed": "2018-03-15T10:33:56Z",
+            "published": "2017-10-21T16:11:09Z",
+            "capacity": null,
+            "capacity_is_custom": null,
+            "status": "completed",
+            "currency": "USD",
+            "listed": true,
+            "shareable": true,
+            "online_event": false,
+            "tx_time_limit": 480,
+            "hide_start_date": false,
+            "hide_end_date": false,
+            "locale": "en_US",
+            "is_locked": false,
+            "privacy_setting": "unlocked",
+            "is_series": false,
+            "is_series_parent": false,
+            "inventory_type": "limited",
+            "is_reserved_seating": false,
+            "show_pick_a_seat": false,
+            "show_seatmap_thumbnail": false,
+            "show_colors_in_seatmap_thumbnail": false,
+            "source": "create_2.0",
+            "is_free": false,
+            "version": null,
+            "summary": "Security BSides is coming to Greenville?\nThat's right - the BSides Security conference is coming on December 9th to Greenville, SC!\nThis yea",
+            "facebook_event_id": null,
+            "logo_id": "37564000",
+            "organizer_id": "15516951616",
+            "venue_id": "21742454",
+            "category_id": "102",
+            "subcategory_id": "2999",
+            "format_id": "1",
+            "id": "39146789100",
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/39146789100/",
+            "is_externally_ticketed": false,
+            "logo": {
+                "crop_mask": {
+                    "top_left": {
+                        "x": 134,
+                        "y": 84
+                    },
+                    "width": 466,
+                    "height": 233
+                },
+                "original": {
+                    "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F37564000%2F220384806859%2F1%2Foriginal.jpg?auto=format%2Ccompress&q=75&sharp=10&s=bad9a5b5e72324339c9763d215ae59a4",
+                    "width": 721,
+                    "height": 385
+                },
+                "id": "37564000",
+                "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F37564000%2F220384806859%2F1%2Foriginal.jpg?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=134%2C84%2C466%2C233&s=cd3d4667d8f4192392af436d892195f0",
+                "aspect_ratio": "2",
+                "edge_color": null,
+                "edge_color_set": true
+            }
+        }
+    ]
+}
