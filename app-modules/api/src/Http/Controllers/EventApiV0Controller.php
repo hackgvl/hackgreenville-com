@@ -14,10 +14,10 @@ class EventApiV0Controller
         return new EventCollection(
             resource: Event::query()
                 ->when($request->filled('start_date'), function (Builder $query) use ($request) {
-                    $query->where('active_at', '>=', $request->date('start_date'));
+                    $query->where('active_at', '>=', $request->date('start_date')->startOfDay());
                 })
                 ->when($request->filled('end_date'), function (Builder $query) use ($request) {
-                    $query->where('active_at', '<=', $request->date('end_date'));
+                    $query->where('active_at', '<=', $request->date('end_date')->endOfDay());
                 })
                 ->when($request->filled('tags'), function (Builder $query) use ($request) {
                     $query->whereHas('organization.tags', function (Builder $query) use ($request) {
