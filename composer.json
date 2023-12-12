@@ -20,7 +20,6 @@
         "laravel/slack-notification-channel": "^2.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "v4.2.2",
-        "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.12",
         "scyllaly/hcaptcha": "^4.4",
         "spatie/laravel-data": "*",
