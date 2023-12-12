@@ -17,6 +17,11 @@
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 plugins: ['dayGrid'],
+                header: {
+                    left: 'title',
+                    center: '',
+                    right: 'dayGridMonth,dayGridDay,prev,next' // user can switch between the two
+                },
                 events: {
                     url: '/api/calendar',
                     // extraParams: function() { // a function that returns an object

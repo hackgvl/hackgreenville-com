@@ -21,7 +21,7 @@ it('marks event as canceled if not in the API response', function () {
 
     // Mock the API response to not include the event
     Http::fake([
-        config('app.events_api_domain') => Http::response([
+        'https://events.openupstate.org/api/gtc' => Http::response([
             [
                 'event_name' => 'Weekly Friday Afternoon Garden Tending',
                 'group_name' => 'SynergyMill Community Workshop',

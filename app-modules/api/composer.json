@@ -1,0 +1,26 @@
+{
+	"name": "hack-greenville/api",
+	"description": "",
+	"type": "library",
+	"version": "1.0",
+	"license": "proprietary",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"HackGreenville\\Api\\": "src/"
+        }
+	},
+    "autoload-dev": {
+        "psr-4": {
+            "HackGreenville\\Api\\Tests\\": "tests/"
+        }
+    },
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"HackGreenville\\Api\\Providers\\ApiServiceProvider"
+			]
+		}
+	}
+}

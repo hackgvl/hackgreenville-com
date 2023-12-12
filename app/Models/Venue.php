@@ -17,17 +17,19 @@ class Venue extends Model
     protected $table = 'venues';
 
     protected $fillable
-            = [
-                'slug',
-                'name',
-                'address',
-                'zipcode',
-                'phone',
-                'city',
-                'state_id',
-                'lat',
-                'lng',
-            ];
+        = [
+            'unique_venue_id',
+            'slug',
+            'name',
+            'address',
+            'zipcode',
+            'phone',
+            'city',
+            'state_id',
+            'country',
+            'lat',
+            'lng',
+        ];
 
     public function __toString()
     {
