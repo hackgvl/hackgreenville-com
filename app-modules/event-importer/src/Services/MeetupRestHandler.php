@@ -67,7 +67,7 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        if (!isset($data['venue'])) {
+        if ( ! isset($data['venue'])) {
             return null;
         }
 
@@ -109,7 +109,7 @@ class MeetupRestHandler extends AbstractEventHandler
     {
         if ($links = $response->header('Link')) {
             $link = collect($links)
-                ->flatMap(fn($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
+                ->flatMap(fn ($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
                 ->implode('');
 
             if (empty($link)) {
