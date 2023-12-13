@@ -23,7 +23,7 @@ class EventBriteHandler extends AbstractEventHandler
             'service_id' => $data['id'],
 
             'name' => $data['name']['text'],
-            'description' => $data['description']['text'],
+            'description' => $this->sanitize_description($data['description']['text']),
             'url' => $data['url'],
             'starts_at' => Carbon::parse($data['start']['local']),
             // Yes "canceled" is misspelled

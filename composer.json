@@ -24,6 +24,7 @@
         "laravel/ui": "v4.2.2",
         "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.12",
+        "mews/purifier": "^3.4",
         "scyllaly/hcaptcha": "^4.4",
         "spatie/laravel-data": "*",
         "spatie/laravel-google-calendar": "^3.0"

@@ -6,6 +6,7 @@ use App\Models\Org;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
 use Illuminate\Support\Collection;
+use Mews\Purifier\Facades\Purifier;
 
 abstract class AbstractEventHandler
 {
@@ -35,5 +36,11 @@ abstract class AbstractEventHandler
             $this->eventResults($page)->map(fn ($data) => $this->mapIntoEventData($data)),
             $this->page_count,
         ];
+    }
+
+    /** @return string */
+    public function sanitize_description(string $description_text): string
+    {
+        return Purifier::clean($description_text);
     }
 }

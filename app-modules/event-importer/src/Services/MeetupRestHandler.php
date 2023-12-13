@@ -46,7 +46,7 @@ class MeetupRestHandler extends AbstractEventHandler
         return EventData::from([
             'id' => $data['id'],
             'name' => $data['name'],
-            'description' => $data['description'],
+            'description' => $this->sanitize_description($data['description']),
             'url' => $data['link'],
             'starts_at' => Carbon::createFromTimestampMs($data['time']),
             'event_type' => match ($data['eventType']) {
