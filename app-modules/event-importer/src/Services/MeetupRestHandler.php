@@ -54,6 +54,10 @@ class MeetupRestHandler extends AbstractEventHandler
                 'PHYSICAL' => EventType::Live,
                 default => throw new RuntimeException("Unable to determine event type {$data['eventType']}"),
             },
+            'cancelled_at' => match ($data['status']) {
+                'cancelled' => now(),
+                default => null
+            },
             'rsvp' => $data['yes_rsvp_count'],
             'service' => EventServices::MeetupRest,
             'service_id' => $data['id'],
