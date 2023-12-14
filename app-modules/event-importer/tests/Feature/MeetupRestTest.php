@@ -49,7 +49,7 @@ HTML, $active_event->description);
     {
         Http::fake([
             $this->getMeetupUrl('beer-and-napkins-community-of-design') => Http::response(
-                $this->apiResponse('cancelled-event-in-future.json'),
+                $this->apiResponse('cancelled-event.json'),
                 200
             ),
         ]);
