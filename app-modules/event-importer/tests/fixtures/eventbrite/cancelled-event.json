@@ -1,0 +1,98 @@
+{
+  "pagination": {
+    "object_count": 1,
+    "page_number": 1,
+    "page_size": 50,
+    "page_count": 1,
+    "has_more_items": false
+  },
+  "events": [
+    {
+      "name": {
+        "text": "Flywheel Café (Greenville)",
+        "html": "Flywheel Café (Greenville)"
+      },
+      "description": {
+        "text": "Connect with small business owners, startups, investors and community leaders.",
+        "html": "Connect with small business owners, startups, investors and community leaders."
+      },
+      "url": "https://www.eventbrite.com/e/flywheel-cafe-greenville-tickets-478619482757",
+      "start": {
+        "timezone": "America/New_York",
+        "local": "2023-12-09T17:00:00",
+        "utc": "2023-12-09T22:00:00Z"
+      },
+      "end": {
+        "timezone": "America/New_York",
+        "local": "2023-12-09T18:00:00",
+        "utc": "2023-12-09T23:00:00Z"
+      },
+      "organization_id": "160887327615",
+      "created": "2022-11-30T21:23:06Z",
+      "changed": "2023-12-10T08:57:05Z",
+      "published": "2022-11-30T21:23:39Z",
+      "capacity": null,
+      "capacity_is_custom": null,
+      "status": "completed",
+      "currency": "USD",
+      "listed": true,
+      "shareable": true,
+      "online_event": false,
+      "tx_time_limit": 1200,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_US",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "inventory_type": "limited",
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "coyote",
+      "is_free": true,
+      "version": null,
+      "summary": "Connect with small business owners, startups, investors and community leaders.",
+      "facebook_event_id": null,
+      "logo_id": "402659949",
+      "organizer_id": "36673227093",
+      "venue_id": "21742454",
+      "category_id": "101",
+      "subcategory_id": "1001",
+      "format_id": "11",
+      "id": "478619482757",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/478619482757/",
+      "is_externally_ticketed": false,
+      "event_sales_status": {
+        "sales_status": "sales_ended",
+        "start_sales_date": null,
+        "message": "Cancelled",
+        "message_type": "canonical",
+        "message_code": "event_cancelled",
+        "currency": "USD"
+      },
+      "logo": {
+        "crop_mask": {
+          "top_left": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 1600,
+          "height": 800
+        },
+        "original": {
+          "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F402659949%2F637994093253%2F1%2Foriginal.20221130-211143?auto=format%2Ccompress&q=75&sharp=10&s=367feacba1d57ba902b131392094095c",
+          "width": 1600,
+          "height": 800
+        },
+        "id": "402659949",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F402659949%2F637994093253%2F1%2Foriginal.20221130-211143?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1600%2C800&s=58f526c8460ce0162787ebe534e728f0",
+        "aspect_ratio": "2",
+        "edge_color": "#7d7465",
+        "edge_color_set": true
+      }
+    }
+  ]
+}

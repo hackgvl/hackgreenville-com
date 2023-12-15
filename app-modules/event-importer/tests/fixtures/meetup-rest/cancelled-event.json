@@ -1,0 +1,51 @@
+[
+  {
+    "created": 1701477847000,
+    "duration": 7200000,
+    "id": "lkzghtyfcqbcc",
+    "name": "Beer and Napkins Creator Community ",
+    "date_in_series_pattern": false,
+    "status": "cancelled",
+    "time": 1703201400000,
+    "local_date": "2023-12-21",
+    "local_time": "18:30",
+    "updated": 1702457122000,
+    "utc_offset": -18000000,
+    "waitlist_count": 0,
+    "yes_rsvp_count": 1,
+    "venue": {
+      "id": 27096654,
+      "name": "Carolina Bauernhaus Greenville",
+      "lat": 34.848915100097656,
+      "lon": -82.42721557617188,
+      "repinned": true,
+      "address_1": "556 Perry Ave Suite B118",
+      "city": "Greenville",
+      "country": "us",
+      "localized_country_name": "USA",
+      "zip": "29611",
+      "state": "SC"
+    },
+    "is_online_event": false,
+    "eventType": "PHYSICAL",
+    "group": {
+      "created": 1405519067000,
+      "name": "Beer and Napkins Communities of Design",
+      "id": 15757232,
+      "join_mode": "open",
+      "lat": 34.79999923706055,
+      "lon": -82.38999938964844,
+      "urlname": "beer-and-napkins-community-of-design",
+      "who": "BNN'rs",
+      "localized_location": "Greenville, SC",
+      "state": "SC",
+      "country": "us",
+      "region": "en_US",
+      "timezone": "US/Eastern"
+    },
+    "link": "https://www.meetup.com/beer-and-napkins-community-of-design/events/lkzghtyfcqbcc/",
+    "description": "<p>Are you feeling dizzy trying to navigate the accelerating changes as an artist or creative? We understand that it can be challenging, so we at Beer and Napkins are excited to announce our ongoing community for Creatives. This community is designed to facilitate knowledge sharing, provide tips and techniques, explore technology, and discuss community development ideas.</p> <p>We invite you to join us for our Bi-Monthly Meetup at Carolina Bauernhaus in Greenville at 6:30 PM. This is a fantastic opportunity to connect with like-minded creatives and engage in supportive conversations to help you grow and thrive as an artist and creator.</p> <p>Don't miss this fantastic opportunity to expand your network, learn new skills, and share your experiences with other creatives. We hope to see you there!</p> ",
+    "visibility": "public",
+    "member_pay_fee": false
+  }
+]
