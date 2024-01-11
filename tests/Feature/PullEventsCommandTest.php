@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Http;
 
 uses(RefreshDatabase::class);
 
-it("it imports events from api", function () {
+it("imports events from api", function () {
     Http::fake([
-        config('app.events_api_domain') . '/*' => Http::response([
+        'https://events.openupstate.org/api/gtc' => Http::response([
             [
                 'event_name' => 'Weekly Friday Afternoon Garden Tending',
                 'group_name' => 'SynergyMill Community Workshop',

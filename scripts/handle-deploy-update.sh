@@ -31,5 +31,10 @@ php artisan view:cache
 php artisan event:cache
 echo "Laravel optimization completed."
 
+# Bundle and optimize assets
+echo "Beginning Vite build..."
+yarn run build
+echo "Vite build completed! Assets have been bundled and/or optimized."
+
 # Finish
 echo "Deployment completed."

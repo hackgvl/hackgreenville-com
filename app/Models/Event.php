@@ -2,77 +2,49 @@
 
 namespace App\Models;
 
+use App\Enums\EventServices;
 use App\Http\SearchPipeline\Active;
 use App\Http\SearchPipeline\Month;
+use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Routing\Pipeline;
+use RuntimeException;
 
-/**
- * @property string event_name
- * @property string title
- * @property string group_name
- * @property string description
- * @property string uri
- * @property int rsvp_count
- * @property int venue_id
- * @property Venue venue
- * @property Carbon active_at
- * @property array cache
- * @property string service
- * @property string service_id
- * @property string uniqueIdentifier
- * @method static search()
- */
-class Event extends Model
+class Event extends BaseModel
 {
     use HasFactory;
+    use HasUniqueIdentifier;
     use SoftDeletes;
 
     protected $table = 'events';
 
-    protected $fillable
-        = [
-            'event_name',
-            'group_name',
-            'description',
-            'rsvp_count',
-            'active_at',
-            'expire_at',
-            'cancelled_at',
-            'uri',
-            'venue_id',
-            'cache',
-            'event_uuid',
-            'service',
-            'service_id',
-        ];
+    protected $casts = [
+        'cache' => 'json',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
+        'active_at' => 'datetime',
+        'expire_at' => 'datetime',
+        'cancelled_at' => 'datetime',
+        'service_id' => 'string',
+        'service' => EventServices::class,
+    ];
 
-    protected $casts
-        = [
-            'cache'      => 'json',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-            'deleted_at' => 'datetime',
-            'active_at'  => 'datetime',
-            'expire_at'  => 'datetime',
-        ];
-
-    protected $appends
-        = [
-            'short_description',
-            'title',
-            'active_at_ftm',
-        ];
+    protected $appends = [
+        'short_description',
+        'title',
+        'active_at_ftm',
+        'status',
+    ];
 
     public function getUniqueIdentifierAttribute(): bool|string
     {
-        $service    = $this->service;
+        $service = $this->service;
         $service_id = $this->service_id;
 
         return json_encode(compact('service', 'service_id'));
@@ -81,6 +53,11 @@ class Event extends Model
     public function venue(): BelongsTo
     {
         return $this->belongsTo(Venue::class);
+    }
+
+    public function organization(): BelongsTo
+    {
+        return $this->belongsTo(Org::class, 'organization_id');
     }
 
     public function scopeGetActive(Builder $query): Builder
@@ -125,6 +102,7 @@ class Event extends Model
 
     /**
      * accessor url to uri
+     *
      * @return string
      */
     public function getUrlAttribute(): string
@@ -138,12 +116,30 @@ class Event extends Model
             return 'passed';
         }
 
-
         return 'upcoming';
+    }
+
+    public function getStatusAttribute(): string
+    {
+        if ($this->cancelled_at) {
+            return 'cancelled';
+        }
+
+        if ($this->active_at->isPast()) {
+            return 'past';
+        }
+
+        if ($this->active_at->isFuture()) {
+            return 'upcoming';
+        }
+
+        throw new RuntimeException('Unable to determine status');
+
     }
 
     /**
      * build out the link that adds this event to the users personal calendar
+     *
      * @return string
      */
     public function getGCalUrlAttribute(): string
@@ -177,11 +173,6 @@ class Event extends Model
     public function getLocalActiveAtAttribute(): Carbon|string
     {
         return $this->active_at->tz(config('app.timezone'));
-    }
-
-    public function getDescriptionAttribute(): array|string
-    {
-        return str_replace('<a', '<a target="_blank"', $this->attributes['description']);
     }
 
     public function getShortDescriptionAttribute(): string
