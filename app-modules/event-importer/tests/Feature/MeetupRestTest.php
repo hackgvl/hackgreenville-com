@@ -13,6 +13,8 @@ class MeetupRestTest extends DatabaseTestCase
 {
     public function test_active_meetup_event_is_imported_correctly(): void
     {
+        $this->travelTo('December 18, 2023');
+
         Http::fake([
             $this->getMeetupUrl('code-for-the-carolinas-greenville') => Http::response(
                 $this->apiResponse('online-event-in-future.json'),
