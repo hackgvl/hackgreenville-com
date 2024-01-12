@@ -22,30 +22,11 @@
                     <hr class="mx-auto w-100 px-4">
                 </div>
 
-                {!! Form::open(['url' => url()->secure('/contact'), 'class'=> 'px-lg-4']) !!}
-                <div class="form-group">
-                    {{ Form::label('name', __('Name'), ['class' => 'form-label']) }}
-                    {{ Form::text('name', old('name'), ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : null)]) }}
-                    @error('name')
-                    <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                {{ aire()->route('contact.submit') }}
 
-                <div class="form-group">
-                    {{ Form::label('contact', __('Email'), ['class' => 'form-label']) }}
-                    {{ Form::email('contact', old('contact'), ['class' => 'form-control' . ($errors->has('contact') ? ' is-invalid' : null)]) }}
-                    @error('contact')
-                    <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    {{ Form::label('message', __('Message'), ['class' => 'form-label']) }}
-                    {{ Form::textarea('message', old('message'), ['class' => 'form-control' . ($errors->has('message') ? ' is-invalid' : null)]) }}
-                    @error('message')
-                    <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                {{ aire()->input('name', 'Name') }}
+                {{ aire()->email('contact', 'Email') }}
+                {{ aire()->textArea('message', 'Message') }}
 
                 {!! HCaptcha::display(['class' => 'hcaptcha mt-4 text-center']) !!}
 
@@ -54,10 +35,9 @@
                 @enderror
 
                 <div class="text-center">
-                    {{ Form::submit('Submit', ['class' => 'my-4 btn btn-outline-secondary ']) }}
+                    {{ aire()->submit() }}
                 </div>
-
-                {!! Form::close() !!}
+                {{ aire()->close() }}
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55120ce828acdb08b05e2810109401cc",
+    "content-hash": "8729e5d1549a425a189b01963604d563",
     "packages": [
         {
             "name": "brick/math",
@@ -1242,6 +1242,142 @@
                 }
             ],
             "time": "2022-02-20T15:07:15+00:00"
+        },
+        {
+            "name": "glhd/aire",
+            "version": "2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/glhd/aire.git",
+                "reference": "c362b463d775fb7a034d6d5b3fe073dea641b664"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/glhd/aire/zipball/c362b463d775fb7a034d6d5b3fe073dea641b664",
+                "reference": "c362b463d775fb7a034d6d5b3fe073dea641b664",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/events": "~5.8.28|^6|^7|^8|^9|^10|11.x-dev|dev-master",
+                "illuminate/support": "~5.8.28|^6|^7|^8|^9|^10|11.x-dev|dev-master",
+                "illuminate/view": "~5.8.28|^6|^7|^8|^9|^10|11.x-dev|dev-master"
+            },
+            "require-dev": {
+                "barryvdh/reflection-docblock": "^2.0",
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "guzzlehttp/guzzle": "~6.0|~7.0",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^6.24|^7.10|^8|9.x-dev|10.x-dev|dev-master",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^9.5",
+                "symfony/css-selector": "^5.4",
+                "symfony/dom-crawler": "^5.4"
+            },
+            "suggest": {
+                "glhd/aire-tailwind-custom-forms": "Use the Tailwind custom forms plugin for even nicer looking forms"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Galahad\\Aire\\Support\\AireServiceProvider"
+                    ],
+                    "aliases": {
+                        "Aire": "Galahad\\Aire\\Support\\Facades\\Aire"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Galahad\\Aire\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Morrell",
+                    "homepage": "http://www.cmorrell.com"
+                }
+            ],
+            "description": "Modern Laravel form builder. Remembers old input, retrieves error messages and comes with beautiful Tailwind-based markup out of the box.",
+            "keywords": [
+                "Forms",
+                "aire",
+                "laravel",
+                "tailwind"
+            ],
+            "support": {
+                "issues": "https://github.com/glhd/aire/issues",
+                "source": "https://github.com/glhd/aire/tree/2.8.1"
+            },
+            "time": "2023-07-12T17:27:26+00:00"
+        },
+        {
+            "name": "glhd/aire-bootstrap",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/glhd/aire-bootstrap.git",
+                "reference": "3d1a5f564fb2bc609c9182d6147263ba5baf671b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/glhd/aire-bootstrap/zipball/3d1a5f564fb2bc609c9182d6147263ba5baf671b",
+                "reference": "3d1a5f564fb2bc609c9182d6147263ba5baf671b",
+                "shasum": ""
+            },
+            "require": {
+                "glhd/aire": "^2.0",
+                "illuminate/support": "^5.7|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~3.0|~4.0|~5.0|~6.0",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^7.3|^8.0|^9.0",
+                "symfony/css-selector": "^4.1",
+                "symfony/dom-crawler": "^4.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Galahad\\AireBootstrap\\AireBootstrapServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Galahad\\AireBootstrap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Morrell",
+                    "homepage": "http://www.cmorrell.com"
+                }
+            ],
+            "description": "Bootstrap themes for Aire",
+            "keywords": [
+                "Forms",
+                "aire",
+                "bootstrap",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/glhd/aire-bootstrap/issues",
+                "source": "https://github.com/glhd/aire-bootstrap/tree/2.1.2"
+            },
+            "time": "2023-04-05T11:13:44+00:00"
         },
         {
             "name": "glhd/conveyor-belt",
@@ -2860,79 +2996,6 @@
                 "source": "https://github.com/laravel/ui/tree/v4.2.2"
             },
             "time": "2023-05-09T19:47:28+00:00"
-        },
-        {
-            "name": "laravelcollective/html",
-            "version": "v6.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "64ddfdcaeeb8d332bd98bef442bef81e39c3910b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/64ddfdcaeeb8d332bd98bef442bef81e39c3910b",
-                "reference": "64ddfdcaeeb8d332bd98bef442bef81e39c3910b",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "^6.0|^7.0|^8.0|^9.0|^10.0",
-                "illuminate/routing": "^6.0|^7.0|^8.0|^9.0|^10.0",
-                "illuminate/session": "^6.0|^7.0|^8.0|^9.0|^10.0",
-                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
-                "illuminate/view": "^6.0|^7.0|^8.0|^9.0|^10.0",
-                "php": ">=7.2.5"
-            },
-            "require-dev": {
-                "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0",
-                "mockery/mockery": "~1.0",
-                "phpunit/phpunit": "~8.5|^9.5.10"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "6.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Collective\\Html\\HtmlServiceProvider"
-                    ],
-                    "aliases": {
-                        "Form": "Collective\\Html\\FormFacade",
-                        "Html": "Collective\\Html\\HtmlFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Collective\\Html\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Engebretson",
-                    "email": "adam@laravelcollective.com"
-                },
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                }
-            ],
-            "description": "HTML and Form Builders for the Laravel Framework",
-            "homepage": "https://laravelcollective.com",
-            "support": {
-                "issues": "https://github.com/LaravelCollective/html/issues",
-                "source": "https://github.com/LaravelCollective/html"
-            },
-            "abandoned": "spatie/laravel-html",
-            "time": "2023-04-25T02:46:11+00:00"
         },
         {
             "name": "league/commonmark",
