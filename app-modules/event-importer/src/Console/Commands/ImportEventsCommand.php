@@ -15,6 +15,8 @@ class ImportEventsCommand extends Command
 
     protected $signature = 'import:events';
 
+    protected $description = 'Imports events from various sources such as Meetup etc';
+
     public function query()
     {
         return Org::query()
