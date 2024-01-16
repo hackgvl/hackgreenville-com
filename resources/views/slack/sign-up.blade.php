@@ -26,9 +26,11 @@
                 <hr class="mx-auto w-100 px-4" style="max-width: 50em;">
             </div>
 
-            {{ aire()->route('join-slack') }}
+            {{ aire()->route('join-slack.submit') }}
             <div class="row justify-content-center">
                 <div class="col-md-5">
+                    {{ aire()->summary()->verbose() }}
+
                     {{ aire()->input('name', __('Full Name'))->required() }}
                     {{ aire()->email('contact', __('Email'))->required() }}
                     {{ aire()->textArea('reason', __('What do you do in the Upstate?'))->rows(4)->placeholder(__('What is it that interests you? What kinds of things are you involved in here? If you are not from the Upstate and don\'t plan to be, you might find another group better suited for you.')) }}
@@ -75,9 +77,6 @@
                         {{ aire()->checkbox('rules', __('Do you accept the rules?'))->required() }}
                         {!! HCaptcha::display(['class' => 'hcaptcha mt-4']) !!}
                         <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-                        @error('h-captcha-response')
-                        <div class="col-12 mx-1 my-2 alert alert-danger">{{ $message }}</div>
-                        @enderror
 
                         {{ aire()->submit('Join Slack')->addClass('m-4') }}
                     </div>

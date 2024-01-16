@@ -6,6 +6,7 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use Tests\DatabaseTestCase;
 
@@ -13,6 +14,8 @@ class MeetupRestTest extends DatabaseTestCase
 {
     public function test_active_meetup_event_is_imported_correctly(): void
     {
+        Carbon::setTestNow('2020-01-01');
+        
         Http::fake([
             $this->getMeetupUrl('code-for-the-carolinas-greenville') => Http::response(
                 $this->apiResponse('online-event-in-future.json'),
