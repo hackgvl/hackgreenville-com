@@ -23,7 +23,7 @@
         "lint:php"
     ],
     "devDependencies": {
-        "axios": "^0.19.2",
+        "axios": "^1.6.0",
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
@@ -35,7 +35,7 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
-        "sharp": "^0.32.4",
+        "sharp": "^0.32.6",
         "sharrre": "^2.0.1",
         "vite": "^4.3.9",
         "vite-plugin-image-optimizer": "^1.1.6"

@@ -9,7 +9,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.1",
+        "php": "^8.3",
         "ext-json": "*",
         "glhd/aire-bootstrap": "^2.1",
         "glhd/conveyor-belt": "*",
