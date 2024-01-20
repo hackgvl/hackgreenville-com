@@ -2006,9 +2006,9 @@ sweetalert2@^11.7.12:
   integrity sha512-GdU1TkiLpGGC0mcPV8bKmS7G0MR7caxambPkEU8zyepRSNR9EaEvIjNhX5QNkL0VFVzHbI3l12NtuEklkJ0D4Q==
 
 systeminformation@^5.7:
-  version "5.18.8"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.18.8.tgz#3c7f99b14c4b7af588da09e92d5a1f40e0270918"
-  integrity sha512-ot0QuNpIsiSBXSxMN7JdUYcQ8urqQ5dcYfoPF3Ac9aOVJ5RamtLKS+fTxIcYmjgCfht7E/UJ0VEkubQnFPgLtg==
+  version "5.21.22"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.21.22.tgz#9f0cb9955d564855d0992734212f3f2f03b29c6d"
+  integrity sha512-gNHloAJSyS+sKWkwvmvozZ1eHrdVTEsynWMTY6lvLGBB70gflkBQFw8drXXr1oEXY84+Vr9tOOrN8xHZLJSycA==
 
 tar-fs@^2.0.0:
   version "2.1.1"
