@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(ImportEventsCommand::class)->everyThreeHours();
+        $schedule->command(ImportEventsCommand::class)->hourly();
     }
 
     /**
