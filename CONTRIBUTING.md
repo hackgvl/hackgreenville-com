@@ -184,8 +184,7 @@ Organization and events data comes from the [Organizations API](https://github.c
 
 
 ```bash
-php artisan pull:orgs
-php artisan pull:events
+php artisan import:events
 ```
 
 </details>
@@ -274,7 +273,7 @@ If there are any changes in the application code, you will need to run `docker-c
 To seed events and organizations into your application, run the following to import events and organizations from the Open Upstate API:
 
 ```bash
-docker exec "hackgreenville" /bin/bash -c "php artisan php artisan pull:orgs && pull:events"
+docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 ```
 </details>
 
@@ -284,8 +283,7 @@ docker exec "hackgreenville" /bin/bash -c "php artisan php artisan pull:orgs && 
 
 - Run `php artisan` to see a full list of availabe commands.
 - Running tests `php artisan test`
-- Refreshing organizations from the remote API: `php artisan pull:orgs`
-- Refreshing events from the remote API: `php artisan pull:events`
+- Refreshing events from the remote API: `php artisan import:events`
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
 
