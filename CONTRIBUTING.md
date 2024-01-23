@@ -300,8 +300,8 @@ The Events API's responses are controlled by variables that may limit the data a
 Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
 
 Explaination of the .env defaults
-`EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the responses to no more than 30 days in the past
-`EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the responses to no more than 365 days in the future
+`EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's to no more than 30 days in the past
+`EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the imported events saved in the Event API's database to no more than 365 days in the future
 `EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
  
 
