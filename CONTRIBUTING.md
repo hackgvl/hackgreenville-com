@@ -291,7 +291,7 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 
 # Environment Variables
 
-- The sample .env.example OR .env.docker is used as a template for new projects and one must exist based on how the app is running (Native or Docker)
+- The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
 - The .env.ci and .env.testing are used for their respective tasks.
 
 ## Events API Configuration
