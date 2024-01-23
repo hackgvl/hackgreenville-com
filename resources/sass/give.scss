@@ -3,3 +3,35 @@
         font-size: 1.25rem;
     }
 }
+
+.organizations-group {
+    text-align: center;
+    justify-content: center;
+
+    > h4 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.options-row {
+    --gap: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+
+    > div {
+        width: calc((100% / 3) - (var(--gap) * 2 / 3));
+    }
+
+    h5 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.2em;
+    }
+}
