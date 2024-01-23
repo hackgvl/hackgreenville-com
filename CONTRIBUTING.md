@@ -36,10 +36,11 @@ If you can't find what you were looking for then [open a new issue](https://gith
 
 When in doubt, you can reach out to an active project contributor:
 
-| Name          | GitHub                                   | Role                               |
-|:--------------|:-----------------------------------------|:-----------------------------------|
-| Zach          | [@zach2825](https://github.com/zach2825) | Technical Lead, Laravel            |
-| Jim Ciallella | [@allella](https://github.com/allella)   | Bugs, Documentation, Newcomer Help |
+| Name          | GitHub                                                   | Role                               |
+|:--------------|:---------------------------------------------------------|:-----------------------------------|
+| Bogdan        | [@bogdankharchenko](https://github.com/bogdankharchenko) | Technical Lead, Laravel            |
+| Zach          | [@zach2825](https://github.com/zach2825)                 | Technical Lead, Laravel            |
+| Jim Ciallella | [@allella](https://github.com/allella)                   | Bugs, Documentation, Newcomer Help |
 
 
 # Forking the Project
@@ -181,7 +182,7 @@ php artisan key:generate
 
 ### Import / Seed the Organizations and Events Data
 
-Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](https://github.com/hackgvl/events-api). Without this step the application will have no data.
+Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](/EVENTS_API.md). Without this step the application will have no data.
 
 
 ```bash
@@ -300,7 +301,7 @@ The Events API's responses are controlled by variables that may limit the data a
 Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
 
 Explaination of the .env defaults
-`EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's to no more than 30 days in the past
+`EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's database to no more than 30 days in the past
 `EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the imported events saved in the Event API's database to no more than 365 days in the future
 `EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
  
