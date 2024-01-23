@@ -25,9 +25,9 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running a
 # Tech Stack Notes
 
 ## APIs
-The organization data is queried from HackGreenville Labs's [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md).
+The organization data is queried from HackGreenville Labs' [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md).
 
-Then, for all of these organization, the events can be are queried from the [Events API](https://github.com/hackgvl/events-api).
+The events data is queried through the [Events API](https://github.com/hackgvl/hackgreenville.com/EVENTS_API.md), which is now part of this repository.
 
 ## Laravel
 This project uses the [Laravel PHP framework](https://laravel.com). The [CONTRIBUTING.md](CONTRIBUTING.md) goes into more technical details.
@@ -47,7 +47,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/magoun"><img src="https://avatars1.githubusercontent.com/u/6494252?v=4?s=100" width="100px;" alt="Creighton Magoun"/><br /><sub><b>Creighton Magoun</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=magoun" title="Code">💻</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3Amagoun" title="Bug reports">🐛</a> <a href="#ideas-magoun" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jaaron0606"><img src="https://avatars1.githubusercontent.com/u/18074750?v=4?s=100" width="100px;" alt="James Aaron"/><br /><sub><b>James Aaron</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=Jaaron0606" title="Code">💻</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3AJaaron0606" title="Bug reports">🐛</a> <a href="#ideas-Jaaron0606" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/kevindees"><img src="https://avatars1.githubusercontent.com/u/348368?v=4?s=100" width="100px;" alt="Kevin Dees"/><br /><sub><b>Kevin Dees</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=kevindees" title="Code">💻</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3Akevindees" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JSn1nj4"><img src="https://avatars1.githubusercontent.com/u/5084820?v=4?s=100" width="100px;" alt="Elliot Derhay"/><br /><sub><b>Elliot Derhay</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=JSn1nj4 " title="Code">💻</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3AJSn1nj4 " title="Bug reports">🐛</a> <a href="#ideas-JSn1nj4 " title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JSn1nj4"><img src="https://avatars1.githubusercontent.com/u/5084820?v=4?s=100" width="100px;" alt="Elliot Derhay"/><br /><sub><b>Elliot Derhay</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=JSn1nj4 " title="Code">💻</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3AJSn1nj4 " title="Bug reports">🐛</a> <a href="#ideas-JSn1nj4 " title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/hackgvl/hackgreenville-com/commits?author=JSn1nj4" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://twitter.com/fancybike"><img src="https://avatars0.githubusercontent.com/u/4888730?v=4?s=100" width="100px;" alt="Pamela"/><br /><sub><b>Pamela</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=pamelawoodbrowne" title="Documentation">📖</a> <a href="#content-pamelawoodbrowne" title="Content">🖋</a> <a href="#ideas-pamelawoodbrowne" title="Ideas, Planning, & Feedback">🤔</a> <a href="#eventOrganizing-pamelawoodbrowne" title="Event Organizing">📋</a></td>
     </tr>
     <tr>
@@ -62,7 +62,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AbolfazlAkhtari"><img src="https://avatars.githubusercontent.com/u/68465524?v=4?s=100" width="100px;" alt="Abolfazl Akhtari"/><br /><sub><b>Abolfazl Akhtari</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=AbolfazlAkhtari" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alex-Grimes"><img src="https://avatars.githubusercontent.com/u/66704965?v=4?s=100" width="100px;" alt="Alexander Grimes"/><br /><sub><b>Alexander Grimes</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=Alex-Grimes" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JSn1nj4"><img src="https://avatars.githubusercontent.com/u/5084820?v=4?s=100" width="100px;" alt="JSn1nj4"/><br /><sub><b>JSn1nj4</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=JSn1nj4" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
