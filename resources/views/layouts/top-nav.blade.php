@@ -18,6 +18,7 @@
                 <x-nav-link route="labs.index" icon="fa-flask">{{ __('Labs') }}</x-nav-link>
                 <x-nav-link route="hg-nights.index" icon="fa-moon-o">{{ __('HG Nights') }}</x-nav-link>
                 <x-nav-link route="about" icon="fa-users">{{ __('About Us') }}</x-nav-link>
+                <x-nav-link route="give" icon="fa-handshake-o">{{ __('Give') }}</x-nav-link>
                 <x-nav-link route="contact" icon="fa-paper-plane">{{ __('Contact') }}</x-nav-link>
             </ul>
 
