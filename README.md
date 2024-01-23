@@ -1,5 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![HackGreenville](https://www.hackgreenville.com/img/logo-v2.png)
@@ -62,6 +62,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AbolfazlAkhtari"><img src="https://avatars.githubusercontent.com/u/68465524?v=4?s=100" width="100px;" alt="Abolfazl Akhtari"/><br /><sub><b>Abolfazl Akhtari</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=AbolfazlAkhtari" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alex-Grimes"><img src="https://avatars.githubusercontent.com/u/66704965?v=4?s=100" width="100px;" alt="Alexander Grimes"/><br /><sub><b>Alexander Grimes</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=Alex-Grimes" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JSn1nj4"><img src="https://avatars.githubusercontent.com/u/5084820?v=4?s=100" width="100px;" alt="JSn1nj4"/><br /><sub><b>JSn1nj4</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=JSn1nj4" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
