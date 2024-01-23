@@ -297,7 +297,7 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 ## Events API Configuration
 The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
 
-Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](https://github.com/hackgvl/hackgreenville.com/EVENTS_API.md)
+Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
 
 Explaination of the .env defaults
 `EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the responses to no more than 30 days in the past
