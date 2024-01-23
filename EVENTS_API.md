@@ -3,8 +3,6 @@
 ## URLs and Query String Parameters
 By default, results are returned in JSON format.
 
-Previously, an `Accept: application/json+ld` header could be sent to the API to fetch [Schema.org Event markup](https://schema.org/Event) in JSON+LD format. However, this feature is not implemented in the newest version.
-
 * [Get all upcoming events](https://hackgreenville.com/api/v0/events) by calling _/api/v0/events_
 * [Get events within a date range](https://hackgreenville.com/api/v0/events?start_date=2024-01-15&end_date=2024-02-01) by calling _/api/v0/events?start_date=2024-01-15&end_date=2024-02-01_
     * the API defaults to providing only upcoming meetings, unless a `start_date` and `end_date` are specified
@@ -17,6 +15,7 @@ Previously, an `Accept: application/json+ld` header could be sent to the API to 
 * The Events API's responses are controlled by [server .env variables](/CONTRIBUTING.md#environment-variables) that may limit the data available to calling / consuming applications. Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the HackGreenville.com Events API endpoints referenced above.
 * All timestamps are in UTC.  
 * The event description fields may include HTML markup.  This application does not sanitize those fields and it's unclear if the upstream source should be trusted, so sanitize any output to avoid malicious cross-site scripting (XSS).
+* Previously, an `Accept: application/json+ld` header could be sent to the API to fetch [Schema.org Event markup](https://schema.org/Event) in JSON+LD format. However, this feature is not implemented in the newest version.
 
 ## Sample JSON Event Object Response
 
