@@ -49,5 +49,5 @@ By default, results are returned in JSON format.
 ```
 
 ## Kudos to Past Contributors
-Thanks to @Nunie123 for the initial development, and to @ramona-spence for sustaining the [previous Python implementation](https://github.com/hackgvl/events-api).
-
+* Thanks to @Nunie123 for the initial development, and to @ramona-spence for sustaining the [previous Python implementation](https://github.com/hackgvl/events-api).
+* Thanks to @bogdankharchenko for migrating the Python implementation to PHP / Laravel
