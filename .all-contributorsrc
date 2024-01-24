@@ -75,7 +75,8 @@
       "contributions": [
         "code",
         "bug",
-        "ideas"
+        "ideas",
+        "docs"
       ]
     },
     {
@@ -182,15 +183,6 @@
       "profile": "https://github.com/Alex-Grimes",
       "contributions": [
         "code"
-      ]
-    },
-    {
-      "login": "JSn1nj4",
-      "name": "JSn1nj4",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5084820?v=4",
-      "profile": "https://github.com/JSn1nj4",
-      "contributions": [
-        "doc"
       ]
     }
   ],

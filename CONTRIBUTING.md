@@ -3,6 +3,7 @@
 - [Forking the Project](#forking-the-project)
 - [Running the App](#running-the-app)
 - [Interacting with Your Running App](#interacting-with-your-running-app)
+- [Environment Variables](#environment-variables)
 - [Synchronizing Your Fork with the Latest Development Code Changes](#synchronizing-your-fork-with-the-latest-development-code-changes)
 - [Contributing Code to the Project](#contributing-code-to-the-project)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -35,10 +36,11 @@ If you can't find what you were looking for then [open a new issue](https://gith
 
 When in doubt, you can reach out to an active project contributor:
 
-| Name          | GitHub                                   | Role                               |
-|:--------------|:-----------------------------------------|:-----------------------------------|
-| Zach          | [@zach2825](https://github.com/zach2825) | Technical Lead, Laravel            |
-| Jim Ciallella | [@allella](https://github.com/allella)   | Bugs, Documentation, Newcomer Help |
+| Name          | GitHub                                                   | Role                               |
+|:--------------|:---------------------------------------------------------|:-----------------------------------|
+| Bogdan        | [@bogdankharchenko](https://github.com/bogdankharchenko) | Technical Lead, Laravel            |
+| Zach          | [@zach2825](https://github.com/zach2825)                 | Technical Lead, Laravel            |
+| Jim Ciallella | [@allella](https://github.com/allella)                   | Bugs, Documentation, Newcomer Help |
 
 
 # Forking the Project
@@ -180,7 +182,7 @@ php artisan key:generate
 
 ### Import / Seed the Organizations and Events Data
 
-Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](https://github.com/hackgvl/events-api). Without this step the application will have no data.
+Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](/EVENTS_API.md). Without this step the application will have no data.
 
 
 ```bash
@@ -286,6 +288,23 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 - Refreshing events from the remote API: `php artisan import:events`
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
+
+
+# Environment Variables
+
+- The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
+- The .env.ci and .env.testing are used for their respective tasks.
+
+## Events API Configuration
+The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
+
+Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
+
+Explaination of the .env defaults
+`EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's database to no more than 30 days in the past
+`EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the imported events saved in the Event API's database to no more than 365 days in the future
+`EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
+ 
 
 
 # Synchronizing Your Fork with the Latest Development Code Changes
