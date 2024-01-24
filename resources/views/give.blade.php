@@ -6,7 +6,7 @@
 @section('content')
     <div id="give-page">
         <div class="container my-5">
-            <div class="row mb-5">
+            <div class="row">
                 <div class="w-100">
                     <div class="text-center">
                         <h3 class="screaming-hackgreenville-question">How do I contribute?</h3>
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div id="donation-orgs" class="row organizations-group mb-5">
+            <div id="donation-orgs" class="row organizations-group">
                 <h4>Donate</h4>
                 <div class="options-row w-100">
                     <div class="organization">
