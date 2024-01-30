@@ -28,11 +28,6 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function give(): \Illuminate\Contracts\View\View
-    {
-        return view('give');
-    }
-
     public function testing()
     {
         return view('testing');

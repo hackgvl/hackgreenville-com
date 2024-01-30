@@ -28,6 +28,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/give', 'HomeController@give')->name('give');
+Route::get('/give', 'GiveController@index')->name('give');
 
 Route::get('/styles', 'StyleController@index')->name('styles.index');
