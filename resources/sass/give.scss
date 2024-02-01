@@ -11,36 +11,3 @@
         }
     }
 }
-
-.options-row {
-    --gap: 2rem;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--gap);
-
-    > div {
-        // 1/3 of available width minus both horizontal gaps
-        width: calc((100% / 3) - (var(--gap) * 2 / 3));
-        display: flex;
-        flex-direction: column;
-
-        > :nth-last-child(2) {
-            flex-grow: 1;
-        }
-
-        > :first-child + :last-child {
-            margin-top: calc(var(--gap) / 4);
-        }
-    }
-
-    h5 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-        line-height: 1.2em;
-    }
-}
