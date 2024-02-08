@@ -13,6 +13,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use RuntimeException;
+use Throwable;
 
 class MeetupRestHandler extends AbstractEventHandler
 {
@@ -67,7 +68,7 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        if ( ! isset($data['venue'])) {
+        if (!isset($data['venue'])) {
             return null;
         }
 
@@ -75,17 +76,23 @@ class MeetupRestHandler extends AbstractEventHandler
             return null;
         }
 
-        return VenueData::from([
-            'id' => $data['venue']['id'],
-            'name' => $data['venue']['name'],
-            'address' => $data['venue']['address_1'] ?? '',
-            'city' => $data['venue']['city'],
-            'state' => $data['venue']['state'],
-            'zip' => $data['venue']['zip'],
-            'country' => $data['venue']['country'],
-            'lat' => $data['venue']['lat'],
-            'lon' => $data['venue']['lon'],
-        ]);
+        try {
+            return VenueData::from([
+                'id' => $data['venue']['id'],
+                'name' => $data['venue']['name'],
+                'address' => $data['venue']['address_1'] ?? '',
+                'city' => $data['venue']['city'],
+                'state' => $data['venue']['state'],
+                'zip' => $data['venue']['zip'],
+                'country' => $data['venue']['country'],
+                'lat' => $data['venue']['lat'],
+                'lon' => $data['venue']['lon'],
+            ]);
+        } catch (Throwable $exception) {
+            report($exception);
+
+            return null;
+        }
     }
 
     protected function eventResults(int $page): Collection
@@ -109,7 +116,7 @@ class MeetupRestHandler extends AbstractEventHandler
     {
         if ($links = $response->header('Link')) {
             $link = collect($links)
-                ->flatMap(fn ($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
+                ->flatMap(fn($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
                 ->implode('');
 
             if (empty($link)) {
