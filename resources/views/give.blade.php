@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Hackgreenville - Give (WIP title)')
-@section('description', "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.")
+@section('title', 'Tech Giving Opportunities around Greenville, SC')
+@section('description', "Contribute time or money to local Upstate, SC tech, maker, and tinker non-profits or open-source projects through with these HackGreenville partners.")
 
 @section('content')
     <div id="give-page">
@@ -10,6 +10,7 @@
                 <div class="w-100">
                     <div class="text-center">
                         <h3 class="screaming-hackgreenville-question">How do I contribute?</h3>
+                        <p class="summary">Contribute time or money to local Upstate, SC tech, maker, and tinker non-profits or open-source projects through with these HackGreenville partners.</p>
                     </div>
                 </div>
             </div>
