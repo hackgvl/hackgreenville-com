@@ -20,7 +20,7 @@ echo "PHP dependencies installation completed."
 
 # Run database migrations and seed the database
 echo "Running database migrations and seeding..."
-php artisan migrate --seed
+php artisan migrate
 echo "Database migrations and seeding completed."
 
 # Run Laravel optimization commands
