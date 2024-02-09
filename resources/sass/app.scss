@@ -301,7 +301,54 @@ a {
     gap: 1.25rem;
 }
 
+// FLEXIBLE ROWS
+// These rows have a max of X columns while centering a lesser amount.
+// This first iteration supports 3 columns. But sizes can be calculated
+// using a mixin when more or fewer max columns become necessary.
+.flex-row-3-columns {
+    --gap: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+
+    h5 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.2em;
+    }
+}
+
+.flex-row-column {
+    display: flex;
+    flex-direction: column;
+
+    > :nth-last-child(2) {
+        flex-grow: 1;
+    }
+
+    > :first-child + :last-child {
+        margin-top: calc(var(--gap) / 4);
+    }
+
+    @at-root {
+        .flex-row-3-columns > & {
+            // 1/3 of available width minus both horizontal gaps
+            width: calc((100% / 3) - (var(--gap) * 2 / 3));
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
 @import 'about';
 @import 'labs';
 @import 'hg-nights';
 @import 'rfs';
+@import 'give';
