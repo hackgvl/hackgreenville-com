@@ -1,0 +1,17 @@
+#give-page {
+    .summary {
+        font-size: 1.25rem;
+    }
+
+    .organizations-group {
+        text-align: center;
+        justify-content: center;
+
+        margin-top: 4rem;
+
+        > h4 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
