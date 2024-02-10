@@ -55,7 +55,6 @@
     <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
 
     @yield('head')
-    @livewireStyles
 </head>
 <body>
 <div id="app">
@@ -83,6 +82,5 @@
 @yield('js')
 
 @stack('scripts')
-@livewireScripts
 </body>
 </html>
