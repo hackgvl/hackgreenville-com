@@ -9,11 +9,11 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Support\Facades\FilamentColor;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
@@ -35,7 +35,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->brandLogo(static fn () => view('includes.logo', ['darkMode' => false]))
             ->darkModeBrandLogo(static fn () => view('includes.logo'))
-            ->brandLogoHeight('auto')
+            ->brandLogoHeight(static fn (Request $request) => match($request->route()->getName()) {
+                'filament.admin.auth.login' => 'auto',
+                default => '3rem',
+            })
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
