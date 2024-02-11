@@ -9,6 +9,7 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentColor;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -27,9 +28,14 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->darkMode()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::hex('#60ae6d'),
+                'gray' => Color::hex('#201748'),
             ])
+            ->brandLogo(static fn () => view('includes.logo', ['darkMode' => false]))
+            ->darkModeBrandLogo(static fn () => view('includes.logo'))
+            ->brandLogoHeight('auto')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
