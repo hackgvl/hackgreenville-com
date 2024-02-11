@@ -19,6 +19,13 @@
                 <h4>Donate</h4>
                 <x-flex-row class="w-100">
                     <x-flex-column>
+                        <h5>Agile Learning Institute</h5>
+                        <p>A 501(c)3 educational nonprofit whose mission is to provide free mentorship and one-on-one coaching services to support software engineers</p>
+                        <p><a href="https://agile-learning.institute/become-a-mentor"
+                              target="ali-mentorship"
+                              class="btn btn-info">Learn More</a></p>
+                    </x-flex-column>
+                    <x-flex-column>
                         <h5>Build Carolina</h5>
                         <dl>
                             <dt class="text-uppercase">Programs</dt>
@@ -45,6 +52,11 @@
                               target="synergy_mill_donate"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
+                </x-flex-row>
+            </div>
+            <div id="volunteer-orgs" class="row organizations-group">
+                <h4>Volunteer</h4>
+                <x-flex-row class="w-100">
                     <x-flex-column>
                         <h5>Agile Learning Institute</h5>
                         <p>A 501(c)3 educational nonprofit whose mission is to provide free mentorship and one-on-one coaching services to support software engineers</p>
@@ -52,34 +64,11 @@
                               target="ali-mentorship"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
-                </x-flex-row>
-            </div>
-            <div id="volunteer-orgs" class="row organizations-group">
-                <h4>Volunteer</h4>
-                <x-flex-row class="w-100">
                     <x-flex-column>
                         <h5>Carolina Code Conference</h5>
                         <p>A welcoming and community-driven “polyglot” conference</p>
                         <p><a href="https://carolina.codes/"
                               target="carolina_code_conf"
-                              class="btn btn-info">Learn More</a></p>
-                    </x-flex-column>
-                    <x-flex-column>
-                        <h5>SC Codes</h5>
-                        <p>Become a Mentor</p>
-                        <p><a href="https://www.sccodes.org/mentorship/"
-                              target="sccodes_mentorship"
-                              class="btn btn-info">Learn More</a></p>
-                    </x-flex-column>
-                    <x-flex-column>
-                        <h5>Synergy Mill</h5>
-                        <dl>
-                            <dt class="text-uppercase">Needs</dt>
-                            <dd class="mb-0">Gardening</dd>
-                            <dd class="mb-0">Shop Cleanup</dd>
-                        </dl>
-                        <p><a href="https://www.synergymill.com/"
-                              target="synergy_mill"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                     <x-flex-column>
@@ -102,17 +91,28 @@
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                     <x-flex-column>
+                        <h5>SC Codes</h5>
+                        <p>Become a Mentor</p>
+                        <p><a href="https://www.sccodes.org/mentorship/"
+                              target="sccodes_mentorship"
+                              class="btn btn-info">Learn More</a></p>
+                    </x-flex-column>
+                    <x-flex-column>
+                        <h5>Synergy Mill</h5>
+                        <dl>
+                            <dt class="text-uppercase">Needs</dt>
+                            <dd class="mb-0">Gardening</dd>
+                            <dd class="mb-0">Shop Cleanup</dd>
+                        </dl>
+                        <p><a href="https://www.synergymill.com/"
+                              target="synergy_mill"
+                              class="btn btn-info">Learn More</a></p>
+                    </x-flex-column>
+                    <x-flex-column>
                         <h5>Women Who Code Greenville</h5>
                         <p>WWCode is a global non-profit organization that inspires women to excel in technology careers.</p>
                         <p><a href="https://opencollective.com/wwcodegreenville"
                               target="wwcode-gvl"
-                              class="btn btn-info">Learn More</a></p>
-                    </x-flex-column>
-                    <x-flex-column>
-                        <h5>Agile Learning Institute</h5>
-                        <p>A 501(c)3 educational nonprofit whose mission is to provide free mentorship and one-on-one coaching services to support software engineers</p>
-                        <p><a href="https://agile-learning.institute/become-a-mentor"
-                              target="ali-mentorship"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                 </x-flex-row>
