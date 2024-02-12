@@ -48,7 +48,7 @@ class DeleteUser extends Command
 
             $this->info("User deleted successfully.");
 
-            return self::FAILURE;
+            return self::SUCCESS;
         } catch (Throwable $throwable) {
             $this->sendError($throwable->getMessage());
             return self::FAILURE;
