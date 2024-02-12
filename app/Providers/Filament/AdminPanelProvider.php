@@ -36,9 +36,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->brandLogo(static fn () => view('includes.logo', ['darkMode' => false]))
             ->darkModeBrandLogo(static fn () => view('includes.logo'))
-            ->brandLogoHeight(static fn (Request $request) => match($request->route()->getName()) {
-                'filament.admin.auth.login' => 'auto',
-                default => '3rem',
+            ->brandLogoHeight(static fn (Request $request) => match(true) {
+                str($request->route()->getName())
+                    ->isMatch('/filament\.admin\.pages.*/') => '3rem',
+                default => 'auto',
             })
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
