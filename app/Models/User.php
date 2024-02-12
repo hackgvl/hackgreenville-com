@@ -74,6 +74,10 @@ class User extends Authenticatable implements FilamentUser
                 'remember_token',
             ];
 
+    protected $casts = [
+        'password' => 'hashed',
+    ];
+
     public function getNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
