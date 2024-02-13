@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Events\UserCreated;
 use App\Models\User;
 use Exception;
 use Illuminate\Console\Command;
@@ -47,7 +48,7 @@ class CreateUser extends Command
                 'password' => Str::password(),
             ]);
 
-            // todo: attempt to notify new user via email
+            UserCreated::dispatch($user);
 
             $this->info("Successfully created user for email '{$user->email}'.");
             return self::SUCCESS;
