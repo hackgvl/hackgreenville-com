@@ -13,7 +13,7 @@ class EmailNewUser
      */
     public function __construct()
     {
-        //
+
     }
 
     /**

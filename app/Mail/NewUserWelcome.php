@@ -5,7 +5,6 @@ namespace App\Mail;
 use App\Models\User;
 use Filament\Facades\Filament;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -13,14 +12,15 @@ use Illuminate\Queue\SerializesModels;
 
 class NewUserWelcome extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * Create a new message instance.
      */
     public function __construct(protected User $user)
     {
-        //
+
     }
 
     /**

@@ -13,7 +13,7 @@ class FlexRow extends Component
      */
     public function __construct()
     {
-        //
+
     }
 
     /**
