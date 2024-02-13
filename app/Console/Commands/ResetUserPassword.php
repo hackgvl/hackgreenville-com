@@ -35,8 +35,6 @@ class ResetUserPassword extends Command
         try {
             $user = User::whereEmail($email)->firstOrFail();
 
-            // todo: attempt to notify user that their password has been reset
-
             if ( ! $this->confirm("Are you sure you want to reset this user's password?")) {
                 $this->error("Password reset cancelled.");
 
