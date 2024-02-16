@@ -20,6 +20,8 @@ You don't need to be a "coder" to contribute. Many issues have UI, UX, accessibi
 
 You can also ask questions and connect with the development team in the [HackGreenville Slack's #hg-labs channel](https://hackgreenville.com/join-slack)
 
+<details><summary>Helping with Existing Issues</summary>
+
 ## Helping with Existing Issues
 
 Our focused task-based discussions happen mostly within GitHub [Issues](https://github.com/hackgvl/hackgreenville-com/issues) and [Pull Requests](https://github.com/hackgvl/hackgreenville-com/pulls) (also known as PRs).
@@ -27,6 +29,9 @@ Our focused task-based discussions happen mostly within GitHub [Issues](https://
 [Issues tagged with "Good First Issue"](https://github.com/hackgvl/hackgreenville-com/labels/good%20first%20issue) are typically an easy place to start.
 
 If you feel ready to contribute code to this project, then follow the sections and steps below.
+</details>
+
+<details><summary>Reporting a Bug or New Idea</summary>
 
 ## Reporting a Bug or New Idea
 
@@ -41,6 +46,7 @@ When in doubt, you can reach out to an active project contributor:
 | Bogdan        | [@bogdankharchenko](https://github.com/bogdankharchenko) | Technical Lead, Laravel            |
 | Zach          | [@zach2825](https://github.com/zach2825)                 | Technical Lead, Laravel            |
 | Jim Ciallella | [@allella](https://github.com/allella)                   | Bugs, Documentation, Newcomer Help |
+</details>
 
 
 # Forking the Project
@@ -55,7 +61,6 @@ Follow these steps to fork the `https://github.com/hackgvl/hackgreenville-com` r
 2. Click the "Fork" Button in the upper right-hand corner of the interface ([Need help?](https://help.github.com/articles/fork-a-repo/)).
 3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/hackgreenville-com`.
 
-</details>
 
 # Running the App
 
@@ -100,29 +105,29 @@ You need a reference from your local copy to the `upstream` repository in additi
 
 1.  Change directory to the new hackgreenville-com directory:
 
-    ```sh
-    cd hackgreenville-com
-    ```
+```sh
+cd hackgreenville-com
+```
 
 2.  Add a remote reference to the main Hackgreenvill.com GitHub repository. We're refer to this as "HG" in the later steps.
 
-    ```sh
-    git remote add upstream https://github.com/hackgvl/hackgreenville-com.git
-    ```
+```sh
+git remote add upstream https://github.com/hackgvl/hackgreenville-com.git
+```
 
 3.  Ensure the configuration looks correct:
 
-        ```sh
-        git remote -v
-        ```
+```sh
+git remote -v
+```
 
-        The output should look something like below:
-        ```sh
-        origin    https://github.com/YOUR_USER_NAME/hackgreenville-com.git (fetch)
-        origin    https://github.com/YOUR_USER_NAME/hackgreenville-com.git (push)
-        upstream    https://github.com/hackgvl/hackgreenville-com.git (fetch)
-        upstream    https://github.com/hackgvl/hackgreenville-com.git (push)
-        ```
+The output should look something like below:
+```sh
+origin    https://github.com/YOUR_USER_NAME/hackgreenville-com.git (fetch)
+origin    https://github.com/YOUR_USER_NAME/hackgreenville-com.git (push)
+upstream    https://github.com/hackgvl/hackgreenville-com.git (fetch)
+upstream    https://github.com/hackgvl/hackgreenville-com.git (push)
+```
 </details>
 
 ## Setup & Configuration Options
@@ -336,18 +341,18 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
     ```sh
     git status
     ```
-
+    
     You should get an output like this:
-
+    
     ```sh
     On branch develop
     Your branch is up-to-date with 'origin/develop'.
-
+    
     nothing to commit, working directory clean
     ```
-
+    
     If you are not on develop or your working directory is not clean, resolve any outstanding files/commits and checkout `develop`:
-
+    
     ```sh
     git checkout develop
     ```
@@ -356,31 +361,31 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
 
     This is very important to avoid conflicts later.
 
-        > **Note:** If you have any outstanding Pull Request that you made from the `develop` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from develop.
+    > **Note:** If you have any outstanding Pull Request that you made from the `develop` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from develop.
 
-        This step **will sync the latest changes** from the main repository of HG.
+    This step **will sync the latest changes** from the main repository of HG.
 
-        Update your local copy of the HG upstream repository:
-        ```sh
-        git fetch upstream
-        ```
+    Update your local copy of the HG upstream repository:
+    ```sh
+    git fetch upstream
+    ```
 
-        Hard reset your develop branch with the HG develop:
-        ```sh
-        git reset --hard upstream/develop
-        ```
+    Hard reset your develop branch with the HG develop:
+    ```sh
+    git reset --hard upstream/develop
+    ```
 
-        Push your develop branch to your origin to have a clean history on your fork on GitHub:
-        ```sh
-        git push origin develop --force
-        ```
+    Push your develop branch to your origin to have a clean history on your fork on GitHub:
+    ```sh
+    git push origin develop --force
+    ```
 
-        You can validate if your current develop matches the upstream/develop or not by performing a diff:
-        ```sh
-        git diff upstream/develop
-        ```
+    You can validate if your current develop matches the upstream/develop or not by performing a diff:
+    ```sh
+    git diff upstream/develop
+    ```
 
-        If you don't get any output, you are good to go to the next step.
+    If you don't get any output, you are good to go to the next step.
 
 </details>
 
@@ -524,7 +529,7 @@ Issues are more for discussing larger problems associated with code or structura
 
 Read freeCodeCamp's [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
-Then, come back and see our ["How to Help"](#how-to-help) section on how to specificially get involved in this project.
+Then, come back and see our ["Ways to Help"](#ways-to-help) section on how to specificially get involved in this project.
 </details>
 
 # Kudos
