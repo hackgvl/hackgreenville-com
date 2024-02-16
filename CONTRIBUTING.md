@@ -294,7 +294,6 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
 
-
 # Environment Variables
 
 - The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
@@ -309,8 +308,25 @@ Explaination of the .env defaults
 `EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's database to no more than 30 days in the past
 `EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the imported events saved in the Event API's database to no more than 365 days in the future
 `EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
- 
 
+# Admin Panel
+The admin panel in this project is built in [Filament][filament_docs]. This package is also built on [Laravel Livewire][livewire_docs].
+
+After seeding the DB as [described above](#interacting-with-your-running-app), you'll have a default set of login credentials found in the [UsersTableSeeder][users_seeder] class.
+
+To view the admin panel routes, run: `artisan route:list --name=filament`
+
+Filament provides commands for generating [CRUD resources][filament_resources] and [individual pages][filament_pages]. But you can also create pages from [Livewire components][livewire_components] that borrow tables or [forms][filament_advanced_forms] from Filament.
+
+[filament_advanced_forms]: https://filamentphp.com/docs/3.x/forms/adding-a-form-to-a-livewire-component
+[filament_docs]: https://filamentphp.com/docs
+[filament_pages]: https://filamentphp.com/docs/3.x/panels/pages
+[filament_resources]: https://filamentphp.com/docs/3.x/panels/resources/getting-started
+[filament_resource_authorization]: https://filamentphp.com/docs/3.x/panels/resources/listing-records#authorization
+[laravel_policies]: https://laravel.com/docs/10.x/authorization#creating-policies
+[livewire_docs]: https://livewire.laravel.com/docs/quickstart
+[livewire_components]: https://livewire.laravel.com/docs/components
+[users_seeder]: https://github.com/hackgvl/hackgreenville-com/blob/develop/database/seeders/UsersTableSeeder.php
 
 # Synchronizing Your Fork with the Latest Development Code Changes
 Be sure you're on the desired branch, usually `git checkout develop`, and change to the project's base directory.
