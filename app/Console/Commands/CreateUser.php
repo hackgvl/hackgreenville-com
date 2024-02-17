@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Console\Commands\Traits\LogOutput;
 use App\Events\UserCreated;
 use App\Models\User;
 use Exception;
@@ -12,6 +13,8 @@ use Throwable;
 
 class CreateUser extends Command
 {
+    use LogOutput;
+
     /**
      * The name and signature of the console command.
      *
@@ -38,7 +41,8 @@ class CreateUser extends Command
 
         try {
             if (User::whereEmail($email)->exists()) {
-                throw new Exception("User already exists for email '{$email}'.");
+                $this->error("User already exists for email '{$email}'.");
+                return self::FAILURE;
             }
 
             $user = User::create([
@@ -50,17 +54,11 @@ class CreateUser extends Command
 
             UserCreated::dispatch($user);
 
-            $this->info("Successfully created user for email '{$user->email}'.");
+            $this->logInfo("Successfully created user for email '{$user->email}'.");
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->sendError($throwable->getMessage());
+            $this->logError($throwable->getMessage());
             return self::FAILURE;
         }
-    }
-
-    private function sendError(string $message): void
-    {
-        $this->error($message);
-        Log::error("{$message} " . __CLASS__ . "::" . __METHOD__);
     }
 }

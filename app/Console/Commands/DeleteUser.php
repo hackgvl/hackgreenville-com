@@ -2,13 +2,15 @@
 
 namespace App\Console\Commands;
 
+use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Throwable;
 
 class DeleteUser extends Command
 {
+    use LogOutput;
+
     /**
      * The name and signature of the console command.
      *
@@ -36,28 +38,19 @@ class DeleteUser extends Command
 
             if ( ! $this->confirm("Are you sure you want to delete this user?")) {
                 $this->error("User delete cancelled.");
-
                 return self::FAILURE;
             }
 
             if ( ! $user->delete()) {
-                $this->sendError("Unable to delete user with email '{$user->email}'.");
-
-                return self::FAILURE;
+                throw new \Exception("Unable to delete user with email '{$user->email}'.");
             }
 
-            $this->info("User deleted successfully.");
+            $this->logInfo("User deleted successfully.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->sendError($throwable->getMessage());
+            $this->logError($throwable->getMessage());
             return self::FAILURE;
         }
-    }
-
-    private function sendError(string $message): void
-    {
-        $this->error($message);
-        Log::error("{$message} " . __CLASS__ . "::" . __METHOD__);
     }
 }

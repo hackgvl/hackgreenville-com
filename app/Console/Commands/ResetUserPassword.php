@@ -2,14 +2,16 @@
 
 namespace App\Console\Commands;
 
+use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Throwable;
 
 class ResetUserPassword extends Command
 {
+    use LogOutput;
+
     /**
      * The name and signature of the console command.
      *
@@ -37,30 +39,21 @@ class ResetUserPassword extends Command
 
             if ( ! $this->confirm("Are you sure you want to reset this user's password?")) {
                 $this->error("Password reset cancelled.");
-
                 return self::FAILURE;
             }
 
             $user->password = Str::password();
 
             if ( ! $user->save()) {
-                $this->sendError("Unable to reset user's password.");
-
-                return self::FAILURE;
+                throw new \Exception("Unable to reset user's password.");
             }
 
             $this->info("User successfully reset.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->sendError($throwable->getMessage());
+            $this->logError($throwable->getMessage());
             return self::FAILURE;
         }
-    }
-
-    private function sendError(string $message): void
-    {
-        $this->error($message);
-        Log::error("{$message} " . __CLASS__ . "::" . __METHOD__);
     }
 }

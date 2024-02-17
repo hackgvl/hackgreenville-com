@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Exception;
 use Illuminate\Console\Command;
@@ -10,6 +11,8 @@ use Throwable;
 
 class DeactivateUser extends Command
 {
+    use LogOutput;
+
     /**
      * The name and signature of the console command.
      *
@@ -35,24 +38,19 @@ class DeactivateUser extends Command
             $user = User::whereEmail($email)->firstOrFail();
 
             if ( ! $user->active) {
-                throw new Exception("User with the email '{$user->email}' is already deactivated.");
+                $this->error("User with the email '{$user->email}' is already deactivated.");
+                return self::FAILURE;
             }
 
             $user->active = false;
             $user->save();
 
-            $this->info("User successfully deactivated.");
+            $this->logInfo("User successfully deactivated.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->sendError($throwable->getMessage());
+            $this->logError($throwable->getMessage());
             return self::FAILURE;
         }
-    }
-
-    private function sendError(string $message): void
-    {
-        $this->error($message);
-        Log::error("{$message} " . __CLASS__ . "::" . __METHOD__);
     }
 }
