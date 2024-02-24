@@ -92,8 +92,8 @@
     <!-- End of Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© {{date('Y')}} Copyright:
-        <a href="http://hackgreenville.com"> HackGreenville</a>
+    <div class="footer-copyright text-center py-3">
+        <p>© {{date('Y')}} Copyright: <a href="http://hackgreenville.com" target="hg-home">HackGreenville</a>. HackGreenville is a program of the <a href="https://refactorgvl.com/" target="refactorgvl">RefactorGVL</a> non-profit.</p>
     </div>
     <!-- End of Copyright -->
 
