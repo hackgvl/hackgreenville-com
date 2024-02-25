@@ -4,9 +4,7 @@ namespace App\Console\Commands;
 
 use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
-use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Throwable;
 
 class ActivateUser extends Command

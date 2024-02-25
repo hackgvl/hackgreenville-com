@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
+use Exception;
 use Illuminate\Console\Command;
 use Throwable;
 
@@ -42,7 +43,7 @@ class DeleteUser extends Command
             }
 
             if ( ! $user->delete()) {
-                throw new \Exception("Unable to delete user with email '{$user->email}'.");
+                throw new Exception("Unable to delete user with email '{$user->email}'.");
             }
 
             $this->logInfo("User deleted successfully.");

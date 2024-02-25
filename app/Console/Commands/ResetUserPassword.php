@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Throwable;
@@ -45,7 +46,7 @@ class ResetUserPassword extends Command
             $user->password = Str::password();
 
             if ( ! $user->save()) {
-                throw new \Exception("Unable to reset user's password.");
+                throw new Exception("Unable to reset user's password.");
             }
 
             $this->info("User successfully reset.");
