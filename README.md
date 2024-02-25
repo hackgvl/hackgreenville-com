@@ -22,6 +22,18 @@ Our goal is to connect people to the tech-related community in the Greenville ar
 
 See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running and administering the running application.
 
+## Debugging
+
+### Telescope (Laravel Debugging)
+
+Telescope is a Laravel Debugging tool that allows you to see all the requests made to the application, and the responses they return.
+
+If you want to enable it in your local environment, you can do so by setting the `TELESCOPE_ENABLED` environment variable to `true` in your `.env` file.
+
+```bash
+TELESCOPE_ENABLED=true
+```
+
 # Tech Stack Notes
 
 ## APIs
