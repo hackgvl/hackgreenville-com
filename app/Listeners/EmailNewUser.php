@@ -9,14 +9,6 @@ use Illuminate\Support\Facades\Mail;
 class EmailNewUser
 {
     /**
-     * Create the event listener.
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * Handle the event.
      */
     public function handle(UserCreated $created): void
