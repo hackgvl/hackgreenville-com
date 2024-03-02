@@ -20,6 +20,7 @@
                 For Greenville</a>. The site uses <a href="https://data.openupstate.org" class="highlight-link">open
                 data APIs developed by HackGreenville Labs</a> to promote local, tech-related meetup groups and
             events.</p>
+        <p class="lead-text">In Nov. 2023, HackGreenville established a collaborative relationship with <a href="https://refactorgvl.com/" target="refactorgvl">RefactorGVL</a>, a local 501(c)(3) non-profit, to further their mission of elevating the tech community in the Upstate. This collaboration provides infrastructure, fiscal sponsorship, and other support services to HackGreenville as it serves the local workforce.</p>
         <p class="lead-text">Here's a snapshot of our community's purpose, mission, vision, and culture:</p>
         <h2 class="section-heading">Our Purpose</h2>
         <p class="lead-text">We are here to nurture personal growth amongst Greenville, SC's vibrant community of

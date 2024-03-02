@@ -115,6 +115,11 @@ a {
     .footer-copyright {
         font-size: 0.8rem;
         margin-top: 10px;
+
+        a {
+            color: $success;
+            font-weight: bold;
+        }
     }
 }
 #homepage {
