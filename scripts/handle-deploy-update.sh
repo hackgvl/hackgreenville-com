@@ -15,7 +15,7 @@ echo "JavaScript dependencies installation completed."
 
 # Install the PHP dependencies
 echo "Installing PHP dependencies..."
-composer install
+composer install --no-dev
 echo "PHP dependencies installation completed."
 
 # Run database migrations and seed the database
