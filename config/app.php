@@ -67,6 +67,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Dashboard Configuration
+    |--------------------------------------------------------------------------
+    |
+    | These settings are used to configure defaults for the Filament admin
+    | panel and other similar dashboards.
+    |
+    */
+    'dashboard' => [
+        'root' => env('APP_DASHBOARD_ROOT', 'admin'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Force SSL
     |--------------------------------------------------------------------------
     |

@@ -16,7 +16,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->path(config('app.dashboard.root'))
             ->login()
             ->passwordReset()
             ->darkMode()
