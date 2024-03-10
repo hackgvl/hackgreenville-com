@@ -75,7 +75,7 @@ return [
     |
     */
     'dashboard' => [
-        'root' => env('APP_DASHBOARD_ROOT', 'admin'),
+        'root_path' => env('APP_DASHBOARD_ROOT_PATH', 'admin'),
     ],
 
     /*
