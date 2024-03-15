@@ -67,6 +67,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Dashboard Configuration
+    |--------------------------------------------------------------------------
+    |
+    | These settings are used to configure defaults for the Filament admin
+    | panel and other similar dashboards.
+    |
+    */
+    'dashboard' => [
+        'root_path' => env('APP_DASHBOARD_ROOT_PATH', 'admin'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Force SSL
     |--------------------------------------------------------------------------
     |
@@ -182,6 +195,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\Filament\AdminPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
     ],
 
