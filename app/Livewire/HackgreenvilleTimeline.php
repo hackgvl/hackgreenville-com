@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Event;
 use Illuminate\Contracts\Foundation\Application;
@@ -26,12 +26,13 @@ class HackgreenvilleTimeline extends Component
         $event = $this->events->firstWhere('id', $eventId);
 
         if ($event) {
-            $this->dispatchBrowserEvent('show-alert', [
-                'title' => $event['title'],
-                'desc' => $event['description'], // Add any additional data you need
-                'uri' => $event['uri'],
-                'cancelled' => $event['cancelled'],
-            ]);
+            $this->dispatch(
+                'show-alert',
+                title: $event['title'],
+                desc: $event['description'], // Add any additional data you need
+                uri: $event['uri'],
+                cancelled: $event['cancelled'],
+            );
         }
     }
 

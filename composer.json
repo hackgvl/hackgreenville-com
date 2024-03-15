@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
+        "filament/filament": "^3.2",
         "glhd/aire-bootstrap": "^2.1",
         "glhd/conveyor-belt": "*",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -23,7 +24,7 @@
         "laravel/slack-notification-channel": "^2.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "v4.2.2",
-        "livewire/livewire": "^2.12",
+        "livewire/livewire": "^3.0",
         "scyllaly/hcaptcha": "^4.4",
         "spatie/laravel-data": "*",
         "spatie/laravel-google-calendar": "^3.0"
@@ -77,7 +78,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "@php artisan package:discover",
+            "@php artisan filament:upgrade"
         ],
         "generate-ide-helper": [
             "@php artisan ide-helper:generate --ansi --no-interaction",

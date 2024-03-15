@@ -15,7 +15,7 @@ echo "JavaScript dependencies installation completed."
 
 # Install the PHP dependencies
 echo "Installing PHP dependencies..."
-composer install
+composer install --no-dev
 echo "PHP dependencies installation completed."
 
 # Run database migrations and seed the database
@@ -29,6 +29,8 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 php artisan event:cache
+php artisan icons:cache
+php artisan filament:cache-components
 echo "Laravel optimization completed."
 
 # Bundle and optimize assets

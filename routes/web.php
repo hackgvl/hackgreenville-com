@@ -24,8 +24,6 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/join-slack', 'SlackController@join')->name('join-slack');
 Route::post('/join-slack', 'SlackController@submit')->name('join-slack.submit');
 
-Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/give', 'GiveController@index')->name('give');

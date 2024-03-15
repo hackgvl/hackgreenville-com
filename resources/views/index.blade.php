@@ -70,7 +70,7 @@
                                class="text-decoration-none text-dark">
                                 <p style="line-height:1; font-size:15em;" class="mt-5">
                                     <i class="fa fa-github"></i>
-                                <p/>
+                                </p>
                                 <p class="summary">Join the Project</p>
                             </a>
                         </div>
