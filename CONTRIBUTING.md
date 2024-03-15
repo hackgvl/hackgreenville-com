@@ -506,9 +506,9 @@ Some examples of good branch names are:
    Keep your commit messages short. You can always add additional information in the description of the commit message.
 
 5. Push the new branch to your fork / origin. For example, if the name of your branch is `docs/typos-in-readme`, then your command should be:
-`sh
+   ```sh
     git push origin docs/typos-in-readme
-    `
+    ```
 </details>
 
 <details><summary>Step 3: Proposing a Pull Request (PR)</summary>
