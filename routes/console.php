@@ -18,7 +18,7 @@ Artisan::command('inspire', function () {
 })->describe('Display an inspiring quote');
 
 Artisan::command('events:back-fill-uuid', function () {
-    $updated_count = \App\Models\Event::whereNull('event_uuid')->orWhere('event_uuid', '')
+    $updated_count = App\Models\Event::whereNull('event_uuid')->orWhere('event_uuid', '')
         ->get()
         ->each(function ($event) {
             $event->update(['event_uuid' => $event->cache[ 'uuid' ]]);

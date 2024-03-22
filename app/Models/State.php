@@ -7,8 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * @property string abbr
- * @property string name
+ * App\Models\State
+ *
+ * @property int $id
+ * @property string $abbr
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Venue> $venues
+ * @property-read int|null $venues_count
+ * @method static \Illuminate\Database\Eloquent\Builder|State abbr($abbr)
+ * @method static \Database\Factories\StateFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|State newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|State newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|State onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|State query()
+ * @method static \Illuminate\Database\Eloquent\Builder|State whereAbbr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|State whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|State whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|State whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|State whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|State whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|State withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|State withoutTrashed()
+ * @mixin \Eloquent
  */
 class State extends Model
 {
