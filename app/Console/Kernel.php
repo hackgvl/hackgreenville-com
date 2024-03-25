@@ -17,6 +17,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(ImportEventsCommand::class)->hourly();
+
+        if(config('telescope.enabled')) {
+            $schedule->command('telescope:prune')->daily();
+        }
     }
 
     /**

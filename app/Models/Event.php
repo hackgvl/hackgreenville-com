@@ -45,8 +45,8 @@ use RuntimeException;
  * @property-read string $title
  * @property-read string|bool $unique_identifier
  * @property-read string $url
- * @property-read \App\Models\Org|null $organization
- * @property-read \App\Models\Venue|null $venue
+ * @property-read Org|null $organization
+ * @property-read Venue|null $venue
  * @method static Builder|Event datesBetween($start, $end)
  * @method static \Database\Factories\EventFactory factory($count = null, $state = [])
  * @method static Builder|Event getActive()

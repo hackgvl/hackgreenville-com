@@ -24,7 +24,7 @@ class Event
 
     // Constructs an Event object from the given array of key=>values.
     // You can optionally force the timeZone of the parsed dates.
-    public function __construct($array, $timeZone=null)
+    public function __construct($array, $timeZone = null)
     {
 
         $this->title = $array['title'];
@@ -108,7 +108,7 @@ class Event
 
 
 // Parses a string into a DateTime object, optionally forced into the given timeZone.
-function parseDateTime($string, $timeZone=null)
+function parseDateTime($string, $timeZone = null)
 {
     $date = new DateTime(
         $string,
