@@ -32,6 +32,11 @@ class AppServiceProvider extends ServiceProvider
             fn () => new GoogleCalendar
         );
 
+        if(config('telescope.enabled')) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+            $this->app->register(TelescopeServiceProvider::class);
+        }
+
         $this->app->singleton('UpstateClient', fn () => new UpstateClient);
     }
 }
