@@ -27,7 +27,7 @@ class EventBriteTest extends DatabaseTestCase
     public function test_active_eventbrite_event_is_imported_correctly(): void
     {
         Http::fake([
-            $this->getEventbriteUrl('15516951616')=> Http::response($this->apiResponse('live-event-in-past.json')),
+            $this->getEventbriteUrl('15516951616') => Http::response($this->apiResponse('live-event-in-past.json')),
             'https://www.eventbriteapi.com/v3/venues/21742454?token=ABC' => Http::response(
                 $this->apiResponse('live-event-in-past-venue.json')
             ),
@@ -76,7 +76,7 @@ class EventBriteTest extends DatabaseTestCase
     public function test_cancelled_eventbrite_event_is_imported_correctly(): void
     {
         Http::fake([
-            $this->getEventbriteUrl('36673227093')=> Http::response($this->apiResponse('cancelled-event.json')),
+            $this->getEventbriteUrl('36673227093') => Http::response($this->apiResponse('cancelled-event.json')),
             'https://www.eventbriteapi.com/v3/venues/21742454?token=ABC' => Http::response(
                 $this->apiResponse('live-event-in-past-venue.json')
             ),
