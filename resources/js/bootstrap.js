@@ -1,7 +1,6 @@
 // Importing third-party libraries
 import Lodash from 'lodash';
 import moment from 'moment';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import jquery from 'jquery';
 import popper from 'popper.js';
@@ -37,13 +36,6 @@ try {
 } catch (e) {
   // An error occurred while setting SweetAlert2 to the global scope
 }
-
-// Setting Axios to the global scope.
-// Axios is a promise-based HTTP client for the browser and Node.js.
-window.axios = axios;
-
-// Setting a default header for all Axios requests
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * The code below is commented out but can be used to set up Laravel Echo and Pusher.
