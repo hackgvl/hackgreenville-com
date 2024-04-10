@@ -56,9 +56,7 @@
 
     <div class="col-10 px-5 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 m-5 mx-auto d-flex flex-column">
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
-
       <h3 class="font-weight-bold">2024 - February - "Chili Bar"</h3>
-
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
           <p><a href="https://www.meetup.com/hack-greenville/events/299063777/" class="btn btn-info">Recap</a></p>
@@ -68,11 +66,13 @@
         </div>
       </div>
 
+
       <h5 class="font-weight-bold">Kudos</h5>
-           <p>Event Sponsorship by <a href="https://stemsearchgroup.com/"><b>STEM Search Group</b></a> | 
+      <p class="lead-text">Event Sponsorship by <a href="https://stemsearchgroup.com/"><b>STEM Search Group</b></a> | 
            Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |  
-           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a></p>
- 
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
       <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
 
       <h5 class="font-weight-bold">Speakers</h5>
@@ -123,9 +123,6 @@
         </li>
       </ul>
 
-    </div>
-
-
       <h3 class="font-weight-bold">2023 - October - "Taco Bar"</h3>
 
       <div class="flex-row-3-columns w-100">
@@ -135,9 +132,10 @@
       </div>
 
       <h5 class="font-weight-bold">Kudos</h5>
-           <p>Event Sponsorship by <a href="https://www.simplybinary.com"><b>Simply Binary</b></a> | 
+      <p class="lead-text">Event Sponsorship by <a href="https://www.simplybinary.com"><b>Simply Binary</b></a> | 
            Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a>
- 
+      </p>
+
       <p>Food and event logistics by HackGreenville volunteers</p>
 
       <h5 class="font-weight-bold">Speakers</h5>
