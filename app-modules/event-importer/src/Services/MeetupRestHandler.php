@@ -4,7 +4,6 @@ namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
 use App\Enums\EventType;
-use App\Models\Event;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;

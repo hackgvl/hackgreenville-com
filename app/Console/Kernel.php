@@ -2,8 +2,8 @@
 
 namespace App\Console;
 
-use HackGreenville\EventImporter\Console\Commands\PruneMissingEventsCommand;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Console\Commands\PruneMissingEventsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

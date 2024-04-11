@@ -19,17 +19,17 @@ class PruneMissingEventsCommand extends Command
         return Event::query()
             ->where('active_at', '>', now()->startOfDay())
             ->whereNull('cancelled_at')
-            ->whereHas('organization', function($query) {
+            ->whereHas('organization', function ($query) {
                 $query->hasConfiguredEventService();
             });
     }
 
     public function handleRow(Event $event)
     {
-        $this->progressMessage("Checking: $event->event_name");
+        $this->progressMessage("Checking: {$event->event_name}");
 
         if ($event->doesNotExistOnEventService()) {
-            $this->progressMessage("Event missing: $event->event_name");
+            $this->progressMessage("Event missing: {$event->event_name}");
 
             $event->delete();
         }
