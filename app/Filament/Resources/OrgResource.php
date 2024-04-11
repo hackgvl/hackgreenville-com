@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Enums\EventServices;
 use App\Enums\OrganizationStatus;
 use App\Filament\Resources\OrgResource\Pages;
-use App\Filament\Resources\OrgResource\RelationManagers;
 use App\Models\Org;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -134,7 +133,7 @@ class OrgResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -149,7 +148,7 @@ class OrgResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 

@@ -2,7 +2,6 @@
 
 namespace App\Enums;
 
-use Filament\Support\Contracts\HasDescription;
 use Filament\Support\Contracts\HasLabel;
 
 enum OrganizationStatus: string implements HasLabel
