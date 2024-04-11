@@ -35,7 +35,6 @@ class OrgResource extends Resource
                             ->columnSpanFull()
                             ->maxLength(255),
 
-
                         Forms\Components\TextInput::make('city')
                             ->required()
                             ->maxLength(255),
@@ -95,26 +94,18 @@ class OrgResource extends Resource
                 Tables\Columns\TextColumn::make('city')
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('focus_area')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('uri')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('primary_contact_person')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('organization_type')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('event_calendar_uri')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('service')
-                    ->searchable(),
-                Tables\Columns\SelectColumn::make('status')
-                    ->options(OrganizationStatus::class),
 
-                Tables\Columns\TextColumn::make('service_api_key')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('service')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('status')
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('established_at')
-                    ->dateTime()
+                    ->dateTime('m/d/Y')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
