@@ -101,11 +101,11 @@ class OrgResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('status')
+                Tables\Columns\TextColumn::make('service_api_key')
+                    ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('established_at')
-                    ->dateTime('m/d/Y')
+                Tables\Columns\TextColumn::make('status')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
@@ -133,7 +133,9 @@ class OrgResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('title', 'asc')
+            ->paginated(['all']);
     }
 
     public static function getRelations(): array
