@@ -2,7 +2,6 @@
 
 namespace HackGreenville\EventImporter\Console\Commands;
 
-use App\Enums\OrganizationStatus;
 use App\Models\Org;
 use Glhd\ConveyorBelt\IteratesIdQuery;
 use HackGreenville\EventImporter\Data\EventData;
@@ -19,16 +18,12 @@ class ImportEventsCommand extends Command
 
     public function query()
     {
-        return Org::query()
-            ->where('status', OrganizationStatus::Active)
-            ->whereIn('service', config('event-import-handlers.active_services'))
-            ->whereNotNull('service')
-            ->whereNotNull('service_api_key');
+        return Org::query()->hasConfiguredEventService();
     }
 
     public function handleRow(Org $org)
     {
-        $handler = $org->getEventImporterHandler();
+        $handler = $org->getEventHandler();
 
         $current_page = 1;
 
