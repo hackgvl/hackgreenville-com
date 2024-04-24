@@ -2,10 +2,12 @@
 
 namespace HackGreenville\EventImporter\Services\Concerns;
 
+use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
 
 abstract class AbstractEventHandler
 {
@@ -27,6 +29,11 @@ abstract class AbstractEventHandler
     abstract protected function mapIntoVenueData(array $data): ?VenueData;
 
     abstract protected function eventResults(int $page): Collection;
+
+    public function eventExistsOnService(Event $event): bool
+    {
+        return Http::get($event->url)->successful();
+    }
 
     /** @return array{int, Collection<EventData>} */
     public function getPaginatedData(int $page): array

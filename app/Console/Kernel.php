@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Console\Commands\PruneMissingEventsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,6 +18,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(ImportEventsCommand::class)->hourly();
+
+        $schedule->command(PruneMissingEventsCommand::class)->dailyAt('02:00');
 
         if(config('telescope.enabled')) {
             $schedule->command('telescope:prune')->daily();

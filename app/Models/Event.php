@@ -252,4 +252,11 @@ class Event extends BaseModel
     {
         return $this->event_name;
     }
+
+    public function doesNotExistOnEventService(): bool
+    {
+        return ! $this->organization
+            ->getEventHandler()
+            ->eventExistsOnService($this);
+    }
 }

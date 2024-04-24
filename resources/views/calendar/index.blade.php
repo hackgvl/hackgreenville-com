@@ -37,12 +37,6 @@
                         $(".loading").fadeOut('fast');
                     }
                 },
-                eventPositioned: function(info){
-                    todayElement = document.getElementsByClassName("fc-today fc-day-top")[0]
-                    scrollableElement = document.getElementsByClassName("fc-scroller")[0];
-                    scrollableElement.scrollTop = todayElement.offsetParent.offsetParent.offsetParent.offsetTop
-                },
-
                 eventClick: function (info) {
                     const event_link = info.event.extendedProps.event_url;
                     const datetime_format = 'MM/DD hh:mm A';
@@ -101,7 +95,7 @@
                 }
             });
 
-            calendar.render();       
+            calendar.render();
         });
     </script>
 @endsection
