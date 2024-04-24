@@ -32,7 +32,6 @@
                         $(".loading").fadeOut('fast');
                     }
                 },
-
                 eventClick: function (info) {
                     const event_link = info.event.extendedProps.event_url;
                     const datetime_format = 'MM/DD hh:mm A';
