@@ -53,6 +53,7 @@
 
     <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
     <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
+    <script src='{{url('vendors/fullcalendar/packages/list/main.js')}}'></script>
 
     @yield('head')
 </head>

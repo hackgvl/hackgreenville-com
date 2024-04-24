@@ -16,19 +16,14 @@
             const calendarEl = document.getElementById('calendar');
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: ['dayGrid'],
+                plugins: ['dayGrid', 'list'],
                 header: {
                     left: 'title',
                     center: '',
-                    right: 'dayGridMonth,dayGridDay,prev,next' // user can switch between the two
+                    right: 'listWeek,dayGridMonth,dayGridDay,prev,next' // user can switch between the two
                 },
                 events: {
                     url: '/api/calendar',
-                    // extraParams: function() { // a function that returns an object
-                    //     return {
-                    //         dynamic_value: Math.random()
-                    //     };
-                    // }
                 },
                 loading: function (isLoading, view) {
                     if (isLoading) {// isLoading gives boolean value
@@ -36,11 +31,6 @@
                     } else {
                         $(".loading").fadeOut('fast');
                     }
-                },
-                eventPositioned: function(info){
-                    todayElement = document.getElementsByClassName("fc-today fc-day-top")[0]
-                    scrollableElement = document.getElementsByClassName("fc-scroller")[0];
-                    scrollableElement.scrollTop = todayElement.offsetParent.offsetParent.offsetParent.offsetTop
                 },
 
                 eventClick: function (info) {
@@ -101,7 +91,7 @@
                 }
             });
 
-            calendar.render();       
+            calendar.render();
         });
     </script>
 @endsection
