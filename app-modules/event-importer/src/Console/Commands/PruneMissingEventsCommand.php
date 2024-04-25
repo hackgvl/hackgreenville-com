@@ -29,7 +29,7 @@ class PruneMissingEventsCommand extends Command
         $this->progressMessage("Checking: {$event->event_name}");
 
         sleep(1);
-        
+
         if ($event->doesNotExistOnEventService()) {
             $this->progressMessage("Event missing: {$event->event_name}");
 
