@@ -60,7 +60,7 @@ These notes are specifically for those helping develop the _Events API_.
   * [GET past events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=past)
 
 ### Eventbrite
-* [Eventbrite API Docs](http://developer.eventbrite.com/doc/)
+* [Eventbrite API Docs](https://www.eventbrite.com/platform/api)
 * [Examples of making requests to the Eventbrite API](https://github.com/hackgvl/hackgreenville-com/issues/217#issuecomment-802212633)
 * [Example "events" response using a test Eventbrite API key](https://www.eventbriteapi.com/v3/events/10584525601/?token=BKKRDKVUVRC5WG4HAVLT)
 
