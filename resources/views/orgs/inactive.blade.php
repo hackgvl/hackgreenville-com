@@ -24,7 +24,7 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{ $org->url}}" rel="external" title="Homepage">{{ $org->title }}</a>
+                                        <a href="{{ route('orgs.show', $org) }}" title="{{ $org->title }}">{{ $org->title }}</a>
                                     </div>
                                     <div class="col-md-6">
                                         <a href="{{$org->event_calendar_uri }}" rel="external">Events Site</a>

@@ -83,6 +83,11 @@ class Org extends BaseModel
         return $this->belongsToMany(Tag::class);
     }
 
+    public function isActive(): bool
+    {
+        return $this->status === OrganizationStatus::Active;
+    }
+
     public function scopeHasConfiguredEventService($query): void
     {
         $query->where('status', OrganizationStatus::Active)
@@ -91,21 +96,11 @@ class Org extends BaseModel
             ->whereNotNull('service_api_key');
     }
 
-    public function getUrlAttribute()
-    {
-        return $this->uri;
-    }
-
-    public function getHomePageAttribute()
-    {
-        return $this->uri ?: $this->path;
-    }
-
     public function getEventHandler(): AbstractEventHandler
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }

@@ -20,6 +20,7 @@ Route::get('/give', [GiveController::class, 'index'])->name('give');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 Route::get('/orgs', [OrgsController::class, 'index'])->name('orgs.index');
+Route::get('/orgs/{org:slug}', [OrgsController::class, 'show'])->name('orgs.show');
 Route::get('/orgs/inactive', [OrgsController::class, 'inactive'])->name('orgs.inactive');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
