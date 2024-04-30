@@ -110,7 +110,10 @@
                 }
 
                 document.querySelector('.fc-scroller')
-                    .scrollTo(0, thisWeek.offsetTop);
+                    .scrollTo({
+                        top: thisWeek.offsetTop,
+                        behavior: 'smooth',
+                    });
 
                 firstRender = false;
             }
