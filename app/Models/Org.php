@@ -100,7 +100,7 @@ class Org extends BaseModel
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }
