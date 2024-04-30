@@ -11,7 +11,6 @@ use App\Http\Controllers\OrgsController;
 use App\Http\Controllers\SlackController;
 use App\Http\Controllers\StyleController;
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
 Route::get('/events', [EventsController::class, 'index'])->name('events.index');
