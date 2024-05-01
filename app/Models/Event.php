@@ -123,6 +123,11 @@ class Event extends BaseModel
         return $this->belongsTo(Org::class, 'organization_id');
     }
 
+    public function scopeFuture(Builder $query)
+    {
+        $query->where('active_at', '>=', DB::raw('NOW()'));
+    }
+
     public function scopeGetActive(Builder $query): Builder
     {
         return $query
@@ -217,17 +222,17 @@ class Event extends BaseModel
         $location = '';
 
         if (property_exists($this, 'venue') && ($this->venue !== null)) {
-            $location .= $this->venue->name . ', ';
-            $location .= $this->venue->address . ', ';
-            $location .= $this->venue->city . ', ';
+            $location .= $this->venue->name.', ';
+            $location .= $this->venue->address.', ';
+            $location .= $this->venue->city.', ';
             $location .= $this->venue->state;
         }
 
         $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
-        $calendar_url .= 'text=' . urlencode($this->event_name) . '&';
+        $calendar_url .= 'text='.urlencode($this->event_name).'&';
         $calendar_url .= "dates={$start_time}/{$end_time}&";
-        $calendar_url .= 'details=' . urlencode(strip_tags($this->description)) . '&';
-        $calendar_url .= 'location=' . urlencode($location) . '&';
+        $calendar_url .= 'details='.urlencode(strip_tags($this->description)).'&';
+        $calendar_url .= 'location='.urlencode($location).'&';
         $calendar_url .= "trp=false&";
 
         return $calendar_url;
@@ -255,7 +260,7 @@ class Event extends BaseModel
 
     public function doesNotExistOnEventService(): bool
     {
-        return ! $this->organization
+        return !$this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
     }

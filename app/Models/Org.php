@@ -6,6 +6,7 @@ use App\Enums\EventServices;
 use App\Enums\OrganizationStatus;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -83,6 +84,11 @@ class Org extends BaseModel
         return $this->belongsToMany(Tag::class);
     }
 
+    public function events(): HasMany
+    {
+        return $this->hasMany(Event::class, 'organization_id');
+    }
+
     public function isActive(): bool
     {
         return $this->status === OrganizationStatus::Active;
@@ -100,7 +106,7 @@ class Org extends BaseModel
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }
