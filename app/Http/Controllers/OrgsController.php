@@ -26,8 +26,10 @@ class OrgsController extends Controller
         return view('orgs.show', [
             'org' => $org->load([
                 'events' => function ($query) {
-                    $query->future();
-                    $query->limit(5);
+                    $query
+                        ->future()
+                        ->latest('active_at')
+                        ->limit(5);
                 },
             ]),
         ]);
