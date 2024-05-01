@@ -28,7 +28,7 @@ class OrgsController extends Controller
                 'events' => function ($query) {
                     $query
                         ->future()
-                        ->latest('active_at')
+                        ->orderBy('active_at')
                         ->limit(5);
                 },
             ]),
