@@ -24,7 +24,7 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{ $org->url}}" rel="external" title="Homepage"
+                                        <a href="{{ route('orgs.show', $org) }}" title="Homepage"
                                             @class([
                                                 'text-muted text-decoration-line-through' => $org->category->isInactive()
                                             ])

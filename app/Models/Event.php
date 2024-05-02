@@ -123,6 +123,11 @@ class Event extends BaseModel
         return $this->belongsTo(Org::class, 'organization_id');
     }
 
+    public function scopeFuture(Builder $query)
+    {
+        $query->where('active_at', '>=', DB::raw('NOW()'));
+    }
+
     public function scopeGetActive(Builder $query): Builder
     {
         return $query

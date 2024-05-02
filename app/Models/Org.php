@@ -6,6 +6,7 @@ use App\Enums\EventServices;
 use App\Enums\OrganizationStatus;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -83,22 +84,22 @@ class Org extends BaseModel
         return $this->belongsToMany(Tag::class);
     }
 
+    public function events(): HasMany
+    {
+        return $this->hasMany(Event::class, 'organization_id');
+    }
+
+    public function isActive(): bool
+    {
+        return $this->status === OrganizationStatus::Active;
+    }
+
     public function scopeHasConfiguredEventService($query): void
     {
         $query->where('status', OrganizationStatus::Active)
             ->whereIn('service', config('event-import-handlers.active_services'))
             ->whereNotNull('service')
             ->whereNotNull('service_api_key');
-    }
-
-    public function getUrlAttribute()
-    {
-        return $this->uri;
-    }
-
-    public function getHomePageAttribute()
-    {
-        return $this->uri ?: $this->path;
     }
 
     public function getEventHandler(): AbstractEventHandler
