@@ -41,6 +41,7 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
             ])
             ->middleware(['filament-web'])
-            ->authMiddleware(['filament-auth']);
+            ->authMiddleware(['filament-auth'])
+            ->favicon(asset('favicon.png'));
     }
 }
