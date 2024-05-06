@@ -30,7 +30,9 @@
 					</a>
 
 					<div class="text-muted">
-						{{ $event->group_name }}
+                        <a href="{{ route('orgs.show',$event->organization) }}" class="text-muted">
+                            {{ $event->group_name }}
+                        </a>
 					</div>
 				</div>
 			</div>

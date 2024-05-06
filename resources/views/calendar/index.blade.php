@@ -11,8 +11,9 @@
 
 @section('js')
     <script type="text/javascript">
-
         document.addEventListener('DOMContentLoaded', function () {
+            let firstRender = true;
+
             const calendarEl = document.getElementById('calendar');
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
@@ -30,6 +31,8 @@
                         $(".loading").fadeIn('fast');
                     } else {
                         $(".loading").fadeOut('fast');
+
+                        if (firstRender) setTimeout(maybeMoveToCurrentWeek, 100);
                     }
                 },
                 eventClick: function (info) {
@@ -89,6 +92,31 @@
                     info.el.style.borderColor = info.el.style.borderColor == 'red' ? 'black' : 'red';
                 }
             });
+
+            function maybeMoveToCurrentWeek() {
+                let layoutRoot = calendarEl.querySelector('.fc-dayGridMonth-view');
+
+                if (layoutRoot === null) {
+                    console.warn('layout root not found');
+                    return;
+                }
+
+                let thisWeek = layoutRoot.querySelector('.fc-today').closest('.fc-week');
+
+                // current week can be found at end of last month, within this month, or beginning of next month
+                if (thisWeek === null) {
+                    console.warn('Current week is not on this page.');
+                    return;
+                }
+
+                document.querySelector('.fc-scroller')
+                    .scrollTo({
+                        top: thisWeek.offsetTop,
+                        behavior: 'smooth',
+                    });
+
+                firstRender = false;
+            }
 
             calendar.render();
         });
