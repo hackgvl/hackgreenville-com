@@ -32,6 +32,7 @@ class MeetupRestHandler extends AbstractEventHandler
                 'no_earlier_than' => now()->subDays($this->max_days_in_past)->startOfDay()->format('Y-m-d\TH:i:s'),
                 'no_later_than' => now()->addDays($this->max_days_in_future)->endOfDay()->format('Y-m-d\TH:i:s'),
             ])
+            ->connectTimeout(20)
             ->throw()
             ->get("{$this->org->service_api_key}/events");
 
