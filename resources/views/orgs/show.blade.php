@@ -9,7 +9,7 @@
         </h1>
 
         <blockquote>
-            {{ $org->description }}
+            {!! $org->description !!}
         </blockquote>
 
         <table class="table">
