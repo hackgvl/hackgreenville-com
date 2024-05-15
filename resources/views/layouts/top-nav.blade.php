@@ -33,54 +33,6 @@
                         {{ __('Log In to Slack') }}
                     </a>
                 </li>
-
-                @if(request('testing-123') == 'working')
-                    <!-- Authentication Links -->
-                    @guest
-                        <x-nav-link route="login" icon="fa-sign-in">{{ __('Login') }}</x-nav-link>
-                        <x-nav-link route="register" icon="fa-cloud">{{ __('Register') }}</x-nav-link>
-                    @else
-                        {{-- Add condition here to check if the user has the role necessary to see this dropdown--}}
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-adjust"></i>
-                                {{__('Admin Stuff')}} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
-                                <a href="#" class="dropdown-item">
-                                    Placeholder
-                                </a>
-                            </div>
-                        </li>
-                        <li class="d-none d-md-inline-block">
-                            <div class="vertical-divider"></div>
-                        </li>
-                        {{-- End condition--}}
-
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="d-md-none d-lg-inline-block fa fa-sign-out"></i>
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                @endif
             </ul>
         </div>
     </div>
