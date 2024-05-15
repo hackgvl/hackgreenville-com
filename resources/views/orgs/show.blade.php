@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', $org->title)
+@section('description', 'Highlights of the '. $org->title . ' organization of '. $org->city . ', SC, including upcoming events, organizer, and history.')
 
 @section('content')
     <div class="container">
