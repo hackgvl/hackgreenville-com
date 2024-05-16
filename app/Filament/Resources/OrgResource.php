@@ -58,7 +58,6 @@ class OrgResource extends Resource
 
                         Forms\Components\TextInput::make('uri')
                             ->name('Url')
-                            ->required()
                             ->url()
                             ->maxLength(255),
 
