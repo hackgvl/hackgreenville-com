@@ -72,6 +72,7 @@ class Org extends BaseModel
         'status' => OrganizationStatus::class,
         'service' => EventServices::class,
         'established_at' => 'datetime',
+        'inactive_at' => 'date',
     ];
 
     public function category()
