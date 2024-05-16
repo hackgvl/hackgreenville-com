@@ -5,17 +5,17 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-	public function up(): void
-	{
-		Schema::table('orgs', function(Blueprint $table) {
-			$table->date('inactive_at')->nullable()->after('established_at');
-		});
-	}
+    public function up(): void
+    {
+        Schema::table('orgs', function (Blueprint $table) {
+            $table->date('inactive_at')->nullable()->after('established_at');
+        });
+    }
 
-	public function down(): void
-	{
-		Schema::table('orgs', function(Blueprint $table) {
-			$table->dropColumn('inactive_at');
-		});
-	}
+    public function down(): void
+    {
+        Schema::table('orgs', function (Blueprint $table) {
+            $table->dropColumn('inactive_at');
+        });
+    }
 };
