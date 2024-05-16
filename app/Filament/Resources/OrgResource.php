@@ -70,6 +70,10 @@ class OrgResource extends Resource
                             ->required()
                             ->time(false)
                             ->format('m/d/Y'),
+
+                        Forms\Components\DateTimePicker::make('inactive_at')
+                            ->time(false)
+                            ->format('m/d/Y'),
                     ]),
 
                 Forms\Components\Section::make('Contacts')

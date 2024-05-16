@@ -72,6 +72,7 @@ class Org extends BaseModel
         'status' => OrganizationStatus::class,
         'service' => EventServices::class,
         'established_at' => 'datetime',
+        'inactive_at' => 'date',
     ];
 
     public function category()
@@ -106,7 +107,7 @@ class Org extends BaseModel
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }
