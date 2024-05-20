@@ -12060,22 +12060,22 @@
         },
         {
             "name": "imanghafoori/composer-json",
-            "version": "v1.0.15",
+            "version": "v1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/imanghafoori1/composer-json.git",
-                "reference": "d3c77f18ed65bf97ea7aa25b12b6f32d96b35c74"
+                "reference": "ff0e6c592e1badefa955d04bb2bc8c4108e70d85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imanghafoori1/composer-json/zipball/d3c77f18ed65bf97ea7aa25b12b6f32d96b35c74",
-                "reference": "d3c77f18ed65bf97ea7aa25b12b6f32d96b35c74",
+                "url": "https://api.github.com/repos/imanghafoori1/composer-json/zipball/ff0e6c592e1badefa955d04bb2bc8c4108e70d85",
+                "reference": "ff0e6c592e1badefa955d04bb2bc8c4108e70d85",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^7.1.3|8.*",
-                "symfony/finder": "4.*|5.*|6.*"
+                "symfony/finder": "4.*|5.*|6.*|7.*|8.*"
             },
             "require-dev": {
                 "phpunit/phpunit": "~7.0|~8.0|~9.0",
@@ -12105,7 +12105,7 @@
             ],
             "support": {
                 "issues": "https://github.com/imanghafoori1/composer-json/issues",
-                "source": "https://github.com/imanghafoori1/composer-json/tree/v1.0.15"
+                "source": "https://github.com/imanghafoori1/composer-json/tree/v1.0.16"
             },
             "funding": [
                 {
@@ -12113,20 +12113,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-19T22:31:03+00:00"
+            "time": "2024-04-03T14:49:01+00:00"
         },
         {
             "name": "imanghafoori/laravel-microscope",
-            "version": "v1.0.343",
+            "version": "v1.0.347",
             "source": {
                 "type": "git",
                 "url": "https://github.com/imanghafoori1/laravel-microscope.git",
-                "reference": "73d1d8dcc4b1bd75b0b912add00cae3e050d0b19"
+                "reference": "a9ebd332b630e217776b95c35c4077117dce778e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imanghafoori1/laravel-microscope/zipball/73d1d8dcc4b1bd75b0b912add00cae3e050d0b19",
-                "reference": "73d1d8dcc4b1bd75b0b912add00cae3e050d0b19",
+                "url": "https://api.github.com/repos/imanghafoori1/laravel-microscope/zipball/a9ebd332b630e217776b95c35c4077117dce778e",
+                "reference": "a9ebd332b630e217776b95c35c4077117dce778e",
                 "shasum": ""
             },
             "require": {
@@ -12183,9 +12183,9 @@
             ],
             "support": {
                 "issues": "https://github.com/imanghafoori1/laravel-microscope/issues",
-                "source": "https://github.com/imanghafoori1/laravel-microscope/tree/v1.0.343"
+                "source": "https://github.com/imanghafoori1/laravel-microscope/tree/v1.0.347"
             },
-            "time": "2024-03-13T18:10:15+00:00"
+            "time": "2024-05-19T15:32:51+00:00"
         },
         {
             "name": "imanghafoori/php-abstract-filesystem",
@@ -12345,16 +12345,16 @@
         },
         {
             "name": "imanghafoori/php-token-analyzer",
-            "version": "v0.1.73",
+            "version": "v0.1.74",
             "source": {
                 "type": "git",
                 "url": "https://github.com/imanghafoori1/php_token_analyzer.git",
-                "reference": "378b9f917d2afcabd3af21a834b4b4c621a94963"
+                "reference": "ab36923f9811a11b7172c68e16cf81cfdd50c1a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imanghafoori1/php_token_analyzer/zipball/378b9f917d2afcabd3af21a834b4b4c621a94963",
-                "reference": "378b9f917d2afcabd3af21a834b4b4c621a94963",
+                "url": "https://api.github.com/repos/imanghafoori1/php_token_analyzer/zipball/ab36923f9811a11b7172c68e16cf81cfdd50c1a5",
+                "reference": "ab36923f9811a11b7172c68e16cf81cfdd50c1a5",
                 "shasum": ""
             },
             "require": {
@@ -12389,9 +12389,9 @@
             ],
             "support": {
                 "issues": "https://github.com/imanghafoori1/php_token_analyzer/issues",
-                "source": "https://github.com/imanghafoori1/php_token_analyzer/tree/v0.1.73"
+                "source": "https://github.com/imanghafoori1/php_token_analyzer/tree/v0.1.74"
             },
-            "time": "2024-03-08T23:49:01+00:00"
+            "time": "2024-05-04T19:36:27+00:00"
         },
         {
             "name": "imanghafoori/smart-realtime-facades",
@@ -12516,16 +12516,16 @@
         },
         {
             "name": "jetbrains/phpstorm-attributes",
-            "version": "1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-attributes.git",
-                "reference": "a7a83ae5df4dd3c0875484483de19de8edf60a9f"
+                "reference": "22fb28d679deceedba8366dbae65cc8ebfc17e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-attributes/zipball/a7a83ae5df4dd3c0875484483de19de8edf60a9f",
-                "reference": "a7a83ae5df4dd3c0875484483de19de8edf60a9f",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-attributes/zipball/22fb28d679deceedba8366dbae65cc8ebfc17e26",
+                "reference": "22fb28d679deceedba8366dbae65cc8ebfc17e26",
                 "shasum": ""
             },
             "type": "library",
@@ -12552,9 +12552,9 @@
             ],
             "support": {
                 "issues": "https://youtrack.jetbrains.com/newIssue?project=WI",
-                "source": "https://github.com/JetBrains/phpstorm-attributes/tree/1.0"
+                "source": "https://github.com/JetBrains/phpstorm-attributes/tree/1.1"
             },
-            "time": "2020-11-17T11:09:47+00:00"
+            "time": "2023-09-01T08:50:25+00:00"
         },
         {
             "name": "laravel/pint",
