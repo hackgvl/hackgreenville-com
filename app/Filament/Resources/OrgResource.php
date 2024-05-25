@@ -58,7 +58,6 @@ class OrgResource extends Resource
 
                         Forms\Components\TextInput::make('uri')
                             ->name('Url')
-                            ->required()
                             ->url()
                             ->maxLength(255),
 
@@ -68,6 +67,10 @@ class OrgResource extends Resource
 
                         Forms\Components\DateTimePicker::make('established_at')
                             ->required()
+                            ->time(false)
+                            ->format('m/d/Y'),
+
+                        Forms\Components\DateTimePicker::make('inactive_at')
                             ->time(false)
                             ->format('m/d/Y'),
                     ]),

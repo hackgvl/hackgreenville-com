@@ -65,6 +65,16 @@
                         {{ $org->established_at->year }}
                     </td>
                 </tr>
+                @if($org->inactive_at)
+                    <tr>
+                        <th scope="row">
+                            Year Inactive
+                        </th>
+                        <td>
+                            {{ $org->inactive_at->year }}
+                        </td>
+                    </tr>
+                @endif
                 <tr>
                     <th scope="row">
                         Organization Status
