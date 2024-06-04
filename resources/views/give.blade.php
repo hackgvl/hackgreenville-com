@@ -91,13 +91,6 @@
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                     <x-flex-column>
-                        <h5>SC Codes</h5>
-                        <p>Become a Mentor</p>
-                        <p><a href="https://www.sccodes.org/mentorship/"
-                              target="sccodes_mentorship"
-                              class="btn btn-info">Learn More</a></p>
-                    </x-flex-column>
-                    <x-flex-column>
                         <h5>Synergy Mill</h5>
                         <dl>
                             <dt class="text-uppercase">Needs</dt>
@@ -106,13 +99,6 @@
                         </dl>
                         <p><a href="https://www.synergymill.com/"
                               target="synergy_mill"
-                              class="btn btn-info">Learn More</a></p>
-                    </x-flex-column>
-                    <x-flex-column>
-                        <h5>Women Who Code Greenville</h5>
-                        <p>WWCode is a global non-profit organization that inspires women to excel in technology careers.</p>
-                        <p><a href="https://opencollective.com/wwcodegreenville"
-                              target="wwcode-gvl"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                 </x-flex-row>

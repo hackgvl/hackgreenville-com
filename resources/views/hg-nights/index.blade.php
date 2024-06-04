@@ -48,9 +48,9 @@
 
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Spread the word and invite others to <a href="https://forms.gle/oz4vDwrwG9c4h5Bo6" rel="nofollow">pitch a talk</a></li>
-        <li class="list-group-item">Join our <a href="https://www.meetup.com/hack-greenville/">Meetup group</a> to receive updates and spread the word</li>
+        <li class="list-group-item">Join our <a href="https://www.meetup.com/hack-greenville/"><em>Meetup</em> group</a> to receive updates</li>
         <li class="list-group-item">Hop into the <a href="/join-slack">official HackGreenville Slack</a> #community-organizers channel volunteer</li>
-        <li class="list-group-item">Help make <em>HG Nights</em> possible by <a href="/contact">becoming a sponsor</a></li>
+        <li class="list-group-item"><a href="/contact">Becoming a <em>HG Nights</em> sponsor</a></li>
       </ul>
     </div>
 
@@ -59,7 +59,7 @@
 
 
 
-      <h3 class="font-weight-bold">2024 - May - "Subs and Sliders"</h3>
+      <h3 class="mt-4">2024 - May | <em>"Subs and Sliders"</em></h3>
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
           <p><a href="https://www.meetup.com/hack-greenville/events/300300590/" class="btn btn-info">Recap</a></p>
@@ -104,7 +104,7 @@
 
 
 
-      <h3 class="font-weight-bold">2024 - February - "Chili Bar"</h3>
+      <h3 class="mt-4">2024 - February | <em>"Chili Bar"</em></h3>
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
           <p><a href="https://www.meetup.com/hack-greenville/events/299063777/" class="btn btn-info">Recap</a></p>
@@ -145,7 +145,7 @@
 
         <li class="list-group-item">Gavin Coyle on
           <a href="https://www.youtube.com/watch?v=7njpu6PgNsw&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=3&pp=iAQB">
-            <em>Addressing Workforce Planning Challenges Through Mentorship</em></li>
+            <em>Addressing Workforce Planning Challenges Through Mentorship</em>
           </a>
 	</li>
 
@@ -171,7 +171,7 @@
         </li>
       </ul>
 
-      <h3 class="font-weight-bold">2023 - October - "Taco Bar"</h3>
+      <h3 class="mt-4">2023 - October | <em>"Taco Bar"</em></h3>
 
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
