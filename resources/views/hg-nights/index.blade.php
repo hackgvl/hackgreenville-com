@@ -48,15 +48,63 @@
 
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Spread the word and invite others to <a href="https://forms.gle/oz4vDwrwG9c4h5Bo6" rel="nofollow">pitch a talk</a></li>
-        <li class="list-group-item">Join our <a href="https://www.meetup.com/hack-greenville/">Meetup group</a> to receive updates and spread the word</li>
+        <li class="list-group-item">Join our <a href="https://www.meetup.com/hack-greenville/"><em>Meetup</em> group</a> to receive updates</li>
         <li class="list-group-item">Hop into the <a href="/join-slack">official HackGreenville Slack</a> #community-organizers channel volunteer</li>
-        <li class="list-group-item">Help make <em>HG Nights</em> possible by <a href="/contact">becoming a sponsor</a></li>
+        <li class="list-group-item"><a href="/contact">Becoming a <em>HG Nights</em> sponsor</a></li>
       </ul>
     </div>
 
     <div class="col-10 px-5 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 m-5 mx-auto d-flex flex-column">
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
-      <h3 class="font-weight-bold">2024 - February - "Chili Bar"</h3>
+
+
+
+      <h3 class="mt-4">2024 - May | <em>"Subs and Sliders"</em></h3>
+      <div class="flex-row-3-columns w-100">
+        <div class="flex-row-column">
+          <p><a href="https://www.meetup.com/hack-greenville/events/300300590/" class="btn btn-info">Recap</a></p>
+        </div>
+        <div class="flex-row-column">
+          <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
+        </div>
+      </div>
+
+
+      <h5 class="font-weight-bold">Kudos</h5>
+      <p class="lead-text">Event Sponsorship by <a href="https://www.neurelo.com"><b>Neurelo</b></a> | 
+           Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |  
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+
+      <h5 class="font-weight-bold">Speakers</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Andrew Thompson on
+          <a href="https://www.youtube.com/watch?v=mWFX1lvIGSQ&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=2&pp=iAQB">
+            <em>How Not to Give a Talk</em>
+          </a>
+	</li>
+        <li class="list-group-item"> James Shockley on
+          <a href="https://www.youtube.com/watch?v=wMrcyxZO-Lw&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=4&pp=iAQB">
+            <em>Scratch, Dent, and Data: Engineering A Used Appliance Information Advantage Out Of Necessity</em>
+          </a>
+        </li>
+        <li class="list-group-item"> Joel Griffith on
+          <a href="https://www.youtube.com/watch?v=Yp79uQf923E&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=3&pp=iAQB">
+            <em>Random Numbers from Cosmic Rays (Step 1)</em>
+          </a>
+        </li>
+        <li class="list-group-item">Pete Dunlap on
+          <a href="https://www.youtube.com/watch?v=5rwe99c5dA0&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=1&pp=iAQB">
+            <em>Decentralized Community Building Via Twilio</em>
+          </a>
+        </li>
+      </ul>
+
+
+
+      <h3 class="mt-4">2024 - February | <em>"Chili Bar"</em></h3>
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
           <p><a href="https://www.meetup.com/hack-greenville/events/299063777/" class="btn btn-info">Recap</a></p>
@@ -97,7 +145,7 @@
 
         <li class="list-group-item">Gavin Coyle on
           <a href="https://www.youtube.com/watch?v=7njpu6PgNsw&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=3&pp=iAQB">
-            <em>Addressing Workforce Planning Challenges Through Mentorship</em></li>
+            <em>Addressing Workforce Planning Challenges Through Mentorship</em>
           </a>
 	</li>
 
@@ -123,7 +171,7 @@
         </li>
       </ul>
 
-      <h3 class="font-weight-bold">2023 - October - "Taco Bar"</h3>
+      <h3 class="mt-4">2023 - October | <em>"Taco Bar"</em></h3>
 
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
