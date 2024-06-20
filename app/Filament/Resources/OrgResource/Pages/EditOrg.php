@@ -13,6 +13,10 @@ class EditOrg extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('view')
+                ->label('View Public Page')
+                ->link()
+                ->url(fn () => route('orgs.show', ['org' => $this->record])),
             Actions\DeleteAction::make(),
         ];
     }

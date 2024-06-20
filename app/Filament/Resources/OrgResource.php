@@ -44,6 +44,10 @@ class OrgResource extends Resource
                             ->required()
                             ->columnSpanFull(),
 
+                        Forms\Components\TextInput::make('focus_area')
+                            ->required()
+                            ->columnSpanFull(),
+
                         Forms\Components\TextInput::make('city')
                             ->required()
                             ->maxLength(255),
