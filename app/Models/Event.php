@@ -99,7 +99,7 @@ class Event extends BaseModel
     ];
 
     protected $attributes = [
-        'cache' => [],
+        'cache' => '{}',
     ];
 
     protected $appends = [
