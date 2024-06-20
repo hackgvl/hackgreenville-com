@@ -25,6 +25,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "v4.2.2",
         "livewire/livewire": "^3.0",
+        "malzariey/filament-daterangepicker-filter": "^2.7",
         "scyllaly/hcaptcha": "^4.4",
         "spatie/laravel-data": "*",
         "spatie/laravel-google-calendar": "^3.0"
