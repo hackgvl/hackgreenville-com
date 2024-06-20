@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\VenueResource\Pages;
-use App\Filament\Resources\VenueResource\RelationManagers;
 use App\Models\Venue;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class VenueResource extends Resource
 {
@@ -82,7 +79,7 @@ class VenueResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -97,7 +94,7 @@ class VenueResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 

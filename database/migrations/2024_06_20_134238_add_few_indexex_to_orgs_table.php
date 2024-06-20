@@ -5,19 +5,19 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-	public function up(): void
-	{
-		Schema::table('orgs', function(Blueprint $table) {
-			$table->index('slug');
-			$table->index('title');
-		});
-	}
+    public function up(): void
+    {
+        Schema::table('orgs', function (Blueprint $table) {
+            $table->index('slug');
+            $table->index('title');
+        });
+    }
 
-	public function down(): void
-	{
-		Schema::table('orgs', function(Blueprint $table) {
-			$table->dropIndex('slug');
-			$table->dropIndex('title');
-		});
-	}
+    public function down(): void
+    {
+        Schema::table('orgs', function (Blueprint $table) {
+            $table->dropIndex('slug');
+            $table->dropIndex('title');
+        });
+    }
 };

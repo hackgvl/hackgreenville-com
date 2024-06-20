@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Enums\EventServices;
 use App\Filament\Resources\EventResource\Pages;
-use App\Filament\Resources\EventResource\RelationManagers;
 use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
@@ -32,15 +31,15 @@ class EventResource extends Resource
                             ->relationship('organization', 'title')
                             ->searchable()
                             ->live()
-                            ->afterStateUpdated(function($state, Forms\Set $set) {
+                            ->afterStateUpdated(function ($state, Forms\Set $set) {
                                 $org = Org::find($state);
 
                                 $set('group_name', $org->title);
                             }),
 
                         Forms\Components\Select::make('venue_id')
-                            ->relationship('venue', 'name', fn($query) => $query->orderBy('name'))
-                            ->getOptionLabelFromRecordUsing(fn(Venue $venue) => "{$venue->name} - {$venue->address}"),
+                            ->relationship('venue', 'name', fn ($query) => $query->orderBy('name'))
+                            ->getOptionLabelFromRecordUsing(fn (Venue $venue) => "{$venue->name} - {$venue->address}"),
 
                         Forms\Components\TextInput::make('uri')
                             ->label('Event URL Page')
@@ -136,7 +135,7 @@ class EventResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 
