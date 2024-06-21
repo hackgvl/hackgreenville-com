@@ -56,12 +56,12 @@ class User extends Authenticatable implements FilamentUser
      * @var array
      */
     protected $fillable
-            = [
-                'first_name',
-                'last_name',
-                'email',
-                'password',
-            ];
+        = [
+            'first_name',
+            'last_name',
+            'email',
+            'password',
+        ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -69,10 +69,10 @@ class User extends Authenticatable implements FilamentUser
      * @var array
      */
     protected $hidden
-            = [
-                'password',
-                'remember_token',
-            ];
+        = [
+            'password',
+            'remember_token',
+        ];
 
     protected $casts = [
         'password' => 'hashed',

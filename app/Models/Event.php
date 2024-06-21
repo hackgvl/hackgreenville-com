@@ -38,7 +38,7 @@ use RuntimeException;
  * @property string|null $event_uuid
  * @property-read string $active_at_ftm
  * @property-read string $g_cal_url
- * @property-read \Carbon\Carbon|string $local_active_at
+ * @property-read Carbon|string $local_active_at
  * @property-read string $short_description
  * @property-read string $state
  * @property-read string $status
@@ -96,6 +96,10 @@ class Event extends BaseModel
         'cancelled_at' => 'datetime',
         'service_id' => 'string',
         'service' => EventServices::class,
+    ];
+
+    protected $attributes = [
+        'cache' => '{}',
     ];
 
     protected $appends = [

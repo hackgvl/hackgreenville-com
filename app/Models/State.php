@@ -41,10 +41,10 @@ class State extends Model
     protected $table = 'states';
 
     protected $fillable
-            = [
-                'abbr',
-                'name',
-            ];
+        = [
+            'abbr',
+            'name',
+        ];
 
     public function venues()
     {

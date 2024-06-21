@@ -6,6 +6,8 @@ use Filament\Support\Contracts\HasLabel;
 
 enum EventServices: string implements HasLabel
 {
+    case ManuallyManaged = 'manually_managed';
+
     case MeetupRest = 'meetup';
 
     case EventBrite = 'eventbrite';
@@ -17,6 +19,7 @@ enum EventServices: string implements HasLabel
     public function getLabel(): ?string
     {
         return match ($this) {
+            self::ManuallyManaged => 'Managed Manually',
             self::MeetupRest => 'Meetup.com',
             self::EventBrite => 'EventBrite.com',
             self::Nvite => 'Nvite (not implemented)',
