@@ -9,13 +9,6 @@ class LabsController extends Controller
         $remove_space = true;
         $projects = [
             [
-                'name' => __('Organizations API'),
-                'description' => __('Public API for organization information'),
-                'link' => 'https://data.openupstate.org/organizations',
-                'linkType' => 'website',
-                'status' => 'active',
-            ],
-            [
                 'name' => __('Events API'),
                 'description' => __('Public API for tech event information'),
                 'link' => 'https://github.com/hackgvl/OpenData',
