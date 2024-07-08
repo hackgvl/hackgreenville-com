@@ -11,13 +11,13 @@
                     <h1>{{ __('Sign up for HackGreenville!') }}</h1>
 
                     <h4>
-                        <a href="https://hackgreenville.slack.com" class="badge badge-pill btn-success p-3" rel="noreferrer" target="_blank">
+                        <a href="https://hackgreenville.slack.com" class="badge badge-pill btn-success p-3" rel="nofollow" target="_blank">
                             Already Signed Up? Log In to Slack
                         </a>
                     </h4>
 
                     <p class="summary">
-                        {{ __('Ready to get started? Fill out the sign up form below and we\'ll add you as soon as possible!') }}
+                        {{ __('Ready to get started? Fill out the form below and we\'ll add you as soon as possible!') }}
                     </p>
                 </div>
             </div>
@@ -33,7 +33,7 @@
 
                     {{ aire()->input('name', __('Full Name'))->required() }}
                     {{ aire()->email('contact', __('Email'))->required() }}
-                    {{ aire()->textArea('reason', __('What do you do in the Upstate?'))->rows(4)->placeholder(__('What is it that interests you? What kinds of things are you involved in here? If you are not from the Upstate and don\'t plan to be, you might find another group better suited for you.')) }}
+                    {{ aire()->textArea('reason', __('To help us weed out spam, please confirm you are a real person.'))->rows(4)->placeholder(__('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?')) }}
 
                 </div>
             </div>
@@ -41,11 +41,10 @@
                 <div class="col-md-5">
                     <p>The Rules of HackGreenville are simple:</p>
                     <ul class="text-left">
-                        <li>
-                            <strong>Be nice:</strong>
-                            We're a community that helps one another regardless of Gender,
-                            Religion, Political Party, Programming Language, Tabs or Spaces... If you
-                            try to provoke fights you will be removed.
+                        <li><strong>Everyone agrees to abide by the <a href="{{route('code-of-conduct')}}" target="_blank">Code of Conduct</a></strong>
+                          within our Slack and at in-person events.
+                            We <a href="{{route('about')}}" target="_blank">exist to nurture personal growth</a>, not to bring people down.
+                            Constructive debate, even "Tabs" or "Spaces", is welcome, but please do not harrass or provoke.
                         </li>
                         <li>
                             <strong>Be considerate:</strong>
