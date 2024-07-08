@@ -25,22 +25,12 @@
                     </div>
 
                     <div class="d-flex flex-column align-middle h-100">
-                        <h4 class="mb-4">Some technology we like</h4>
+                        <h4 class="mb-4">Built with Laravel</h4>
 
                         <div class="text-center footer-technology-icons">
                             <a href="https://laravel.com" class="footer-technology-icon-wrapper" rel="nofollow">
                                 <img src="{{url('img/icons/laravel-226015.png')}}" class="footer-technology-icon"
                                      alt="Laravel"/>
-                            </a>
-                            <a href="https://www.djangoproject.com" class="footer-technology-icon-wrapper"
-                               rel="nofollow">
-                                <img src="{{url('img/icons/django.jpg')}}" class="footer-technology-icon" alt="Django"/>
-                            </a>
-                            <a href="https://nuxtjs.org" class="footer-technology-icon-wrapper" rel="nofollow">
-                                <img src="{{url('img/icons/nuxt.png')}}" class="footer-technology-icon" alt="NuxtJS"/>
-                            </a>
-                            <a href="https://nextjs.org/" class="footer-technology-icon-wrapper" rel="nofollow">
-                                <img src="{{url('img/icons/nextjs.png')}}" class="footer-technology-icon" alt="NextJS"/>
                             </a>
                         </div>
                     </div>
@@ -69,6 +59,12 @@
                                 <a class="@if(Route::is('join-slack.*')) active @endif" href="/join-slack">
                                     <i class="fa fa-slack"></i>
                                     {{__('Join Slack')}}
+                                </a>
+                            </li>
+                            <li>
+                                <a class="@if(Route::is('code-of-conduct.*')) active @endif" href="{{route('code-of-conduct')}}">
+                                    <i class="fa fa-check"></i>
+                                    {{ __('Code of Conduct') }}
                                 </a>
                             </li>
                             <li>

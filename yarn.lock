@@ -1179,9 +1179,9 @@ pm2-sysmonit@^1.2.8:
     tx2 "~1.0.4"
 
 pm2@^5.3.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/pm2/-/pm2-5.4.0.tgz#bf7976d8681304c31388ff8aae81633a2a04d54e"
-  integrity sha512-9TrDuckcSEnINoURygr3yfruK20qXuOUPOPQyIh4FIskQduyDNst9ys1XAt9YPY3RyGxVr2+x8Irsdma3klVQw==
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/pm2/-/pm2-5.4.1.tgz#b9259eeb9bd1618ef0d9f51ff6d2ad4c48e36846"
+  integrity sha512-y9ndADjy78XfzdbVHISn4WiUTrcvmsO7ieCtM/oC80rwPgBDg+bHkkz1e4eaLOW5a7sJsnDfQjJe4AqxNnIw5Q==
   dependencies:
     "@pm2/agent" "~2.0.0"
     "@pm2/io" "~6.0.0"
@@ -1413,9 +1413,9 @@ sass-loader@^8.0.0:
     semver "^6.3.0"
 
 sass@^1.20.1:
-  version "1.77.3"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.77.3.tgz#4e93f6197786c05cab2c795c3f0f243470d94836"
-  integrity sha512-WJHo+jmFp0dwRuymPmIovuxHaBntcCyja5hCB0yYY9wWrViEp4kF5Cdai98P72v6FzroPuABqu+ddLMbQWmwzA==
+  version "1.77.6"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.77.6.tgz#898845c1348078c2e6d1b64f9ee06b3f8bd489e4"
+  integrity sha512-ByXE1oLD79GVq9Ht1PeHWCPMPB8XHpBuz1r85oByKHjZY6qV6rWnQovQzXJXuQ/XyE1Oj3iPk3lo28uzaRA2/Q==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -1625,9 +1625,9 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 sweetalert2@^11.7.12:
-  version "11.11.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.11.1.tgz#bb07de656c5bd65bb7c30b4bea93f99cc65f7714"
-  integrity sha512-7jumu0I0/QdRa5R7K1mh05ZdhmsMV6rZOVtjpratZGidxyJD4Sn7rDSA+zmKHzvMef9hVTwPmDU3VxnvhVQMNg==
+  version "11.12.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.12.1.tgz#3b63de03ee15f10d4a5f3bceebddf2d3f70e3bce"
+  integrity sha512-xV3/YI7Ah6BeP+bXKcrHy1yn6duh8eqlX2TSI9I/rTIzGLYQvnnTa3mOIo5RHUobAjSmacC2IhPApxjvppZaEQ==
 
 systeminformation@^5.7:
   version "5.22.7"

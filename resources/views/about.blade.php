@@ -23,8 +23,8 @@
         <p class="lead-text">In Nov. 2023, HackGreenville established a collaborative relationship with <a href="https://refactorgvl.com/" target="refactorgvl">RefactorGVL</a>, a local 501(c)(3) non-profit, to further their mission of elevating the tech community in the Upstate. This collaboration provides infrastructure, fiscal sponsorship, and other support services to HackGreenville as it serves the local workforce.</p>
         <p class="lead-text">Here's a snapshot of our community's purpose, mission, vision, and culture:</p>
         <h2 class="section-heading">Our Purpose</h2>
-        <p class="lead-text">We are here to nurture personal growth amongst Greenville, SC's vibrant community of
-            "hackers" and beyond.</p>
+        <p class="lead-text">We are here to nurture personal growth among the vibrant community of
+            "hackers" in Greenville, SC and the surrounding Upstate area.</p>
         <h2 class="section-heading">Our Mission</h2>
         <p class="lead-text">Through our <a href="/join-slack" class="highlight-link">online community</a> and <a
                 href="/" class="highlight-link">discovery
@@ -35,9 +35,12 @@
             tech enthusiasts exploring the area's vibrant "hacker" culture and opportunities.</p>
         <h2 class="section-heading">Our Culture and Guiding Principles</h2>
         <ul class="values-list">
+            <li>We expect everyone to abide by the <a href="{{route('code-of-conduct')}}">Code of Conduct</a> within our Slack and at in-person events.</li>
+            <li>We exist to nurture personal growth, not to bring people down.
+                Constructive debate, even "Tabs" or "Spaces", is welcome, but please do not harrass or provoke.
+            </li>
             <li>We welcome all hackers, makers, and tinker types. Our community extends beyond just software.</li>
             <li>Be respectful. Egos and biases have no place here.</li>
-            <li>Enjoy the journey. Trolling isn't tolerated.</li>
             <li>Pay it forward. Remember, your knowledge comes from others.</li>
             <li>Give more than you take. This isn't a community for selfish pursuits.</li>
         </ul>

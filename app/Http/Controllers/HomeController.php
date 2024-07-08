@@ -28,6 +28,16 @@ class HomeController extends Controller
         return view('about');
     }
 
+    /**
+     * Show the application Code of Conduct page.
+     *
+     * @return View
+     */
+    public function code_of_conduct()
+    {
+        return view('code-of-conduct');
+    }
+
     public function testing()
     {
         return view('testing');
