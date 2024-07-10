@@ -10,9 +10,11 @@ return [
     'handlers' => [
         EventServices::EventBrite->value => EventBriteHandler::class,
         EventServices::MeetupRest->value => MeetupRestHandler::class,
+        EventServices::Luma->value => HackGreenville\EventImporter\Services\LumaHandler::class,
     ],
     'active_services' => [
         EventServices::EventBrite->value,
         EventServices::MeetupRest->value,
+        EventServices::Luma->value,
     ],
 ];
