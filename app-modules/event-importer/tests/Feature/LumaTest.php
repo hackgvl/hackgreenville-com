@@ -20,7 +20,7 @@ class LumaTest extends DatabaseTestCase
         Carbon::setTestNow('2020-01-01');
     }
 
-    public function test_active_eventbrite_event_is_imported_correctly(): void
+    public function test_active_luma_event_is_imported_correctly(): void
     {
         Http::fake([
             'https://api.lu.ma/calendar/get-items?calendar_api_id=cal-eBssGXM4Irgjp6j&period=future&pagination_limit=50' => Http::response($this->apiResponse('response.json')),
