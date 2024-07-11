@@ -3,6 +3,7 @@
 use App\Enums\EventServices;
 use HackGreenville\EventImporter\Services\EventBriteHandler;
 use HackGreenville\EventImporter\Services\MeetupRestHandler;
+use HackGreenville\EventImporter\Services\LumaHandler;
 
 return [
     'max_days_in_past' => env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30),
@@ -10,7 +11,7 @@ return [
     'handlers' => [
         EventServices::EventBrite->value => EventBriteHandler::class,
         EventServices::MeetupRest->value => MeetupRestHandler::class,
-        EventServices::Luma->value => HackGreenville\EventImporter\Services\LumaHandler::class,
+        EventServices::Luma->value => LumaHandler::class,
     ],
     'active_services' => [
         EventServices::EventBrite->value,
