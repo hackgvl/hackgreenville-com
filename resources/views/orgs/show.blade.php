@@ -31,7 +31,7 @@
                             Organization Homepage
                         </th>
                         <td>
-                            <a href="{{ $org->event_calendar_uri }}">{{ $org->uri }}</a>
+                            <a href="{{ $org->uri }}">{{ $org->uri }}</a>
                         </td>
                     </tr>
                 @endif
