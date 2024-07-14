@@ -25,7 +25,7 @@
                         </td>
                     </tr>
                 @endif
-                @if($org->event_calendar_uri)
+                @if($org->uri)
                     <tr>
                         <th scope="row">
                             Organization Homepage
