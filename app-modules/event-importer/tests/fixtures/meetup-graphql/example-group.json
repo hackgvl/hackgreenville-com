@@ -37,7 +37,7 @@
               "title": "Hungry Hungry Hackers",
               "eventUrl": "https://www.meetup.com/defcon864/events/301559297",
               "description": "Join in open discussion and delicious food as we break bread over hacking stories, cyber events, and general conversation about anything else.\n\nNo set talks, agendas, or goals. Just lunch with folks who are interested in a casual event.\n\nHopefully, it's not too hot, but it's good for us all to get outside occasionally. Come get your Vitamin D, and enjoy a good conversation.\n\nNotice: Attendees are required to pay for their own meal.",
-              "dateTime": "2024-06-14T12:00-04:00",
+              "dateTime": "2019-12-31T23:59-04:00",
               "eventType": "PHYSICAL",
               "status": "PAST",
               "going": 5,
@@ -149,7 +149,7 @@
               "description": "Join us for the monthly DEF CON 864 group meeting online and in-person.\n\n* Online details are posted in our Discord.\n* Discord invite is on our website at dc864.org.\n\nAll meetings are free and open to the public.\n\nWe have a very open format, so join in and let us know what your interests are that you'd like to see from this group.\n\nWe leave an hour to going over member projects and interests. Have a Raspberry Pi project or build a custom drone? Bring it in and show us how you did it. Creating your own set of scripts for system reconnaissance? We'd love to see it.",
               "dateTime": "2024-08-01T18:00-04:00",
               "eventType": "PHYSICAL",
-              "status": "published",
+              "status": "CANCELLED",
               "going": 3,
               "createdAt": null,
               "venue": {
