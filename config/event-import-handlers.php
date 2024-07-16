@@ -2,8 +2,8 @@
 
 use App\Enums\EventServices;
 use HackGreenville\EventImporter\Services\EventBriteHandler;
-use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
+use HackGreenville\EventImporter\Services\MeetupRestHandler;
 
 return [
     'max_days_in_past' => env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30),
