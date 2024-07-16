@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Http;
 
 class MeetupGraphqlHandler extends AbstractEventHandler
 {
+    protected ?string $next_page_url = null;
+    protected int $per_page_limit = 100;
+
     protected function mapIntoEventData(array $data): EventData
     {
         $event = $data['node'];
@@ -75,18 +78,34 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
-        $response = $this->initialApiCall();
+        if (null === $this->next_page_url) {
+            $response = $this->initialApiCall();
+        }
+
+
         $data = $response->collect();
         $groupData = $data['data']['groupByUrlname'];
         $pastEvents = $groupData['pastEvents']['edges'];
         $upcomingEvents = $groupData['upcomingEvents']['edges'];
+
+        $this->determineNextPage($response);
+
         return collect(array_merge($pastEvents, $upcomingEvents));
     }
 
     protected function determineNextPage(Response $response): void
     {
-        $this->next_page_url = null;
+        $data = $response->collect();
+        $upcomingEvents = $data['data']['groupByUrlname']['upcomingEvents'];
+        $pageInfo = $upcomingEvents['pageInfo'];
+
+        if (false === $pageInfo['hasNextPage']) {
+            $this->next_page_url = null;
+        }
+
+        $this->next_page_url = $upcomingEvents['pageInfo']['endCursor'];
     }
+
     private function initialApiCall(): Response
     {
         $response = Http::baseUrl('https://api.meetup.com/')
