@@ -14,7 +14,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 {
     public function test_active_meetup_event_is_imported_correctly(): void
     {
-        $this->setupTestDate();
+        $this->setupTest();
 
         Http::fake([
             $this->getMeetupUrl() => Http::response(
@@ -45,12 +45,13 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $this->assertEquals(1720735200, $active_event->active_at->utc()->unix());
         $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $active_event->uri);
         $this->assertNull($active_event->cancelled_at);
+        $this->assertNotNull($active_event->venue);
         $this->assertEquals('upcoming', $active_event->status);
     }
 
     public function test_meetup_event_venue_data_is_imported_correctly(): void
     {
-        $this->setupTestDate();
+        $this->setupTest();
 
         Http::fake([
             $this->getMeetupUrl() => Http::response(
@@ -80,7 +81,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
     public function test_cancelled_meetup_event_is_imported_correctly(): void
     {
-        $this->setupTestDate();
+        $this->setupTest();
 
         Http::fake([
             $this->getMeetupUrl() => Http::response(
@@ -103,7 +104,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
     public function test_past_meetup_event_is_imported_correctly(): void
     {
-        $this->setupTestDate();
+        $this->setupTest();
 
         Http::fake([
             $this->getMeetupUrl() => Http::response(
@@ -124,6 +125,17 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $this->assertEquals('past', $past_event->status);
     }
 
+    public function test_online_event_venue_is_null(): void
+    {
+        $this->setupTest();
+
+
+
+        $event = $this->queryEvent('pwdqjtygcpbkb');
+
+        $this->assertNull($event->venue);
+    }
+
     protected function getMeetupUrl(): string
     {
         return 'https://api.meetup.com/gql';
@@ -134,9 +146,23 @@ class MeetupGraphqlTest extends DatabaseTestCase
         return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);
     }
 
-    private function setupTestDate(): void
+    private function setupTest(): void
     {
         Carbon::setTestNow('2020-01-01');
+
+        Http::fake([
+            $this->getMeetupUrl() => Http::response(
+                $this->apiResponse('example-group.json'),
+                200
+            ),
+        ]);
+
+        $organization = Org::factory()->create([
+            'service' => EventServices::MeetupGraphql,
+            'service_api_key' => 'defcon864',
+        ]);
+
+        $this->artisan(ImportEventsCommand::class);
     }
 
     private function queryEvent(string $service_id): Event

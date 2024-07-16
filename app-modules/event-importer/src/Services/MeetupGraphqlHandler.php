@@ -48,6 +48,10 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             return null;
         }
 
+        if ($event['eventType'] === 'ONLINE') {
+            return null;
+        }
+
         $venue = $event['venue'];
 
         try {
