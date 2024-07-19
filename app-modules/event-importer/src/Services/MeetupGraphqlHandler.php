@@ -82,11 +82,13 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             $response = $this->initialApiCall();
         }
 
-
         $data = $response->collect();
         $groupData = $data['data']['groupByUrlname'];
         $pastEvents = $groupData['pastEvents']['edges'];
         $upcomingEvents = $groupData['upcomingEvents']['edges'];
+
+        $pastEvents = $this->filterEvents($pastEvents, false);
+        $upcomingEvents = $this->filterEvents($upcomingEvents, true);
 
         $this->determineNextPage($response);
 
@@ -117,5 +119,26 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         }
 
         return $response;
+    }
+
+    private function filterEvents(array $events, bool $isUpcoming): array
+    {
+      $filteredEvents = [];
+      foreach($events as $event) {
+        $eventDate = Carbon::parse($event['node']['dateTime']);
+        if (!$isUpcoming) {
+          if ($eventDate < now()->subDays($this->max_days_in_future)->startOfDay()) {
+            continue;
+          }
+          $filteredEvents[] = $event;
+          continue;
+        }
+        if ($eventDate > now()->addDays($this->max_days_in_past)->startOfDay()) {
+          continue;
+        }
+        $filteredEvents[] = $event;
+      }
+
+      return $filteredEvents;
     }
 }
