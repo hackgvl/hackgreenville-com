@@ -123,22 +123,22 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     private function filterEvents(array $events, bool $isUpcoming): array
     {
-      $filteredEvents = [];
-      foreach($events as $event) {
-        $eventDate = Carbon::parse($event['node']['dateTime']);
-        if (!$isUpcoming) {
-          if ($eventDate < now()->subDays($this->max_days_in_future)->startOfDay()) {
-            continue;
-          }
-          $filteredEvents[] = $event;
-          continue;
+        $filteredEvents = [];
+        foreach($events as $event) {
+            $eventDate = Carbon::parse($event['node']['dateTime']);
+            if ( ! $isUpcoming) {
+                if ($eventDate < now()->subDays($this->max_days_in_future)->startOfDay()) {
+                    continue;
+                }
+                $filteredEvents[] = $event;
+                continue;
+            }
+            if ($eventDate > now()->addDays($this->max_days_in_past)->startOfDay()) {
+                continue;
+            }
+            $filteredEvents[] = $event;
         }
-        if ($eventDate > now()->addDays($this->max_days_in_past)->startOfDay()) {
-          continue;
-        }
-        $filteredEvents[] = $event;
-      }
 
-      return $filteredEvents;
+        return $filteredEvents;
     }
 }

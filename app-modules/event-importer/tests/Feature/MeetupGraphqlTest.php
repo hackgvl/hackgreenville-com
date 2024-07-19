@@ -79,22 +79,22 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $this->assertNull($event->venue);
     }
 
-    public function test_past_meetup_event_past_max_days_not_imported(): void 
+    public function test_past_meetup_event_past_max_days_not_imported(): void
     {
-      $this->setupTest();
+        $this->setupTest();
 
-      $event = $this->queryEvent('300699290');
+        $event = $this->queryEvent('300699290');
 
-      $this->assertNull($event);
+        $this->assertNull($event);
     }
 
-    public function test_upcoming_meetup_event_past_max_days_not_imported(): void 
+    public function test_upcoming_meetup_event_past_max_days_not_imported(): void
     {
-      $this->setupTest();
+        $this->setupTest();
 
-      $event = $this->queryEvent('pwdqjtygcqbhb');
+        $event = $this->queryEvent('pwdqjtygcqbhb');
 
-      $this->assertNull($event);
+        $this->assertNull($event);
     }
 
     protected function getMeetupUrl(): string
