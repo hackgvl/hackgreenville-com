@@ -50,7 +50,7 @@ class State extends Model
     {
         return $this->hasMany(Venue::class);
     }
-    
+
     public function scopeAbbr($query, $abbr)
     {
         return $query->where('abbr', 'like', $abbr);
