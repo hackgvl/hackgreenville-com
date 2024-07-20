@@ -33,23 +33,56 @@ class LumaTest extends DatabaseTestCase
 
         $this->artisan(ImportEventsCommand::class);
 
-        $active_event = Event::query()
+        $event1 = Event::query()
             ->where([
                 'service' => EventServices::Luma->value,
                 'service_id' => 'evt-H1KppCSH1w03RfG',
+                'event_name' => 'Tech Taco Tuesday',
             ])
             ->firstOrFail();
 
-        $this->assertEquals('Tech Taco Tuesday', $active_event->event_name);
-        $this->assertEquals($organization->title, $active_event->group_name);
-        $this->assertStringContainsString('Tech meetups and events for web developers and designers.', $active_event->description);
+        $this->assertEquals($organization->title, $event1->group_name);
+        $this->assertStringContainsString('Tech meetups and events for web developers and designers.', $event1->description);
 
-        $this->assertEquals(null, $active_event->rsvp_count);
-        $this->assertEquals('2024-08-06 11:30:00', $active_event->active_at->toDateTimeString());
-        $this->assertEquals('https://lu.ma/uxweg758', $active_event->url);
-        $this->assertNull($active_event->cancelled_at);
+        $this->assertEquals(null, $event1->rsvp_count);
+        $this->assertEquals('2024-08-06 11:30:00', $event1->active_at->toDateTimeString());
+        $this->assertEquals('https://lu.ma/uxweg758', $event1->url);
+        $this->assertNull($event1->cancelled_at);
 
-        $this->assertEquals('upcoming', $active_event->status);
+        $this->assertEquals('upcoming', $event1->status);
+
+        $venue = Venue::query()->where([
+            'name' => 'White Duck Taco Shop',
+            "address" => "301 Airport Rd Suite J",
+            "city" => "Greenville",
+            "zipcode" => "29607",
+            "country" => "US",
+            "lat" => "34.844795",
+            "lng" => "-82.354982",
+        ])
+            ->firstOrFail();
+
+        $this->assertEquals('SC', $venue->state->abbr);
+
+
+        // Event 2
+        $event2 = Event::query()
+            ->where([
+                'service' => EventServices::Luma->value,
+                'service_id' => 'evt-pDFUoxEnWDdJw7F',
+                'event_name' => 'Tech Taco Tuesday - second event',
+            ])
+            ->firstOrFail();
+
+        $this->assertEquals($organization->title, $event2->group_name);
+        $this->assertStringContainsString('Tech meetups and events for web developers and designers.', $event2->description);
+
+        $this->assertEquals(null, $event2->rsvp_count);
+        $this->assertEquals('2024-09-03 11:30:00', $event2->active_at->toDateTimeString());
+        $this->assertEquals('https://lu.ma/0w9vm5fw', $event2->url);
+        $this->assertNull($event2->cancelled_at);
+
+        $this->assertEquals('upcoming', $event2->status);
 
         $venue = Venue::query()->where([
             'name' => '',
@@ -63,6 +96,24 @@ class LumaTest extends DatabaseTestCase
             ->firstOrFail();
 
         $this->assertEquals('SC', $venue->state->abbr);
+
+        // Virtual Event
+
+        $event2 = Event::query()
+            ->where([
+                'service' => EventServices::Luma->value,
+                'service_id' => 'evt-VDjbDc3iEH6r3r7',
+                'event_name' => 'zoom event',
+            ])
+            ->firstOrFail();
+
+        $this->assertEquals($organization->title, $event2->group_name);
+        $this->assertStringContainsString('hello world', $event2->description);
+
+        $this->assertEquals('2024-07-19 21:30:00', $event2->active_at->toDateTimeString());
+        $this->assertEquals('https://lu.ma/n9gijqux', $event2->url);
+        $this->assertNull($event2->cancelled_at);
+        $this->assertEquals('upcoming', $event2->status);
     }
 
     protected function apiResponse(string $file): string

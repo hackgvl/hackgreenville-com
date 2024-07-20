@@ -9,6 +9,7 @@ use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -21,18 +22,15 @@ class LumaHandler extends AbstractEventHandler
         return EventData::from([
             'id' => $data['event']['api_id'],
             'name' => $data['event']['name'],
-            'description' => $data['calendar']['description_short'],
-            'url' => "https://lu.ma/" . $data['event']['url'],
+            'description' => $data['calendar']['description_short'] ?? '',
+            'url' => "https://lu.ma/".$data['event']['url'],
             'starts_at' => Carbon::parse($data['event']['start_at'])->setTimezone($data['event']['timezone']),
             'event_type' => match ($data['event']['location_type']) {
                 'online', 'zoom', => EventType::Online,
                 'offline', 'unknown' => EventType::Live,
                 default => throw new RuntimeException("Unable to determine event type {$data['event']['location_type']}"),
             },
-            'cancelled_at' => match ($data['status']) {
-                'cancelled' => now(),
-                default => null
-            },
+            'cancelled_at' => null,
             'rsvp' => $data['guest_count'],
             'service' => EventServices::Luma,
             'service_id' => $data['event']['api_id'],
@@ -54,6 +52,14 @@ class LumaHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
+        if (Arr::get($data['event'], 'virtual_info.has_access', false)) {
+            Log::warning('Lu.ma - Missing Geo Address Info', [
+                'data' => $data,
+            ]);
+
+            return null;
+        }
+
         if (null === $data['event']['geo_address_info']) {
             Log::warning('Lu.ma - Missing Geo Address Info', [
                 'data' => $data,
@@ -62,7 +68,7 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        if ( ! isset($data['event']['geo_address_info']['full_address'])) {
+        if (!isset($data['event']['geo_address_info']['full_address'])) {
             Log::warning('Lu.ma - Missing Full Address', [
                 'data' => $data,
             ]);
@@ -72,7 +78,7 @@ class LumaHandler extends AbstractEventHandler
 
         $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
 
-        if (count($parts) < 5) {
+        if (count($parts) < 4) {
             Log::warning('Lu.ma - Not enough address data', [
                 'data' => $data,
             ]);
@@ -80,8 +86,16 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        $address = $this->parseGoogleAddress($parts);
+        try {
+            $address = $this->parseGoogleAddress($parts);
 
+        } catch (\Throwable $exception) {
+            Log::warning('Lu.ma - Unable to parse address.', [
+                'data' => $data,
+            ]);
+
+            return null;
+        }
         return VenueData::from([
             'id' => $data['event']['geo_address_info']['place_id'],
             'name' => $address->name,
@@ -119,14 +133,15 @@ class LumaHandler extends AbstractEventHandler
             public function __construct(array $parts)
             {
                 // No "Location Name"
-                if (count($parts) === 5) {
+                if (count($parts) === 4) {
                     $this->name = '';
+                    array_unshift($parts, null);
                 } else {
                     $this->name = $parts[0];
-                    array_unshift($parts, null);
                 }
 
                 $state_zip = explode(' ', $parts[3]);
+
                 $state = $state_zip[0];
                 $zip = $state_zip[1];
 

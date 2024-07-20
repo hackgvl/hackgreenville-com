@@ -20,7 +20,8 @@ class VenueData extends Data
         public ?float  $lat = 0,
         public ?float  $lon = 0,
         public ?string $country = 'US',
-    ) {
+    )
+    {
     }
 
     public function resolveVenue(EventData $data): Venue
@@ -41,6 +42,7 @@ class VenueData extends Data
     {
         return State::firstOrCreate([
             'abbr' => $this->state,
+        ], [
             'name' => $this->state,
         ]);
     }

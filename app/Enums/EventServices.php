@@ -23,7 +23,7 @@ enum EventServices: string implements HasLabel
         return match ($this) {
             self::ManuallyManaged => 'Managed Manually',
             self::MeetupRest => 'Meetup.com',
-            self::Luma => 'Lu.ma',
+            self::Luma => 'Luma',
             self::EventBrite => 'EventBrite.com',
             self::Nvite => 'Nvite (not implemented)',
             self::GetTogether => 'GetTogether (not implemented)',
