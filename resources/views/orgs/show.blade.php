@@ -25,6 +25,16 @@
                         </td>
                     </tr>
                 @endif
+                @if($org->uri)
+                    <tr>
+                        <th scope="row">
+                            Organization Homepage
+                        </th>
+                        <td>
+                            <a href="{{ $org->uri }}">{{ $org->uri }}</a>
+                        </td>
+                    </tr>
+                @endif
                 <tr>
                     <th scope="row">
                         City
