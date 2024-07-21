@@ -10,6 +10,8 @@ enum EventServices: string implements HasLabel
 
     case MeetupRest = 'meetup';
 
+    case Luma = 'luma';
+
     case EventBrite = 'eventbrite';
 
     case Nvite = 'nvite';
@@ -21,6 +23,7 @@ enum EventServices: string implements HasLabel
         return match ($this) {
             self::ManuallyManaged => 'Managed Manually',
             self::MeetupRest => 'Meetup.com',
+            self::Luma => 'Luma',
             self::EventBrite => 'EventBrite.com',
             self::Nvite => 'Nvite (not implemented)',
             self::GetTogether => 'GetTogether (not implemented)',

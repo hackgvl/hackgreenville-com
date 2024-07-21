@@ -41,6 +41,7 @@ class VenueData extends Data
     {
         return State::firstOrCreate([
             'abbr' => $this->state,
+        ], [
             'name' => $this->state,
         ]);
     }
