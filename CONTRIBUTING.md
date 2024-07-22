@@ -30,6 +30,7 @@
 - [Interacting with Your Running App](#interacting-with-your-running-app)
 - [Environment Variables](#environment-variables)
   - [Events API Configuration](#events-api-configuration)
+    - [Importing Events from Meetup GraphQL API](#importing-events-from-meetup-graphql-api)
 - [Admin Panel](#admin-panel)
 - [Synchronizing Your Fork with the Latest Development Code Changes](#synchronizing-your-fork-with-the-latest-development-code-changes)
 - [Contributing Code to the Project](#contributing-code-to-the-project)
@@ -345,6 +346,17 @@ Explanation of the .env defaults
 `EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's database to no more than 30 days in the past
 `EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the imported events saved in the Event API's database to no more than 365 days in the future
 `EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
+
+### Importing Events from Meetup GraphQL API
+In order to import events from organizations with a `meetup_graphql` service type, you will need to setup the following environment variables:
+
+`EVENT_IMPORTER_MEETUP_GRAPHQL_CLIENT_ID` - Your Meetup [OAuth client](https://www.meetup.com/api/oauth/list/)
+`EVENT_IMPORTER_MEETUP_GRAPHQL_MEMBER_ID` - Your Meetup user ID. You can find this user ID in the URL of your profile page or by running `query { self { id name } }` in the Meetup [GraphQL playground](https://www.meetup.com/api/playground/#graphQl-playground).
+`EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_ID` - The ID of a private key associated to your OAuth client. You'll be using this private key to [sign the JWT](https://www.meetup.com/api/authentication/#p04-jwt-flow-section) to request access tokens.
+
+You will need to import your Meetup OAuth client's private key into the `app-modules/event-importer/src/Providers/Keys` folder with the file name `meetup-graphql.pem`. Alternatively, you can set the `EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_PATH` to a path of your own choosing if you wish to place your private key elsewhere.
+
+**NOTE**: Meetup requires a [Pro account](https://www.meetup.com/meetup-pro/) in order to create an OAuth client.
 
 # Admin Panel
 The admin panel in this project is built in [Filament][filament_docs]. This package is also built on [Laravel Livewire][livewire_docs].
