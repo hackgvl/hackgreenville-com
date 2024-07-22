@@ -123,14 +123,90 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     {
         $bearer_token = $this->tokenProvider->getBearerToken();
 
+        $urlname = $this->org->service_api_key;
+        $skip = $this->next_page_url !== null ? ', after: ' . $this->next_page_url : '';
+
+        $query = <<<GQL
+        query {
+          groupByUrlname(urlname: "{$urlname}" ) {
+            id
+            name
+            pastEvents(input: { first: {$this->per_page_limit} }, sortOrder: DESC) {
+              edges {
+                cursor
+                node {
+                  id
+                  title
+                  eventUrl
+                  description
+                  dateTime
+                  eventType
+                  status
+                  going
+                  createdAt
+                  venue {
+                    id
+                    name
+                    address
+                    city
+                    state
+                    postalCode
+                    country
+                    lat
+                    lng
+                  }
+                }
+              }
+              pageInfo {
+                startCursor
+                endCursor
+                hasNextPage
+              }
+              count
+            }
+            upcomingEvents(input: { first: {$this->per_page_limit} {$skip} }, filter: { includeCancelled: true }, sortOrder: ASC) {
+              edges {
+                cursor
+                node {
+                  id
+                  title
+                  eventUrl
+                  description
+                  dateTime
+                  eventType
+                  status
+                  going
+                  createdAt
+                  venue {
+                    id
+                    name
+                    address
+                    city
+                    state
+                    postalCode
+                    country
+                    lat
+                    lng
+                  }
+                }
+              }
+              pageInfo {
+                startCursor
+                endCursor
+                hasNextPage
+              }
+              count
+            }
+          }
+        }
+        GQL;
+
         $response = Http::baseUrl('https://api.meetup.com/')
             ->withToken($bearer_token['access_token'])
             ->throw()
-            ->post("/gql");
-
-        if ($total_results = $response->header('X-Total-Count')) {
-            $this->page_count = ceil($total_results / $this->per_page_limit);
-        }
+            ->post("/gql", [
+                'query' => $query
+            ]);
 
         return $response;
     }
@@ -139,8 +215,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     // We need to filter the events ourselves
     private function filterEvents(array $events): array
     {
-        $start_date = now()->subDays($this->max_days_in_future)->startOfDay();
-        $end_date = now()->addDays($this->max_days_in_past)->startOfDay();
+        $start_date = now()->subDays($this->max_days_in_past)->startOfDay();
+        $end_date = now()->addDays($this->max_days_in_future)->startOfDay();
 
         $filtered_events = [];
 

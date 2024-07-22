@@ -109,10 +109,10 @@ class MeetupGraphqlTest extends DatabaseTestCase
         config()->set('event-import-handlers.max_days_in_past', 10);
         config()->set('event-import-handlers.max_days_in_future', 10);
 
-        config()->set('event-importer-handlers.meetup_graphql_private_key_path', __DIR__ . '/../fixtures/meetup-graphql/test_key.pem');
-        config()->set('event-importer-handlers.meetup_graphql_client_id', 'foo');
-        config()->set('event-importer-handlers.meetup_graphql_member_id', 'bar');
-        config()->set('event-importer-handlers.meetup_graphql_private_key_id', 'abc123');
+        config()->set('event-import-handlers.meetup_graphql_private_key_path', __DIR__ . '/../fixtures/meetup-graphql/test_key.pem');
+        config()->set('event-import-handlers.meetup_graphql_client_id', 'foo');
+        config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
+        config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
 
         Http::fake([
             'https://secure.meetup.com/oauth2/access' => Http::response(
