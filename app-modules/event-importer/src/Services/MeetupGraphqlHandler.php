@@ -88,9 +88,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
-        if (null === $this->next_page_url) {
-            $response = $this->initialApiCall();
-        }
+        $response = $this->getMeetupEvents();
 
         $this->determineNextPage($response);
 
@@ -119,12 +117,12 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $this->next_page_url = $upcomingEvents['pageInfo']['endCursor'];
     }
 
-    private function initialApiCall(): Response
+    private function getMeetupEvents(): Response
     {
         $bearer_token = $this->tokenProvider->getBearerToken();
 
         $urlname = $this->org->service_api_key;
-        $skip = $this->next_page_url !== null ? ', after: ' . $this->next_page_url : '';
+        $skip = $this->next_page_url !== null ? ', after: "' . $this->next_page_url . '"' : '';
 
         $query = <<<GQL
         query {
