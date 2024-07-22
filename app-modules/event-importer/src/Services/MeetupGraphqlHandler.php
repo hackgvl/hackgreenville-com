@@ -111,7 +111,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $pageInfo = $upcomingEvents['pageInfo'];
 
         if (false === $pageInfo['hasNextPage']) {
-            $this->next_page_url = null;
+          $this->next_page_url = null;
+          return;
         }
 
         $this->next_page_url = $upcomingEvents['pageInfo']['endCursor'];
