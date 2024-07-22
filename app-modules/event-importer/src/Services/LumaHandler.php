@@ -24,7 +24,7 @@ class LumaHandler extends AbstractEventHandler
             'id' => $data['event']['api_id'],
             'name' => $data['event']['name'],
             'description' => $data['calendar']['description_short'] ?? '',
-            'url' => "https://lu.ma/".$data['event']['url'],
+            'url' => "https://lu.ma/" . $data['event']['url'],
             'starts_at' => Carbon::parse($data['event']['start_at'])->setTimezone($data['event']['timezone']),
             'event_type' => match ($data['event']['location_type']) {
                 'online', 'zoom', => EventType::Online,
@@ -63,7 +63,7 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        if (!isset($data['event']['geo_address_info']['full_address'])) {
+        if ( ! isset($data['event']['geo_address_info']['full_address'])) {
             Log::warning('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
