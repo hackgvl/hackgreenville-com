@@ -63,7 +63,6 @@ class EventResource extends Resource
                         Forms\Components\DateTimePicker::make('active_at')
                             ->label('Event Date')
                             ->date()
-                            ->time(false)
                             ->required(),
 
                         Forms\Components\DateTimePicker::make('cancelled_at')

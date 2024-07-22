@@ -12,6 +12,8 @@ enum EventServices: string implements HasLabel
 
     case MeetupGraphql = 'meetup_graphql';
 
+    case Luma = 'luma';
+
     case EventBrite = 'eventbrite';
 
     case Nvite = 'nvite';
@@ -24,6 +26,7 @@ enum EventServices: string implements HasLabel
             self::ManuallyManaged => 'Managed Manually',
             self::MeetupRest => 'Meetup.com',
             self::MeetupGraphql => 'Meetup.com (GraphQL)',
+            self::Luma => 'Luma',
             self::EventBrite => 'EventBrite.com',
             self::Nvite => 'Nvite (not implemented)',
             self::GetTogether => 'GetTogether (not implemented)',
