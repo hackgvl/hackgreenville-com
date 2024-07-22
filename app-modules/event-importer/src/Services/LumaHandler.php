@@ -53,24 +53,18 @@ class LumaHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        if (Arr::get($data['event'], 'virtual_info.has_access', false)) {
-            Log::warning('Lu.ma - Missing Geo Address Info', [
-                'data' => $data,
-            ]);
-
+        // No Address information
+        if (null === $data['event']['geo_address_info']) {
             return null;
         }
 
-        if (null === $data['event']['geo_address_info']) {
-            Log::warning('Lu.ma - Missing Geo Address Info', [
-                'data' => $data,
-            ]);
-
+        // Virtual Event
+        if (Arr::get($data['event'], 'virtual_info.has_access', false)) {
             return null;
         }
 
         if ( ! isset($data['event']['geo_address_info']['full_address'])) {
-            Log::warning('Lu.ma - Missing Full Address', [
+            Log::warning('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
 
@@ -80,7 +74,7 @@ class LumaHandler extends AbstractEventHandler
         $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
 
         if (count($parts) < 4) {
-            Log::warning('Lu.ma - Not enough address data', [
+            Log::warning('Luma - Not enough address data', [
                 'data' => $data,
             ]);
 
@@ -91,7 +85,7 @@ class LumaHandler extends AbstractEventHandler
             $address = $this->parseGoogleAddress($parts);
 
         } catch (Throwable $exception) {
-            Log::warning('Lu.ma - Unable to parse address.', [
+            Log::warning('Luma - Unable to parse address.', [
                 'data' => $data,
             ]);
 
