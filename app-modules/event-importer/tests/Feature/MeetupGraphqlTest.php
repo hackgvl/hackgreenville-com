@@ -97,11 +97,6 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $this->assertNull($event);
     }
 
-    protected function getMeetupUrl(): string
-    {
-        return 'https://api.meetup.com/gql';
-    }
-
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);
@@ -114,8 +109,20 @@ class MeetupGraphqlTest extends DatabaseTestCase
         config()->set('event-import-handlers.max_days_in_past', 10);
         config()->set('event-import-handlers.max_days_in_future', 10);
 
+        config()->set('event-importer-handlers.meetup_graphql_private_key_path', __DIR__ . '/../fixtures/meetup-graphql/test_key.pem');
+        config()->set('event-importer-handlers.meetup_graphql_client_id', 'foo');
+        config()->set('event-importer-handlers.meetup_graphql_member_id', 'bar');
+        config()->set('event-importer-handlers.meetup_graphql_private_key_id', 'abc123');
+
         Http::fake([
-            $this->getMeetupUrl() => Http::response(
+            'https://secure.meetup.com/oauth2/access' => Http::response(
+                $this->apiResponse('example-access-token.json'),
+                200
+            ),
+        ]);
+
+        Http::fake([
+            'https://api.meetup.com/gql' => Http::response(
                 $this->apiResponse('example-group.json'),
                 200
             ),

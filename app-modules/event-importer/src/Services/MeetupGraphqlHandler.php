@@ -4,9 +4,11 @@ namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
 use App\Enums\EventType;
+use App\Models\Org;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
+use HackGreenville\EventImporter\Providers\MeetupGraphqlTokenProvider;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
@@ -16,6 +18,14 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 {
     protected ?string $next_page_url = null;
     protected int $per_page_limit = 100;
+    protected MeetupGraphqlTokenProvider $tokenProvider;
+
+    public function __construct(
+        public Org $org
+    ) {
+        $this->tokenProvider = new MeetupGraphqlTokenProvider;
+        parent::__construct($org);
+    }
 
     protected function mapIntoEventData(array $data): EventData
     {
@@ -111,7 +121,10 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     private function initialApiCall(): Response
     {
+        $bearer_token = $this->tokenProvider->getBearerToken();
+
         $response = Http::baseUrl('https://api.meetup.com/')
+            ->withToken($bearer_token['access_token'])
             ->throw()
             ->post("/gql");
 
@@ -122,6 +135,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         return $response;
     }
 
+    // Meetup's GraphQL API does not support date filtering on its API
+    // We need to filter the events ourselves
     private function filterEvents(array $events): array
     {
         $start_date = now()->subDays($this->max_days_in_future)->startOfDay();
