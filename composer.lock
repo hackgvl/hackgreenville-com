@@ -4640,16 +4640,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.48.16",
+            "version": "v10.48.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f9a3a50fae399d75e125b0eea637dda90c99eae7"
+                "reference": "60f3c8f667b24a09e0392e26b1f40fb9067cdc3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f9a3a50fae399d75e125b0eea637dda90c99eae7",
-                "reference": "f9a3a50fae399d75e125b0eea637dda90c99eae7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/60f3c8f667b24a09e0392e26b1f40fb9067cdc3c",
+                "reference": "60f3c8f667b24a09e0392e26b1f40fb9067cdc3c",
                 "shasum": ""
             },
             "require": {
@@ -4843,7 +4843,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-07-09T15:25:22+00:00"
+            "time": "2024-07-23T16:06:06+00:00"
         },
         {
             "name": "laravel/helpers",
@@ -12166,16 +12166,16 @@
         },
         {
             "name": "imanghafoori/laravel-microscope",
-            "version": "v1.0.351",
+            "version": "v1.0.357",
             "source": {
                 "type": "git",
                 "url": "https://github.com/imanghafoori1/laravel-microscope.git",
-                "reference": "8836018ffe460ae37076efd480d52d284136dfd4"
+                "reference": "bfa8ceec05148000d9af60ca8d376a4730a986ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imanghafoori1/laravel-microscope/zipball/8836018ffe460ae37076efd480d52d284136dfd4",
-                "reference": "8836018ffe460ae37076efd480d52d284136dfd4",
+                "url": "https://api.github.com/repos/imanghafoori1/laravel-microscope/zipball/bfa8ceec05148000d9af60ca8d376a4730a986ea",
+                "reference": "bfa8ceec05148000d9af60ca8d376a4730a986ea",
                 "shasum": ""
             },
             "require": {
@@ -12232,9 +12232,9 @@
             ],
             "support": {
                 "issues": "https://github.com/imanghafoori1/laravel-microscope/issues",
-                "source": "https://github.com/imanghafoori1/laravel-microscope/tree/v1.0.351"
+                "source": "https://github.com/imanghafoori1/laravel-microscope/tree/v1.0.357"
             },
-            "time": "2024-07-10T21:08:31+00:00"
+            "time": "2024-07-21T16:46:37+00:00"
         },
         {
             "name": "imanghafoori/php-abstract-filesystem",
