@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\Contracts\CalendarContract;
 use App\Http\Clients\GoogleCalendar;
-use App\Http\Clients\UpstateClient;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
