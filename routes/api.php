@@ -11,4 +11,3 @@
 |
 */
 
-Route::get('/homepage/events', 'HomepageController@events')->name('homepage.timeline');
