@@ -26,6 +26,7 @@ class LumaHandler extends AbstractEventHandler
             'description' => $data['calendar']['description_short'] ?? '',
             'url' => "https://lu.ma/" . $data['event']['url'],
             'starts_at' => Carbon::parse($data['event']['start_at'])->setTimezone($data['event']['timezone']),
+            'ends_at' => Carbon::parse($data['event']['end_at'])->setTimezone($data['event']['timezone']),
             'event_type' => match ($data['event']['location_type']) {
                 'online', 'zoom', => EventType::Online,
                 'offline', 'unknown' => EventType::Live,

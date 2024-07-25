@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use App\Enums\EventServices;
-use App\Http\SearchPipeline\Active;
-use App\Http\SearchPipeline\Month;
+use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use DB;
@@ -12,7 +11,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Routing\Pipeline;
 use RuntimeException;
 
 /**
@@ -93,6 +91,7 @@ class Event extends BaseModel
         'cancelled_at' => 'datetime',
         'service_id' => 'string',
         'service' => EventServices::class,
+        'visibility' => EventVisibility::class,
     ];
 
     protected $appends = [
@@ -118,6 +117,11 @@ class Event extends BaseModel
     public function organization(): BelongsTo
     {
         return $this->belongsTo(Org::class, 'organization_id');
+    }
+
+    public function scopePublished(Builder $query): void
+    {
+        $query->where('visibility', EventVisibility::Published);
     }
 
     public function scopeFuture(Builder $query)
@@ -149,20 +153,6 @@ class Event extends BaseModel
                     date('Y-m-d', strtotime($end)),
                 ],
             );
-    }
-
-    public function scopeSearch(Builder $query)
-    {
-        return app(Pipeline::class)
-            ->send($query)
-            ->through(
-                [
-                    // Get the active events
-                    Active::class,
-                    Month::class,
-                ],
-            )
-            ->thenReturn();
     }
 
     /**
