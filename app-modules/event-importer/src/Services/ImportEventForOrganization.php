@@ -25,7 +25,6 @@ class ImportEventForOrganization
                     'venue_id' => $data->hasVenue()
                         ? $data->venue->resolveVenue($data)->id
                         : null,
-                    'cache' => [],
                     'event_uuid' => $data->uniqueIdentifierHash(),
                     'organization_id' => $org->id,
                 ]
