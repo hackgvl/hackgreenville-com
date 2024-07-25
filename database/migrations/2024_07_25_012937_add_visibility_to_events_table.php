@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::table('events', function(Blueprint $table) {
-            $table->string('visibility')->after('uri')->default(\App\Enums\EventVisibility::Published);
+        Schema::table('events', function (Blueprint $table) {
+            $table->string('visibility')->after('uri')->default(App\Enums\EventVisibility::Published);
         });
     }
 
     public function down(): void
     {
-        Schema::table('events', function(Blueprint $table) {
+        Schema::table('events', function (Blueprint $table) {
             $table->dropColumn('visibility');
         });
     }
