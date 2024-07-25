@@ -52,6 +52,10 @@ class OrgResource extends Resource
                             ->required()
                             ->maxLength(255),
 
+                        Forms\Components\TextInput::make('organization_type')
+                            ->datalist(Org::distinct()->pluck('organization_type'))
+                            ->required(),
+
                         Forms\Components\Select::make('category_id')
                             ->relationship(name: 'category', titleAttribute: 'label')
                             ->required(),
