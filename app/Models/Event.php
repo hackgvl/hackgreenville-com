@@ -28,7 +28,6 @@ use RuntimeException;
  * @property \Illuminate\Support\Carbon|null $cancelled_at
  * @property string $uri
  * @property int|null $venue_id
- * @property array $cache
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -55,7 +54,6 @@ use RuntimeException;
  * @method static Builder|Event search()
  * @method static Builder|Event startOfMonth()
  * @method static Builder|Event whereActiveAt($value)
- * @method static Builder|Event whereCache($value)
  * @method static Builder|Event whereCancelledAt($value)
  * @method static Builder|Event whereCreatedAt($value)
  * @method static Builder|Event whereDeletedAt($value)
@@ -85,7 +83,6 @@ class Event extends BaseModel
     protected $table = 'events';
 
     protected $casts = [
-        'cache' => 'json',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
@@ -95,10 +92,6 @@ class Event extends BaseModel
         'service_id' => 'string',
         'service' => EventServices::class,
         'visibility' => EventVisibility::class,
-    ];
-
-    protected $attributes = [
-        'cache' => '{}',
     ];
 
     protected $appends = [

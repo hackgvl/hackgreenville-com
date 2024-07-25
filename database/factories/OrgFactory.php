@@ -24,7 +24,6 @@ class OrgFactory extends Factory
             'organization_type' => $this->faker->word(),
             'event_calendar_uri' => $this->faker->url(),
             'established_at' => now(),
-            'cache' => $this->faker->words(),
             'status' => OrganizationStatus::Active,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
