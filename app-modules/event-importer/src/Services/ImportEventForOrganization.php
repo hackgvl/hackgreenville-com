@@ -20,6 +20,7 @@ class ImportEventForOrganization
                     'description' => $data->description,
                     'rsvp_count' => $data->rsvp,
                     'active_at' => $data->starts_at,
+                    'expire_at' => $data->ends_at,
                     'cancelled_at' => $data->cancelled_at,
                     'uri' => $data->url,
                     'venue_id' => $data->hasVenue()
