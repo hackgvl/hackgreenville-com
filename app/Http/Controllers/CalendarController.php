@@ -26,7 +26,7 @@ class CalendarController extends Controller
                 $request->date('end'),
             ])
             ->get()
-            ->map(function(Event $event) {
+            ->map(function (Event $event) {
                 return [
                     'start' => $event->active_at,
                     'start_fmt' => $event->active_at->copy()->utc()->format('Ymd\THi00\Z'),
@@ -34,11 +34,11 @@ class CalendarController extends Controller
                     'end' => $event->active_at->copy()->addHours(2),
                     'end_fmt' => $event->active_at->copy()->addHours(2)->utc()->format('Ymd\THi00\Z'),
 
-                    'title' => str($event->organization->title."\n".$event->event_name)
-                        ->when($event->isCancelled(), fn(Stringable $str) => $str->prepend('[CANCELLED] '))
+                    'title' => str($event->organization->title . "\n" . $event->event_name)
+                        ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('[CANCELLED] '))
                         ->toString(),
                     'description' => str($event->description)
-                        ->when($event->isCancelled(), fn(Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
+                        ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
                     'allDay' => false,
                     'cancelled' => $event->isCancelled(),
                     'color' => match (true) {
