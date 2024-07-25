@@ -22,8 +22,8 @@ class CalendarController extends Controller
 
         $events = Event::query()
             ->whereBetween('active_at', [
-                $request->date('start'),
-                $request->date('end'),
+                $request->date('start')->startOfDay(),
+                $request->date('end')->endOfDay(),
             ])
             ->get()
             ->map(function (Event $event) {
