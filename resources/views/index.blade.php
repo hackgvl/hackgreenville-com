@@ -116,7 +116,7 @@
                                             <div class="timeline-body">
                                                 <div>
                                                     <button
-                                                        onClick="showMoreTimeline('{{addslashes($event->toJson()) }}')"
+                                                        onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => $event->description]))"
                                                         class="btn btn-secondary"
                                                         type="button"
                                                     >

@@ -23,6 +23,7 @@ class CalendarController extends Controller
         $end   = Carbon::parse(request('end'));
 
         Event::datesBetween($start, $end)
+            ->with('organization', 'venue.state')
             ->each(
                 function ($e) use ($calendar) {
                     $calendar->addEvent(

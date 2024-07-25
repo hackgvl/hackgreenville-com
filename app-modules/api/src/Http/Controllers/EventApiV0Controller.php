@@ -13,6 +13,7 @@ class EventApiV0Controller
     {
         return new EventCollection(
             resource: Event::query()
+                ->published()
                 ->when($request->filled('start_date'), function (Builder $query) use ($request) {
                     $query->where('active_at', '>=', $request->date('start_date')->startOfDay());
                 })
