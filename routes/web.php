@@ -17,8 +17,8 @@ Route::get('/events', [EventsController::class, 'index'])->name('events.index');
 Route::get('/labs', [LabsController::class, 'index'])->name('labs.index');
 Route::get('/hg-nights', [HGNightsController::class, 'index'])->name('hg-nights.index');
 Route::get('/give', [GiveController::class, 'index'])->name('give');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/code-of-conduct', [HomeController::class, 'code_of_conduct'])->name('code-of-conduct');
+Route::get('/about', fn () => view('about'))->name('about');
+Route::get('/code-of-conduct', fn () => view('code-of-conduct'))->name('code-of-conduct');
 
 Route::get('/orgs', [OrgsController::class, 'index'])->name('orgs.index');
 Route::get('/orgs/{org:slug}', [OrgsController::class, 'show'])->name('orgs.show');
