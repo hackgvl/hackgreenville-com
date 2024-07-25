@@ -18,6 +18,7 @@ class EventData extends Data
         public string         $url,
         public ?int           $rsvp,
         public Carbon         $starts_at,
+        public Carbon         $ends_at,
         public null|Carbon    $cancelled_at,
         public EventType      $event_type,
         public EventServices  $service,

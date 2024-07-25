@@ -54,6 +54,7 @@ class EventBriteTest extends DatabaseTestCase
 
         $this->assertEquals(null, $active_event->rsvp_count);
         $this->assertEquals('2018-03-10 08:30:00', $active_event->active_at->toDateTimeString());
+        $this->assertEquals('2018-03-10 17:30:00', $active_event->expire_at->toDateTimeString());
         $this->assertEquals('https://www.eventbrite.com/e/bsides-greenville-2018-tickets-39146789100', $active_event->url);
         $this->assertNull($active_event->cancelled_at);
 
