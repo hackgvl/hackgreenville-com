@@ -79,6 +79,7 @@ class LumaTest extends DatabaseTestCase
 
         $this->assertEquals(null, $event2->rsvp_count);
         $this->assertEquals('2024-09-03 11:30:00', $event2->active_at->toDateTimeString());
+        $this->assertEquals('2024-09-03 12:30:00', $event2->expire_at->toDateTimeString());
         $this->assertEquals('https://lu.ma/0w9vm5fw', $event2->url);
         $this->assertNull($event2->cancelled_at);
 
@@ -111,6 +112,7 @@ class LumaTest extends DatabaseTestCase
         $this->assertStringContainsString('hello world', $event2->description);
 
         $this->assertEquals('2024-07-19 21:30:00', $event2->active_at->toDateTimeString());
+        $this->assertEquals('2024-07-19 22:30:00', $event2->expire_at->toDateTimeString());
         $this->assertEquals('https://lu.ma/n9gijqux', $event2->url);
         $this->assertNull($event2->cancelled_at);
         $this->assertEquals('upcoming', $event2->status);
