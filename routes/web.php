@@ -13,6 +13,7 @@ use App\Http\Controllers\StyleController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
+Route::get('/calendar/data', [CalendarController::class, 'data'])->name('calendar.data');
 Route::get('/events', [EventsController::class, 'index'])->name('events.index');
 Route::get('/labs', [LabsController::class, 'index'])->name('labs.index');
 Route::get('/hg-nights', [HGNightsController::class, 'index'])->name('hg-nights.index');

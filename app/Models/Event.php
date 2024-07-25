@@ -251,4 +251,9 @@ class Event extends BaseModel
             ->getEventHandler()
             ->eventExistsOnService($this);
     }
+
+    public function isCancelled(): bool
+    {
+        return null !== $this->cancelled_at;
+    }
 }
