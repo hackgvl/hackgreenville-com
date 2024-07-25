@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\CalendarContract;
-use App\Http\Clients\GoogleCalendar;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,10 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
-            CalendarContract::class,
-            fn () => new GoogleCalendar
-        );
+        Model::preventLazyLoading($this->app->environment('local'));
 
         if(config('telescope.enabled')) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);

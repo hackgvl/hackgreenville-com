@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use App\Enums\EventServices;
-use App\Http\SearchPipeline\Active;
-use App\Http\SearchPipeline\Month;
+use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use DB;
@@ -12,7 +11,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Routing\Pipeline;
 use RuntimeException;
 
 /**
@@ -30,7 +28,6 @@ use RuntimeException;
  * @property \Illuminate\Support\Carbon|null $cancelled_at
  * @property string $uri
  * @property int|null $venue_id
- * @property array $cache
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -57,7 +54,6 @@ use RuntimeException;
  * @method static Builder|Event search()
  * @method static Builder|Event startOfMonth()
  * @method static Builder|Event whereActiveAt($value)
- * @method static Builder|Event whereCache($value)
  * @method static Builder|Event whereCancelledAt($value)
  * @method static Builder|Event whereCreatedAt($value)
  * @method static Builder|Event whereDeletedAt($value)
@@ -87,7 +83,6 @@ class Event extends BaseModel
     protected $table = 'events';
 
     protected $casts = [
-        'cache' => 'json',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
@@ -96,10 +91,7 @@ class Event extends BaseModel
         'cancelled_at' => 'datetime',
         'service_id' => 'string',
         'service' => EventServices::class,
-    ];
-
-    protected $attributes = [
-        'cache' => '{}',
+        'visibility' => EventVisibility::class,
     ];
 
     protected $appends = [
@@ -125,6 +117,11 @@ class Event extends BaseModel
     public function organization(): BelongsTo
     {
         return $this->belongsTo(Org::class, 'organization_id');
+    }
+
+    public function scopePublished(Builder $query): void
+    {
+        $query->where('visibility', EventVisibility::Published);
     }
 
     public function scopeFuture(Builder $query)
@@ -156,20 +153,6 @@ class Event extends BaseModel
                     date('Y-m-d', strtotime($end)),
                 ],
             );
-    }
-
-    public function scopeSearch(Builder $query)
-    {
-        return app(Pipeline::class)
-            ->send($query)
-            ->through(
-                [
-                    // Get the active events
-                    Active::class,
-                    Month::class,
-                ],
-            )
-            ->thenReturn();
     }
 
     /**
@@ -267,5 +250,10 @@ class Event extends BaseModel
         return ! $this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
+    }
+
+    public function isCancelled(): bool
+    {
+        return null !== $this->cancelled_at;
     }
 }

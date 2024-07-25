@@ -8,11 +8,9 @@ import './bootstrap';
 
 $('.loading').hide().removeClass('d-none');
 
-window.showMoreTimeline = function (e) {
-  const event = JSON.parse(e);
-
+window.showMoreTimeline = function (event) {
   Swal.fire({
     title: event.title,
-    html: event.description,
+    html: event.html,
   });
 };
