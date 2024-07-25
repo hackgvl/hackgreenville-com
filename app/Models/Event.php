@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use App\Enums\EventServices;
-use App\Http\SearchPipeline\Active;
-use App\Http\SearchPipeline\Month;
+use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use DB;
@@ -12,7 +11,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Routing\Pipeline;
 use RuntimeException;
 
 /**
@@ -96,6 +94,7 @@ class Event extends BaseModel
         'cancelled_at' => 'datetime',
         'service_id' => 'string',
         'service' => EventServices::class,
+        'visibility' => EventVisibility::class,
     ];
 
     protected $attributes = [
@@ -127,6 +126,11 @@ class Event extends BaseModel
         return $this->belongsTo(Org::class, 'organization_id');
     }
 
+    public function scopePublished(Builder $query): void
+    {
+        $query->where('visibility', EventVisibility::Published);
+    }
+
     public function scopeFuture(Builder $query)
     {
         $query->where('active_at', '>=', DB::raw('NOW()'));
@@ -156,20 +160,6 @@ class Event extends BaseModel
                     date('Y-m-d', strtotime($end)),
                 ],
             );
-    }
-
-    public function scopeSearch(Builder $query)
-    {
-        return app(Pipeline::class)
-            ->send($query)
-            ->through(
-                [
-                    // Get the active events
-                    Active::class,
-                    Month::class,
-                ],
-            )
-            ->thenReturn();
     }
 
     /**
@@ -226,17 +216,17 @@ class Event extends BaseModel
         $location = '';
 
         if (property_exists($this, 'venue') && ($this->venue !== null)) {
-            $location .= $this->venue->name . ', ';
-            $location .= $this->venue->address . ', ';
-            $location .= $this->venue->city . ', ';
+            $location .= $this->venue->name.', ';
+            $location .= $this->venue->address.', ';
+            $location .= $this->venue->city.', ';
             $location .= $this->venue->state;
         }
 
         $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
-        $calendar_url .= 'text=' . urlencode($this->event_name) . '&';
+        $calendar_url .= 'text='.urlencode($this->event_name).'&';
         $calendar_url .= "dates={$start_time}/{$end_time}&";
-        $calendar_url .= 'details=' . urlencode(strip_tags($this->description)) . '&';
-        $calendar_url .= 'location=' . urlencode($location) . '&';
+        $calendar_url .= 'details='.urlencode(strip_tags($this->description)).'&';
+        $calendar_url .= 'location='.urlencode($location).'&';
         $calendar_url .= "trp=false&";
 
         return $calendar_url;
@@ -264,7 +254,7 @@ class Event extends BaseModel
 
     public function doesNotExistOnEventService(): bool
     {
-        return ! $this->organization
+        return !$this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
     }

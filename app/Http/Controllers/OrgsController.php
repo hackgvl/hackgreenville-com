@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Org;
+use Illuminate\Contracts\Database\Query\Builder;
 
 class OrgsController extends Controller
 {
@@ -11,7 +12,7 @@ class OrgsController extends Controller
         $activeOrgs = Org::with('category')
             ->orderBy('title')
             ->get()
-            ->sortBy(function (Org $org) {
+            ->sortBy(function(Org $org) {
                 return $org->category->isInactive()
                     ? PHP_INT_MAX
                     : $org->category->count();
@@ -25,9 +26,11 @@ class OrgsController extends Controller
     {
         return view('orgs.show', [
             'org' => $org->load([
-                'events' => function ($query) {
+                'events' => function(Builder $query) {
                     $query
+                        ->with('organization')
                         ->future()
+                        ->published()
                         ->orderBy('active_at')
                         ->limit(5);
                 },

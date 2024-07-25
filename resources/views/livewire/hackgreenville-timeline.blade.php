@@ -12,13 +12,13 @@
             @foreach ($events as $event)
                 <li class="timeline-inverted">
                     <div class="timeline-badge bg-success">
-                        <i class="fa fa-calendar" ></i>
+                        <i class="fa fa-calendar"></i>
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4 class="timeline-title">
                                 @if($event['cancelled_at'])
-                                <span class="text-danger">
+                                    <span class="text-danger">
                                     [CANCELLED]
                                 </span>
                                 @endif
@@ -27,14 +27,14 @@
                             <p class="timeline-subtitle h6">{{ $event['group_name'] }}</p>
                             <p>
                                 <small class="text-muted">
-                                    <i class="fa fa-calendar"  ></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/d h:i A') }}
+                                    <i class="fa fa-calendar"></i> {{ \Carbon\Carbon::parse($event['active_at'])->format('M/d h:i A') }}
                                 </small>
                             </p>
                         </div>
                         <div class="timeline-body">
                             <div>
                                 <button
-                                    onClick="showMoreTimeline('{{addslashes($event->toJson()) }}')"
+                                    onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => $event->description]))"
                                     class="btn btn-secondary"
                                     type="button"
                                 >
