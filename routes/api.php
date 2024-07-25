@@ -11,5 +11,4 @@
 |
 */
 
-Route::get('/calendar', 'CalendarController@index');
 Route::get('/homepage/events', 'HomepageController@events')->name('homepage.timeline');

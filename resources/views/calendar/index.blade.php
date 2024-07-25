@@ -24,7 +24,7 @@
                     right: 'listWeek,dayGridMonth,dayGridDay,prev,next' // user can switch between the two
                 },
                 events: {
-                    url: '/api/calendar',
+                    url: '{{ route('calendar.data') }}',
                 },
                 loading: function (isLoading, view) {
                     if (isLoading) {// isLoading gives boolean value
