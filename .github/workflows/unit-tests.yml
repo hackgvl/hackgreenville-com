@@ -5,17 +5,6 @@ on:
     branches:
      - master
      - develop
-    paths:
-      - 'app/**'
-      - 'bootstrap/**'
-      - 'config/**'
-      - 'database/**'
-      - 'public/**'
-      - 'resources/**'
-      - 'routes/**'
-      - 'storage/**'
-      - 'style-guide/**'
-      - 'tests/**'
 
 jobs:
   tests:
