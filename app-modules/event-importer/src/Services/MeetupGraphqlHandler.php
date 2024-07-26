@@ -217,7 +217,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     private function filterEvents(array $events): array
     {
         $start_date = now()->subDays($this->max_days_in_past)->startOfDay();
-        $end_date = now()->addDays($this->max_days_in_future)->startOfDay();
+        $end_date = now()->addDays($this->max_days_in_future)->endOfDay();
 
         $filtered_events = [];
 
