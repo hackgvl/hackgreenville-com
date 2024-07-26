@@ -8450,16 +8450,16 @@
         },
         {
             "name": "spatie/laravel-data",
-            "version": "4.7.1",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-data.git",
-                "reference": "b7e10d345c059ff1de04168ec1d75b65157ac5a1"
+                "reference": "8980ee53f03721428c21b0b32ef662f85b277403"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-data/zipball/b7e10d345c059ff1de04168ec1d75b65157ac5a1",
-                "reference": "b7e10d345c059ff1de04168ec1d75b65157ac5a1",
+                "url": "https://api.github.com/repos/spatie/laravel-data/zipball/8980ee53f03721428c21b0b32ef662f85b277403",
+                "reference": "8980ee53f03721428c21b0b32ef662f85b277403",
                 "shasum": ""
             },
             "require": {
@@ -8522,7 +8522,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-data/issues",
-                "source": "https://github.com/spatie/laravel-data/tree/4.7.1"
+                "source": "https://github.com/spatie/laravel-data/tree/4.7.2"
             },
             "funding": [
                 {
@@ -8530,7 +8530,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-25T11:01:36+00:00"
+            "time": "2024-07-25T11:17:44+00:00"
         },
         {
             "name": "spatie/laravel-google-calendar",
