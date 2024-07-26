@@ -36,6 +36,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'description' => $event['description'],
             'url' => $event['eventUrl'],
             'starts_at' => Carbon::parse($event['dateTime']),
+            // Meetup (graphql) does not provide an event end time
+            'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
             'event_type' => match ($event['eventType']) {
                 'ONLINE' => EventType::Online,
                 'PHYSICAL' => EventType::Live,
