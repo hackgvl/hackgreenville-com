@@ -4,11 +4,10 @@ namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
 use App\Enums\EventType;
-use App\Models\Org;
 use Carbon\Carbon;
+use Firebase\JWT\JWT;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
-use HackGreenville\EventImporter\Providers\MeetupGraphqlTokenProvider;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
@@ -18,14 +17,6 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 {
     protected ?string $next_page_url = null;
     protected int $per_page_limit = 100;
-    protected MeetupGraphqlTokenProvider $tokenProvider;
-
-    public function __construct(
-        public Org $org
-    ) {
-        $this->tokenProvider = new MeetupGraphqlTokenProvider;
-        parent::__construct($org);
-    }
 
     protected function mapIntoEventData(array $data): EventData
     {
@@ -113,8 +104,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $pageInfo = $upcomingEvents['pageInfo'];
 
         if (false === $pageInfo['hasNextPage']) {
-          $this->next_page_url = null;
-          return;
+            $this->next_page_url = null;
+            return;
         }
 
         $this->next_page_url = $upcomingEvents['pageInfo']['endCursor'];
@@ -122,7 +113,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     private function getMeetupEvents(): Response
     {
-        $bearer_token = $this->tokenProvider->getBearerToken();
+        $bearer_token = $this->getBearerToken();
 
         $urlname = $this->org->service_api_key;
         $skip = $this->next_page_url !== null ? ', after: "' . $this->next_page_url . '"' : '';
@@ -231,5 +222,33 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         }
 
         return $filtered_events;
+    }
+
+    private function getBearerToken()
+    {
+        $jwt_key = $this->getJwtKey();
+
+        $response = Http::asForm()->throw()->post('https://secure.meetup.com/oauth2/access', [
+            'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+            'assertion' => $jwt_key,
+        ]);
+
+        return $response->json();
+    }
+
+    private function getJwtKey()
+    {
+        $privateKey = file_get_contents(config('event-import-handlers.meetup_graphql_private_key_path'));
+        $headers = [
+            'kid' => config('event-import-handlers.meetup_graphql_private_key_id'),
+        ];
+        $payload = [
+            'iss' => config('event-import-handlers.meetup_graphql_client_id'),
+            'sub' => config('event-import-handlers.meetup_graphql_member_id'),
+            'aud' => 'api.meetup.com',
+            'iat' => time(),
+            'exp' => time() + 240,
+        ];
+        return JWT::encode($payload, $privateKey, 'RS256', null, $headers);
     }
 }
