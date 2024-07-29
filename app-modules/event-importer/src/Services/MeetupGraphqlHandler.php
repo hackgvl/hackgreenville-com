@@ -12,6 +12,7 @@ use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
+use RuntimeException;
 
 class MeetupGraphqlHandler extends AbstractEventHandler
 {
@@ -226,6 +227,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     private function getBearerToken()
     {
+        $this->validateConfigValues();
+
         $jwt_key = $this->getJwtKey();
 
         $response = Http::asForm()->throw()->post('https://secure.meetup.com/oauth2/access', [
@@ -238,7 +241,13 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     private function getJwtKey()
     {
-        $privateKey = file_get_contents(config('event-import-handlers.meetup_graphql_private_key_path'));
+        $file_path = config('event-import-handlers.meetup_graphql_private_key_path');
+
+        if ( ! file_exists($file_path)) {
+            throw new RuntimeException('File path ' . $file_path . ' does not exist.');
+        }
+
+        $privateKey = file_get_contents($file_path);
         $headers = [
             'kid' => config('event-import-handlers.meetup_graphql_private_key_id'),
         ];
@@ -250,5 +259,24 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'exp' => time() + 240,
         ];
         return JWT::encode($payload, $privateKey, 'RS256', null, $headers);
+    }
+
+    private function validateConfigValues(): void
+    {
+        if (config('event-import-handlers.meetup_graphql_client_id') === null) {
+            throw new RuntimeException('meetup_graphql_client_id config value must be set.');
+        }
+
+        if (config('event-import-handlers.meetup_graphql_member_id') === null) {
+            throw new RuntimeException('meetup_graphql_member_id config value must be set.');
+        }
+
+        if (config('event-import-handlers.meetup_graphql_private_key_id') === null) {
+            throw new RuntimeException('meetup_graphql_private_key_id config value must be set.');
+        }
+
+        if (config('event-import-handlers.meetup_graphql_private_key_path') === null) {
+            throw new RuntimeException('meetup_graphql_private_key_path config value must be set.');
+        }
     }
 }

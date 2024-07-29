@@ -15,6 +15,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_meetup_event_is_imported_correctly(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $organization = $this->getOrganization();
         $event = $this->queryEvent('301411834');
@@ -39,6 +40,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_meetup_event_venue_data_is_imported_correctly(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $event = $this->queryEvent('301411834');
         $venue = $event->venue;
@@ -55,6 +57,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_cancelled_meetup_event_is_imported_correctly(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $cancelled_event = $this->queryEvent('302190057');
 
@@ -64,6 +67,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_past_meetup_event_is_imported_correctly(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $past_event = $this->queryEvent('301559297');
 
@@ -73,6 +77,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_online_event_venue_is_null(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $event = $this->queryEvent('pwdqjtygcpbkb');
 
@@ -82,6 +87,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_past_meetup_event_past_max_days_not_imported(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $event = $this->queryEvent('300699290');
 
@@ -91,10 +97,62 @@ class MeetupGraphqlTest extends DatabaseTestCase
     public function test_upcoming_meetup_event_past_max_days_not_imported(): void
     {
         $this->setupTest();
+        $this->runImportCommand();
 
         $event = $this->queryEvent('pwdqjtygcqbhb');
 
         $this->assertNull($event);
+    }
+
+    public function test_config_validation_fails_with_missing_client_id(): void
+    {
+        $this->setupTest();
+        config()->set('event-import-handlers.meetup_graphql_client_id', null);
+
+        $this->expectExceptionMessage('meetup_graphql_client_id config value must be set.');
+
+        $this->runImportCommand();
+    }
+
+    public function test_config_validation_fails_with_missing_member_id(): void
+    {
+        $this->setupTest();
+        config()->set('event-import-handlers.meetup_graphql_member_id', null);
+
+        $this->expectExceptionMessage('meetup_graphql_member_id config value must be set.');
+
+        $this->runImportCommand();
+    }
+
+    public function test_config_validation_fails_with_missing_private_key_id(): void
+    {
+        $this->setupTest();
+        config()->set('event-import-handlers.meetup_graphql_private_key_id', null);
+
+        $this->expectExceptionMessage('meetup_graphql_private_key_id config value must be set.');
+
+        $this->runImportCommand();
+    }
+
+    public function test_config_validation_fails_with_missing_private_key_path(): void
+    {
+        $this->setupTest();
+        config()->set('event-import-handlers.meetup_graphql_private_key_path', null);
+
+        $this->expectExceptionMessage('meetup_graphql_private_key_path config value must be set.');
+
+        $this->runImportCommand();
+    }
+
+    public function test_file_path_validation_fails_when_private_key_path_does_not_exist(): void
+    {
+        $this->setupTest();
+        $file_path = __DIR__ . '/../fixtures/meetup-graphql/file_does_not_exist.pem';
+        config()->set('event-import-handlers.meetup_graphql_private_key_path', $file_path);
+
+        $this->expectExceptionMessage('File path ' . $file_path . ' does not exist.');
+
+        $this->runImportCommand();
     }
 
     protected function apiResponse(string $file): string
@@ -132,7 +190,10 @@ class MeetupGraphqlTest extends DatabaseTestCase
             'service' => EventServices::MeetupGraphql,
             'service_api_key' => 'defcon864',
         ]);
+    }
 
+    private function runImportCommand(): void
+    {
         $this->artisan(ImportEventsCommand::class);
     }
 
