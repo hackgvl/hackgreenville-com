@@ -57,29 +57,23 @@ class Venue extends Model
 
     protected $table = 'venues';
 
-    protected $fillable
-        = [
-            'unique_venue_id',
-            'slug',
-            'name',
-            'address',
-            'zipcode',
-            'phone',
-            'city',
-            'state_id',
-            'country',
-            'lat',
-            'lng',
-        ];
+    protected $fillable = [
+        'unique_venue_id',
+        'slug',
+        'name',
+        'address',
+        'zipcode',
+        'phone',
+        'city',
+        'state_id',
+        'country',
+        'lat',
+        'lng',
+    ];
 
-    public function __toString()
+    public function fullAddress()
     {
         return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
-    }
-
-    public function getStateAbbrAttribute()
-    {
-        return $this->state->abbr;
     }
 
     public function state()

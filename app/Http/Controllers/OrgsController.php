@@ -28,7 +28,7 @@ class OrgsController extends Controller
             'org' => $org->load([
                 'events' => function (Builder $query) {
                     $query
-                        ->with('organization')
+                        ->with('organization', 'venue.state')
                         ->future()
                         ->published()
                         ->orderBy('active_at')

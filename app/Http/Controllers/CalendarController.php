@@ -31,9 +31,8 @@ class CalendarController extends Controller
                 return [
                     'start' => $event->active_at,
                     'start_fmt' => $event->active_at->copy()->utc()->format('Ymd\THi00\Z'),
-                    // FIXME - this needs to rely on expires_at, fix importers to look for event end dates.
-                    'end' => $event->active_at->copy()->addHours(2),
-                    'end_fmt' => $event->active_at->copy()->addHours(2)->utc()->format('Ymd\THi00\Z'),
+                    'end' => $event->expire_at->copy()->addHours(2),
+                    'end_fmt' => $event->expire_at->copy()->addHours(2)->utc()->format('Ymd\THi00\Z'),
 
                     'title' => str($event->organization->title . "\n" . $event->event_name)
                         ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('[CANCELLED] '))
