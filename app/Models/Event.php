@@ -102,13 +102,6 @@ class Event extends BaseModel
         'status',
     ];
 
-    protected function expireAt(): Attribute
-    {
-        return Attribute::make(
-            get: fn($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
-        );
-    }
-
     public function getUniqueIdentifierAttribute(): bool|string
     {
         $service = $this->service;
@@ -213,7 +206,7 @@ class Event extends BaseModel
             'trp' => false,
         ]));
 
-        return 'https://www.google.com/calendar/event?action=TEMPLATE&'.$query;
+        return 'https://www.google.com/calendar/event?action=TEMPLATE&' . $query;
     }
 
     public function getLocalActiveAtAttribute(): Carbon|string
@@ -238,7 +231,7 @@ class Event extends BaseModel
 
     public function doesNotExistOnEventService(): bool
     {
-        return !$this->organization
+        return ! $this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
     }
@@ -246,5 +239,12 @@ class Event extends BaseModel
     public function isCancelled(): bool
     {
         return null !== $this->cancelled_at;
+    }
+
+    protected function expireAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
+        );
     }
 }

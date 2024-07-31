@@ -12,7 +12,7 @@ class OrgsController extends Controller
         $activeOrgs = Org::with('category')
             ->orderBy('title')
             ->get()
-            ->sortBy(function(Org $org) {
+            ->sortBy(function (Org $org) {
                 return $org->category->isInactive()
                     ? PHP_INT_MAX
                     : $org->category->count();
@@ -26,7 +26,7 @@ class OrgsController extends Controller
     {
         return view('orgs.show', [
             'org' => $org->load([
-                'events' => function(Builder $query) {
+                'events' => function (Builder $query) {
                     $query
                         ->with('organization', 'venue.state')
                         ->future()

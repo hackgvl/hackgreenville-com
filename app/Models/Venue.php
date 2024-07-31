@@ -58,18 +58,18 @@ class Venue extends Model
     protected $table = 'venues';
 
     protected $fillable = [
-            'unique_venue_id',
-            'slug',
-            'name',
-            'address',
-            'zipcode',
-            'phone',
-            'city',
-            'state_id',
-            'country',
-            'lat',
-            'lng',
-        ];
+        'unique_venue_id',
+        'slug',
+        'name',
+        'address',
+        'zipcode',
+        'phone',
+        'city',
+        'state_id',
+        'country',
+        'lat',
+        'lng',
+    ];
 
     public function fullAddress()
     {
