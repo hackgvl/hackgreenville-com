@@ -3,7 +3,7 @@
 <div class="list-group-item mb-3 hover-bg border-0 shadow-sm">
 	<div class="row">
 		<div class="col-md-3 col-sm-6 col-xs-6">
-			<a href="{{ $event->gCalUrl }}"
+			<a href="{{ $event->toGoogleCalendarUrl() }}"
 			   rel="external"
 			   class="text-decoration-none"
 			   title="Add to Calendar"

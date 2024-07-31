@@ -8,6 +8,7 @@ use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -101,6 +102,13 @@ class Event extends BaseModel
         'status',
     ];
 
+    protected function expireAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
+        );
+    }
+
     public function getUniqueIdentifierAttribute(): bool|string
     {
         $service = $this->service;
@@ -192,37 +200,20 @@ class Event extends BaseModel
 
     }
 
-    /**
-     * build out the link that adds this event to the users personal calendar
-     *
-     * @return string
-     */
-    public function getGCalUrlAttribute(): string
+    public function toGoogleCalendarUrl(): string
     {
-        $event_time = $this->active_at->format('Y-m-d\TH:i:s\Z');
+        $starts_at = $this->active_at->format('Ymd\THis');
+        $ends_at = $this->expire_at->format('Ymd\THis');
 
-        $start_time = $this->active_at->format('Ymd\THis\Z');
+        $query = http_build_query(array_filter([
+            'text' => $this->event_name,
+            'dates' => "{$starts_at}/{$ends_at}",
+            'details' => strip_tags($this->description),
+            'location' => $this->venue?->fullAddress(),
+            'trp' => false,
+        ]));
 
-        // Assume event is two hours long...
-        $end_time = $this->active_at->addHours(2)->format('Ymd\THis\Z');
-
-        $location = '';
-
-        if (property_exists($this, 'venue') && ($this->venue !== null)) {
-            $location .= $this->venue->name . ', ';
-            $location .= $this->venue->address . ', ';
-            $location .= $this->venue->city . ', ';
-            $location .= $this->venue->state;
-        }
-
-        $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
-        $calendar_url .= 'text=' . urlencode($this->event_name) . '&';
-        $calendar_url .= "dates={$start_time}/{$end_time}&";
-        $calendar_url .= 'details=' . urlencode(strip_tags($this->description)) . '&';
-        $calendar_url .= 'location=' . urlencode($location) . '&';
-        $calendar_url .= "trp=false&";
-
-        return $calendar_url;
+        return 'https://www.google.com/calendar/event?action=TEMPLATE&'.$query;
     }
 
     public function getLocalActiveAtAttribute(): Carbon|string
@@ -247,7 +238,7 @@ class Event extends BaseModel
 
     public function doesNotExistOnEventService(): bool
     {
-        return ! $this->organization
+        return !$this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
     }

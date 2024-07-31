@@ -10,9 +10,9 @@ class EventsController extends Controller
     {
         $months = Event::future()
             ->published()
-            ->with('organization')
+            ->with('organization', 'venue.state')
             ->get()
-            ->groupBy(fn (Event $event) => $event->active_at->format('F Y'));
+            ->groupBy(fn(Event $event) => $event->active_at->format('F Y'));
 
         return view('events.index', compact('months'));
     }
