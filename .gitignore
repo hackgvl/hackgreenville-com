@@ -30,3 +30,5 @@ laravel.log
 
 # Compiled with `yarn build`
 public/build/
+
+*.pem
