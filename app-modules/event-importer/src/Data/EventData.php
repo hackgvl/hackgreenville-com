@@ -27,8 +27,7 @@ class EventData extends Data
         public EventServices  $service,
         public string         $service_id,
         public null|VenueData $venue,
-    )
-    {
+    ) {
     }
 
     public function hasVenue(): bool
