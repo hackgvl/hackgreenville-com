@@ -27,16 +27,16 @@ class CalendarController extends Controller
                 $request->date('end')->endOfDay(),
             ])
             ->get()
-            ->map(function(Event $event) {
+            ->map(function (Event $event) {
                 return [
                     'start' => $event->active_at,
                     'end' => $event->expire_at->copy()->addHours(2),
 
-                    'title' => str($event->organization->title."\n".$event->event_name)
-                        ->when($event->isCancelled(), fn(Stringable $str) => $str->prepend('[CANCELLED] '))
+                    'title' => str($event->organization->title . "\n" . $event->event_name)
+                        ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('[CANCELLED] '))
                         ->toString(),
                     'description' => str($event->description)
-                        ->when($event->isCancelled(), fn(Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
+                        ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
 
                     'allDay' => false,
                     'cancelled' => $event->isCancelled(),
