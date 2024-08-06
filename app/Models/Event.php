@@ -34,9 +34,6 @@ use RuntimeException;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property \Illuminate\Support\Carbon|null $expire_at
  * @property string|null $event_uuid
- * @property-read string $active_at_ftm
- * @property-read string $g_cal_url
- * @property-read string $short_description
  * @property-read string $state
  * @property-read string $status
  * @property-read string $title
