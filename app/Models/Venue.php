@@ -73,7 +73,7 @@ class Venue extends Model
 
     public function fullAddress()
     {
-        return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
+        return "{$this->name} - {$this->address} {$this->city}, {$this->state->abbr} {$this->zipcode}";
     }
 
     public function state()

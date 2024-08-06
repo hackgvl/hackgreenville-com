@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,9 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Model::preventLazyLoading($this->app->environment('local'));
+        Model::preventLazyLoading( ! App::isProduction());
+        Model::shouldBeStrict( ! App::isProduction());
 
-        if(config('telescope.enabled')) {
+        if (config('telescope.enabled')) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
