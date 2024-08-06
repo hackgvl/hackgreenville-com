@@ -28,7 +28,7 @@ class OrganizationsApiV0Test extends DatabaseTestCase
                     'field_event_service' => $org->service,
                     'field_events_api_key' => $org->service,
                     'field_focus_area' => $org->focus_area,
-                    'field_homepage' => $org->home_page,
+                    'field_homepage' => $org->uri,
                     'field_org_status' => $org->status->value,
                     'field_primary_contact_person' => $org->primary_contact_person,
                     'field_organization_type' => $org->organization_type,
