@@ -198,27 +198,12 @@ class Event extends BaseModel
             'trp' => false,
         ]));
 
-        return 'https://www.google.com/calendar/event?action=TEMPLATE&' . $query;
-    }
-
-    public function getShortDescriptionAttribute(): string
-    {
-        return str_limit($this->description);
-    }
-
-    public function getActiveAtFtmAttribute(): string
-    {
-        return $this->active_at->diffForHumans();
-    }
-
-    public function getTitleAttribute(): string
-    {
-        return $this->event_name;
+        return 'https://www.google.com/calendar/event?action=TEMPLATE&'.$query;
     }
 
     public function doesNotExistOnEventService(): bool
     {
-        return ! $this->organization
+        return !$this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
     }
@@ -231,7 +216,7 @@ class Event extends BaseModel
     protected function expireAt(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
+            get: fn($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
         );
     }
 }
