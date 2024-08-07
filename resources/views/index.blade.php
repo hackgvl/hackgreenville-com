@@ -105,7 +105,7 @@
                                                     {{ $event->event_name }}
                                                 </h4>
                                                 <p class="timeline-subtitle h6">
-                                                    {{ $event->organization->name }}
+                                                    {{ $event->organization->title }}
                                                 </p>
                                                 <p>
                                                     <small class="text-muted">
