@@ -13,7 +13,7 @@ class EventsController extends Controller
             ->with('organization', 'venue.state')
             ->orderBy('active_at')
             ->get()
-            ->groupBy(fn(Event $event) => $event->active_at->format('F Y'));
+            ->groupBy(fn (Event $event) => $event->active_at->format('F Y'));
 
         return view('events.index', compact('months'));
     }
