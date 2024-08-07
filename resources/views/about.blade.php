@@ -5,22 +5,29 @@
 
 @section('content')
     <div id="about-us" class="container">
-        <h1 class="title-heading">Uncover HackGreenville</h1>
+        <h1 class="title-heading">About HackGreenville</h1>
+
+        <h2>Our History</h2>
         <p class="lead-text">Our journey began as a humble <a href="/join-slack" class="highlight-link">Slack chat
                 group</a> back in March 2015, thanks to the efforts of Andrew Orr
             <a class="user-mention" href="https://github.com/Soulfire86">(@Soulfire86)</a>
             and Dave Brothers (<a class="user-mention" href="https://github.com/davebrothers">@davebrothers</a>).</p>
-        <p class="lead-text">Our <a href="/join-slack" class="highlight-link">Slack community</a> has proven to be a
-            resilient and vibrant hub for numerous insightful
-            conversations, standing the test of time.</p>
-        <p class="lead-text">The HackGreenville.com website was initially brought to life by the <a
-                href="https://www.sccodes.org" class="highlight-link">SC Codes</a>
-            pilot program and was later nurtured and expanded by <a href="https://codeforgreenville.org"
-                                                                    class="highlight-link">Code
-                For Greenville</a>. The site uses <a href="https://data.openupstate.org" class="highlight-link">open
-                data APIs developed by HackGreenville Labs</a> to promote local, tech-related meetup groups and
-            events.</p>
         <p class="lead-text">In Nov. 2023, HackGreenville established a collaborative relationship with <a href="https://refactorgvl.com/" target="refactorgvl">RefactorGVL</a>, a local 501(c)(3) non-profit, to further their mission of elevating the tech community in the Upstate. This collaboration provides infrastructure, fiscal sponsorship, and other support services to HackGreenville as it serves the local workforce.</p>
+
+        <p class="lead-text">Our <a href="/join-slack" class="highlight-link">Slack community</a> continues to be a
+            resilient and vibrant hub for numerous insightful conversations, standing the test of time.
+        </p>
+        <h2>HackGreenville Nights</h2>
+        <p>Since 2023, we host a quarterly-ish <a href="https://hackgreenville.com/hg-nights"><em>HackGreenville Nights</em></a> gathering with socialing, good food, and optional short talks to bridge the gap between our monthly meetups and our annual conferences.</p>
+        <h2>HackGreenville Labs</h2>
+        <p>
+           This website and the related _Organizations_ and _Events_ APIs
+           are now <a href="https://github.com/hackgvl/hackgreenville-com" class="highlight-link">
+           developed and supported by HackGreenville Labs</a> to promote local meetup groups and events.
+        </p>
+        <p class="lead-text">The HackGreenville.com website was initially brought to life by the _SC Codes_
+            pilot program and was later nurtured and expanded by _Code For Greenville_.
+        </p>
         <p class="lead-text">Here's a snapshot of our community's purpose, mission, vision, and culture:</p>
         <h2 class="section-heading">Our Purpose</h2>
         <p class="lead-text">We are here to nurture personal growth among the vibrant community of
