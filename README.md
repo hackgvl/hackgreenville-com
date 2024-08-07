@@ -37,9 +37,9 @@ TELESCOPE_ENABLED=true
 # Tech Stack Notes
 
 ## APIs
-The organization data is queried from HackGreenville Labs' [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md).
 
-The events data is queried through the [Events API](https://github.com/hackgvl/hackgreenville.com/EVENTS_API.md), which is now part of this repository.
+* [Organizations](https://hackgreenville.com/orgs) data may is queried via the [Organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).
+* [Events](https://hackgreenville.com/events) data may be queried via the [Events API](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md).
 
 ## Laravel
 This project uses the [Laravel PHP framework](https://laravel.com). The [CONTRIBUTING.md](CONTRIBUTING.md) goes into more technical details.
