@@ -344,7 +344,7 @@ Telescope is a Laravel Debugging tool that allows you to see all the requests ma
 - The .env.ci and .env.testing are used for their respective tasks.
 - Be sure to clear the configuration cache after any changes to .env using `php artisan config:clear && php artisan config:cache`
 - Additional defaults may be as defined in _config/app.php_
-- Debugging can be enabled in development by settin `TELESCOPE_ENABLED=TRUE` in your local `.env`
+- Debugging can be enabled in development by setting `TELESCOPE_ENABLED=TRUE` in your local `.env`
 
 ## Events API Configuration
 The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
@@ -599,9 +599,4 @@ Then, come back and see our ["Ways to Help"](#ways-to-help) section on how to sp
 # Kudos
 - Thanks to our [project contributors](https://github.com/hackgvl/hackgreenville-com#contributors-)
 - Thanks to [freeCodeCamp's Chapter project](https://github.com/freeCodeCamp/chapter) for the template for this CONTRIBUTING.md.
-- [https://sweetalert2.github.io/#examples](https://sweetalert2.github.io/#examples)
-- [http://fullcalendar.io/docs](http://fullcalendar.io/docs)
-- [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)
-- [https://getbootstrap.com/docs/4.0/getting-started/introduction/](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-- [https://lodash.com/](https://lodash.com/)
-- [Plugin DatePicker](https://github.com/uxsolutions/bootstrap-datepicker)
+- Thanks to all of the open-source projects, as seen in composer.json and package.json
