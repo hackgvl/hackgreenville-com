@@ -4391,16 +4391,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.48.17",
+            "version": "v10.48.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "60f3c8f667b24a09e0392e26b1f40fb9067cdc3c"
+                "reference": "d816681a99a8fe2ea42fdf793b401dd3b34775a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/60f3c8f667b24a09e0392e26b1f40fb9067cdc3c",
-                "reference": "60f3c8f667b24a09e0392e26b1f40fb9067cdc3c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d816681a99a8fe2ea42fdf793b401dd3b34775a7",
+                "reference": "d816681a99a8fe2ea42fdf793b401dd3b34775a7",
                 "shasum": ""
             },
             "require": {
@@ -4594,7 +4594,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-07-23T16:06:06+00:00"
+            "time": "2024-08-06T14:06:43+00:00"
         },
         {
             "name": "laravel/helpers",
@@ -4713,26 +4713,27 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v1.3.3",
+            "version": "v1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "3dbf8a8e914634c48d389c1234552666b3d43754"
+                "reference": "61b87392d986dc49ad5ef64e75b1ff5fee24ef81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/3dbf8a8e914634c48d389c1234552666b3d43754",
-                "reference": "3dbf8a8e914634c48d389c1234552666b3d43754",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/61b87392d986dc49ad5ef64e75b1ff5fee24ef81",
+                "reference": "61b87392d986dc49ad5ef64e75b1ff5fee24ef81",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "nesbot/carbon": "^2.61",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "nesbot/carbon": "^2.61|^3.0",
                 "pestphp/pest": "^1.21.3",
                 "phpstan/phpstan": "^1.8.2",
-                "symfony/var-dumper": "^5.4.11"
+                "symfony/var-dumper": "^5.4.11|^6.2.0|^7.0.0"
             },
             "type": "library",
             "extra": {
@@ -4769,7 +4770,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2023-11-08T14:08:06+00:00"
+            "time": "2024-08-02T07:48:17+00:00"
         },
         {
             "name": "laravel/slack-notification-channel",
@@ -6018,20 +6019,20 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.4",
+            "version": "v4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "d3ad0aa3b9f934602cb3e3902ebccf10be34d218"
+                "reference": "736c567e257dbe0fcf6ce81b4d6dbe05c6899f96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/d3ad0aa3b9f934602cb3e3902ebccf10be34d218",
-                "reference": "d3ad0aa3b9f934602cb3e3902ebccf10be34d218",
+                "url": "https://api.github.com/repos/nette/utils/zipball/736c567e257dbe0fcf6ce81b4d6dbe05c6899f96",
+                "reference": "736c567e257dbe0fcf6ce81b4d6dbe05c6899f96",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0 <8.4"
+                "php": "8.0 - 8.4"
             },
             "conflict": {
                 "nette/finder": "<3",
@@ -6098,9 +6099,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.4"
+                "source": "https://github.com/nette/utils/tree/v4.0.5"
             },
-            "time": "2024-01-17T16:50:36+00:00"
+            "time": "2024-08-07T15:39:19+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -11470,16 +11471,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v5.1.1",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "7355643b998027f8fa9393e6c8c884f126204a80"
+                "reference": "dd3f5e205dea0cb58f89a79470a38e0dc9732876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/7355643b998027f8fa9393e6c8c884f126204a80",
-                "reference": "7355643b998027f8fa9393e6c8c884f126204a80",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/dd3f5e205dea0cb58f89a79470a38e0dc9732876",
+                "reference": "dd3f5e205dea0cb58f89a79470a38e0dc9732876",
                 "shasum": ""
             },
             "require": {
@@ -11533,9 +11534,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v5.1.1"
+                "source": "https://github.com/laravel/telescope/tree/v5.2.0"
             },
-            "time": "2024-06-27T07:12:23+00:00"
+            "time": "2024-08-02T07:49:39+00:00"
         },
         {
             "name": "maximebf/debugbar",
