@@ -30,7 +30,7 @@
 			<a href="{{ route('join-slack') }}" class="text-success font-weight-bold">
 				HackGreenville Slack
 			</a>
-			and our _#hg-labs_ channel
+			and our <em>#hg-labs</em> channel
 		</h5>
 	</div>
 @endsection
