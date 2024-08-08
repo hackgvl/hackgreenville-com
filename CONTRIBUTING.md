@@ -185,6 +185,7 @@ sh scripts/handle-deploy-update.sh
 ```
 
 The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
+BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
 
 #### Starting the Vite Dev Tool
 
