@@ -370,9 +370,9 @@ The Meetup OAuth client private key file can be stored anywhere on your machine.
 
 # Admin Panel
 
-* The admin panel is built in [Filament][filament_docs].
-* After seeding the DB as [described above](#interacting-with-your-running-app), you'll have a default set of login credentials, so BE SURE TO CHANGE THE PASSWORD
-* To view the admin panel routes / path , run: `artisan route:list --name=filament`
+* The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
+* After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
+* To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
 * See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
 * Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages). 
 
