@@ -22,6 +22,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     protected function mapIntoEventData(array $data): EventData
     {
         $event = $data['node'];
+
         return EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
@@ -30,6 +31,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'starts_at' => Carbon::parse($event['dateTime']),
             // Meetup (graphql) does not provide an event end time
             'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
+            'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
             'event_type' => match ($event['eventType']) {
                 'ONLINE' => EventType::Online,
                 'PHYSICAL' => EventType::Live,
