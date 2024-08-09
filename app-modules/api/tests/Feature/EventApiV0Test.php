@@ -27,7 +27,7 @@ class EventApiV0Test extends DatabaseTestCase
                 [
                     'event_name' => $event->event_name,
                     'group_name' => $event->group_name,
-                    'group_url' => $event->organization->home_page,
+                    'group_url' => $event->organization->uri,
                     'url' => $event->url,
                     'time' => $event->active_at->toISOString(),
                     'tags' => $event->organization->tags->first()->id,

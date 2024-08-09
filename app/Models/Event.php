@@ -34,10 +34,6 @@ use RuntimeException;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property \Illuminate\Support\Carbon|null $expire_at
  * @property string|null $event_uuid
- * @property-read string $active_at_ftm
- * @property-read string $g_cal_url
- * @property-read Carbon|string $local_active_at
- * @property-read string $short_description
  * @property-read string $state
  * @property-read string $status
  * @property-read string $title
@@ -93,13 +89,6 @@ class Event extends BaseModel
         'service_id' => 'string',
         'service' => EventServices::class,
         'visibility' => EventVisibility::class,
-    ];
-
-    protected $appends = [
-        'short_description',
-        'title',
-        'active_at_ftm',
-        'status',
     ];
 
     public function getUniqueIdentifierAttribute(): bool|string
@@ -207,26 +196,6 @@ class Event extends BaseModel
         ]));
 
         return 'https://www.google.com/calendar/event?action=TEMPLATE&' . $query;
-    }
-
-    public function getLocalActiveAtAttribute(): Carbon|string
-    {
-        return $this->active_at->tz(config('app.timezone'));
-    }
-
-    public function getShortDescriptionAttribute(): string
-    {
-        return str_limit($this->description);
-    }
-
-    public function getActiveAtFtmAttribute(): string
-    {
-        return $this->active_at->diffForHumans();
-    }
-
-    public function getTitleAttribute(): string
-    {
-        return $this->event_name;
     }
 
     public function doesNotExistOnEventService(): bool

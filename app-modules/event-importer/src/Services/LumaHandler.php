@@ -66,7 +66,7 @@ class LumaHandler extends AbstractEventHandler
         }
 
         if ( ! isset($data['event']['geo_address_info']['full_address'])) {
-            Log::warning('Luma - Missing Full Address', [
+            Log::debug('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
 
@@ -76,7 +76,7 @@ class LumaHandler extends AbstractEventHandler
         $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
 
         if (count($parts) < 4) {
-            Log::warning('Luma - Not enough address data', [
+            Log::debug('Luma - Not enough address data', [
                 'data' => $data,
             ]);
 
@@ -87,7 +87,7 @@ class LumaHandler extends AbstractEventHandler
             $address = $this->parseGoogleAddress($parts);
 
         } catch (Throwable $exception) {
-            Log::warning('Luma - Unable to parse address.', [
+            Log::debug('Luma - Unable to parse address.', [
                 'data' => $data,
             ]);
 

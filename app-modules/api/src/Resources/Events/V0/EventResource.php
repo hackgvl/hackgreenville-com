@@ -16,7 +16,7 @@ class EventResource extends JsonResource
         return [
             'event_name' => $this->resource->event_name,
             'group_name' => $this->resource->group_name,
-            'group_url' => $this->resource->organization->home_page,
+            'group_url' => $this->resource->organization->uri,
             'url' => $this->resource->url,
             'time' => $this->resource->active_at->toISOString(),
             'tags' => $this->resource->organization->tags->first()?->id ?? '',
