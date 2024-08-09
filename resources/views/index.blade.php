@@ -77,8 +77,60 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mt-sm-5 mt-md-3">
-                    <livewire:hackgreenville-timeline
-                                 title="Upcoming Events"/>
+                    <div>
+                        <h3 class="text-center">
+                            Upcoming Events
+                        </h3>
+                        <ul
+                            @class(['timeline'=>$upcoming_events->isNotEmpty()])
+                        >
+                            @if ($upcoming_events->isEmpty())
+                                <li>
+                                    <strong>No</strong> events to display.
+                                </li>
+                            @else
+                                @foreach ($upcoming_events as $event)
+                                    <li class="timeline-inverted">
+                                        <div class="timeline-badge bg-success">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">
+                                                    @if($event->cancelled_at)
+                                                        <div class="text-danger">
+                                                            [CANCELLED]
+                                                        </div>
+                                                    @endif
+                                                    {{ $event->event_name }}
+                                                </h4>
+                                                <p class="timeline-subtitle h6">
+                                                    {{ $event->organization->title }}
+                                                </p>
+                                                <p>
+                                                    <small class="text-muted">
+                                                        <i class="fa fa-calendar"></i> {{ $event->active_at->format('M/d h:i A') }}
+                                                    </small>
+                                                </p>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <div>
+                                                    <button
+                                                        onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => $event->description]))"
+                                                        class="btn btn-secondary"
+                                                        type="button"
+                                                    >
+                                                        READ MORE
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>

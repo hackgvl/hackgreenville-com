@@ -12,23 +12,20 @@
         "php": "^8.1",
         "ext-json": "*",
         "filament/filament": "^3.2",
+        "firebase/php-jwt": "^6.10",
         "glhd/aire-bootstrap": "^2.1",
         "glhd/conveyor-belt": "*",
         "guzzlehttp/guzzle": "^7.0.1",
         "hack-greenville/api": "*",
         "hack-greenville/event-importer": "*",
         "internachi/modular": "^2.0",
-        "intervention/image": ">=2.5 <3.0.0",
         "laravel/framework": "^10.0",
         "laravel/helpers": "^1.2",
         "laravel/slack-notification-channel": "^2.4",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "v4.2.2",
-        "livewire/livewire": "^3.0",
         "malzariey/filament-daterangepicker-filter": "^2.7",
         "scyllaly/hcaptcha": "^4.4",
-        "spatie/laravel-data": "*",
-        "spatie/laravel-google-calendar": "^3.0"
+        "spatie/laravel-data": "*"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
@@ -36,13 +33,11 @@
         "barryvdh/laravel-debugbar": "^3.8",
         "barryvdh/laravel-ide-helper": "*",
         "fakerphp/faker": "^1.9.1",
-        "imanghafoori/laravel-microscope": "*",
         "laravel/pint": "^1.10",
         "laravel/sail": "^1.5",
         "laravel/telescope": "*",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^7.7",
-        "pestphp/pest": "^2.8",
         "phpunit/phpunit": "^10.2",
         "spatie/laravel-ignition": "^2.0"
     },
@@ -103,9 +98,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
+        "allow-plugins": {}
     },
     "minimum-stability": "stable",
     "prefer-stable": true,

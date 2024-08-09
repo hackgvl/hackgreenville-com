@@ -26,6 +26,7 @@ class LumaHandler extends AbstractEventHandler
             'description' => $data['calendar']['description_short'] ?? '',
             'url' => "https://lu.ma/" . $data['event']['url'],
             'starts_at' => Carbon::parse($data['event']['start_at'])->setTimezone($data['event']['timezone']),
+            'ends_at' => Carbon::parse($data['event']['end_at'])->setTimezone($data['event']['timezone']),
             'event_type' => match ($data['event']['location_type']) {
                 'online', 'zoom', => EventType::Online,
                 'offline', 'unknown' => EventType::Live,
@@ -64,7 +65,7 @@ class LumaHandler extends AbstractEventHandler
         }
 
         if ( ! isset($data['event']['geo_address_info']['full_address'])) {
-            Log::warning('Luma - Missing Full Address', [
+            Log::debug('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
 
@@ -74,7 +75,7 @@ class LumaHandler extends AbstractEventHandler
         $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
 
         if (count($parts) < 4) {
-            Log::warning('Luma - Not enough address data', [
+            Log::debug('Luma - Not enough address data', [
                 'data' => $data,
             ]);
 
@@ -85,7 +86,7 @@ class LumaHandler extends AbstractEventHandler
             $address = $this->parseGoogleAddress($parts);
 
         } catch (Throwable $exception) {
-            Log::warning('Luma - Unable to parse address.', [
+            Log::debug('Luma - Unable to parse address.', [
                 'data' => $data,
             ]);
 

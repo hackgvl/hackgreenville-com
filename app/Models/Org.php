@@ -25,13 +25,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property EventServices|null $service
  * @property OrganizationStatus $status
  * @property string|null $service_api_key
- * @property array $cache
  * @property \Illuminate\Support\Carbon|null $established_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read Category|null $category
- * @property-read mixed $home_page
  * @property-read mixed $url
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tag> $tags
  * @property-read int|null $tags_count
@@ -40,7 +38,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Org newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Org onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Org query()
- * @method static \Illuminate\Database\Eloquent\Builder|Org whereCache($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Org whereCategoryId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Org whereCity($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Org whereCreatedAt($value)
@@ -68,7 +65,6 @@ class Org extends BaseModel
     use SoftDeletes;
 
     protected $casts = [
-        'cache' => 'json',
         'status' => OrganizationStatus::class,
         'service' => EventServices::class,
         'established_at' => 'datetime',

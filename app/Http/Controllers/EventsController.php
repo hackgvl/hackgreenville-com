@@ -8,8 +8,10 @@ class EventsController extends Controller
 {
     public function index()
     {
-        $months = Event::search()
-            ->latest('active_at')
+        $months = Event::future()
+            ->published()
+            ->with('organization', 'venue.state')
+            ->orderBy('active_at')
             ->get()
             ->groupBy(fn (Event $event) => $event->active_at->format('F Y'));
 

@@ -40,8 +40,8 @@ HTML, $active_event->description);
 
         $this->assertEquals(1, $active_event->rsvp_count);
         $this->assertEquals(1702944000, $active_event->active_at->utc()->unix());
+        $this->assertEquals(1702951200, $active_event->expire_at->utc()->unix());
         $this->assertEquals('https://www.meetup.com/code-for-the-carolinas-greenville/events/lvgwftyfcqbxb/', $active_event->uri);
-        $this->assertNull($active_event->cancelled_at);
         $this->assertNull($active_event->venue_id);
         $this->assertEquals('upcoming', $active_event->status);
         $this->assertNull($active_event->cancelled_at);

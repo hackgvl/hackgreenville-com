@@ -1,9 +1,37 @@
 - [Contribution Guidelines](#contribution-guidelines)
 - [Ways to Help](#ways-to-help)
+  - [Helping with Existing Issues](#helping-with-existing-issues)
+  - [Reporting a Bug or New Idea](#reporting-a-bug-or-new-idea)
 - [Forking the Project](#forking-the-project)
 - [Running the App](#running-the-app)
+  - [Prerequisites](#prerequisites)
+  - [System Requirements](#system-requirements)
+  - [Setup \& Configuration Options](#setup--configuration-options)
+    - [Option 1 - Run via Native Host](#option-1---run-via-native-host)
+      - [Running the Database](#running-the-database)
+      - [Installing Dependencies and Seeding Database](#installing-dependencies-and-seeding-database)
+      - [Starting the Vite Dev Tool](#starting-the-vite-dev-tool)
+      - [Starting the Web Application](#starting-the-web-application)
+      - [Generate App Key](#generate-app-key)
+      - [Import / Seed the Organizations and Events Data](#import--seed-the-organizations-and-events-data)
+    - [Option 2 - Run via VS Code and GitHub Codespaces Dev Container](#option-2---run-via-vs-code-and-github-codespaces-dev-container)
+    - [Option 3 - Run via Docker \& Laravel Sail](#option-3---run-via-docker--laravel-sail)
+      - [Copying Docker Environment Variables](#copying-docker-environment-variables)
+      - [Installing the Dockerfile](#installing-the-dockerfile)
+        - [Option A: Using Composer](#option-a-using-composer)
+        - [Option B: Installing with Laravel Sail](#option-b-installing-with-laravel-sail)
+      - [Running the Docker Services](#running-the-docker-services)
+      - [Conditional: Install Application Dependencies](#conditional-install-application-dependencies)
+      - [Seeding the Application Database](#seeding-the-application-database)
+      - [Generating an Application Encryption Key](#generating-an-application-encryption-key)
+      - [Starting Vite Development Server](#starting-vite-development-server)
+      - [Troubleshooting](#troubleshooting)
+      - [Import / Seed Organizations and Events Data](#import--seed-organizations-and-events-data)
 - [Interacting with Your Running App](#interacting-with-your-running-app)
 - [Environment Variables](#environment-variables)
+  - [Events API Configuration](#events-api-configuration)
+    - [Importing Events from Meetup GraphQL API](#importing-events-from-meetup-graphql-api)
+- [Admin Panel](#admin-panel)
 - [Synchronizing Your Fork with the Latest Development Code Changes](#synchronizing-your-fork-with-the-latest-development-code-changes)
 - [Contributing Code to the Project](#contributing-code-to-the-project)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -139,7 +167,7 @@ You need to make a copy of the `.env.example` file and rename it to `.env` at yo
 
 Edit the new .env file and set your database settings.
 
-### Running the Database
+#### Running the Database
 
 If it does not already exist, you will need to create the `hack_greenville` database in your local MySQL server.
 
@@ -147,7 +175,7 @@ If it does not already exist, you will need to create the `hack_greenville` data
 mysql --user="dbusername" --password -e "create database hack_greenville"
 ```
 
-### Installing Dependencies and Seeding Database
+#### Installing Dependencies and Seeding Database
 
 Run the following script to install dependencies, run database migrations, and run other optimizations:
 
@@ -157,7 +185,7 @@ sh scripts/handle-deploy-update.sh
 
 The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
 
-### Starting the Vite Dev Tool
+#### Starting the Vite Dev Tool
 
 In one terminal, run the following command to start the Vite local development server:
 
@@ -167,7 +195,7 @@ yarn dev
 
 > Note: for production environments, `yarn prod` would be used.
 
-### Starting the Web Application
+#### Starting the Web Application
 
 In another terminal, run the following command to start the Laravel server (will open on port `8000`)
 
@@ -177,7 +205,7 @@ php artisan serve
 
 The app should now be accessible by visting `http://localhost:8000` in your browser.
 
-### Generate App Key
+#### Generate App Key
 
 Once the app is running, run the following command to generate your [app encryption key](https://laravel.com/docs/10.x/encryption):
 
@@ -185,7 +213,7 @@ Once the app is running, run the following command to generate your [app encrypt
 php artisan key:generate
 ```
 
-### Import / Seed the Organizations and Events Data
+#### Import / Seed the Organizations and Events Data
 
 Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](/EVENTS_API.md). Without this step the application will have no data.
 
@@ -208,23 +236,23 @@ See [VS Code + GitHub Codespaces Dev Container documentation](https://github.com
 
 The Docker setup of this project should only be done for advanced users, or if needed for runtime compatibility issues.
 
-### Copying Docker Environment Variables
+#### Copying Docker Environment Variables
 
 First, you need to make a copy of the `.env.docker` file and rename it to `.env` at the
 project root. This can be accomplished by running `cp .env.docker .env` from the project root. 
 
-### Installing the Dockerfile
+#### Installing the Dockerfile
 
 To run the Docker container for the web application, you'll need to generate the Laravel Sail docker files. You can generate the Laravel Sail docker files with either of the two options:
 
-#### Option A: Using Composer
+##### Option A: Using Composer
 If you have `composer` installed on your machine, you can run the following script to install the application dependencies, including Laravel Sail.
 
 ```bash
 composer install
 ```
 
-#### Option B: Installing with Laravel Sail
+##### Option B: Installing with Laravel Sail
 If you do not have `composer` installed on your machine, you can install Laravel Sail directly using the following scripts:
 
 ```bash
@@ -232,7 +260,7 @@ mkdir -p vendor/laravel
 git clone https://github.com/laravel/sail.git vendor/laravel/sail/
 ```
 
-### Running the Docker Services
+#### Running the Docker Services
 
 To run the Docker services, run Docker Compose from the root directory:
 
@@ -240,7 +268,7 @@ To run the Docker services, run Docker Compose from the root directory:
 docker-compose -f docker-compose.yml up --build
 ```
 
-### Conditional: Install Application Dependencies
+#### Conditional: Install Application Dependencies
 
 If you followed `Option B` on the `Installing the Dockerfile` step, you'll need to run `composer install` on the web application Docker container to install the rest of the application dependencies. This can be done by running the following:
 
@@ -248,7 +276,7 @@ If you followed `Option B` on the `Installing the Dockerfile` step, you'll need 
 docker exec -it hackgreenville composer install
 ```
 
-### Seeding the Application Database
+#### Seeding the Application Database
 
 Now that we have the application dependencies installed, we can seed the MySQL database using the following command:
 
@@ -256,7 +284,7 @@ Now that we have the application dependencies installed, we can seed the MySQL d
 docker exec -it hackgreenville php artisan migrate --seed
 ```
 
-### Generating an Application Encryption Key
+#### Generating an Application Encryption Key
 
 On the first start, you will need to generate an `APP_KEY` secret, which serve as your application encryption key. This can be generated running the following command:
 
@@ -265,6 +293,16 @@ docker exec -it hackgreenville php artisan key:generate
 ```
 
 This command should populate the `APP_KEY` environment variable within your `.env` file.
+
+#### Starting Vite Development Server
+
+Each time the Docker container is restarted, the Vite development server will need to be running in order for the app's stylesheets to be compiled. You can run the Vite development server by running the following command:
+
+```bash
+docker exec -d hackgreenville yarn dev
+```
+
+#### Troubleshooting
 
 If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP`.
 I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
@@ -275,7 +313,7 @@ After that, hit Ctrl-C in the original docker-compose to stop the application, a
 
 If there are any changes in the application code, you will need to run `docker-compose up --build` to recreate the container with your changes.
 
-### Import / Seed Organizations and Events Data
+#### Import / Seed Organizations and Events Data
 
 To seed events and organizations into your application, run the following to import events and organizations from the Open Upstate API:
 
@@ -304,10 +342,22 @@ The Events API's responses are controlled by variables that may limit the data a
 
 Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
 
-Explaination of the .env defaults
+Explanation of the .env defaults
 `EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's database to no more than 30 days in the past
 `EVENT_IMPORTER_MAX_DAYS_IN_FUTURE=365` would .env will limit the imported events saved in the Event API's database to no more than 365 days in the future
 `EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
+
+### Importing Events from Meetup GraphQL API
+In order to import events from organizations with a `meetup_graphql` service type, you will need to setup the following environment variables:
+
+`EVENT_IMPORTER_MEETUP_GRAPHQL_CLIENT_ID` - Your Meetup [OAuth client](https://www.meetup.com/api/oauth/list/)
+`EVENT_IMPORTER_MEETUP_GRAPHQL_MEMBER_ID` - Your Meetup user ID. You can find this user ID in the URL of your profile page or by running `query { self { id name } }` in the Meetup [GraphQL playground](https://www.meetup.com/api/playground/#graphQl-playground).
+`EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_ID` - The ID of a private key associated to your OAuth client. You'll be using this private key to [sign the JWT](https://www.meetup.com/api/authentication/#p04-jwt-flow-section) to request access tokens.
+`EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_ID` - The path to the Meetup OAuth private key.
+
+The Meetup OAuth client private key file can be stored anywhere on your machine. If you put the private key in the repository root, you can put it under `*.pem` and the file will be ignored by version control. If placed in the repository root and you run the project in Docker, the private key path will be `/var/www/html/your_private_key.pem`.
+
+**NOTE**: Meetup requires a [Pro account](https://www.meetup.com/meetup-pro/) in order to create an OAuth client.
 
 # Admin Panel
 The admin panel in this project is built in [Filament][filament_docs]. This package is also built on [Laravel Livewire][livewire_docs].

@@ -24,7 +24,7 @@
                     right: 'listWeek,dayGridMonth,dayGridDay,prev,next' // user can switch between the two
                 },
                 events: {
-                    url: '/api/calendar',
+                    url: '{{ route('calendar.data') }}',
                 },
                 loading: function (isLoading, view) {
                     if (isLoading) {// isLoading gives boolean value
@@ -75,15 +75,7 @@
 		                }
 
 		                if (result.value) {
-
-			                let link = `https://calendar.google.com/calendar/r/eventedit?text=${info.event.title}&`;
-			                link += `dates=${info.event.extendedProps.start_fmt}/${info.event.extendedProps.end_fmt}&`;
-			                link += `details=${calendar_desc}&`;
-			                link += `location=${info.event.extendedProps.location}`;
-
-			                link = encodeURI(link);
-
-                            window.open(link, '_blank');
+                            window.open(info.event.extendedProps.add_to_google_calendar_url, '_blank');
                         } else if (result.dismiss == "cancel") {
                             window.open(event_link, '_blank');
                         }

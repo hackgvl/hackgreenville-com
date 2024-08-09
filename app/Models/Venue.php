@@ -25,7 +25,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $country
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Event> $events
  * @property-read int|null $events_count
- * @property-read mixed $state_abbr
  * @property-read State|null $state
  * @method static \Database\Factories\VenueFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Venue newModelQuery()
@@ -57,29 +56,23 @@ class Venue extends Model
 
     protected $table = 'venues';
 
-    protected $fillable
-        = [
-            'unique_venue_id',
-            'slug',
-            'name',
-            'address',
-            'zipcode',
-            'phone',
-            'city',
-            'state_id',
-            'country',
-            'lat',
-            'lng',
-        ];
+    protected $fillable = [
+        'unique_venue_id',
+        'slug',
+        'name',
+        'address',
+        'zipcode',
+        'phone',
+        'city',
+        'state_id',
+        'country',
+        'lat',
+        'lng',
+    ];
 
-    public function __toString()
+    public function fullAddress()
     {
-        return "{$this->name} - {$this->address} {$this->city}, {$this->state_abbr} {$this->zipcode}";
-    }
-
-    public function getStateAbbrAttribute()
-    {
-        return $this->state->abbr;
+        return "{$this->name} - {$this->address} {$this->city}, {$this->state->abbr} {$this->zipcode}";
     }
 
     public function state()

@@ -2,10 +2,9 @@
 
 namespace App\Providers;
 
-use App\Contracts\CalendarContract;
-use App\Http\Clients\GoogleCalendar;
-use App\Http\Clients\UpstateClient;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,16 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
-            CalendarContract::class,
-            fn () => new GoogleCalendar
-        );
+        Model::preventLazyLoading( ! App::isProduction());
+        Model::shouldBeStrict( ! App::isProduction());
 
-        if(config('telescope.enabled')) {
+        if (config('telescope.enabled')) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
-
-        $this->app->singleton('UpstateClient', fn () => new UpstateClient);
     }
 }

@@ -21,7 +21,7 @@ class OrgResource extends JsonResource
             'field_event_service' => $this->resource->service,
             'field_events_api_key' => $this->resource->service_api_key,
             'field_focus_area' => $this->resource->focus_area,
-            'field_homepage' => $this->resource->home_page,
+            'field_homepage' => $this->resource->uri,
             'field_event_calendar_homepage' => $this->resource->event_calendar_uri,
             'field_primary_contact_person' => $this->resource->primary_contact_person,
             'field_org_status' => $this->resource->status,

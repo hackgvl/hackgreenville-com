@@ -3,16 +3,15 @@
 namespace App\Models;
 
 use App\Enums\EventServices;
-use App\Http\SearchPipeline\Active;
-use App\Http\SearchPipeline\Month;
+use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Routing\Pipeline;
 use RuntimeException;
 
 /**
@@ -30,16 +29,11 @@ use RuntimeException;
  * @property \Illuminate\Support\Carbon|null $cancelled_at
  * @property string $uri
  * @property int|null $venue_id
- * @property array $cache
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property \Illuminate\Support\Carbon|null $expire_at
  * @property string|null $event_uuid
- * @property-read string $active_at_ftm
- * @property-read string $g_cal_url
- * @property-read Carbon|string $local_active_at
- * @property-read string $short_description
  * @property-read string $state
  * @property-read string $status
  * @property-read string $title
@@ -57,7 +51,6 @@ use RuntimeException;
  * @method static Builder|Event search()
  * @method static Builder|Event startOfMonth()
  * @method static Builder|Event whereActiveAt($value)
- * @method static Builder|Event whereCache($value)
  * @method static Builder|Event whereCancelledAt($value)
  * @method static Builder|Event whereCreatedAt($value)
  * @method static Builder|Event whereDeletedAt($value)
@@ -87,7 +80,6 @@ class Event extends BaseModel
     protected $table = 'events';
 
     protected $casts = [
-        'cache' => 'json',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
@@ -96,17 +88,7 @@ class Event extends BaseModel
         'cancelled_at' => 'datetime',
         'service_id' => 'string',
         'service' => EventServices::class,
-    ];
-
-    protected $attributes = [
-        'cache' => '{}',
-    ];
-
-    protected $appends = [
-        'short_description',
-        'title',
-        'active_at_ftm',
-        'status',
+        'visibility' => EventVisibility::class,
     ];
 
     public function getUniqueIdentifierAttribute(): bool|string
@@ -125,6 +107,11 @@ class Event extends BaseModel
     public function organization(): BelongsTo
     {
         return $this->belongsTo(Org::class, 'organization_id');
+    }
+
+    public function scopePublished(Builder $query): void
+    {
+        $query->where('visibility', EventVisibility::Published);
     }
 
     public function scopeFuture(Builder $query)
@@ -156,20 +143,6 @@ class Event extends BaseModel
                     date('Y-m-d', strtotime($end)),
                 ],
             );
-    }
-
-    public function scopeSearch(Builder $query)
-    {
-        return app(Pipeline::class)
-            ->send($query)
-            ->through(
-                [
-                    // Get the active events
-                    Active::class,
-                    Month::class,
-                ],
-            )
-            ->thenReturn();
     }
 
     /**
@@ -209,57 +182,20 @@ class Event extends BaseModel
 
     }
 
-    /**
-     * build out the link that adds this event to the users personal calendar
-     *
-     * @return string
-     */
-    public function getGCalUrlAttribute(): string
+    public function toGoogleCalendarUrl(): string
     {
-        $event_time = $this->active_at->format('Y-m-d\TH:i:s\Z');
+        $starts_at = $this->active_at->format('Ymd\THis');
+        $ends_at = $this->expire_at->format('Ymd\THis');
 
-        $start_time = $this->active_at->format('Ymd\THis\Z');
+        $query = http_build_query(array_filter([
+            'text' => $this->event_name,
+            'dates' => "{$starts_at}/{$ends_at}",
+            'details' => strip_tags($this->description),
+            'location' => $this->venue?->fullAddress(),
+            'trp' => false,
+        ]));
 
-        // Assume event is two hours long...
-        $end_time = $this->active_at->addHours(2)->format('Ymd\THis\Z');
-
-        $location = '';
-
-        if (property_exists($this, 'venue') && ($this->venue !== null)) {
-            $location .= $this->venue->name . ', ';
-            $location .= $this->venue->address . ', ';
-            $location .= $this->venue->city . ', ';
-            $location .= $this->venue->state;
-        }
-
-        $calendar_url = "http://www.google.com/calendar/event?action=TEMPLATE&";
-        $calendar_url .= 'text=' . urlencode($this->event_name) . '&';
-        $calendar_url .= "dates={$start_time}/{$end_time}&";
-        $calendar_url .= 'details=' . urlencode(strip_tags($this->description)) . '&';
-        $calendar_url .= 'location=' . urlencode($location) . '&';
-        $calendar_url .= "trp=false&";
-
-        return $calendar_url;
-    }
-
-    public function getLocalActiveAtAttribute(): Carbon|string
-    {
-        return $this->active_at->tz(config('app.timezone'));
-    }
-
-    public function getShortDescriptionAttribute(): string
-    {
-        return str_limit($this->description);
-    }
-
-    public function getActiveAtFtmAttribute(): string
-    {
-        return $this->active_at->diffForHumans();
-    }
-
-    public function getTitleAttribute(): string
-    {
-        return $this->event_name;
+        return 'https://www.google.com/calendar/event?action=TEMPLATE&' . $query;
     }
 
     public function doesNotExistOnEventService(): bool
@@ -267,5 +203,17 @@ class Event extends BaseModel
         return ! $this->organization
             ->getEventHandler()
             ->eventExistsOnService($this);
+    }
+
+    public function isCancelled(): bool
+    {
+        return null !== $this->cancelled_at;
+    }
+
+    protected function expireAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
+        );
     }
 }

@@ -20,12 +20,12 @@ class ImportEventForOrganization
                     'description' => $data->description,
                     'rsvp_count' => $data->rsvp,
                     'active_at' => $data->starts_at,
+                    'expire_at' => $data->ends_at,
                     'cancelled_at' => $data->cancelled_at,
                     'uri' => $data->url,
                     'venue_id' => $data->hasVenue()
                         ? $data->venue->resolveVenue($data)->id
                         : null,
-                    'cache' => [],
                     'event_uuid' => $data->uniqueIdentifierHash(),
                     'organization_id' => $org->id,
                 ]

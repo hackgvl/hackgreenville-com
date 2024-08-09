@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Enums\EventServices;
+use App\Enums\EventVisibility;
 use App\Filament\Resources\EventResource\Pages;
 use App\Models\Event;
 use App\Models\Org;
@@ -69,6 +70,10 @@ class EventResource extends Resource
                             ->date()
                             ->time(false)
                             ->nullable(),
+
+                        Forms\Components\Select::make('visibility')
+                            ->options(EventVisibility::class)
+                            ->required(),
                     ]),
                 Forms\Components\Section::make('Event Service')
                     ->columns(2)
@@ -89,8 +94,10 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('event_name')
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('organization.title')
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('service')
                     ->searchable(),
