@@ -8,20 +8,13 @@
 		<div class="col-sm-12 offset-md-2 col-md-4 container py-5 d-flex flex-column justify-content-center text-center">
 			<h1>{{ __('HackGreenville Labs') }}</h1>
 			<p class="lead my-1">
-				Mentoring, Inspiring and Innovating
-				<span class="font-weight-bold text-success">Local Tech</span>
-			</p>
-			<p class="lead my-1">
-				We are the
-				<span class="font-weight-bold text-success">#YeahThatGreenville</span>
-				tech community
+				Supporting our HackGreenville tech projects
 			</p>
 		</div>
 		<div id="jumbotron-image" class="m-0 p-0 col-md-6 d-none d-md-block"></div>
 	</div>
 
-	<div class="col-10 offset-2 col-sm-8 offset-sm-4 col-xl-6 offset-xl-6 mt-5 mx-auto d-flex flex-column justify-content-center"
-	>
+	<div class="col-10 offset-2 col-sm-8 offset-sm-4 col-xl-6 offset-xl-6 mt-5 mx-auto d-flex flex-column justify-content-center">
 		<h2 class="font-weight-bold">{{ __('Our Projects') }}</h2>
 		<div class="list-group my-3 p-0">
 			@foreach($projects as $index=>$project)
@@ -37,14 +30,7 @@
 			<a href="{{ route('join-slack') }}" class="text-success font-weight-bold">
 				HackGreenville Slack
 			</a>
-			and then enter the
-			<a
-				href="https://hackgreenville.slack.com/archives/C3XNGDEBT"
-				class="text-success font-weight-bold"
-			>
-				#hg-labs
-			</a>
-			channel to get started!
+			and our <em>#hg-labs</em> channel
 		</h5>
 	</div>
 @endsection

@@ -49,8 +49,8 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Spread the word and invite others to <a href="https://forms.gle/oz4vDwrwG9c4h5Bo6" rel="nofollow">pitch a talk</a></li>
         <li class="list-group-item">Join our <a href="https://www.meetup.com/hack-greenville/"><em>Meetup</em> group</a> to receive updates</li>
-        <li class="list-group-item">Hop into the <a href="/join-slack">official HackGreenville Slack</a> #community-organizers channel volunteer</li>
-        <li class="list-group-item"><a href="/contact">Becoming a <em>HG Nights</em> sponsor</a></li>
+        <li class="list-group-item">Hop into the <a href="/join-slack">HackGreenville Slack</a> <em>#community-organizers</em> channel to volunteer</li>
+        <li class="list-group-item"><a href="/contact">Become a <em>HG Nights</em> sponsor</a></li>
       </ul>
     </div>
 

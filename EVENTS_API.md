@@ -1,4 +1,4 @@
-# Interacting with the Events API
+# Interacting with the HackGreenville Events API
 
 ## URLs and Query String Parameters
 By default, results are returned in JSON format.
@@ -49,17 +49,19 @@ By default, results are returned in JSON format.
 ```
 
 ## Contributor Notes
-These notes are specifically for those helping develop the _Events API_.
+These notes are specifically for those helping develop the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
 
 ### Meetup.com
 * Wayback Machine has copies of the old v2 REST API docs, which were removed and redirected when their [GraphQL API too over](https://github.com/hackgvl/hackgreenville-com/issues/212).
 * [v2 REST API - GET /events](https://web.archive.org/web/20170709041824/http://www.meetup.com/meetup_api/docs/2/events/)
 * [v2 REST API - GET /groups](https://web.archive.org/web/20170709041556/http://www.meetup.com/meetup_api/docs/2/groups/)
 * Examples
-  * [GET upcoming events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public)
-  * [GET past events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=past)
+  * [GET upcoming events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=upcoming)
+  * [GET past and cancelled events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=past,cancelled)
+  * [GET all events after 2024-02-12 for one group / org](https://api.meetup.com/synergymill/events?&sign=true&photo-host=public&no_earlier_than=2024-02-12T02:21:20.000&status=upcoming,cancelled,past&page=50) where dates is of the format %Y-%m-%dT%H:%M:%S.000
 
 ### Eventbrite
+* [Eventbrite's API requires creating a free API key](https://www.eventbrite.com/help/en-us/articles/849962/generate-an-api-key/).
 * [Eventbrite API Docs](https://www.eventbrite.com/platform/api)
 * [Examples of making requests to the Eventbrite API](https://github.com/hackgvl/hackgreenville-com/issues/217#issuecomment-802212633)
 * [Example "events" response using a test Eventbrite API key](https://www.eventbriteapi.com/v3/events/10584525601/?token=BKKRDKVUVRC5WG4HAVLT)

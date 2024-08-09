@@ -9,20 +9,6 @@ class LabsController extends Controller
         $remove_space = true;
         $projects = [
             [
-                'name' => __('Events API'),
-                'description' => __('Public API for tech event information'),
-                'link' => 'https://github.com/hackgvl/OpenData',
-                'linkType' => 'github',
-                'status' => 'active',
-            ],
-            [
-                'name' => __('Map Layers API'),
-                'description' => __('Public API for Upstate location data'),
-                'link' => 'https://github.com/hackgvl/OpenData/blob/master/MAPS_API.md',
-                'linkType' => 'github',
-                'status' => 'active',
-            ],
-            [
                 'name' => __('HackGreenville.com'),
                 'description' => __('Tech events in Greenville, SC'),
                 'link' => 'https://github.com/hackgvl/hackgreenville-com#readme',
@@ -30,9 +16,30 @@ class LabsController extends Controller
                 'status' => 'active',
             ],
             [
+                'name' => __('Events API'),
+                'description' => __('Public API for tech event information'),
+                'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md',
+                'linkType' => 'github',
+                'status' => 'active',
+            ],
+            [
+                'name' => __('Organizations API'),
+                'description' => __('Public API for tech event information'),
+                'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md',
+                'linkType' => 'github',
+                'status' => 'active',
+            ],
+            [
                 'name' => __('HackGreenville Slack Events Bot'),
                 'description' => __('Automated weekly tech event notifications in Slack'),
                 'link' => 'https://github.com/hackgvl/slack-events-bot',
+                'linkType' => 'github',
+                'status' => 'active',
+            ],
+            [
+                'name' => __('Map Layers API'),
+                'description' => __('Public API for Upstate location data'),
+                'link' => 'https://github.com/hackgvl/OpenData/blob/master/MAPS_API.md',
                 'linkType' => 'github',
                 'status' => 'active',
             ],
