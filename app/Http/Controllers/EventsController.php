@@ -8,7 +8,7 @@ class EventsController extends Controller
 {
     public function index()
     {
-        $months = Event::future()
+        $months = Event::getActive()
             ->published()
             ->with('organization', 'venue.state')
             ->orderBy('active_at')
