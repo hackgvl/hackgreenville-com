@@ -19,6 +19,7 @@ class OrgFactory extends Factory
             'title' => $this->faker->word(),
             'path' => $this->faker->url(),
             'city' => $this->faker->city(),
+            'slug' => $this->faker->slug(),
             'focus_area' => $this->faker->word(),
             'primary_contact_person' => $this->faker->word(),
             'organization_type' => $this->faker->word(),

@@ -116,13 +116,13 @@ class Event extends BaseModel
 
     public function scopeFuture(Builder $query)
     {
-        $query->where('active_at', '>=', DB::raw('NOW()'));
+        $query->where('active_at', '>=', Carbon::now());
     }
 
     public function scopeGetActive(Builder $query): Builder
     {
         return $query
-            ->where('active_at', '>=', DB::raw('NOW()'))
+            ->where('active_at', '>=', Carbon::now())
             ->orderBy('active_at', 'asc');
     }
 
