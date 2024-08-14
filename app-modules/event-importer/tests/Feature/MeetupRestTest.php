@@ -45,7 +45,7 @@ HTML, $active_event->description);
         $this->assertNull($active_event->venue_id);
         $this->assertEquals('upcoming', $active_event->status);
         $this->assertNull($active_event->cancelled_at);
-
+        $this->assertEquals('America/New_York', $active_event->timezone);
     }
 
     public function test_cancelled_meetup_event_is_imported_correctly(): void
@@ -73,9 +73,9 @@ HTML, $active_event->description);
     protected function getMeetupUrl(string $service_api_key): string
     {
         return 'https://api.meetup.com/' . $service_api_key . '/events?sign=1&photo-host=public' .
-        '&status=upcoming%2Ccancelled%2Cpast&page=100&' .
-        'no_earlier_than=' . now()->subDays(env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30))->format('Y-m-d') . 'T00%3A00%3A00' .
-        '&no_later_than=' . now()->addDays(180)->format('Y-m-d') . 'T23%3A59%3A59';
+            '&status=upcoming%2Ccancelled%2Cpast&page=100&' .
+            'no_earlier_than=' . now()->subDays(env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30))->format('Y-m-d') . 'T00%3A00%3A00' .
+            '&no_later_than=' . now()->addDays(180)->format('Y-m-d') . 'T23%3A59%3A59';
     }
 
     protected function apiResponse(string $file): string

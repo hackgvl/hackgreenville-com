@@ -52,6 +52,7 @@ class MeetupRestHandler extends AbstractEventHandler
             'starts_at' => Carbon::createFromTimestampMs($data['time']),
             // Meetup (rest) does not provide an event end time
             'ends_at' => Carbon::createFromTimestampMs($data['time'])->addHours(2),
+            'timezone' => Carbon::createFromTimestampMs($data['time'])->utcOffset($data['utc_offset'] / 1000)->timezoneName,
             'event_type' => match ($data['eventType']) {
                 'ONLINE' => EventType::Online,
                 'PHYSICAL' => EventType::Live,

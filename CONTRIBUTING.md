@@ -28,6 +28,7 @@
       - [Troubleshooting](#troubleshooting)
       - [Import / Seed Organizations and Events Data](#import--seed-organizations-and-events-data)
 - [Interacting with Your Running App](#interacting-with-your-running-app)
+- [Debugging with Telescope](#debugging-with-telescope)
 - [Environment Variables](#environment-variables)
   - [Events API Configuration](#events-api-configuration)
     - [Importing Events from Meetup GraphQL API](#importing-events-from-meetup-graphql-api)
@@ -184,6 +185,7 @@ sh scripts/handle-deploy-update.sh
 ```
 
 The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
+BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
 
 #### Starting the Vite Dev Tool
 
@@ -332,10 +334,17 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
 
+# Debugging with Telescope
+
+Telescope is a Laravel Debugging tool that allows you to see all the requests made to the application, and the responses they return. It can be enabled in [.env](#environment-variables).
+
 # Environment Variables
 
 - The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
 - The .env.ci and .env.testing are used for their respective tasks.
+- Be sure to clear the configuration cache after any changes to .env using `php artisan config:clear && php artisan config:cache`
+- Additional defaults may be as defined in _config/app.php_
+- Debugging can be enabled in development by setting `TELESCOPE_ENABLED=TRUE` in your local `.env`
 
 ## Events API Configuration
 The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
@@ -360,23 +369,12 @@ The Meetup OAuth client private key file can be stored anywhere on your machine.
 **NOTE**: Meetup requires a [Pro account](https://www.meetup.com/meetup-pro/) in order to create an OAuth client.
 
 # Admin Panel
-The admin panel in this project is built in [Filament][filament_docs]. This package is also built on [Laravel Livewire][livewire_docs].
 
-After seeding the DB as [described above](#interacting-with-your-running-app), you'll have a default set of login credentials found in the [UsersTableSeeder][users_seeder] class.
-
-To view the admin panel routes, run: `artisan route:list --name=filament`
-
-Filament provides commands for generating [CRUD resources][filament_resources] and [individual pages][filament_pages]. But you can also create pages from [Livewire components][livewire_components] that borrow tables or [forms][filament_advanced_forms] from Filament.
-
-[filament_advanced_forms]: https://filamentphp.com/docs/3.x/forms/adding-a-form-to-a-livewire-component
-[filament_docs]: https://filamentphp.com/docs
-[filament_pages]: https://filamentphp.com/docs/3.x/panels/pages
-[filament_resources]: https://filamentphp.com/docs/3.x/panels/resources/getting-started
-[filament_resource_authorization]: https://filamentphp.com/docs/3.x/panels/resources/listing-records#authorization
-[laravel_policies]: https://laravel.com/docs/10.x/authorization#creating-policies
-[livewire_docs]: https://livewire.laravel.com/docs/quickstart
-[livewire_components]: https://livewire.laravel.com/docs/components
-[users_seeder]: https://github.com/hackgvl/hackgreenville-com/blob/develop/database/seeders/UsersTableSeeder.php
+* The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
+* After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
+* To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
+* See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
+* Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages). 
 
 # Synchronizing Your Fork with the Latest Development Code Changes
 Be sure you're on the desired branch, usually `git checkout develop`, and change to the project's base directory.
@@ -601,9 +599,4 @@ Then, come back and see our ["Ways to Help"](#ways-to-help) section on how to sp
 # Kudos
 - Thanks to our [project contributors](https://github.com/hackgvl/hackgreenville-com#contributors-)
 - Thanks to [freeCodeCamp's Chapter project](https://github.com/freeCodeCamp/chapter) for the template for this CONTRIBUTING.md.
-- [https://sweetalert2.github.io/#examples](https://sweetalert2.github.io/#examples)
-- [http://fullcalendar.io/docs](http://fullcalendar.io/docs)
-- [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)
-- [https://getbootstrap.com/docs/4.0/getting-started/introduction/](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-- [https://lodash.com/](https://lodash.com/)
-- [Plugin DatePicker](https://github.com/uxsolutions/bootstrap-datepicker)
+- Thanks to all of the open-source projects, as seen in composer.json and package.json

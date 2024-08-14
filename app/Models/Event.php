@@ -116,7 +116,8 @@ class Event extends BaseModel
 
     public function scopeFuture(Builder $query)
     {
-        $query->where('active_at', '>=', DB::raw('NOW()'));
+        $query->where('active_at', '>=', now())
+            ->orderBy('active_at', 'asc');
     }
 
     public function scopeGetActive(Builder $query): Builder
