@@ -24,7 +24,7 @@
       - [Conditional: Install Application Dependencies](#conditional-install-application-dependencies)
       - [Seeding the Application Database](#seeding-the-application-database)
       - [Generating an Application Encryption Key](#generating-an-application-encryption-key)
-      - [Starting Vite Development Server](#starting-vite-development-server)
+      - [Build website](#build-website)
       - [Troubleshooting](#troubleshooting)
       - [Import / Seed Organizations and Events Data](#import--seed-organizations-and-events-data)
 - [Interacting with Your Running App](#interacting-with-your-running-app)
@@ -296,9 +296,15 @@ docker exec -it hackgreenville php artisan key:generate
 
 This command should populate the `APP_KEY` environment variable within your `.env` file.
 
-#### Starting Vite Development Server
+#### Build website
 
-Each time the Docker container is restarted, the Vite development server will need to be running in order for the app's stylesheets to be compiled. You can run the Vite development server by running the following command:
+This project uses Vite to build the website. This includes building out the website's stylesheets and scripts. You can run the following command to generate the production build:
+
+```bash
+docker exec -d hackgreenville yarn build
+```
+
+Alternatively, you can start the Vite development server to listen and compile the latest changes:
 
 ```bash
 docker exec -d hackgreenville yarn dev

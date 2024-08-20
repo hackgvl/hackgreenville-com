@@ -25,11 +25,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: install dependencies
+      - name: install php dependencies
         run: composer install
+      - name: install node dependencies
+        run: yarn install
       - name: copy environment variables to .env
         run: cp .env.ci .env
       - name: migrate database
         run: php artisan migrate --seed
+      - name: Build website
+        run: yarn build
       - name: run tests
         run: php artisan test
