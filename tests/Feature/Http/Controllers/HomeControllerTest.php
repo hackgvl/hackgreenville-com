@@ -13,7 +13,7 @@ class HomeControllerTest extends DatabaseTestCase
     Carbon::setTestNow('2020-01-01');
   }
 
-  function test_upcoming_events_sorts_unordered_events()
+  public function test_upcoming_events_sorts_unordered_events()
   {
     Event::factory()->create([
       'event_name' => 'Event 2',
@@ -34,7 +34,7 @@ class HomeControllerTest extends DatabaseTestCase
     $response->assertSeeInOrder(['Event 1', 'Event 2', 'Event 3']);
   }
 
-  function test_upcoming_events_does_not_show_old_events()
+  public function test_upcoming_events_does_not_show_old_events()
   {
     Event::factory()->create([
       'event_name' => 'Event 1',
