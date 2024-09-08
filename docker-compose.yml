@@ -27,8 +27,8 @@ services:
   hackgreenville-db:
     image: 'mysql:8.0'
     container_name: hackgreenville-db
-    ports:
-      - 3306:3306
+    expose:
+      - 3306
     env_file:
       - .env
     restart: always
