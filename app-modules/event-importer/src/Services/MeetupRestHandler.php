@@ -55,6 +55,7 @@ class MeetupRestHandler extends AbstractEventHandler
             'timezone' => Carbon::createFromTimestampMs($data['time'])->utcOffset($data['utc_offset'] / 1000)->timezoneName,
             'event_type' => match ($data['eventType']) {
                 'ONLINE' => EventType::Online,
+                'HYBRID' => EventType::Live,
                 'PHYSICAL' => EventType::Live,
                 default => throw new RuntimeException("Unable to determine event type {$data['eventType']}"),
             },

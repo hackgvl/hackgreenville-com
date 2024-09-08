@@ -34,6 +34,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
             'event_type' => match ($event['eventType']) {
                 'ONLINE' => EventType::Online,
+                'HYBRID' => EventType::Live,
                 'PHYSICAL' => EventType::Live,
                 default => throw new RuntimeException("Unable to determine event type {$event['eventType']}"),
             },
