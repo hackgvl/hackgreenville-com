@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use Firebase\JWT\JWT;
 use HackGreenville\EventImporter\Data\EventData;
@@ -32,12 +31,6 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             // Meetup (graphql) does not provide an event end time
             'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
             'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
-            'event_type' => match ($event['eventType']) {
-                'ONLINE' => EventType::Online,
-                'HYBRID' => EventType::Live,
-                'PHYSICAL' => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$event['eventType']}"),
-            },
             'cancelled_at' => match ($event['status']) {
                 'CANCELLED' => now(),
                 'cancelled' => now(),
