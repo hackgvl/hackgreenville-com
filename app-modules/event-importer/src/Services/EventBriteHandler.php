@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -32,11 +31,6 @@ class EventBriteHandler extends AbstractEventHandler
             'cancelled_at' => 'canceled' === $data['status'] || 'event_cancelled' === Arr::get($data, 'event_sales_status.message_code')
                 ? now()
                 : null,
-            'event_type' => match ($data['online_event']) {
-                true => EventType::Online,
-                false => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$data['eventType']}"),
-            },
             'venue' => $this->mapIntoVenueData($data),
         ]);
     }
