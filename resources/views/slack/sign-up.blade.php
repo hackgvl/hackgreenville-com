@@ -34,7 +34,7 @@
                     {{ aire()->input('name', __('Full Name'))->required() }}
                     {{ aire()->email('contact', __('Email'))->required() }}
                     {{ aire()->textArea('reason', __('Share why you are joining HackGreenville and include any relevant local context that helps validate you\'re not a bot or spammer.'))->rows(4)->placeholder(__('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?')) }}
-                    {{ aire()->url('url', __('Please provide a LinkedIn profile link, or similar, to help us distinguish that\'s you\'re a real person with a local connection this community.')) }}
+                    {{ aire()->url('url', __('Please provide a LinkedIn profile link, or similar, to help us distinguish that you\'re a real person with a local connection this community.')) }}
 
                 </div>
             </div>
