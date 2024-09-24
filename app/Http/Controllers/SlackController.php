@@ -25,7 +25,12 @@ class SlackController extends Controller
     public function submit(JoinMessageRequest $request)
     {
         Notification::route('slack', config('services.slack.contact.webhook'))
-            ->notify(new JoinMessage(...$request->safe(['name', 'contact', 'reason', 'url'])));
+            ->notify(new JoinMessage(
+                $request->validated('name'),
+                $request->validated('contact'),
+                $request->validated('reason'),
+                $request->validated('url')
+            ));
 
         return view('slack.submitted');
     }
