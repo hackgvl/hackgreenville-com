@@ -23,9 +23,8 @@ class JoinMessage extends Notification implements ShouldQueue
         public string $name,
         public string $contact,
         public string $reason,
-        public string $url
-    )
-    {
+        public ?string $url
+    ) {
 
     }
 
