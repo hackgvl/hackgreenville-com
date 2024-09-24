@@ -21,7 +21,7 @@ class JoinSlackTest extends DatabaseTestCase
             'name' => 'John Doe',
             'contact' => 'john@fake.email',
             'reason' => 'I love Greenville!',
-            'url' => 'https://hackgreenville.com/join-slack',
+            'url' => 'https://linkedin.com/in/not-a-bot',
             'rules' => 1,
             'h-captcha-response' => 1234,
         ])
@@ -33,7 +33,7 @@ class JoinSlackTest extends DatabaseTestCase
                 return $notification->contact === 'john@fake.email'
                     && $notification->name === 'John Doe'
                     && $notification->reason === 'I love Greenville!'
-                    && $notification->url === 'https://hackgreenville.com/join-slack';
+                    && $notification->url === 'https://linkedin.com/in/not-a-bot';
             }
         );
     }
