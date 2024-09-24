@@ -17,7 +17,7 @@ class JoinMessage extends Notification implements ShouldQueue
      * @param  string $name
      * @param  string $contact
      * @param  string $reason
-     * @param  string $url
+     * @param  ?string $url
      */
     public function __construct(
         public string $name,
