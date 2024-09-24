@@ -11,22 +11,22 @@ class JoinMessage extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $name;
-    public $contact;
-    public $reason;
-
     /**
      * Create a new notification instance.
      *
      * @param  string $name
      * @param  string $contact
      * @param  string $reason
+     * @param  string $url
      */
-    public function __construct($name, $contact, $reason)
+    public function __construct(
+        public string $name,
+        public string $contact,
+        public string $reason,
+        public string $url
+    )
     {
-        $this->name = $name;
-        $this->contact = $contact;
-        $this->reason = $reason;
+
     }
 
     /**
@@ -48,19 +48,16 @@ class JoinMessage extends Notification implements ShouldQueue
      */
     public function toSlack($notifiable)
     {
-        $name = $this->name;
-        $contact = $this->contact;
-        $reason = $this->reason;
-
         return (new SlackMessage)
             ->success()
             ->content('A new sign-up submission has been received')
-            ->attachment(function ($attachment) use ($name, $contact, $reason) {
+            ->attachment(function ($attachment) {
                 $attachment
                     ->fields([
-                        'Name' => $name,
-                        'Contact' => $contact,
-                        'Reason' => $reason,
+                        'Name' => $this->name,
+                        'Contact' => $this->contact,
+                        'Reason' => $this->reason,
+                        'Url' => $this->url,
                     ]);
             });
     }
@@ -77,6 +74,7 @@ class JoinMessage extends Notification implements ShouldQueue
             'Name' => $this->name,
             'Contact' => $this->contact,
             'Reason' => $this->reason,
+            'Url' => $this->url,
         ];
     }
 }
