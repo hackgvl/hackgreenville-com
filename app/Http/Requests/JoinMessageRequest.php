@@ -27,6 +27,7 @@ class JoinMessageRequest extends FormRequest
             'name' => 'required|max:255',
             'contact' => 'required|email:rfc,dns',
             'reason' => 'required|max:5000',
+            'url' => 'nullable|url',
             'rules' => 'required|accepted',
             'h-captcha-response' => 'required|HCaptcha'
         ];

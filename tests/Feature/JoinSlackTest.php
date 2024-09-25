@@ -21,6 +21,7 @@ class JoinSlackTest extends DatabaseTestCase
             'name' => 'John Doe',
             'contact' => 'john@fake.email',
             'reason' => 'I love Greenville!',
+            'url' => 'https://linkedin.com/in/not-a-bot',
             'rules' => 1,
             'h-captcha-response' => 1234,
         ])
@@ -31,7 +32,8 @@ class JoinSlackTest extends DatabaseTestCase
             function (JoinMessage $notification, array $channels) {
                 return $notification->contact === 'john@fake.email'
                     && $notification->name === 'John Doe'
-                    && $notification->reason === 'I love Greenville!';
+                    && $notification->reason === 'I love Greenville!'
+                    && $notification->url === 'https://linkedin.com/in/not-a-bot';
             }
         );
     }
