@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -13,7 +12,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use RuntimeException;
 use Throwable;
 
 class LumaHandler extends AbstractEventHandler
@@ -28,11 +26,6 @@ class LumaHandler extends AbstractEventHandler
             'starts_at' => Carbon::parse($data['event']['start_at'])->setTimezone($data['event']['timezone']),
             'ends_at' => Carbon::parse($data['event']['end_at'])->setTimezone($data['event']['timezone']),
             'timezone' => $data['event']['timezone'],
-            'event_type' => match ($data['event']['location_type']) {
-                'online', 'zoom', => EventType::Online,
-                'offline', 'unknown' => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$data['event']['location_type']}"),
-            },
             'cancelled_at' => null,
             'rsvp' => $data['guest_count'],
             'service' => EventServices::Luma,
