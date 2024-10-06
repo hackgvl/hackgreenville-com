@@ -108,9 +108,9 @@ class MeetupGraphqlTest extends DatabaseTestCase
     {
         $this->runImportCommand();
 
-        $event = $this->queryEvent('pwdqjtygcpbkc');
+        $event = $this->queryEvent('pwdqjtygcpbkb');
 
-        $this->assertNull($event);
+        $this->assertNull($event->venue);
     }
 
     public function test_past_meetup_event_past_max_days_not_imported(): void
