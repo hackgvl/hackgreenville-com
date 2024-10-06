@@ -108,9 +108,9 @@ class MeetupGraphqlTest extends DatabaseTestCase
     {
         $this->runImportCommand();
 
-        $event = $this->queryEvent('pwdqjtygcpbkb');
+        $event = $this->queryEvent('pwdqjtygcpbkc');
 
-        $this->assertNull($event->venue);
+        $this->assertNull($event);
     }
 
     public function test_past_meetup_event_past_max_days_not_imported(): void
@@ -123,6 +123,15 @@ class MeetupGraphqlTest extends DatabaseTestCase
     }
 
     public function test_upcoming_meetup_event_past_max_days_not_imported(): void
+    {
+        $this->runImportCommand();
+
+        $event = $this->queryEvent('pwdqjtygcqbhb');
+
+        $this->assertNull($event);
+    }
+
+    public function test_meetup_event_duplicate_not_imported(): void
     {
         $this->runImportCommand();
 

@@ -10,6 +10,7 @@ use HackGreenville\EventImporter\Data\VenueData;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use RuntimeException;
 
@@ -17,20 +18,23 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 {
     protected ?string $next_page_url = null;
     protected int $per_page_limit = 100;
+    protected int $cache_ttl_minutes = 10;
+    protected string $cache_key = 'meetup_graphql_events';
 
     protected function mapIntoEventData(array $data): EventData
     {
         $event = $data['node'];
+        $event_time = Carbon::parse($event['dateTime']);
 
         return EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
             'url' => $event['eventUrl'],
-            'starts_at' => Carbon::parse($event['dateTime']),
+            'starts_at' => $event_time,
             // Meetup (graphql) does not provide an event end time
-            'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
-            'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
+            'ends_at' => $event_time->copy()->addHours(2),
+            'timezone' => $event_time->timezoneName,
             'cancelled_at' => match ($event['status']) {
                 'CANCELLED' => now(),
                 'cancelled' => now(),
@@ -190,7 +194,9 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         }
         GQL;
 
-        $response = Http::baseUrl('https://api.meetup.com/')
+        // We may get rate limited on the number of calls we make here
+        // Let's retry a few times with a delay in between
+        $response = Http::retry(3, 1000)->baseUrl('https://api.meetup.com/')
             ->withToken($bearer_token['access_token'])
             ->throw()
             ->post("/gql", [
@@ -208,14 +214,25 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $end_date = now()->addDays($this->max_days_in_future)->endOfDay();
 
         $filtered_events = [];
+        $filtered_events_hash = [];
 
-        foreach($events as $event) {
-            $eventDate = Carbon::parse($event['node']['dateTime']);
+        foreach($events as $eventData) {
+            $event = $eventData['node'];
+            $event_hash = md5($event['dateTime'] . $event['title']);
+
+            $eventDate = Carbon::parse($event['dateTime']);
             if ($eventDate < $start_date || $eventDate > $end_date) {
                 continue;
             }
 
-            $filtered_events[] = $event;
+            // Sometimes Meetup will return multiple events with the same title and date
+            // We need to filter out duplicates
+            if (in_array($event_hash, $filtered_events_hash)) {
+                continue;
+            }
+
+            $filtered_events[] = $eventData;
+            $filtered_events_hash[] = $event_hash;
         }
 
         return $filtered_events;
@@ -223,6 +240,10 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     private function getBearerToken()
     {
+        if (Cache::has($this->cache_key)) {
+            return Cache::get($this->cache_key);
+        }
+
         $this->validateConfigValues();
 
         $jwt_key = $this->getJwtKey();
@@ -232,7 +253,12 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'assertion' => $jwt_key,
         ]);
 
-        return $response->json();
+        $key_data = $response->json();
+
+        // Save JWT key to cache for next event import
+        Cache::put($this->cache_key, $key_data, now()->addMinutes($this->cache_ttl_minutes - 1));
+
+        return $key_data;
     }
 
     private function getJwtKey()
@@ -252,7 +278,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'sub' => config('event-import-handlers.meetup_graphql_member_id'),
             'aud' => 'api.meetup.com',
             'iat' => time(),
-            'exp' => time() + 240,
+            'exp' => time() + (60 * $this->cache_ttl_minutes),
         ];
         return JWT::encode($payload, $privateKey, 'RS256', null, $headers);
     }
