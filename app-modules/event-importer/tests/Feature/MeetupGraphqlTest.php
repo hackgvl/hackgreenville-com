@@ -131,6 +131,15 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $this->assertNull($event);
     }
 
+    public function test_meetup_event_duplicate_not_imported(): void
+    {
+        $this->runImportCommand();
+
+        $event = $this->queryEvent('pwdqjtygcqbhb');
+
+        $this->assertNull($event);
+    }
+
     public function test_config_validation_fails_with_missing_client_id(): void
     {
         config()->set('event-import-handlers.meetup_graphql_client_id', null);
