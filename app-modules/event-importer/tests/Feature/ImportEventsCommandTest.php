@@ -50,7 +50,7 @@ class Stub extends AbstractEventHandler
 
 class ExceptionStub extends AbstractEventHandler
 {
-    public static string $service = EventServices::EventBrite->value;
+    public static string $service = 'eventbrite';
     public static string $service_id = 'stub_id';
 
     // Simulate an exception thrown during event data mapping
