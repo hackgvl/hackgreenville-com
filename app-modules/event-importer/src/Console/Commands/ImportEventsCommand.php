@@ -2,11 +2,13 @@
 
 namespace HackGreenville\EventImporter\Console\Commands;
 
+use App\Models\Event;
 use App\Models\Org;
 use Glhd\ConveyorBelt\IteratesIdQuery;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Services\ImportEventForOrganization;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class ImportEventsCommand extends Command
 {
@@ -23,22 +25,32 @@ class ImportEventsCommand extends Command
 
     public function handleRow(Org $org)
     {
-        $handler = $org->getEventHandler();
+        DB::transaction(function () use ($org) {
+            $handler = $org->getEventHandler();
+            $current_page = 1;
 
-        $current_page = 1;
+            $min_cutoff = now()->subDays(config('event-import-handlers.max_days_in_past'));
+            $max_cutoff = now()->addDays(config('event-import-handlers.max_days_in_future'));
 
-        do {
-            [$events, $last_page] = $handler->getPaginatedData($current_page);
+            Event::query()
+                ->where('organization_id', $org->id)
+                ->where('active_at', '>', $min_cutoff)
+                ->where('active_at', '<', $max_cutoff)
+                ->delete();
 
-            $this->info("Processing Page <{$current_page}> from {$org->service->name} for {$org->title}");
+            do {
+                [$events, $last_page] = $handler->getPaginatedData($current_page);
 
-            /** @var EventData $event_data */
-            foreach ($events as $event_data) {
-                $this->info("Importing event: {$event_data->name} @ {$event_data->starts_at->toDateTimeString()}");
+                $this->info("Processing Page <{$current_page}> from {$org->service->name} for {$org->title}");
 
-                ImportEventForOrganization::process($event_data, $org);
-            }
+                /** @var EventData $event_data */
+                foreach ($events as $event_data) {
+                    $this->info("Importing event: {$event_data->name} @ {$event_data->starts_at->toDateTimeString()}");
 
-        } while (++$current_page < $last_page);
+                    ImportEventForOrganization::process($event_data, $org);
+                }
+
+            } while (++$current_page < $last_page);
+        });
     }
 }

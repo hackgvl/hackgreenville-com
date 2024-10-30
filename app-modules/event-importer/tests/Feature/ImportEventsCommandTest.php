@@ -5,6 +5,7 @@ namespace HackGreenville\EventImporter\Tests\Feature;
 use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
+use Exception;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -34,6 +35,28 @@ class Stub extends AbstractEventHandler
             'rsvp' => 0,
             'venue' => null,
         ]);
+    }
+
+    protected function mapIntoVenueData(array $data): ?VenueData
+    {
+        return null;
+    }
+
+    protected function eventResults(int $page): Collection
+    {
+        return collect([[]]); // return non-empty array to simulate events
+    }
+}
+
+class ExceptionStub extends AbstractEventHandler
+{
+    public static string $service = EventServices::EventBrite->value;
+    public static string $service_id = 'stub_id';
+
+    // Simulate an exception thrown during event data mapping
+    protected function mapIntoEventData(array $data): EventData
+    {
+        throw new Exception('Test exception');
     }
 
     protected function mapIntoVenueData(array $data): ?VenueData
@@ -108,10 +131,47 @@ class ImportEventsCommandTest extends DatabaseTestCase
         $this->assertEquals('Stub Event', $result->event_name);
     }
 
-    private function createEvent(int $daysToAdd, string $service_id): void
+    public function test_event_in_date_range_not_imported_is_deleted(): void
+    {
+        $this->createEvent(1, 'foobar');
+
+        $this->runImportCommand();
+
+        $result = $this->queryEvent('foobar');
+        $this->assertNull($result);
+    }
+
+    public function test_event_for_different_org_is_not_deleted(): void
+    {
+        $org = Org::factory()->create();
+        $this->createEvent(1, 'foobar', $org->id);
+
+        $this->runImportCommand();
+
+        $result = $this->queryEvent('foobar');
+        $this->assertNotNull($result);
+    }
+
+    public function test_event_import_on_exception_does_not_delete_records(): void
+    {
+        config()->set('event-import-handlers.handlers', [
+            ExceptionStub::$service => ExceptionStub::class,
+        ]);
+
+        $this->createEvent(1, 'foobar');
+
+        $this->expectException(Exception::class);
+
+        $this->runImportCommand();
+
+        $result = $this->queryEvent('foobar');
+        $this->assertNotNull($result);
+    }
+
+    private function createEvent(int $daysToAdd, string $service_id, int $org_id = 1): void
     {
         Event::factory()->create([
-            'organization_id' => 1,
+            'organization_id' => $org_id,
             'service' => Stub::$service,
             'service_id' => $service_id,
             'event_name' => 'Existing Event',
