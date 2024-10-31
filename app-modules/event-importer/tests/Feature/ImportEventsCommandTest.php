@@ -69,9 +69,9 @@ class ExceptionStub extends AbstractEventHandler
 
 class ImportEventsCommandTest extends DatabaseTestCase
 {
-    public const MEETUP_REST = EventServices::MeetupRest->value;
-    public const MEETUP_GRAPHQL = EventServices::MeetupGraphql->value;
-    public const EVENTBRITE = EventServices::EventBrite->value;
+    public $meetup_rest = EventServices::MeetupRest->value;
+    public $meetup_graphql = EventServices::MeetupGraphql->value;
+    public $eventbrite = EventServices::EventBrite->value;
 
     public const SERVICE_ID = '12345';
     public const ALT_SERVICE_ID = 'foobar';
@@ -84,7 +84,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_new_event_is_imported(): void
     {
-        $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_rest, self::SERVICE_ID);
 
         $this->runImportCommand();
 
@@ -94,7 +94,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_imported_event_updates_event_with_same_service_id(): void
     {
-        $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_rest, self::SERVICE_ID);
 
         $this->createEvent(0, self::SERVICE_ID);
 
@@ -107,7 +107,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_event_for_meetup_rest_org_at_same_time_different_service_id_is_deleted(): void
     {
-        $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_rest, self::SERVICE_ID);
 
         $this->createEvent(0, self::ALT_SERVICE_ID);
 
@@ -119,7 +119,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_event_for_meetup_graphql_org_at_same_time_different_service_id_is_deleted(): void
     {
-        $this->setServiceValues(self::MEETUP_GRAPHQL, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_graphql, self::SERVICE_ID);
 
         $this->createEvent(0, self::ALT_SERVICE_ID);
 
@@ -131,7 +131,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_event_for_org_at_different_time_different_service_id_is_not_deleted(): void
     {
-        $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_rest, self::SERVICE_ID);
 
         $this->createEvent(1, self::ALT_SERVICE_ID);
 
@@ -143,7 +143,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_event_for_non_meetup_at_same_time_different_service_id_is_not_deleted(): void
     {
-        $this->setServiceValues(self::EVENTBRITE, self::SERVICE_ID);
+        $this->setServiceValues($this->eventbrite, self::SERVICE_ID);
 
         $this->createEvent(1, self::ALT_SERVICE_ID);
 
@@ -155,7 +155,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_event_for_different_org_is_not_deleted(): void
     {
-        $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_rest, self::SERVICE_ID);
 
         $org = Org::factory()->create();
         $this->createEvent(0, self::ALT_SERVICE_ID, $org->id);
@@ -168,7 +168,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
 
     public function test_event_import_on_exception_does_not_delete_records(): void
     {
-        $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
+        $this->setServiceValues($this->meetup_rest, self::SERVICE_ID);
 
         config()->set('event-import-handlers.handlers', [
             $this->getServiceName() => ExceptionStub::class,
