@@ -158,7 +158,7 @@ class ImportEventsCommandTest extends DatabaseTestCase
         $this->setServiceValues(self::MEETUP_REST, self::SERVICE_ID);
 
         $org = Org::factory()->create();
-        $this->createEvent(1, self::ALT_SERVICE_ID, $org->id);
+        $this->createEvent(0, self::ALT_SERVICE_ID, $org->id);
 
         $this->runImportCommand();
 
