@@ -2,7 +2,6 @@
 
 namespace HackGreenville\EventImporter\Console\Commands;
 
-use App\Models\Event;
 use App\Models\Org;
 use Glhd\ConveyorBelt\IteratesIdQuery;
 use HackGreenville\EventImporter\Data\EventData;
@@ -32,8 +31,8 @@ class ImportEventsCommand extends Command
             $min_cutoff = now()->subDays(config('event-import-handlers.max_days_in_past'));
             $max_cutoff = now()->addDays(config('event-import-handlers.max_days_in_future'));
 
-            Event::query()
-                ->where('organization_id', $org->id)
+            DB::table('events')
+                ->where('organization_id', '=', $org->id)
                 ->where('active_at', '>', $min_cutoff)
                 ->where('active_at', '<', $max_cutoff)
                 ->delete();

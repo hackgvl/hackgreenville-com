@@ -2,7 +2,6 @@
 
 namespace HackGreenville\EventImporter\Tests\Feature;
 
-use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use Exception;
