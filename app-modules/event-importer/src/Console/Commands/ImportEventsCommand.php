@@ -55,9 +55,11 @@ class ImportEventsCommand extends Command
         }
 
         $active_at_dates = $events->pluck('starts_at')->all();
+        $service_ids = $events->pluck('service_id')->all();
 
         $events_to_delete = DB::table('events')
             ->where('organization_id', $org->id)
+            ->whereNotIn('service_id', $service_ids)
             ->whereIn('active_at', $active_at_dates)
             ->get();
 
