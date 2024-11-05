@@ -54,6 +54,8 @@ class Venue extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public const icon = 'heroicon-o-building-office';
+
     protected $table = 'venues';
 
     protected $fillable = [

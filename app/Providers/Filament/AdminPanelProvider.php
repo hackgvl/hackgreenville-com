@@ -20,6 +20,13 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->passwordReset()
             ->darkMode()
+            ->spa()
+            ->unsavedChangesAlerts()
+            ->globalSearchKeyBindings([
+                'ctrl+k',
+                'command+k',
+            ])
+            ->globalSearchDebounce('750ms')
             ->colors([
                 'primary' => Color::hex('#60ae6d'),
                 'gray' => Color::hex('#201748'),

@@ -35,8 +35,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class State extends Model
 {
-    use HasFactory;
     use SoftDeletes;
+
+    public const icon = 'heroicon-o-map-pin';
 
     protected $table = 'states';
 

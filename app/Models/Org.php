@@ -64,6 +64,8 @@ class Org extends BaseModel
     use HasFactory;
     use SoftDeletes;
 
+    public const icon = 'heroicon-o-circle-stack';
+
     protected $casts = [
         'status' => OrganizationStatus::class,
         'service' => EventServices::class,
