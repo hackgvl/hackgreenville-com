@@ -7697,16 +7697,16 @@
         },
         {
             "name": "scyllaly/hcaptcha",
-            "version": "4.4.6",
+            "version": "4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Scyllaly/hcaptcha.git",
-                "reference": "5b7d5ec5430014bbf2b44831cef3ddf9d3ded451"
+                "reference": "f5d3d669a5a21e63457e868effbfb44099c3f8fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Scyllaly/hcaptcha/zipball/5b7d5ec5430014bbf2b44831cef3ddf9d3ded451",
-                "reference": "5b7d5ec5430014bbf2b44831cef3ddf9d3ded451",
+                "url": "https://api.github.com/repos/Scyllaly/hcaptcha/zipball/f5d3d669a5a21e63457e868effbfb44099c3f8fd",
+                "reference": "f5d3d669a5a21e63457e868effbfb44099c3f8fd",
                 "shasum": ""
             },
             "require": {
@@ -7750,9 +7750,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Scyllaly/hcaptcha/issues",
-                "source": "https://github.com/Scyllaly/hcaptcha/tree/4.4.6"
+                "source": "https://github.com/Scyllaly/hcaptcha/tree/4.4.7"
             },
-            "time": "2024-06-08T15:55:53+00:00"
+            "time": "2024-08-31T06:44:47+00:00"
         },
         {
             "name": "seld/jsonlint",
