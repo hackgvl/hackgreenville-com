@@ -21,6 +21,7 @@
         "internachi/modular": "^2.0",
         "laravel/framework": "^10.0",
         "laravel/helpers": "^1.2",
+        "laravel/pail": "^1.2",
         "laravel/slack-notification-channel": "^2.4",
         "laravel/tinker": "^2.0",
         "malzariey/filament-daterangepicker-filter": "^2.7",
@@ -92,6 +93,13 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall"
+        ],
+        "serve": [
+            "php artisan serve"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"composer serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail\" \"yarn dev --host\" --names=server,queue,logs,vite"
         ]
     },
     "config": {
