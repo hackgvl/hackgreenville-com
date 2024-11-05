@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -10,7 +11,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class Categories
  *
  * @property int $id
- * @package App\Models
  * @property string|null $slug
  * @property string $label
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -34,7 +34,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Category extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    use HasSlug, SoftDeletes;
+
+    public const icon = 'heroicon-o-briefcase';
+
+    public static string $slug_from = 'label';
 
     protected $fillable
         = [

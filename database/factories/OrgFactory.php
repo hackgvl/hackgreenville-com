@@ -23,7 +23,7 @@ class OrgFactory extends Factory
             'primary_contact_person' => $this->faker->word(),
             'organization_type' => $this->faker->word(),
             'event_calendar_uri' => $this->faker->url(),
-            'established_at' => now(),
+            'established_at' => $this->faker->dateTimeBetween('-10 years', 'now'),
             'status' => OrganizationStatus::Active,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

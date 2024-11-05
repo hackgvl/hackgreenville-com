@@ -15,13 +15,12 @@ class VenueFactory extends Factory
     {
         return [
             'name' => $name = implode(' ', $this->faker->words(5)),
-            'slug' => Str::slug($name),
             'address' => $this->faker->address,
             'zipcode' => $this->faker->postcode,
             'country' => $this->faker->countryCode(),
             'phone' => $this->faker->phoneNumber,
             'city' => $this->faker->city,
-            'state_id' => State::factory(),
+            'state_id' => State::inRandomOrder()->first(),
             'lat' => $this->faker->latitude,
             'lng' => $this->faker->longitude,
         ];

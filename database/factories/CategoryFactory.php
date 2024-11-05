@@ -13,7 +13,6 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'slug' => $this->faker->slug(),
             'label' => $this->faker->word(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
