@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use App\Enums\EventServices;
 use App\Enums\OrganizationStatus;
 use App\Filament\Resources\OrgResource\Pages;
-use App\Filament\Resources\OrgResource\RelationManagers\EventsRelationManager;
+//use App\Filament\Resources\OrgResource\RelationManagers\EventsRelationManager; // including this in another PR
 use App\Models\Org;
 use App\Models\Venue;
 use Exception;
@@ -199,7 +199,7 @@ class OrgResource extends Resource
     public static function getRelations(): array
     {
         return [
-            EventsRelationManager::class,
+            //EventsRelationManager::class, // including this in another PR
         ];
     }
 
