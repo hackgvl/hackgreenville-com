@@ -40,7 +40,7 @@
                     <x-flex-column>
                         <h5>RefactorGVL</h5>
                         <p>To donate for the HackGreenville initiative, please enter "HackGreenville" in the "Requested earmark" field on the donation form.</p>
-                        <p><a href="https://refactorgvl.com/"
+                        <p><a href="https://refactorgvl.com/#donate"
                               target="refactor_gvl"
                               class="btn btn-info">Learn More</a>
                         </p>
