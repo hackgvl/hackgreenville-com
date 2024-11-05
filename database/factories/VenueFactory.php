@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\State;
 use App\Models\Venue;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class VenueFactory extends Factory
 {

@@ -63,7 +63,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Org extends BaseModel
 {
     use HasFactory;
-    use HasSlug, SoftDeletes;
+    use HasSlug;
+    use SoftDeletes;
 
     protected $casts = [
         'status' => OrganizationStatus::class,

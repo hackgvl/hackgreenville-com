@@ -209,7 +209,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
         $filtered_events = [];
 
-        foreach($events as $event) {
+        foreach ($events as $event) {
             $eventDate = Carbon::parse($event['node']['dateTime']);
             if ($eventDate < $start_date || $eventDate > $end_date) {
                 continue;

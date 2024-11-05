@@ -14,11 +14,12 @@
         "hg:monit": "pm2 monit",
         "hg:dev": "yarn hg:delete; yarn hg:start; yarn hg:monit",
         "test": "echo 'Running art test'",
-        "posttest": "php artisan test --parallel",
+        "posttest": "php artisan test",
         "lint": "prettier --write \"resources/{js,scss}/**/*.{ts,tsx,md,json,js,scss}\" --loglevel=error",
         "lint:php": "composer lint --silent"
     },
     "pre-commit": [
+        "test",
         "lint",
         "lint:php"
     ],

@@ -53,7 +53,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Venue extends Model
 {
     use HasFactory;
-    use HasSlug, SoftDeletes;
+    use HasSlug;
+    use SoftDeletes;
 
     public static string $slug_from = 'name';
 
