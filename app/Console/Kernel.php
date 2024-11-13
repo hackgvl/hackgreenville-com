@@ -17,7 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(ImportEventsCommand::class)->hourly();
+        $schedule->command(ImportEventsCommand::class)->hourly()
+          ->appendOutputTo(storage_path('logs/cron.log'));
 
         $schedule->command(PruneMissingEventsCommand::class)->dailyAt('02:00');
 

@@ -42,7 +42,7 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function mapIntoEventData(array $data): EventData
     {
-        return EventData::from([
+        $map = EventData::from([
             'id' => $data['id'],
             'name' => $data['name'],
             'description' => $data['description'],
@@ -60,6 +60,16 @@ class MeetupRestHandler extends AbstractEventHandler
             'service_id' => $data['id'],
             'venue' => $this->mapIntoVenueData($data),
         ]);
+
+        Log::info('Mapped MeetupRest event data', [
+            'org_service_key' => $this->org->service_api_key,
+            'service_id' => $map->service_id,
+            'starts_at' => $map->starts_at->toISOString(),
+            'name' => $map->name,
+        ]);
+
+
+        return $map;
     }
 
     protected function mapIntoVenueData(array $data): ?VenueData
@@ -93,6 +103,8 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
+        Log::info('Fetching events from Meetup Rest API', ['service_key' => $this->org->service_api_key]);
+
         // Meetup's pagination is a bit tricky.
         // Initially we have to specify the data we want,
         // In response, it provides a "Link" header which tells us what the next page is
