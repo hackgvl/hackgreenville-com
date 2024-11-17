@@ -32,7 +32,7 @@ class OrgsController extends Controller
                         ->future()
                         ->published()
                         ->orderBy('active_at')
-                        ->limit(5);
+                        ->limit(25);
                 },
             ]),
         ]);
