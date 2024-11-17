@@ -9,6 +9,7 @@
             "cursor": "MzAxNDExODM0OjE3MjA3MzUyMDAwMDA=",
             "node": {
               "id": "301411834",
+              "token": "301411834",
               "title": "Build Carolina: empowering tech professionals in South Carolina through training",
               "eventUrl": "https://www.meetup.com/defcon864/events/301411834",
               "description": "Lauren McGlamery will share the mission of Build Carolina as a tech talent hub, fostering a vibrant community for tech professionals. We'll explore the various ways we achieve this, including:\n\n* Comprehensive training programs: We offer a range of training programs to address the industry's ever-evolving needs.\n* Dedicated support: We offer career guidance, mentorship opportunities, and other resources to empower aspiring tech professionals.\n* Supportive community for the tech ecosystem in SC: Our organization provides a platform for collaboration, knowledge sharing, and professional development.\n* Learning opportunities and giving back initiatives: We'll showcase ways experienced professionals can continue to expand their skills and contribute their knowledge and expertise to the community.\n\nWe'll also delve into our unique apprenticeship program, designed to bridge the gap between theory and practice for early-career professionals in any tech-based role. Learn how your organization can benefit from partnering with Build Carolina to build a robust tech workforce.\n\n**Agenda**\n\n1. Welcome & Announcements\n2. Presentation (*above*)\n3. Projects & Hobbies\n4. Networking",
@@ -59,6 +60,7 @@
             "cursor": "MzAwNjk5MjkwOjE3MTc3MTEyMDAwMDA=",
             "node": {
               "id": "300699290",
+              "token": "300699290",
               "title": "Simple Malware Creation for AV Testing",
               "eventUrl": "https://www.meetup.com/defcon864/events/300699290",
               "description": "**Location**\nNote the new location at OpenWorks.\nFor parking and how to find us: [https://joinopenworks.com/guest-access#after-hours](https://joinopenworks.com/guest-access#after-hours)\n\n**About the Presentation**\nThis presentation covers how to create a simulation of the LockBit 3.0 ransomware using known indicators of compromise (IoCs). The non-malicious simulation is designed to trigger detections by Endpoint Detection and Response (EDR) and Antivirus (AV) systems, providing a practical exercise to enhance purple teaming skills. The simulation includes a simple Python-based listening server for command and control (C2) and a simulated malware component developed in Nim.\n\n**Projects**\nDuring this time anyone in attendance is free to share an update on a project or hobby they are working on.\n\n**CTF Planning**\nThere will be a time to collaborate for those involved in planning capture the flag (CTF) events for up-coming conferences.",
@@ -84,6 +86,7 @@
             "cursor": "Mjk5NjYzNzAzOjE3MTQ2ODcyMDAwMDA=",
             "node": {
               "id": "299663703",
+              "token": "299663703",
               "title": "Social gathering for food and drink at Home Team BBQ",
               "eventUrl": "https://www.meetup.com/defcon864/events/299663703",
               "description": "Instead of a meeting this month we're just going to hang out with some good food and friends. Individual ordering.",
@@ -109,6 +112,7 @@
             "cursor": "Mjk5NjYzNzAyOjE3MTIyNjgwMDAwMDA=",
             "node": {
               "id": "299663702",
+              "token": "299663702",
               "title": "How to Survive a War Zone with a VPN and a Raspberry Pi",
               "eventUrl": "https://www.meetup.com/defcon864/events/299663702",
               "description": "Every day learning is important. In my opinion, the best way to learn is to have a project and a playground. In this talk, I’ll present the technology stack in my personal lab, the evolution of how I’ve used it for professional development, and most importantly, the motivation behind the development and evolution. If I get the slides done in time…\n\n**Speaker Bio**\nMike Fletcher is a security leader with over 15 years in the security industry. He is an advocate of people leadership in the tech field, where most find only poor management. He also leads our Blue Team village.\n\n**Event Details**\nThursday, April 4, 2024 at 6:00 – 8:00 PM EST\nGreenville County Library System (Hughes Main Library) 25 Heritage Green Pl · Greenville, SC\n\nIf you have a tools project to share with the group we have an open mic time for projects. These can be status updates of a work in-progress.",
@@ -144,6 +148,7 @@
             "cursor": "MzAyMTkwMDU3OjE3MjI1NDk2MDAwMDA=",
             "node": {
               "id": "302190057",
+              "token": "302190057",
               "title": "DEF CON 864 Meeting",
               "eventUrl": "https://www.meetup.com/defcon864/events/302190057",
               "description": "Join us for the monthly DEF CON 864 group meeting online and in-person.\n\n* Online details are posted in our Discord.\n* Discord invite is on our website at dc864.org.\n\nAll meetings are free and open to the public.\n\nWe have a very open format, so join in and let us know what your interests are that you'd like to see from this group.\n\nWe leave an hour to going over member projects and interests. Have a Raspberry Pi project or build a custom drone? Bring it in and show us how you did it. Creating your own set of scripts for system reconnaissance? We'd love to see it.",
@@ -169,6 +174,7 @@
             "cursor": "cHdkcWp0eWdjbWJoYjoxNzI1NTczNjAwMDAw",
             "node": {
               "id": "pwdqjtygcmbhb",
+              "token": "pwdqjtygcmbhb",
               "title": "DEF CON 864 Meeting",
               "eventUrl": "https://www.meetup.com/defcon864/events/pwdqjtygcmbhb",
               "description": "Join us for the monthly DEF CON 864 group meeting online and in-person.\n\n* Online details are posted in our Discord.\n* Discord invite is on our website at dc864.org.\n\nAll meetings are free and open to the public.\n\nWe have a very open format, so join in and let us know what your interests are that you'd like to see from this group.\n\nWe leave an hour to going over member projects and interests. Have a Raspberry Pi project or build a custom drone? Bring it in and show us how you did it. Creating your own set of scripts for system reconnaissance? We'd love to see it.",
@@ -194,6 +200,7 @@
             "cursor": "cHdkcWp0eWdjbmJmYjoxNzI3OTkyODAwMDAw",
             "node": {
               "id": "pwdqjtygcnbfb",
+              "token": "pwdqjtygcnbfb",
               "title": "DEF CON 864 Meeting",
               "eventUrl": "https://www.meetup.com/defcon864/events/pwdqjtygcnbfb",
               "description": "Join us for the monthly DEF CON 864 group meeting online and in-person.\n\n* Online details are posted in our Discord.\n* Discord invite is on our website at dc864.org.\n\nAll meetings are free and open to the public.\n\nWe have a very open format, so join in and let us know what your interests are that you'd like to see from this group.\n\nWe leave an hour to going over member projects and interests. Have a Raspberry Pi project or build a custom drone? Bring it in and show us how you did it. Creating your own set of scripts for system reconnaissance? We'd love to see it.",
@@ -219,6 +226,7 @@
             "cursor": "cHdkcWp0eWdjcGJrYjoxNzMxMDIwNDAwMDAw",
             "node": {
               "id": "pwdqjtygcpbkb",
+              "token": "pwdqjtygcpbkb",
               "title": "DEF CON 864 Meeting",
               "eventUrl": "https://www.meetup.com/defcon864/events/pwdqjtygcpbkb",
               "description": "Join us for the monthly DEF CON 864 group meeting online and in-person.\n\n* Online details are posted in our Discord.\n* Discord invite is on our website at dc864.org.\n\nAll meetings are free and open to the public.\n\nWe have a very open format, so join in and let us know what your interests are that you'd like to see from this group.\n\nWe leave an hour to going over member projects and interests. Have a Raspberry Pi project or build a custom drone? Bring it in and show us how you did it. Creating your own set of scripts for system reconnaissance? We'd love to see it.",
@@ -244,6 +252,7 @@
             "cursor": "cHdkcWp0eWdjcWJoYjoxNzMzNDM5NjAwMDAw",
             "node": {
               "id": "pwdqjtygcqbhb",
+              "token": "pwdqjtygcqbhb",
               "title": "DEF CON 864 Meeting",
               "eventUrl": "https://www.meetup.com/defcon864/events/pwdqjtygcqbhb",
               "description": "Join us for the monthly DEF CON 864 group meeting online and in-person.\n\n* Online details are posted in our Discord.\n* Discord invite is on our website at dc864.org.\n\nAll meetings are free and open to the public.\n\nWe have a very open format, so join in and let us know what your interests are that you'd like to see from this group.\n\nWe leave an hour to going over member projects and interests. Have a Raspberry Pi project or build a custom drone? Bring it in and show us how you did it. Creating your own set of scripts for system reconnaissance? We'd love to see it.",
