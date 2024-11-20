@@ -58,6 +58,48 @@
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
 
 
+      <h3 class="mt-4">2024 - Oct | <em>"Starch Trek"</em></h3>
+      <div class="flex-row-3-columns w-100">
+        <div class="flex-row-column">
+          <p><a href="https://www.meetup.com/hack-greenville/events/303551633/" class="btn btn-info">Recap</a></p>
+        </div>
+        <div class="flex-row-column">
+          <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
+        </div>
+      </div>
+
+
+      <h5 class="font-weight-bold">Kudos</h5>
+      <p class="lead-text">Event Sponsorship by <a href="https://www.brightball.com"><b>Brightball</b></a> | 
+           Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+
+      <h5 class="font-weight-bold">Speakers</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Caleb McQuaid on
+          <a href="https://www.youtube.com/watch?v=-1FoF2T2ZZU&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=1">
+            <em>Encore! Encore!</em>
+          </a>
+	</li>
+        <li class="list-group-item"> Barry Jones on
+          <a href="https://www.youtube.com/watch?v=AOis3O5kO70&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=2">
+            <em>Story Points are Pointless, Measure Queues</em>
+          </a>
+        </li>
+        <li class="list-group-item"> Heather Bowes on
+          <a href="https://www.youtube.com/watch?v=2Vsaq2bUl4E&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=3">
+            <em>Running a House Off an Electric Car</em>
+          </a>
+        </li>
+        <li class="list-group-item">Brian Kennedy on
+          <a href="https://www.youtube.com/watch?v=XW5J_KGWIAA&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=4">
+            <em>Project-based IaC, You're Doing IaC Wrong | Part 2 - Tools and Quality</em>
+          </a>
+        </li>
+      </ul>
 
       <h3 class="mt-4">2024 - May | <em>"Subs and Sliders"</em></h3>
       <div class="flex-row-3-columns w-100">

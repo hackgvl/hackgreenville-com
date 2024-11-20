@@ -1526,14 +1526,15 @@ sass-loader@^8.0.0:
     semver "^6.3.0"
 
 sass@^1.20.1:
-  version "1.80.5"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.80.5.tgz#0ba965223d44df22497f2966b498cf5c453fae8f"
-  integrity sha512-TQd2aoQl/+zsxRMEDSxVdpPIqeq9UFc6pr7PzkugiTx3VYCFPUaa3P4RrBQsqok4PO200Vkz0vXQBNlg7W907g==
+  version "1.80.6"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.80.6.tgz#5d0aa55763984effe41e40019c9571ab73e6851f"
+  integrity sha512-ccZgdHNiBF1NHBsWvacvT5rju3y1d/Eu+8Ex6c21nHp2lZGLBEtuwc415QfiI1PJa1TpCo3iXwwSRjRpn2Ckjg==
   dependencies:
-    "@parcel/watcher" "^2.4.1"
     chokidar "^4.0.0"
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
+  optionalDependencies:
+    "@parcel/watcher" "^2.4.1"
 
 sax@^1.2.4:
   version "1.3.0"
@@ -1739,9 +1740,9 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 sweetalert2@^11.7.12:
-  version "11.14.4"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.14.4.tgz#0186439674ea4f15991e41cea3af203ee497853c"
-  integrity sha512-8QMzjxCuinwm18EK5AtYvuhP+lRMRxTWVXy8om9wGlULsXSI4TD29kyih3VYrSXMMBlD4EShFvNC7slhTC7j0w==
+  version "11.14.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.14.5.tgz#a3adf9d8c6c8eb8eacfd57e2261503f2181abb8d"
+  integrity sha512-8MWk5uc/r6bWhiJWkUXyEuApfXAhSCZT8FFX7pZXL7YwaPxq+9Ynhi2dUzWkOFn9jvLjKj22CXuccZ+IHcnjvQ==
 
 systeminformation@^5.7:
   version "5.22.7"
