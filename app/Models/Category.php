@@ -36,6 +36,8 @@ class Category extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public const icon = 'heroicon-o-briefcase';
+
     protected $fillable
         = [
             'slug',

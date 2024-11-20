@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\EventResource\Widgets\TotalActiveEvents;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -20,13 +21,20 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->passwordReset()
             ->darkMode()
+            ->spa()
+            ->unsavedChangesAlerts()
+            ->globalSearchKeyBindings([
+                'ctrl+k',
+                'command+k',
+            ])
+            ->globalSearchDebounce('750ms')
             ->colors([
                 'primary' => Color::hex('#60ae6d'),
                 'gray' => Color::hex('#201748'),
             ])
             ->brandLogo(static fn () => view('includes.logo', ['darkMode' => false]))
             ->darkModeBrandLogo(static fn () => view('includes.logo'))
-            ->brandLogoHeight(static fn (Request $request) => match(true) {
+            ->brandLogoHeight(static fn (Request $request) => match (true) {
                 str($request->route()->getName())
                     ->isMatch('/filament\.admin\.*/') => '3rem',
                 default => 'auto',
@@ -39,6 +47,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
+                TotalActiveEvents::class,
             ])
             ->middleware(['filament-web'])
             ->authMiddleware(['filament-auth'])

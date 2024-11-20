@@ -8,18 +8,35 @@ use App\Filament\Resources\EventResource\Pages;
 use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
+use Exception;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 
 class EventResource extends Resource
 {
     protected static ?string $model = Event::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = Event::icon;
+
+    protected static ?int $navigationSort = 20;
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['event_name', 'description'];
+    }
+
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Event Name' => $record->event_name,
+            'Description' => $record->description,
+        ];
+    }
 
     public static function form(Form $form): Form
     {
@@ -90,6 +107,9 @@ class EventResource extends Resource
             ]);
     }
 
+    /**
+     * @throws Exception
+     */
     public static function table(Table $table): Table
     {
         return $table
@@ -114,6 +134,7 @@ class EventResource extends Resource
                     ->sortable(),
             ])
             ->filters([
+                Tables\Filters\TrashedFilter::make(),
                 DateRangeFilter::make('active_at')
                     ->defaultToday()
                     ->autoApply()

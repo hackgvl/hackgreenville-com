@@ -1,18 +1,13 @@
 <?php
 
-namespace Database\Seeders;
-
 use App\Models\State;
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Migrations\Migration;
 
-class StatesSeeder extends Seeder
-{
+return new class extends Migration {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Run the migrations.
      */
-    public function run()
+    public function up(): void
     {
         $states = [
             ['name' => 'Alaska', 'abbr' => 'AK'],
@@ -89,4 +84,11 @@ class StatesSeeder extends Seeder
             ]);
         }
     }
-}
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+    }
+};

@@ -14,7 +14,9 @@ class StateResource extends Resource
 {
     protected static ?string $model = State::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = State::icon;
+
+    protected static ?int $navigationSort = 1000;
 
     public static function form(Form $form): Form
     {

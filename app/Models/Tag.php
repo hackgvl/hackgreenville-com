@@ -25,6 +25,8 @@ namespace App\Models;
  */
 class Tag extends BaseModel
 {
+    public const icon = 'heroicon-o-tag';
+
     public function orgs()
     {
         return $this->belongsToMany(Org::class);

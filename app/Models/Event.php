@@ -77,6 +77,8 @@ class Event extends BaseModel
     use HasUniqueIdentifier;
     use SoftDeletes;
 
+    public const icon = 'heroicon-o-calendar';
+
     protected $table = 'events';
 
     protected $casts = [
