@@ -104,11 +104,6 @@ class Event extends BaseModel
         return $this->belongsTo(Venue::class);
     }
 
-    public function orgs(): BelongsTo
-    {
-        return $this->belongsTo(Org::class, 'organization_id');
-    }
-
     public function organization(): BelongsTo
     {
         return $this->belongsTo(Org::class, 'organization_id');

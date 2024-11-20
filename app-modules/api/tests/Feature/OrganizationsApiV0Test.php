@@ -15,7 +15,7 @@ class OrganizationsApiV0Test extends DatabaseTestCase
 
         $org = Org::factory()->create();
 
-        Tag::factory()->create()->orgs()->attach($org);
+        Tag::factory()->create()->organization()->attach($org);
 
         $this->getJson(route('api.v0.orgs.index'))
             ->assertSessionDoesntHaveErrors()
