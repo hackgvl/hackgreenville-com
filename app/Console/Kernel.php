@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command(PruneMissingEventsCommand::class)->dailyAt('02:00');
 
-        if(config('telescope.enabled')) {
+        if (config('telescope.enabled')) {
             $schedule->command('telescope:prune')->daily();
         }
     }
