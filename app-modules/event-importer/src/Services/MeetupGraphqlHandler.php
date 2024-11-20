@@ -11,6 +11,7 @@ use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
 class MeetupGraphqlHandler extends AbstractEventHandler
@@ -22,7 +23,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     {
         $event = $data['node'];
 
-        return EventData::from([
+        $map = EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
@@ -41,6 +42,21 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'service_id' => $event['id'],
             'venue' => $this->mapIntoVenueData($data),
         ]);
+
+        Log::info('Mapped MeetupGraphql event data', [
+            Log::build([
+                'driver' => 'single',
+                'path' => storage_path('logs/meetup-graphql.log'),
+            ])->info('MeetupGraphql', [
+                'org_service_key' => $this->org->service_api_key,
+                'service_id' => $map->service_id,
+                'token' => $event['token'] ?? null,
+                'starts_at' => $map->starts_at->toISOString(),
+                'name' => $map->name,
+            ])
+        ]);
+
+        return $map;
     }
 
     protected function mapIntoVenueData(array $data): ?VenueData
@@ -78,6 +94,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
+        Log::info('Fetching events from Meetup GraphQL API', ['service_key' => $this->org->service_api_key]);
+
         $response = $this->getMeetupEvents();
 
         $this->determineNextPage($response);
@@ -89,6 +107,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $upcomingEvents = $groupData['upcomingEvents']['edges'];
 
         $events = array_merge($pastEvents, $upcomingEvents);
+
         $events = $this->filterEvents($events);
 
         return collect($events);
@@ -125,6 +144,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 cursor
                 node {
                   id
+                  token
                   title
                   eventUrl
                   description
@@ -158,6 +178,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 cursor
                 node {
                   id
+                  token
                   title
                   eventUrl
                   description
