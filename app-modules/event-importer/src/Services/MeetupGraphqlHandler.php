@@ -44,10 +44,16 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         ]);
 
         Log::info('Mapped MeetupGraphql event data', [
-            'org_service_key' => $this->org->service_api_key,
-            'service_id' => $map->service_id,
-            'starts_at' => $map->starts_at->toISOString(),
-            'name' => $map->name,
+            Log::build([
+                'driver' => 'single',
+                'path' => storage_path('logs/meetup-graphql.log'),
+            ])->info('MeetupGraphql', [
+                'org_service_key' => $this->org->service_api_key,
+                'service_id' => $map->service_id,
+                'token' => $event['token'] ?? null,
+                'starts_at' => $map->starts_at->toISOString(),
+                'name' => $map->name,
+            ])
         ]);
 
         return $map;
@@ -138,6 +144,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 cursor
                 node {
                   id
+                  token
                   title
                   eventUrl
                   description
@@ -171,6 +178,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 cursor
                 node {
                   id
+                  token
                   title
                   eventUrl
                   description
