@@ -92,6 +92,16 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall"
+        ],
+        "serve": [
+            "php artisan serve"
+        ],
+        "logs:tail": [
+            "tail -f storage/logs/laravel.log"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"composer serve\" \"php artisan queue:listen --tries=1\" \"composer logs:tail\" \"yarn dev --host\" --names=server,queue,logs,vite"
         ]
     },
     "config": {

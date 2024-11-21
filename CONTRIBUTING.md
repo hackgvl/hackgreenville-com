@@ -10,9 +10,8 @@
     - [Option 1 - Run via Native Host](#option-1---run-via-native-host)
       - [Running the Database](#running-the-database)
       - [Installing Dependencies and Seeding Database](#installing-dependencies-and-seeding-database)
-      - [Starting the Vite Dev Tool](#starting-the-vite-dev-tool)
-      - [Starting the Web Application](#starting-the-web-application)
       - [Generate App Key](#generate-app-key)
+      - [Starting the Web Application](#starting-the-web-application)
       - [Import / Seed the Organizations and Events Data](#import--seed-the-organizations-and-events-data)
     - [Option 2 - Run via VS Code and GitHub Codespaces Dev Container](#option-2---run-via-vs-code-and-github-codespaces-dev-container)
     - [Option 3 - Run via Docker \& Laravel Sail](#option-3---run-via-docker--laravel-sail)
@@ -187,25 +186,6 @@ sh scripts/handle-deploy-update.sh
 The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
 BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
 
-#### Starting the Vite Dev Tool
-
-In one terminal, run the following command to start the Vite local development server:
-
-```bash
-yarn dev
-```
-
-> Note: for production environments, `yarn prod` would be used.
-
-#### Starting the Web Application
-
-In another terminal, run the following command to start the Laravel server (will open on port `8000`)
-
-```bash
-php artisan serve
-```
-
-The app should now be accessible by visting `http://localhost:8000` in your browser.
 
 #### Generate App Key
 
@@ -214,6 +194,16 @@ Once the app is running, run the following command to generate your [app encrypt
 ```bash
 php artisan key:generate
 ```
+
+#### Starting the Web Application
+
+In a terminal, run the following command to start the Laravel server.
+
+```bash
+composer dev
+```
+
+The app should now be accessible by visiting `http://localhost:8000` in your browser.
 
 #### Import / Seed the Organizations and Events Data
 
