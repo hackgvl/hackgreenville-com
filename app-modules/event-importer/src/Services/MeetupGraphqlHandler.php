@@ -39,7 +39,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             },
             'rsvp' => $event['going'],
             'service' => EventServices::MeetupGraphql,
-            'service_id' => $event['id'],
+            'service_id' => $event['token'] ?? $event['id'],
             'venue' => $this->mapIntoVenueData($data),
         ]);
 
