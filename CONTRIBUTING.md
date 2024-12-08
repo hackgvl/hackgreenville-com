@@ -257,7 +257,7 @@ git clone https://github.com/laravel/sail.git vendor/laravel/sail/
 To run the Docker services, run Docker Compose from the root directory:
 
 ```bash
-docker-compose -f docker-compose.yml up --build
+docker-compose -f docker-compose.local.yml up --build
 ```
 
 #### Conditional: Install Application Dependencies
@@ -307,9 +307,9 @@ I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data 
 
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
 
-After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose up --build` to run it again.
+After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose -f docker-compose.local.yml up --build` to run it again.
 
-If there are any changes in the application code, you will need to run `docker-compose up --build` to recreate the container with your changes.
+If there are any changes in the application code, you will need to run `docker-compose -f docker-compose.local.yml up --build` to recreate the container with your changes.
 
 #### Import / Seed Organizations and Events Data
 
