@@ -8,7 +8,7 @@ By default, results are returned in JSON format.
     * the API defaults to providing only upcoming meetings, unless a `start_date` and `end_date` are specified
     * the API may only reply with a limited number of days in the past, as defined in the API's server configuration
     * "US/Eastern" is assumed as the timezone when a date filter is provided
-* [Get events with a specific organizations tag](https://hackgreenville.com/api/v0/events?tags=1) by calling _/api/v0/events?tags=1_ - "tags" are applied to an organization in the [organizations API](https://github.com/codeforgreenville/OpenData/blob/master/ORGANIZATIONS_API.md).  Currently, the organizations API only provides integer tag IDs, such as with this tag #1, representing OpenWorks hosted events, The format of the JSON that returns is:
+* [Get events with a specific organizations tag](https://hackgreenville.com/api/v0/events?tags=1) by calling _/api/v0/events?tags=1_ - "tags" are applied to an organization in the [organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).  Currently, the organizations API only provides integer tag IDs, such as with this tag #1, representing OpenWorks hosted events, The format of the JSON that returns is:
 * The query parameters can be combined, so you could [request only events for a specific tag, during a specific date range](https://hackgreenville.com/api/v0/events?tags=1&start_date=2024-01-15&end_date=2024-02-01), like _/api/v0/events?tags=1&start_date=2024-01-15&end_date=2024-02-01_
 
 ## Limitations and Gotchas
