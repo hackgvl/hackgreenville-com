@@ -64,6 +64,12 @@ The import code for this service exists in app-modules/event-importer/src/Servic
 * [Examples of making requests to the Eventbrite API](https://github.com/hackgvl/hackgreenville-com/issues/217#issuecomment-802212633)
 * [Example "events" response using a test Eventbrite API key](https://www.eventbriteapi.com/v3/events/10584525601/?token=BKKRDKVUVRC5WG4HAVLT)
 
+### Luma
+
+The import code for this service exists in app-modules/event-importer/src/Services/LumaHandler.php
+
+The Luma events for each org using the service are pulled via an public Luma URLs that are used to render the browser pages.
+
 ## Kudos to Past Contributors
 * Thanks to @Nunie123 for the initial development, and to @ramona-spence for sustaining the [previous Python implementation](https://github.com/hackgvl/events-api).
 * Thanks to @bogdankharchenko for migrating the Python implementation to PHP / Laravel
