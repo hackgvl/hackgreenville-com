@@ -51,8 +51,10 @@ By default, results are returned in JSON format.
 ## Contributor Notes
 These notes are specifically for those helping develop the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
 
+The _[test fixtures](https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/event-importer/tests/fixtures)_ give an example of the responses one might expect from the remote APIs.
+
 ### Meetup.com
-* Wayback Machine has copies of the old v2 REST API docs, which were removed and redirected when their [GraphQL API too over](https://github.com/hackgvl/hackgreenville-com/issues/212).
+* Wayback Machine has copies of the old v2 REST API docs, which were removed and redirected when their [GraphQL API took over](https://github.com/hackgvl/hackgreenville-com/issues/212).
 * [v2 REST API - GET /events](https://web.archive.org/web/20170709041824/http://www.meetup.com/meetup_api/docs/2/events/)
 * [v2 REST API - GET /groups](https://web.archive.org/web/20170709041556/http://www.meetup.com/meetup_api/docs/2/groups/)
 * Examples
