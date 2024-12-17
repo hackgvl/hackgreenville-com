@@ -49,12 +49,12 @@ By default, results are returned in JSON format.
 ```
 
 ## Contributor Notes
-These notes are specifically for those helping develop the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
+The following notes are specifically for contributors developing the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
 
 ### Meetup.com
-As of late 2024, the [Meetup GraphQL API](https://www.meetup.com/api/schema/#graphQl-schema) is now used to query events.
+The [Meetup GraphQL API](https://www.meetup.com/api/schema/#graphQl-schema) is used to query events.  This API requires a paid Meetup Pro account, the cost of which is covered by [RefactorGVL](https://refactorgvl.com/).
 
-The import code for this service exists in app-modules/event-importer/src/Services/MeetupRestHandler.php
+The import code for this service exists in app-modules/event-importer/src/Services/MeetupRestHandler.php and schema of interest include [groupByUrlname](https://www.meetup.com/api/schema/#groupByUrlname) and [Event](https://www.meetup.com/api/schema/#Event).
 
 ### Eventbrite
 The import code for this service exists in app-modules/event-importer/src/Services/EventBriteHandler.php
