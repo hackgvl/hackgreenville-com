@@ -1,4 +1,4 @@
-# Interacting with the HackGreenville Events API
+# Interacting with the HackGreenville Orgs API
 
 The _Organizations API_ can be used to build your own custom applications from the structured JSON data representing the [HackGreenville Organizations](https://hackgreenville.com/orgs).
 
