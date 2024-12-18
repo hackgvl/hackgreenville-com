@@ -8,7 +8,7 @@ By default, results are returned in JSON format.
     * the API defaults to providing only upcoming meetings, unless a `start_date` and `end_date` are specified
     * the API may only reply with a limited number of days in the past, as defined in the API's server configuration
     * "US/Eastern" is assumed as the timezone when a date filter is provided
-* [Get events with a specific organizations tag](https://hackgreenville.com/api/v0/events?tags=1) by calling _/api/v0/events?tags=1_ - "tags" are applied to an organization in the [organizations API](https://github.com/codeforgreenville/OpenData/blob/master/ORGANIZATIONS_API.md).  Currently, the organizations API only provides integer tag IDs, such as with this tag #1, representing OpenWorks hosted events, The format of the JSON that returns is:
+* [Get events with a specific organizations tag](https://hackgreenville.com/api/v0/events?tags=1) by calling _/api/v0/events?tags=1_ - "tags" are applied to an organization in the [organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).  Currently, the organizations API only provides integer tag IDs, such as with this tag #1, representing OpenWorks hosted events, The format of the JSON that returns is:
 * The query parameters can be combined, so you could [request only events for a specific tag, during a specific date range](https://hackgreenville.com/api/v0/events?tags=1&start_date=2024-01-15&end_date=2024-02-01), like _/api/v0/events?tags=1&start_date=2024-01-15&end_date=2024-02-01_
 
 ## Limitations and Gotchas
@@ -49,9 +49,35 @@ By default, results are returned in JSON format.
 ```
 
 ## Contributor Notes
-These notes are specifically for those helping develop the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
+The following notes are specifically for contributors developing the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
 
 ### Meetup.com
+The [Meetup GraphQL API](https://www.meetup.com/api/schema/#graphQl-schema) is used to query events.  This API requires a paid Meetup Pro account, the cost of which is covered by [RefactorGVL](https://refactorgvl.com/).
+
+The import code for this service exists in app-modules/event-importer/src/Services/MeetupRestHandler.php and schema of interest include [groupByUrlname](https://www.meetup.com/api/schema/#groupByUrlname) and [Event](https://www.meetup.com/api/schema/#Event).
+
+### Eventbrite
+The import code for this service exists in app-modules/event-importer/src/Services/EventBriteHandler.php
+
+* [Eventbrite's API requires creating a free API key](https://www.eventbrite.com/help/en-us/articles/849962/generate-an-api-key/).
+* [Eventbrite API Docs](https://www.eventbrite.com/platform/api)
+* [Examples of making requests to the Eventbrite API](https://github.com/hackgvl/hackgreenville-com/issues/217#issuecomment-802212633)
+* [Example "events" response using a test Eventbrite API key](https://www.eventbriteapi.com/v3/events/10584525601/?token=BKKRDKVUVRC5WG4HAVLT)
+
+### Luma
+
+The import code for this service exists in app-modules/event-importer/src/Services/LumaHandler.php
+
+The Luma events for each org using the service are pulled via an public Luma URLs that are used to render the browser pages.
+
+## Kudos to Past Contributors
+* Thanks to @Nunie123 for the initial development, and to @ramona-spence for sustaining the [previous Python implementation](https://github.com/hackgvl/events-api).
+* Thanks to @bogdankharchenko for migrating the Python implementation to PHP / Laravel
+
+## Archive
+
+### Meetup REST API
+
 * Wayback Machine has copies of the old v2 REST API docs, which were removed and redirected when their [GraphQL API too over](https://github.com/hackgvl/hackgreenville-com/issues/212).
 * [v2 REST API - GET /events](https://web.archive.org/web/20170709041824/http://www.meetup.com/meetup_api/docs/2/events/)
 * [v2 REST API - GET /groups](https://web.archive.org/web/20170709041556/http://www.meetup.com/meetup_api/docs/2/groups/)
@@ -59,13 +85,3 @@ These notes are specifically for those helping develop the _Events API_ at _app-
   * [GET upcoming events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=upcoming)
   * [GET past and cancelled events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=past,cancelled)
   * [GET all events after 2024-02-12 for one group / org](https://api.meetup.com/synergymill/events?&sign=true&photo-host=public&no_earlier_than=2024-02-12T02:21:20.000&status=upcoming,cancelled,past&page=50) where dates is of the format %Y-%m-%dT%H:%M:%S.000
-
-### Eventbrite
-* [Eventbrite's API requires creating a free API key](https://www.eventbrite.com/help/en-us/articles/849962/generate-an-api-key/).
-* [Eventbrite API Docs](https://www.eventbrite.com/platform/api)
-* [Examples of making requests to the Eventbrite API](https://github.com/hackgvl/hackgreenville-com/issues/217#issuecomment-802212633)
-* [Example "events" response using a test Eventbrite API key](https://www.eventbriteapi.com/v3/events/10584525601/?token=BKKRDKVUVRC5WG4HAVLT)
-
-## Kudos to Past Contributors
-* Thanks to @Nunie123 for the initial development, and to @ramona-spence for sustaining the [previous Python implementation](https://github.com/hackgvl/events-api).
-* Thanks to @bogdankharchenko for migrating the Python implementation to PHP / Laravel

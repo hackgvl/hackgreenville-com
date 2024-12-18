@@ -52,21 +52,14 @@
 
                     <div class="row mt-5">
                         <div class="col-md-6 my-5">
-                            <h2 class="display-5 text-center mt-5">Contribute!!</h2>
+                            <h2 class="display-5 text-center mt-5">Contribute</h2>
                             <div class="summary container">
-                                hackgreenville.com's
-
-                                <ul style="margin: 0 auto">
-                                    <li>written in a <a href="https://www.php.net/">PHP</a> framework <a
-                                            href="https://laravel.com/">laravel</a></li>
-                                    <li>has got some <a href="https://vuejs.org/v2/guide/components.html">vue
-                                            components</a></li>
-                                    <li>community is super helpful and supportive</li>
-                                </ul>
+                                hackgreenville.com is built on the
+                                <a href="https://laravel.com/">Laravel</a> PHP framework
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <a href="https://github.com/codeforgreenville/hackgreenville-com"
+                            <a href="https://github.com/hackgvl/hackgreenville-com"
                                class="text-decoration-none text-dark">
                                 <p style="line-height:1; font-size:15em;" class="mt-5">
                                     <i class="fa fa-github"></i>
