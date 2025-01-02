@@ -1739,9 +1739,9 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 sweetalert2@^11.7.12:
-  version "11.15.3"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.15.3.tgz#6322a7c5fa2e835d5a3570c83e55071e357cd4a7"
-  integrity sha512-+0imNg+XYL8tKgx8hM0xoiXX3KfgxHDmiDc8nTJFO89fQEEhJlkecSdyYOZ3IhVMcUmoNte4fTIwWiugwkPU6w==
+  version "11.15.6"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.15.6.tgz#5380ce7a74c9684793a8d3e86b94f4ebb51df348"
+  integrity sha512-OyJQsMlIZPfKHXXPkChQMqoaskPOgF8OnxjShHmyOP8T7KQjrjwXu3qD2pwExrUkVhXFVhoxZovOXG0G+7TCag==
 
 systeminformation@^5.7:
   version "5.23.17"
