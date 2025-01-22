@@ -1844,9 +1844,9 @@ vite-plugin-image-optimizer@^1.1.6:
     pathe "^1.1.2"
 
 vite@^4.5.3:
-  version "4.5.8"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.8.tgz#1d4af98f039635302800d2c8f05caf593719cfd7"
-  integrity sha512-knwCemCOfTj1NiegPcXwlbltQdXpYrSWlh+1QSzhl7L8UTqGrSy0mOTTI3mkhK1Ud/YNMtVmaDojdUbvFl55CQ==
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.9.tgz#f4dfd4c4295743b50c3e3f90df798d70de699e4f"
+  integrity sha512-qK9W4xjgD3gXbC0NmdNFFnVFLMWSNiR3swj957yutwzzN16xF/E7nmtAyp1rT9hviDroQANjE4HK3H4WqWdFtw==
   dependencies:
     esbuild "^0.18.10"
     postcss "^8.4.27"
