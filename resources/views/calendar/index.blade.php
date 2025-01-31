@@ -5,6 +5,8 @@
 
 @section('content')
     <div class="container">
+        <x-calendar-feed-promo />
+
         <div id="calendar"></div>
     </div>
 @endsection
