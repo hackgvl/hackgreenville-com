@@ -1,4 +1,4 @@
-@extends('layouts.app', ['show_loading' => true])
+@extends('layouts.app')
 
 @section('title', "Build a Calendar Feed of the events you're interested in")
 @section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
