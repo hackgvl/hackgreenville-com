@@ -19,7 +19,7 @@ class CalendarFeedController extends Controller
                 ->where('status', OrganizationStatus::Active)
                 ->orderBy('title')
                 ->get()
-                ->map(fn(Org $org) => [
+                ->map(fn (Org $org) => [
                     'id' => $org->id,
                     'title' => $org->title,
                     'checked' => true,
@@ -33,25 +33,23 @@ class CalendarFeedController extends Controller
 
         $organizations = Org::query()
             ->where('status', OrganizationStatus::Active)
-            ->when($organization_ids->isNotEmpty(), fn($query) => $query->whereIn('id', $organization_ids))
+            ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('id', $organization_ids))
             ->get();
 
         $events = Event::query()
             ->with('organization', 'venue.state')
             ->future()
-            ->when($organization_ids->isNotEmpty(), fn($query) => $query->whereIn('organization_id', $organization_ids))
+            ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $organization_ids))
             ->get()
-            ->mapWithKeys(function(Event $event, $i) {
-                return [
-                    $i => CalendarEvent::create($event->event_name)
-                        ->uniqueIdentifier($event->uniqueIdentifierHash())
-                        ->startsAt($event->active_at)
-                        ->endsAt($event->expire_at)
-                        ->address($event->venue?->fullAddress() ?? 'Virtual Event')
-                        ->description($event->description)
-                        ->url($event->url),
-                ];
-            })
+            ->mapWithKeys(fn (Event $event, $i) => [
+                $i => CalendarEvent::create($event->event_name)
+                    ->uniqueIdentifier($event->uniqueIdentifierHash())
+                    ->startsAt($event->active_at)
+                    ->endsAt($event->expire_at)
+                    ->address($event->venue?->fullAddress() ?? 'Virtual Event')
+                    ->description($event->description)
+                    ->url($event->url),
+            ])
             ->toArray();
 
         // Calendar
@@ -62,8 +60,8 @@ class CalendarFeedController extends Controller
             $organization = $organizations->first();
 
             $calendar
-                ->productIdentifier($organization->title.' Event Calendar')
-                ->name($organization->title.' Event Calendar')
+                ->productIdentifier($organization->title . ' Event Calendar')
+                ->name($organization->title . ' Event Calendar')
                 ->description($organization->description ?? '')
                 ->source(route('orgs.show', $organization));
         } else {
