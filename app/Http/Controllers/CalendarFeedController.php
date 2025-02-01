@@ -8,6 +8,7 @@ use App\Models\Org;
 use Illuminate\Http\Request;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event as CalendarEvent;
+use Spatie\IcalendarGenerator\Enums\EventStatus;
 
 class CalendarFeedController extends Controller
 {
@@ -46,6 +47,10 @@ class CalendarFeedController extends Controller
                     ->uniqueIdentifier($event->uniqueIdentifierHash())
                     ->startsAt($event->active_at)
                     ->endsAt($event->expire_at)
+                    ->status(match ($event->isCancelled()) {
+                        true => EventStatus::cancelled(),
+                        default => EventStatus::confirmed(),
+                    })
                     ->address($event->venue?->fullAddress() ?? 'Virtual Event')
                     ->description($event->description)
                     ->url($event->url),
