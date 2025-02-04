@@ -99,6 +99,11 @@ class Org extends BaseModel
             ->whereNotNull('service_api_key');
     }
 
+    public function scopeActive($query) 
+    {
+        return $query->where('status', OrganizationStatus::Active);
+    }
+
     public function getEventHandler(): AbstractEventHandler
     {
         /** @var AbstractEventHandler $handler */
