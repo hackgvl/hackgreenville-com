@@ -17,7 +17,7 @@ class CalendarFeedController extends Controller
         return view('calendar-feed.index', [
             'organizations' => Org::query()
                 ->with('category')
-                ->where('status', OrganizationStatus::Active)
+                ->active()
                 ->orderBy('title')
                 ->get()
                 ->map(fn (Org $org) => [
@@ -35,7 +35,7 @@ class CalendarFeedController extends Controller
             ->filter(fn ($id) => is_numeric($id) && (int) $id > 0);
 
         $organizations = Org::query()
-            ->where('status', OrganizationStatus::Active)
+            ->active()
             ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('id', $organization_ids))
             ->get();
 
