@@ -33,7 +33,8 @@
 
                     {{ aire()->input('name', __('Full Name'))->required() }}
                     {{ aire()->email('contact', __('Email'))->required() }}
-                    {{ aire()->textArea('reason', __('To help us weed out spam, please confirm you are a real person.'))->rows(4)->placeholder(__('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?')) }}
+                    {{ aire()->textArea('reason', __('Share why you are joining HackGreenville and include any relevant local context that helps validate you\'re not a bot or spammer.'))->rows(4)->placeholder(__('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?')) }}
+                    {{ aire()->url('url', __('Please provide a LinkedIn profile, or similar link, that validates details entered on this form. This helps us filter out otherwise convincing bots and spammers.'))->placeholder('https://linkedin.com/in/not-a-bot') }}
 
                 </div>
             </div>
@@ -48,8 +49,7 @@
                         </li>
                         <li>
                             <strong>Be considerate:</strong>
-                            Don't @channel or @here in heavily used rooms like #random
-                            and #opportunities
+                            Don't @channel or @here
                         </li>
                         <li>
                             <strong>Make it happen:</strong>
@@ -58,17 +58,15 @@
                             just archive it)
                         </li>
                         <li>
-                            <strong>Don't SPAM!:</strong>
+                            <strong>Don't SPAM or Self-promote!:</strong>
                             Seriously, don't do it.
                             We're always glad to hear what community members are working on,
                             but if you're here just to spam members about a new service or outsourcing,
-                            just don't sign up, you will be banned. This is a local community, not an
-                            advertising market (unless it made by locals who contribute to the group)
+                            then consider asking in #community-organizers about sponsoring. 
                         </li>
                         <li>
                             <strong>Recruiters:</strong>
-                            If you have jobs in the Upstate, SC area, you are welcome, but
-                            we ask that you please keep job postings to the #recruiting channel only.
+                            Job postings where the company isn't disclosed are limited to the #recruiting channel.
                         </li>
                     </ul>
 

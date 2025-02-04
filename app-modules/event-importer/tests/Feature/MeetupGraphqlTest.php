@@ -63,6 +63,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $this->assertEquals(19, $event->rsvp_count);
         $this->assertEquals(1577833200, $event->active_at->utc()->unix());
+        $this->assertEquals('America/New_York', $event->timezone);
         $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $event->uri);
         $this->assertNull($event->cancelled_at);
         $this->assertNotNull($event->venue);
@@ -109,6 +110,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $event = $this->queryEvent('pwdqjtygcpbkb');
 
+        $this->assertNotNull($event);
         $this->assertNull($event->venue);
     }
 
@@ -128,6 +130,25 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $event = $this->queryEvent('pwdqjtygcqbhb');
 
         $this->assertNull($event);
+    }
+
+    public function test_duplicate_event_is_not_imported(): void
+    {
+        $this->runImportCommand();
+
+        Event::factory()->create([
+            'service' => EventServices::MeetupGraphql,
+            'service_id' => '306527183',
+            'updated_at' => now()->subDays(1),
+        ]);
+
+        $event_original = $this->queryEvent('306527183');
+        $this->assertNotNull($event_original);
+
+        $this->assertEquals(now(), $event_original->updated_at);
+
+        $event_duplicate = $this->queryEvent('mfuaiakmcxuzjsd');
+        $this->assertNull($event_duplicate);
     }
 
     public function test_config_validation_fails_with_missing_client_id(): void

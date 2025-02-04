@@ -3,9 +3,9 @@
 namespace HackGreenville\EventImporter\Data;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
+use Spatie\LaravelData\Attributes\Validation\Timezone;
 use Spatie\LaravelData\Data;
 
 class EventData extends Data
@@ -20,7 +20,8 @@ class EventData extends Data
         public Carbon         $starts_at,
         public Carbon         $ends_at,
         public null|Carbon    $cancelled_at,
-        public EventType      $event_type,
+        #[Timezone()]
+        public string         $timezone,
         public EventServices  $service,
         public string         $service_id,
         public null|VenueData $venue,

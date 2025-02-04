@@ -10,7 +10,7 @@ namespace App\Models;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Org> $orgs
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Org> $orgs
  * @property-read int|null $orgs_count
  * @method static \Database\Factories\TagFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()

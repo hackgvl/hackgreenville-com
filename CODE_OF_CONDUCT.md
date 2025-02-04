@@ -1,3 +1,3 @@
 # Code of Conduct
 
-Please play nice. We follow this ["Code of Conduct"](https://hackgreenville.com/join-slack).
+We follow the [HackGreenville Code of Conduct](https://hackgreenville.com/code-of-conduct).

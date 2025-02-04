@@ -21,6 +21,7 @@ class CalendarController extends Controller
         ]);
 
         $events = Event::query()
+            ->published()
             ->with('organization', 'venue.state')
             ->whereBetween('active_at', [
                 $request->date('start')->startOfDay(),

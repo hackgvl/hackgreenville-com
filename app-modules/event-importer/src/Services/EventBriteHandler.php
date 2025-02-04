@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -27,15 +26,11 @@ class EventBriteHandler extends AbstractEventHandler
             'url' => $data['url'],
             'starts_at' => Carbon::parse($data['start']['local']),
             'ends_at' => Carbon::parse($data['end']['local']),
+            'timezone' => Carbon::parse($data['start']['timezone']),
             // Yes "canceled" is misspelled
             'cancelled_at' => 'canceled' === $data['status'] || 'event_cancelled' === Arr::get($data, 'event_sales_status.message_code')
                 ? now()
                 : null,
-            'event_type' => match ($data['online_event']) {
-                true => EventType::Online,
-                false => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$data['eventType']}"),
-            },
             'venue' => $this->mapIntoVenueData($data),
         ]);
     }
@@ -49,11 +44,9 @@ class EventBriteHandler extends AbstractEventHandler
         $venue_id = $data['venue_id'];
 
         // Cache to prevent unnecessary api calls for same venue id
-        $venue = Cache::remember(__CLASS__ . __FUNCTION__ . $venue_id, now()->addHour(), function () use ($venue_id) {
-            return $this->client()
-                ->get("v3/venues/{$venue_id}")
-                ->object();
-        });
+        $venue = Cache::remember(__CLASS__ . __FUNCTION__ . $venue_id, now()->addHour(), fn () => $this->client()
+            ->get("v3/venues/{$venue_id}")
+            ->object());
 
         return VenueData::from([
             'id' => $venue->id,

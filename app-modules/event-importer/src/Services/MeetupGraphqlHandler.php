@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use Firebase\JWT\JWT;
 use HackGreenville\EventImporter\Data\EventData;
@@ -12,6 +11,7 @@ use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
 class MeetupGraphqlHandler extends AbstractEventHandler
@@ -22,7 +22,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     protected function mapIntoEventData(array $data): EventData
     {
         $event = $data['node'];
-        return EventData::from([
+
+        $map = EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
@@ -30,11 +31,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'starts_at' => Carbon::parse($event['dateTime']),
             // Meetup (graphql) does not provide an event end time
             'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
-            'event_type' => match ($event['eventType']) {
-                'ONLINE' => EventType::Online,
-                'PHYSICAL' => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$event['eventType']}"),
-            },
+            'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
             'cancelled_at' => match ($event['status']) {
                 'CANCELLED' => now(),
                 'cancelled' => now(),
@@ -42,9 +39,11 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             },
             'rsvp' => $event['going'],
             'service' => EventServices::MeetupGraphql,
-            'service_id' => $event['id'],
+            'service_id' => $event['token'] ?? $event['id'],
             'venue' => $this->mapIntoVenueData($data),
         ]);
+
+        return $map;
     }
 
     protected function mapIntoVenueData(array $data): ?VenueData
@@ -82,6 +81,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
+        Log::info('Fetching events from Meetup GraphQL API', ['service_key' => $this->org->service_api_key]);
+
         $response = $this->getMeetupEvents();
 
         $this->determineNextPage($response);
@@ -93,6 +94,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $upcomingEvents = $groupData['upcomingEvents']['edges'];
 
         $events = array_merge($pastEvents, $upcomingEvents);
+
         $events = $this->filterEvents($events);
 
         return collect($events);
@@ -129,6 +131,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 cursor
                 node {
                   id
+                  token
                   title
                   eventUrl
                   description
@@ -162,6 +165,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 cursor
                 node {
                   id
+                  token
                   title
                   eventUrl
                   description
@@ -213,7 +217,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
         $filtered_events = [];
 
-        foreach($events as $event) {
+        foreach ($events as $event) {
             $eventDate = Carbon::parse($event['node']['dateTime']);
             if ($eventDate < $start_date || $eventDate > $end_date) {
                 continue;

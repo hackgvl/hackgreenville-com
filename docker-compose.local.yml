@@ -1,0 +1,16 @@
+version: '3'
+services:
+  hackgreenville:
+    extends:
+      file: docker-compose.yml
+      service: hackgreenville
+  hackgreenville-db:
+    ports:
+      - 3306:3306
+    extends:
+      file: docker-compose.yml
+      service: hackgreenville-db
+  hackgreenville-redis:
+    extends:
+      file: docker-compose.yml
+      service: hackgreenville-redis

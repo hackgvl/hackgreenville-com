@@ -10,9 +10,8 @@
     - [Option 1 - Run via Native Host](#option-1---run-via-native-host)
       - [Running the Database](#running-the-database)
       - [Installing Dependencies and Seeding Database](#installing-dependencies-and-seeding-database)
-      - [Starting the Vite Dev Tool](#starting-the-vite-dev-tool)
-      - [Starting the Web Application](#starting-the-web-application)
       - [Generate App Key](#generate-app-key)
+      - [Starting the Web Application](#starting-the-web-application)
       - [Import / Seed the Organizations and Events Data](#import--seed-the-organizations-and-events-data)
     - [Option 2 - Run via VS Code and GitHub Codespaces Dev Container](#option-2---run-via-vs-code-and-github-codespaces-dev-container)
     - [Option 3 - Run via Docker \& Laravel Sail](#option-3---run-via-docker--laravel-sail)
@@ -24,10 +23,11 @@
       - [Conditional: Install Application Dependencies](#conditional-install-application-dependencies)
       - [Seeding the Application Database](#seeding-the-application-database)
       - [Generating an Application Encryption Key](#generating-an-application-encryption-key)
-      - [Starting Vite Development Server](#starting-vite-development-server)
+      - [Build website](#build-website)
       - [Troubleshooting](#troubleshooting)
       - [Import / Seed Organizations and Events Data](#import--seed-organizations-and-events-data)
 - [Interacting with Your Running App](#interacting-with-your-running-app)
+- [Debugging with Telescope](#debugging-with-telescope)
 - [Environment Variables](#environment-variables)
   - [Events API Configuration](#events-api-configuration)
     - [Importing Events from Meetup GraphQL API](#importing-events-from-meetup-graphql-api)
@@ -184,26 +184,8 @@ sh scripts/handle-deploy-update.sh
 ```
 
 The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
+BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
 
-#### Starting the Vite Dev Tool
-
-In one terminal, run the following command to start the Vite local development server:
-
-```bash
-yarn dev
-```
-
-> Note: for production environments, `yarn prod` would be used.
-
-#### Starting the Web Application
-
-In another terminal, run the following command to start the Laravel server (will open on port `8000`)
-
-```bash
-php artisan serve
-```
-
-The app should now be accessible by visting `http://localhost:8000` in your browser.
 
 #### Generate App Key
 
@@ -212,6 +194,16 @@ Once the app is running, run the following command to generate your [app encrypt
 ```bash
 php artisan key:generate
 ```
+
+#### Starting the Web Application
+
+In a terminal, run the following command to start the Laravel server.
+
+```bash
+composer dev
+```
+
+The app should now be accessible by visiting `http://localhost:8000` in your browser.
 
 #### Import / Seed the Organizations and Events Data
 
@@ -265,7 +257,7 @@ git clone https://github.com/laravel/sail.git vendor/laravel/sail/
 To run the Docker services, run Docker Compose from the root directory:
 
 ```bash
-docker-compose -f docker-compose.yml up --build
+docker-compose -f docker-compose.local.yml up --build
 ```
 
 #### Conditional: Install Application Dependencies
@@ -294,9 +286,15 @@ docker exec -it hackgreenville php artisan key:generate
 
 This command should populate the `APP_KEY` environment variable within your `.env` file.
 
-#### Starting Vite Development Server
+#### Build website
 
-Each time the Docker container is restarted, the Vite development server will need to be running in order for the app's stylesheets to be compiled. You can run the Vite development server by running the following command:
+This project uses Vite to build the website. This includes building out the website's stylesheets and scripts. You can run the following command to generate the production build:
+
+```bash
+docker exec -d hackgreenville yarn build
+```
+
+Alternatively, you can start the Vite development server to listen and compile the latest changes:
 
 ```bash
 docker exec -d hackgreenville yarn dev
@@ -309,9 +307,9 @@ I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data 
 
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
 
-After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose up --build` to run it again.
+After that, hit Ctrl-C in the original docker-compose to stop the application, and do `docker-compose -f docker-compose.local.yml up --build` to run it again.
 
-If there are any changes in the application code, you will need to run `docker-compose up --build` to recreate the container with your changes.
+If there are any changes in the application code, you will need to run `docker-compose -f docker-compose.local.yml up --build` to recreate the container with your changes.
 
 #### Import / Seed Organizations and Events Data
 
@@ -332,10 +330,17 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
 
+# Debugging with Telescope
+
+Telescope is a Laravel Debugging tool that allows you to see all the requests made to the application, and the responses they return. It can be enabled in [.env](#environment-variables).
+
 # Environment Variables
 
 - The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
 - The .env.ci and .env.testing are used for their respective tasks.
+- Be sure to clear the configuration cache after any changes to .env using `php artisan config:clear && php artisan config:cache`
+- Additional defaults may be as defined in _config/app.php_
+- Debugging can be enabled in development by setting `TELESCOPE_ENABLED=TRUE` in your local `.env`
 
 ## Events API Configuration
 The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
@@ -360,23 +365,12 @@ The Meetup OAuth client private key file can be stored anywhere on your machine.
 **NOTE**: Meetup requires a [Pro account](https://www.meetup.com/meetup-pro/) in order to create an OAuth client.
 
 # Admin Panel
-The admin panel in this project is built in [Filament][filament_docs]. This package is also built on [Laravel Livewire][livewire_docs].
 
-After seeding the DB as [described above](#interacting-with-your-running-app), you'll have a default set of login credentials found in the [UsersTableSeeder][users_seeder] class.
-
-To view the admin panel routes, run: `artisan route:list --name=filament`
-
-Filament provides commands for generating [CRUD resources][filament_resources] and [individual pages][filament_pages]. But you can also create pages from [Livewire components][livewire_components] that borrow tables or [forms][filament_advanced_forms] from Filament.
-
-[filament_advanced_forms]: https://filamentphp.com/docs/3.x/forms/adding-a-form-to-a-livewire-component
-[filament_docs]: https://filamentphp.com/docs
-[filament_pages]: https://filamentphp.com/docs/3.x/panels/pages
-[filament_resources]: https://filamentphp.com/docs/3.x/panels/resources/getting-started
-[filament_resource_authorization]: https://filamentphp.com/docs/3.x/panels/resources/listing-records#authorization
-[laravel_policies]: https://laravel.com/docs/10.x/authorization#creating-policies
-[livewire_docs]: https://livewire.laravel.com/docs/quickstart
-[livewire_components]: https://livewire.laravel.com/docs/components
-[users_seeder]: https://github.com/hackgvl/hackgreenville-com/blob/develop/database/seeders/UsersTableSeeder.php
+* The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
+* After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
+* To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
+* See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
+* Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages). 
 
 # Synchronizing Your Fork with the Latest Development Code Changes
 Be sure you're on the desired branch, usually `git checkout develop`, and change to the project's base directory.
@@ -601,9 +595,4 @@ Then, come back and see our ["Ways to Help"](#ways-to-help) section on how to sp
 # Kudos
 - Thanks to our [project contributors](https://github.com/hackgvl/hackgreenville-com#contributors-)
 - Thanks to [freeCodeCamp's Chapter project](https://github.com/freeCodeCamp/chapter) for the template for this CONTRIBUTING.md.
-- [https://sweetalert2.github.io/#examples](https://sweetalert2.github.io/#examples)
-- [http://fullcalendar.io/docs](http://fullcalendar.io/docs)
-- [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)
-- [https://getbootstrap.com/docs/4.0/getting-started/introduction/](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-- [https://lodash.com/](https://lodash.com/)
-- [Plugin DatePicker](https://github.com/uxsolutions/bootstrap-datepicker)
+- Thanks to all of the open-source projects, as seen in composer.json and package.json

@@ -193,6 +193,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "msmahon",
+      "name": "Mitchell Mahoney",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6668279?v=4",
+      "profile": "https://github.com/msmahon",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

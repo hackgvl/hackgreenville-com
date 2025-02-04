@@ -1,5 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![HackGreenville](https://www.hackgreenville.com/img/logo-v2.png)
@@ -22,24 +22,12 @@ Our goal is to connect people to the tech-related community in the Greenville ar
 
 See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running and administering the running application.
 
-## Debugging
-
-### Telescope (Laravel Debugging)
-
-Telescope is a Laravel Debugging tool that allows you to see all the requests made to the application, and the responses they return.
-
-If you want to enable it in your local environment, you can do so by setting the `TELESCOPE_ENABLED` environment variable to `true` in your `.env` file.
-
-```bash
-TELESCOPE_ENABLED=true
-```
-
 # Tech Stack Notes
 
 ## APIs
-The organization data is queried from HackGreenville Labs' [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md).
 
-The events data is queried through the [Events API](https://github.com/hackgvl/hackgreenville.com/EVENTS_API.md), which is now part of this repository.
+* [Organizations](https://hackgreenville.com/orgs) data may be queried via the [Organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).
+* [Events](https://hackgreenville.com/events) data may be queried via the [Events API](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md).
 
 ## Laravel
 This project uses the [Laravel PHP framework](https://laravel.com). The [CONTRIBUTING.md](CONTRIBUTING.md) goes into more technical details.
@@ -75,6 +63,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AbolfazlAkhtari"><img src="https://avatars.githubusercontent.com/u/68465524?v=4?s=100" width="100px;" alt="Abolfazl Akhtari"/><br /><sub><b>Abolfazl Akhtari</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=AbolfazlAkhtari" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alex-Grimes"><img src="https://avatars.githubusercontent.com/u/66704965?v=4?s=100" width="100px;" alt="Alexander Grimes"/><br /><sub><b>Alexander Grimes</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=Alex-Grimes" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/alhelwany"><img src="https://avatars.githubusercontent.com/u/115778766?v=4?s=100" width="100px;" alt="Mhd Ghaith Alhelwany"/><br /><sub><b>Mhd Ghaith Alhelwany</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=alhelwany" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/msmahon"><img src="https://avatars.githubusercontent.com/u/6668279?v=4?s=100" width="100px;" alt="Mitchell Mahoney"/><br /><sub><b>Mitchell Mahoney</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=msmahon" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

@@ -12,11 +12,9 @@ class OrgsController extends Controller
         $activeOrgs = Org::with('category')
             ->orderBy('title')
             ->get()
-            ->sortBy(function (Org $org) {
-                return $org->category->isInactive()
+            ->sortBy(fn (Org $org) => $org->category->isInactive()
                     ? PHP_INT_MAX
-                    : $org->category->count();
-            }, SORT_NUMERIC)
+                    : $org->category->count(), SORT_NUMERIC)
             ->groupBy('category_id');
 
         return view('orgs.index', compact('activeOrgs'));
@@ -32,7 +30,7 @@ class OrgsController extends Controller
                         ->future()
                         ->published()
                         ->orderBy('active_at')
-                        ->limit(5);
+                        ->limit(25);
                 },
             ]),
         ]);

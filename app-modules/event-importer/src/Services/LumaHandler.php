@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -13,7 +12,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use RuntimeException;
 use Throwable;
 
 class LumaHandler extends AbstractEventHandler
@@ -27,11 +25,7 @@ class LumaHandler extends AbstractEventHandler
             'url' => "https://lu.ma/" . $data['event']['url'],
             'starts_at' => Carbon::parse($data['event']['start_at'])->setTimezone($data['event']['timezone']),
             'ends_at' => Carbon::parse($data['event']['end_at'])->setTimezone($data['event']['timezone']),
-            'event_type' => match ($data['event']['location_type']) {
-                'online', 'zoom', => EventType::Online,
-                'offline', 'unknown' => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$data['event']['location_type']}"),
-            },
+            'timezone' => $data['event']['timezone'],
             'cancelled_at' => null,
             'rsvp' => $data['guest_count'],
             'service' => EventServices::Luma,
@@ -65,7 +59,7 @@ class LumaHandler extends AbstractEventHandler
         }
 
         if ( ! isset($data['event']['geo_address_info']['full_address'])) {
-            Log::info('Luma - Missing Full Address', [
+            Log::debug('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
 
@@ -75,7 +69,7 @@ class LumaHandler extends AbstractEventHandler
         $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
 
         if (count($parts) < 4) {
-            Log::info('Luma - Not enough address data', [
+            Log::debug('Luma - Not enough address data', [
                 'data' => $data,
             ]);
 
@@ -86,7 +80,7 @@ class LumaHandler extends AbstractEventHandler
             $address = $this->parseGoogleAddress($parts);
 
         } catch (Throwable $exception) {
-            Log::info('Luma - Unable to parse address.', [
+            Log::debug('Luma - Unable to parse address.', [
                 'data' => $data,
             ]);
 

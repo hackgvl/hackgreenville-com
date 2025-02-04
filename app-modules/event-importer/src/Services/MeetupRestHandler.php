@@ -3,7 +3,6 @@
 namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
-use App\Enums\EventType;
 use Carbon\Carbon;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
@@ -12,7 +11,6 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use RuntimeException;
 use Throwable;
 
 class MeetupRestHandler extends AbstractEventHandler
@@ -52,11 +50,7 @@ class MeetupRestHandler extends AbstractEventHandler
             'starts_at' => Carbon::createFromTimestampMs($data['time']),
             // Meetup (rest) does not provide an event end time
             'ends_at' => Carbon::createFromTimestampMs($data['time'])->addHours(2),
-            'event_type' => match ($data['eventType']) {
-                'ONLINE' => EventType::Online,
-                'PHYSICAL' => EventType::Live,
-                default => throw new RuntimeException("Unable to determine event type {$data['eventType']}"),
-            },
+            'timezone' => Carbon::createFromTimestampMs($data['time'])->utcOffset($data['utc_offset'] / 1000)->timezoneName,
             'cancelled_at' => match ($data['status']) {
                 'cancelled' => now(),
                 default => null
