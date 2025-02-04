@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read Category|null $category
  * @property-read mixed $url
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tag> $tags
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag> $tags
  * @property-read int|null $tags_count
  * @method static \Database\Factories\OrgFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Org newModelQuery()

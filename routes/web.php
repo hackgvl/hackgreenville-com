@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\CalendarFeedController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GiveController;
@@ -14,6 +15,10 @@ use App\Http\Controllers\StyleController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
 Route::get('/calendar/data', [CalendarController::class, 'data'])->name('calendar.data');
+
+Route::get('/calendar-feed', [CalendarFeedController::class, 'index'])->name('calendar-feed.index');
+Route::get('/calendar-feed.ics', [CalendarFeedController::class, 'show'])->name('calendar-feed.show');
+
 Route::get('/events', [EventsController::class, 'index'])->name('events.index');
 Route::get('/labs', [LabsController::class, 'index'])->name('labs.index');
 Route::get('/hg-nights', [HGNightsController::class, 'index'])->name('hg-nights.index');
