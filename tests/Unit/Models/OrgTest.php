@@ -8,12 +8,7 @@ use Tests\DatabaseTestCase;
 
 class OrgTest extends DatabaseTestCase
 {
-    public function setUp(): void
-    {
-        parent::setUp();
-    }
-
-    public function test_scopeActive_pulls_active_organization()
+    public function test_scope_active_pulls_active_organization()
     {
         $org = Org::factory()->create([
             'status' => OrganizationStatus::Active
@@ -24,7 +19,7 @@ class OrgTest extends DatabaseTestCase
         $this->assertEquals($org->id, $result->id);
     }
 
-    public function test_scopeActive_does_not_pull_inactive_organization()
+    public function test_scope_active_does_not_pull_inactive_organization()
     {
         $org = Org::factory()->create([
             'status' => OrganizationStatus::InActive
