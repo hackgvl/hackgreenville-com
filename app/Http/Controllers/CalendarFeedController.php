@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\OrganizationStatus;
 use App\Models\Event;
 use App\Models\Org;
 use Illuminate\Http\Request;
