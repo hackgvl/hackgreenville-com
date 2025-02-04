@@ -91,9 +91,14 @@ class Org extends BaseModel
         return $this->status === OrganizationStatus::Active;
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('status', OrganizationStatus::Active);
+    }
+
     public function scopeHasConfiguredEventService($query): void
     {
-        $query->where('status', OrganizationStatus::Active)
+        $query->active()
             ->whereIn('service', config('event-import-handlers.active_services'))
             ->whereNotNull('service')
             ->whereNotNull('service_api_key');
