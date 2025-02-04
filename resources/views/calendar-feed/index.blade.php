@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', "Build a Calendar Feed of the events you're interested in")
-@section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
+@section('description', 'Generate an iCal calendar feed to pull events for one, many, or all organizations promoted by HackGreenville into your calendar app')
 
 @section('content')
     <div class="container py-5  d-flex justify-content-center">

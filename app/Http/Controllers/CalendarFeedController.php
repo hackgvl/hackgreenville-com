@@ -30,7 +30,9 @@ class CalendarFeedController extends Controller
 
     public function show(Request $request)
     {
-        $organization_ids = collect(explode('-', $request->input('orgs')));
+        $organization_ids = collect(explode('-', $request->input('orgs')))
+            ->take(150) // Only allow up to 150 orgs, could prevent unnecessary db lookups.
+            ->filter(fn ($id) => is_numeric($id) && (int) $id > 0);
 
         $organizations = Org::query()
             ->where('status', OrganizationStatus::Active)
@@ -52,7 +54,7 @@ class CalendarFeedController extends Controller
                         default => EventStatus::confirmed(),
                     })
                     ->address($event->venue?->fullAddress() ?? 'Virtual Event')
-                    ->description($event->description)
+                    ->description("Check out latest event details at {$event->url}")
                     ->url($event->url),
             ])
             ->toArray();
