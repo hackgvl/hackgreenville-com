@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\OrganizationStatus;
 use App\Models\Event;
 use App\Models\Org;
 use Illuminate\Http\Request;
@@ -30,7 +29,7 @@ class CalendarFeedController extends Controller
 
     public function show(Request $request)
     {
-        $organization_ids = collect(explode('-', $request->input('orgs')))
+        $organization_ids = collect(explode('-', $request->input('orgs', '')))
             ->take(150) // Only allow up to 150 orgs, could prevent unnecessary db lookups.
             ->filter(fn ($id) => is_numeric($id) && (int) $id > 0);
 

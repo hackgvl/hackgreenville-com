@@ -99,7 +99,7 @@
                     </template>
 
                     <div class="text-center mt-4 d-flex flex-column align-items-center">
-                        <a :href="feedUrl('ical://')" class="btn btn-primary text-decoration-none mb-3">
+                        <a :href="feedUrl('webcal://')" class="btn btn-primary text-decoration-none mb-3">
                             Subscribe to Calendar Feed
                         </a>
 
