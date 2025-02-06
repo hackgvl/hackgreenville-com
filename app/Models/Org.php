@@ -104,11 +104,31 @@ class Org extends BaseModel
             ->whereNotNull('service_api_key');
     }
 
+    public function scopeOrderByFieldSequence($query, string $column, array $sequence = []): void
+    {
+        if (empty($sequence)) {
+            $query->orderBy($column);
+        }
+
+        $placeholders = implode(',', array_fill(0, count($sequence), '?'));
+
+        $query->orderByRaw("
+                CASE
+                    WHEN {$column} IN ({$placeholders}) THEN 0
+                    ELSE 999999  -- Large number to ensure it's always after
+                END",
+            $sequence
+        )
+            ->orderByRaw("FIELD({$column}, {$placeholders})", $sequence)
+            ->orderBy($column)  // Regular ordering for non-sequence items
+            ->orderBy('created_at', 'desc');
+    }
+
     public function getEventHandler(): AbstractEventHandler
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }
