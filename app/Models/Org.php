@@ -33,6 +33,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property-read mixed $url
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag> $tags
  * @property-read int|null $tags_count
+ *
  * @method static \Database\Factories\OrgFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Org newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Org newQuery()
@@ -57,6 +58,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Org whereUri($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Org withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Org withoutTrashed()
+ *
  * @mixin \Eloquent
  */
 class Org extends BaseModel
@@ -112,17 +114,16 @@ class Org extends BaseModel
 
         $placeholders = implode(',', array_fill(0, count($sequence), '?'));
 
-        $query->orderByRaw(
-            "
+        $query
+            ->orderByRaw(
+                "
                 CASE
                     WHEN {$column} IN ({$placeholders}) THEN 0
                     ELSE 999999  -- Large number to ensure it's always after
                 END",
-            $sequence
-        )
-            ->orderByRaw("FIELD({$column}, {$placeholders})", $sequence)
-            ->orderBy($column)  // Regular ordering for non-sequence items
-            ->orderBy('created_at', 'desc');
+                $sequence
+            )
+            ->orderByRaw("FIELD({$column}, {$placeholders})", $sequence);
     }
 
     public function getEventHandler(): AbstractEventHandler
