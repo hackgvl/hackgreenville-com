@@ -94,7 +94,12 @@
                                 />
                                 <label class="custom-control-label" :for="feed.id"></label>
                             </div>
-                            <span class="feed-name" x-text="feed.title"></span>
+                            <span
+                                class="feed-name"
+                                :class="{
+                                    'font-weight-bold': feed.checked,
+                                }"
+                                x-text="feed.title"></span>
                         </div>
                     </template>
 
