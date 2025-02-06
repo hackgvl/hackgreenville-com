@@ -16,7 +16,7 @@ class CalendarFeedController extends Controller
     {
         $orgs = Org::query()
             ->select('id')
-            ->when($request->filled('orgs'), fn(Builder $query) => $query->whereIn('id', explode('-', $request->input('orgs'))))
+            ->when($request->filled('orgs'), fn (Builder $query) => $query->whereIn('id', explode('-', $request->input('orgs'))))
             ->get();
 
         return view('calendar-feed.index', [
@@ -25,16 +25,16 @@ class CalendarFeedController extends Controller
                 ->active()
                 ->when(
                     value: $orgs->isNotEmpty(),
-                    callback: function(Builder $query) use ($orgs) {
+                    callback: function (Builder $query) use ($orgs) {
                         $query->orderByFieldSequence('id', $orgs->pluck('id')->toArray())
                             ->orderBy('title');
                     },
-                    default: function(Builder $query) {
+                    default: function (Builder $query) {
                         $query->orderBy('title');
                     }
                 )
                 ->get()
-                ->map(fn(Org $org) => [
+                ->map(fn (Org $org) => [
                     'id' => $org->id,
                     'title' => $org->title,
                     'checked' => $orgs->contains('id', $org->id),
@@ -46,19 +46,19 @@ class CalendarFeedController extends Controller
     {
         $organization_ids = collect(explode('-', $request->input('orgs', '')))
             ->take(150) // Only allow up to 150 orgs, could prevent unnecessary db lookups.
-            ->filter(fn($id) => is_numeric($id) && (int) $id > 0);
+            ->filter(fn ($id) => is_numeric($id) && (int) $id > 0);
 
         $organizations = Org::query()
             ->active()
-            ->when($organization_ids->isNotEmpty(), fn($query) => $query->whereIn('id', $organization_ids))
+            ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('id', $organization_ids))
             ->get();
 
         $events = Event::query()
             ->with('organization', 'venue.state')
             ->future()
-            ->when($organization_ids->isNotEmpty(), fn($query) => $query->whereIn('organization_id', $organization_ids))
+            ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $organization_ids))
             ->get()
-            ->mapWithKeys(fn(Event $event, $i) => [
+            ->mapWithKeys(fn (Event $event, $i) => [
                 $i => CalendarEvent::create($event->event_name)
                     ->uniqueIdentifier($event->uniqueIdentifierHash())
                     ->startsAt($event->active_at)
@@ -81,8 +81,8 @@ class CalendarFeedController extends Controller
             $organization = $organizations->first();
 
             $calendar
-                ->productIdentifier($organization->title.' Event Calendar')
-                ->name($organization->title.' Event Calendar')
+                ->productIdentifier($organization->title . ' Event Calendar')
+                ->name($organization->title . ' Event Calendar')
                 ->description($organization->description ?? '')
                 ->source(route('orgs.show', $organization));
         } else {

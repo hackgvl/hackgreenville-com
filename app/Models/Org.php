@@ -112,7 +112,8 @@ class Org extends BaseModel
 
         $placeholders = implode(',', array_fill(0, count($sequence), '?'));
 
-        $query->orderByRaw("
+        $query->orderByRaw(
+            "
                 CASE
                     WHEN {$column} IN ({$placeholders}) THEN 0
                     ELSE 999999  -- Large number to ensure it's always after
@@ -128,7 +129,7 @@ class Org extends BaseModel
     {
         /** @var AbstractEventHandler $handler */
         $handler = collect(config('event-import-handlers.handlers'))
-            ->firstOrFail(fn($handler, $service) => $this->service->value === $service);
+            ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
     }
