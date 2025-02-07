@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CalendarFeedRequest;
 use App\Models\Event;
 use App\Models\Org;
 use Illuminate\Contracts\Database\Query\Builder;
-use Illuminate\Http\Request;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event as CalendarEvent;
 use Spatie\IcalendarGenerator\Enums\Classification;
@@ -13,52 +13,35 @@ use Spatie\IcalendarGenerator\Enums\EventStatus;
 
 class CalendarFeedController extends Controller
 {
-    public function index(Request $request)
+    public function index(CalendarFeedRequest $request)
     {
-        $orgs = Org::query()
-            ->select('id')
-            ->active()
-            ->when($request->filled('orgs'), fn (Builder $query) => $query->whereIn('id', explode('-', $request->input('orgs'))))
-            ->get();
-
         return view('calendar-feed.index', [
             'organizations' => Org::query()
                 ->with('category')
                 ->active()
                 ->when(
-                    value: $orgs->isNotEmpty(),
-                    callback: function (Builder $query) use ($orgs) {
-                        $query->orderByFieldSequence('id', $orgs->pluck('id')->toArray())
+                    value: $request->validOrganizations()->isNotEmpty(),
+                    callback: function (Builder $query) use ($request) {
+                        $query->orderByFieldSequence('id', $request->validOrganizations()->pluck('id')->toArray())
                             ->orderBy('title');
                     },
-                    default: function (Builder $query) {
-                        $query->orderBy('title');
-                    }
+                    default: fn (Builder $query) => $query->orderBy('title')
                 )
                 ->get()
                 ->map(fn (Org $org) => [
                     'id' => $org->id,
                     'title' => $org->title,
-                    'checked' => $orgs->contains('id', $org->id),
+                    'checked' => $request->validOrganizations()->contains('id', $org->id),
                 ]),
         ]);
     }
 
-    public function show(Request $request)
+    public function show(CalendarFeedRequest $request)
     {
-        $organization_ids = collect(explode('-', $request->input('orgs', '')))
-            ->take(150) // Only allow up to 150 orgs, could prevent unnecessary db lookups.
-            ->filter(fn ($id) => is_numeric($id) && (int) $id > 0);
-
-        $organizations = Org::query()
-            ->active()
-            ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('id', $organization_ids))
-            ->get();
-
         $events = Event::query()
             ->with('organization', 'venue.state')
             ->future()
-            ->when($organization_ids->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $organization_ids))
+            ->when($request->validOrganizations()->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $request->validOrganizations()->pluck('id')))
             ->get()
             ->mapWithKeys(fn (Event $event, $i) => [
                 $i => CalendarEvent::create($event->event_name)
@@ -83,8 +66,8 @@ class CalendarFeedController extends Controller
         $calendar = Calendar::create()
             ->timezone(['America/New_York']);
 
-        if ($organizations->count() === 1) {
-            $organization = $organizations->first();
+        if ($request->validOrganizations()->count() === 1) {
+            $organization = $request->validOrganizations()->first();
 
             $calendar
                 ->productIdentifier($organization->title . ' Event Calendar')
