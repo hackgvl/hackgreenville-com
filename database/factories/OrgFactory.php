@@ -15,6 +15,7 @@ class OrgFactory extends Factory
     public function definition(): array
     {
         return [
+            'slug' => $this->faker->slug,
             'uri' => $this->faker->word(),
             'title' => $this->faker->word(),
             'path' => $this->faker->url(),
