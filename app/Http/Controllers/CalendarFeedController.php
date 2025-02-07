@@ -8,6 +8,7 @@ use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event as CalendarEvent;
+use Spatie\IcalendarGenerator\Enums\Classification;
 use Spatie\IcalendarGenerator\Enums\EventStatus;
 
 class CalendarFeedController extends Controller
@@ -60,14 +61,18 @@ class CalendarFeedController extends Controller
             ->get()
             ->mapWithKeys(fn (Event $event, $i) => [
                 $i => CalendarEvent::create($event->event_name)
-                    ->uniqueIdentifier($event->uniqueIdentifierHash())
+                    ->uniqueIdentifier(sha1($event->id))
                     ->startsAt($event->active_at)
                     ->endsAt($event->expire_at)
                     ->status(match ($event->isCancelled()) {
                         true => EventStatus::cancelled(),
                         default => EventStatus::confirmed(),
                     })
-                    ->address($event->venue?->fullAddress() ?? 'Virtual Event')
+                    ->address(
+                        address: $event->venue?->fullAddress() ?? 'Virtual Event',
+                        name: $event->venue?->name ?? 'Virtual'
+                    )
+                    ->classification(Classification::public())
                     ->description("Check out latest event details at {$event->url}")
                     ->url($event->url),
             ])
