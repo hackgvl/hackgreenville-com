@@ -1,10 +1,4 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap');
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-}
-
 .calendar-banner {
     background: linear-gradient(135deg, #2937f0 0%, #9089fc 100%);
     border-radius: 16px;
