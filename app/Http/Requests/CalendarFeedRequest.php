@@ -16,13 +16,6 @@ class CalendarFeedRequest extends FormRequest
         return true;
     }
 
-    protected function prepareForValidation()
-    {
-        $this->replace([
-            'orgs' => $this->formattedOrganizationIds(),
-        ]);
-    }
-
     public function rules()
     {
         return [
@@ -33,8 +26,15 @@ class CalendarFeedRequest extends FormRequest
     public function validOrganizations(): Collection
     {
         return $this->valid_organizations ??= Org::query()->active()
-            ->when($this->collect('orgs')->isNotEmpty(), fn(Builder $query) => $query->whereIn('id', $this->collect('orgs')))
+            ->when($this->collect('orgs')->isNotEmpty(), fn (Builder $query) => $query->whereIn('id', $this->collect('orgs')))
             ->get();
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->replace([
+            'orgs' => $this->formattedOrganizationIds(),
+        ]);
     }
 
     protected function formattedOrganizationIds(): array
@@ -42,7 +42,7 @@ class CalendarFeedRequest extends FormRequest
         return collect(explode('-', $this->input('orgs')))
             // Only allow up to 150 orgs, could prevent unnecessary db lookups.
             ->take(150)
-            ->filter(fn($id) => is_numeric($id) && (int) $id > 0)
+            ->filter(fn ($id) => is_numeric($id) && (int) $id > 0)
             ->toArray();
     }
 }
