@@ -30,14 +30,12 @@ class CalendarFeedTest extends DatabaseTestCase
         $this->get(route('calendar-feed.index'))
             ->assertOk()
             ->assertViewIs('calendar-feed.index')
-            ->assertViewHas('organizations', function($organizations) use ($first_org, $second_org, $inactive_org) {
-                return $organizations->count() === 2
+            ->assertViewHas('organizations', fn ($organizations) => $organizations->count() === 2
                     && $organizations->contains('id', $first_org->id)
                     && $organizations->contains('id', $second_org->id)
                     && false === $organizations->contains('id', $inactive_org->id)
                     && $organizations->firstWhere('id', $first_org->id)['checked']
-                    && $organizations->firstWhere('id', $second_org->id)['checked'];
-            });
+                    && $organizations->firstWhere('id', $second_org->id)['checked']);
     }
 
     public function test_show_generates_calendar_with_multiple_organizations_and_unique_uids(): void
@@ -198,7 +196,7 @@ class CalendarFeedTest extends DatabaseTestCase
         );
     }
 
-    public function test_older_events_never_show_up_on_calendar_feed() : void
+    public function test_older_events_never_show_up_on_calendar_feed(): void
     {
         $organization = Org::factory()->create(['status' => OrganizationStatus::Active]);
 

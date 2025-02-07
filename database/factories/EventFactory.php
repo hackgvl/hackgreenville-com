@@ -27,8 +27,8 @@ class EventFactory extends Factory
         $venue = Venue::factory();
 
         return [
-            'event_name' => $this->faker->sentence.' tech talk',
-            'group_name' => $this->faker->name.' tech group',
+            'event_name' => $this->faker->sentence . ' tech talk',
+            'group_name' => $this->faker->name . ' tech group',
             'description' => $this->faker->text(100),
             'rsvp_count' => $this->faker->randomNumber(2),
             'active_at' => $active_at = $this->faker->dateTimeThisMonth(),
