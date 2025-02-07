@@ -56,6 +56,7 @@ class CalendarFeedTest extends DatabaseTestCase
             'cancelled_at' => null,
             'active_at' => now(),
             'expire_at' => now()->addHours(2),
+            'event_name' => 'Event 1',
         ]);
 
         $second_org_events = Event::factory(2)->create([
@@ -63,6 +64,7 @@ class CalendarFeedTest extends DatabaseTestCase
             'cancelled_at' => null,
             'active_at' => now()->addDay(),
             'expire_at' => now()->addDay()->addHours(2),
+            'event_name' => 'Event hello!',
         ]);
 
         $response = $this->get(route('calendar-feed.show', [
