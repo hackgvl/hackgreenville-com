@@ -19,7 +19,7 @@ class CalendarFeedRequest extends FormRequest
     public function rules()
     {
         return [
-            'orgs' => ['sometimes', 'array'],
+            'orgs' => ['array'],
         ];
     }
 

@@ -119,25 +119,10 @@ class Org extends BaseModel
 
         // Shared priority ordering
         $query->orderByRaw("
-        CASE
-            WHEN {$column} IN ({$placeholders}) THEN 0
-            ELSE 999999
-        END", $sequence);
-
-        // Database-specific sequence ordering
-        if ($driver === 'mysql') {
-            $query->orderByRaw("FIELD({$column}, {$placeholders})", $sequence);
-        } else {
-            $cases = [];
-            foreach ($sequence as $index => $value) {
-                $cases[] = "WHEN {$column} = ? THEN ?";
-            }
-
-            $query->orderByRaw(
-                'CASE ' . implode(' ', $cases) . ' ELSE ' . count($sequence) . ' END',
-                array_merge($sequence, array_map(fn ($i) => $i, range(0, count($sequence) - 1)))
-            );
-        }
+                CASE
+                    WHEN {$column} IN ({$placeholders}) THEN 0
+                    ELSE 999999
+                END", $sequence);
     }
 
     public function getEventHandler(): AbstractEventHandler
