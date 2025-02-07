@@ -115,7 +115,6 @@ class Org extends BaseModel
         }
 
         $placeholders = implode(',', array_fill(0, count($sequence), '?'));
-        $driver = config('database.default');
 
         // Shared priority ordering
         $query->orderByRaw("
