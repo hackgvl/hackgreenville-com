@@ -17,6 +17,7 @@ class CalendarFeedController extends Controller
     {
         $orgs = Org::query()
             ->select('id')
+            ->active()
             ->when($request->filled('orgs'), fn (Builder $query) => $query->whereIn('id', explode('-', $request->input('orgs'))))
             ->get();
 
