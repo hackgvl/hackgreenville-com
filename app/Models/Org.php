@@ -108,15 +108,20 @@ class Org extends BaseModel
 
     public function scopeOrderByFieldSequence($query, string $column, array $sequence = []): void
     {
+        // If no sequence provided, do simple column ordering and exit
         if (empty($sequence)) {
             $query->orderBy($column);
 
             return;
         }
 
+        // Create placeholders (?,?) based on sequence length
+        // This is used for data binding when using raw queries (below)
         $placeholders = implode(',', array_fill(0, count($sequence), '?'));
 
-        // Shared priority ordering
+        // Orders using CASE statement:
+        // - Records matching sequence values get 0 (appear first)
+        // - All other records get 999999 (appear last)
         $query->orderByRaw("
                 CASE
                     WHEN {$column} IN ({$placeholders}) THEN 0
