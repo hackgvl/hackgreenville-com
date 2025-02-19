@@ -13,9 +13,9 @@
             </div>
 
             <div class="col-12 col-md-auto ml-md-auto">
-                <a href="{{ route('calendar-feed.show', ['orgs' => $org->id]) }}" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm w-100 w-md-auto">
+                <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm w-100 w-md-auto">
                     <div class="fa fa-calendar mr-2"></div>
-                    Subscribe to Calendar
+                    Subscribe
                 </a>
             </div>
         </div>
