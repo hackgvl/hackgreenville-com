@@ -5,9 +5,20 @@
 
 @section('content')
     <div class="container">
-        <h1>
-            {{ $org->title }}
-        </h1>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-auto mb-3 mb-md-0">
+                <h1 class="display-4 font-weight-bold text-primary mb-0" style="font-size: calc(1.8rem + 1.5vw);">
+                    {{ $org->title }}
+                </h1>
+            </div>
+
+            <div class="col-12 col-md-auto ml-md-auto">
+                <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm w-100 w-md-auto">
+                    <div class="fa fa-calendar mr-2"></div>
+                    Subscribe
+                </a>
+            </div>
+        </div>
 
         <blockquote>
             {!! $org->description !!}

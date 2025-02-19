@@ -27,15 +27,15 @@ class EventFactory extends Factory
         $venue = Venue::factory();
 
         return [
-            'event_name' => $event_name = $this->faker->name . ' tech talk',
-            'group_name' => $group_name = $this->faker->name . ' tech group',
-            'description' => $description = $this->faker->text(100),
-            'rsvp_count' => $rsvp_count = $this->faker->randomNumber(2),
+            'event_name' => $this->faker->sentence,
+            'group_name' => $this->faker->name . ' tech group',
+            'description' => $this->faker->text(100),
+            'rsvp_count' => $this->faker->randomNumber(2),
             'active_at' => $active_at = $this->faker->dateTimeThisMonth(),
-            'uri' => $url = $this->faker->url,
+            'uri' => $this->faker->url,
             'venue_id' => $venue,
-            'event_uuid' => $uuid = $this->faker->uuid,
-            'expire_at' => $expire_at = $this->faker->dateTimeBetween($active_at, '+2 days'),
+            'event_uuid' => $this->faker->uuid,
+            'expire_at' => $this->faker->dateTimeBetween($active_at, '+2 days'),
             'cancelled_at' => null,
             'service' => EventServices::EventBrite->value,
             'service_id' => $this->faker->randomDigit(),

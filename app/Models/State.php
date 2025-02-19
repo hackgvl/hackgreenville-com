@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Venue> $venues
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Venue> $venues
  * @property-read int|null $venues_count
  * @method static \Illuminate\Database\Eloquent\Builder|State abbr($abbr)
  * @method static \Database\Factories\StateFactory factory($count = null, $state = [])
