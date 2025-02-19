@@ -166,7 +166,7 @@ class CalendarFeedTest extends DatabaseTestCase
         );
 
         $this->assertStringContainsString(
-            "SUMMARY:{$cancelled_event->event_name}",
+            "SUMMARY:[CANCELLED] {$cancelled_event->event_name}",
             $calendar_content
         );
     }
