@@ -20,26 +20,21 @@
                 <x-flex-row class="w-100">
                     <x-flex-column>
                         <h5>Agile Learning Institute</h5>
-                        <p>A 501(c)3 educational nonprofit whose mission is to provide free mentorship and one-on-one coaching services to support software engineers</p>
+                        <p>A 501(c)(3) educational nonprofit whose mission is to provide free mentorship and one-on-one coaching services to support software engineers</p>
                         <p><a href="https://agile-learning.institute/become-a-mentor"
                               target="ali-mentorship"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                     <x-flex-column>
                         <h5>Build Carolina</h5>
-                        <dl>
-                            <dt class="text-uppercase">Programs</dt>
-                            <dd class="mb-0">Carolina Code School</dd>
-                            <dd class="mb-0">SC Codes</dd>
-                            <dd class="mb-0">Develop Carolina</dd>
-                        </dl>
+                        <p>Support tech workforce development in SC through a local 501(c)(3) nonprofit</p>
                         <p><a href="https://buildcarolina.org/build-carolina-giving"
                               target="build_carolina"
                               class="btn btn-info">Learn More</a></p>
                     </x-flex-column>
                     <x-flex-column>
                         <h5>RefactorGVL</h5>
-                        <p>To donate for the HackGreenville initiative, please enter "HackGreenville" in the "Requested earmark" field on the donation form.</p>
+                        <p>To support a HackGreenville initiative, enter "HackGreenville" in the "Requested earmark" field of RefactorGVL's 501(c)(3) nonprofit donation form.</p>
                         <p><a href="https://refactorgvl.com/#donate"
                               target="refactor_gvl"
                               class="btn btn-info">Learn More</a>
@@ -47,7 +42,7 @@
                     </x-flex-column>
                     <x-flex-column>
                         <h5>Synergy Mill</h5>
-                        <p>Help keep Synergy Mill available for the makers, crafters, inventors, and small business owners in Greenville</p>
+                        <p>Help keep Synergy Mill, a 501(c)(3) nonprofit, available for the makers, crafters, inventors, and small business owners in Greenville</p>
                         <p><a href="https://www.synergymill.com/donate"
                               target="synergy_mill_donate"
                               class="btn btn-info">Learn More</a></p>
