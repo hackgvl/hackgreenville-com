@@ -53,10 +53,7 @@ class CalendarFeedController extends Controller
                     ->uniqueIdentifier(sha1($event->id))
                     ->startsAt($event->active_at)
                     ->endsAt($event->expire_at)
-                    ->status(match ($event->isCancelled()) {
-                        true => EventStatus::cancelled(),
-                        default => EventStatus::confirmed(),
-                    })
+                    ->status(EventStatus::confirmed())
                     ->address(
                         address: $event->venue?->fullAddress() ?? 'Virtual Event',
                         name: $event->venue?->name ?? 'Virtual'
