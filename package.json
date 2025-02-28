@@ -16,7 +16,7 @@
         "test": "echo 'Running art test'",
         "posttest": "php artisan test --parallel",
         "lint": "prettier --write \"resources/{js,scss}/**/*.{ts,tsx,md,json,js,scss}\" --loglevel=error",
-        "lint:php": "composer lint --silent"
+        "lint:php": "composer lint --dev"
     },
     "pre-commit": [
         "lint",

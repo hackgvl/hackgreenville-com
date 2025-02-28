@@ -44,11 +44,9 @@ class EventBriteHandler extends AbstractEventHandler
         $venue_id = $data['venue_id'];
 
         // Cache to prevent unnecessary api calls for same venue id
-        $venue = Cache::remember(__CLASS__ . __FUNCTION__ . $venue_id, now()->addHour(), function () use ($venue_id) {
-            return $this->client()
-                ->get("v3/venues/{$venue_id}")
-                ->object();
-        });
+        $venue = Cache::remember(__CLASS__ . __FUNCTION__ . $venue_id, now()->addHour(), fn () => $this->client()
+            ->get("v3/venues/{$venue_id}")
+            ->object());
 
         return VenueData::from([
             'id' => $venue->id,

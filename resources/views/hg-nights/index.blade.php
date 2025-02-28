@@ -57,6 +57,48 @@
     <div class="col-10 px-5 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 m-5 mx-auto d-flex flex-column">
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
 
+      <h3 class="mt-4">2025 - Feb | <em>"Souperman IV: Quest for Peas"</em></h3>
+      <div class="flex-row-3-columns w-100">
+        <div class="flex-row-column">
+          <p><a href="https://www.meetup.com/hack-greenville/events/305856459/" class="btn btn-info">Recap</a></p>
+        </div>
+        <div class="flex-row-column">
+          <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
+        </div>
+      </div>
+
+
+      <h5 class="font-weight-bold">Kudos</h5>
+      <p class="lead-text">Event Sponsorship by <a href="https://home.mymechanic.app"><b>myMechanic</b></a> | 
+           Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+
+      <h5 class="font-weight-bold">Speakers</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">David He on
+          <a href="https://www.youtube.com/watch?v=ZaRFJqOg28s&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=1">
+            <em>Beyond Coding: How Windsurf AI is Making Software Development Accessible to Everyone</em>
+          </a>
+	</li>
+        <li class="list-group-item">Paul Sullivan on
+          <a href="https://www.youtube.com/watch?v=u-2QHjU3Y3c&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=2">
+            <em>The Elixir Ecosystem</em>
+          </a>
+        </li>
+        <li class="list-group-item">Zach Hall on
+          <a href="https://www.youtube.com/watch?v=wfiDn5Ff2i4&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=3">
+            <em>Simulating Analog Television on the Web</em>
+          </a>
+        </li>
+        <li class="list-group-item">Andrew Lechowicz on
+          <a href="https://www.youtube.com/watch?v=OSVy1nGj5Y8&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=4">
+            <em>Detecting Flaky Tests: Increasing Trust in Your Test</em>
+          </a>
+        </li>
+      </ul>
 
       <h3 class="mt-4">2024 - Oct | <em>"Starch Trek"</em></h3>
       <div class="flex-row-3-columns w-100">

@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $lat
  * @property string|null $lng
  * @property string|null $country
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Event> $events
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Event> $events
  * @property-read int|null $events_count
  * @property-read State|null $state
  * @method static \Database\Factories\VenueFactory factory($count = null, $state = [])

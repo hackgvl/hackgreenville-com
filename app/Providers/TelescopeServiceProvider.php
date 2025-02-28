@@ -14,7 +14,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      */
     public function register(): void
     {
-        if( ! config('telescope.enabled')) {
+        if ( ! config('telescope.enabled')) {
             return;
         }
 
@@ -22,13 +22,11 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 
         $this->hideSensitiveRequestDetails();
 
-        Telescope::filter(function (IncomingEntry $entry) {
-            return $entry->isReportableException() ||
+        Telescope::filter(fn (IncomingEntry $entry) => $entry->isReportableException() ||
                    $entry->isFailedRequest() ||
                    $entry->isFailedJob() ||
                    $entry->isScheduledTask() ||
-                   $entry->hasMonitoredTag();
-        });
+                   $entry->hasMonitoredTag());
     }
 
     /**
@@ -56,10 +54,8 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      */
     protected function gate(): void
     {
-        Gate::define('viewTelescope', function ($user) {
-            return in_array($user->email, [
+        Gate::define('viewTelescope', fn ($user) => in_array($user->email, [
 
-            ]);
-        });
+        ]));
     }
 }

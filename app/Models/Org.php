@@ -31,8 +31,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read Category|null $category
  * @property-read mixed $url
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tag> $tags
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag> $tags
  * @property-read int|null $tags_count
+ *
  * @method static \Database\Factories\OrgFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Org newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Org newQuery()
@@ -57,6 +58,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Org whereUri($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Org withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Org withoutTrashed()
+ *
  * @mixin \Eloquent
  */
 class Org extends BaseModel
@@ -91,12 +93,40 @@ class Org extends BaseModel
         return $this->status === OrganizationStatus::Active;
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('status', OrganizationStatus::Active);
+    }
+
     public function scopeHasConfiguredEventService($query): void
     {
-        $query->where('status', OrganizationStatus::Active)
+        $query->active()
             ->whereIn('service', config('event-import-handlers.active_services'))
             ->whereNotNull('service')
             ->whereNotNull('service_api_key');
+    }
+
+    public function scopeOrderByFieldSequence($query, string $column, array $sequence = []): void
+    {
+        // If no sequence provided, do simple column ordering and exit
+        if (empty($sequence)) {
+            $query->orderBy($column);
+
+            return;
+        }
+
+        // Create placeholders (?,?) based on sequence length
+        // This is used for data binding when using raw queries (below)
+        $placeholders = implode(',', array_fill(0, count($sequence), '?'));
+
+        // Orders using CASE statement:
+        // - Records matching sequence values get 0 (appear first)
+        // - All other records get 999999 (appear last)
+        $query->orderByRaw("
+                CASE
+                    WHEN {$column} IN ({$placeholders}) THEN 0
+                    ELSE 999999
+                END", $sequence);
     }
 
     public function getEventHandler(): AbstractEventHandler

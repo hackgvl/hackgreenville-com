@@ -26,8 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Model::preventLazyLoading( ! App::isProduction());
-        Model::shouldBeStrict( ! App::isProduction());
+        Model::preventLazyLoading(App::environment(['local', 'testing']));
+        Model::shouldBeStrict(App::environment(['local', 'testing']));
 
         if (config('telescope.enabled')) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
