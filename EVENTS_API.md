@@ -51,10 +51,19 @@ By default, results are returned in JSON format.
 ## Contributor Notes
 The following notes are specifically for contributors developing the _Events API_ at _app-modules/api/src/Http/Controllers/EventApiV0Controller.php_.
 
+The _[test fixtures](https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/event-importer/tests/fixtures)_ give an example of the responses one might expect from the remote APIs.
+
 ### Meetup.com
 The [Meetup GraphQL API](https://www.meetup.com/api/schema/#graphQl-schema) is used to query events.  This API requires a paid Meetup Pro account, the cost of which is covered by [RefactorGVL](https://refactorgvl.com/).
 
 The import code for this service exists in app-modules/event-importer/src/Services/MeetupRestHandler.php and schema of interest include [groupByUrlname](https://www.meetup.com/api/schema/#groupByUrlname) and [Event](https://www.meetup.com/api/schema/#Event).
+* Wayback Machine has copies of the old v2 REST API docs, which were removed and redirected when their [GraphQL API took over](https://github.com/hackgvl/hackgreenville-com/issues/212).
+* [v2 REST API - GET /events](https://web.archive.org/web/20170709041824/http://www.meetup.com/meetup_api/docs/2/events/)
+* [v2 REST API - GET /groups](https://web.archive.org/web/20170709041556/http://www.meetup.com/meetup_api/docs/2/groups/)
+* Examples
+  * [GET upcoming events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=upcoming)
+  * [GET past and cancelled events for one group / org](https://api.meetup.com/hack-greenville/events?&sign=true&photo-host=public&status=past,cancelled)
+  * [GET all events after 2024-02-12 for one group / org](https://api.meetup.com/synergymill/events?&sign=true&photo-host=public&no_earlier_than=2024-02-12T02:21:20.000&status=upcoming,cancelled,past&page=50) where dates is of the format %Y-%m-%dT%H:%M:%S.000
 
 ### Eventbrite
 The import code for this service exists in app-modules/event-importer/src/Services/EventBriteHandler.php

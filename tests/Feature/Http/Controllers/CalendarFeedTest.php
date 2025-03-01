@@ -153,10 +153,12 @@ class CalendarFeedTest extends DatabaseTestCase
             'Active event should have CONFIRMED status'
         );
 
+        // We want to ensure the status is confirmed
+        // as some calenders drop cancelled events
         $this->assertStringContainsString(
-            'STATUS:CANCELLED',
+            'STATUS:CONFIRMED',
             $calendar_content,
-            'Cancelled event should have CANCELLED status'
+            'Cancelled event should have CONFIRMED status'
         );
 
         // Verify both events are present but with different statuses
@@ -166,7 +168,7 @@ class CalendarFeedTest extends DatabaseTestCase
         );
 
         $this->assertStringContainsString(
-            "SUMMARY:{$cancelled_event->event_name}",
+            "SUMMARY:[CANCELLED] {$cancelled_event->event_name}",
             $calendar_content
         );
     }

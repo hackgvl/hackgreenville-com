@@ -9,17 +9,18 @@
             <div class="col-12">
 
                 <div class="row">
-                    <div class="col-12 text-center">
-                        <h1>{{ __('Contact Us') }}</h1>
-
-                        <p class="summary">
-                            {{ __('Have a question? Fill out the contact form below and we\'ll try to get back to you as soon as possible!') }}
-                        </p>
+                    <div class="col-12">
+                        <h1>Contact HackGreenville</h1>
+                        <ul class="values-list">
+                            <li>See our <a href="/code-of-conduct" class="highlight-link">Code of Conduct</a> for related concerns.</li>
+                            <li>All other requests may be shared through the form below.</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="row">
                     <hr class="mx-auto w-100 px-4">
+                    <h2>Contact Form</h2>
                 </div>
 
                 {{ aire()->route('contact.submit') }}
