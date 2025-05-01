@@ -37,6 +37,7 @@ class CalendarController extends Controller
                         ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('[CANCELLED] '))
                         ->toString(),
                     'description' => str($event->description)
+                        ->markdown()
                         ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
 
                     'allDay' => false,
