@@ -631,9 +631,9 @@ detect-libc@^2.0.0, detect-libc@^2.0.1:
   integrity sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==
 
 dotenv@^16.3.1:
-  version "16.4.7"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.7.tgz#0e20c5b82950140aa99be360a8a5f52335f53c26"
-  integrity sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==
+  version "16.5.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.5.0.tgz#092b49f25f808f020050051d1ff258e404c78692"
+  integrity sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==
 
 emojis-list@^3.0.0:
   version "3.0.0"
@@ -1012,13 +1012,13 @@ kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-laravel-vite-plugin@^0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/laravel-vite-plugin/-/laravel-vite-plugin-0.7.8.tgz#0fd0c577389ed5f4c5bb61cfbd9da5d18c9b58dc"
-  integrity sha512-HWYqpQYHR3kEQ1LsHX7gHJoNNf0bz5z5mDaHBLzS+PGLCTmYqlU5/SZyeEgObV7z7bC/cnStYcY9H1DI1D5Udg==
+laravel-vite-plugin@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/laravel-vite-plugin/-/laravel-vite-plugin-1.2.0.tgz#7a82e850fba9ca2359fa64f70e0647478ea5fde3"
+  integrity sha512-R0pJ+IcTVeqEMoKz/B2Ij57QVq3sFTABiFmb06gAwFdivbOgsUtuhX6N2MGLEArajrS3U5JbberzwOe7uXHMHQ==
   dependencies:
     picocolors "^1.0.0"
-    vite-plugin-full-reload "^1.0.5"
+    vite-plugin-full-reload "^1.1.0"
 
 lazy@~1.0.11:
   version "1.0.11"
@@ -1527,9 +1527,9 @@ sass-loader@^8.0.0:
     semver "^6.3.0"
 
 sass@^1.20.1:
-  version "1.85.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.85.1.tgz#18ab0bb48110ae99163778f06445b406148ca0d5"
-  integrity sha512-Uk8WpxM5v+0cMR0XjX9KfRIacmSG86RH4DCCZjLU2rFh5tyutt9siAXJ7G+YfxQ99Q6wrRMbMlVl6KqUms71ag==
+  version "1.87.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.87.0.tgz#8cceb36fa63fb48a8d5d7f2f4c13b49c524b723e"
+  integrity sha512-d0NoFH4v6SjEK7BoX810Jsrhj7IQSYHAHLi/iSpgqKc7LaIDshFRlSg5LOymf9FqQhxEHs2W5ZQXlvy0KD45Uw==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
@@ -1739,9 +1739,9 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 sweetalert2@^11.7.12:
-  version "11.17.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.17.2.tgz#a11852713c8eea274d9e1d233522322cc63cf5be"
-  integrity sha512-HKxDr1IyV3Lxr3W6sb61qm/p2epFIEdr5EKwteRFHnIg6f8nHFl2kX++DBVz16Mac+fFiU3hMpjq1L6yE2Ge5w==
+  version "11.21.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.21.0.tgz#afb4d9abd8d15446788671552f2b52e7eafdccbf"
+  integrity sha512-fiEK7SqRY/QD/wC2uqEHlfYGZ7qe2UcyQbJpbpj4YRVqplBgcI+euPZLZL+evLINcvbtXmL1SFUdZHKqBHGAAQ==
 
 systeminformation@^5.7:
   version "5.23.17"
@@ -1749,9 +1749,9 @@ systeminformation@^5.7:
   integrity sha512-jjcPB23YcoNN43Q+A0rPFsGMMSAW/Zeok8rMGko1DvO8b1SO7zizgAEVQ4lyJdlAuc6vTmqnkyMCDD3N9Uwksw==
 
 tar-fs@^2.0.0, tar-fs@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-2.1.1.tgz#489a15ab85f1f0befabb370b7de4f9eb5cbe8784"
-  integrity sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-2.1.2.tgz#425f154f3404cb16cb8ff6e671d45ab2ed9596c5"
+  integrity sha512-EsaAXwxmx8UB7FRKqeozqEPop69DXcmYwTQwXvyAPF352HJsPdkVhvTaDPYqfNgruveJIJy3TA2l+2zj8LJIJA==
   dependencies:
     chownr "^1.1.1"
     mkdirp-classic "^0.5.2"
@@ -1827,7 +1827,7 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
-vite-plugin-full-reload@^1.0.5:
+vite-plugin-full-reload@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/vite-plugin-full-reload/-/vite-plugin-full-reload-1.2.0.tgz#bc4bfdc842abb4d24309ca802be8b955fce1c0c6"
   integrity sha512-kz18NW79x0IHbxRSHm0jttP4zoO9P9gXh+n6UTwlNKnviTTEpOlum6oS9SmecrTtSr+muHEn5TUuC75UovQzcA==
@@ -1844,9 +1844,9 @@ vite-plugin-image-optimizer@^1.1.6:
     pathe "^1.1.2"
 
 vite@^4.5.3:
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.9.tgz#f4dfd4c4295743b50c3e3f90df798d70de699e4f"
-  integrity sha512-qK9W4xjgD3gXbC0NmdNFFnVFLMWSNiR3swj957yutwzzN16xF/E7nmtAyp1rT9hviDroQANjE4HK3H4WqWdFtw==
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.14.tgz#2e652bc1d898265d987d6543ce866ecd65fa4086"
+  integrity sha512-+v57oAaoYNnO3hIu5Z/tJRZjq5aHM2zDve9YZ8HngVHbhk66RStobhb1sqPMIPEleV6cNKYK4eGrAbE9Ulbl2g==
   dependencies:
     esbuild "^0.18.10"
     postcss "^8.4.27"

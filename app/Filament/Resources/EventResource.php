@@ -62,7 +62,12 @@ class EventResource extends Resource
                             ->columnSpanFull(),
 
                         Forms\Components\DateTimePicker::make('active_at')
-                            ->label('Event Date')
+                            ->label('Starts At')
+                            ->date()
+                            ->required(),
+
+                        Forms\Components\DateTimePicker::make('expire_at')
+                            ->label('Ends at')
                             ->date()
                             ->required(),
 
