@@ -37,3 +37,6 @@ Route::get('/join-slack', [SlackController::class, 'join'])->name('join-slack');
 Route::post('/join-slack', [SlackController::class, 'submit'])->name('join-slack.submit');
 
 Route::get('/styles', [StyleController::class, 'index'])->name('styles.index');
+
+// Redirects
+Route::redirect('/nights', '/hg-nights');
