@@ -39,4 +39,4 @@ Route::post('/join-slack', [SlackController::class, 'submit'])->name('join-slack
 Route::get('/styles', [StyleController::class, 'index'])->name('styles.index');
 
 // Redirects
-Route::redirect('/nights', '/hg-nights');
+Route::redirect('/nights', 'https://www.meetup.com/hack-greenville/events/307794466/');
