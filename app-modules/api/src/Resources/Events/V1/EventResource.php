@@ -2,7 +2,6 @@
 
 namespace HackGreenville\Api\Resources\Events\V1;
 
-use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -27,12 +26,10 @@ class EventResource extends JsonResource
                 'id' => $this->resource->organization->id,
                 'name' => $this->resource->group_name,
                 'url' => $this->resource->organization->uri,
-                'tags' => $this->resource->organization->tags->map(function ($tag) {
-                    return [
-                        'id' => $tag->id,
-                        'name' => $tag->name,
-                    ];
-                }),
+                'tags' => $this->resource->organization->tags->map(fn ($tag) => [
+                    'id' => $tag->id,
+                    'name' => $tag->name,
+                ]),
             ],
             'venue' => new VenueResource($this->resource->venue),
             'service' => [

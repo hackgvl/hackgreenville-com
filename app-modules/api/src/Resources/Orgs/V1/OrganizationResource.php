@@ -2,7 +2,6 @@
 
 namespace HackGreenville\Api\Resources\Orgs\V1;
 
-use App\Models\Org;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -28,12 +27,10 @@ class OrganizationResource extends JsonResource
             'status' => $this->resource->status,
             'organization_type' => $this->resource->organization_type,
             'established_year' => $this->resource->established_at ? $this->resource->established_at->year : null,
-            'tags' => $this->resource->tags->map(function ($tag) {
-                return [
-                    'id' => $tag->id,
-                    'name' => $tag->name,
-                ];
-            }),
+            'tags' => $this->resource->tags->map(fn ($tag) => [
+                'id' => $tag->id,
+                'name' => $tag->name,
+            ]),
             'created_at' => $this->resource->created_at->toISOString(),
             'updated_at' => $this->resource->updated_at->toISOString(),
         ];
