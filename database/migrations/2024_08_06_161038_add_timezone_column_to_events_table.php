@@ -17,5 +17,9 @@ return new class extends Migration {
         Schema::table('events', function (Blueprint $table) {
             $table->dropColumn('timezone');
         });
+
+        Schema::table('abcd', function (Blueprint $table) {
+            $table->dropColumn('timezone');
+        });
     }
 };
