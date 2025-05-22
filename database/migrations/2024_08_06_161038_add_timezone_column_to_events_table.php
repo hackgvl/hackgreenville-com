@@ -10,15 +10,16 @@ return new class extends Migration {
         Schema::table('events', function (Blueprint $table) {
             $table->string('timezone')->after('active_at')->default('America/New_York');
         });
+
+        Schema::table('abcd', function (Blueprint $table) {
+            $table->dropColumn('timezone');
+        });
+        
     }
 
     public function down(): void
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->dropColumn('timezone');
-        });
-
-        Schema::table('abcd', function (Blueprint $table) {
             $table->dropColumn('timezone');
         });
     }
