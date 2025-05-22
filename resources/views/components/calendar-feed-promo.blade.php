@@ -46,7 +46,7 @@
             <div class="col-md-9 text-center text-md-left mb-4 mb-md-0">
                 <h2 class="text-white banner-title mb-2">Stay in sync with your events</h2>
                 <p class="text-white banner-text mb-0">
-                    Subscribe to our calendar feed and get real-time updates across all your devices.
+                    Connect to our calendar feed and never miss an update—sync automatically across all your devices.
                 </p>
             </div>
             <div class="col-md-3 text-center text-md-right">
