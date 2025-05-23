@@ -151,7 +151,7 @@ class SlackController
 
                 // Run API check asynchronously
                 dispatch(function () {
-                    $this->botService->checkApi();
+                    $this->botService->handlePostingToSlack();
                 })->afterResponse();
 
                 return response('Checking api for events 👍');

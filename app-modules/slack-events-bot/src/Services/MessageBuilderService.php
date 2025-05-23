@@ -2,6 +2,7 @@
 
 namespace HackGreenville\SlackEventsBot\Services;
 
+use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
@@ -11,10 +12,10 @@ class MessageBuilderService
     {
     }
 
-    public function buildEventBlocks(array $events, Carbon $weekStart, Carbon $weekEnd): Collection
+    public function buildEventBlocks(Collection $events): Collection
     {
         return collect($events)
-            ->map(fn ($event) => $this->buildSingleEventBlock($event, $weekStart, $weekEnd))
+            ->map(fn (Event $event) => $this->buildSingleEventBlock($event))
             ->filter()
             ->values();
     }
@@ -82,21 +83,8 @@ class MessageBuilderService
         ];
     }
 
-    private function buildSingleEventBlock(array $eventData, Carbon $weekStart, Carbon $weekEnd): ?array
+    private function buildSingleEventBlock(Event $event): ?array
     {
-        $event = $this->eventService->createEventFromJson($eventData);
-
-        // Ignore event if it's not in the current week
-        if ($event['time']->lt($weekStart) || $event['time']->gt($weekEnd)) {
-            return null;
-        }
-
-        // Ignore event if it has a non-supported status
-        if ( ! in_array($event['status'], ['cancelled', 'upcoming', 'past'])) {
-            logger()->warning("Couldn't parse event {$event['uuid']} with status: {$event['status']}");
-            return null;
-        }
-
         $text = $this->eventService->generateText($event) . "\n\n";
 
         return [
