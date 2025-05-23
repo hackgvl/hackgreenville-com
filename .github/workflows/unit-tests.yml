@@ -35,11 +35,14 @@ jobs:
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
 
-      - name: Railway Preview Deploy
+  railway-preview:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Deploy Railway PR Preview
         uses: bogdankharchenko/railway-pr-preview@main
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
-          RAILWAY_ENVIRONMENT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
         with:
-          railway_token: ${{ secrets.RAILWAY_API_TOKEN }}
-          source_environment_id: ${{ secrets.RAILWAY_PROJECT_ID }}
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          source_environment_id: ${{ secrets.RAILWAY_SOURCE_ENV_ID }}
