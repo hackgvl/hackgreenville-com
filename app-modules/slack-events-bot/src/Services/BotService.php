@@ -18,43 +18,6 @@ class BotService
     ) {
     }
 
-    private function isUnsafeToSpillover(
-        int $existingMessagesLength,
-        int $newMessagesLength,
-        Carbon $week,
-        string $slackChannelId
-    ): bool {
-        if ($newMessagesLength > $existingMessagesLength && $existingMessagesLength > 0) {
-            $latestMessage = $this->databaseService->getMostRecentMessageForChannel($slackChannelId);
-
-            if (!$latestMessage) {
-                return false;
-            }
-
-            $latestMessageWeek = Carbon::parse($latestMessage['week']);
-
-            // If the latest message is for a more recent week then it is unsafe
-            // to add new messages. We cannot place new messages before older, existing ones.
-            return $latestMessageWeek->greaterThan($week);
-        }
-
-        return false;
-    }
-
-    private function postNewMessage(string $slackChannelId, array $msgBlocks, string $msgText): array
-    {
-        $response = Http::withToken(config('slack-events-bot.bot_token'))
-            ->post('https://slack.com/api/chat.postMessage', [
-                'channel' => $slackChannelId,
-                'blocks' => $msgBlocks,
-                'text' => $msgText,
-                'unfurl_links' => false,
-                'unfurl_media' => false,
-            ]);
-
-        return $response->json();
-    }
-
     public function postOrUpdateMessages(Carbon $week, array $messages): void
     {
         $channels = $this->databaseService->getSlackChannelIds();
@@ -64,7 +27,7 @@ class BotService
         $messageDetails = [];
         foreach ($existingMessages as $existingMessage) {
             $channelId = $existingMessage['slack_channel_id'];
-            if (!isset($messageDetails[$channelId])) {
+            if ( ! isset($messageDetails[$channelId])) {
                 $messageDetails[$channelId] = [];
             }
             $messageDetails[$channelId][] = [
@@ -89,7 +52,7 @@ class BotService
                             $week,
                             $slackChannelId
                         )) {
-                            throw new UnsafeMessageSpilloverException();
+                            throw new UnsafeMessageSpilloverException;
                         }
 
                         Log::info("Posting an additional message for week {$week->format('F j')} in {$slackChannelId}");
@@ -105,7 +68,7 @@ class BotService
                         );
                     } elseif (
                         in_array($slackChannelId, $postedChannelsSet) &&
-                        $msgText == $messageDetails[$slackChannelId][$msgIdx]['message']
+                        $msgText === $messageDetails[$slackChannelId][$msgIdx]['message']
                     ) {
                         Log::info(
                             "Message " . ($msgIdx + 1) . " for week of {$week->format('F j')} " .
@@ -118,7 +81,7 @@ class BotService
                             $week,
                             $slackChannelId
                         )) {
-                            throw new UnsafeMessageSpilloverException();
+                            throw new UnsafeMessageSpilloverException;
                         }
 
                         Log::info(
@@ -172,26 +135,24 @@ class BotService
         $weekEnd = $weekStart->copy()->addDays(7);
 
         // Convert Event models to array format expected by MessageBuilderService
-        $eventsArray = $events->map(function (Event $event) {
-            return [
-                'event_name' => $event->event_name,
-                'group_name' => $event->group_name,
-                'description' => $event->description,
-                'venue' => $event->venue ? [
-                    'name' => $event->venue->name,
-                    'address' => $event->venue->address,
-                    'city' => $event->venue->city,
-                    'state' => $event->venue->state?->abbr,
-                    'zip' => $event->venue->zipcode,
-                    'lat' => $event->venue->lat,
-                    'lon' => $event->venue->lng,
-                ] : null,
-                'time' => $event->active_at->toIso8601String(),
-                'url' => $event->uri,
-                'status' => $event->status,
-                'uuid' => $event->event_uuid,
-            ];
-        })->toArray();
+        $eventsArray = $events->map(fn (Event $event) => [
+            'event_name' => $event->event_name,
+            'group_name' => $event->group_name,
+            'description' => $event->description,
+            'venue' => $event->venue ? [
+                'name' => $event->venue->name,
+                'address' => $event->venue->address,
+                'city' => $event->venue->city,
+                'state' => $event->venue->state?->abbr,
+                'zip' => $event->venue->zipcode,
+                'lat' => $event->venue->lat,
+                'lon' => $event->venue->lng,
+            ] : null,
+            'time' => $event->active_at->toIso8601String(),
+            'url' => $event->uri,
+            'status' => $event->status,
+            'uuid' => $event->event_uuid,
+        ])->toArray();
 
         $eventBlocks = $this->messageBuilderService->buildEventBlocks($eventsArray, $weekStart, $weekEnd);
         $chunkedMessages = $this->messageBuilderService->chunkMessages($eventBlocks, $weekStart);
@@ -219,5 +180,42 @@ class BotService
         // Potentially post next week 5 days early
         $probeDate = $today->copy()->addDays(5);
         $this->parseEventsForWeek($probeDate, $events);
+    }
+
+    private function isUnsafeToSpillover(
+        int $existingMessagesLength,
+        int $newMessagesLength,
+        Carbon $week,
+        string $slackChannelId
+    ): bool {
+        if ($newMessagesLength > $existingMessagesLength && $existingMessagesLength > 0) {
+            $latestMessage = $this->databaseService->getMostRecentMessageForChannel($slackChannelId);
+
+            if ( ! $latestMessage) {
+                return false;
+            }
+
+            $latestMessageWeek = Carbon::parse($latestMessage['week']);
+
+            // If the latest message is for a more recent week then it is unsafe
+            // to add new messages. We cannot place new messages before older, existing ones.
+            return $latestMessageWeek->greaterThan($week);
+        }
+
+        return false;
+    }
+
+    private function postNewMessage(string $slackChannelId, array $msgBlocks, string $msgText): array
+    {
+        $response = Http::withToken(config('slack-events-bot.bot_token'))
+            ->post('https://slack.com/api/chat.postMessage', [
+                'channel' => $slackChannelId,
+                'blocks' => $msgBlocks,
+                'text' => $msgText,
+                'unfurl_links' => false,
+                'unfurl_media' => false,
+            ]);
+
+        return $response->json();
     }
 }

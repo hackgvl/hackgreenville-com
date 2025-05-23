@@ -6,72 +6,6 @@ use Carbon\Carbon;
 
 class EventService
 {
-    private function parseLocation(array $eventData): ?string
-    {
-        $venue = $eventData['venue'] ?? null;
-        
-        if (!$venue) {
-            return null;
-        }
-
-        // Full address available
-        if (
-            isset($venue['name'], $venue['address'], $venue['city'], $venue['state'], $venue['zip']) &&
-            !in_array(null, [$venue['name'], $venue['address'], $venue['city'], $venue['state'], $venue['zip']], true)
-        ) {
-            return sprintf(
-                '%s at %s %s, %s %s',
-                $venue['name'],
-                $venue['address'],
-                $venue['city'],
-                $venue['state'],
-                $venue['zip']
-            );
-        }
-
-        // Lat/long available
-        if (isset($venue['lat'], $venue['lon']) && $venue['lat'] !== null && $venue['lon'] !== null) {
-            return sprintf('lat/long: %s, %s', $venue['lat'], $venue['lon']);
-        }
-
-        // Just the name
-        return $venue['name'] ?? null;
-    }
-
-    private function truncateString(string $string, int $length = 250): string
-    {
-        if (strlen($string) <= $length) {
-            return $string;
-        }
-        
-        return substr($string, 0, $length) . '...';
-    }
-
-    private function getLocationUrl(?string $location): string
-    {
-        if (!$location) {
-            return 'No location';
-        }
-
-        $encodedLocation = urlencode($location);
-        return "<https://www.google.com/maps/search/?api=1&query={$encodedLocation}|{$location}>";
-    }
-
-    private function printStatus(string $status): string
-    {
-        return match ($status) {
-            'upcoming' => 'Upcoming ✅',
-            'past' => 'Past ✔',
-            'cancelled' => 'Cancelled ❌',
-            default => ucfirst($status),
-        };
-    }
-
-    private function printDateTime(Carbon $time): string
-    {
-        return $time->setTimezone(config('app.timezone'))->format('F j, Y g:i A T');
-    }
-
     public function createEventFromJson(array $eventData): array
     {
         return [
@@ -127,5 +61,70 @@ class EventService
             $event['location'] ?? 'No location',
             $this->printDateTime($event['time'])
         );
+    }
+    private function parseLocation(array $eventData): ?string
+    {
+        $venue = $eventData['venue'] ?? null;
+
+        if ( ! $venue) {
+            return null;
+        }
+
+        // Full address available
+        if (
+            isset($venue['name'], $venue['address'], $venue['city'], $venue['state'], $venue['zip']) &&
+            ! in_array(null, [$venue['name'], $venue['address'], $venue['city'], $venue['state'], $venue['zip']], true)
+        ) {
+            return sprintf(
+                '%s at %s %s, %s %s',
+                $venue['name'],
+                $venue['address'],
+                $venue['city'],
+                $venue['state'],
+                $venue['zip']
+            );
+        }
+
+        // Lat/long available
+        if (isset($venue['lat'], $venue['lon']) && $venue['lat'] !== null && $venue['lon'] !== null) {
+            return sprintf('lat/long: %s, %s', $venue['lat'], $venue['lon']);
+        }
+
+        // Just the name
+        return $venue['name'] ?? null;
+    }
+
+    private function truncateString(string $string, int $length = 250): string
+    {
+        if (mb_strlen($string) <= $length) {
+            return $string;
+        }
+
+        return mb_substr($string, 0, $length) . '...';
+    }
+
+    private function getLocationUrl(?string $location): string
+    {
+        if ( ! $location) {
+            return 'No location';
+        }
+
+        $encodedLocation = urlencode($location);
+        return "<https://www.google.com/maps/search/?api=1&query={$encodedLocation}|{$location}>";
+    }
+
+    private function printStatus(string $status): string
+    {
+        return match ($status) {
+            'upcoming' => 'Upcoming ✅',
+            'past' => 'Past ✔',
+            'cancelled' => 'Cancelled ❌',
+            default => ucfirst($status),
+        };
+    }
+
+    private function printDateTime(Carbon $time): string
+    {
+        return $time->setTimezone(config('app.timezone'))->format('F j, Y g:i A T');
     }
 }

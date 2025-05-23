@@ -20,7 +20,7 @@ class AuthService
     public function isAdmin(string $userId): bool
     {
         $userInfo = $this->getUserInfo($userId);
-        
+
         return $userInfo['user']['is_admin'] ?? false;
     }
 
@@ -28,13 +28,13 @@ class AuthService
     {
         $timestamp = $request->header('X-Slack-Request-Timestamp');
         $signature = $request->header('X-Slack-Signature');
-        
-        if (!$timestamp || !$signature) {
+
+        if ( ! $timestamp || ! $signature) {
             return false;
         }
 
         // Check for possible replay attacks (5 minutes)
-        if (abs(time() - intval($timestamp)) > 60 * 5) {
+        if (abs(time() - (int) $timestamp) > 60 * 5) {
             return false;
         }
 

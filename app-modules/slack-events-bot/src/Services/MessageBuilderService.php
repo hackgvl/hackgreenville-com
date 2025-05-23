@@ -11,6 +11,47 @@ class MessageBuilderService
     {
     }
 
+    public function buildEventBlocks(array $events, Carbon $weekStart, Carbon $weekEnd): Collection
+    {
+        return collect($events)
+            ->map(fn ($event) => $this->buildSingleEventBlock($event, $weekStart, $weekEnd))
+            ->filter()
+            ->values();
+    }
+
+    public function chunkMessages(Collection $eventBlocks, Carbon $weekStart): array
+    {
+        $messagesNeeded = $this->totalMessagesNeeded($eventBlocks);
+        $maxLength = config('slack-events-bot.max_message_character_length');
+
+        $messages = [];
+        $initialHeader = $this->buildHeader($weekStart, 1, $messagesNeeded);
+
+        $blocks = $initialHeader['blocks'];
+        $text = $initialHeader['text'];
+
+        foreach ($eventBlocks as $event) {
+            // Event can be safely added to existing message
+            if ($event['text_length'] + mb_strlen($text) < $maxLength) {
+                $blocks = array_merge($blocks, $event['blocks']);
+                $text .= $event['text'];
+                continue;
+            }
+
+            // Save message and then start a new one
+            $messages[] = ['blocks' => $blocks, 'text' => $text];
+
+            $newHeader = $this->buildHeader($weekStart, count($messages) + 1, $messagesNeeded);
+            $blocks = array_merge($newHeader['blocks'], $event['blocks']);
+            $text = $newHeader['text'] . $event['text'];
+        }
+
+        // Add whatever is left as a new message
+        $messages[] = ['blocks' => $blocks, 'text' => $text];
+
+        return $messages;
+    }
+
     private function buildHeader(Carbon $weekStart, int $index, int $total): array
     {
         $text = sprintf(
@@ -37,7 +78,7 @@ class MessageBuilderService
                 ['type' => 'divider'],
             ],
             'text' => $text,
-            'text_length' => strlen($text),
+            'text_length' => mb_strlen($text),
         ];
     }
 
@@ -51,7 +92,7 @@ class MessageBuilderService
         }
 
         // Ignore event if it has a non-supported status
-        if (!in_array($event['status'], ['cancelled', 'upcoming', 'past'])) {
+        if ( ! in_array($event['status'], ['cancelled', 'upcoming', 'past'])) {
             logger()->warning("Couldn't parse event {$event['uuid']} with status: {$event['status']}");
             return null;
         }
@@ -61,60 +102,19 @@ class MessageBuilderService
         return [
             'blocks' => array_merge($this->eventService->generateBlocks($event), [['type' => 'divider']]),
             'text' => $text,
-            'text_length' => strlen($text),
+            'text_length' => mb_strlen($text),
         ];
-    }
-
-    public function buildEventBlocks(array $events, Carbon $weekStart, Carbon $weekEnd): Collection
-    {
-        return collect($events)
-            ->map(fn($event) => $this->buildSingleEventBlock($event, $weekStart, $weekEnd))
-            ->filter()
-            ->values();
     }
 
     private function totalMessagesNeeded(Collection $eventBlocks): int
     {
         $maxLength = config('slack-events-bot.max_message_character_length');
         $headerBuffer = config('slack-events-bot.header_buffer_length');
-        
+
         $totalLength = $eventBlocks->sum('text_length');
         $messagesNeeded = (int) ceil($totalLength / ($maxLength - $headerBuffer));
 
         // Ensure total count is at least 1 if we're going to post anything
         return max(1, $messagesNeeded);
-    }
-
-    public function chunkMessages(Collection $eventBlocks, Carbon $weekStart): array
-    {
-        $messagesNeeded = $this->totalMessagesNeeded($eventBlocks);
-        $maxLength = config('slack-events-bot.max_message_character_length');
-        
-        $messages = [];
-        $initialHeader = $this->buildHeader($weekStart, 1, $messagesNeeded);
-        
-        $blocks = $initialHeader['blocks'];
-        $text = $initialHeader['text'];
-
-        foreach ($eventBlocks as $event) {
-            // Event can be safely added to existing message
-            if ($event['text_length'] + strlen($text) < $maxLength) {
-                $blocks = array_merge($blocks, $event['blocks']);
-                $text .= $event['text'];
-                continue;
-            }
-
-            // Save message and then start a new one
-            $messages[] = ['blocks' => $blocks, 'text' => $text];
-
-            $newHeader = $this->buildHeader($weekStart, count($messages) + 1, $messagesNeeded);
-            $blocks = array_merge($newHeader['blocks'], $event['blocks']);
-            $text = $newHeader['text'] . $event['text'];
-        }
-
-        // Add whatever is left as a new message
-        $messages[] = ['blocks' => $blocks, 'text' => $text];
-
-        return $messages;
     }
 }
