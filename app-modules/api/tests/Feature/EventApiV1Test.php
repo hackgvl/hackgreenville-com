@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace HackGreenville\Api\Tests\Feature;
 
 use App\Models\Event;
 use App\Models\Org;
