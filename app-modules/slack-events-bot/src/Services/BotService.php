@@ -14,8 +14,7 @@ class BotService
     public function __construct(
         private DatabaseService       $databaseService,
         private MessageBuilderService $messageBuilderService,
-    )
-    {
+    ) {
     }
 
     public function postOrUpdateMessages(Carbon $week, array $messages): void
@@ -27,7 +26,7 @@ class BotService
         $messageDetails = [];
         foreach ($existingMessages as $existingMessage) {
             $channelId = $existingMessage['slack_channel_id'];
-            if (!isset($messageDetails[$channelId])) {
+            if ( ! isset($messageDetails[$channelId])) {
                 $messageDetails[$channelId] = [];
             }
             $messageDetails[$channelId][] = [
@@ -52,7 +51,7 @@ class BotService
                             $week,
                             $slackChannelId
                         )) {
-                            throw new UnsafeMessageSpilloverException();
+                            throw new UnsafeMessageSpilloverException;
                         }
 
                         Log::info("Posting an additional message for week {$week->format('F j')} in {$slackChannelId}");
@@ -66,26 +65,26 @@ class BotService
                             $slackChannelId,
                             $msgIdx
                         );
-                    } else if (
+                    } elseif (
                         in_array($slackChannelId, $postedChannelsSet)
                         && $msgText === $messageDetails[$slackChannelId][$msgIdx]['message']
                     ) {
                         Log::info(
-                            "Message ".($msgIdx + 1)." for week of {$week->format('F j')} ".
+                            "Message " . ($msgIdx + 1) . " for week of {$week->format('F j')} " .
                             "in {$slackChannelId} hasn't changed, not updating"
                         );
-                    } else if (in_array($slackChannelId, $postedChannelsSet)) {
+                    } elseif (in_array($slackChannelId, $postedChannelsSet)) {
                         if ($this->isUnsafeToSpillover(
                             count($existingMessages),
                             count($messages),
                             $week,
                             $slackChannelId
                         )) {
-                            throw new UnsafeMessageSpilloverException();
+                            throw new UnsafeMessageSpilloverException;
                         }
 
                         Log::info(
-                            "Updating message ".($msgIdx + 1)." for week {$week->format('F j')} ".
+                            "Updating message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
                             "in {$slackChannelId}"
                         );
 
@@ -102,7 +101,7 @@ class BotService
                         $this->databaseService->updateMessage($week, $msgText, $timestamp, $slackChannelId);
                     } else {
                         Log::info(
-                            "Posting message ".($msgIdx + 1)." for week {$week->format('F j')} ".
+                            "Posting message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
                             "in {$slackChannelId}"
                         );
 
@@ -119,10 +118,10 @@ class BotService
                 }
             } catch (UnsafeMessageSpilloverException $e) {
                 Log::error(
-                    "Cannot update messages for {$week->format('m/d/Y')} for channel {$slackChannelId}. ".
-                    "New events have caused the number of messages needed to increase, ".
-                    "but the next week's post has already been sent. Cannot resize. ".
-                    "Existing message count: ".count($existingMessages)." --- New message count: ".count($messages)
+                    "Cannot update messages for {$week->format('m/d/Y')} for channel {$slackChannelId}. " .
+                    "New events have caused the number of messages needed to increase, " .
+                    "but the next week's post has already been sent. Cannot resize. " .
+                    "Existing message count: " . count($existingMessages) . " --- New message count: " . count($messages)
                 );
                 continue;
             }
@@ -158,12 +157,11 @@ class BotService
         int    $newMessagesLength,
         Carbon $week,
         string $slackChannelId
-    ): bool
-    {
+    ): bool {
         if ($newMessagesLength > $existingMessagesLength && $existingMessagesLength > 0) {
             $latestMessage = $this->databaseService->getMostRecentMessageForChannel($slackChannelId);
 
-            if (!$latestMessage) {
+            if ( ! $latestMessage) {
                 return false;
             }
 
