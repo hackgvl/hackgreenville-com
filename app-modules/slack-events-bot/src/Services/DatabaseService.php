@@ -48,21 +48,19 @@ class DatabaseService
             ->where('week', $week)
             ->orderBy('sequence_position')
             ->get()
-            ->map(function ($message) {
-                return [
-                    'message' => $message->message,
-                    'message_timestamp' => $message->message_timestamp,
-                    'slack_channel_id' => $message->channel->slack_channel_id,
-                    'sequence_position' => $message->sequence_position,
-                ];
-            });
+            ->map(fn ($message) => [
+                'message' => $message->message,
+                'message_timestamp' => $message->message_timestamp,
+                'slack_channel_id' => $message->channel->slack_channel_id,
+                'sequence_position' => $message->sequence_position,
+            ]);
     }
 
     public function getMostRecentMessageForChannel(string $slackChannelId): ?array
     {
         $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
-        
-        if (!$channel) {
+
+        if ( ! $channel) {
             return null;
         }
 
@@ -71,7 +69,7 @@ class DatabaseService
             ->orderBy('message_timestamp', 'desc')
             ->first();
 
-        if (!$message) {
+        if ( ! $message) {
             return null;
         }
 
@@ -100,11 +98,11 @@ class DatabaseService
     public function deleteOldMessages(int $daysBack = 90): void
     {
         $cutoffDate = Carbon::now()->subDays($daysBack);
-        
+
         // Delete old messages
         SlackMessage::whereRaw('CAST(message_timestamp AS DECIMAL) < ?', [$cutoffDate->timestamp])
             ->delete();
-        
+
         // Delete old cooldowns
         SlackCooldown::where('expires_at', '<', $cutoffDate)->delete();
     }
