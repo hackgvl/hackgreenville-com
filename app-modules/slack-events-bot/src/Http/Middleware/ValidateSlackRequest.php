@@ -14,7 +14,7 @@ class ValidateSlackRequest
 
     public function handle(Request $request, Closure $next)
     {
-        if (!$this->authService->validateSlackRequest($request)) {
+        if ( ! $this->authService->validateSlackRequest($request)) {
             return response('Unauthorized', 401);
         }
 

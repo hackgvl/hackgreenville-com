@@ -2,6 +2,7 @@
 
 namespace HackGreenville\SlackEventsBot\Console\Commands;
 
+use Exception;
 use HackGreenville\SlackEventsBot\Services\BotService;
 use Illuminate\Console\Command;
 
@@ -23,7 +24,7 @@ class CheckApiCommand extends Command
             $this->botService->checkApi(); // Method name kept for backward compatibility
             $this->info('Event check completed successfully!');
             return self::SUCCESS;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('Error checking events: ' . $e->getMessage());
             return self::FAILURE;
         }

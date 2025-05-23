@@ -2,6 +2,7 @@
 
 namespace HackGreenville\SlackEventsBot\Console\Commands;
 
+use Exception;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
 use Illuminate\Console\Command;
 
@@ -19,12 +20,12 @@ class DeleteOldMessagesCommand extends Command
     {
         $days = (int) $this->option('days');
         $this->info("Deleting messages older than {$days} days...");
-        
+
         try {
             $this->databaseService->deleteOldMessages($days);
             $this->info('Old messages deleted successfully!');
             return self::SUCCESS;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('Error deleting old messages: ' . $e->getMessage());
             return self::FAILURE;
         }

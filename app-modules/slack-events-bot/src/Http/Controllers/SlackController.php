@@ -2,7 +2,7 @@
 
 namespace HackGreenville\SlackEventsBot\Http\Controllers;
 
-use Carbon\Carbon;
+use Exception;
 use HackGreenville\SlackEventsBot\Services\AuthService;
 use HackGreenville\SlackEventsBot\Services\BotService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
@@ -106,26 +106,26 @@ class SlackController
 
         switch ($command) {
             case '/add_channel':
-                if (!$this->authService->isAdmin($userId)) {
+                if ( ! $this->authService->isAdmin($userId)) {
                     return response('You must be a workspace admin in order to run `/add_channel`');
                 }
 
                 try {
                     $this->databaseService->addChannel($channelId);
                     return response('Added channel to slack events bot 👍');
-                } catch (\Exception $e) {
+                } catch (Exception $e) {
                     return response('Slack events bot has already been activated for this channel');
                 }
 
             case '/remove_channel':
-                if (!$this->authService->isAdmin($userId)) {
+                if ( ! $this->authService->isAdmin($userId)) {
                     return response('You must be a workspace admin in order to run `/remove_channel`');
                 }
 
                 try {
                     $this->databaseService->removeChannel($channelId);
                     return response('Removed channel from slack events bot 👍');
-                } catch (\Exception $e) {
+                } catch (Exception $e) {
                     return response('Slack events bot is not activated for this channel');
                 }
 
