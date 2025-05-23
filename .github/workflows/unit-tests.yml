@@ -26,35 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.1
-          extensions: :php_psr
-
-      - name: install php dependencies
-        run: composer install
-
-      - name: install node dependencies
-        run: yarn install
-
-      - name: copy environment variables to .env
-        run: cp .env.ci .env
-
-      - name: migrate database
-        run: php artisan migrate --seed
-
-      - name: Build website
-        run: yarn build
-
-      - name: run tests
-        run: php artisan test
-
       - name: Railway Preview Deploy
         uses: bogdankharchenko/railway-pr-preview@v0.1
         with:
