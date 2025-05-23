@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Railway Preview Deploy
-        uses: bogdankharchenko/railway-pr-preview@v0.1
+        uses: bogdankharchenko/railway-pr-preview@main
         with:
           railway_token: ${{ secrets.RAILWAY_API_TOKEN }}
           source_environment_id: ${{ secrets.RAILWAY_PROJECT_ID }}
