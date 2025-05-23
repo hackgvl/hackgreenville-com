@@ -33,7 +33,7 @@ jobs:
           echo "RAILWAY_PROJECT_ID exists: ${{ secrets.RAILWAY_PROJECT_ID != '' }}"
           echo "RAILWAY_API_TOKEN length: ${#RAILWAY_API_TOKEN}"
         env:
-        RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
 
       - name: Railway Preview Deploy
         uses: bogdankharchenko/railway-pr-preview@main
