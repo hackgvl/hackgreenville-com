@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "227e8fe549cc13ceb553d8eaadf19e82",
+    "content-hash": "9eb553e06ad1ce5a6f38e012e6441565",
     "packages": [
         {
             "name": "amphp/amp",
@@ -4018,6 +4018,41 @@
             "license": [
                 "proprietary"
             ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "hack-greenville/slack-events-bot",
+            "version": "1.0",
+            "dist": {
+                "type": "path",
+                "url": "app-modules/slack-events-bot",
+                "reference": "533e449e7f78748d5fdebf266814961c02184ac1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "HackGreenville\\SlackEventsBot\\Providers\\SlackEventsBotServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HackGreenville\\SlackEventsBot\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "HackGreenville\\SlackEventsBot\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Slack bot that relays information from HackGreenville Labs' Events API to Slack channels",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -14002,7 +14037,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -14013,5 +14048,5 @@
         "ext-pdo_sqlite": "*",
         "ext-sqlite3": "*"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }
