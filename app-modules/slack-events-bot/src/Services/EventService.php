@@ -24,8 +24,8 @@ class EventService
                     'text' => Str::limit($event->description, 250),
                 ],
                 'fields' => [
-                    ['type' => 'mrkdwn', 'text' => '*'.Str::limit($event->organization->title).'*', 250],
-                    ['type' => 'mrkdwn', 'text' => '<'.$event->url.'|*Link* :link:>'],
+                    ['type' => 'mrkdwn', 'text' => '*' . Str::limit($event->organization->title) . '*', 250],
+                    ['type' => 'mrkdwn', 'text' => '<' . $event->url . '|*Link* :link:>'],
                     ['type' => 'mrkdwn', 'text' => '*Status*'],
                     ['type' => 'mrkdwn', 'text' => $this->printStatus($event->status)],
                     ['type' => 'mrkdwn', 'text' => '*Location*'],

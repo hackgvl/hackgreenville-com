@@ -16,7 +16,7 @@ class SlackEventsBotServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/slack-events-bot.php',
+            __DIR__ . '/../../config/slack-events-bot.php',
             'slack-events-bot'
         );
 
@@ -32,14 +32,14 @@ class SlackEventsBotServiceProvider extends ServiceProvider
     {
         // Publish config
         $this->publishes([
-            __DIR__.'/../../config/slack-events-bot.php' => config_path('slack-events-bot.php'),
+            __DIR__ . '/../../config/slack-events-bot.php' => config_path('slack-events-bot.php'),
         ], 'slack-events-bot-config');
 
         // Load migrations
-        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         // Load routes
-        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
 
         // Register commands
         if ($this->app->runningInConsole()) {
@@ -49,7 +49,7 @@ class SlackEventsBotServiceProvider extends ServiceProvider
         }
 
         // Schedule tasks
-        $this->callAfterResolving(Schedule::class, function(Schedule $schedule) {
+        $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
             // Delete old messages once daily
             $schedule->command('slack:delete-old-messages')->daily();
         });
