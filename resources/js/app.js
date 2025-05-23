@@ -8,9 +8,6 @@ import './bootstrap';
 
 $('.loading').hide().removeClass('d-none');
 
-window.showMoreTimeline = function (event) {
-  Swal.fire({
-    title: event.title,
-    html: event.html,
-  });
+window.showMoreTimeline = function (args) {
+  Swal.fire(args);
 };

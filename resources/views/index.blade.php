@@ -109,11 +109,11 @@
                                             <div class="timeline-body">
                                                 <div>
                                                     <button
-                                                        onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => $event->description]))"
+                                                        onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => str($event->description)->markdown()->toString(), 'confirmButtonText' => "Close"]))"
                                                         class="btn btn-secondary"
                                                         type="button"
                                                     >
-                                                        READ MORE
+                                                        Details
                                                     </button>
                                                 </div>
                                             </div>
