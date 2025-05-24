@@ -71,7 +71,7 @@ jobs:
         with:
           railway_token: ${{ secrets.RAILWAY_API_TOKEN }}
           source_environment_id: ${{ secrets.RAILWAY_ENVIRONMENT_ID }}
-          environment_name_prefix: 'pr-${{ github.event.pull_request.number }}'
+          environment_name_prefix: 'pr-'
           comment_on_pr: 'true'
           deploy_on_create: 'true'
           github_token: ${{ secrets.GITHUB_TOKEN }}
