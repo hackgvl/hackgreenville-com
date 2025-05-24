@@ -2,7 +2,7 @@ name: Run unit tests
 
 on:
   pull_request_target:
-    types: [ opened, synchronize, reopened, closed ]
+    types: [ opened, synchronize, reopened ]
     branches:
       - master
       - develop
