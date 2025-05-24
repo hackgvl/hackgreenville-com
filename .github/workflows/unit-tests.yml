@@ -10,7 +10,6 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    environment: staging
     services:
       mysql:
         image: mysql:8.0
@@ -38,9 +37,7 @@ jobs:
 
   railway-preview:
     runs-on: ubuntu-latest
-    if: >
-      github.event.action != 'closed' &&
-      github.event.pull_request.head.repo.full_name == github.repository
+    environment: staging
     steps:
       - name: Deploy Railway PR Preview
         uses: bogdankharchenko/railway-pr-preview@main
