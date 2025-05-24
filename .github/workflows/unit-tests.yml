@@ -25,6 +25,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Important: test the actual PR code
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -63,14 +65,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-
-      - name: Deploy to PR staging
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-        run: |
-          # Your deployment commands
-          ./deploy-pr-stage.sh ${{ github.event.number }}
 
       - name: Deploy Railway PR Preview
         uses: bogdankharchenko/railway-pr-preview@main
