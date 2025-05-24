@@ -1,6 +1,12 @@
 name: Run unit tests
 
 on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    branches:
+      - master
+      - develop
+
   pull_request_target:
     types: [ opened, synchronize, reopened ]
     branches:
@@ -10,6 +16,7 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    environment: staging
     services:
       mysql:
         image: mysql:8.0
@@ -26,21 +33,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-
-      - name: Debug secrets
-        run: |
-          echo "RAILWAY_API_TOKEN exists: ${{ secrets.RAILWAY_API_TOKEN != '' }}"
-          echo "RAILWAY_PROJECT_ID exists: ${{ secrets.RAILWAY_PROJECT_ID != '' }}"
-          echo "RAILWAY_API_TOKEN length: ${#RAILWAY_API_TOKEN}"
-        env:
-          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
-
-  railway-preview:
-    runs-on: ubuntu-latest
-    environment: staging
-    steps:
-      - name: Deploy Railway PR Preview
-        uses: bogdankharchenko/railway-pr-preview@main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          source_environment_id: ${{ secrets.RAILWAY_SOURCE_ENV_ID }}
+          node-version: 18
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: :php_psr
+
+      - name: install php dependencies
+        run: composer install
+
+      - name: install node dependencies
+        run: yarn install
+
+      - name: copy environment variables to .env
+        run: cp .env.ci .env
+
+      - name: migrate database
+        run: php artisan migrate --seed
+
+      - name: Build website
+        run: yarn build
+
+      - name: run tests
+        run: php artisan test
+
+      - name: Railway Preview Deploy
+        uses: ayungavis/railway-preview-deploy@v1.0.2
+        with:
+          railway_api_token: ${{ secrets.RAILWAY_API_TOKEN }}
+          project_id: ${{ secrets.RAILWAY_PROJECT_ID }}
+          environment_name: 'staging'
+          preview_environment_name: 'pr-${{ github.event.pull_request.number }}'
+          branch_name: ${{ github.head_ref }}
+          cleanup: 'true'
