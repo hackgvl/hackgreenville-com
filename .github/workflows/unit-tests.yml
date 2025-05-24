@@ -27,6 +27,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+
+      - name: Debug secrets
+        run: |
+          echo "RAILWAY_API_TOKEN exists: ${{ secrets.RAILWAY_API_TOKEN != '' }}"
+          echo "RAILWAY_PROJECT_ID exists: ${{ secrets.RAILWAY_PROJECT_ID != '' }}"
+          echo "RAILWAY_API_TOKEN length: ${#RAILWAY_API_TOKEN}"
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+
   railway-preview:
     runs-on: ubuntu-latest
     if: >
