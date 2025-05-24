@@ -3,6 +3,9 @@
 @section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
 
 @section('content')
+    <h1>
+        Hello World!
+    </h1>
     <div id="homepage">
         <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid text-white bg-dark position-relative">
             <div class="overlay"></div>
