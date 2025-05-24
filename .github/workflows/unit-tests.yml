@@ -1,14 +1,8 @@
 name: Run unit tests
 
 on:
-  pull_request:
-    types: [ opened, synchronize, reopened ]
-    branches:
-      - master
-      - develop
-
   pull_request_target:
-    types: [ opened, synchronize, reopened ]
+    types: [ opened, synchronize, reopened, closed ]
     branches:
       - master
       - develop
@@ -16,7 +10,6 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    environment: staging
     services:
       mysql:
         image: mysql:8.0
@@ -61,6 +54,23 @@ jobs:
 
       - name: run tests
         run: php artisan test
+
+  deploy-staging:
+    needs: tests
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Deploy to PR staging
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+        run: |
+          # Your deployment commands
+          ./deploy-pr-stage.sh ${{ github.event.number }}
 
       - name: Deploy Railway PR Preview
         uses: bogdankharchenko/railway-pr-preview@main
