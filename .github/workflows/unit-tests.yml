@@ -74,4 +74,5 @@ jobs:
           environment_name_prefix: 'pr-'
           comment_on_pr: 'true'
           deploy_on_create: 'true'
+          is_ephemeral: 'false'
           github_token: ${{ secrets.GITHUB_TOKEN }}
