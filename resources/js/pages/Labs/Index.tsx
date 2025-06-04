@@ -1,6 +1,11 @@
 import { Head } from '@inertiajs/react';
 import AppLayout from '../../layouts/AppLayout';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { TestTube, Github, ExternalLink, Globe } from 'lucide-react';
 
@@ -28,25 +33,30 @@ export default function LabsIndex({ projects }: LabsIndexProps) {
   return (
     <AppLayout title="Labs - HackGreenville">
       <Head>
-        <meta name="description" content="Explore open source projects and experiments from the HackGreenville community." />
+        <meta
+          name="description"
+          content="Explore open source projects and experiments from the HackGreenville community."
+        />
       </Head>
 
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <div className="flex items-center mb-4">
             <TestTube size={32} className="mr-3 text-blue-600" />
-            <h1 className="text-4xl font-bold text-gray-900">HackGreenville Labs</h1>
+            <h1 className="text-4xl font-bold text-gray-900">
+              HackGreenville Labs
+            </h1>
           </div>
           <p className="text-lg text-gray-600">
-            Explore open source projects and experiments from the HackGreenville community. 
-            These projects are built by and for our members.
+            Explore open source projects and experiments from the HackGreenville
+            community. These projects are built by and for our members.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => {
             const IconComponent = getIcon(project.linkType);
-            
+
             return (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -64,9 +74,9 @@ export default function LabsIndex({ projects }: LabsIndexProps) {
                     <p className="text-gray-700 line-clamp-3">
                       {project.description}
                     </p>
-                    
+
                     <div className="pt-2">
-                      <a 
+                      <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -88,10 +98,11 @@ export default function LabsIndex({ projects }: LabsIndexProps) {
         <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Want to Contribute?</h3>
           <p className="text-lg mb-6">
-            Join our community and help build amazing projects that benefit the entire tech ecosystem in Greenville!
+            Join our community and help build amazing projects that benefit the
+            entire tech ecosystem in Greenville!
           </p>
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-            <a 
+            <a
               href="https://github.com/hackgvl"
               target="_blank"
               rel="noopener noreferrer"
@@ -100,7 +111,7 @@ export default function LabsIndex({ projects }: LabsIndexProps) {
               <Github size={20} className="inline mr-2" />
               Visit Our GitHub
             </a>
-            <a 
+            <a
               href="/join-slack"
               className="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
             >

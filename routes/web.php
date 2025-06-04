@@ -1,6 +1,5 @@
 <?php
 
-use Inertia\Inertia;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CalendarFeedController;
 use App\Http\Controllers\ContactController;
@@ -12,6 +11,7 @@ use App\Http\Controllers\LabsController;
 use App\Http\Controllers\OrgsController;
 use App\Http\Controllers\SlackController;
 use App\Http\Controllers\StyleController;
+use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');

@@ -2,18 +2,18 @@ import { Head, Link } from '@inertiajs/react';
 import { PropsWithChildren } from 'react';
 import { Button } from '../components/ui/button';
 import { route } from '../helpers/route';
-import { 
-  Calendar, 
-  CalendarCheck, 
-  Building, 
-  TestTube, 
-  Moon, 
-  Users, 
-  Handshake, 
+import {
+  Calendar,
+  CalendarCheck,
+  Building,
+  TestTube,
+  Moon,
+  Users,
+  Handshake,
   Mail,
   Slack,
   Menu,
-  X
+  X,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -39,14 +39,21 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#f8fafc' }}>
       <Head title={title} />
-      
+
       {/* Navigation */}
-      <nav className="bg-primary text-primary-foreground shadow-sm" style={{ backgroundColor: '#3b82f6', color: 'white' }}>
+      <nav
+        className="bg-primary text-primary-foreground shadow-sm"
+        style={{ backgroundColor: '#3b82f6', color: 'white' }}
+      >
         <div className="container mx-auto px-4">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href={route('home')} className="flex items-center">
-                <img className="h-8 w-auto" src="/img/logo-v2.png" alt="HackGreenville" />
+                <img
+                  className="h-8 w-auto"
+                  src="/img/logo-v2.png"
+                  alt="HackGreenville"
+                />
               </Link>
             </div>
 
@@ -70,12 +77,16 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
             {/* Right side buttons */}
             <div className="hidden md:flex items-center space-x-3">
               <Link href={route('join-slack')}>
-                <Button variant="outline" size="sm" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                >
                   <Slack size={16} className="mr-1" />
                   Join Slack
                 </Button>
               </Link>
-              <a 
+              <a
                 href="https://hackgreenville.slack.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -118,13 +129,20 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                   );
                 })}
                 <div className="border-t border-primary-foreground/20 pt-2 mt-2 space-y-2">
-                  <Link href={route('join-slack')} onClick={() => setIsMenuOpen(false)}>
-                    <Button variant="outline" size="sm" className="w-full border-primary-foreground/20">
+                  <Link
+                    href={route('join-slack')}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-primary-foreground/20"
+                    >
                       <Slack size={16} className="mr-1" />
                       Join Slack
                     </Button>
                   </Link>
-                  <a 
+                  <a
                     href="https://hackgreenville.slack.com"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -142,9 +160,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
       </nav>
 
       {/* Main Content */}
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </div>
   );
 }
