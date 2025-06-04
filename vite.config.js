@@ -1,14 +1,24 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import react from '@vitejs/plugin-react';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import path from 'path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources/js'),
+    },
+  },
   plugins: [
+    react({
+      include: '**/*.{jsx,tsx}',
+    }),
     laravel({
       input: [
         'resources/css/app.css',
-        'resources/sass/app.scss',
-        'resources/js/app.js',
+        'resources/js/app.tsx',
+        'resources/css/legacy.css',
       ],
       refresh: true,
     }),

@@ -1,0 +1,44 @@
+/* Legacy styles for non-Inertia pages (like Filament admin) */
+
+/* Font Awesome for legacy components */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
+/* Full Calendar styles for calendar page */
+@import '@fullcalendar/core/main.min.css';
+@import '@fullcalendar/daygrid/main.min.css';
+@import '@fullcalendar/list/main.min.css';
+
+/* SweetAlert2 styles */
+.swal-wide {
+    width: 50em !important;
+}
+
+/* Calendar specific styles */
+#calendar {
+    min-height: 800px;
+}
+
+.fc-content {
+    cursor: pointer;
+    white-space: unset !important;
+}
+
+/* Loading spinner for legacy pages */
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.loading .fa-spin {
+    position: relative;
+    top: 50vh;
+    left: 50vw;
+    font-size: 50px;
+}
+
+.noscroll {
+    overflow: hidden;
+}

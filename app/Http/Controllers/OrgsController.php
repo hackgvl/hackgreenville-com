@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Org;
 use Illuminate\Contracts\Database\Query\Builder;
+use Inertia\Inertia;
 
 class OrgsController extends Controller
 {
     public function index()
     {
-        $activeOrgs = Org::with('category')
+        $organizations = Org::with('category')
+            ->withCount('events')
             ->orderBy('title')
-            ->get()
-            ->sortBy(fn (Org $org) => $org->category->isInactive()
-                    ? PHP_INT_MAX
-                    : $org->category->count(), SORT_NUMERIC)
-            ->groupBy('category_id');
+            ->get();
 
-        return view('orgs.index', compact('activeOrgs'));
+        return Inertia::render('Organizations/Index', [
+            'organizations' => $organizations,
+        ]);
     }
 
     public function show(Org $org)
     {
-        return view('orgs.show', [
+        return Inertia::render('Organizations/Show', [
             'org' => $org->load([
                 'events' => function (Builder $query) {
                     $query
@@ -38,8 +38,10 @@ class OrgsController extends Controller
 
     public function inactive()
     {
-        $inactiveOrgs = Org::with('category')->onlyTrashed()->get()->groupBy('category_id');
+        $inactiveOrgs = Org::with('category')->onlyTrashed()->get();
 
-        return view('orgs.inactive', compact('inactiveOrgs'));
+        return Inertia::render('Organizations/Inactive', [
+            'organizations' => $inactiveOrgs,
+        ]);
     }
 }

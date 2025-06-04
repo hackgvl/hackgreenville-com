@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\View;
+use Inertia\Inertia;
 
 class GiveController extends Controller
 {
-    public function index(): View
+    public function index()
     {
-        return view('give');
+        return Inertia::render('Give');
     }
 }

@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use Inertia\Inertia;
 
 class EventsController extends Controller
 {
     public function index()
     {
-        $months = Event::future()
+        $events = Event::future()
             ->published()
             ->with('organization', 'venue.state')
             ->orderBy('active_at')
-            ->get()
-            ->groupBy(fn (Event $event) => $event->active_at->format('F Y'));
+            ->get();
 
-        return view('events.index', compact('months'));
+        return Inertia::render('Events/Index', [
+            'events' => $events,
+        ]);
     }
 }

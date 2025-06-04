@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('index', [
+        return Inertia::render('Home', [
             'upcoming_events' => Event::future()
                 ->published()
                 ->with('organization')

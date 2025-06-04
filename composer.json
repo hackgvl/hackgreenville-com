@@ -18,6 +18,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "hack-greenville/api": "*",
         "hack-greenville/event-importer": "*",
+        "inertiajs/inertia-laravel": "*",
         "internachi/modular": "^2.0",
         "laravel/framework": "^10.0",
         "laravel/helpers": "^1.2",
@@ -26,7 +27,8 @@
         "malzariey/filament-daterangepicker-filter": "^2.7",
         "scyllaly/hcaptcha": "^4.4",
         "spatie/icalendar-generator": "^2.9",
-        "spatie/laravel-data": "*"
+        "spatie/laravel-data": "*",
+        "tightenco/ziggy": "*"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",

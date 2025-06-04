@@ -23,6 +23,7 @@ use Illuminate\Routing\Middleware\ValidateSignature;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Http\Middleware\HandleInertiaRequests;
 
 class Kernel extends HttpKernel
 {
@@ -56,6 +57,7 @@ class Kernel extends HttpKernel
                 ShareErrorsFromSession::class,
                 VerifyCsrfToken::class,
                 SubstituteBindings::class,
+                HandleInertiaRequests::class,
             ],
 
             'api' => [

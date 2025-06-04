@@ -16,7 +16,7 @@ class CalendarFeedController extends Controller
 {
     public function index(CalendarFeedRequest $request)
     {
-        return view('calendar-feed.index', [
+        return \Inertia\Inertia::render('CalendarFeed/Index', [
             'organizations' => Org::query()
                 ->with('category')
                 ->active()
@@ -34,6 +34,7 @@ class CalendarFeedController extends Controller
                     'title' => $org->title,
                     'checked' => $request->validOrganizations()->contains('id', $org->id),
                 ]),
+            'baseUrl' => route('calendar-feed.show'),
         ]);
     }
 

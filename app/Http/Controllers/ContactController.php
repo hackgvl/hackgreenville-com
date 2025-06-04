@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactMessageRequest;
 use App\Notifications\ContactMessage;
 use Illuminate\Support\Facades\Notification;
+use Inertia\Inertia;
 
 class ContactController extends Controller
 {
     public function contact()
     {
-        return view('contact.contact');
+        return Inertia::render('Contact/Index');
     }
 
     /**
@@ -26,6 +27,6 @@ class ContactController extends Controller
         Notification::route('slack', config('services.slack.contact.webhook'))
             ->notify(new ContactMessage($validated['name'], $validated['contact'], $validated['message']));
 
-        return view('contact.submitted');
+        return Inertia::render('Contact/Submitted');
     }
 }

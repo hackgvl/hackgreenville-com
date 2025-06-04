@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
+
 class LabsController extends Controller
 {
     public function index()
@@ -52,6 +54,8 @@ class LabsController extends Controller
             ],
         ];
 
-        return view('labs.index', compact('projects', 'remove_space'));
+        return Inertia::render('Labs/Index', [
+            'projects' => $projects,
+        ]);
     }
 }

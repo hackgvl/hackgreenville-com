@@ -10,7 +10,7 @@ class CalendarController extends Controller
 {
     public function index()
     {
-        return view('calendar.index');
+        return \Inertia\Inertia::render('Calendar/Index');
     }
 
     public function data(Request $request)

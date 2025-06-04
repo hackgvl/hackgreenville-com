@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
+use Inertia\Inertia;
 
 class HGNightsController extends Controller
 {
     /**
      * Present the HackGreenville Nights Page
-     *
-     * @return View
      */
     public function index()
     {
-        return view('hg-nights.index');
+        return Inertia::render('HGNights/Index');
     }
 }
