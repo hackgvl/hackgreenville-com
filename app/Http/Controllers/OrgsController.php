@@ -15,19 +15,17 @@ class OrgsController extends Controller
             ->orderBy('status', 'desc') // Active first (since 'active' > 'inactive' alphabetically)
             ->orderBy('title')
             ->get()
-            ->map(function ($org) {
-                return [
-                    'id' => $org->id,
-                    'title' => $org->title,
-                    'description' => $org->description,
-                    'slug' => $org->slug,
-                    'focus_area' => $org->focus_area,
-                    'established_at' => $org->established_at,
-                    'events_count' => $org->events_count,
-                    'status' => $org->status->value,
-                    'status_label' => $org->status->getLabel(),
-                ];
-            });
+            ->map(fn ($org) => [
+                'id' => $org->id,
+                'title' => $org->title,
+                'description' => $org->description,
+                'slug' => $org->slug,
+                'focus_area' => $org->focus_area,
+                'established_at' => $org->established_at,
+                'events_count' => $org->events_count,
+                'status' => $org->status->value,
+                'status_label' => $org->status->getLabel(),
+            ]);
 
         return Inertia::render('Organizations/Index', [
             'organizations' => $organizations,

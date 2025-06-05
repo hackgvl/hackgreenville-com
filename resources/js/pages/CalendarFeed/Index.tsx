@@ -1,12 +1,7 @@
 import { Head } from '@inertiajs/react';
 import { useState } from 'react';
 import AppLayout from '../../layouts/AppLayout';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';

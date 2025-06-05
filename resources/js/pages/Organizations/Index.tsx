@@ -1,14 +1,17 @@
 import { Head, Link } from '@inertiajs/react';
 import { useState, useMemo } from 'react';
 import AppLayout from '../../layouts/AppLayout';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Building, ExternalLink, Users, MapPin, Filter, Eye, EyeOff } from 'lucide-react';
+import {
+  Building,
+  ExternalLink,
+  Users,
+  MapPin,
+  Filter,
+  Eye,
+  EyeOff,
+} from 'lucide-react';
 
 interface Organization {
   id: number;
@@ -29,7 +32,9 @@ interface OrganizationsIndexProps {
 export default function OrganizationsIndex({
   organizations,
 }: OrganizationsIndexProps) {
-  const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'inactive'>('all');
+  const [statusFilter, setStatusFilter] = useState<
+    'all' | 'active' | 'inactive'
+  >('all');
   const [showInactive, setShowInactive] = useState(true);
 
   // Filter and sort organizations
@@ -37,9 +42,9 @@ export default function OrganizationsIndex({
     let filtered = organizations;
 
     if (statusFilter === 'active') {
-      filtered = organizations.filter(org => org.status === 'active');
+      filtered = organizations.filter((org) => org.status === 'active');
     } else if (statusFilter === 'inactive') {
-      filtered = organizations.filter(org => org.status === 'inactive');
+      filtered = organizations.filter((org) => org.status === 'inactive');
     }
 
     // Sort with active first, then by title
@@ -51,8 +56,12 @@ export default function OrganizationsIndex({
     });
   }, [organizations, statusFilter]);
 
-  const activeCount = organizations.filter(org => org.status === 'active').length;
-  const inactiveCount = organizations.filter(org => org.status === 'inactive').length;
+  const activeCount = organizations.filter(
+    (org) => org.status === 'active',
+  ).length;
+  const inactiveCount = organizations.filter(
+    (org) => org.status === 'inactive',
+  ).length;
   return (
     <AppLayout title="Organizations - HackGreenville">
       <Head>
@@ -104,9 +113,10 @@ export default function OrganizationsIndex({
               <span>Inactive ({inactiveCount})</span>
             </Button>
           </div>
-          
+
           <div className="text-sm text-gray-600">
-            Showing {filteredOrganizations.length} organization{filteredOrganizations.length !== 1 ? 's' : ''}
+            Showing {filteredOrganizations.length} organization
+            {filteredOrganizations.length !== 1 ? 's' : ''}
           </div>
         </div>
 
@@ -118,33 +128,39 @@ export default function OrganizationsIndex({
                 No organizations found
               </h3>
               <p className="text-gray-600">
-                {statusFilter === 'all' ? 'Check back soon for new organizations!' : `No ${statusFilter} organizations found.`}
+                {statusFilter === 'all'
+                  ? 'Check back soon for new organizations!'
+                  : `No ${statusFilter} organizations found.`}
               </p>
             </CardContent>
           </Card>
         ) : (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredOrganizations.map((org) => (
-              <Card 
-                key={org.id} 
+              <Card
+                key={org.id}
                 className={`hover:shadow-lg transition-all duration-200 ${
-                  org.status === 'inactive' 
-                    ? 'opacity-60 hover:opacity-80 border-dashed' 
+                  org.status === 'inactive'
+                    ? 'opacity-60 hover:opacity-80 border-dashed'
                     : 'hover:shadow-lg'
                 }`}
               >
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <CardTitle className={`text-xl line-clamp-2 ${
-                      org.status === 'inactive' ? 'text-gray-500' : ''
-                    }`}>
+                    <CardTitle
+                      className={`text-xl line-clamp-2 ${
+                        org.status === 'inactive' ? 'text-gray-500' : ''
+                      }`}
+                    >
                       {org.title}
                     </CardTitle>
-                    <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ml-2 flex-shrink-0 ${
-                      org.status === 'active' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-gray-100 text-gray-600'
-                    }`}>
+                    <div
+                      className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ml-2 flex-shrink-0 ${
+                        org.status === 'active'
+                          ? 'bg-green-100 text-green-800'
+                          : 'bg-gray-100 text-gray-600'
+                      }`}
+                    >
                       {org.status_label}
                     </div>
                   </div>
@@ -157,16 +173,24 @@ export default function OrganizationsIndex({
                 <CardContent>
                   <div className="space-y-3">
                     {org.description && (
-                      <p className={`text-sm line-clamp-3 ${
-                        org.status === 'inactive' ? 'text-gray-500' : 'text-gray-700'
-                      }`}>
+                      <p
+                        className={`text-sm line-clamp-3 ${
+                          org.status === 'inactive'
+                            ? 'text-gray-500'
+                            : 'text-gray-700'
+                        }`}
+                      >
                         {org.description.substring(0, 150)}...
                       </p>
                     )}
 
-                    <div className={`flex items-center space-x-4 text-sm ${
-                      org.status === 'inactive' ? 'text-gray-400' : 'text-gray-600'
-                    }`}>
+                    <div
+                      className={`flex items-center space-x-4 text-sm ${
+                        org.status === 'inactive'
+                          ? 'text-gray-400'
+                          : 'text-gray-600'
+                      }`}
+                    >
                       {org.established_at && (
                         <div className="flex items-center space-x-1">
                           <MapPin size={14} />
@@ -183,10 +207,12 @@ export default function OrganizationsIndex({
 
                     <div className="pt-3">
                       <Link href={`/orgs/${org.slug}`}>
-                        <Button 
-                          size="sm" 
-                          className="w-full" 
-                          variant={org.status === 'inactive' ? 'outline' : 'default'}
+                        <Button
+                          size="sm"
+                          className="w-full"
+                          variant={
+                            org.status === 'inactive' ? 'outline' : 'default'
+                          }
                         >
                           <ExternalLink size={16} className="mr-2" />
                           View Organization

@@ -1,21 +1,16 @@
 import { Head, router } from '@inertiajs/react';
 import { useState, useMemo } from 'react';
 import AppLayout from '../../layouts/AppLayout';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Calendar, 
-  MapPin, 
-  ExternalLink, 
-  Grid3X3, 
-  List, 
+import {
+  Calendar,
+  MapPin,
+  ExternalLink,
+  Grid3X3,
+  List,
   Filter,
-  Tag 
+  Tag,
 } from 'lucide-react';
 import {
   Select,
@@ -53,7 +48,11 @@ interface EventsIndexProps {
   selectedCategory?: string;
 }
 
-export default function EventsIndex({ events, categories, selectedCategory }: EventsIndexProps) {
+export default function EventsIndex({
+  events,
+  categories,
+  selectedCategory,
+}: EventsIndexProps) {
   const [viewMode, setViewMode] = useState<'grid' | 'horizontal'>('grid');
 
   const formatDate = (dateString: string) => {
@@ -72,7 +71,7 @@ export default function EventsIndex({ events, categories, selectedCategory }: Ev
     router.get(
       '/events',
       categoryId === 'all' ? {} : { category: categoryId },
-      { preserveState: true }
+      { preserveState: true },
     );
   };
 
@@ -102,14 +101,20 @@ export default function EventsIndex({ events, categories, selectedCategory }: Ev
             {/* Category Filter */}
             <div className="flex items-center gap-2">
               <Filter size={16} />
-              <Select value={selectedCategory || 'all'} onValueChange={handleCategoryChange}>
+              <Select
+                value={selectedCategory || 'all'}
+                onValueChange={handleCategoryChange}
+              >
                 <SelectTrigger className="w-48">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Categories</SelectItem>
                   {categories.map((category) => (
-                    <SelectItem key={category.id} value={category.id.toString()}>
+                    <SelectItem
+                      key={category.id}
+                      value={category.id.toString()}
+                    >
                       {category.label}
                     </SelectItem>
                   ))}
@@ -207,7 +212,11 @@ export default function EventsIndex({ events, categories, selectedCategory }: Ev
 
                     <div className="pt-3">
                       <Button asChild size="sm" className="w-full">
-                        <a href={event.uri} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={event.uri}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink size={16} className="mr-2" />
                           View Details
                         </a>
@@ -241,11 +250,11 @@ export default function EventsIndex({ events, categories, selectedCategory }: Ev
                           </div>
                         )}
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-gray-900 line-clamp-1 mb-2">
                         {event.event_name}
                       </h3>
-                      
+
                       <p className="text-sm text-muted-foreground font-medium mb-3">
                         {event.organization.title}
                       </p>
@@ -276,7 +285,11 @@ export default function EventsIndex({ events, categories, selectedCategory }: Ev
 
                     <div className="flex-shrink-0">
                       <Button asChild size="sm">
-                        <a href={event.uri} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={event.uri}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink size={16} className="mr-2" />
                           View Details
                         </a>

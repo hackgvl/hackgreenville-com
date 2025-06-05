@@ -49,7 +49,10 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
       <Head title={title} />
 
       {/* Navigation */}
-      <nav className="bg-primary shadow-sm" style={{ backgroundColor: '#3b82f6' }}>
+      <nav
+        className="bg-primary shadow-sm"
+        style={{ backgroundColor: '#3b82f6' }}
+      >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -84,7 +87,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                       </NavigationMenuItem>
                     );
                   })}
-                  
+
                   {/* More Menu Dropdown */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-[state=open]:bg-white/10">
@@ -102,14 +105,23 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               >
                                 <div className="flex items-center space-x-2">
-                                  <IconComponent size={16} className="text-muted-foreground" />
-                                  <div className="text-sm font-medium leading-none">{item.label}</div>
+                                  <IconComponent
+                                    size={16}
+                                    className="text-muted-foreground"
+                                  />
+                                  <div className="text-sm font-medium leading-none">
+                                    {item.label}
+                                  </div>
                                 </div>
                                 <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                  {item.label === 'HG Nights' && 'Monthly community events and meetups'}
-                                  {item.label === 'About Us' && 'Learn about our tech community'}
-                                  {item.label === 'Give' && 'Support our mission and volunteer'}
-                                  {item.label === 'Contact' && 'Get in touch with our team'}
+                                  {item.label === 'HG Nights' &&
+                                    'Monthly community events and meetups'}
+                                  {item.label === 'About Us' &&
+                                    'Learn about our tech community'}
+                                  {item.label === 'Give' &&
+                                    'Support our mission and volunteer'}
+                                  {item.label === 'Contact' &&
+                                    'Get in touch with our team'}
                                 </p>
                               </Link>
                             </NavigationMenuLink>
