@@ -42,30 +42,67 @@ export default function CalendarIndex({
           name="description"
           content="View all upcoming tech events in the Greenville, SC area on our interactive calendar."
         />
+        <style>{`
+          @media (max-width: 768px) {
+            .fc-toolbar {
+              padding: 0.5rem !important;
+              flex-wrap: wrap !important;
+              gap: 0.5rem !important;
+            }
+            .fc-toolbar-title {
+              font-size: 1.1rem !important;
+              margin: 0 !important;
+            }
+            .fc-button {
+              padding: 0.25rem 0.5rem !important;
+              font-size: 0.75rem !important;
+            }
+            .fc-daygrid-day-number {
+              font-size: 0.75rem !important;
+              padding: 0.25rem !important;
+            }
+            .fc-event {
+              font-size: 0.65rem !important;
+              padding: 0.125rem 0.25rem !important;
+              margin-bottom: 1px !important;
+            }
+            .fc-daygrid-day-frame {
+              min-height: 60px !important;
+            }
+            .fc-col-header-cell {
+              padding: 0.25rem 0.125rem !important;
+            }
+            .fc-daygrid-day {
+              padding: 0.125rem !important;
+            }
+            .fc-event-title {
+              font-weight: 500 !important;
+            }
+          }
+        `}</style>
       </Head>
 
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground mb-2">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex flex-col gap-4">
+            <div className="text-center sm:text-left">
+              <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                 Event Calendar
               </h1>
-              <p className="text-muted-foreground">
-                View all upcoming tech events in the Greenville, SC area on our
-                interactive calendar.
+              <p className="text-muted-foreground text-sm sm:text-base">
+                View all upcoming tech events in the Greenville, SC area
               </p>
             </div>
-            <div className="flex gap-3">
-              <Button asChild variant="outline" size="sm">
+            <div className="flex flex-col sm:flex-row gap-3 sm:justify-center md:justify-start">
+              <Button asChild variant="outline" size="sm" className="flex-1 sm:flex-none">
                 <Link href="/calendar-feed">
                   <Plus className="w-4 h-4 mr-2" />
                   Subscribe to Feed
                 </Link>
               </Button>
-              <Button asChild size="sm">
-                <Link href="/events">View All Events</Link>
+              <Button asChild size="sm" className="flex-1 sm:flex-none">
+                <Link href="/events">View List</Link>
               </Button>
             </div>
           </div>
@@ -80,8 +117,8 @@ export default function CalendarIndex({
           />
         </div>
 
-        {/* Help Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Help Section - Hidden on mobile for better focus on calendar */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -144,6 +181,23 @@ export default function CalendarIndex({
                   calendar applications.
                 </p>
               </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Mobile-specific help - Simple call-to-action */}
+        <div className="md:hidden">
+          <Card>
+            <CardContent className="p-4 text-center">
+              <p className="text-sm text-muted-foreground mb-3">
+                Tap events to view details. Want to add these events to your calendar?
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/calendar-feed">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Get Calendar Feed
+                </Link>
+              </Button>
             </CardContent>
           </Card>
         </div>

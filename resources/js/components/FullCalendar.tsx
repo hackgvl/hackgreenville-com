@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -31,6 +31,18 @@ export default function FullCalendarComponent({
   onDateSelect,
 }: FullCalendarComponentProps) {
   const calendarRef = useRef<FullCalendar>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleEventClick = (eventInfo: EventClickArg) => {
     if (onEventClick) {
@@ -65,20 +77,31 @@ export default function FullCalendarComponent({
   };
 
   return (
-    <div className="bg-card rounded-lg border shadow-sm">
+    <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
       <FullCalendar
         ref={calendarRef}
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        headerToolbar={{
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay',
-        }}
+        headerToolbar={
+          isMobile
+            ? {
+                left: 'prev,next',
+                center: 'title',
+                right: 'today',
+              }
+            : {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay',
+              }
+        }
         initialView="dayGridMonth"
+        aspectRatio={isMobile ? 1.0 : 1.35}
         editable={false}
         selectable={true}
         selectMirror={true}
-        dayMaxEvents={true}
+        dayMaxEvents={isMobile ? 2 : true}
+        dayMaxEventRows={isMobile ? 2 : false}
+        moreLinkClick="popover"
         weekends={true}
         initialEvents={initialEvents}
         eventClick={handleEventClick}
