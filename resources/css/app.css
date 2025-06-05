@@ -126,84 +126,221 @@
 }
 
 :root {
-    --radius: 0.625rem;
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    --radius: 0.5rem;
+    /* Mainline-inspired warm beige/cream palette */
+    --background: oklch(0.97 0.015 85);   /* Warm cream background */
+    --foreground: oklch(0.15 0.02 85);    /* Deep warm dark text */
+    --card: oklch(0.99 0.005 85);         /* Slightly whiter cards */
+    --card-foreground: oklch(0.15 0.02 85);
+    --popover: oklch(0.99 0.005 85);
+    --popover-foreground: oklch(0.15 0.02 85);
+    --primary: oklch(0.15 0.02 85);       /* Dark primary (black-ish) */
+    --primary-foreground: oklch(0.99 0.005 85);
+    --secondary: oklch(0.94 0.01 85);     /* Light warm gray */
+    --secondary-foreground: oklch(0.15 0.02 85);
+    --muted: oklch(0.94 0.01 85);
+    --muted-foreground: oklch(0.45 0.015 85);  /* Medium warm gray */
+    --accent: oklch(0.94 0.01 85);
+    --accent-foreground: oklch(0.15 0.02 85);
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --border: oklch(0.9 0.01 85);         /* Subtle warm border */
+    --input: oklch(0.9 0.01 85);
+    --ring: oklch(0.15 0.02 85);
     --chart-1: oklch(0.646 0.222 41.116);
     --chart-2: oklch(0.6 0.118 184.704);
     --chart-3: oklch(0.398 0.07 227.392);
     --chart-4: oklch(0.828 0.189 84.429);
     --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --sidebar: oklch(0.99 0.005 85);
+    --sidebar-foreground: oklch(0.15 0.02 85);
+    --sidebar-primary: oklch(0.15 0.02 85);
+    --sidebar-primary-foreground: oklch(0.99 0.005 85);
+    --sidebar-accent: oklch(0.94 0.01 85);
+    --sidebar-accent-foreground: oklch(0.15 0.02 85);
+    --sidebar-border: oklch(0.9 0.01 85);
+    --sidebar-ring: oklch(0.15 0.02 85);
 
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
-
+    /* Soft, comfortable dark background with subtle warmth */
+    --background: oklch(0.15 0.01 240);
+    --foreground: oklch(0.92 0.005 240);
+    
+    /* Gentle elevated card surfaces */
+    --card: oklch(0.19 0.012 240);
+    --card-foreground: oklch(0.9 0.008 240);
+    
+    /* Soft popover surfaces */
+    --popover: oklch(0.18 0.01 240);
+    --popover-foreground: oklch(0.9 0.008 240);
+    
+    /* Muted but visible primary accent */
+    --primary: oklch(0.65 0.12 160);
+    --primary-foreground: oklch(0.98 0.005 240);
+    
+    /* Subtle secondary surfaces */
+    --secondary: oklch(0.23 0.015 240);
+    --secondary-foreground: oklch(0.85 0.01 240);
+    
+    /* Gentle muted elements */
+    --muted: oklch(0.21 0.012 240);
+    --muted-foreground: oklch(0.7 0.008 240);
+    
+    /* Soft accent colors for interactions */
+    --accent: oklch(0.25 0.02 240);
+    --accent-foreground: oklch(0.88 0.008 240);
+    
+    /* Gentle error states */
+    --destructive: oklch(0.58 0.15 20);
+    
+    /* Subtle borders and inputs */
+    --border: oklch(0.28 0.015 240);
+    --input: oklch(0.22 0.015 240);
+    --ring: oklch(0.65 0.12 160);
+    
+    /* Softer chart colors */
+    --chart-1: oklch(0.65 0.14 270);
+    --chart-2: oklch(0.65 0.12 160);
+    --chart-3: oklch(0.68 0.13 50);
+    --chart-4: oklch(0.62 0.14 310);
+    --chart-5: oklch(0.67 0.11 200);
+    
+    /* Comfortable sidebar */
+    --sidebar: oklch(0.17 0.01 240);
+    --sidebar-foreground: oklch(0.88 0.008 240);
+    --sidebar-primary: oklch(0.65 0.12 160);
+    --sidebar-primary-foreground: oklch(0.98 0.005 240);
+    --sidebar-accent: oklch(0.23 0.015 240);
+    --sidebar-accent-foreground: oklch(0.85 0.01 240);
+    --sidebar-border: oklch(0.26 0.015 240);
+    --sidebar-ring: oklch(0.65 0.12 160);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-
     }
+  
   body {
     @apply bg-background text-foreground;
-
     }
 
+  /* Ensure all headings use theme-aware colors by default */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+    }
+
+  /* Enhanced dark mode styles */
+  .dark {
+    /* Gentle gradient to background for subtle depth */
+    background: linear-gradient(135deg, 
+      oklch(0.15 0.01 240) 0%, 
+      oklch(0.148 0.012 235) 100%);
+  }
+
+  /* Soft card hover states in dark mode */
+  .dark .hover\:shadow-md:hover {
+    box-shadow: 0 4px 12px oklch(0.1 0.005 240 / 0.2);
+  }
+
+  /* Gentle button focus states in dark mode */
+  .dark .focus\:ring-2:focus {
+    ring-color: oklch(0.65 0.12 160 / 0.4);
+  }
+}
+
+/* FullCalendar Custom Styles */
+.fc {
+  /* Calendar container */
+  @apply bg-card rounded-lg border;
+}
+
+.fc-header-toolbar {
+  /* Header with navigation */
+  @apply p-4 border-b border-border;
+}
+
+.fc-toolbar-title {
+  /* Calendar title */
+  @apply text-lg font-semibold text-foreground;
+}
+
+.fc-button-primary {
+  /* Calendar buttons */
+  @apply bg-primary text-primary-foreground border-primary hover:bg-primary/90;
+  @apply px-3 py-1.5 text-sm font-medium rounded-md;
+  @apply transition-colors focus:outline-none focus:ring-2 focus:ring-ring;
+}
+
+.fc-button-primary:not(:disabled):active,
+.fc-button-primary:not(:disabled).fc-button-active {
+  @apply bg-primary/90;
+}
+
+.fc-daygrid-day {
+  /* Day cells */
+  @apply border-border;
+}
+
+.fc-daygrid-day-top {
+  /* Day numbers */
+  @apply p-2;
+}
+
+.fc-day-today {
+  /* Today's cell */
+  @apply bg-accent/30;
+}
+
+.fc-event {
+  /* Event styling */
+  @apply rounded border-l-4 px-2 py-1 text-sm;
+  @apply cursor-pointer hover:opacity-90 transition-opacity;
+}
+
+.fc-event-title {
+  @apply font-medium;
+}
+
+.fc-event-org {
+  @apply text-xs opacity-80;
+}
+
+.fc-daygrid-event {
+  @apply mb-1;
+}
+
+.fc-view-harness {
+  /* Calendar content area */
+  @apply p-4;
+}
+
+.fc-col-header-cell {
+  /* Day header cells */
+  @apply bg-muted/50 border-border p-2 text-sm font-medium text-muted-foreground;
+}
+
+.fc-scrollgrid {
+  @apply border-border;
+}
+
+.fc-scrollgrid-section-body > td {
+  @apply border-border;
+}
+
+/* Enhanced FullCalendar dark mode styles */
+.dark .fc-event {
+  /* Subtle event styling in dark mode */
+  @apply shadow-sm;
+}
+
+.dark .fc-day-today {
+  /* Gentle today highlighting in dark mode */
+  @apply bg-primary/15 ring-1 ring-primary/20;
+}
+
+.dark .fc-col-header-cell {
+  /* Soft header styling in dark mode */
+  @apply bg-secondary/40;
 }

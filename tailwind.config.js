@@ -7,6 +7,7 @@ export default {
     "./resources/**/*.ts",
     "./resources/**/*.tsx",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

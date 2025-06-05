@@ -88,7 +88,7 @@ export default function HGNightsIndex() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 text-foreground">
               <Moon className="inline-block mr-4 mb-2" size={64} />
               HackGreenville Nights
             </h1>

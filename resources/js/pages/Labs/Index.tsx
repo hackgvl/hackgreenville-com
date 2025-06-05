@@ -38,7 +38,7 @@ export default function LabsIndex({ projects }: LabsIndexProps) {
         <div className="mb-8">
           <div className="flex items-center mb-4">
             <TestTube size={32} className="mr-3 text-blue-600" />
-            <h1 className="text-4xl font-bold text-gray-900">
+            <h1 className="text-4xl font-bold text-foreground">
               HackGreenville Labs
             </h1>
           </div>

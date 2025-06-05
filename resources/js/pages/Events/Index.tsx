@@ -86,7 +86,7 @@ export default function EventsIndex({
 
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Upcoming Events
           </h1>
           <p className="text-lg text-gray-600">
@@ -146,7 +146,7 @@ export default function EventsIndex({
           <Card>
             <CardContent className="py-12 text-center">
               <Calendar size={48} className="mx-auto text-gray-400 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 No upcoming events
               </h3>
               <p className="text-gray-600">Check back soon for new events!</p>
@@ -251,7 +251,7 @@ export default function EventsIndex({
                         )}
                       </div>
 
-                      <h3 className="text-xl font-bold text-gray-900 line-clamp-1 mb-2">
+                      <h3 className="text-xl font-bold text-foreground line-clamp-1 mb-2">
                         {event.event_name}
                       </h3>
 

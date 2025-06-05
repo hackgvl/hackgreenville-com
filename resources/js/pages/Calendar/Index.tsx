@@ -1,8 +1,37 @@
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import AppLayout from '../../layouts/AppLayout';
-import { Calendar } from 'lucide-react';
+import FullCalendarComponent from '../../components/FullCalendar';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Calendar, ExternalLink, Plus } from 'lucide-react';
+import { EventClickArg } from '@fullcalendar/core';
 
-export default function CalendarIndex() {
+interface CalendarEvent {
+  title: string;
+  start: string;
+  end?: string;
+  description?: string;
+  allDay: boolean;
+  cancelled: boolean;
+  color?: string;
+  add_to_google_calendar_url?: string;
+  event_url?: string;
+}
+
+interface CalendarIndexProps {
+  initialEvents: CalendarEvent[];
+  eventsDataUrl: string;
+}
+
+export default function CalendarIndex({ initialEvents, eventsDataUrl }: CalendarIndexProps) {
+  const handleEventClick = (eventInfo: EventClickArg) => {
+    // Custom event click handler - could show a modal or navigate
+    if (eventInfo.event.extendedProps?.event_url) {
+      window.open(eventInfo.event.extendedProps.event_url, '_blank');
+      eventInfo.jsEvent.preventDefault();
+    }
+  };
+
   return (
     <AppLayout title="Calendar - HackGreenville">
       <Head>
@@ -12,48 +41,102 @@ export default function CalendarIndex() {
         />
       </Head>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-6 py-8">
+        {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Event Calendar
-          </h1>
-          <p className="text-lg text-gray-600">
-            View all upcoming tech events in the Greenville, SC area on our
-            interactive calendar.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-sm border">
-          <div className="p-6">
-            <div className="flex items-center justify-center h-96 text-gray-500">
-              <div className="text-center">
-                <Calendar size={48} className="mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
-                  Calendar Integration
-                </h3>
-                <p>Full calendar integration will be implemented here.</p>
-                <p className="text-sm mt-2">
-                  This will use FullCalendar.js to display events.
-                </p>
-              </div>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold text-foreground mb-2">
+                Event Calendar
+              </h1>
+              <p className="text-muted-foreground">
+                View all upcoming tech events in the Greenville, SC area on our interactive calendar.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/calendar-feed">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Subscribe to Feed
+                </Link>
+              </Button>
+              <Button asChild size="sm">
+                <Link href="/events">
+                  View All Events
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-blue-900 mb-2">
-            Calendar Feed
-          </h3>
-          <p className="text-blue-700 mb-3">
-            You can also subscribe to our calendar feed to stay updated with all
-            events.
-          </p>
-          <a
-            href="/calendar-feed"
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Subscribe to Calendar Feed
-          </a>
+        {/* Calendar */}
+        <div className="mb-8">
+          <FullCalendarComponent
+            initialEvents={initialEvents}
+            eventsDataUrl={eventsDataUrl}
+            onEventClick={handleEventClick}
+          />
+        </div>
+
+        {/* Help Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="w-5 h-5" />
+                Calendar Features
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div>
+                <h4 className="font-medium text-sm mb-1">View Options</h4>
+                <p className="text-sm text-muted-foreground">
+                  Switch between month, week, and day views using the buttons in the calendar header.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-sm mb-1">Event Details</h4>
+                <p className="text-sm text-muted-foreground">
+                  Click on any event to visit the event page with full details and registration information.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-sm mb-1">Navigation</h4>
+                <p className="text-sm text-muted-foreground">
+                  Use the navigation arrows to browse different months and dates.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <ExternalLink className="w-5 h-5" />
+                Calendar Integration
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div>
+                <h4 className="font-medium text-sm mb-1">Subscribe to Calendar</h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Add our calendar feed to your personal calendar app to stay updated with all events.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/calendar-feed">
+                    <Plus className="w-4 h-4 mr-2" />
+                    Get Calendar Feed
+                  </Link>
+                </Button>
+              </div>
+              <div>
+                <h4 className="font-medium text-sm mb-1">Supported Apps</h4>
+                <p className="text-sm text-muted-foreground">
+                  Works with Google Calendar, Apple Calendar, Outlook, and other calendar applications.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </AppLayout>

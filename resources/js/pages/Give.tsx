@@ -95,7 +95,7 @@ export default function Give() {
 
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-light text-blue-600 mb-6">
+          <h1 className="text-5xl md:text-6xl font-light text-primary mb-6">
             How do I contribute?
           </h1>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto">
@@ -109,7 +109,7 @@ export default function Give() {
         <section className="mb-16">
           <div className="flex items-center mb-8">
             <Heart size={32} className="mr-3 text-red-500" />
-            <h2 className="text-3xl font-bold text-gray-900">Donate</h2>
+            <h2 className="text-3xl font-bold text-foreground">Donate</h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
@@ -142,7 +142,7 @@ export default function Give() {
         <section>
           <div className="flex items-center mb-8">
             <HandHeart size={32} className="mr-3 text-blue-500" />
-            <h2 className="text-3xl font-bold text-gray-900">Volunteer</h2>
+            <h2 className="text-3xl font-bold text-foreground">Volunteer</h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

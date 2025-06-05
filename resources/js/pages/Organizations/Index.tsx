@@ -73,7 +73,7 @@ export default function OrganizationsIndex({
 
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Organizations
           </h1>
           <p className="text-lg text-gray-600">
@@ -124,7 +124,7 @@ export default function OrganizationsIndex({
           <Card>
             <CardContent className="py-12 text-center">
               <Building size={48} className="mx-auto text-gray-400 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 No organizations found
               </h3>
               <p className="text-gray-600">

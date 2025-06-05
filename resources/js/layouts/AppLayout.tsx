@@ -22,111 +22,107 @@ import {
   Slack,
   Menu,
   X,
+  Sun,
 } from 'lucide-react';
 import { useState } from 'react';
+import { ThemeProvider, useTheme } from '@/contexts/ThemeContext';
 
 interface AppLayoutProps extends PropsWithChildren {
   title?: string;
 }
 
-export default function AppLayout({ title, children }: AppLayoutProps) {
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    <Button variant="ghost" size="icon" onClick={toggleTheme}>
+      {theme === 'light' ? (
+        <Moon className="h-4 w-4" />
+      ) : (
+        <Sun className="h-4 w-4" />
+      )}
+    </Button>
+  );
+}
+
+function AppLayoutContent({ title, children }: AppLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
-    { route: 'calendar.index', label: 'Calendar', icon: Calendar },
-    { route: 'calendar-feed.index', label: 'Calendar Feed', icon: Calendar },
-    { route: 'events.index', label: 'Events', icon: CalendarCheck },
-    { route: 'orgs.index', label: 'Organizations', icon: Building },
-    { route: 'labs.index', label: 'Labs', icon: TestTube },
-    { route: 'hg-nights.index', label: 'HG Nights', icon: Moon },
-    { route: 'about', label: 'About Us', icon: Users },
-    { route: 'give', label: 'Give', icon: Handshake },
-    { route: 'contact', label: 'Contact', icon: Mail },
+  const primaryNavItems = [
+    { route: 'events.index', label: 'Events' },
+    { route: 'orgs.index', label: 'Organizations' },
+    { route: 'calendar.index', label: 'Calendar' },
+    { route: 'about', label: 'About Us' },
+    { route: 'contact', label: 'Contact' },
+  ];
+
+  const secondaryNavItems = [
+    { route: 'labs.index', label: 'Labs', description: 'Open source projects and code' },
+    { route: 'hg-nights.index', label: 'HG Nights', description: 'Monthly community events' },
+    { route: 'give', label: 'Give', description: 'Support our mission' },
+    { route: 'calendar-feed.index', label: 'Calendar Feed', description: 'Subscribe to events' },
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#f8fafc' }}>
+    <div className="min-h-screen bg-background">
       <Head title={title} />
 
-      {/* Navigation */}
-      <nav
-        className="bg-primary shadow-sm"
-        style={{ backgroundColor: '#3b82f6' }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
+      {/* Navigation - Mainline inspired */}
+      <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href={route('home')} className="flex items-center">
-                <img
-                  className="h-8 w-auto"
-                  src="/img/logo-v2.png"
-                  alt="HackGreenville"
-                />
+              <Link 
+                href={route('home')} 
+                className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                  <span className="text-background font-bold text-sm">HG</span>
+                </div>
+                <span className="font-semibold text-lg text-foreground">HackGreenville</span>
               </Link>
             </div>
 
-            {/* Desktop Navigation Menu */}
-            <div className="hidden md:flex items-center flex-1 justify-center">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center justify-center flex-1">
               <NavigationMenu>
-                <NavigationMenuList>
-                  {/* Primary Navigation Items */}
-                  {navItems.slice(0, 4).map((item) => {
-                    const IconComponent = item.icon;
-                    return (
-                      <NavigationMenuItem key={item.route}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href={route(item.route)}
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-white"
-                          >
-                            <IconComponent size={16} className="mr-2" />
-                            <span>{item.label}</span>
-                          </Link>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    );
-                  })}
+                <NavigationMenuList className="gap-1">
+                  {primaryNavItems.slice(0, 4).map((item) => (
+                    <NavigationMenuItem key={item.route}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={route(item.route)}
+                          className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-foreground"
+                        >
+                          {item.label}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
 
-                  {/* More Menu Dropdown */}
+                  {/* More dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-[state=open]:bg-white/10">
-                      <Menu size={16} className="mr-2" />
+                    <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent">
                       More
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {navItems.slice(4).map((item) => {
-                          const IconComponent = item.icon;
-                          return (
-                            <NavigationMenuLink key={item.route} asChild>
-                              <Link
-                                href={route(item.route)}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                              >
-                                <div className="flex items-center space-x-2">
-                                  <IconComponent
-                                    size={16}
-                                    className="text-muted-foreground"
-                                  />
-                                  <div className="text-sm font-medium leading-none">
-                                    {item.label}
-                                  </div>
-                                </div>
-                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                  {item.label === 'HG Nights' &&
-                                    'Monthly community events and meetups'}
-                                  {item.label === 'About Us' &&
-                                    'Learn about our tech community'}
-                                  {item.label === 'Give' &&
-                                    'Support our mission and volunteer'}
-                                  {item.label === 'Contact' &&
-                                    'Get in touch with our team'}
-                                </p>
-                              </Link>
-                            </NavigationMenuLink>
-                          );
-                        })}
+                      <div className="grid w-[400px] gap-3 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {secondaryNavItems.map((item) => (
+                          <NavigationMenuLink key={item.route} asChild>
+                            <Link
+                              href={route(item.route)}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="text-sm font-medium leading-none">
+                                {item.label}
+                              </div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                {item.description}
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
                       </div>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -134,84 +130,48 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
               </NavigationMenu>
             </div>
 
-            {/* Right side buttons */}
-            <div className="hidden md:flex items-center space-x-3">
-              <Link href={route('join-slack')}>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-white/20 text-white hover:bg-white/10 hover:text-white"
-                >
-                  <Slack size={16} className="mr-1" />
-                  Join Slack
-                </Button>
-              </Link>
-              <a
-                href="https://hackgreenville.slack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex"
-              >
-                <Button variant="secondary" size="sm">
-                  <Slack size={16} className="mr-1" />
-                  Log In to Slack
-                </Button>
-              </a>
+            {/* Right side actions */}
+            <div className="hidden md:flex items-center space-x-4">
+              <ThemeToggle />
+              <Button asChild variant="outline" size="sm">
+                <Link href={route('join-slack')}>Join Slack</Link>
+              </Button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <button
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md hover:bg-white/10 text-white"
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </Button>
             </div>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden border-t border-white/20">
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                {navItems.map((item) => {
-                  const IconComponent = item.icon;
-                  return (
-                    <Link
-                      key={item.route}
-                      href={route(item.route)}
-                      className="flex items-center space-x-2 px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md text-white"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <IconComponent size={16} />
-                      <span>{item.label}</span>
-                    </Link>
-                  );
-                })}
-                <div className="border-t border-white/20 pt-2 mt-2 space-y-2">
+            <div className="md:hidden border-t border-border py-4">
+              <div className="space-y-2">
+                {[...primaryNavItems, ...secondaryNavItems].map((item) => (
                   <Link
-                    href={route('join-slack')}
+                    key={item.route}
+                    href={route(item.route)}
+                    className="block px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full border-white/20 text-white hover:bg-white/10"
-                    >
-                      <Slack size={16} className="mr-1" />
-                      Join Slack
-                    </Button>
+                    {item.label}
                   </Link>
-                  <a
-                    href="https://hackgreenville.slack.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="secondary" size="sm" className="w-full">
-                      <Slack size={16} className="mr-1" />
-                      Log In to Slack
-                    </Button>
-                  </a>
+                ))}
+                <div className="border-t border-border pt-4 mt-4 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Theme</span>
+                    <ThemeToggle />
+                  </div>
+                  <Button asChild variant="outline" size="sm" className="w-full">
+                    <Link href={route('join-slack')}>Join Slack</Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -220,7 +180,17 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
       </nav>
 
       {/* Main Content */}
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
     </div>
+  );
+}
+
+export default function AppLayout({ title, children }: AppLayoutProps) {
+  return (
+    <ThemeProvider>
+      <AppLayoutContent title={title}>
+        {children}
+      </AppLayoutContent>
+    </ThemeProvider>
   );
 }
