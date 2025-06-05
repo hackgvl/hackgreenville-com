@@ -95,7 +95,12 @@ export default function CalendarIndex({
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:justify-center md:justify-start">
-              <Button asChild variant="outline" size="sm" className="flex-1 sm:flex-none">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="flex-1 sm:flex-none"
+              >
                 <Link href="/calendar-feed">
                   <Plus className="w-4 h-4 mr-2" />
                   Subscribe to Feed
@@ -190,7 +195,8 @@ export default function CalendarIndex({
           <Card>
             <CardContent className="p-4 text-center">
               <p className="text-sm text-muted-foreground mb-3">
-                Tap events to view details. Want to add these events to your calendar?
+                Tap events to view details. Want to add these events to your
+                calendar?
               </p>
               <Button asChild variant="outline" size="sm">
                 <Link href="/calendar-feed">
