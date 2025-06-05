@@ -35,6 +35,7 @@ class EventsController extends Controller
             'service' => $event->service->value ?? 'unknown',
             'organization' => [
                 'title' => $event->organization->title,
+                'slug' => $event->organization->slug,
                 'category' => $event->organization->category ? [
                     'id' => $event->organization->category->id,
                     'label' => $event->organization->category->label,
@@ -54,6 +55,39 @@ class EventsController extends Controller
             'events' => $events,
             'categories' => $categories,
             'selectedCategory' => $categoryFilter,
+        ]);
+    }
+
+    public function show(Event $event)
+    {
+        $event->load(['organization', 'venue.state']);
+
+        $eventData = [
+            'id' => $event->id,
+            'event_name' => $event->event_name,
+            'description' => $event->description,
+            'active_at' => $event->active_at->toISOString(),
+            'expire_at' => $event->expire_at ? $event->expire_at->toISOString() : null,
+            'cancelled_at' => $event->cancelled_at?->toISOString(),
+            'rsvp_count' => $event->rsvp_count,
+            'uri' => $event->uri,
+            'service' => $event->service->value ?? 'unknown',
+            'organization' => [
+                'id' => $event->organization->id,
+                'title' => $event->organization->title,
+                'slug' => $event->organization->slug,
+            ],
+            'venue' => $event->venue ? [
+                'name' => $event->venue->name,
+                'address' => $event->venue->address,
+                'city' => $event->venue->city,
+                'state' => $event->venue->state,
+            ] : null,
+            'google_calendar_url' => $event->toGoogleCalendarUrl(),
+        ];
+
+        return Inertia::render('Events/Show', [
+            'event' => $eventData,
         ]);
     }
 }

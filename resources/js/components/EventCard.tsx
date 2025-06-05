@@ -121,8 +121,8 @@ export default function EventCard({ event }: EventCardProps) {
 
             {/* View Event Link - Always visible */}
             <Button variant="ghost" size="sm" asChild>
-              <a href={event.uri} target="_blank" rel="noopener noreferrer">
-                View Event <ExternalLink className="w-3 h-3 ml-1" />
+              <a href={`/events/${event.id}`}>
+                View Details <ExternalLink className="w-3 h-3 ml-1" />
               </a>
             </Button>
           </div>

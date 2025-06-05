@@ -21,6 +21,7 @@ Route::get('/calendar-feed', [CalendarFeedController::class, 'index'])->name('ca
 Route::get('/calendar-feed.ics', [CalendarFeedController::class, 'show'])->name('calendar-feed.show');
 
 Route::get('/events', [EventsController::class, 'index'])->name('events.index');
+Route::get('/events/{event}', [EventsController::class, 'show'])->name('events.show');
 Route::get('/labs', [LabsController::class, 'index'])->name('labs.index');
 Route::get('/hg-nights', [HGNightsController::class, 'index'])->name('hg-nights.index');
 Route::get('/give', [GiveController::class, 'index'])->name('give');

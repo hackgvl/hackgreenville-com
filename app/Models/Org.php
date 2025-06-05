@@ -66,12 +66,36 @@ class Org extends BaseModel
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'description',
+        'path',
+        'city',
+        'focus_area',
+        'uri',
+        'primary_contact_person',
+        'organization_type',
+        'event_calendar_uri',
+        'service',
+        'status',
+        'service_api_key',
+        'established_at',
+        'inactive_at',
+        'category_id',
+    ];
+
     protected $casts = [
         'status' => OrganizationStatus::class,
         'service' => EventServices::class,
         'established_at' => 'datetime',
         'inactive_at' => 'date',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function category()
     {
