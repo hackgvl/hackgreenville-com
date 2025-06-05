@@ -12,7 +12,8 @@ export default defineConfig({
   },
   plugins: [
     react({
-      include: '**/*.{jsx,tsx}',
+      include: "**/*.{jsx,tsx}",
+      jsxRuntime: 'automatic',
     }),
     laravel({
       input: [

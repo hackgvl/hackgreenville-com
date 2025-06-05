@@ -1,3 +1,4 @@
+import * as React from 'react';
 import '../css/app.css';
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';

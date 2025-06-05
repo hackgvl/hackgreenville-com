@@ -1,13 +1,34 @@
-import { Head } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
+import { useState, useMemo } from 'react';
 import AppLayout from '../../layouts/AppLayout';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '../../components/ui/card';
-import { Button } from '../../components/ui/button';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { 
+  Calendar, 
+  MapPin, 
+  ExternalLink, 
+  Grid3X3, 
+  List, 
+  Filter,
+  Tag 
+} from 'lucide-react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
+interface Category {
+  id: number;
+  label: string;
+}
 
 interface Event {
   id: number;
@@ -15,8 +36,10 @@ interface Event {
   description: string;
   active_at: string;
   cancelled_at: string | null;
+  uri: string;
   organization: {
     title: string;
+    category?: Category;
   };
   venue?: {
     name: string;
@@ -26,9 +49,13 @@ interface Event {
 
 interface EventsIndexProps {
   events: Event[];
+  categories: Category[];
+  selectedCategory?: string;
 }
 
-export default function EventsIndex({ events }: EventsIndexProps) {
+export default function EventsIndex({ events, categories, selectedCategory }: EventsIndexProps) {
+  const [viewMode, setViewMode] = useState<'grid' | 'horizontal'>('grid');
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       weekday: 'long',
@@ -39,6 +66,14 @@ export default function EventsIndex({ events }: EventsIndexProps) {
       minute: '2-digit',
       hour12: true,
     });
+  };
+
+  const handleCategoryChange = (categoryId: string) => {
+    router.get(
+      '/events',
+      categoryId === 'all' ? {} : { category: categoryId },
+      { preserveState: true }
+    );
   };
 
   return (
@@ -61,6 +96,47 @@ export default function EventsIndex({ events }: EventsIndexProps) {
           </p>
         </div>
 
+        {/* Controls */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+          <div className="flex items-center gap-4">
+            {/* Category Filter */}
+            <div className="flex items-center gap-2">
+              <Filter size={16} />
+              <Select value={selectedCategory || 'all'} onValueChange={handleCategoryChange}>
+                <SelectTrigger className="w-48">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Categories</SelectItem>
+                  {categories.map((category) => (
+                    <SelectItem key={category.id} value={category.id.toString()}>
+                      {category.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          {/* View Toggle */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant={viewMode === 'grid' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setViewMode('grid')}
+            >
+              <Grid3X3 size={16} />
+            </Button>
+            <Button
+              variant={viewMode === 'horizontal' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setViewMode('horizontal')}
+            >
+              <List size={16} />
+            </Button>
+          </div>
+        </div>
+
         {events.length === 0 ? (
           <Card>
             <CardContent className="py-12 text-center">
@@ -71,7 +147,7 @@ export default function EventsIndex({ events }: EventsIndexProps) {
               <p className="text-gray-600">Check back soon for new events!</p>
             </CardContent>
           </Card>
-        ) : (
+        ) : viewMode === 'grid' ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {events.map((event) => (
               <Card
@@ -79,11 +155,21 @@ export default function EventsIndex({ events }: EventsIndexProps) {
                 className="hover:shadow-lg transition-shadow"
               >
                 <CardHeader>
-                  {event.cancelled_at && (
-                    <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 mb-2 w-fit">
-                      CANCELLED
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex flex-wrap gap-2">
+                      {event.cancelled_at && (
+                        <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                          CANCELLED
+                        </div>
+                      )}
+                      {event.organization.category && (
+                        <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          <Tag size={12} className="mr-1" />
+                          {event.organization.category.label}
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
                   <CardTitle className="text-xl line-clamp-2">
                     {event.event_name}
                   </CardTitle>
@@ -120,9 +206,80 @@ export default function EventsIndex({ events }: EventsIndexProps) {
                     )}
 
                     <div className="pt-3">
-                      <Button size="sm" className="w-full">
-                        <ExternalLink size={16} className="mr-2" />
-                        View Details
+                      <Button asChild size="sm" className="w-full">
+                        <a href={event.uri} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink size={16} className="mr-2" />
+                          View Details
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {events.map((event) => (
+              <Card
+                key={event.id}
+                className="hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="p-6">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {event.cancelled_at && (
+                          <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                            CANCELLED
+                          </div>
+                        )}
+                        {event.organization.category && (
+                          <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            <Tag size={12} className="mr-1" />
+                            {event.organization.category.label}
+                          </div>
+                        )}
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-gray-900 line-clamp-1 mb-2">
+                        {event.event_name}
+                      </h3>
+                      
+                      <p className="text-sm text-muted-foreground font-medium mb-3">
+                        {event.organization.title}
+                      </p>
+
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-gray-600">
+                        <div className="flex items-center space-x-2">
+                          <Calendar size={16} className="text-gray-500" />
+                          <span>{formatDate(event.active_at)}</span>
+                        </div>
+
+                        {event.venue && (
+                          <div className="flex items-center space-x-2">
+                            <MapPin size={16} className="text-gray-500" />
+                            <span>{event.venue.name}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {event.description && (
+                        <p className="text-sm text-gray-700 line-clamp-2 mt-3">
+                          {event.description
+                            .replace(/(<([^>]+)>)/gi, '')
+                            .substring(0, 200)}
+                          ...
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex-shrink-0">
+                      <Button asChild size="sm">
+                        <a href={event.uri} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink size={16} className="mr-2" />
+                          View Details
+                        </a>
                       </Button>
                     </div>
                   </div>

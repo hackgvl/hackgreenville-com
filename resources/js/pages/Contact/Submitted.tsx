@@ -1,12 +1,12 @@
 import { Head } from '@inertiajs/react';
 import AppLayout from '../../layouts/AppLayout';
-import { Button } from '../../components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '../../components/ui/card';
+} from '@/components/ui/card';
 import { CheckCircle, ArrowLeft } from 'lucide-react';
 
 export default function ContactSubmitted() {

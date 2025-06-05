@@ -1,6 +1,14 @@
 import { Head, Link } from '@inertiajs/react';
 import { PropsWithChildren } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 import { route } from '../helpers/route';
 import {
   Calendar,
@@ -41,12 +49,10 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
       <Head title={title} />
 
       {/* Navigation */}
-      <nav
-        className="bg-primary text-primary-foreground shadow-sm"
-        style={{ backgroundColor: '#3b82f6', color: 'white' }}
-      >
+      <nav className="bg-primary shadow-sm" style={{ backgroundColor: '#3b82f6' }}>
         <div className="container mx-auto px-4">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
             <div className="flex items-center">
               <Link href={route('home')} className="flex items-center">
                 <img
@@ -57,21 +63,63 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              {navItems.map((item) => {
-                const IconComponent = item.icon;
-                return (
-                  <Link
-                    key={item.route}
-                    href={route(item.route)}
-                    className="flex items-center space-x-1 px-3 py-2 text-sm font-medium hover:text-primary-foreground/80 transition-colors"
-                  >
-                    <IconComponent size={16} />
-                    <span>{item.label}</span>
-                  </Link>
-                );
-              })}
+            {/* Desktop Navigation Menu */}
+            <div className="hidden md:flex items-center flex-1 justify-center">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  {/* Primary Navigation Items */}
+                  {navItems.slice(0, 4).map((item) => {
+                    const IconComponent = item.icon;
+                    return (
+                      <NavigationMenuItem key={item.route}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={route(item.route)}
+                            className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-white"
+                          >
+                            <IconComponent size={16} className="mr-2" />
+                            <span>{item.label}</span>
+                          </Link>
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    );
+                  })}
+                  
+                  {/* More Menu Dropdown */}
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-[state=open]:bg-white/10">
+                      <Menu size={16} className="mr-2" />
+                      More
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {navItems.slice(4).map((item) => {
+                          const IconComponent = item.icon;
+                          return (
+                            <NavigationMenuLink key={item.route} asChild>
+                              <Link
+                                href={route(item.route)}
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="flex items-center space-x-2">
+                                  <IconComponent size={16} className="text-muted-foreground" />
+                                  <div className="text-sm font-medium leading-none">{item.label}</div>
+                                </div>
+                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                  {item.label === 'HG Nights' && 'Monthly community events and meetups'}
+                                  {item.label === 'About Us' && 'Learn about our tech community'}
+                                  {item.label === 'Give' && 'Support our mission and volunteer'}
+                                  {item.label === 'Contact' && 'Get in touch with our team'}
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          );
+                        })}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
             </div>
 
             {/* Right side buttons */}
@@ -80,7 +128,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="border-white/20 text-white hover:bg-white/10 hover:text-white"
                 >
                   <Slack size={16} className="mr-1" />
                   Join Slack
@@ -103,7 +151,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md hover:bg-primary-foreground/10"
+                className="p-2 rounded-md hover:bg-white/10 text-white"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -112,7 +160,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden border-t border-primary-foreground/20">
+            <div className="md:hidden border-t border-white/20">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item) => {
                   const IconComponent = item.icon;
@@ -120,7 +168,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                     <Link
                       key={item.route}
                       href={route(item.route)}
-                      className="flex items-center space-x-2 px-3 py-2 text-sm font-medium hover:bg-primary-foreground/10 rounded-md"
+                      className="flex items-center space-x-2 px-3 py-2 text-sm font-medium hover:bg-white/10 rounded-md text-white"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <IconComponent size={16} />
@@ -128,7 +176,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                     </Link>
                   );
                 })}
-                <div className="border-t border-primary-foreground/20 pt-2 mt-2 space-y-2">
+                <div className="border-t border-white/20 pt-2 mt-2 space-y-2">
                   <Link
                     href={route('join-slack')}
                     onClick={() => setIsMenuOpen(false)}
@@ -136,7 +184,7 @@ export default function AppLayout({ title, children }: AppLayoutProps) {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full border-primary-foreground/20"
+                      className="w-full border-white/20 text-white hover:bg-white/10"
                     >
                       <Slack size={16} className="mr-1" />
                       Join Slack
