@@ -23,7 +23,10 @@ interface CalendarIndexProps {
   eventsDataUrl: string;
 }
 
-export default function CalendarIndex({ initialEvents, eventsDataUrl }: CalendarIndexProps) {
+export default function CalendarIndex({
+  initialEvents,
+  eventsDataUrl,
+}: CalendarIndexProps) {
   const handleEventClick = (eventInfo: EventClickArg) => {
     // Custom event click handler - could show a modal or navigate
     if (eventInfo.event.extendedProps?.event_url) {
@@ -50,7 +53,8 @@ export default function CalendarIndex({ initialEvents, eventsDataUrl }: Calendar
                 Event Calendar
               </h1>
               <p className="text-muted-foreground">
-                View all upcoming tech events in the Greenville, SC area on our interactive calendar.
+                View all upcoming tech events in the Greenville, SC area on our
+                interactive calendar.
               </p>
             </div>
             <div className="flex gap-3">
@@ -61,9 +65,7 @@ export default function CalendarIndex({ initialEvents, eventsDataUrl }: Calendar
                 </Link>
               </Button>
               <Button asChild size="sm">
-                <Link href="/events">
-                  View All Events
-                </Link>
+                <Link href="/events">View All Events</Link>
               </Button>
             </div>
           </div>
@@ -91,19 +93,22 @@ export default function CalendarIndex({ initialEvents, eventsDataUrl }: Calendar
               <div>
                 <h4 className="font-medium text-sm mb-1">View Options</h4>
                 <p className="text-sm text-muted-foreground">
-                  Switch between month, week, and day views using the buttons in the calendar header.
+                  Switch between month, week, and day views using the buttons in
+                  the calendar header.
                 </p>
               </div>
               <div>
                 <h4 className="font-medium text-sm mb-1">Event Details</h4>
                 <p className="text-sm text-muted-foreground">
-                  Click on any event to visit the event page with full details and registration information.
+                  Click on any event to visit the event page with full details
+                  and registration information.
                 </p>
               </div>
               <div>
                 <h4 className="font-medium text-sm mb-1">Navigation</h4>
                 <p className="text-sm text-muted-foreground">
-                  Use the navigation arrows to browse different months and dates.
+                  Use the navigation arrows to browse different months and
+                  dates.
                 </p>
               </div>
             </CardContent>
@@ -118,9 +123,12 @@ export default function CalendarIndex({ initialEvents, eventsDataUrl }: Calendar
             </CardHeader>
             <CardContent className="space-y-3">
               <div>
-                <h4 className="font-medium text-sm mb-1">Subscribe to Calendar</h4>
+                <h4 className="font-medium text-sm mb-1">
+                  Subscribe to Calendar
+                </h4>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Add our calendar feed to your personal calendar app to stay updated with all events.
+                  Add our calendar feed to your personal calendar app to stay
+                  updated with all events.
                 </p>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/calendar-feed">
@@ -132,7 +140,8 @@ export default function CalendarIndex({ initialEvents, eventsDataUrl }: Calendar
               <div>
                 <h4 className="font-medium text-sm mb-1">Supported Apps</h4>
                 <p className="text-sm text-muted-foreground">
-                  Works with Google Calendar, Apple Calendar, Outlook, and other calendar applications.
+                  Works with Google Calendar, Apple Calendar, Outlook, and other
+                  calendar applications.
                 </p>
               </div>
             </CardContent>

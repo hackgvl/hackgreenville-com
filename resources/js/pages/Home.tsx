@@ -54,11 +54,11 @@ export default function Home({ upcoming_events }: HomeProps) {
                 HackGreenville your product team
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                HackGreenville is the fit-for-purpose tool for
-                planning and building modern software products in the Greenville SC area.
+                HackGreenville is the fit-for-purpose tool for planning and
+                building modern software products in the Greenville SC area.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="font-medium">
                 Get started
@@ -79,7 +79,8 @@ export default function Home({ upcoming_events }: HomeProps) {
                 <div>
                   <h3 className="font-semibold">Modern product teams</h3>
                   <p className="text-sm text-muted-foreground">
-                    HackGreenville is built on the habits that make the best product teams successful
+                    HackGreenville is built on the habits that make the best
+                    product teams successful
                   </p>
                 </div>
               </div>
@@ -134,7 +135,9 @@ export default function Home({ upcoming_events }: HomeProps) {
               <div className="w-12 h-12 bg-card rounded-xl border flex items-center justify-center">
                 <Github className="w-6 h-6 text-foreground" />
               </div>
-              <h3 className="font-semibold text-foreground">Progress insights</h3>
+              <h3 className="font-semibold text-foreground">
+                Progress insights
+              </h3>
               <p className="text-sm text-muted-foreground">
                 Track scope, velocity, and progress over time.
               </p>
@@ -171,13 +174,17 @@ export default function Home({ upcoming_events }: HomeProps) {
               Upcoming Events
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Join our community events and connect with fellow developers, makers, and tech enthusiasts in the Greenville area.
+              Join our community events and connect with fellow developers,
+              makers, and tech enthusiasts in the Greenville area.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {upcoming_events.slice(0, 6).map((event) => (
-              <Card key={event.id} className="hover:shadow-md transition-shadow">
+              <Card
+                key={event.id}
+                className="hover:shadow-md transition-shadow"
+              >
                 <CardContent className="p-6">
                   <div className="space-y-3">
                     {event.cancelled_at && (

@@ -52,12 +52,14 @@ export default function FullCalendarComponent({
   const renderEventContent = (eventInfo: any) => {
     const { event } = eventInfo;
     const isCancelled = event.extendedProps?.cancelled;
-    
+
     return (
-      <div className={`fc-event-content ${isCancelled ? 'line-through opacity-75' : ''}`}>
-        <div className="fc-event-title font-medium text-sm">
-          {event.title}
-        </div>
+      <div
+        className={`fc-event-content ${
+          isCancelled ? 'line-through opacity-75' : ''
+        }`}
+      >
+        <div className="fc-event-title font-medium text-sm">{event.title}</div>
       </div>
     );
   };
@@ -70,7 +72,7 @@ export default function FullCalendarComponent({
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          right: 'dayGridMonth,timeGridWeek,timeGridDay',
         }}
         initialView="dayGridMonth"
         editable={false}
@@ -86,7 +88,11 @@ export default function FullCalendarComponent({
         height="auto"
         // Custom styling classes
         eventClassNames={(arg) => {
-          const classes = ['cursor-pointer', 'hover:opacity-90', 'transition-opacity'];
+          const classes = [
+            'cursor-pointer',
+            'hover:opacity-90',
+            'transition-opacity',
+          ];
           if (arg.event.extendedProps?.cancelled) {
             classes.push('opacity-75');
           }
@@ -103,12 +109,18 @@ export default function FullCalendarComponent({
           }
         }}
         // Load events dynamically when navigating
-        events={eventsDataUrl ? (info, successCallback, failureCallback) => {
-          fetch(`${eventsDataUrl}?start=${info.startStr}&end=${info.endStr}`)
-            .then(response => response.json())
-            .then(data => successCallback(data))
-            .catch(error => failureCallback(error));
-        } : initialEvents}
+        events={
+          eventsDataUrl
+            ? (info, successCallback, failureCallback) => {
+                fetch(
+                  `${eventsDataUrl}?start=${info.startStr}&end=${info.endStr}`,
+                )
+                  .then((response) => response.json())
+                  .then((data) => successCallback(data))
+                  .catch((error) => failureCallback(error));
+              }
+            : initialEvents
+        }
         // Custom button text
         buttonText={{
           today: 'Today',
@@ -124,13 +136,13 @@ export default function FullCalendarComponent({
         eventTimeFormat={{
           hour: 'numeric',
           minute: '2-digit',
-          hour12: true
+          hour12: true,
         }}
         // Slot time format
         slotLabelFormat={{
           hour: 'numeric',
           minute: '2-digit',
-          hour12: true
+          hour12: true,
         }}
       />
     </div>

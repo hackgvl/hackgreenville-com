@@ -33,7 +33,7 @@ interface AppLayoutProps extends PropsWithChildren {
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  
+
   return (
     <Button variant="ghost" size="icon" onClick={toggleTheme}>
       {theme === 'light' ? (
@@ -57,10 +57,22 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
   ];
 
   const secondaryNavItems = [
-    { route: 'labs.index', label: 'Labs', description: 'Open source projects and code' },
-    { route: 'hg-nights.index', label: 'HG Nights', description: 'Monthly community events' },
+    {
+      route: 'labs.index',
+      label: 'Labs',
+      description: 'Open source projects and code',
+    },
+    {
+      route: 'hg-nights.index',
+      label: 'HG Nights',
+      description: 'Monthly community events',
+    },
     { route: 'give', label: 'Give', description: 'Support our mission' },
-    { route: 'calendar-feed.index', label: 'Calendar Feed', description: 'Subscribe to events' },
+    {
+      route: 'calendar-feed.index',
+      label: 'Calendar Feed',
+      description: 'Subscribe to events',
+    },
   ];
 
   return (
@@ -73,14 +85,16 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <Link 
-                href={route('home')} 
+              <Link
+                href={route('home')}
                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
               >
                 <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
                   <span className="text-background font-bold text-sm">HG</span>
                 </div>
-                <span className="font-semibold text-lg text-foreground">HackGreenville</span>
+                <span className="font-semibold text-lg text-foreground">
+                  HackGreenville
+                </span>
               </Link>
             </div>
 
@@ -145,7 +159,11 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                 size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {isMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
               </Button>
             </div>
           </div>
@@ -169,7 +187,12 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                     <span className="text-sm font-medium">Theme</span>
                     <ThemeToggle />
                   </div>
-                  <Button asChild variant="outline" size="sm" className="w-full">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                  >
                     <Link href={route('join-slack')}>Join Slack</Link>
                   </Button>
                 </div>
@@ -188,9 +211,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
 export default function AppLayout({ title, children }: AppLayoutProps) {
   return (
     <ThemeProvider>
-      <AppLayoutContent title={title}>
-        {children}
-      </AppLayoutContent>
+      <AppLayoutContent title={title}>{children}</AppLayoutContent>
     </ThemeProvider>
   );
 }
