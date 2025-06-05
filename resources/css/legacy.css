@@ -3,10 +3,8 @@
 /* Font Awesome for legacy components */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
 
-/* Full Calendar styles for calendar page */
-@import '@fullcalendar/core/main.min.css';
-@import '@fullcalendar/daygrid/main.min.css';
-@import '@fullcalendar/list/main.min.css';
+/* Full Calendar styles are now included in the React component via JS modules */
+/* Legacy CSS imports removed as they don't exist in FullCalendar v6 */
 
 /* SweetAlert2 styles */
 .swal-wide {

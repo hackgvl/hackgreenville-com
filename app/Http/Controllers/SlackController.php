@@ -4,25 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\JoinMessageRequest;
 use App\Notifications\JoinMessage;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Notification;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class SlackController extends Controller
 {
-    public function join()
+    public function join(): Response
     {
-        return view('slack.sign-up');
+        return Inertia::render('Slack/Index');
     }
 
     /**
      * Submits a new request to join slack
      *
      * @param  JoinMessageRequest  $request
-     * @return Application|Factory|View
+     * @return Response
      */
-    public function submit(JoinMessageRequest $request)
+    public function submit(JoinMessageRequest $request): Response
     {
         Notification::route('slack', config('services.slack.contact.webhook'))
             ->notify(new JoinMessage(
@@ -32,6 +31,6 @@ class SlackController extends Controller
                 $request->validated('url')
             ));
 
-        return view('slack.submitted');
+        return Inertia::render('Slack/Submitted');
     }
 }
