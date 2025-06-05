@@ -35,7 +35,7 @@ export default function SlackIndex() {
               Join Our Slack Community
             </h1>
             <p className="text-lg text-gray-600">
-              Connect with local developers, designers, and tech enthusiasts in 
+              Connect with local developers, designers, and tech enthusiasts in
               the Greenville area. Join our vibrant community on Slack!
             </p>
           </div>
@@ -111,9 +111,7 @@ export default function SlackIndex() {
                     required
                   />
                   {errors.reason && (
-                    <p className="mt-1 text-sm text-red-600">
-                      {errors.reason}
-                    </p>
+                    <p className="mt-1 text-sm text-red-600">{errors.reason}</p>
                   )}
                 </div>
 
@@ -187,9 +185,15 @@ export default function SlackIndex() {
               What to expect:
             </h3>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Your request will be reviewed by our community moderators</li>
-              <li>• You'll receive an invitation email within 1-2 business days</li>
-              <li>• Join discussions about local tech events, jobs, and projects</li>
+              <li>
+                • Your request will be reviewed by our community moderators
+              </li>
+              <li>
+                • You'll receive an invitation email within 1-2 business days
+              </li>
+              <li>
+                • Join discussions about local tech events, jobs, and projects
+              </li>
               <li>• Connect with developers, designers, and entrepreneurs</li>
             </ul>
           </div>

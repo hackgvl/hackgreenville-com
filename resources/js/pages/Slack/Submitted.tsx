@@ -27,8 +27,9 @@ export default function SlackSubmitted() {
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <p className="text-lg text-gray-700">
-                Thank you for your interest in joining the HackGreenville Slack 
-                community! We've received your request and will review it shortly.
+                Thank you for your interest in joining the HackGreenville Slack
+                community! We've received your request and will review it
+                shortly.
               </p>
 
               <div className="bg-blue-50 rounded-lg p-4 my-6">
@@ -37,14 +38,22 @@ export default function SlackSubmitted() {
                 </h3>
                 <ul className="text-sm text-blue-800 space-y-1 text-left">
                   <li>• Our community moderators will review your request</li>
-                  <li>• You'll receive an invitation email within 1-2 business days</li>
-                  <li>• Check your spam folder if you don't see the invitation</li>
-                  <li>• Once you join, introduce yourself in the #introductions channel</li>
+                  <li>
+                    • You'll receive an invitation email within 1-2 business
+                    days
+                  </li>
+                  <li>
+                    • Check your spam folder if you don't see the invitation
+                  </li>
+                  <li>
+                    • Once you join, introduce yourself in the #introductions
+                    channel
+                  </li>
                 </ul>
               </div>
 
               <p className="text-gray-600">
-                While you wait, check out our upcoming events and get involved 
+                While you wait, check out our upcoming events and get involved
                 in the local tech community!
               </p>
 
