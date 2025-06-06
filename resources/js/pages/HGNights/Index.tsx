@@ -100,18 +100,27 @@ export default function HGNightsIndex() {
           <div className="absolute top-20 left-10 animate-pulse">
             <Stars className="w-8 h-8 text-yellow-400/30" />
           </div>
-          <div className="absolute top-40 right-20 animate-bounce" style={{ animationDelay: '1s' }}>
+          <div
+            className="absolute top-40 right-20 animate-bounce"
+            style={{ animationDelay: '1s' }}
+          >
             <Sparkles className="w-6 h-6 text-blue-300/40" />
           </div>
-          <div className="absolute bottom-32 left-1/4 animate-pulse" style={{ animationDelay: '2s' }}>
+          <div
+            className="absolute bottom-32 left-1/4 animate-pulse"
+            style={{ animationDelay: '2s' }}
+          >
             <Stars className="w-5 h-5 text-purple-300/30" />
           </div>
-          <div className="absolute top-1/3 right-1/3 animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <div
+            className="absolute top-1/3 right-1/3 animate-bounce"
+            style={{ animationDelay: '0.5s' }}
+          >
             <Sparkles className="w-4 h-4 text-pink-300/40" />
           </div>
         </div>
         <div className="absolute inset-0 bg-black/30 z-0"></div>
-        
+
         <div className="relative container mx-auto px-4 py-24">
           <div className="max-w-5xl mx-auto text-center">
             {/* Icon and Title */}
@@ -188,10 +197,11 @@ export default function HGNightsIndex() {
               Share Your Passion
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Got something cool to share? HG Nights is the perfect stage for your ideas!
+              Got something cool to share? HG Nights is the perfect stage for
+              your ideas!
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="relative overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-lg">
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-bl-3xl flex items-center justify-center">
@@ -205,12 +215,19 @@ export default function HGNightsIndex() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-lg">
-                  Quick 5, 10, or 15-minute talks on tech or tech-adjacent topics that don't fit existing meetup formats.
+                  Quick 5, 10, or 15-minute talks on tech or tech-adjacent
+                  topics that don't fit existing meetup formats.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">5-15 minutes</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Any tech topic</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Casual format</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                    5-15 minutes
+                  </span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                    Any tech topic
+                  </span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+                    Casual format
+                  </span>
                 </div>
               </CardContent>
             </Card>
@@ -227,12 +244,19 @@ export default function HGNightsIndex() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-lg">
-                  Thinking about starting a new group? Pitch your idea and gauge interest from the community.
+                  Thinking about starting a new group? Pitch your idea and gauge
+                  interest from the community.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">New groups</span>
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Get feedback</span>
-                  <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">Find collaborators</span>
+                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">
+                    New groups
+                  </span>
+                  <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">
+                    Get feedback
+                  </span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">
+                    Find collaborators
+                  </span>
                 </div>
               </CardContent>
             </Card>
@@ -260,7 +284,8 @@ export default function HGNightsIndex() {
               Join the Movement
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to be part of something bigger? Here's how you can get involved in our amazing community!
+              Ready to be part of something bigger? Here's how you can get
+              involved in our amazing community!
             </p>
           </div>
 
@@ -274,7 +299,8 @@ export default function HGNightsIndex() {
                   Share Your Ideas
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Spread the word and invite others to pitch amazing talks that inspire our community.
+                  Spread the word and invite others to pitch amazing talks that
+                  inspire our community.
                 </p>
                 <Button size="sm" variant="outline" className="w-full" asChild>
                   <Link external href="https://forms.gle/oz4vDwrwG9c4h5Bo6">
@@ -294,7 +320,8 @@ export default function HGNightsIndex() {
                   Stay Connected
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Join our Meetup group to get the latest updates on events and community happenings.
+                  Join our Meetup group to get the latest updates on events and
+                  community happenings.
                 </p>
                 <Button size="sm" variant="outline" className="w-full" asChild>
                   <Link external href="https://www.meetup.com/hack-greenville/">
@@ -314,7 +341,8 @@ export default function HGNightsIndex() {
                   Volunteer & Lead
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Jump into Slack's #community-organizers channel and help shape our events.
+                  Jump into Slack's #community-organizers channel and help shape
+                  our events.
                 </p>
                 <Button size="sm" variant="outline" className="w-full" asChild>
                   <Link href={route('join-slack')}>
@@ -334,7 +362,8 @@ export default function HGNightsIndex() {
                   Sponsor Events
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Support HG Nights and help us create even more amazing experiences for the community.
+                  Support HG Nights and help us create even more amazing
+                  experiences for the community.
                 </p>
                 <Button size="sm" variant="outline" className="w-full" asChild>
                   <Link href={route('contact')}>
@@ -354,13 +383,18 @@ export default function HGNightsIndex() {
               Epic Nights of the Past
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Relive the magic! Check out highlights from our previous events, amazing talks, and the incredible speakers who shared their knowledge.
+              Relive the magic! Check out highlights from our previous events,
+              amazing talks, and the incredible speakers who shared their
+              knowledge.
             </p>
           </div>
 
           <div className="space-y-12">
             {pastEvents.map((event, index) => (
-              <Card key={index} className="relative overflow-hidden border-2 hover:border-gradient-to-r hover:shadow-2xl transition-all duration-300">
+              <Card
+                key={index}
+                className="relative overflow-hidden border-2 hover:border-gradient-to-r hover:shadow-2xl transition-all duration-300"
+              >
                 {/* Decorative Elements */}
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-orange-500"></div>
                 <div className="absolute top-4 right-4">
@@ -415,16 +449,26 @@ export default function HGNightsIndex() {
                       </h4>
                       <div className="grid gap-4 md:grid-cols-2">
                         {event.speakers.map((speaker, speakerIndex) => (
-                          <Card key={speakerIndex} className="relative overflow-hidden border border-purple-200 hover:border-purple-400 hover:shadow-md transition-all duration-200">
+                          <Card
+                            key={speakerIndex}
+                            className="relative overflow-hidden border border-purple-200 hover:border-purple-400 hover:shadow-md transition-all duration-200"
+                          >
                             <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-bl-2xl flex items-center justify-center">
                               <Play className="w-4 h-4 text-white" />
                             </div>
                             <CardContent className="p-4 pr-16">
-                              <h5 className="font-semibold text-lg mb-2">{speaker.name}</h5>
+                              <h5 className="font-semibold text-lg mb-2">
+                                {speaker.name}
+                              </h5>
                               <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
                                 {speaker.topic}
                               </p>
-                              <Button size="sm" variant="ghost" className="p-0 h-auto text-purple-600 hover:text-purple-800" asChild>
+                              <Button
+                                size="sm"
+                                variant="ghost"
+                                className="p-0 h-auto text-purple-600 hover:text-purple-800"
+                                asChild
+                              >
                                 <Link external href={speaker.video}>
                                   <Play size={14} className="mr-1" />
                                   Watch Talk
@@ -444,30 +488,58 @@ export default function HGNightsIndex() {
                       </h4>
                       <div className="space-y-3 text-sm">
                         <div className="flex flex-wrap items-center gap-1">
-                          <span className="text-muted-foreground">Event Sponsorship by</span>
-                          <Button variant="link" size="sm" className="p-0 h-auto font-semibold" asChild>
+                          <span className="text-muted-foreground">
+                            Event Sponsorship by
+                          </span>
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto font-semibold"
+                            asChild
+                          >
                             <Link external href={event.sponsor.url}>
                               {event.sponsor.name}
                             </Link>
                           </Button>
                           <span className="text-muted-foreground">•</span>
-                          <span className="text-muted-foreground">Hosted by</span>
-                          <Button variant="link" size="sm" className="p-0 h-auto" asChild>
+                          <span className="text-muted-foreground">
+                            Hosted by
+                          </span>
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto"
+                            asChild
+                          >
                             <Link external href="https://joinopenworks.com">
                               OpenWorks Coworking
                             </Link>
                           </Button>
                         </div>
                         <div className="flex flex-wrap items-center gap-1">
-                          <span className="text-muted-foreground">Video production by</span>
-                          <Button variant="link" size="sm" className="p-0 h-auto" asChild>
+                          <span className="text-muted-foreground">
+                            Video production by
+                          </span>
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto"
+                            asChild
+                          >
                             <Link external href="https://synergymill.com">
                               Synergy Mill Makerspace
                             </Link>
                           </Button>
                           <span className="text-muted-foreground">•</span>
-                          <span className="text-muted-foreground">Fiscal support by</span>
-                          <Button variant="link" size="sm" className="p-0 h-auto" asChild>
+                          <span className="text-muted-foreground">
+                            Fiscal support by
+                          </span>
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto"
+                            asChild
+                          >
                             <Link external href="https://refactorgvl.com/">
                               RefactorGVL
                             </Link>
@@ -475,7 +547,8 @@ export default function HGNightsIndex() {
                         </div>
                         <p className="text-muted-foreground italic">
                           <Coffee className="inline w-4 h-4 mr-1" />
-                          Food and event logistics lovingly organized by HackGreenville volunteers
+                          Food and event logistics lovingly organized by
+                          HackGreenville volunteers
                         </p>
                       </div>
                     </div>
