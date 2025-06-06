@@ -71,13 +71,13 @@ jobs:
 
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           # Create a unique environment name based on PR number
           ENV_NAME="pr-${{ github.event.pull_request.number }}"
 
-          # Link to your Railway project using the project ID as argument
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
+          # Link to your Railway project using the --project flag
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }}
 
           # Switch to or create environment (Railway will create if it doesn't exist)
           railway environment $ENV_NAME
@@ -118,12 +118,12 @@ jobs:
 
       - name: Delete Railway Environment
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           ENV_NAME="pr-${{ github.event.pull_request.number }}"
 
-          # Link to your Railway project using the project ID as argument
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
+          # Link to your Railway project using the --project flag
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }}
 
           # Delete the Railway environment
           railway environment delete $ENV_NAME
