@@ -23,10 +23,10 @@ class EventsController extends Controller
             });
         }
 
-        $events = $eventsQuery->get()->map(fn ($event) => [
+        $events = $eventsQuery->get()->map(fn (Event $event) => [
             'id' => $event->id,
             'event_name' => $event->event_name,
-            'description' => $event->description,
+            'description' => str($event->description)->markdown()->toString(),
             'active_at' => $event->active_at->toISOString(),
             'expire_at' => $event->expire_at ? $event->expire_at->toISOString() : null,
             'cancelled_at' => $event->cancelled_at?->toISOString(),
@@ -65,7 +65,7 @@ class EventsController extends Controller
         $eventData = [
             'id' => $event->id,
             'event_name' => $event->event_name,
-            'description' => $event->description,
+            'description' => str($event->description)->markdown()->toString(),
             'active_at' => $event->active_at->toISOString(),
             'expire_at' => $event->expire_at ? $event->expire_at->toISOString() : null,
             'cancelled_at' => $event->cancelled_at?->toISOString(),

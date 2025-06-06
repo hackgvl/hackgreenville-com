@@ -1,4 +1,5 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
+import { Link } from '@/components/ui/link';
 import { PropsWithChildren } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -87,7 +88,8 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
             <div className="flex items-center">
               <Link
                 href={route('home')}
-                className="flex items-center space-x-3 hover:opacity-80 transition-opacity !cursor-pointer"
+                variant="ghost"
+                className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
               >
                 <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
                   <span className="text-background font-bold text-sm">HG</span>
@@ -107,7 +109,8 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                       <NavigationMenuLink asChild>
                         <Link
                           href={route(item.route)}
-                          className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-foreground !cursor-pointer"
+                          variant="navigation"
+                          className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
                         >
                           {item.label}
                         </Link>
@@ -126,7 +129,8 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                           <NavigationMenuLink key={item.route} asChild>
                             <Link
                               href={route(item.route)}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground !cursor-pointer"
+                              variant="ghost"
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             >
                               <div className="text-sm font-medium leading-none">
                                 {item.label}
@@ -153,7 +157,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                 size="sm"
                 className="!cursor-pointer"
               >
-                <Link href={route('join-slack')} className="!cursor-pointer">
+                <Link href={route('join-slack')}>
                   Join Slack
                 </Link>
               </Button>
@@ -183,7 +187,8 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                   <Link
                     key={item.route}
                     href={route(item.route)}
-                    className="block px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md transition-colors !cursor-pointer"
+                    variant="ghost"
+                    className="block px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -200,10 +205,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                     size="sm"
                     className="w-full !cursor-pointer"
                   >
-                    <Link
-                      href={route('join-slack')}
-                      className="!cursor-pointer"
-                    >
+                    <Link href={route('join-slack')}>
                       Join Slack
                     </Link>
                   </Button>
