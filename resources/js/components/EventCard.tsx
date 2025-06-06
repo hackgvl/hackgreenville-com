@@ -98,11 +98,14 @@ export default function EventCard({ event }: EventCardProps) {
 
                 {/* Event Title - Aligned with date block */}
                 <h3 className="font-semibold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
-                  <span className="block overflow-hidden" style={{ 
-                    display: '-webkit-box',
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: 'vertical'
-                  }}>
+                  <span
+                    className="block overflow-hidden"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                    }}
+                  >
                     {event.event_name}
                   </span>
                 </h3>
@@ -123,13 +126,17 @@ export default function EventCard({ event }: EventCardProps) {
               <div className="flex flex-col gap-2">
                 {/* Primary Action Button */}
                 {!event.cancelled_at && isLive() && (
-                  <Button 
-                    size="sm" 
-                    className="h-8 px-3 text-sm" 
+                  <Button
+                    size="sm"
+                    className="h-8 px-3 text-sm"
                     asChild
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <a href={event.uri} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={event.uri}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Clock className="w-3 h-3 mr-1.5" />
                       Join Now
                     </a>

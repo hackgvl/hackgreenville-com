@@ -147,8 +147,15 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
             {/* Right side actions */}
             <div className="hidden md:flex items-center space-x-4">
               <ThemeToggle />
-              <Button asChild variant="outline" size="sm" className="!cursor-pointer">
-                <Link href={route('join-slack')} className="!cursor-pointer">Join Slack</Link>
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="!cursor-pointer"
+              >
+                <Link href={route('join-slack')} className="!cursor-pointer">
+                  Join Slack
+                </Link>
               </Button>
             </div>
 
@@ -193,7 +200,12 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                     size="sm"
                     className="w-full !cursor-pointer"
                   >
-                    <Link href={route('join-slack')} className="!cursor-pointer">Join Slack</Link>
+                    <Link
+                      href={route('join-slack')}
+                      className="!cursor-pointer"
+                    >
+                      Join Slack
+                    </Link>
                   </Button>
                 </div>
               </div>
