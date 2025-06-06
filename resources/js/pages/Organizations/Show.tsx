@@ -70,7 +70,9 @@ export default function OrganizationShow({ org }: OrganizationShowProps) {
       <Head>
         <meta
           name="description"
-          content={`${org.title} - ${org.description || `Tech organization in Greenville, SC`}`}
+          content={`${org.title} - ${
+            org.description || `Tech organization in Greenville, SC`
+          }`}
         />
       </Head>
 
@@ -160,7 +162,8 @@ export default function OrganizationShow({ org }: OrganizationShowProps) {
                                 {event.event_name}
                               </h3>
                               <p className="text-sm text-muted-foreground mt-1">
-                                {formatDate(event.active_at)} at {formatTime(event.active_at)}
+                                {formatDate(event.active_at)} at{' '}
+                                {formatTime(event.active_at)}
                               </p>
                             </div>
 
@@ -181,7 +184,8 @@ export default function OrganizationShow({ org }: OrganizationShowProps) {
                               )}
                               <Button variant="ghost" size="sm" asChild>
                                 <Link href={`/events/${event.id}`}>
-                                  View Details <ExternalLink className="w-3 h-3 ml-1" />
+                                  View Details{' '}
+                                  <ExternalLink className="w-3 h-3 ml-1" />
                                 </Link>
                               </Button>
                             </div>
@@ -230,11 +234,7 @@ export default function OrganizationShow({ org }: OrganizationShowProps) {
               <Card>
                 <CardContent className="p-6">
                   <Button className="w-full" asChild>
-                    <a
-                      href={org.uri}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={org.uri} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Visit Website
                     </a>

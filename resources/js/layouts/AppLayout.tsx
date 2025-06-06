@@ -87,7 +87,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
             <div className="flex items-center">
               <Link
                 href={route('home')}
-                className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+                className="flex items-center space-x-3 hover:opacity-80 transition-opacity !cursor-pointer"
               >
                 <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
                   <span className="text-background font-bold text-sm">HG</span>
@@ -107,7 +107,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                       <NavigationMenuLink asChild>
                         <Link
                           href={route(item.route)}
-                          className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-foreground"
+                          className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-foreground !cursor-pointer"
                         >
                           {item.label}
                         </Link>
@@ -117,7 +117,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
 
                   {/* More dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent">
+                    <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent !cursor-pointer">
                       More
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -126,7 +126,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                           <NavigationMenuLink key={item.route} asChild>
                             <Link
                               href={route(item.route)}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground !cursor-pointer"
                             >
                               <div className="text-sm font-medium leading-none">
                                 {item.label}
@@ -147,8 +147,8 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
             {/* Right side actions */}
             <div className="hidden md:flex items-center space-x-4">
               <ThemeToggle />
-              <Button asChild variant="outline" size="sm">
-                <Link href={route('join-slack')}>Join Slack</Link>
+              <Button asChild variant="outline" size="sm" className="!cursor-pointer">
+                <Link href={route('join-slack')} className="!cursor-pointer">Join Slack</Link>
               </Button>
             </div>
 
@@ -176,7 +176,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                   <Link
                     key={item.route}
                     href={route(item.route)}
-                    className="block px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+                    className="block px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground rounded-md transition-colors !cursor-pointer"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -191,9 +191,9 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                     asChild
                     variant="outline"
                     size="sm"
-                    className="w-full"
+                    className="w-full !cursor-pointer"
                   >
-                    <Link href={route('join-slack')}>Join Slack</Link>
+                    <Link href={route('join-slack')} className="!cursor-pointer">Join Slack</Link>
                   </Button>
                 </div>
               </div>

@@ -62,14 +62,14 @@ export default function EventShow({ event }: EventShowProps) {
 
   const getFullAddress = () => {
     if (!event.venue) return 'Online Event';
-    
+
     const parts = [
       event.venue.name,
       event.venue.address,
       event.venue.city,
       event.venue.state,
     ].filter(Boolean);
-    
+
     return parts.join(', ');
   };
 
@@ -114,7 +114,12 @@ export default function EventShow({ event }: EventShowProps) {
       <Head>
         <meta
           name="description"
-          content={`${event.event_name} hosted by ${event.organization.title} in Greenville, SC. ${cleanDescription(event.description).substring(0, 160)}`}
+          content={`${event.event_name} hosted by ${
+            event.organization.title
+          } in Greenville, SC. ${cleanDescription(event.description).substring(
+            0,
+            160,
+          )}`}
         />
       </Head>
 
@@ -179,13 +184,17 @@ export default function EventShow({ event }: EventShowProps) {
                     <h4 className="font-medium text-sm mb-1 text-muted-foreground">
                       Date
                     </h4>
-                    <p className="text-foreground">{formatDate(event.active_at)}</p>
+                    <p className="text-foreground">
+                      {formatDate(event.active_at)}
+                    </p>
                   </div>
                   <div>
                     <h4 className="font-medium text-sm mb-1 text-muted-foreground">
                       Time
                     </h4>
-                    <p className="text-foreground">{formatTime(event.active_at)}</p>
+                    <p className="text-foreground">
+                      {formatTime(event.active_at)}
+                    </p>
                   </div>
                   {event.venue && (
                     <div className="sm:col-span-2">
@@ -268,7 +277,9 @@ export default function EventShow({ event }: EventShowProps) {
                 <div className="space-y-4">
                   {isLive() && (
                     <div className="text-center">
-                      <h3 className="font-semibold text-lg mb-2">Event is Live!</h3>
+                      <h3 className="font-semibold text-lg mb-2">
+                        Event is Live!
+                      </h3>
                       <Button size="lg" className="w-full" asChild>
                         <a
                           href={event.uri}
@@ -284,7 +295,9 @@ export default function EventShow({ event }: EventShowProps) {
 
                   {isUpcoming() && (
                     <div className="text-center">
-                      <h3 className="font-semibold text-lg mb-2">Ready to attend?</h3>
+                      <h3 className="font-semibold text-lg mb-2">
+                        Ready to attend?
+                      </h3>
                       <Button size="lg" className="w-full" asChild>
                         <a
                           href={event.uri}
@@ -300,8 +313,15 @@ export default function EventShow({ event }: EventShowProps) {
 
                   {isPast() && !event.cancelled_at && (
                     <div className="text-center">
-                      <h3 className="font-semibold text-lg mb-2">This event has ended</h3>
-                      <Button variant="outline" size="lg" className="w-full" asChild>
+                      <h3 className="font-semibold text-lg mb-2">
+                        This event has ended
+                      </h3>
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className="w-full"
+                        asChild
+                      >
                         <a
                           href={event.uri}
                           target="_blank"

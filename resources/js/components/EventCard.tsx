@@ -33,17 +33,14 @@ export default function EventCard({ event }: EventCardProps) {
       hour: 'numeric',
       minute: '2-digit',
       hour12: true,
-      timeZoneName: 'short',
     });
   };
 
-  const formatTimeRange = (start: string, end?: string) => {
-    const startTime = formatTime(start);
-    if (end) {
-      const endTime = formatTime(end);
-      return `${startTime} - ${endTime}`;
-    }
-    return startTime;
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+    });
   };
 
   const isLive = () => {
@@ -51,83 +48,98 @@ export default function EventCard({ event }: EventCardProps) {
     const startTime = new Date(event.active_at);
     const endTime = event.expire_at
       ? new Date(event.expire_at)
-      : new Date(startTime.getTime() + 2 * 60 * 60 * 1000); // Default 2 hours
+      : new Date(startTime.getTime() + 2 * 60 * 60 * 1000);
 
     return now >= startTime && now <= endTime && !event.cancelled_at;
   };
 
   const getVenueDisplay = () => {
-    if (!event.venue) {
-      return 'Online';
-    }
-
+    if (!event.venue) return 'Online';
     return event.venue.name || 'Venue TBD';
   };
 
   return (
-    <Card className="hover:shadow-md transition-shadow bg-card border">
-      <CardContent className="p-3">
-        <div className="space-y-2">
-          {/* Time and Live Status */}
-          <div className="flex items-center gap-2">
-            {isLive() && (
-              <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
-                • LIVE
-              </span>
-            )}
-            <span className="text-sm font-medium text-orange-600 dark:text-orange-400">
-              {formatTimeRange(event.active_at, event.expire_at)}
-            </span>
-          </div>
-
-          {/* Event Title */}
-          <h3 className="font-semibold text-foreground leading-tight">
-            {event.event_name}
-          </h3>
-
-          {/* Organization and Venue - Single Line */}
-          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-            <span>By {event.organization.title}</span>
-            <div className="flex items-center gap-1">
-              <MapPin className="w-3 h-3" />
-              <span>{getVenueDisplay()}</span>
-            </div>
-          </div>
-
-          {/* Actions and Status */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              {/* Cancelled Status */}
-              {event.cancelled_at && (
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-destructive/10 text-destructive">
-                  CANCELLED
-                </span>
-              )}
-
-              {/* Live Check In Button */}
-              {!event.cancelled_at && isLive() && (
-                <Button
-                  size="sm"
-                  className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
-                  asChild
-                >
-                  <a href={event.uri} target="_blank" rel="noopener noreferrer">
-                    <Clock className="w-3 h-3 mr-1" />
-                    Check In
-                  </a>
-                </Button>
-              )}
+    <Card className="group hover:shadow-lg transition-all duration-200 border border-border/50 hover:border-border cursor-pointer">
+      <a href={`/events/${event.id}`} className="block">
+        <CardContent className="p-4">
+          <div className="flex gap-4">
+            {/* Date/Time Block */}
+            <div className="flex-shrink-0">
+              <div className="text-center">
+                <div className="text-sm font-semibold text-primary">
+                  {formatDate(event.active_at)}
+                </div>
+                <div className="text-xs text-muted-foreground mt-0.5">
+                  {formatTime(event.active_at)}
+                </div>
+              </div>
             </div>
 
-            {/* View Event Link - Always visible */}
-            <Button variant="ghost" size="sm" asChild>
-              <a href={`/events/${event.id}`}>
-                View Details <ExternalLink className="w-3 h-3 ml-1" />
-              </a>
-            </Button>
+            {/* Event Details */}
+            <div className="flex-1 min-w-0 flex flex-col">
+              {/* Status badges and Event Title - Aligned with date */}
+              <div className="flex flex-col">
+                {/* Status badges */}
+                {(isLive() || event.cancelled_at) && (
+                  <div className="flex items-center gap-2 mb-1">
+                    {isLive() && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-500 text-white">
+                        <span className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></span>
+                        LIVE
+                      </span>
+                    )}
+                    {event.cancelled_at && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                        CANCELLED
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {/* Event Title - Aligned with date block */}
+                <h3 className="font-semibold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
+                  <span className="block overflow-hidden" style={{ 
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical'
+                  }}>
+                    {event.event_name}
+                  </span>
+                </h3>
+              </div>
+
+              {/* Organization & Location */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-muted-foreground flex-grow">
+                <span className="font-medium">{event.organization.title}</span>
+                <div className="flex items-center gap-1">
+                  <MapPin className="w-3 h-3 flex-shrink-0" />
+                  <span className="truncate">{getVenueDisplay()}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Actions - Vertically centered */}
+            <div className="flex-shrink-0 self-center">
+              <div className="flex flex-col gap-2">
+                {/* Primary Action Button */}
+                {!event.cancelled_at && isLive() && (
+                  <Button 
+                    size="sm" 
+                    className="h-8 px-3 text-sm" 
+                    asChild
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <a href={event.uri} target="_blank" rel="noopener noreferrer">
+                      <Clock className="w-3 h-3 mr-1.5" />
+                      Join Now
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </CardContent>
+        </CardContent>
+      </a>
     </Card>
   );
 }
