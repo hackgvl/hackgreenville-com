@@ -157,9 +157,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                 size="sm"
                 className="!cursor-pointer"
               >
-                <Link href={route('join-slack')}>
-                  Join Slack
-                </Link>
+                <Link href={route('join-slack')}>Join Slack</Link>
               </Button>
             </div>
 
@@ -205,9 +203,7 @@ function AppLayoutContent({ title, children }: AppLayoutProps) {
                     size="sm"
                     className="w-full !cursor-pointer"
                   >
-                    <Link href={route('join-slack')}>
-                      Join Slack
-                    </Link>
+                    <Link href={route('join-slack')}>Join Slack</Link>
                   </Button>
                 </div>
               </div>

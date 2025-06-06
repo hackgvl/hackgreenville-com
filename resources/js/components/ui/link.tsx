@@ -10,10 +10,13 @@ const linkVariants = cva(
       variant: {
         default: 'text-primary underline-offset-4 hover:underline',
         destructive: 'text-destructive underline-offset-4 hover:underline',
-        outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-        secondary: 'text-secondary-foreground underline-offset-4 hover:underline',
+        outline:
+          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        secondary:
+          'text-secondary-foreground underline-offset-4 hover:underline',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
-        muted: 'text-muted-foreground hover:text-foreground underline-offset-4 hover:underline',
+        muted:
+          'text-muted-foreground hover:text-foreground underline-offset-4 hover:underline',
         navigation: 'text-foreground hover:text-primary transition-colors',
       },
       size: {
@@ -28,7 +31,7 @@ const linkVariants = cva(
       variant: 'default',
       size: 'inline',
     },
-  }
+  },
 );
 
 export interface LinkProps
@@ -37,34 +40,33 @@ export interface LinkProps
   external?: boolean;
 }
 
-const Link = React.forwardRef<
-  React.ElementRef<typeof InertiaLink>,
-  LinkProps
->(({ className, variant, size, external, children, ...props }, ref) => {
-  if (external) {
+const Link = React.forwardRef<React.ElementRef<typeof InertiaLink>, LinkProps>(
+  ({ className, variant, size, external, children, ...props }, ref) => {
+    if (external) {
+      return (
+        <a
+          className={cn(linkVariants({ variant, size, className }))}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...(props as any)}
+          ref={ref as any}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <a
+      <InertiaLink
         className={cn(linkVariants({ variant, size, className }))}
-        target="_blank"
-        rel="noopener noreferrer"
-        {...(props as any)}
-        ref={ref as any}
+        ref={ref}
+        {...props}
       >
         {children}
-      </a>
+      </InertiaLink>
     );
-  }
-
-  return (
-    <InertiaLink
-      className={cn(linkVariants({ variant, size, className }))}
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </InertiaLink>
-  );
-});
+  },
+);
 Link.displayName = 'Link';
 
 export { Link, linkVariants };
