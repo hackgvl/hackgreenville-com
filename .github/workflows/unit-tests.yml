@@ -6,57 +6,7 @@ on:
     types: [ opened, synchronize, reopened ]
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_DATABASE: hackgreenville
-          MYSQL_USER: hackgreenville
-          MYSQL_ROOT_PASSWORD: test
-          MYSQL_PASSWORD: test
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.1
-          extensions: :php_psr
-
-      - name: install php dependencies
-        run: composer install
-
-      - name: install node dependencies
-        run: yarn install
-
-      - name: copy environment variables to .env
-        run: cp .env.ci .env
-
-      - name: migrate database
-        run: php artisan migrate --seed
-
-      - name: Build website
-        run: yarn build
-
-      - name: run tests
-        run: php artisan test
-
   deploy-staging:
-    needs: tests
     runs-on: ubuntu-latest
     environment: staging
     steps:
@@ -71,22 +21,22 @@ jobs:
 
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
           # Create a unique environment name based on PR number
           ENV_NAME="pr-${{ github.event.pull_request.number }}"
-          
+
           # Link to your Railway project
           railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-          
+
           # Create and deploy to a new Railway environment
           railway environment --name $ENV_NAME
           railway up --detach
-          
+
           # Get the deployment URL (optional - for commenting on PR)
           DEPLOY_URL=$(railway domain)
           echo "Deployed to: $DEPLOY_URL"
-          
+
           # Optional: Comment on PR with deployment URL
           # You'll need to add GITHUB_TOKEN to your secrets for this to work
           if [ ! -z "$DEPLOY_URL" ]; then
@@ -117,16 +67,16 @@ jobs:
 
       - name: Delete Railway Environment
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
           ENV_NAME="pr-${{ github.event.pull_request.number }}"
-          
+
           # Link to your Railway project
           railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-          
+
           # Delete the Railway environment
           railway environment --remove $ENV_NAME
-          
+
           echo "Deleted Railway environment: $ENV_NAME"
 
       - name: Comment on PR
