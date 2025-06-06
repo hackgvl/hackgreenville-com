@@ -4,9 +4,6 @@ name: Run unit tests and deploy PR
 on:
   pull_request_target:
     types: [ opened, synchronize, reopened ]
-    branches:
-      - master
-      - develop
 
 jobs:
   tests:
