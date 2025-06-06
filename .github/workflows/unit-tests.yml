@@ -71,7 +71,7 @@ jobs:
 
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
           # Create a unique environment name based on PR number
           ENV_NAME="pr-${{ github.event.pull_request.number }}"
@@ -118,7 +118,7 @@ jobs:
 
       - name: Delete Railway Environment
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
           ENV_NAME="pr-${{ github.event.pull_request.number }}"
 
