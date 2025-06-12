@@ -49,7 +49,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 'path' => storage_path('logs/meetup-graphql.log'),
             ])->info('MeetupGraphql', [
                 'org_service_key' => $this->org->service_api_key,
-                'service_id' => $map->service_id,
+                'service_id' => $event['id'],
                 'token' => $event['token'] ?? null,
                 'starts_at' => $map->starts_at->toISOString(),
                 'name' => $map->name,
