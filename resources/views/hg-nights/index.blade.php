@@ -40,7 +40,6 @@
             target="_blank">
               Submit a Talk
           </a>
-
     </div>
 
     <div class="col-10 px-5 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 m-5 mx-auto d-flex flex-column">
@@ -56,6 +55,52 @@
 
     <div class="col-10 px-5 offset-2 col-sm-8 offset-sm-4 col-xl-12 offset-xl-2 m-5 mx-auto d-flex flex-column">
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
+
+
+      <h3 class="mt-4">2025 - June | <em>"Full-stack Nachos"</em></h3>
+      <div class="flex-row-3-columns w-100">
+        <div class="flex-row-column">
+          <p><a href="https://www.meetup.com/hack-greenville/events/307794466/" class="btn btn-info">Recap</a></p>
+        </div>
+        <div class="flex-row-column">
+          <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
+        </div>
+      </div>
+
+
+      <h5 class="font-weight-bold">Kudos</h5>
+      <p class="lead-text">Event Sponsorship by <a href="https://www.chirohd.com"><b>ChiroHD</b></a> | 
+           Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+
+      <h5 class="font-weight-bold">Speakers</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Jen Bauer on
+          <a href="https://www.youtube.com/watch?v=3KioPbXDfYo&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=1">
+            <em>Level Up Your Legacy</em>
+          </a>
+	</li>
+        <li class="list-group-item">Bogdan Kharchenko on
+          <a href="https://www.youtube.com/watch?v=BDivM3znbzQ&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=2">
+            <em>HackGreenville Labs</em>
+          </a>
+        </li>
+        <li class="list-group-item">Violet Kester on
+          <a href="https://www.youtube.com/watch?v=4PJSxQUz0oU&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=3">
+            <em>Fluid Design and Musical Harmony: A simple method for implementing truly responsive web applications</em>
+          </a>
+        </li>
+        <li class="list-group-item">AMA w/ Luke Kapustka, Nick Mansfield, JT Webb on
+          <a href="https://www.youtube.com/watch?v=W5QzMMS10Q0&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=4">
+            <em>We're Penetration Testers, Ask us Anything</em>
+          </a>
+        </li>
+      </ul>
+
+
 
       <h3 class="mt-4">2025 - Feb | <em>"Souperman IV: Quest for Peas"</em></h3>
       <div class="flex-row-3-columns w-100">
