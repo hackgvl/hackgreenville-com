@@ -34,6 +34,7 @@ By default, results are returned in JSON format.
 	"data_as_of":"2024-01-23T18:49:52.738311Z",
 	"service_id":"298465949",
 	"service":"meetup",
+	"is_paid":false,
 	"venue":{
 		"name":"OpenWorks",
 		"address":"101 N Main St #302",
