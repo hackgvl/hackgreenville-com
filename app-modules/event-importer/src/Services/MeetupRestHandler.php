@@ -59,7 +59,6 @@ class MeetupRestHandler extends AbstractEventHandler
             'service' => EventServices::MeetupRest,
             'service_id' => $data['id'],
             'venue' => $this->mapIntoVenueData($data),
-            'is_paid' => false,
         ]);
     }
 

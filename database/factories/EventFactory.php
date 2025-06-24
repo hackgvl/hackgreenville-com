@@ -40,7 +40,7 @@ class EventFactory extends Factory
             'service' => EventServices::EventBrite->value,
             'service_id' => $this->faker->randomDigit(),
             'organization_id' => Org::factory(),
-            'is_paid' => false,
+            'is_paid' => null,
         ];
     }
 }

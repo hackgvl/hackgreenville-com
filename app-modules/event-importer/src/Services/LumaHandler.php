@@ -31,7 +31,6 @@ class LumaHandler extends AbstractEventHandler
             'service' => EventServices::Luma,
             'service_id' => $data['event']['api_id'],
             'venue' => $this->mapIntoVenueData($data),
-            'is_paid' => false,
         ]);
     }
 
