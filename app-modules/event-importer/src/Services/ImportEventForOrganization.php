@@ -28,7 +28,7 @@ class ImportEventForOrganization
                         : null,
                     'event_uuid' => $data->uniqueIdentifierHash(),
                     'organization_id' => $org->id,
-                    'is_paid' => false,
+                    'is_paid' => $data->is_paid,
                 ]
             );
         });

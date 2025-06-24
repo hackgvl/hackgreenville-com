@@ -32,7 +32,7 @@ class EventBriteHandler extends AbstractEventHandler
                 ? now()
                 : null,
             'venue' => $this->mapIntoVenueData($data),
-            'is_paid' => false,
+            'is_paid' => $data['is_free'] == false,
         ]);
     }
 
