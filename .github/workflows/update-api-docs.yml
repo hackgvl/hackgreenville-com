@@ -14,8 +14,6 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
-    permissions:
-        contents: write  # Allow the job to push changes to the repository
     services:
       mysql:
         image: mysql:8.0
@@ -74,6 +72,7 @@ jobs:
 
           # Check if there are any changes to commit
           if ! git diff --cached --quiet; then
-            git commit -m "Update API docs via GitHub Actions"
-            git push origin HEAD:${{ steps.branch.outputs.branch }}
+            echo "❌ Scribe docs are out of date. Please run 'php artisan scribe:generate' and commit the changes."
+            git diff --cached --name-only
+            exit 1
           fi
