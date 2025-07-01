@@ -1,5 +1,8 @@
 # Interacting with the HackGreenville Events API
 
+## Interactive API Explorer
+You can view the interactive API explorer via https://hackgreenville.com/api-docs
+
 ## URLs and Query String Parameters
 By default, results are returned in JSON format.
 

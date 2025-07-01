@@ -21,4 +21,14 @@ class OrgsApiV0Request extends FormRequest
             ],
         ];
     }
+
+    public function queryParameters()
+    {
+        return [
+            'tags' => [
+                'example' => 1,
+                'description' => 'Filter organizations by organization tag ID.',
+            ],
+        ];
+    }
 }
