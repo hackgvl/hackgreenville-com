@@ -48,6 +48,9 @@ jobs:
       - name: copy environment variables to .env
         run: cp .env.ci .env
 
+      - name: migrate database
+        run: php artisan migrate --seed
+
       - name: Set Laravel app key
         run: php artisan key:generate
 
