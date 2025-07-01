@@ -33,6 +33,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0 # Fetch all history for all branches and tags
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up PHP
@@ -63,6 +64,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Ensure we're on the correct branch
+          git checkout ${GITHUB_HEAD_REF}
 
           # Stage changes
           git add public/vendor/ resources/views/
