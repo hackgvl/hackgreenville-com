@@ -60,19 +60,20 @@ jobs:
       - name: Generate API Docs
         run: php artisan scribe:generate
 
+      - name: Get current branch name
+        id: branch
+        run: echo "branch=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_OUTPUT
+
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Ensure we're on the correct branch
-          git checkout ${GITHUB_HEAD_REF}
-
           # Stage changes
-          git add public/vendor/ resources/views/
+          git add public/vendor/ resources/views/scribe
 
           # Check if there are any changes to commit
           if ! git diff --cached --quiet; then
             git commit -m "Update API docs via GitHub Actions"
-            git push
+            git push origin HEAD:${{ steps.branch.outputs.branch }}
           fi
