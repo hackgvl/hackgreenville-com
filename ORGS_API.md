@@ -3,7 +3,7 @@
 The _Organizations API_ can be used to build your own custom applications from the structured JSON data representing the [HackGreenville Organizations](https://hackgreenville.com/orgs).
 
 ## Interactive API Explorer
-You can view the interactive API explorer via https://hackgreenville.com/api-docs
+You can view the interactive API explorer via https://hackgreenville.com/docs/api
 
 ## URLs and Query String Parameters
 

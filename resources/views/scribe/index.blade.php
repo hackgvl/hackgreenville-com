@@ -91,7 +91,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 1, 2025</li>
+        <li>Last updated: July 2, 2025</li>
     </ul>
 </div>
 
@@ -182,30 +182,30 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;event_name&quot;: &quot;Adipisci rerum assumenda voluptatem dolores.&quot;,
-        &quot;group_name&quot;: &quot;Elda Ritchie tech group&quot;,
-        &quot;group_url&quot;: &quot;et&quot;,
-        &quot;url&quot;: &quot;http://white.biz/&quot;,
-        &quot;time&quot;: &quot;2025-06-22T15:00:13.000000Z&quot;,
+        &quot;event_name&quot;: &quot;Voluptas facere aut inventore.&quot;,
+        &quot;group_name&quot;: &quot;Alexandrine Murazik Sr. tech group&quot;,
+        &quot;group_url&quot;: &quot;soluta&quot;,
+        &quot;url&quot;: &quot;http://www.bins.com/quidem-iste-omnis-porro-itaque-atque&quot;,
+        &quot;time&quot;: &quot;2025-06-15T11:11:21.000000Z&quot;,
         &quot;tags&quot;: &quot;&quot;,
         &quot;status&quot;: &quot;past&quot;,
-        &quot;rsvp_count&quot;: 75,
-        &quot;description&quot;: &quot;Sed fuga eveniet quia similique architecto et autem. Saepe hic enim culpa nostrum sequi vel.&quot;,
-        &quot;uuid&quot;: &quot;5de7ddb7-9e6d-3c39-8e50-375a694794f5&quot;,
-        &quot;data_as_of&quot;: &quot;2025-07-01T21:35:16.876724Z&quot;,
-        &quot;service_id&quot;: &quot;3&quot;,
+        &quot;rsvp_count&quot;: 32,
+        &quot;description&quot;: &quot;Quam vitae autem omnis hic. Atque suscipit laudantium ab.&quot;,
+        &quot;uuid&quot;: &quot;3f52216b-2c4b-30fa-8d5b-28b6118e4724&quot;,
+        &quot;data_as_of&quot;: &quot;2025-07-02T15:42:50.996526Z&quot;,
+        &quot;service_id&quot;: &quot;4&quot;,
         &quot;service&quot;: &quot;eventbrite&quot;,
         &quot;venue&quot;: {
-            &quot;name&quot;: &quot;molestiae vitae quo iure aut&quot;,
-            &quot;address&quot;: &quot;44444 Dannie Points\nEdberg, WY 15933-9698&quot;,
-            &quot;city&quot;: &quot;Davonland&quot;,
-            &quot;state&quot;: &quot;Quia.&quot;,
-            &quot;zip&quot;: &quot;94313-9500&quot;,
-            &quot;country&quot;: &quot;RE&quot;,
-            &quot;lat&quot;: &quot;-49.692284&quot;,
-            &quot;lon&quot;: &quot;117.526566&quot;
+            &quot;name&quot;: &quot;consequatur provident quo eaque assumenda&quot;,
+            &quot;address&quot;: &quot;46424 Kautzer Square Apt. 131\nStoltenbergside, MT 10023&quot;,
+            &quot;city&quot;: &quot;Port Kamrenhaven&quot;,
+            &quot;state&quot;: &quot;Et.&quot;,
+            &quot;zip&quot;: &quot;12977&quot;,
+            &quot;country&quot;: &quot;BL&quot;,
+            &quot;lat&quot;: &quot;-65.835211&quot;,
+            &quot;lon&quot;: &quot;57.246265&quot;
         },
-        &quot;created_at&quot;: &quot;2025-07-01T21:35:16.000000Z&quot;
+        &quot;created_at&quot;: &quot;2025-07-02T15:42:50.000000Z&quot;
     }
 ]</code>
  </pre>
@@ -381,21 +381,21 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;title&quot;: &quot;repellat&quot;,
-        &quot;path&quot;: &quot;http://www.breitenberg.com/&quot;,
-        &quot;changed&quot;: &quot;2025-07-01T21:35:16.000000Z&quot;,
-        &quot;field_city&quot;: &quot;Port Taya&quot;,
+        &quot;title&quot;: &quot;debitis&quot;,
+        &quot;path&quot;: &quot;https://www.volkman.com/quas-quos-id-rerum-et-dolorem&quot;,
+        &quot;changed&quot;: &quot;2025-07-02T15:42:51.000000Z&quot;,
+        &quot;field_city&quot;: &quot;Cummingsbury&quot;,
         &quot;field_event_service&quot;: null,
         &quot;field_events_api_key&quot;: null,
-        &quot;field_focus_area&quot;: &quot;voluptas&quot;,
-        &quot;field_homepage&quot;: &quot;et&quot;,
-        &quot;field_event_calendar_homepage&quot;: &quot;https://www.haley.com/harum-eum-velit-sint-unde&quot;,
-        &quot;field_primary_contact_person&quot;: &quot;quaerat&quot;,
+        &quot;field_focus_area&quot;: &quot;ipsam&quot;,
+        &quot;field_homepage&quot;: &quot;debitis&quot;,
+        &quot;field_event_calendar_homepage&quot;: &quot;http://quigley.biz/nihil-ipsum-debitis-magnam&quot;,
+        &quot;field_primary_contact_person&quot;: &quot;odit&quot;,
         &quot;field_org_status&quot;: &quot;active&quot;,
-        &quot;field_organization_type&quot;: &quot;sed&quot;,
+        &quot;field_organization_type&quot;: &quot;tenetur&quot;,
         &quot;field_year_established&quot;: 2025,
         &quot;field_org_tags&quot;: &quot;&quot;,
-        &quot;uuid&quot;: 95
+        &quot;uuid&quot;: 101
     }
 ]</code>
  </pre>
