@@ -4,7 +4,7 @@ version: '3'
 services:
   hackgreenville:
     build:
-      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.1}'
+      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.3}'
       dockerfile: Dockerfile
       args:
         WWWGROUP: '${WWWGROUP:-www-data}'
