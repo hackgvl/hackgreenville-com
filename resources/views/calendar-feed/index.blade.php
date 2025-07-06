@@ -172,22 +172,6 @@
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
 
-        .feed-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .feed-title {
-            font-weight: 600;
-            color: #2d3748;
-            font-size: 1.25rem;
-            margin: 0;
-        }
-
-        .feed-body {
-            padding: 1.5rem;
-        }
-
         .feed-item {
             display: flex;
             align-items: center;
