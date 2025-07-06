@@ -8,9 +8,9 @@ use HackGreenville\SlackEventsBot\Services\BotService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
 use HackGreenville\SlackEventsBot\Services\EventService;
 use HackGreenville\SlackEventsBot\Services\MessageBuilderService;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Console\Scheduling\Schedule;
 
 class SlackEventsBotServiceProvider extends ServiceProvider
 {

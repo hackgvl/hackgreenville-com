@@ -127,10 +127,10 @@ class SlackController
         $originalCommand = $command;
 
         // Normalize dev commands to match production commands
-        // if (str_starts_with($command, '/dev_')) {
-        //     $command = str_replace('/dev_', '/', $command);
-        //     Log::info('Normalized dev command', ['original' => $originalCommand, 'normalized' => $command]);
-        // }
+        if (app()->isLocal() && str_starts_with($command, '/dev_')) {
+            $command = str_replace('/dev_', '/', $command);
+            Log::info('Normalized dev command', ['original' => $originalCommand, 'normalized' => $command]);
+        }
 
         switch ($command) {
             case '/add_channel':
@@ -174,7 +174,7 @@ class SlackController
             case '/check_api':
                 Log::info('Executing /check_api command', ['user_id' => $userId, 'team_domain' => $teamDomain]);
                 // Check cooldown
-                if ($teamDomain) {
+                if ( ! app()->isLocal() && $teamDomain) {
                     $expiryTime = $this->databaseService->getCooldownExpiryTime($teamDomain, 'check_api');
 
                     if ($expiryTime && $expiryTime->isFuture()) {
