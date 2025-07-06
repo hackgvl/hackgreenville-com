@@ -6,6 +6,29 @@
 @section('content')
     <div class="container py-5  d-flex justify-content-center">
         <div class="col-lg-8 col-sm-12">
+            <h1 class="font-weight-bold">Subscribe to a Personalized Calendar</h1>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="font-weight-bold">How Does it Work?</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Select one or more organizations to follow and press 'Generate Calendar Feed Link'</li>
+                        <li>Add this generated link to your preferred calendar application, often configured under 'By URL', 'iCal / WebCal', or 'From Web'
+                            <ul>
+                                <li><a href="https://support.google.com/calendar/answer/37100#:~:text=Use%20a%20link%20to%20add%20a%20public%20calendar" rel="nofollow">Google</a></li>
+                                <li><a href="https://support.microsoft.com/en-us/office/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web-cff1429c-5af6-41ec-a5b4-74f2c278e98c#ID0EDLBBDDD" rel="nofollow">Outlook</a></li>
+                                <li><a href="https://support.mozilla.org/en-US/kb/creating-new-calendars#w_on-the-network-connect-to-your-online-calendars" rel="nofollow">Thunderbird</a></li>
+                                <li><a href="https://support.apple.com/guide/calendar/subscribe-to-calendars-icl1022/mac" rel="nofollow">Apple</a></li>
+                            </ul>
+                        </li>
+                        <li>Due to performance caching, updates by event organizers may take hours to refresh within your calendar app</li> 
+                        <li>Changing your subscription in the future will require generating a new link and replacing the URL in your calendar application</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="feed-container" x-data="{
             feeds: {{ \Illuminate\Support\Js::encode($organizations) }},
             copied: false,
@@ -60,83 +83,86 @@
                 }
             }
         }">
-                <div class="feed-header">
-                    <h3 class="feed-title">
-                        Curated Event Feed
-                    </h3>
-                </div>
-                <div class="feed-body">
-
-                    <div class="feed-item bg-white/5 m-2 select-all-item" @click="toggleAll()">
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox"
-                                   class="custom-control-input"
-                                   id="selectAll"
-                                   :checked="allSelected"
-                                   :indeterminate="someSelected"
-                                   @click="toggleAll()">
-                            <label class="custom-control-label" for="selectAll"></label>
-                        </div>
-                        <span class="feed-name">Select All / None</span>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="font-weight-bold">
+                            Organizations
+                        </h3>
                     </div>
+                    <div class="card-body">
 
-                    <div class="feed-divider"></div>
-
-                    <template x-for="feed in feeds" :key="feed.id">
-                        <div class="feed-item m-2"
-                             @click="toggleFeed(feed)">
+                        <div class="feed-item bg-white/5 m-2 select-all-item" @click="toggleAll()">
                             <div class="custom-control custom-switch">
                                 <input type="checkbox"
                                        class="custom-control-input"
-                                       :id="feed.id"
-                                       x-model="feed.checked"
-                                       @click="toggleFeed(feed)"
-                                />
-                                <label class="custom-control-label" :for="feed.id"></label>
+                                       id="selectAll"
+                                       :checked="allSelected"
+                                       :indeterminate="someSelected"
+                                       @click="toggleAll()">
+                                <label class="custom-control-label" for="selectAll"></label>
                             </div>
-                            <span
-                                class="feed-name"
-                                :class="{
-                                    'font-weight-bold': feed.checked,
-                                }"
-                                x-text="feed.title"></span>
+                            <span class="feed-name">Select All / None</span>
                         </div>
-                    </template>
 
-                    <div class="text-center mt-4 d-flex flex-column align-items-center">
-                        <a :href="feedUrl('webcal://')" class="btn btn-primary text-decoration-none mb-3">
-                            Subscribe to Calendar Feed
-                        </a>
+                        <div class="feed-divider"></div>
 
-                        <input type="text" class="form-control mb-3" :value="feedUrl" readonly />
+                        <template x-for="feed in feeds" :key="feed.id">
+                            <div class="feed-item m-2"
+                                 @click="toggleFeed(feed)">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox"
+                                           class="custom-control-input"
+                                           :id="feed.id"
+                                           x-model="feed.checked"
+                                           @click="toggleFeed(feed)"
+                                    />
+                                    <label class="custom-control-label" :for="feed.id"></label>
+                                </div>
+                                <span
+                                    class="feed-name"
+                                    :class="{
+                                        'font-weight-bold': feed.checked,
+                                    }"
+                                    x-text="feed.title"></span>
+                            </div>
+                        </template>
 
-                        <button class="copy-btn"
-                                @click="copyLink()"
-                                :class="{ 'copied': copied }">
-                            <template x-if="!copied">
-                                <svg class="copy-icon mr-2" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 4V16C8 17.1046 8.89543 18 10 18H20C21.1046 18 22 17.1046 22 16V7.41421C22 6.88378 21.7893 6.37507 21.4142 6L20 4.58579C19.6249 4.21071 19.1162 4 18.5858 4H10C8.89543 4 8 4.89543 8 6"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round" />
-                                    <path d="M16 4V2C16 0.89543 15.1046 0 14 0H4C2.89543 0 2 0.895431 2 2V12C2 13.1046 2.89543 14 4 14H6"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round" />
-                                </svg>
-                            </template>
-                            <template x-if="copied">
-                                <svg class="copy-icon mr-2" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </template>
-                            <span x-text="copied ? 'Copied!' : 'Copy Link'"></span>
-                        </button>
+                        <div class="text-center mt-4 d-flex flex-column align-items-center">
+                            <a :href="feedUrl('webcal://')" class="btn btn-primary text-decoration-none mb-3">
+                                Generate Calendar Feed Link
+                            </a>
+
+                            <input type="text" class="form-control mb-3" :value="feedUrl" readonly />
+
+                            <button class="copy-btn"
+                                    @click="copyLink()"
+                                    :class="{ 'copied': copied }">
+                                <template x-if="!copied">
+                                    <svg class="copy-icon mr-2" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 4V16C8 17.1046 8.89543 18 10 18H20C21.1046 18 22 17.1046 22 16V7.41421C22 6.88378 21.7893 6.37507 21.4142 6L20 4.58579C19.6249 4.21071 19.1162 4 18.5858 4H10C8.89543 4 8 4.89543 8 6"
+                                              stroke="currentColor"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round" />
+                                        <path d="M16 4V2C16 0.89543 15.1046 0 14 0H4C2.89543 0 2 0.895431 2 2V12C2 13.1046 2.89543 14 4 14H6"
+                                              stroke="currentColor"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round" />
+                                    </svg>
+                                </template>
+                                <template x-if="copied">
+                                    <svg class="copy-icon mr-2" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </template>
+                                <span x-text="copied ? 'Copied!' : 'Copy Link'"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <style>
