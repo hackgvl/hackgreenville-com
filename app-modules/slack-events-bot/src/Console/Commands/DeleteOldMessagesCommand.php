@@ -19,14 +19,14 @@ class DeleteOldMessagesCommand extends Command
     public function handle(): int
     {
         $days = (int) $this->option('days');
-        $this->info("Deleting messages older than {$days} days...");
+        $this->info("Deleting messages and cooldowns older than {$days} days...");
 
         try {
             $this->databaseService->deleteOldMessages($days);
-            $this->info('Old messages deleted successfully!');
+            $this->info('Old messages and cooldowns deleted successfully!');
             return self::SUCCESS;
         } catch (Exception $e) {
-            $this->error('Error deleting old messages: ' . $e->getMessage());
+            $this->error('Error deleting old messages and cooldowns: ' . $e->getMessage());
             return self::FAILURE;
         }
     }

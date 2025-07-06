@@ -2,6 +2,7 @@
 
 namespace HackGreenville\SlackEventsBot\Providers;
 
+use HackGreenville\SlackEventsBot\Console\Commands\DeleteOldMessagesCommand;
 use HackGreenville\SlackEventsBot\Services\AuthService;
 use HackGreenville\SlackEventsBot\Services\BotService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
@@ -9,6 +10,7 @@ use HackGreenville\SlackEventsBot\Services\EventService;
 use HackGreenville\SlackEventsBot\Services\MessageBuilderService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Console\Scheduling\Schedule;
 
 class SlackEventsBotServiceProvider extends ServiceProvider
 {
@@ -36,6 +38,19 @@ class SlackEventsBotServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadRoutes();
+
+        // Register commands
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                DeleteOldMessagesCommand::class,
+            ]);
+        }
+
+        // Schedule tasks
+        $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
+            // Delete old messages once daily
+            $schedule->command('slack:delete-old-messages')->daily();
+        });
     }
 
     protected function loadRoutes(): void
@@ -47,18 +62,5 @@ class SlackEventsBotServiceProvider extends ServiceProvider
 
         Route::middleware('web')
             ->group("{$this->moduleDir}/routes/web.php");
-
-        // // Register commands
-        // if ($this->app->runningInConsole()) {
-        //     $this->commands([
-        //         DeleteOldMessagesCommand::class,
-        //     ]);
-        // }
-
-        // // Schedule tasks
-        // $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
-        //     // Delete old messages once daily
-        //     $schedule->command('slack:delete-old-messages')->daily();
-        // });
     }
 }
