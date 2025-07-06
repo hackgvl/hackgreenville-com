@@ -13,7 +13,7 @@ By default, results are returned in JSON format.
 
 ## Limitations and Gotchas
 * The Events API's responses are controlled by [server .env variables](/CONTRIBUTING.md#environment-variables) that may limit the data available to calling / consuming applications. Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the HackGreenville.com Events API endpoints referenced above.
-* The productive / live website is cached and changes may take up to 4 hours to show due to the cache.
+* The production / live website is cached and changes may take up to 4 hours to show due to the cache.
 * All timestamps are in UTC.  
 * The event description fields may include HTML markup.  This application does not sanitize those fields and it's unclear if the upstream source should be trusted, so sanitize any output to avoid malicious cross-site scripting (XSS).
 * Previously, an `Accept: application/json+ld` header could be sent to the API to fetch [Schema.org Event markup](https://schema.org/Event) in JSON+LD format. However, this feature is not implemented in the newest version.
