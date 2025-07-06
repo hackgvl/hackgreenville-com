@@ -6,7 +6,9 @@ use Carbon\Carbon;
 use HackGreenville\SlackEventsBot\Models\SlackChannel;
 use HackGreenville\SlackEventsBot\Models\SlackCooldown;
 use HackGreenville\SlackEventsBot\Models\SlackMessage;
+use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 
 class DatabaseService
 {
@@ -20,7 +22,7 @@ class DatabaseService
         $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->firstOrFail();
 
         return SlackMessage::create([
-            'week' => $week,
+            'week' => $week->toDateTimeString(),
             'message' => $message,
             'message_timestamp' => $messageTimestamp,
             'channel_id' => $channel->id,
@@ -36,7 +38,7 @@ class DatabaseService
     ): int {
         $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->firstOrFail();
 
-        return SlackMessage::where('week', $week)
+        return SlackMessage::whereDate('week', $week->toDateString())
             ->where('message_timestamp', $messageTimestamp)
             ->where('channel_id', $channel->id)
             ->update(['message' => $message]);
@@ -45,7 +47,8 @@ class DatabaseService
     public function getMessages(Carbon $week): Collection
     {
         return SlackMessage::with('channel')
-            ->where('week', $week)
+            ->whereDate('week', $week->toDateString())
+            ->orderBy('channel_id')
             ->orderBy('sequence_position')
             ->get()
             ->map(fn ($message) => [
@@ -66,7 +69,7 @@ class DatabaseService
 
         $message = SlackMessage::where('channel_id', $channel->id)
             ->orderBy('week', 'desc')
-            ->orderBy('message_timestamp', 'desc')
+            ->orderBy('sequence_position', 'desc')
             ->first();
 
         if ( ! $message) {
@@ -87,7 +90,7 @@ class DatabaseService
 
     public function addChannel(string $slackChannelId): SlackChannel
     {
-        return SlackChannel::create(['slack_channel_id' => $slackChannelId]);
+        return SlackChannel::firstOrCreate(['slack_channel_id' => $slackChannelId]);
     }
 
     public function removeChannel(string $slackChannelId): int
@@ -95,12 +98,40 @@ class DatabaseService
         return SlackChannel::where('slack_channel_id', $slackChannelId)->delete();
     }
 
+    public function deleteMessagesForWeek(Carbon $week): int
+    {
+        return SlackMessage::whereDate('week', $week->toDateString())->delete();
+    }
+
+    /**
+     * Deletes a specific message by its Slack channel ID and timestamp.
+     * This is used for cleaning up individual messages no longer needed.
+     *
+     * @param string $slackChannelId The Slack channel ID.
+     * @param string $messageTimestamp The Slack message timestamp (ts).
+     * @return int The number of deleted records.
+     */
+    public function deleteMessage(string $slackChannelId, string $messageTimestamp): int
+    {
+        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+
+        if ( ! $channel) {
+            Log::warning("Attempted to delete message in non-existent channel: {$slackChannelId}");
+            return 0;
+        }
+
+        return SlackMessage::where('channel_id', $channel->id)
+            ->where('message_timestamp', $messageTimestamp)
+            ->delete();
+    }
+
+
     public function deleteOldMessages(int $daysBack = 90): void
     {
         $cutoffDate = Carbon::now()->subDays($daysBack);
 
         // Delete old messages
-        SlackMessage::whereRaw('CAST(message_timestamp AS DECIMAL) < ?', [$cutoffDate->timestamp])
+        SlackMessage::whereDate('week', '<', $cutoffDate->startOfWeek()->toDateString())
             ->delete();
 
         // Delete old cooldowns
@@ -127,5 +158,17 @@ class DatabaseService
             ->first();
 
         return $cooldown?->expires_at;
+    }
+
+    public function createOrUpdateWorkspace(array $data): SlackWorkspace
+    {
+        return SlackWorkspace::updateOrCreate(
+            ['team_id' => $data['team']['id']],
+            [
+                'team_name' => $data['team']['name'],
+                'access_token' => $data['access_token'],
+                'bot_user_id' => $data['bot_user_id'],
+            ]
+        );
     }
 }

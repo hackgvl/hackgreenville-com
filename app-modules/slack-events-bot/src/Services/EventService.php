@@ -9,12 +9,18 @@ class EventService
 {
     public function generateBlocks(Event $event): array
     {
+        $eventName = trim((string) $event->event_name);
+        if (empty($eventName)) {
+            $eventName = 'Untitled Event';
+        }
+        $limitedEventName = Str::limit($eventName, 150);
+
         return [
             [
                 'type' => 'header',
                 'text' => [
                     'type' => 'plain_text',
-                    'text' => Str::limit($event->title, 250),
+                    'text' => $limitedEventName,
                 ],
             ],
             [
@@ -24,7 +30,7 @@ class EventService
                     'text' => Str::limit($event->description, 250),
                 ],
                 'fields' => [
-                    ['type' => 'mrkdwn', 'text' => '*' . Str::limit($event->organization->title) . '*', 250],
+                    ['type' => 'mrkdwn', 'text' => '*' . Str::limit($event->organization->title) . '*'],
                     ['type' => 'mrkdwn', 'text' => '<' . $event->url . '|*Link* :link:>'],
                     ['type' => 'mrkdwn', 'text' => '*Status*'],
                     ['type' => 'mrkdwn', 'text' => $this->printStatus($event->status)],
@@ -40,8 +46,9 @@ class EventService
     public function generateText(Event $event): string
     {
         return sprintf(
-            "%s\nDescription: %s\nLink: %s\nStatus: %s\nLocation: %s\nTime: %s",
-            Str::limit($event->title, 250),
+            "%s\nOrganization: %s\nDescription: %s\nLink: %s\nStatus: %s\nLocation: %s\nTime: %s",
+            Str::limit($event->event_name, 250),
+            Str::limit($event->organization->title, 250),
             Str::limit($event->description, 250),
             $event['url'],
             $this->printStatus($event->status),
