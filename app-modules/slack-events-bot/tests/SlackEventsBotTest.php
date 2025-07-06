@@ -2,11 +2,16 @@
 
 namespace HackGreenville\SlackEventsBot\Tests;
 
+use App\Models\Event;
+use App\Models\Org;
+use App\Models\State;
+use App\Models\Venue;
 use Carbon\Carbon;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
 use HackGreenville\SlackEventsBot\Services\EventService;
 use HackGreenville\SlackEventsBot\Services\MessageBuilderService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Collection;
 use Tests\TestCase;
 
 class SlackEventsBotTest extends TestCase
@@ -29,16 +34,12 @@ class SlackEventsBotTest extends TestCase
     public function test_can_add_and_remove_channel()
     {
         $channelId = 'C1234567890';
-
-        // Add channel
-        $channel = $this->databaseService->addChannel($channelId);
+        $this->databaseService->addChannel($channelId);
         $this->assertDatabaseHas('slack_channels', ['slack_channel_id' => $channelId]);
 
-        // Get channels
         $channels = $this->databaseService->getSlackChannelIds();
         $this->assertTrue($channels->contains($channelId));
 
-        // Remove channel
         $this->databaseService->removeChannel($channelId);
         $this->assertDatabaseMissing('slack_channels', ['slack_channel_id' => $channelId]);
     }
@@ -46,16 +47,24 @@ class SlackEventsBotTest extends TestCase
     public function test_can_create_and_get_messages()
     {
         $channelId = 'C1234567890';
-        $this->databaseService->addChannel($channelId);
+        $channel = $this->databaseService->addChannel($channelId);
+        $this->assertDatabaseHas('slack_channels', ['slack_channel_id' => $channelId]);
 
         $week = Carbon::now()->startOfWeek();
         $message = 'Test message content';
         $timestamp = '1234567890.123456';
+        $sequencePosition = 0;
 
-        // Create message
-        $this->databaseService->createMessage($week, $message, $timestamp, $channelId, 0);
+        $this->databaseService->createMessage($week, $message, $timestamp, $channelId, $sequencePosition);
 
-        // Get messages
+        $this->assertDatabaseHas('slack_messages', [
+            'message' => $message,
+            'message_timestamp' => $timestamp,
+            'week' => $week->toDateTimeString(),
+            'sequence_position' => $sequencePosition,
+            'channel_id' => $channel->id,
+        ]);
+
         $messages = $this->databaseService->getMessages($week);
         $this->assertCount(1, $messages);
         $this->assertEquals($message, $messages->first()['message']);
@@ -64,42 +73,43 @@ class SlackEventsBotTest extends TestCase
 
     public function test_event_parsing()
     {
-        $eventData = [
+        $state = State::factory()->create(['abbr' => 'SC']);
+
+        $organization = Org::factory()->create(['title' => 'Test Group']);
+        $venue = Venue::factory()->create([
+            'name' => 'Test Venue',
+            'address' => '123 Main St',
+            'city' => 'Greenville',
+            'state_id' => $state->id,
+            'zipcode' => '29601',
+        ]);
+        $event = Event::factory()->create([
             'event_name' => 'Test Event',
-            'group_name' => 'Test Group',
             'description' => 'This is a test event description',
-            'venue' => [
-                'name' => 'Test Venue',
-                'address' => '123 Main St',
-                'city' => 'Greenville',
-                'state' => 'SC',
-                'zip' => '29601',
-                'lat' => null,
-                'lon' => null,
-            ],
-            'time' => '2024-01-15T18:00:00-05:00',
-            'url' => 'https://example.com/event',
-            'status' => 'upcoming',
-            'uuid' => 'test-uuid-123',
-        ];
+            'uri' => 'https://example.com/event',
+            'event_uuid' => 'test-uuid-123',
+            'active_at' => Carbon::now()->addDays(7),
+            'organization_id' => $organization->id,
+            'venue_id' => $venue->id,
+        ]);
 
-        $event = $this->eventService->createEventFromJson($eventData);
+        $event->load('organization', 'venue');
 
-        $this->assertEquals('Test Event', $event['title']);
-        $this->assertEquals('Test Group', $event['group_name']);
-        $this->assertEquals('Test Venue at 123 Main St Greenville, SC 29601', $event['location']);
-        $this->assertInstanceOf(Carbon::class, $event['time']);
-
-        // Test block generation
         $blocks = $this->eventService->generateBlocks($event);
         $this->assertIsArray($blocks);
         $this->assertEquals('header', $blocks[0]['type']);
         $this->assertEquals('section', $blocks[1]['type']);
+        $this->assertEquals('Test Event', $blocks[0]['text']['text']);
+        $this->assertArrayHasKey('type', $blocks[1]['text']);
+        $this->assertArrayHasKey('text', $blocks[1]['text']);
+        $this->assertStringContainsString('This is a test event description', $blocks[1]['text']['text']);
 
-        // Test text generation
         $text = $this->eventService->generateText($event);
         $this->assertStringContainsString('Test Event', $text);
         $this->assertStringContainsString('Test Group', $text);
+        $this->assertStringContainsString('Test Venue', $text);
+        $this->assertStringContainsString('https://example.com/event', $text);
+        $this->assertStringContainsString('Upcoming ✅', $text);
     }
 
     public function test_cooldown_functionality()
@@ -123,24 +133,38 @@ class SlackEventsBotTest extends TestCase
     public function test_message_chunking()
     {
         $weekStart = Carbon::now()->startOfWeek();
-        $weekEnd = $weekStart->copy()->addDays(7);
+        $state = State::factory()->create(['abbr' => 'SC']);
 
-        // Create multiple events
-        $events = [];
+        $eventsData = [];
         for ($i = 0; $i < 10; $i++) {
-            $events[] = [
+            $organization = Org::factory()->create(['title' => "Group {$i}"]);
+            $venue = Venue::factory()->create([
+                'name' => "Venue {$i}",
+                'address' => "{$i} Main St",
+                'city' => 'Greenville',
+                'state_id' => $state->id,
+                'zipcode' => '29601',
+            ]);
+
+            $event = Event::factory()->create([
                 'event_name' => "Event {$i} with a very long title that takes up space",
-                'group_name' => "Group {$i}",
                 'description' => str_repeat("This is a long description. ", 10),
-                'venue' => ['name' => "Venue {$i}"],
-                'time' => $weekStart->copy()->addDays($i % 7)->toIso8601String(),
-                'url' => "https://example.com/event-{$i}",
-                'status' => 'upcoming',
-                'uuid' => "uuid-{$i}",
-            ];
+                'uri' => "https://example.com/event-{$i}",
+                'active_at' => $weekStart->copy()->addDays($i % 7),
+                'organization_id' => $organization->id,
+                'venue_id' => $venue->id,
+                'event_uuid' => 'test-uuid-123-' . $i,
+            ]);
+
+            $event->load('organization', 'venue');
+
+            $eventsData[] = $event;
         }
 
-        $eventBlocks = $this->messageBuilderService->buildEventBlocks($events, $weekStart, $weekEnd);
+        $eventsCollection = collect($eventsData);
+
+        $eventBlocks = $this->messageBuilderService->buildEventBlocks($eventsCollection);
+        $this->assertInstanceOf(Collection::class, $eventBlocks);
         $this->assertGreaterThan(0, $eventBlocks->count());
 
         $chunkedMessages = $this->messageBuilderService->chunkMessages($eventBlocks, $weekStart);

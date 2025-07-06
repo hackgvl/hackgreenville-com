@@ -4,6 +4,7 @@ namespace HackGreenville\SlackEventsBot\Services;
 
 use App\Models\Event;
 use Carbon\Carbon;
+use Exception;
 use HackGreenville\SlackEventsBot\Exceptions\UnsafeMessageSpilloverException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
@@ -22,20 +23,19 @@ class BotService
         $channels = $this->databaseService->getSlackChannelIds();
         $existingMessages = $this->databaseService->getMessages($week);
 
-        // Group existing messages by channel
         $messageDetails = [];
-        foreach ($existingMessages as $existingMessage) {
-            $channelId = $existingMessage['slack_channel_id'];
-            if ( ! isset($messageDetails[$channelId])) {
-                $messageDetails[$channelId] = [];
-            }
-            $messageDetails[$channelId][] = [
-                'timestamp' => $existingMessage['message_timestamp'],
-                'message' => $existingMessage['message'],
-            ];
-        }
+        foreach ($channels as $channelId) {
+            $messageDetails[$channelId] = [];
+            $channelExistingMessages = $existingMessages->where('slack_channel_id', $channelId);
 
-        $postedChannelsSet = array_keys($messageDetails);
+            foreach ($channelExistingMessages as $existingMessage) {
+                $position = $existingMessage['sequence_position'];
+                $messageDetails[$channelId][$position] = [
+                    'timestamp' => $existingMessage['message_timestamp'],
+                    'message_text' => $existingMessage['message'],
+                ];
+            }
+        }
 
         foreach ($channels as $slackChannelId) {
             try {
@@ -43,92 +43,111 @@ class BotService
                     $msgText = $msg['text'];
                     $msgBlocks = $msg['blocks'];
 
-                    // If new events now warrant additional messages being posted
-                    if ($msgIdx > count($messageDetails[$slackChannelId] ?? []) - 1) {
-                        if ($this->isUnsafeToSpillover(
-                            count($existingMessages),
-                            count($messages),
-                            $week,
-                            $slackChannelId
-                        )) {
-                            throw new UnsafeMessageSpilloverException;
-                        }
+                    $existingMsgDetail = $messageDetails[$slackChannelId][$msgIdx] ?? null;
 
-                        Log::info("Posting an additional message for week {$week->format('F j')} in {$slackChannelId}");
-
-                        $slackResponse = $this->postNewMessage($slackChannelId, $msgBlocks, $msgText);
-
-                        $this->databaseService->createMessage(
-                            $week,
-                            $msgText,
-                            $slackResponse['ts'],
-                            $slackChannelId,
-                            $msgIdx
-                        );
-                    } elseif (
-                        in_array($slackChannelId, $postedChannelsSet)
-                        && $msgText === $messageDetails[$slackChannelId][$msgIdx]['message']
+                    if (
+                        ! $existingMsgDetail
+                        || $msgText !== $existingMsgDetail['message_text']
                     ) {
+                        if ( ! $existingMsgDetail) {
+                            if ($this->isUnsafeToSpillover(
+                                count($existingMessages->where('slack_channel_id', $slackChannelId)),
+                                count($messages),
+                                $week,
+                                $slackChannelId
+                            )) {
+                                throw new UnsafeMessageSpilloverException;
+                            }
+
+                            Log::info("Posting new message " . ($msgIdx + 1) . " for week {$week->format('F j')} in {$slackChannelId}");
+
+                            $slackResponse = $this->postNewMessage($slackChannelId, $msgBlocks, $msgText);
+
+                            $this->databaseService->createMessage(
+                                $week,
+                                $msgText,
+                                $slackResponse['ts'],
+                                $slackChannelId,
+                                $msgIdx
+                            );
+                        } else { // An existing message needs to be updated
+                            if ($this->isUnsafeToSpillover(
+                                count($existingMessages->where('slack_channel_id', $slackChannelId)),
+                                count($messages),
+                                $week,
+                                $slackChannelId
+                            )) {
+                                throw new UnsafeMessageSpilloverException;
+                            }
+
+                            Log::info(
+                                "Updating message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
+                                "in {$slackChannelId} due to text content change."
+                            );
+
+                            $timestamp = $existingMsgDetail['timestamp'];
+
+                            $slackResponse = Http::withToken(config('slack-events-bot.bot_token'))
+                                ->post('https://slack.com/api/chat.update', [
+                                    'ts' => $timestamp,
+                                    'channel' => $slackChannelId,
+                                    'blocks' => $msgBlocks,
+                                    'text' => $msgText,
+                                ]);
+
+                            $json = $slackResponse->json();
+
+                            if ( ! $slackResponse->successful() || ! ($json['ok'] ?? false)) {
+                                $error = $json['error'] ?? 'unknown_error';
+                                Log::error("Failed to update message {$timestamp} in Slack channel {$slackChannelId}", [
+                                    'error' => $error,
+                                    'response' => $json,
+                                ]);
+                                throw new Exception("Slack API error when updating message: {$error}");
+                            }
+
+                            $this->databaseService->updateMessage(
+                                $week,
+                                $msgText,
+                                $timestamp,
+                                $slackChannelId
+                            );
+                        }
+                    } else {
                         Log::info(
                             "Message " . ($msgIdx + 1) . " for week of {$week->format('F j')} " .
                             "in {$slackChannelId} hasn't changed, not updating"
                         );
-                    } elseif (in_array($slackChannelId, $postedChannelsSet)) {
-                        if ($this->isUnsafeToSpillover(
-                            count($existingMessages),
-                            count($messages),
-                            $week,
-                            $slackChannelId
-                        )) {
-                            throw new UnsafeMessageSpilloverException;
-                        }
-
-                        Log::info(
-                            "Updating message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
-                            "in {$slackChannelId}"
-                        );
-
-                        $timestamp = $messageDetails[$slackChannelId][$msgIdx]['timestamp'];
-
-                        $response = Http::withToken(config('slack-events-bot.bot_token'))
-                            ->post('https://slack.com/api/chat.update', [
-                                'ts' => $timestamp,
-                                'channel' => $slackChannelId,
-                                'blocks' => $msgBlocks,
-                                'text' => $msgText,
-                            ]);
-
-                        $this->databaseService->updateMessage($week, $msgText, $timestamp, $slackChannelId);
-                    } else {
-                        Log::info(
-                            "Posting message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
-                            "in {$slackChannelId}"
-                        );
-
-                        $slackResponse = $this->postNewMessage($slackChannelId, $msgBlocks, $msgText);
-
-                        $this->databaseService->createMessage(
-                            $week,
-                            $msgText,
-                            $slackResponse['ts'],
-                            $slackChannelId,
-                            $msgIdx
-                        );
                     }
                 }
+                // Handle deletion of messages if the new set has fewer messages
+                $currentMessageCountForChannel = count($messageDetails[$slackChannelId] ?? []);
+                for ($i = count($messages); $i < $currentMessageCountForChannel; $i++) {
+                    $timestampToDelete = $messageDetails[$slackChannelId][$i]['timestamp'] ?? null;
+                    if ($timestampToDelete) {
+                        Log::info("Deleting old message (sequence_position " . ($i) . ") for week of {$week->format('F j')} in {$slackChannelId}. No longer needed.");
+                        Http::withToken(config('slack-events-bot.bot_token'))
+                            ->post('https://slack.com/api/chat.delete', [
+                                'channel' => $slackChannelId,
+                                'ts'      => $timestampToDelete,
+                            ]);
+                        $this->databaseService->deleteMessage($slackChannelId, $timestampToDelete);
+                    }
+                }
+
             } catch (UnsafeMessageSpilloverException $e) {
                 Log::error(
                     "Cannot update messages for {$week->format('m/d/Y')} for channel {$slackChannelId}. " .
                     "New events have caused the number of messages needed to increase, " .
                     "but the next week's post has already been sent. Cannot resize. " .
-                    "Existing message count: " . count($existingMessages) . " --- New message count: " . count($messages)
+                    "Existing message count: " . count($existingMessages->where('slack_channel_id', $slackChannelId)) . " --- New message count: " . count($messages)
                 );
-                continue;
+                throw $e;
             }
         }
     }
 
-    public function parseEventsForWeek(Collection $events): void
+    public function parseEventsForWeek(Collection $events, Carbon $weekStart): void
     {
         $eventBlocks = $this->messageBuilderService->buildEventBlocks($events);
         $chunkedMessages = $this->messageBuilderService->chunkMessages($eventBlocks, $weekStart);
@@ -138,18 +157,46 @@ class BotService
 
     public function handlePostingToSlack(): void
     {
-        // Keep current week's post up to date
-        $this->parseEventsForWeek(
-            events: Event::query()
-                ->with(['venue.state', 'organization'])
-                ->published()
-                ->whereBetween('active_at', [
-                    now()->copy()->startOfWeek(),
-                    now()->copy()->addDays(7),
-                ])
-                ->oldest('active_at')
-                ->get()
-        );
+        $weekStart = now()->copy()->startOfWeek();
+
+        $events = Event::query()
+            ->with(['venue.state', 'organization'])
+            ->published()
+            ->whereBetween('active_at', [
+                $weekStart,
+                $weekStart->copy()->endOfWeek(),
+            ])
+            ->oldest('active_at')
+            ->get();
+
+        if ($events->isEmpty()) {
+            Log::info("No upcoming events found for the week of {$weekStart->format('F j')}. Cleaning up any existing messages for this week.");
+            $this->deleteMessagesForWeek($weekStart);
+        } else {
+            $this->parseEventsForWeek($events, $weekStart);
+        }
+    }
+
+    private function deleteMessagesForWeek(Carbon $week): void
+    {
+        $messagesToDelete = $this->databaseService->getMessages($week);
+
+        if ($messagesToDelete->isEmpty()) {
+            return;
+        }
+
+        foreach ($messagesToDelete as $message) {
+            Log::info("Deleting stale message {$message['message_timestamp']} in channel {$message['slack_channel_id']}.");
+            Http::withToken(config('slack-events-bot.bot_token'))
+                ->post('https://slack.com/api/chat.delete', [
+                    'channel' => $message['slack_channel_id'],
+                    'ts'      => $message['message_timestamp'],
+                ]);
+            // We don't care if the deletion fails on Slack's end (e.g., message already deleted),
+            // we still want to remove it from our database.
+        }
+
+        $this->databaseService->deleteMessagesForWeek($week);
     }
 
     private function isUnsafeToSpillover(
@@ -177,7 +224,7 @@ class BotService
 
     private function postNewMessage(string $slackChannelId, array $msgBlocks, string $msgText): array
     {
-        $response = Http::withToken(config('slack-events-bot.bot_token'))
+        $slackResponse = Http::withToken(config('slack-events-bot.bot_token'))
             ->post('https://slack.com/api/chat.postMessage', [
                 'channel' => $slackChannelId,
                 'blocks' => $msgBlocks,
@@ -186,6 +233,17 @@ class BotService
                 'unfurl_media' => false,
             ]);
 
-        return $response->json();
+        $json = $slackResponse->json();
+
+        if ( ! $slackResponse->successful() || ! ($json['ok'] ?? false)) {
+            $error = $json['error'] ?? 'unknown_error';
+            Log::error("Failed to post new message to Slack channel {$slackChannelId}", [
+                'error' => $error,
+                'response' => $json,
+            ]);
+            throw new Exception("Slack API error when posting message: {$error}");
+        }
+
+        return $json;
     }
 }
