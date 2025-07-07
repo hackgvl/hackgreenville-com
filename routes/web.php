@@ -23,7 +23,7 @@ Route::get('/calendar-feed.ics', [CalendarFeedController::class, 'show'])->name(
 Route::get('/events', [EventsController::class, 'index'])->name('events.index');
 Route::get('/labs', [LabsController::class, 'index'])->name('labs.index');
 Route::get('/hg-nights', [HGNightsController::class, 'index'])->name('hg-nights.index');
-Route::get('/give', [GiveController::class, 'index'])->name('give');
+Route::get('/contribute', fn () => view('contribute'))->name('contribute');
 Route::get('/about', fn () => view('about'))->name('about');
 Route::get('/code-of-conduct', fn () => view('code-of-conduct'))->name('code-of-conduct');
 
@@ -41,3 +41,4 @@ Route::get('/styles', [StyleController::class, 'index'])->name('styles.index');
 
 // Redirects
 Route::redirect('/nights', '/hg-nights', 301);
+Route::redirect('/give', '/contribute', 301);
