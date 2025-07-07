@@ -40,6 +40,7 @@
                             <li class="list-group-item"><a href="/hg-nights">HackGreenville Nights</a></li>
                             <li class="list-group-item"><a href="https://refactorgvl.com">RefactorGVL</a></li>
                             <li class="list-group-item"><a href="/orgs/synergy-mill">Synergy Mill</a></li>
+                            <li class="list-group-item"><a href="/orgs/upwise">UpWiSE</a></li>
                         </ul>
                     </div>
                 </div>
