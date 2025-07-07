@@ -4,7 +4,6 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CalendarFeedController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventsController;
-use App\Http\Controllers\GiveController;
 use App\Http\Controllers\HGNightsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabsController;

@@ -10,9 +10,9 @@
                     <h1>Contribute</h1>
                     <p class="summary">Support the local organizations making things happen for our local tech workforce, makers, and tinkerers.</p>
                     <ul>
-                        <li>Volunteer your time or resources to a project or program</li>
-                        <li>Get the spotlight by sponsoring an event or initiative</li>
-                        <li>Donate money to our local non-profits</li>
+                        <li><strong>Volunteer</strong> your time or resources to a project or program</li>
+                        <li>Connect with <a href="/join-slack"><em>#community-organizers</em></a> and get the spotlight by <strong>sponsoring</strong> an event or initiative</li>
+                        <li><strong>Donate</strong> to our local non-profits</li>
                     </ul>
                 </div>
             </div>
