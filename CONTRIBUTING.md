@@ -325,8 +325,7 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 [Laravel's Artisan](https://laravel.com/docs/master/artisan) command line tool is heavily leveraged to execute framework and custom commands for development and administration tasks.
 
 - Run `php artisan` to see a full list of availabe commands.
-- The API explorer can be viewed at http://localhost/docs/api
-  - API documentation can be recompiled with `php artisan scribe:generate`
+- The API explorer can be viewed at http://localhost/docs/api and can be recompiled with `php artisan scribe:generate`
 - Running tests `php artisan test`
 - Refreshing events from the remote API: `php artisan import:events`
 - Run database migrations: `php artisan migrate --seed`
