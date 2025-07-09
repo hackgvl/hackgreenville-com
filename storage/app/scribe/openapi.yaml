@@ -1,0 +1,136 @@
+openapi: 3.0.3
+info:
+  title: 'HackGreenville API Documentation'
+  description: 'Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.'
+  version: 1.0.0
+servers:
+  -
+    url: '{{ config("app.url") }}'
+tags:
+  -
+    name: Endpoints
+    description: ''
+paths:
+  /api/v0/events:
+    get:
+      summary: 'Events API v0'
+      operationId: eventsAPIV0
+      description: 'This API provides access to event data stored in the HackGreenville database.'
+      parameters:
+        -
+          in: query
+          name: start_date
+          description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+          example: '2025-01-01'
+          required: false
+          schema:
+            type: string
+            description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+            example: '2025-01-01'
+            nullable: true
+        -
+          in: query
+          name: end_date
+          description: 'The end date for events filtering (inclusive). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+          example: '2100-12-31'
+          required: false
+          schema:
+            type: string
+            description: 'The end date for events filtering (inclusive). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+            example: '2100-12-31'
+            nullable: true
+        -
+          in: query
+          name: tags
+          description: 'Filter events by organization tag ID.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Filter events by organization tag ID.'
+            example: 1
+            nullable: true
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    event_name: 'Eos voluptas consequatur illo non.'
+                    group_name: 'Mrs. Isabell Hettinger tech group'
+                    group_url: quasi
+                    url: 'http://mcdermott.com/itaque-officiis-labore-et-consequatur-fugit'
+                    time: '2025-07-09T15:50:04.000000Z'
+                    tags: ''
+                    status: past
+                    rsvp_count: 27
+                    description: 'Officiis quia et earum. Enim ipsum at ut sapiente. At eum officiis delectus est laboriosam.'
+                    uuid: de8966ac-dbf6-319a-a587-63673f068bd5
+                    data_as_of: '2025-07-09T15:50:04.909306Z'
+                    service_id: '8'
+                    service: eventbrite
+                    venue:
+                      name: 'sit ut expedita molestiae perspiciatis'
+                      address: "82332 Schulist Corners Apt. 190\nWest Keaton, AK 72585-6815"
+                      city: Davisshire
+                      state: Ex.
+                      zip: '80864'
+                      country: ZA
+                      lat: '3.87321'
+                      lon: '-160.456401'
+                    created_at: '2025-07-09T15:50:04.000000Z'
+                    is_paid: null
+      tags:
+        - Endpoints
+      security: []
+  /api/v0/orgs:
+    get:
+      summary: 'Organizations API v0'
+      operationId: organizationsAPIV0
+      description: 'This API provides access to organization data stored in the HackGreenville database.'
+      parameters:
+        -
+          in: query
+          name: tags
+          description: 'Filter organizations by organization tag ID.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Filter organizations by organization tag ID.'
+            example: 1
+            nullable: true
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    title: blanditiis
+                    path: 'https://www.will.org/est-vitae-voluptates-asperiores-corrupti-facilis-quia-enim-non'
+                    changed: '2025-07-09T15:50:04.000000Z'
+                    field_city: Destinyport
+                    field_event_service: null
+                    field_events_api_key: null
+                    field_focus_area: vero
+                    field_homepage: similique
+                    field_event_calendar_homepage: 'http://www.marks.com/rerum-temporibus-nihil-impedit-provident-perferendis.html'
+                    field_primary_contact_person: enim
+                    field_org_status: active
+                    field_organization_type: et
+                    field_year_established: 2025
+                    field_org_tags: ''
+                    uuid: 90
+      tags:
+        - Endpoints
+      security: []
