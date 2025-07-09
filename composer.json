@@ -40,7 +40,8 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^7.7",
         "phpunit/phpunit": "^10.2",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "knuckleswtf/scribe": "^5.2"
     },
     "autoload": {
         "classmap": [
