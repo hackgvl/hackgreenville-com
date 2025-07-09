@@ -19,6 +19,7 @@
         "hack-greenville/api": "*",
         "hack-greenville/event-importer": "*",
         "internachi/modular": "^2.0",
+        "knuckleswtf/scribe": "^5.2",
         "laravel/framework": "^10.0",
         "laravel/helpers": "^1.2",
         "laravel/slack-notification-channel": "^2.4",

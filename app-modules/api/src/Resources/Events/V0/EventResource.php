@@ -29,6 +29,7 @@ class EventResource extends JsonResource
             'service' => $this->resource->service,
             'venue' => new VenueResource($this->resource->venue),
             'created_at' => $this->resource->created_at->toISOString(),
+            'is_paid' => $this->resource->is_paid,
         ];
     }
 }

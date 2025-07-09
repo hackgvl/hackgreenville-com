@@ -32,3 +32,6 @@ laravel.log
 public/build/
 
 *.pem
+
+# Scribe cache and temporary storage
+.scribe

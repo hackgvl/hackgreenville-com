@@ -1,5 +1,8 @@
 # Interacting with the HackGreenville Events API
 
+## Interactive API Explorer
+You can view the interactive API explorer via https://hackgreenville.com/docs/api
+
 ## URLs and Query String Parameters
 By default, results are returned in JSON format.
 
@@ -13,6 +16,7 @@ By default, results are returned in JSON format.
 
 ## Limitations and Gotchas
 * The Events API's responses are controlled by [server .env variables](/CONTRIBUTING.md#environment-variables) that may limit the data available to calling / consuming applications. Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the HackGreenville.com Events API endpoints referenced above.
+* The production / live website is cached and changes may take up to 4 hours to show due to the cache.
 * All timestamps are in UTC.  
 * The event description fields may include HTML markup.  This application does not sanitize those fields and it's unclear if the upstream source should be trusted, so sanitize any output to avoid malicious cross-site scripting (XSS).
 * Previously, an `Accept: application/json+ld` header could be sent to the API to fetch [Schema.org Event markup](https://schema.org/Event) in JSON+LD format. However, this feature is not implemented in the newest version.
@@ -34,6 +38,7 @@ By default, results are returned in JSON format.
 	"data_as_of":"2024-01-23T18:49:52.738311Z",
 	"service_id":"298465949",
 	"service":"meetup",
+	"is_paid":false,
 	"venue":{
 		"name":"OpenWorks",
 		"address":"101 N Main St #302",

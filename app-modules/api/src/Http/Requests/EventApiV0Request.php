@@ -27,6 +27,29 @@ class EventApiV0Request extends FormRequest
                 'date_format:Y-m-d',
                 'after_or_equal:start_date',
             ],
+            'tags' => [
+                'nullable',
+                'sometimes',
+                'integer',
+            ],
+        ];
+    }
+
+    public function queryParameters()
+    {
+        return [
+            'start_date' => [
+                'description' => 'The start date for events filtering (inclusive).',
+                'example' => '2025-01-01',
+            ],
+            'end_date' => [
+                'description' => 'The end date for events filtering (inclusive).',
+                'example' => '2100-12-31',
+            ],
+            'tags' => [
+                'example' => 1,
+                'description' => 'Filter events by organization tag ID.',
+            ],
         ];
     }
 }
