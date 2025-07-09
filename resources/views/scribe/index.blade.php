@@ -27,7 +27,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "{{ config("app.url") }}";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -91,7 +91,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 2, 2025</li>
+        <li>Last updated: July 9, 2025</li>
     </ul>
 </div>
 
@@ -101,7 +101,7 @@
         <h1 id="introduction">Introduction</h1>
 <p>Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.</p>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>{{ config("app.url") }}</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API. <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).  You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside></p>
 
@@ -125,14 +125,14 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v0/events?start_date=2025-01-01&amp;end_date=2100-12-31&amp;tags=1" \
+    --get "{{ config("app.url") }}/api/v0/events?start_date=2025-01-01&amp;end_date=2100-12-31&amp;tags=1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v0/events"
+    "{{ config("app.url") }}/api/v0/events"
 );
 
 const params = {
@@ -158,7 +158,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v0/events'
+url = '{{ config("app.url") }}/api/v0/events'
 params = {
   'start_date': '2025-01-01',
   'end_date': '2100-12-31',
@@ -182,30 +182,31 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;event_name&quot;: &quot;Voluptas facere aut inventore.&quot;,
-        &quot;group_name&quot;: &quot;Alexandrine Murazik Sr. tech group&quot;,
-        &quot;group_url&quot;: &quot;soluta&quot;,
-        &quot;url&quot;: &quot;http://www.bins.com/quidem-iste-omnis-porro-itaque-atque&quot;,
-        &quot;time&quot;: &quot;2025-06-15T11:11:21.000000Z&quot;,
+        &quot;event_name&quot;: &quot;Eos voluptas consequatur illo non.&quot;,
+        &quot;group_name&quot;: &quot;Mrs. Isabell Hettinger tech group&quot;,
+        &quot;group_url&quot;: &quot;quasi&quot;,
+        &quot;url&quot;: &quot;http://mcdermott.com/itaque-officiis-labore-et-consequatur-fugit&quot;,
+        &quot;time&quot;: &quot;2025-07-09T15:50:04.000000Z&quot;,
         &quot;tags&quot;: &quot;&quot;,
         &quot;status&quot;: &quot;past&quot;,
-        &quot;rsvp_count&quot;: 32,
-        &quot;description&quot;: &quot;Quam vitae autem omnis hic. Atque suscipit laudantium ab.&quot;,
-        &quot;uuid&quot;: &quot;3f52216b-2c4b-30fa-8d5b-28b6118e4724&quot;,
-        &quot;data_as_of&quot;: &quot;2025-07-02T15:42:50.996526Z&quot;,
-        &quot;service_id&quot;: &quot;4&quot;,
+        &quot;rsvp_count&quot;: 27,
+        &quot;description&quot;: &quot;Officiis quia et earum. Enim ipsum at ut sapiente. At eum officiis delectus est laboriosam.&quot;,
+        &quot;uuid&quot;: &quot;de8966ac-dbf6-319a-a587-63673f068bd5&quot;,
+        &quot;data_as_of&quot;: &quot;2025-07-09T15:50:04.909306Z&quot;,
+        &quot;service_id&quot;: &quot;8&quot;,
         &quot;service&quot;: &quot;eventbrite&quot;,
         &quot;venue&quot;: {
-            &quot;name&quot;: &quot;consequatur provident quo eaque assumenda&quot;,
-            &quot;address&quot;: &quot;46424 Kautzer Square Apt. 131\nStoltenbergside, MT 10023&quot;,
-            &quot;city&quot;: &quot;Port Kamrenhaven&quot;,
-            &quot;state&quot;: &quot;Et.&quot;,
-            &quot;zip&quot;: &quot;12977&quot;,
-            &quot;country&quot;: &quot;BL&quot;,
-            &quot;lat&quot;: &quot;-65.835211&quot;,
-            &quot;lon&quot;: &quot;57.246265&quot;
+            &quot;name&quot;: &quot;sit ut expedita molestiae perspiciatis&quot;,
+            &quot;address&quot;: &quot;82332 Schulist Corners Apt. 190\nWest Keaton, AK 72585-6815&quot;,
+            &quot;city&quot;: &quot;Davisshire&quot;,
+            &quot;state&quot;: &quot;Ex.&quot;,
+            &quot;zip&quot;: &quot;80864&quot;,
+            &quot;country&quot;: &quot;ZA&quot;,
+            &quot;lat&quot;: &quot;3.87321&quot;,
+            &quot;lon&quot;: &quot;-160.456401&quot;
         },
-        &quot;created_at&quot;: &quot;2025-07-02T15:42:50.000000Z&quot;
+        &quot;created_at&quot;: &quot;2025-07-09T15:50:04.000000Z&quot;,
+        &quot;is_paid&quot;: null
     }
 ]</code>
  </pre>
@@ -328,14 +329,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v0/orgs?tags=1" \
+    --get "{{ config("app.url") }}/api/v0/orgs?tags=1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v0/orgs"
+    "{{ config("app.url") }}/api/v0/orgs"
 );
 
 const params = {
@@ -359,7 +360,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v0/orgs'
+url = '{{ config("app.url") }}/api/v0/orgs'
 params = {
   'tags': '1',
 }
@@ -381,21 +382,21 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;title&quot;: &quot;debitis&quot;,
-        &quot;path&quot;: &quot;https://www.volkman.com/quas-quos-id-rerum-et-dolorem&quot;,
-        &quot;changed&quot;: &quot;2025-07-02T15:42:51.000000Z&quot;,
-        &quot;field_city&quot;: &quot;Cummingsbury&quot;,
+        &quot;title&quot;: &quot;blanditiis&quot;,
+        &quot;path&quot;: &quot;https://www.will.org/est-vitae-voluptates-asperiores-corrupti-facilis-quia-enim-non&quot;,
+        &quot;changed&quot;: &quot;2025-07-09T15:50:04.000000Z&quot;,
+        &quot;field_city&quot;: &quot;Destinyport&quot;,
         &quot;field_event_service&quot;: null,
         &quot;field_events_api_key&quot;: null,
-        &quot;field_focus_area&quot;: &quot;ipsam&quot;,
-        &quot;field_homepage&quot;: &quot;debitis&quot;,
-        &quot;field_event_calendar_homepage&quot;: &quot;http://quigley.biz/nihil-ipsum-debitis-magnam&quot;,
-        &quot;field_primary_contact_person&quot;: &quot;odit&quot;,
+        &quot;field_focus_area&quot;: &quot;vero&quot;,
+        &quot;field_homepage&quot;: &quot;similique&quot;,
+        &quot;field_event_calendar_homepage&quot;: &quot;http://www.marks.com/rerum-temporibus-nihil-impedit-provident-perferendis.html&quot;,
+        &quot;field_primary_contact_person&quot;: &quot;enim&quot;,
         &quot;field_org_status&quot;: &quot;active&quot;,
-        &quot;field_organization_type&quot;: &quot;tenetur&quot;,
+        &quot;field_organization_type&quot;: &quot;et&quot;,
         &quot;field_year_established&quot;: 2025,
         &quot;field_org_tags&quot;: &quot;&quot;,
-        &quot;uuid&quot;: 101
+        &quot;uuid&quot;: 90
     }
 ]</code>
  </pre>
