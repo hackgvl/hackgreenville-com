@@ -22,7 +22,7 @@
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary"><h2>Volunteer</h2></li>
                             <li class="list-group-item"><a href="/orgs/agile-learning-institute">Agile Learning Institute</a></li>
-                            <li class="list-group-item"><a href="/orgs/carolina-code-conference">Carolina Code Conference</a></li>
+                            <li class="list-group-item"><a href="/orgs/carolina-code-conf">Carolina Code Conference</a></li>
                             <li class="list-group-item"><a href="/orgs/code-with-the-carolinas">Code with the Carolinas</a></li>
                             <li class="list-group-item"><a href="/labs">HackGreenville Labs</a></li>
                             <li class="list-group-item"><a href="/hg-nights">HackGreenville Nights</a></li>
