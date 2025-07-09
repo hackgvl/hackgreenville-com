@@ -57,84 +57,87 @@ jobs:
       - name: run tests
         run: php artisan test
 
-  deploy-staging:
+  deploy-pr-preview:
     needs: tests
     runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
     environment: staging
+    env:
+      RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
-
-      - name: Deploy PR Preview
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+      - name: Create PR Environment
+        id: create-env
         run: |
-          # Set project context
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-
-          # Create a new ephemeral environment by cloning production/staging
+          # Create environment name
           PR_ENV_NAME="pr-${{ github.event.pull_request.number }}"
 
-          # Clone the staging environment (or production, depending on your needs)
-          railway environment create $PR_ENV_NAME --from=staging
+          # Create new environment by duplicating staging
+          railway environment new $PR_ENV_NAME --duplicate staging
 
           # Switch to the new environment
           railway environment $PR_ENV_NAME
 
-          # Deploy the PR code to this environment
-          railway up --detach
+          echo "PR_ENV_NAME=$PR_ENV_NAME" >> $GITHUB_OUTPUT
 
-          # Get the deployment URL
-          DEPLOYMENT_URL=$(railway open --json | jq -r '.url')
-          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
+      - name: Deploy to PR Environment
+        run: |
+          # Deploy to the PR environment
+          railway up --detach --environment=${{ steps.create-env.outputs.PR_ENV_NAME }}
 
-          # Save deployment info for the PR
-          echo "Railway Environment: $PR_ENV_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "Deployment URL: $DEPLOYMENT_URL" >> $GITHUB_STEP_SUMMARY
+      - name: Get Deployment URL
+        id: get-url
+        run: |
+          # Wait for deployment to start
+          sleep 10
+
+          # Get project info and parse URL
+          PROJECT_INFO=$(railway status --json)
+
+          # The URL pattern will be your-service-pr-NUMBER.up.railway.app
+          # You may need to construct this based on your service naming
+          echo "deployment_url=https://your-service-${{ steps.create-env.outputs.PR_ENV_NAME }}.up.railway.app" >> $GITHUB_OUTPUT
 
       - name: Comment on PR
         uses: actions/github-script@v7
         with:
           script: |
-            const { DEPLOYMENT_URL } = process.env;
-            const environment = `pr-${{ github.event.pull_request.number }}`;
-
-            // Check if we already commented
-            const comments = await github.rest.issues.listComments({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            });
-
-            const botComment = comments.data.find(comment =>
-              comment.user.type === 'Bot' && comment.body.includes('Railway PR Preview')
-            );
+            const environment = 'pr-${{ github.event.pull_request.number }}';
+            const url = '${{ steps.get-url.outputs.deployment_url }}';
 
             const body = `### 🚂 Railway PR Preview
 
             **Environment:** \`${environment}\`
-            **URL:** ${DEPLOYMENT_URL || 'Deployment in progress...'}
+            **URL:** ${url}
 
             This preview will be automatically removed when the PR is closed.`;
 
+            // Check for existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes('Railway PR Preview')
+            );
+
             if (botComment) {
-              // Update existing comment
               await github.rest.issues.updateComment({
-                comment_id: botComment.id,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: body
+                comment_id: botComment.id,
+                body
               });
             } else {
-              // Create new comment
               await github.rest.issues.createComment({
-                issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: body
+                issue_number: context.issue.number,
+                body
               });
             }
