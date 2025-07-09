@@ -65,3 +65,76 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy PR Preview
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: |
+          # Set project context
+          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
+
+          # Create a new ephemeral environment by cloning production/staging
+          PR_ENV_NAME="pr-${{ github.event.pull_request.number }}"
+
+          # Clone the staging environment (or production, depending on your needs)
+          railway environment create $PR_ENV_NAME --from=staging
+
+          # Switch to the new environment
+          railway environment $PR_ENV_NAME
+
+          # Deploy the PR code to this environment
+          railway up --detach
+
+          # Get the deployment URL
+          DEPLOYMENT_URL=$(railway open --json | jq -r '.url')
+          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
+
+          # Save deployment info for the PR
+          echo "Railway Environment: $PR_ENV_NAME" >> $GITHUB_STEP_SUMMARY
+          echo "Deployment URL: $DEPLOYMENT_URL" >> $GITHUB_STEP_SUMMARY
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { DEPLOYMENT_URL } = process.env;
+            const environment = `pr-${{ github.event.pull_request.number }}`;
+
+            // Check if we already commented
+            const comments = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            const botComment = comments.data.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes('Railway PR Preview')
+            );
+
+            const body = `### 🚂 Railway PR Preview
+
+            **Environment:** \`${environment}\`
+            **URL:** ${DEPLOYMENT_URL || 'Deployment in progress...'}
+
+            This preview will be automatically removed when the PR is closed.`;
+
+            if (botComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                comment_id: botComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            }
