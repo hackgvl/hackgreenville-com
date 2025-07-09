@@ -24,6 +24,7 @@ use RuntimeException;
  * @property string $event_name
  * @property string $group_name
  * @property string $description
+ * @property boolean|null $is_paid
  * @property int|null $rsvp_count
  * @property \Illuminate\Support\Carbon|null $active_at
  * @property \Illuminate\Support\Carbon|null $cancelled_at
@@ -80,6 +81,7 @@ class Event extends BaseModel
     protected $table = 'events';
 
     protected $casts = [
+        'is_paid' => 'boolean',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
