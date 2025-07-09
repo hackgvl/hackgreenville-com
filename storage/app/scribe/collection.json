@@ -1,0 +1,124 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "{{ config(\"app.url\") }}"
+        }
+    ],
+    "info": {
+        "name": "HackGreenville API Documentation",
+        "_postman_id": "b0e4f647-b522-4746-a54c-88c4f65393ef",
+        "description": "Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Events API v0",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v0\/events",
+                            "query": [
+                                {
+                                    "key": "start_date",
+                                    "value": "2025-01-01",
+                                    "description": "The start date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date before or equal to end_date.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2100-12-31",
+                                    "description": "The end date for events filtering (inclusive). Must be a valid date. Must be a valid date in the format Y-m-d. Must be a date after or equal to start_date.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "tags",
+                                    "value": "1",
+                                    "description": "Filter events by organization tag ID.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2025-01-01&end_date=2100-12-31&tags=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This API provides access to event data stored in the HackGreenville database.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "[{\"event_name\":\"Eos voluptas consequatur illo non.\",\"group_name\":\"Mrs. Isabell Hettinger tech group\",\"group_url\":\"quasi\",\"url\":\"http:\\\/\\\/mcdermott.com\\\/itaque-officiis-labore-et-consequatur-fugit\",\"time\":\"2025-07-09T15:50:04.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":27,\"description\":\"Officiis quia et earum. Enim ipsum at ut sapiente. At eum officiis delectus est laboriosam.\",\"uuid\":\"de8966ac-dbf6-319a-a587-63673f068bd5\",\"data_as_of\":\"2025-07-09T15:50:04.909306Z\",\"service_id\":\"8\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"sit ut expedita molestiae perspiciatis\",\"address\":\"82332 Schulist Corners Apt. 190\\nWest Keaton, AK 72585-6815\",\"city\":\"Davisshire\",\"state\":\"Ex.\",\"zip\":\"80864\",\"country\":\"ZA\",\"lat\":\"3.87321\",\"lon\":\"-160.456401\"},\"created_at\":\"2025-07-09T15:50:04.000000Z\",\"is_paid\":null}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Organizations API v0",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v0\/orgs",
+                            "query": [
+                                {
+                                    "key": "tags",
+                                    "value": "1",
+                                    "description": "Filter organizations by organization tag ID.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v0\/orgs?tags=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This API provides access to organization data stored in the HackGreenville database.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "[{\"title\":\"blanditiis\",\"path\":\"https:\\\/\\\/www.will.org\\\/est-vitae-voluptates-asperiores-corrupti-facilis-quia-enim-non\",\"changed\":\"2025-07-09T15:50:04.000000Z\",\"field_city\":\"Destinyport\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"vero\",\"field_homepage\":\"similique\",\"field_event_calendar_homepage\":\"http:\\\/\\\/www.marks.com\\\/rerum-temporibus-nihil-impedit-provident-perferendis.html\",\"field_primary_contact_person\":\"enim\",\"field_org_status\":\"active\",\"field_organization_type\":\"et\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":90}]",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
