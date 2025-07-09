@@ -17,11 +17,14 @@ abstract class AbstractEventHandler
 
     protected int $max_days_in_future;
 
+    protected bool $debug_log_enabled;
+
     public function __construct(
         public Org $org
     ) {
         $this->max_days_in_past = config('event-import-handlers.max_days_in_past');
         $this->max_days_in_future = config('event-import-handlers.max_days_in_future');
+        $this->debug_log_enabled = config('event-import-handlers.debug_log_enabled') == '1';
     }
 
     abstract protected function mapIntoEventData(array $data): EventData;

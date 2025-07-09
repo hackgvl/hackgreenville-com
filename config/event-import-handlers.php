@@ -13,6 +13,7 @@ return [
     'meetup_graphql_client_id' => env('EVENT_IMPORTER_MEETUP_GRAPHQL_CLIENT_ID'),
     'meetup_graphql_member_id' => env('EVENT_IMPORTER_MEETUP_GRAPHQL_MEMBER_ID'),
     'meetup_graphql_private_key_id' => env('EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_ID'),
+    'debug_log_enabled' => env('EVENT_DEBUG_LOGGING_ENABLED'),
     'handlers' => [
         EventServices::EventBrite->value => EventBriteHandler::class,
         EventServices::MeetupRest->value => MeetupRestHandler::class,

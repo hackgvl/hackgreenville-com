@@ -11,6 +11,7 @@ use App\Http\Controllers\LabsController;
 use App\Http\Controllers\OrgsController;
 use App\Http\Controllers\SlackController;
 use App\Http\Controllers\StyleController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
@@ -39,4 +40,4 @@ Route::post('/join-slack', [SlackController::class, 'submit'])->name('join-slack
 Route::get('/styles', [StyleController::class, 'index'])->name('styles.index');
 
 // Redirects
-Route::redirect('/nights', 'https://www.meetup.com/hack-greenville/events/307794466/');
+Route::redirect('/nights', '/hg-nights', 301);
