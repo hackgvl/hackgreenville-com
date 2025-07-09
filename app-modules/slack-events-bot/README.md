@@ -17,6 +17,24 @@ SLACK_CLIENT_ID=your-client-id
 SLACK_CLIENT_SECRET=your-client-secret
 ```
 
+## Setting up Slack Credentials for Testing
+
+To obtain the necessary Slack credentials for testing (SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET, SLACK_CLIENT_ID, SLACK_CLIENT_SECRET), you'll need to create a Slack app and configure it. Follow these steps:
+
+1. Run `cp app-modules/slack-events-bot/slackbot-manifest.json app-modules/slack-events-bot/slackbot-manifest.dev.json` to create a copy version of the manifest. Modify the values in `slackbot-manifest.dev.json` to match your public endpoint. If you don't have a public endpoint, you may need to create one with [ngrok](https://ngrok.com/).
+
+2. Go to [api.slack.com/apps](https://api.slack.com/apps) and click "Create New App". Then, upload your development manifest to get a head start.
+
+3. Get the following environment variables and add them to your `.env` file: `SLACK_BOT_TOKEN`, `SLACK_SIGNING_SECRET`, `SLACK_CLIENT_ID`, `SLACK_CLIENT_SECRET`
+
+4. Next, navigate to your public endpoint and add `/slack/install` at the end. You should see a `Add to Slack` button displayed if it worked correctly!
+
+5. Go through the flow to connect the bot to a server and channel accordingly.
+
+6. In your Slack workspace, try doing the `/check_api`, `/add_channel`, and `/remove_channel` commands.
+
+7. The slackbot should work correctly!
+
 ## Publishing Configuration
 
 To publish the configuration file:
