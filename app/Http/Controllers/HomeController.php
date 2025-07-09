@@ -8,8 +8,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return 'this is just a test';
-        
         return view('index', [
             'upcoming_events' => Event::future()
                 ->published()
