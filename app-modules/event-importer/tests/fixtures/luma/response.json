@@ -57,7 +57,7 @@
         "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_10.png",
         "coordinate": null,
         "cover_image_url": "https://images.lumacdn.com/calendar-defaults/patterns/rain-100.png",
-        "description_short": null,
+        "description_short": "This is a test Luma event",
         "event_submission_restriction": "none",
         "geo_city": null,
         "geo_country": null,
@@ -164,7 +164,7 @@
         "visibility": "public",
         "waitlist_enabled": false,
         "virtual_info": {
-          "has_access": false
+          "has_access": true
         },
         "geo_address_info": {
           "city": "Greenville",
@@ -200,7 +200,7 @@
         "avatar_url": "https://cdn.lu.ma/avatars-default/community_avatar_10.png",
         "coordinate": null,
         "cover_image_url": "https://images.lumacdn.com/calendar-defaults/patterns/rain-100.png",
-        "description_short": null,
+        "description_short": "This is another event to look up!",
         "event_submission_restriction": "none",
         "geo_city": null,
         "geo_country": null,
