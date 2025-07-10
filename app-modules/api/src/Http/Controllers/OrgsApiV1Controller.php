@@ -10,6 +10,14 @@ use Illuminate\Database\Eloquent\Builder;
 
 class OrgsApiV1Controller extends Controller
 {
+    /**
+     * Organizations API v1
+     * 
+     * This API provides access to organization data stored in the HackGreenville database.
+     * 
+     * @apiResource HackGreenville\Api\Resources\Orgs\V1\OrganizationCollection
+     * @apiResourceModel App\Models\Org
+     */
     public function __invoke(OrgsApiV1Request $request)
     {
         $query = Org::query()

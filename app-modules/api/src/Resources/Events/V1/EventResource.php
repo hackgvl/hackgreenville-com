@@ -38,6 +38,7 @@ class EventResource extends JsonResource
             ],
             'created_at' => $this->resource->created_at->toISOString(),
             'updated_at' => $this->resource->updated_at->toISOString(),
+            'is_paid' => $this->resource->is_paid,
         ];
     }
 

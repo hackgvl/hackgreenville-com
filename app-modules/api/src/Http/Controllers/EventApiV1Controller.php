@@ -10,6 +10,14 @@ use Illuminate\Database\Eloquent\Builder;
 
 class EventApiV1Controller extends Controller
 {
+    /**
+     * Events API v1
+     * 
+     * This API provides access to event data stored in the HackGreenville database.
+     * 
+     * @apiResource HackGreenville\Api\Resources\Events\V1\EventCollection
+     * @apiResourceModel App\Models\Event
+     */
     public function __invoke(EventApiV1Request $request)
     {
         $query = Event::query()
@@ -63,6 +71,16 @@ class EventApiV1Controller extends Controller
                 $query->orderBy($request->input('sort_by'), $sortDirection);
             }, function (Builder $query) {
                 $query->orderBy('active_at', 'asc');
+            })
+            ->when($request->filled('is_paid'), function (Builder $query) use ($request) {
+                $param = $request->input('is_paid');
+                $is_null = $param === "null";
+                
+                if ($is_null) {
+                    return $query->whereNull('is_paid');
+                }
+                
+                $query->where('is_paid', $param === "true");
             });
 
         $perPage = $request->input('per_page', 15);

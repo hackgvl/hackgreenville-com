@@ -59,4 +59,38 @@ class OrgsApiV1Request extends FormRequest
             'sort_direction.in' => 'The sort direction must be either asc or desc.',
         ];
     }
+
+    public function queryParameters()
+    {
+        return [
+            'per_page' => [
+                'example' => 50,
+                'description' => 'The number of items to show per page',
+            ],
+            'page' => [
+                'example' => 1,
+                'description' => 'The current page of items to display',
+            ],
+            'tags' => [
+                'example' => null,
+                'description' => 'Filter organizations by tag ID.',
+            ],
+            'tags.*' => [
+                'example' => null,
+                'description' => 'Filter organizations by tag ID.',
+            ],
+            'title' => ['example' => null],
+            'city' => ['example' => null],
+            'focus_area' => ['example' => null, 'description' => 'The organization category (Entrpreneurship, Security, etc.)'],
+            'organization_type' => ['example' => null, 'description' => 'The organization type (Meetup Groups, Code Schools, etc.)'],
+            'status' => ['example' => null, 'description' => 'The organization status (active, inactive, etc.)'],
+            'established_from' => ['example' => null, 'description' => 'The year the organization was established'],
+            'established_to' => ['example' => null, 'description' => 'The year the organization was dissolved'],
+
+            'sort_by' => [
+                'example' => 'title',
+            ],
+            'sort_direction' => ['example' => 'asc'],
+        ];
+    }
 }

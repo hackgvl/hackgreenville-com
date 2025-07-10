@@ -100,4 +100,57 @@ class EventApiV1Test extends TestCase
         $response->assertJsonPath('meta.current_page', 1);
         $response->assertJsonPath('meta.last_page', 2);
     }
+    
+    public function test_can_filter_is_paid_events() {
+        $org = Org::factory()->create();
+        $venue = Venue::factory()->create();
+        
+        $free_event = Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => $venue->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+            'is_paid' => false,
+            'event_name' => 'Free Event',
+        ]);
+
+        $paid_event = Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => $venue->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+            'is_paid' => true,
+            'event_name' => 'Paid Event',
+        ]);
+
+        $unknown_event = Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => $venue->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+            'is_paid' => null,
+            'event_name' => 'Unknown Event',
+        ]);
+
+        $response1 = $this->getJson('/api/v1/events');
+        $response2 = $this->getJson('/api/v1/events?is_paid=true');
+        $response3 = $this->getJson('/api/v1/events?is_paid=false');
+        $response4 = $this->getJson('/api/v1/events?is_paid=null');
+
+        $response1->assertStatus(200);
+        $response2->assertStatus(200);
+        $response3->assertStatus(200);
+        $response4->assertStatus(200);
+
+        $response1->assertJsonCount(3, 'data');
+
+        $response2->assertJsonCount(1, 'data');
+        $response2->assertSee($paid_event->event_name);
+
+        $response3->assertJsonCount(1, 'data');
+        $response3->assertSee($free_event->event_name);
+
+        $response4->assertJsonCount(1, 'data');
+        $response4->assertSee($unknown_event->event_name);
+    }
 }
