@@ -56,3 +56,51 @@ jobs:
 
       - name: run tests
         run: php artisan test
+  pr_opened:
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+    steps:
+      - name: Link to project
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment ${{ secrets.RAILWAY_ENVIRONMENT_ID }}
+        
+      - name: Create Railway Environment for PR
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: railway environment new pr-${{ github.event.pull_request.number }} --copy ${{ secrets.RAILWAY_ENVIRONMENT_ID }}
+
+  pr_updated:
+    if: github.event.action == 'synchronize'
+    runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Link to project
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: railway link --project ${{ secrets.LINK_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }}
+        
+      - name: Deploy to Railway Environment
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: railway up --detach
+
+  pr_closed:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+    steps:
+      - name: Link to project
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: railway link --project ${{ secrets.LINK_PROJECT_ID }} --environment ${{ secrets.DUPLICATE_FROM_ID }}
+        
+      - name: Delete Railway Environment for PR
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: railway environment delete pr-${{ github.event.pull_request.number }} || true
+
