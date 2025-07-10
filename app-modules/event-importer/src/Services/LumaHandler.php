@@ -94,8 +94,8 @@ class LumaHandler extends AbstractEventHandler
             'state' => $address->state,
             'zip' => $address->zipcode,
             'country' => str_limit($address->country, 2, null),
-            'lon' => $data['event']['geo_longitude'],
-            'lat' => $data['event']['geo_latitude'],
+            'lon' => $data['event']['coordinate']['longitude'],
+            'lat' => $data['event']['coordinate']['latitude'],
         ]);
 
     }
