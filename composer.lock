@@ -3203,7 +3203,7 @@
             "dist": {
                 "type": "path",
                 "url": "app-modules/slack-events-bot",
-                "reference": "533e449e7f78748d5fdebf266814961c02184ac1"
+                "reference": "91a773ff075dc9917f87512e7ca55d7929ca7800"
             },
             "type": "library",
             "extra": {
@@ -3215,7 +3215,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "HackGreenville\\SlackEventsBot\\": "src/"
+                    "HackGreenville\\SlackEventsBot\\": "src/",
+                    "HackGreenville\\SlackEventsBot\\Database\\Factories\\": "./database/factories/"
                 }
             },
             "autoload-dev": {
