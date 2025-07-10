@@ -59,6 +59,7 @@ jobs:
   pr_opened:
     if: github.event.action == 'opened'
     runs-on: ubuntu-latest
+    environment: staging
     container: ghcr.io/railwayapp/cli:latest
     steps:
       - name: Link to project
@@ -74,6 +75,7 @@ jobs:
   pr_updated:
     if: github.event.action == 'synchronize'
     runs-on: ubuntu-latest
+    environment: staging
     container: ghcr.io/railwayapp/cli:latest
     steps:
       - name: Checkout code
@@ -92,6 +94,7 @@ jobs:
   pr_closed:
     if: github.event.action == 'closed'
     runs-on: ubuntu-latest
+    environment: staging
     container: ghcr.io/railwayapp/cli:latest
     steps:
       - name: Link to project
