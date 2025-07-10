@@ -11,6 +11,8 @@ class JoinSlackTest extends DatabaseTestCase
 {
     public function test_a_user_can_submit_a_slack_request(): void
     {
+        $this->withoutMiddleware();
+
         Notification::fake();
 
         HCaptcha::shouldReceive('verifyResponse')

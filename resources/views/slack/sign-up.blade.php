@@ -52,21 +52,20 @@
                             Don't @channel or @here
                         </li>
                         <li>
-                            <strong>Make it happen:</strong>
-                            See a need for a new channel around a topic? Feel out the
-                            interest level and then just make it! (If it becomes a ghost town we might
-                            just archive it)
-                        </li>
-                        <li>
-                            <strong>Don't SPAM or Self-promote!:</strong>
-                            Seriously, don't do it.
-                            We're always glad to hear what community members are working on,
-                            but if you're here just to spam members about a new service or outsourcing,
-                            then consider asking in #community-organizers about sponsoring. 
+                            <strong>Don't self-promote:</strong>
+                            We're glad to hear what regular community members are working on,
+                            but do not spam members with offers.
+                            If you want the spotlight, then consider <a href="/contribute">sponsoring</a>.
                         </li>
                         <li>
                             <strong>Recruiters:</strong>
                             Job postings where the company isn't disclosed are limited to the #recruiting channel.
+                        </li>
+                        <li>
+                            <strong>Make it happen:</strong>
+                            See a need for a new channel around a topic? Feel out the
+                            interest level and then just make it! (If it becomes a ghost town we might
+                            just archive it)
                         </li>
                     </ul>
 
