@@ -73,6 +73,18 @@
                                     {{ __('Our Style') }}
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://github.com/hackgvl/hackgreenville-com" target="_new">
+                                    <i class="fa fa-github"></i>
+                                    {{__('Join the Project')}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/docs/api" target="_new">
+                                    <i class="fa fa-wrench"></i>
+                                    {{__('Explore Our API')}}
+                                </a>
+                            </li>
                         </ul>
 
                     </div>
