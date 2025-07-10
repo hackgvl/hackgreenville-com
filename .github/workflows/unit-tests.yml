@@ -84,7 +84,7 @@ jobs:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
           railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service hackgreenville.com
-          railway up --detach
+          railway up --detach .
           
       - name: Get deployment URL
         id: get_url
@@ -120,7 +120,7 @@ jobs:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
           railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service hackgreenville.com
-          railway up --detach
+          railway up --detach .
           
       - name: Get deployment URL
         id: get_url
