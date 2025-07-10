@@ -122,12 +122,13 @@ class SlackController
         $command = $payload['command'];
         $userId = $payload['user_id'];
         $channelId = $payload['channel_id'];
+        $teamId = $payload['team_id'];
         $teamDomain = $payload['team_domain'] ?? null;
 
         $originalCommand = $command;
 
         // Normalize dev commands to match production commands
-        if (app()->isLocal() && str_starts_with($command, '/dev_')) {
+        if (true || app()->isLocal() && str_starts_with($command, '/dev_')) {
             $command = str_replace('/dev_', '/', $command);
             Log::info('Normalized dev command', ['original' => $originalCommand, 'normalized' => $command]);
         }
@@ -135,13 +136,13 @@ class SlackController
         switch ($command) {
             case '/add_channel':
                 Log::info('Executing /add_channel command', ['user_id' => $userId, 'channel_id' => $channelId]);
-                if ( ! $this->authService->isAdmin($userId)) {
+                if ( ! $this->authService->isAdmin($userId, $teamId)) {
                     Log::warning('/add_channel failed: user is not an admin', ['user_id' => $userId]);
                     return response('You must be a workspace admin in order to run `/add_channel`');
                 }
 
                 try {
-                    $this->databaseService->addChannel($channelId);
+                    $this->databaseService->addChannel($channelId, $teamId);
                     Log::info('Successfully added channel', ['channel_id' => $channelId]);
                     return response('Added channel to slack events bot 👍');
                 } catch (Exception $e) {
@@ -154,7 +155,7 @@ class SlackController
 
             case '/remove_channel':
                 Log::info('Executing /remove_channel command', ['user_id' => $userId, 'channel_id' => $channelId]);
-                if ( ! $this->authService->isAdmin($userId)) {
+                if ( ! $this->authService->isAdmin($userId, $teamId)) {
                     Log::warning('/remove_channel failed: user is not an admin', ['user_id' => $userId]);
                     return response('You must be a workspace admin in order to run `/remove_channel`');
                 }
@@ -174,7 +175,7 @@ class SlackController
             case '/check_api':
                 Log::info('Executing /check_api command', ['user_id' => $userId, 'team_domain' => $teamDomain]);
                 // Check cooldown
-                if ( ! app()->isLocal() && $teamDomain) {
+                if (false && ! app()->isLocal() && $teamDomain) {
                     $expiryTime = $this->databaseService->getCooldownExpiryTime($teamDomain, 'check_api');
 
                     if ($expiryTime && $expiryTime->isFuture()) {

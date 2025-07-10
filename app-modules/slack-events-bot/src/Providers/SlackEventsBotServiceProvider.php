@@ -3,6 +3,7 @@
 namespace HackGreenville\SlackEventsBot\Providers;
 
 use HackGreenville\SlackEventsBot\Console\Commands\DeleteOldMessagesCommand;
+use HackGreenville\SlackEventsBot\Jobs\CheckEventsApi;
 use HackGreenville\SlackEventsBot\Services\AuthService;
 use HackGreenville\SlackEventsBot\Services\BotService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
@@ -46,21 +47,25 @@ class SlackEventsBotServiceProvider extends ServiceProvider
             ]);
         }
 
+        $this->loadMigrationsFrom($this->moduleDir . '/database/migrations');
+
         // Schedule tasks
         $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
-            // Delete old messages once daily
             $schedule->command('slack:delete-old-messages')->daily();
+            $schedule->job(CheckEventsApi::class)->hourly();
         });
     }
 
     protected function loadRoutes(): void
     {
-        Route::prefix('slack')
-            ->middleware('api')
+        Route::prefix(config('slack-events-bot.route_prefix', 'slack'))
             ->name('slack.')
-            ->group("{$this->moduleDir}/routes/api.php");
+            ->group(function () {
+                Route::middleware('web')
+                    ->group("{$this->moduleDir}/routes/web.php");
 
-        Route::middleware('web')
-            ->group("{$this->moduleDir}/routes/web.php");
+                Route::middleware('api')
+                    ->group("{$this->moduleDir}/routes/api.php");
+            });
     }
 }

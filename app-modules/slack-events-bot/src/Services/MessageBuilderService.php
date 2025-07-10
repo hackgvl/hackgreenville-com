@@ -114,6 +114,10 @@ class MessageBuilderService
     {
         $text = $this->eventService->generateText($event) . "\n\n";
 
+        if (empty(trim($text))) { // Check if text is empty or just whitespace
+            return null;
+        }
+
         return [
             'blocks' => array_merge($this->eventService->generateBlocks($event), [['type' => 'divider']]),
             'text' => $text,

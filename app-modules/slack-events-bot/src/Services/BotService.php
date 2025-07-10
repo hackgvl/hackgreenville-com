@@ -20,24 +20,27 @@ class BotService
 
     public function postOrUpdateMessages(Carbon $week, array $messages): void
     {
-        $channels = $this->databaseService->getSlackChannelIds();
+        $channels = $this->databaseService->getSlackChannels();
         $existingMessages = $this->databaseService->getMessages($week);
 
         $messageDetails = [];
-        foreach ($channels as $channelId) {
+        foreach ($channels as $channel) {
+            $channelId = $channel->slack_channel_id;
             $messageDetails[$channelId] = [];
-            $channelExistingMessages = $existingMessages->where('slack_channel_id', $channelId);
+            $channelExistingMessages = $existingMessages->where('channel.slack_channel_id', $channelId);
 
             foreach ($channelExistingMessages as $existingMessage) {
-                $position = $existingMessage['sequence_position'];
+                $position = $existingMessage->sequence_position;
                 $messageDetails[$channelId][$position] = [
-                    'timestamp' => $existingMessage['message_timestamp'],
-                    'message_text' => $existingMessage['message'],
+                    'timestamp' => $existingMessage->message_timestamp,
+                    'message_text' => $existingMessage->message,
                 ];
             }
         }
 
-        foreach ($channels as $slackChannelId) {
+        foreach ($channels as $channel) {
+            $slackChannelId = $channel->slack_channel_id;
+            $token = $channel->workspace->access_token;
             try {
                 foreach ($messages as $msgIdx => $msg) {
                     $msgText = $msg['text'];
@@ -51,7 +54,7 @@ class BotService
                     ) {
                         if ( ! $existingMsgDetail) {
                             if ($this->isUnsafeToSpillover(
-                                count($existingMessages->where('slack_channel_id', $slackChannelId)),
+                                count($existingMessages->where('channel.slack_channel_id', $slackChannelId)),
                                 count($messages),
                                 $week,
                                 $slackChannelId
@@ -61,7 +64,7 @@ class BotService
 
                             Log::info("Posting new message " . ($msgIdx + 1) . " for week {$week->format('F j')} in {$slackChannelId}");
 
-                            $slackResponse = $this->postNewMessage($slackChannelId, $msgBlocks, $msgText);
+                            $slackResponse = $this->postNewMessage($slackChannelId, $msgBlocks, $msgText, $token);
 
                             $this->databaseService->createMessage(
                                 $week,
@@ -72,7 +75,7 @@ class BotService
                             );
                         } else { // An existing message needs to be updated
                             if ($this->isUnsafeToSpillover(
-                                count($existingMessages->where('slack_channel_id', $slackChannelId)),
+                                count($existingMessages->where('channel.slack_channel_id', $slackChannelId)),
                                 count($messages),
                                 $week,
                                 $slackChannelId
@@ -87,7 +90,7 @@ class BotService
 
                             $timestamp = $existingMsgDetail['timestamp'];
 
-                            $slackResponse = Http::withToken(config('slack-events-bot.bot_token'))
+                            $slackResponse = Http::withToken($token)
                                 ->post('https://slack.com/api/chat.update', [
                                     'ts' => $timestamp,
                                     'channel' => $slackChannelId,
@@ -126,7 +129,7 @@ class BotService
                     $timestampToDelete = $messageDetails[$slackChannelId][$i]['timestamp'] ?? null;
                     if ($timestampToDelete) {
                         Log::info("Deleting old message (sequence_position " . ($i) . ") for week of {$week->format('F j')} in {$slackChannelId}. No longer needed.");
-                        Http::withToken(config('slack-events-bot.bot_token'))
+                        Http::withToken($token)
                             ->post('https://slack.com/api/chat.delete', [
                                 'channel' => $slackChannelId,
                                 'ts'      => $timestampToDelete,
@@ -139,8 +142,7 @@ class BotService
                 Log::error(
                     "Cannot update messages for {$week->format('m/d/Y')} for channel {$slackChannelId}. " .
                     "New events have caused the number of messages needed to increase, " .
-                    "but the next week's post has already been sent. Cannot resize. " .
-                    "Existing message count: " . count($existingMessages->where('slack_channel_id', $slackChannelId)) . " --- New message count: " . count($messages)
+                    "but the next week's post has already been sent. Cannot resize. " . "Existing message count: " . count($existingMessages->where('channel.slack_channel_id', $slackChannelId)) . " --- New message count: " . count($messages)
                 );
                 throw $e;
             }
@@ -159,15 +161,7 @@ class BotService
     {
         $weekStart = now()->copy()->startOfWeek();
 
-        $events = Event::query()
-            ->with(['venue.state', 'organization'])
-            ->published()
-            ->whereBetween('active_at', [
-                $weekStart,
-                $weekStart->copy()->endOfWeek(),
-            ])
-            ->oldest('active_at')
-            ->get();
+        $events = $this->getEventsForWeek($weekStart);
 
         if ($events->isEmpty()) {
             Log::info("No upcoming events found for the week of {$weekStart->format('F j')}. Cleaning up any existing messages for this week.");
@@ -177,7 +171,20 @@ class BotService
         }
     }
 
-    private function deleteMessagesForWeek(Carbon $week): void
+    protected function getEventsForWeek(Carbon $weekStart): Collection
+    {
+        return Event::query()
+            ->with(['venue.state', 'organization'])
+            ->published()
+            ->whereBetween('active_at', [
+                $weekStart,
+                $weekStart->copy()->endOfWeek(),
+            ])
+            ->oldest('active_at')
+            ->get();
+    }
+
+    protected function deleteMessagesForWeek(Carbon $week): void
     {
         $messagesToDelete = $this->databaseService->getMessages($week);
 
@@ -186,11 +193,12 @@ class BotService
         }
 
         foreach ($messagesToDelete as $message) {
-            Log::info("Deleting stale message {$message['message_timestamp']} in channel {$message['slack_channel_id']}.");
-            Http::withToken(config('slack-events-bot.bot_token'))
+            $token = $message->channel->workspace->access_token;
+            Log::info("Deleting stale message {$message->message_timestamp} in channel {$message->channel->slack_channel_id}.");
+            Http::withToken($token)
                 ->post('https://slack.com/api/chat.delete', [
-                    'channel' => $message['slack_channel_id'],
-                    'ts'      => $message['message_timestamp'],
+                    'channel' => $message->channel->slack_channel_id,
+                    'ts'      => $message->message_timestamp,
                 ]);
             // We don't care if the deletion fails on Slack's end (e.g., message already deleted),
             // we still want to remove it from our database.
@@ -222,9 +230,9 @@ class BotService
         return false;
     }
 
-    private function postNewMessage(string $slackChannelId, array $msgBlocks, string $msgText): array
+    private function postNewMessage(string $slackChannelId, array $msgBlocks, string $msgText, string $token): array
     {
-        $slackResponse = Http::withToken(config('slack-events-bot.bot_token'))
+        $slackResponse = Http::withToken($token)
             ->post('https://slack.com/api/chat.postMessage', [
                 'channel' => $slackChannelId,
                 'blocks' => $msgBlocks,
