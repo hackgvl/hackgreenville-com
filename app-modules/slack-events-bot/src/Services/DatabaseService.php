@@ -46,17 +46,11 @@ class DatabaseService
 
     public function getMessages(Carbon $week): Collection
     {
-        return SlackMessage::with('channel')
+        return SlackMessage::with('channel.workspace')
             ->whereDate('week', $week->toDateString())
             ->orderBy('channel_id')
             ->orderBy('sequence_position')
-            ->get()
-            ->map(fn ($message) => [
-                'message' => $message->message,
-                'message_timestamp' => $message->message_timestamp,
-                'slack_channel_id' => $message->channel->slack_channel_id,
-                'sequence_position' => $message->sequence_position,
-            ]);
+            ->get();
     }
 
     public function getMostRecentMessageForChannel(string $slackChannelId): ?array
@@ -83,14 +77,19 @@ class DatabaseService
         ];
     }
 
-    public function getSlackChannelIds(): Collection
+    public function getSlackChannels(): Collection
     {
-        return SlackChannel::pluck('slack_channel_id');
+        return SlackChannel::with('workspace')->get();
     }
 
-    public function addChannel(string $slackChannelId): SlackChannel
+    public function addChannel(string $slackChannelId, string $teamId): SlackChannel
     {
-        return SlackChannel::firstOrCreate(['slack_channel_id' => $slackChannelId]);
+        $workspace = SlackWorkspace::where('team_id', $teamId)->firstOrFail();
+
+        return SlackChannel::firstOrCreate(
+            ['slack_channel_id' => $slackChannelId],
+            ['slack_workspace_id' => $workspace->id]
+        );
     }
 
     public function removeChannel(string $slackChannelId): int

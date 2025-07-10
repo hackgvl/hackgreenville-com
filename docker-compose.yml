@@ -47,3 +47,21 @@ services:
         - './redis:/data'
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
+
+  hackgreenville-queue:
+    build:
+      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.3}'
+      dockerfile: Dockerfile
+      args:
+        WWWGROUP: '${WWWGROUP:-www-data}'
+    image: hackgreenville
+    container_name: hackgreenville-queue
+    env_file:
+      - .env
+    volumes:
+      - './:/var/www/html'
+    command: 'php artisan queue:work'
+    restart: always
+    depends_on:
+      - hackgreenville-db
+      - hackgreenville-redis
