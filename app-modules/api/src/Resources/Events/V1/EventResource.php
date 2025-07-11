@@ -3,9 +3,9 @@
 namespace HackGreenville\Api\Resources\Events\V1;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use HackGreenville\Api\Resources\ApiResource;
 
-class EventResource extends JsonResource
+class EventResource extends ApiResource
 {
     public $resource;
 
@@ -23,7 +23,7 @@ class EventResource extends JsonResource
             'rsvp_count' => $this->resource->rsvp_count,
             'status' => $this->resource->getStatusAttribute(),
             'organization' => [
-                'id' => $this->resource->organization->id,
+                'id' => $this->getId($this->resource->organization),
                 'name' => $this->resource->group_name,
                 'url' => $this->resource->organization->uri,
                 'tags' => $this->resource->organization->tags->map(fn ($tag) => [
@@ -47,7 +47,7 @@ class EventResource extends JsonResource
         return [
             'meta' => [
                 'version' => '1.0',
-                'timestamp' => now()->toISOString(),
+                'timestamp' => $this->getTime(),
             ],
         ];
     }

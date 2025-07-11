@@ -1,0 +1,72 @@
+name: Run unit tests
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    branches:
+      - master
+      - develop
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Important: test the actual PR code
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: :php_psr
+
+      - name: install php dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Generate docs
+        run: php artisan scribe:generate
+
+      - name: Check for changes
+        id: docs-check
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain ./resources/views/scribe ./storage/app/scribe )" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "❌ API documentation is out of date"
+            echo "Please run 'php artisan scribe:generate' and commit the changes"
+            git status
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "✅ API documentation is up to date"
+          fi
+      - name: Comment on PR
+        if: steps.docs-check.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 📝 API Documentation Update Needed
+              
+              The API documentation appears to be out of date. Please run the following command and commit the changes:
+              
+              \`\`\`bash
+              php artisan scribe:generate
+              \`\`\`
+              
+              This will update the API documentation to reflect any changes made to your endpoints.`
+            })
+      
+      - name: Fail if docs are outdated
+        if: steps.docs-check.outputs.changed == 'true'
+        run: exit 1

@@ -43,12 +43,12 @@ paths:
           in: query
           name: tags
           description: 'Filter events by organization tag ID.'
-          example: 1
+          example: null
           required: false
           schema:
             type: integer
             description: 'Filter events by organization tag ID.'
-            example: 1
+            example: null
             nullable: true
       responses:
         200:
@@ -61,29 +61,29 @@ paths:
                   type: object
                 example:
                   -
-                    event_name: 'Error beatae quasi labore officiis.'
-                    group_name: 'Lavon Runolfsson tech group'
-                    group_url: in
-                    url: 'http://www.morar.com/itaque-minima-dolore-aspernatur-voluptates-et-culpa-dolores.html'
-                    time: '2025-07-11T13:12:29.000000Z'
+                    event_name: 'Dolores dolorum amet iste laborum eius est dolor.'
+                    group_name: 'Nash Corwin tech group!!!'
+                    group_url: doloribus
+                    url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
+                    time: '2025-01-01T17:00:00.000000Z'
                     tags: ''
                     status: past
-                    rsvp_count: 96
-                    description: 'Beatae quidem beatae quidem tempore cupiditate. Consequatur nobis exercitationem asperiores.'
-                    uuid: 904f42e9-7232-3ff7-a707-fc85c75fe580
-                    data_as_of: '2025-07-11T13:12:29.449833Z'
-                    service_id: '6'
+                    rsvp_count: 97
+                    description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
+                    uuid: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
+                    data_as_of: '2025-01-01T12:00:00.000000Z'
+                    service_id: '9'
                     service: eventbrite
                     venue:
-                      name: 'necessitatibus neque occaecati voluptas voluptatem'
-                      address: "980 Senger Centers\nLuettgenstad, NC 43966"
-                      city: 'Lake Myrtie'
-                      state: Et.
-                      zip: '34409'
-                      country: TF
-                      lat: '-3.223772'
-                      lon: '-35.570917'
-                    created_at: '2025-07-11T13:12:29.000000Z'
+                      name: 'est nostrum et voluptas consequatur'
+                      address: "5090 Agustin Plaza\nThielfort, VA 23923"
+                      city: Estellehaven
+                      state: Sit.
+                      zip: '37540'
+                      country: KP
+                      lat: '69.526975'
+                      lon: '85.868299'
+                    created_at: '2025-01-01T17:00:00.000000Z'
                     is_paid: null
       tags:
         - Endpoints
@@ -98,12 +98,12 @@ paths:
           in: query
           name: tags
           description: 'Filter organizations by organization tag ID.'
-          example: 1
+          example: null
           required: false
           schema:
             type: integer
             description: 'Filter organizations by organization tag ID.'
-            example: 1
+            example: null
             nullable: true
       responses:
         200:
@@ -116,21 +116,21 @@ paths:
                   type: object
                 example:
                   -
-                    title: non
-                    path: 'http://www.weimann.com/dolor-ad-cumque-temporibus-beatae'
-                    changed: '2025-07-11T13:12:29.000000Z'
-                    field_city: Anahaven
+                    title: minus
+                    path: 'http://reichel.info/'
+                    changed: '2025-01-01T17:00:00.000000Z'
+                    field_city: 'Lake Robynland'
                     field_event_service: null
                     field_events_api_key: null
-                    field_focus_area: et
-                    field_homepage: dolorem
-                    field_event_calendar_homepage: 'http://weimann.com/illum-et-ab-dolores-ipsum-ad.html'
-                    field_primary_contact_person: voluptates
+                    field_focus_area: fugit
+                    field_homepage: dolores
+                    field_event_calendar_homepage: 'https://www.lakin.com/veniam-sed-fuga-aspernatur-natus-earum'
+                    field_primary_contact_person: facilis
                     field_org_status: active
-                    field_organization_type: rerum
+                    field_organization_type: perferendis
                     field_year_established: 2025
                     field_org_tags: ''
-                    uuid: 75
+                    uuid: 123
       tags:
         - Endpoints
       security: []
@@ -332,35 +332,35 @@ paths:
                   data:
                     -
                       id: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                      name: 'Dolorum amet iste laborum eius est dolor.'
+                      name: 'Dolores dolorum amet iste laborum eius est dolor.'
                       description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
                       url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
-                      starts_at: '2025-07-11T13:12:29.000000Z'
-                      ends_at: '2025-07-13T09:07:04.000000Z'
+                      starts_at: '2025-01-01T17:00:00.000000Z'
+                      ends_at: '2025-01-01T19:00:00.000000Z'
                       rsvp_count: 97
                       status: past
                       organization:
-                        id: 76
-                        name: 'Nash Corwin tech group'
+                        id: 123
+                        name: 'Nash Corwin tech group!!!'
                         url: doloribus
                         tags: []
                       venue:
-                        name: 'nostrum et voluptas consequatur delectus'
-                        address: "25306 Layne Ville Suite 791\nGradyberg, MA 47809"
-                        city: Torphymouth
+                        name: 'est nostrum et voluptas consequatur'
+                        address: "5090 Agustin Plaza\nThielfort, VA 23923"
+                        city: Estellehaven
                         state:
                           code: Sit.
                           name: 'Quia odit.'
-                        zipcode: 79883-0887
-                        country: TT
+                        zipcode: '37540'
+                        country: KP
                         location:
-                          latitude: '30.811763'
-                          longitude: '-32.616068'
+                          latitude: '69.526975'
+                          longitude: '85.868299'
                       service:
                         name: eventbrite
-                        id: '6'
-                      created_at: '2025-07-11T13:12:29.000000Z'
-                      updated_at: '2025-07-11T13:12:29.000000Z'
+                        id: '9'
+                      created_at: '2025-01-01T17:00:00.000000Z'
+                      updated_at: '2025-01-01T17:00:00.000000Z'
                       is_paid: null
                 properties:
                   data:
@@ -368,35 +368,35 @@ paths:
                     example:
                       -
                         id: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                        name: 'Dolorum amet iste laborum eius est dolor.'
+                        name: 'Dolores dolorum amet iste laborum eius est dolor.'
                         description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
                         url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
-                        starts_at: '2025-07-11T13:12:29.000000Z'
-                        ends_at: '2025-07-13T09:07:04.000000Z'
+                        starts_at: '2025-01-01T17:00:00.000000Z'
+                        ends_at: '2025-01-01T19:00:00.000000Z'
                         rsvp_count: 97
                         status: past
                         organization:
-                          id: 76
-                          name: 'Nash Corwin tech group'
+                          id: 123
+                          name: 'Nash Corwin tech group!!!'
                           url: doloribus
                           tags: []
                         venue:
-                          name: 'nostrum et voluptas consequatur delectus'
-                          address: "25306 Layne Ville Suite 791\nGradyberg, MA 47809"
-                          city: Torphymouth
+                          name: 'est nostrum et voluptas consequatur'
+                          address: "5090 Agustin Plaza\nThielfort, VA 23923"
+                          city: Estellehaven
                           state:
                             code: Sit.
                             name: 'Quia odit.'
-                          zipcode: 79883-0887
-                          country: TT
+                          zipcode: '37540'
+                          country: KP
                           location:
-                            latitude: '30.811763'
-                            longitude: '-32.616068'
+                            latitude: '69.526975'
+                            longitude: '85.868299'
                         service:
                           name: eventbrite
-                          id: '6'
-                        created_at: '2025-07-11T13:12:29.000000Z'
-                        updated_at: '2025-07-11T13:12:29.000000Z'
+                          id: '9'
+                        created_at: '2025-01-01T17:00:00.000000Z'
+                        updated_at: '2025-01-01T17:00:00.000000Z'
                         is_paid: null
                     items:
                       type: object
@@ -406,7 +406,7 @@ paths:
                           example: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
                         name:
                           type: string
-                          example: 'Dolorum amet iste laborum eius est dolor.'
+                          example: 'Dolores dolorum amet iste laborum eius est dolor.'
                         description:
                           type: string
                           example: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
@@ -415,10 +415,10 @@ paths:
                           example: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
                         starts_at:
                           type: string
-                          example: '2025-07-11T13:12:29.000000Z'
+                          example: '2025-01-01T17:00:00.000000Z'
                         ends_at:
                           type: string
-                          example: '2025-07-13T09:07:04.000000Z'
+                          example: '2025-01-01T19:00:00.000000Z'
                         rsvp_count:
                           type: integer
                           example: 97
@@ -430,10 +430,10 @@ paths:
                           properties:
                             id:
                               type: integer
-                              example: 76
+                              example: 123
                             name:
                               type: string
-                              example: 'Nash Corwin tech group'
+                              example: 'Nash Corwin tech group!!!'
                             url:
                               type: string
                               example: doloribus
@@ -445,13 +445,13 @@ paths:
                           properties:
                             name:
                               type: string
-                              example: 'nostrum et voluptas consequatur delectus'
+                              example: 'est nostrum et voluptas consequatur'
                             address:
                               type: string
-                              example: "25306 Layne Ville Suite 791\nGradyberg, MA 47809"
+                              example: "5090 Agustin Plaza\nThielfort, VA 23923"
                             city:
                               type: string
-                              example: Torphymouth
+                              example: Estellehaven
                             state:
                               type: object
                               properties:
@@ -463,19 +463,19 @@ paths:
                                   example: 'Quia odit.'
                             zipcode:
                               type: string
-                              example: 79883-0887
+                              example: '37540'
                             country:
                               type: string
-                              example: TT
+                              example: KP
                             location:
                               type: object
                               properties:
                                 latitude:
                                   type: string
-                                  example: '30.811763'
+                                  example: '69.526975'
                                 longitude:
                                   type: string
-                                  example: '-32.616068'
+                                  example: '85.868299'
                         service:
                           type: object
                           properties:
@@ -484,13 +484,13 @@ paths:
                               example: eventbrite
                             id:
                               type: string
-                              example: '6'
+                              example: '9'
                         created_at:
                           type: string
-                          example: '2025-07-11T13:12:29.000000Z'
+                          example: '2025-01-01T17:00:00.000000Z'
                         updated_at:
                           type: string
-                          example: '2025-07-11T13:12:29.000000Z'
+                          example: '2025-01-01T17:00:00.000000Z'
                         is_paid:
                           type: string
                           example: null
@@ -655,7 +655,7 @@ paths:
                 example:
                   data:
                     -
-                      id: 77
+                      id: 123
                       title: minus
                       path: 'http://reichel.info/'
                       city: 'Lake Robynland'
@@ -669,14 +669,14 @@ paths:
                       organization_type: perferendis
                       established_year: 2025
                       tags: []
-                      created_at: '2025-07-11T13:12:29.000000Z'
-                      updated_at: '2025-07-11T13:12:29.000000Z'
+                      created_at: '2025-01-01T17:00:00.000000Z'
+                      updated_at: '2025-01-01T17:00:00.000000Z'
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 77
+                        id: 123
                         title: minus
                         path: 'http://reichel.info/'
                         city: 'Lake Robynland'
@@ -690,14 +690,14 @@ paths:
                         organization_type: perferendis
                         established_year: 2025
                         tags: []
-                        created_at: '2025-07-11T13:12:29.000000Z'
-                        updated_at: '2025-07-11T13:12:29.000000Z'
+                        created_at: '2025-01-01T17:00:00.000000Z'
+                        updated_at: '2025-01-01T17:00:00.000000Z'
                     items:
                       type: object
                       properties:
                         id:
                           type: integer
-                          example: 77
+                          example: 123
                         title:
                           type: string
                           example: minus
@@ -739,10 +739,10 @@ paths:
                           example: []
                         created_at:
                           type: string
-                          example: '2025-07-11T13:12:29.000000Z'
+                          example: '2025-01-01T17:00:00.000000Z'
                         updated_at:
                           type: string
-                          example: '2025-07-11T13:12:29.000000Z'
+                          example: '2025-01-01T17:00:00.000000Z'
       tags:
         - Endpoints
       security: []

@@ -16,7 +16,7 @@ class OrgsApiV1Controller extends Controller
      * This API provides access to organization data stored in the HackGreenville database.
      * 
      * @apiResource HackGreenville\Api\Resources\Orgs\V1\OrganizationCollection
-     * @apiResourceModel App\Models\Org
+     * @apiResourceModel App\Models\Org states=forDocumentation
      */
     public function __invoke(OrgsApiV1Request $request)
     {

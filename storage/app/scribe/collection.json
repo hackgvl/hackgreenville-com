@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "HackGreenville API Documentation",
-        "_postman_id": "4c80669a-3898-463d-9a00-ad3679da4eba",
+        "_postman_id": "02f8e2c2-2ed0-4974-80ae-71c644ff7e03",
         "description": "Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -40,12 +40,12 @@
                                 },
                                 {
                                     "key": "tags",
-                                    "value": "1",
+                                    "value": "",
                                     "description": "Filter events by organization tag ID.",
-                                    "disabled": false
+                                    "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2025-01-01&end_date=2100-12-31&tags=1"
+                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2025-01-01&end_date=2100-12-31&tags="
                         },
                         "method": "GET",
                         "header": [
@@ -68,7 +68,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"event_name\":\"Error beatae quasi labore officiis.\",\"group_name\":\"Lavon Runolfsson tech group\",\"group_url\":\"in\",\"url\":\"http:\\\/\\\/www.morar.com\\\/itaque-minima-dolore-aspernatur-voluptates-et-culpa-dolores.html\",\"time\":\"2025-07-11T13:12:29.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":96,\"description\":\"Beatae quidem beatae quidem tempore cupiditate. Consequatur nobis exercitationem asperiores.\",\"uuid\":\"904f42e9-7232-3ff7-a707-fc85c75fe580\",\"data_as_of\":\"2025-07-11T13:12:29.449833Z\",\"service_id\":\"6\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"necessitatibus neque occaecati voluptas voluptatem\",\"address\":\"980 Senger Centers\\nLuettgenstad, NC 43966\",\"city\":\"Lake Myrtie\",\"state\":\"Et.\",\"zip\":\"34409\",\"country\":\"TF\",\"lat\":\"-3.223772\",\"lon\":\"-35.570917\"},\"created_at\":\"2025-07-11T13:12:29.000000Z\",\"is_paid\":null}]",
+                            "body": "[{\"event_name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"group_name\":\"Nash Corwin tech group!!!\",\"group_url\":\"doloribus\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"time\":\"2025-01-01T17:00:00.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":97,\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"uuid\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"data_as_of\":\"2025-01-01T12:00:00.000000Z\",\"service_id\":\"9\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":\"Sit.\",\"zip\":\"37540\",\"country\":\"KP\",\"lat\":\"69.526975\",\"lon\":\"85.868299\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]",
                             "name": ""
                         }
                     ]
@@ -82,12 +82,12 @@
                             "query": [
                                 {
                                     "key": "tags",
-                                    "value": "1",
+                                    "value": "",
                                     "description": "Filter organizations by organization tag ID.",
-                                    "disabled": false
+                                    "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v0\/orgs?tags=1"
+                            "raw": "{{baseUrl}}\/api\/v0\/orgs?tags="
                         },
                         "method": "GET",
                         "header": [
@@ -110,7 +110,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"title\":\"non\",\"path\":\"http:\\\/\\\/www.weimann.com\\\/dolor-ad-cumque-temporibus-beatae\",\"changed\":\"2025-07-11T13:12:29.000000Z\",\"field_city\":\"Anahaven\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"et\",\"field_homepage\":\"dolorem\",\"field_event_calendar_homepage\":\"http:\\\/\\\/weimann.com\\\/illum-et-ab-dolores-ipsum-ad.html\",\"field_primary_contact_person\":\"voluptates\",\"field_org_status\":\"active\",\"field_organization_type\":\"rerum\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":75}]",
+                            "body": "[{\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"changed\":\"2025-01-01T17:00:00.000000Z\",\"field_city\":\"Lake Robynland\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"fugit\",\"field_homepage\":\"dolores\",\"field_event_calendar_homepage\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"field_primary_contact_person\":\"facilis\",\"field_org_status\":\"active\",\"field_organization_type\":\"perferendis\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":123}]",
                             "name": ""
                         }
                     ]
@@ -236,7 +236,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-07-11T13:12:29.000000Z\",\"ends_at\":\"2025-07-13T09:07:04.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"organization\":{\"id\":76,\"name\":\"Nash Corwin tech group\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"nostrum et voluptas consequatur delectus\",\"address\":\"25306 Layne Ville Suite 791\\nGradyberg, MA 47809\",\"city\":\"Torphymouth\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"79883-0887\",\"country\":\"TT\",\"location\":{\"latitude\":\"30.811763\",\"longitude\":\"-32.616068\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"6\"},\"created_at\":\"2025-07-11T13:12:29.000000Z\",\"updated_at\":\"2025-07-11T13:12:29.000000Z\",\"is_paid\":null}]}",
+                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-01-01T17:00:00.000000Z\",\"ends_at\":\"2025-01-01T19:00:00.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"organization\":{\"id\":123,\"name\":\"Nash Corwin tech group!!!\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"37540\",\"country\":\"KP\",\"location\":{\"latitude\":\"69.526975\",\"longitude\":\"85.868299\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"9\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]}",
                             "name": ""
                         }
                     ]
@@ -344,7 +344,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":77,\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"city\":\"Lake Robynland\",\"service\":null,\"service_api_key\":null,\"focus_area\":\"fugit\",\"website_url\":\"dolores\",\"event_calendar_url\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"primary_contact\":\"facilis\",\"status\":\"active\",\"organization_type\":\"perferendis\",\"established_year\":2025,\"tags\":[],\"created_at\":\"2025-07-11T13:12:29.000000Z\",\"updated_at\":\"2025-07-11T13:12:29.000000Z\"}]}",
+                            "body": "{\"data\":[{\"id\":123,\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"city\":\"Lake Robynland\",\"service\":null,\"service_api_key\":null,\"focus_area\":\"fugit\",\"website_url\":\"dolores\",\"event_calendar_url\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"primary_contact\":\"facilis\",\"status\":\"active\",\"organization_type\":\"perferendis\",\"established_year\":2025,\"tags\":[],\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\"}]}",
                             "name": ""
                         }
                     ]

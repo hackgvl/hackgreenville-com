@@ -3,9 +3,9 @@
 namespace HackGreenville\Api\Resources\Orgs\V1;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use HackGreenville\Api\Resources\ApiResource;
 
-class OrganizationResource extends JsonResource
+class OrganizationResource extends ApiResource
 {
     public $resource;
 
@@ -14,7 +14,7 @@ class OrganizationResource extends JsonResource
         $this->resource->loadMissing('tags');
 
         return [
-            'id' => $this->resource->id,
+            'id' => $this->getId($this->resource),
             'title' => $this->resource->title,
             'path' => $this->resource->path,
             'city' => $this->resource->city,
@@ -41,7 +41,7 @@ class OrganizationResource extends JsonResource
         return [
             'meta' => [
                 'version' => '1.0',
-                'timestamp' => now()->toISOString(),
+                'timestamp' => $this->getTime(),
             ],
         ];
     }

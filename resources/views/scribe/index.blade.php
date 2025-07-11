@@ -97,7 +97,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 11, 2025</li>
+        <li></li>
     </ul>
 </div>
 
@@ -131,7 +131,7 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/events?start_date=2025-01-01&amp;end_date=2100-12-31&amp;tags=1" \
+    --get "{{ config("app.url") }}/api/v0/events?start_date=2025-01-01&amp;end_date=2100-12-31" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -144,7 +144,6 @@
 const params = {
     "start_date": "2025-01-01",
     "end_date": "2100-12-31",
-    "tags": "1",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -168,7 +167,6 @@ url = '{{ config("app.url") }}/api/v0/events'
 params = {
   'start_date': '2025-01-01',
   'end_date': '2100-12-31',
-  'tags': '1',
 }
 headers = {
   'Content-Type': 'application/json',
@@ -188,30 +186,30 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;event_name&quot;: &quot;Error beatae quasi labore officiis.&quot;,
-        &quot;group_name&quot;: &quot;Lavon Runolfsson tech group&quot;,
-        &quot;group_url&quot;: &quot;in&quot;,
-        &quot;url&quot;: &quot;http://www.morar.com/itaque-minima-dolore-aspernatur-voluptates-et-culpa-dolores.html&quot;,
-        &quot;time&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+        &quot;event_name&quot;: &quot;Dolores dolorum amet iste laborum eius est dolor.&quot;,
+        &quot;group_name&quot;: &quot;Nash Corwin tech group!!!&quot;,
+        &quot;group_url&quot;: &quot;doloribus&quot;,
+        &quot;url&quot;: &quot;http://www.huels.org/dignissimos-error-sit-labore-quos.html&quot;,
+        &quot;time&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
         &quot;tags&quot;: &quot;&quot;,
         &quot;status&quot;: &quot;past&quot;,
-        &quot;rsvp_count&quot;: 96,
-        &quot;description&quot;: &quot;Beatae quidem beatae quidem tempore cupiditate. Consequatur nobis exercitationem asperiores.&quot;,
-        &quot;uuid&quot;: &quot;904f42e9-7232-3ff7-a707-fc85c75fe580&quot;,
-        &quot;data_as_of&quot;: &quot;2025-07-11T13:12:29.449833Z&quot;,
-        &quot;service_id&quot;: &quot;6&quot;,
+        &quot;rsvp_count&quot;: 97,
+        &quot;description&quot;: &quot;Consequatur debitis et id. Qui id totam temporibus quia ipsam.&quot;,
+        &quot;uuid&quot;: &quot;71edad68-e2ce-3042-9ff4-fd7f82df6cd1&quot;,
+        &quot;data_as_of&quot;: &quot;2025-01-01T12:00:00.000000Z&quot;,
+        &quot;service_id&quot;: &quot;9&quot;,
         &quot;service&quot;: &quot;eventbrite&quot;,
         &quot;venue&quot;: {
-            &quot;name&quot;: &quot;necessitatibus neque occaecati voluptas voluptatem&quot;,
-            &quot;address&quot;: &quot;980 Senger Centers\nLuettgenstad, NC 43966&quot;,
-            &quot;city&quot;: &quot;Lake Myrtie&quot;,
-            &quot;state&quot;: &quot;Et.&quot;,
-            &quot;zip&quot;: &quot;34409&quot;,
-            &quot;country&quot;: &quot;TF&quot;,
-            &quot;lat&quot;: &quot;-3.223772&quot;,
-            &quot;lon&quot;: &quot;-35.570917&quot;
+            &quot;name&quot;: &quot;est nostrum et voluptas consequatur&quot;,
+            &quot;address&quot;: &quot;5090 Agustin Plaza\nThielfort, VA 23923&quot;,
+            &quot;city&quot;: &quot;Estellehaven&quot;,
+            &quot;state&quot;: &quot;Sit.&quot;,
+            &quot;zip&quot;: &quot;37540&quot;,
+            &quot;country&quot;: &quot;KP&quot;,
+            &quot;lat&quot;: &quot;69.526975&quot;,
+            &quot;lon&quot;: &quot;85.868299&quot;
         },
-        &quot;created_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
         &quot;is_paid&quot;: null
     }
 ]</code>
@@ -315,10 +313,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tags"                data-endpoint="GETapi-v0-events"
-               value="1"
+               value=""
                data-component="query">
     <br>
-<p>Filter events by organization tag ID. Example: <code>1</code></p>
+<p>Filter events by organization tag ID.</p>
             </div>
                 </form>
 
@@ -335,7 +333,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/orgs?tags=1" \
+    --get "{{ config("app.url") }}/api/v0/orgs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -344,12 +342,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "{{ config("app.url") }}/api/v0/orgs"
 );
-
-const params = {
-    "tags": "1",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -367,15 +359,12 @@ fetch(url, {
 import json
 
 url = '{{ config("app.url") }}/api/v0/orgs'
-params = {
-  'tags': '1',
-}
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers, params=params)
+response = requests.request('GET', url, headers=headers)
 response.json()</code></pre></div>
 
 </span>
@@ -388,21 +377,21 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;title&quot;: &quot;non&quot;,
-        &quot;path&quot;: &quot;http://www.weimann.com/dolor-ad-cumque-temporibus-beatae&quot;,
-        &quot;changed&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
-        &quot;field_city&quot;: &quot;Anahaven&quot;,
+        &quot;title&quot;: &quot;minus&quot;,
+        &quot;path&quot;: &quot;http://reichel.info/&quot;,
+        &quot;changed&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
+        &quot;field_city&quot;: &quot;Lake Robynland&quot;,
         &quot;field_event_service&quot;: null,
         &quot;field_events_api_key&quot;: null,
-        &quot;field_focus_area&quot;: &quot;et&quot;,
-        &quot;field_homepage&quot;: &quot;dolorem&quot;,
-        &quot;field_event_calendar_homepage&quot;: &quot;http://weimann.com/illum-et-ab-dolores-ipsum-ad.html&quot;,
-        &quot;field_primary_contact_person&quot;: &quot;voluptates&quot;,
+        &quot;field_focus_area&quot;: &quot;fugit&quot;,
+        &quot;field_homepage&quot;: &quot;dolores&quot;,
+        &quot;field_event_calendar_homepage&quot;: &quot;https://www.lakin.com/veniam-sed-fuga-aspernatur-natus-earum&quot;,
+        &quot;field_primary_contact_person&quot;: &quot;facilis&quot;,
         &quot;field_org_status&quot;: &quot;active&quot;,
-        &quot;field_organization_type&quot;: &quot;rerum&quot;,
+        &quot;field_organization_type&quot;: &quot;perferendis&quot;,
         &quot;field_year_established&quot;: 2025,
         &quot;field_org_tags&quot;: &quot;&quot;,
-        &quot;uuid&quot;: 75
+        &quot;uuid&quot;: 123
     }
 ]</code>
  </pre>
@@ -483,10 +472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tags"                data-endpoint="GETapi-v0-orgs"
-               value="1"
+               value=""
                data-component="query">
     <br>
-<p>Filter organizations by organization tag ID. Example: <code>1</code></p>
+<p>Filter organizations by organization tag ID.</p>
             </div>
                 </form>
 
@@ -570,40 +559,40 @@ response.json()</code></pre></div>
     &quot;data&quot;: [
         {
             &quot;id&quot;: &quot;71edad68-e2ce-3042-9ff4-fd7f82df6cd1&quot;,
-            &quot;name&quot;: &quot;Dolorum amet iste laborum eius est dolor.&quot;,
+            &quot;name&quot;: &quot;Dolores dolorum amet iste laborum eius est dolor.&quot;,
             &quot;description&quot;: &quot;Consequatur debitis et id. Qui id totam temporibus quia ipsam.&quot;,
             &quot;url&quot;: &quot;http://www.huels.org/dignissimos-error-sit-labore-quos.html&quot;,
-            &quot;starts_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
-            &quot;ends_at&quot;: &quot;2025-07-13T09:07:04.000000Z&quot;,
+            &quot;starts_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
+            &quot;ends_at&quot;: &quot;2025-01-01T19:00:00.000000Z&quot;,
             &quot;rsvp_count&quot;: 97,
             &quot;status&quot;: &quot;past&quot;,
             &quot;organization&quot;: {
-                &quot;id&quot;: 76,
-                &quot;name&quot;: &quot;Nash Corwin tech group&quot;,
+                &quot;id&quot;: 123,
+                &quot;name&quot;: &quot;Nash Corwin tech group!!!&quot;,
                 &quot;url&quot;: &quot;doloribus&quot;,
                 &quot;tags&quot;: []
             },
             &quot;venue&quot;: {
-                &quot;name&quot;: &quot;nostrum et voluptas consequatur delectus&quot;,
-                &quot;address&quot;: &quot;25306 Layne Ville Suite 791\nGradyberg, MA 47809&quot;,
-                &quot;city&quot;: &quot;Torphymouth&quot;,
+                &quot;name&quot;: &quot;est nostrum et voluptas consequatur&quot;,
+                &quot;address&quot;: &quot;5090 Agustin Plaza\nThielfort, VA 23923&quot;,
+                &quot;city&quot;: &quot;Estellehaven&quot;,
                 &quot;state&quot;: {
                     &quot;code&quot;: &quot;Sit.&quot;,
                     &quot;name&quot;: &quot;Quia odit.&quot;
                 },
-                &quot;zipcode&quot;: &quot;79883-0887&quot;,
-                &quot;country&quot;: &quot;TT&quot;,
+                &quot;zipcode&quot;: &quot;37540&quot;,
+                &quot;country&quot;: &quot;KP&quot;,
                 &quot;location&quot;: {
-                    &quot;latitude&quot;: &quot;30.811763&quot;,
-                    &quot;longitude&quot;: &quot;-32.616068&quot;
+                    &quot;latitude&quot;: &quot;69.526975&quot;,
+                    &quot;longitude&quot;: &quot;85.868299&quot;
                 }
             },
             &quot;service&quot;: {
                 &quot;name&quot;: &quot;eventbrite&quot;,
-                &quot;id&quot;: &quot;6&quot;
+                &quot;id&quot;: &quot;9&quot;
             },
-            &quot;created_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
             &quot;is_paid&quot;: null
         }
     ]
@@ -928,7 +917,7 @@ response.json()</code></pre></div>
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 77,
+            &quot;id&quot;: 123,
             &quot;title&quot;: &quot;minus&quot;,
             &quot;path&quot;: &quot;http://reichel.info/&quot;,
             &quot;city&quot;: &quot;Lake Robynland&quot;,
@@ -942,8 +931,8 @@ response.json()</code></pre></div>
             &quot;organization_type&quot;: &quot;perferendis&quot;,
             &quot;established_year&quot;: 2025,
             &quot;tags&quot;: [],
-            &quot;created_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;
         }
     ]
 }</code>

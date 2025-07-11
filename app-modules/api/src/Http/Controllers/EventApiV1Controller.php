@@ -16,7 +16,7 @@ class EventApiV1Controller extends Controller
      * This API provides access to event data stored in the HackGreenville database.
      * 
      * @apiResource HackGreenville\Api\Resources\Events\V1\EventCollection
-     * @apiResourceModel App\Models\Event
+     * @apiResourceModel App\Models\Event states=forDocumentation
      */
     public function __invoke(EventApiV1Request $request)
     {

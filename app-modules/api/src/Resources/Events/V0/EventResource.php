@@ -2,11 +2,11 @@
 
 namespace HackGreenville\Api\Resources\Events\V0;
 
+use HackGreenville\Api\Resources\ApiResource;
 use App\Models\Event;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-class EventResource extends JsonResource
+class EventResource extends ApiResource
 {
     /** @var Event $resource */
     public $resource;
@@ -24,7 +24,7 @@ class EventResource extends JsonResource
             'rsvp_count' => $this->resource->rsvp_count,
             'description' => $this->resource->description,
             'uuid' => $this->resource->event_uuid,
-            'data_as_of' => now()->toISOString(),
+            'data_as_of' => $this->getTime(),
             'service_id' => $this->resource->service_id,
             'service' => $this->resource->service,
             'venue' => new VenueResource($this->resource->venue),
