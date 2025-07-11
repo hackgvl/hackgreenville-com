@@ -43,12 +43,12 @@ paths:
           in: query
           name: tags
           description: 'Filter events by organization tag ID.'
-          example: null
+          example: 1
           required: false
           schema:
             type: integer
             description: 'Filter events by organization tag ID.'
-            example: null
+            example: 1
             nullable: true
       responses:
         200:
@@ -61,29 +61,29 @@ paths:
                   type: object
                 example:
                   -
-                    event_name: 'Dolores dolorum amet iste laborum eius est dolor.'
-                    group_name: 'Nash Corwin tech group!!!'
-                    group_url: doloribus
-                    url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
-                    time: '2025-01-01T17:00:00.000000Z'
+                    event_name: 'Eos voluptas consequatur illo non.'
+                    group_name: 'Mrs. Isabell Hettinger tech group'
+                    group_url: quasi
+                    url: 'http://mcdermott.com/itaque-officiis-labore-et-consequatur-fugit'
+                    time: '2025-07-09T15:50:04.000000Z'
                     tags: ''
                     status: past
-                    rsvp_count: 97
-                    description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
-                    uuid: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                    data_as_of: '2025-01-01T12:00:00.000000Z'
-                    service_id: '9'
+                    rsvp_count: 27
+                    description: 'Officiis quia et earum. Enim ipsum at ut sapiente. At eum officiis delectus est laboriosam.'
+                    uuid: de8966ac-dbf6-319a-a587-63673f068bd5
+                    data_as_of: '2025-07-09T15:50:04.909306Z'
+                    service_id: '8'
                     service: eventbrite
                     venue:
-                      name: 'est nostrum et voluptas consequatur'
-                      address: "5090 Agustin Plaza\nThielfort, VA 23923"
-                      city: Estellehaven
-                      state: Sit.
-                      zip: '37540'
-                      country: KP
-                      lat: '69.526975'
-                      lon: '85.868299'
-                    created_at: '2025-01-01T17:00:00.000000Z'
+                      name: 'sit ut expedita molestiae perspiciatis'
+                      address: "82332 Schulist Corners Apt. 190\nWest Keaton, AK 72585-6815"
+                      city: Davisshire
+                      state: Ex.
+                      zip: '80864'
+                      country: ZA
+                      lat: '3.87321'
+                      lon: '-160.456401'
+                    created_at: '2025-07-09T15:50:04.000000Z'
                     is_paid: null
       tags:
         - Endpoints
@@ -98,12 +98,12 @@ paths:
           in: query
           name: tags
           description: 'Filter organizations by organization tag ID.'
-          example: null
+          example: 1
           required: false
           schema:
             type: integer
             description: 'Filter organizations by organization tag ID.'
-            example: null
+            example: 1
             nullable: true
       responses:
         200:
@@ -116,633 +116,21 @@ paths:
                   type: object
                 example:
                   -
-                    title: minus
-                    path: 'http://reichel.info/'
-                    changed: '2025-01-01T17:00:00.000000Z'
-                    field_city: 'Lake Robynland'
+                    title: blanditiis
+                    path: 'https://www.will.org/est-vitae-voluptates-asperiores-corrupti-facilis-quia-enim-non'
+                    changed: '2025-07-09T15:50:04.000000Z'
+                    field_city: Destinyport
                     field_event_service: null
                     field_events_api_key: null
-                    field_focus_area: fugit
-                    field_homepage: dolores
-                    field_event_calendar_homepage: 'https://www.lakin.com/veniam-sed-fuga-aspernatur-natus-earum'
-                    field_primary_contact_person: facilis
+                    field_focus_area: vero
+                    field_homepage: similique
+                    field_event_calendar_homepage: 'http://www.marks.com/rerum-temporibus-nihil-impedit-provident-perferendis.html'
+                    field_primary_contact_person: enim
                     field_org_status: active
-                    field_organization_type: perferendis
+                    field_organization_type: et
                     field_year_established: 2025
                     field_org_tags: ''
-                    uuid: 123
-      tags:
-        - Endpoints
-      security: []
-  /api/v1/events:
-    get:
-      summary: 'Events API v1'
-      operationId: eventsAPIV1
-      description: 'This API provides access to event data stored in the HackGreenville database.'
-      parameters:
-        -
-          in: query
-          name: per_page
-          description: 'The number of items to show per page. Must be at least 1. Must not be greater than 100.'
-          example: 50
-          required: false
-          schema:
-            type: integer
-            description: 'The number of items to show per page. Must be at least 1. Must not be greater than 100.'
-            example: 50
-            nullable: true
-        -
-          in: query
-          name: page
-          description: 'The current page of items to display. Must be at least 1.'
-          example: 1
-          required: false
-          schema:
-            type: integer
-            description: 'The current page of items to display. Must be at least 1.'
-            example: 1
-            nullable: true
-        -
-          in: query
-          name: start_date
-          description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-          example: '2025-01-01'
-          required: false
-          schema:
-            type: string
-            description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-            example: '2025-01-01'
-            nullable: true
-        -
-          in: query
-          name: end_date
-          description: 'The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
-          example: '2100-12-31'
-          required: false
-          schema:
-            type: string
-            description: 'The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
-            example: '2100-12-31'
-            nullable: true
-        -
-          in: query
-          name: tags
-          description: 'The <code>id</code> of an existing record in the tags table.'
-          example:
-            - 17
-          required: false
-          schema:
-            type: array
-            description: 'The <code>id</code> of an existing record in the tags table.'
-            example:
-              - 17
-            items:
-              type: integer
-        -
-          in: query
-          name: name
-          description: 'Filter events by event name (the "event_name" property). Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Filter events by event name (the "event_name" property). Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: org_name
-          description: 'The name of the organization associated with the event (the "group_name" property). Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'The name of the organization associated with the event (the "group_name" property). Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: service
-          description: 'The service that imported the event (meetup_graphql, eventbrite, etc.). Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'The service that imported the event (meetup_graphql, eventbrite, etc.). Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: min_rsvp
-          description: 'Must be at least 0.'
-          example: null
-          required: false
-          schema:
-            type: integer
-            description: 'Must be at least 0.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: max_rsvp
-          description: 'Must be at least 0.'
-          example: null
-          required: false
-          schema:
-            type: integer
-            description: 'Must be at least 0.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: venue_city
-          description: 'Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: venue_state
-          description: 'Must be 2 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Must be 2 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: is_paid
-          description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
-            example: null
-            nullable: true
-            enum:
-              - 'null'
-              - 'true'
-              - 'false'
-        -
-          in: query
-          name: sort_by
-          description: ''
-          example: event_name
-          required: false
-          schema:
-            type: string
-            description: ''
-            example: event_name
-            nullable: true
-            enum:
-              - active_at
-              - event_name
-              - group_name
-              - rsvp_count
-              - created_at
-        -
-          in: query
-          name: sort_direction
-          description: ''
-          example: asc
-          required: false
-          schema:
-            type: string
-            description: ''
-            example: asc
-            nullable: true
-            enum:
-              - asc
-              - desc
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    -
-                      id: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                      name: 'Dolores dolorum amet iste laborum eius est dolor.'
-                      description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
-                      url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
-                      starts_at: '2025-01-01T17:00:00.000000Z'
-                      ends_at: '2025-01-01T19:00:00.000000Z'
-                      rsvp_count: 97
-                      status: past
-                      organization:
-                        id: 123
-                        name: 'Nash Corwin tech group!!!'
-                        url: doloribus
-                        tags: []
-                      venue:
-                        name: 'est nostrum et voluptas consequatur'
-                        address: "5090 Agustin Plaza\nThielfort, VA 23923"
-                        city: Estellehaven
-                        state:
-                          code: Sit.
-                          name: 'Quia odit.'
-                        zipcode: '37540'
-                        country: KP
-                        location:
-                          latitude: '69.526975'
-                          longitude: '85.868299'
-                      service:
-                        name: eventbrite
-                        id: '9'
-                      created_at: '2025-01-01T17:00:00.000000Z'
-                      updated_at: '2025-01-01T17:00:00.000000Z'
-                      is_paid: null
-                properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                        name: 'Dolores dolorum amet iste laborum eius est dolor.'
-                        description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
-                        url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
-                        starts_at: '2025-01-01T17:00:00.000000Z'
-                        ends_at: '2025-01-01T19:00:00.000000Z'
-                        rsvp_count: 97
-                        status: past
-                        organization:
-                          id: 123
-                          name: 'Nash Corwin tech group!!!'
-                          url: doloribus
-                          tags: []
-                        venue:
-                          name: 'est nostrum et voluptas consequatur'
-                          address: "5090 Agustin Plaza\nThielfort, VA 23923"
-                          city: Estellehaven
-                          state:
-                            code: Sit.
-                            name: 'Quia odit.'
-                          zipcode: '37540'
-                          country: KP
-                          location:
-                            latitude: '69.526975'
-                            longitude: '85.868299'
-                        service:
-                          name: eventbrite
-                          id: '9'
-                        created_at: '2025-01-01T17:00:00.000000Z'
-                        updated_at: '2025-01-01T17:00:00.000000Z'
-                        is_paid: null
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          example: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                        name:
-                          type: string
-                          example: 'Dolores dolorum amet iste laborum eius est dolor.'
-                        description:
-                          type: string
-                          example: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
-                        url:
-                          type: string
-                          example: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
-                        starts_at:
-                          type: string
-                          example: '2025-01-01T17:00:00.000000Z'
-                        ends_at:
-                          type: string
-                          example: '2025-01-01T19:00:00.000000Z'
-                        rsvp_count:
-                          type: integer
-                          example: 97
-                        status:
-                          type: string
-                          example: past
-                        organization:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              example: 123
-                            name:
-                              type: string
-                              example: 'Nash Corwin tech group!!!'
-                            url:
-                              type: string
-                              example: doloribus
-                            tags:
-                              type: array
-                              example: []
-                        venue:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              example: 'est nostrum et voluptas consequatur'
-                            address:
-                              type: string
-                              example: "5090 Agustin Plaza\nThielfort, VA 23923"
-                            city:
-                              type: string
-                              example: Estellehaven
-                            state:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  example: Sit.
-                                name:
-                                  type: string
-                                  example: 'Quia odit.'
-                            zipcode:
-                              type: string
-                              example: '37540'
-                            country:
-                              type: string
-                              example: KP
-                            location:
-                              type: object
-                              properties:
-                                latitude:
-                                  type: string
-                                  example: '69.526975'
-                                longitude:
-                                  type: string
-                                  example: '85.868299'
-                        service:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              example: eventbrite
-                            id:
-                              type: string
-                              example: '9'
-                        created_at:
-                          type: string
-                          example: '2025-01-01T17:00:00.000000Z'
-                        updated_at:
-                          type: string
-                          example: '2025-01-01T17:00:00.000000Z'
-                        is_paid:
-                          type: string
-                          example: null
-      tags:
-        - Endpoints
-      security: []
-  /api/v1/organizations:
-    get:
-      summary: 'Organizations API v1'
-      operationId: organizationsAPIV1
-      description: 'This API provides access to organization data stored in the HackGreenville database.'
-      parameters:
-        -
-          in: query
-          name: per_page
-          description: 'The number of items to show per page. Must be at least 1. Must not be greater than 100.'
-          example: 50
-          required: false
-          schema:
-            type: integer
-            description: 'The number of items to show per page. Must be at least 1. Must not be greater than 100.'
-            example: 50
-            nullable: true
-        -
-          in: query
-          name: page
-          description: 'The current page of items to display. Must be at least 1.'
-          example: 1
-          required: false
-          schema:
-            type: integer
-            description: 'The current page of items to display. Must be at least 1.'
-            example: 1
-            nullable: true
-        -
-          in: query
-          name: tags
-          description: 'Filter organizations by tag ID. The <code>id</code> of an existing record in the tags table.'
-          example: null
-          required: false
-          schema:
-            type: array
-            description: 'Filter organizations by tag ID. The <code>id</code> of an existing record in the tags table.'
-            example: null
-            items:
-              type: integer
-        -
-          in: query
-          name: title
-          description: 'Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: city
-          description: 'Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: focus_area
-          description: 'The organization category (Entrpreneurship, Security, etc.). Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'The organization category (Entrpreneurship, Security, etc.). Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: organization_type
-          description: 'The organization type (Meetup Groups, Code Schools, etc.). Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'The organization type (Meetup Groups, Code Schools, etc.). Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: status
-          description: 'The organization status (active, inactive, etc.). Must not be greater than 255 characters.'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'The organization status (active, inactive, etc.). Must not be greater than 255 characters.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: established_from
-          description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2025.'
-          example: null
-          required: false
-          schema:
-            type: integer
-            description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2025.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: established_to
-          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.'
-          example: null
-          required: false
-          schema:
-            type: integer
-            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.'
-            example: null
-            nullable: true
-        -
-          in: query
-          name: sort_by
-          description: ''
-          example: title
-          required: false
-          schema:
-            type: string
-            description: ''
-            example: title
-            nullable: true
-            enum:
-              - title
-              - city
-              - established_at
-              - updated_at
-              - created_at
-        -
-          in: query
-          name: sort_direction
-          description: ''
-          example: asc
-          required: false
-          schema:
-            type: string
-            description: ''
-            example: asc
-            nullable: true
-            enum:
-              - asc
-              - desc
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    -
-                      id: 123
-                      title: minus
-                      path: 'http://reichel.info/'
-                      city: 'Lake Robynland'
-                      service: null
-                      service_api_key: null
-                      focus_area: fugit
-                      website_url: dolores
-                      event_calendar_url: 'https://www.lakin.com/veniam-sed-fuga-aspernatur-natus-earum'
-                      primary_contact: facilis
-                      status: active
-                      organization_type: perferendis
-                      established_year: 2025
-                      tags: []
-                      created_at: '2025-01-01T17:00:00.000000Z'
-                      updated_at: '2025-01-01T17:00:00.000000Z'
-                properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 123
-                        title: minus
-                        path: 'http://reichel.info/'
-                        city: 'Lake Robynland'
-                        service: null
-                        service_api_key: null
-                        focus_area: fugit
-                        website_url: dolores
-                        event_calendar_url: 'https://www.lakin.com/veniam-sed-fuga-aspernatur-natus-earum'
-                        primary_contact: facilis
-                        status: active
-                        organization_type: perferendis
-                        established_year: 2025
-                        tags: []
-                        created_at: '2025-01-01T17:00:00.000000Z'
-                        updated_at: '2025-01-01T17:00:00.000000Z'
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 123
-                        title:
-                          type: string
-                          example: minus
-                        path:
-                          type: string
-                          example: 'http://reichel.info/'
-                        city:
-                          type: string
-                          example: 'Lake Robynland'
-                        service:
-                          type: string
-                          example: null
-                        service_api_key:
-                          type: string
-                          example: null
-                        focus_area:
-                          type: string
-                          example: fugit
-                        website_url:
-                          type: string
-                          example: dolores
-                        event_calendar_url:
-                          type: string
-                          example: 'https://www.lakin.com/veniam-sed-fuga-aspernatur-natus-earum'
-                        primary_contact:
-                          type: string
-                          example: facilis
-                        status:
-                          type: string
-                          example: active
-                        organization_type:
-                          type: string
-                          example: perferendis
-                        established_year:
-                          type: integer
-                          example: 2025
-                        tags:
-                          type: array
-                          example: []
-                        created_at:
-                          type: string
-                          example: '2025-01-01T17:00:00.000000Z'
-                        updated_at:
-                          type: string
-                          example: '2025-01-01T17:00:00.000000Z'
+                    uuid: 90
       tags:
         - Endpoints
       security: []
