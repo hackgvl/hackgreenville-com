@@ -1,4 +1,4 @@
-name: Run unit tests
+name: Detect outdated Scribe docs
 
 on:
   pull_request:
@@ -10,6 +10,18 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: hackgreenville
+          MYSQL_USER: hackgreenville
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_PASSWORD: test
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,6 +37,9 @@ jobs:
         with:
           php-version: 8.1
           extensions: :php_psr
+
+      - name: copy environment variables to .env
+        run: cp .env.ci .env
 
       - name: install php dependencies
         run: composer install --no-dev --optimize-autoloader
