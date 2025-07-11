@@ -28,6 +28,13 @@ jobs:
 
       - name: install php dependencies
         run: composer install --optimize-autoloader
+
+      - name: Setup minimal database
+        run: |
+          cp .env.ci .env
+          echo "DB_CONNECTION=sqlite" >> .env
+          echo "DB_DATABASE=database/database.sqlite" >> .env
+          touch database/database.sqlite
     
       - name: Create CI-specific Scribe config
         run: |
