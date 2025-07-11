@@ -353,6 +353,11 @@ a {
     }
 }
 
+.links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 @import 'about';
 @import 'labs';
 @import 'hg-nights';
