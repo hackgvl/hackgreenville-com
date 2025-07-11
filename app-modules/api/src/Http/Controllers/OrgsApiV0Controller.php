@@ -16,12 +16,13 @@ class OrgsApiV0Controller extends Controller
      * This API provides access to organization data stored in the HackGreenville database.
      * 
      * @apiResource HackGreenville\Api\Resources\Orgs\V0\OrganizationsCollection
-     * @apiResourceModel App\Models\Org
+     * @apiResourceModel App\Models\Org states=forDocumentation
      */
     public function __invoke(OrgsApiV0Request $request)
     {
         return new OrganizationsCollection(
             resource: Org::query()
+                ->with('tags')
                 ->when($request->filled('tags'), function (Builder $query) use ($request) {
                     $query->whereHas('tags', function ($query) use ($request) {
                         $query->where('id', $request->integer('tags'));
