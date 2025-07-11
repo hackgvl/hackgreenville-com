@@ -10,6 +10,18 @@ on:
 jobs:
   detect:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: hackgreenville
+          MYSQL_USER: hackgreenville
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_PASSWORD: test
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,33 +38,17 @@ jobs:
           php-version: 8.1
           extensions: :php_psr
 
-      - name: install php dependencies
-        run: composer install --optimize-autoloader
+      - name: copy environment variables to .env
+        run: cp .env.ci .env
 
-      - name: Setup minimal database
-        run: |
-          cp .env.ci .env
-          echo "DB_CONNECTION=sqlite" >> .env
-          echo "DB_DATABASE=database/database.sqlite" >> .env
-          touch database/database.sqlite
-    
-      - name: Create CI-specific Scribe config
-        run: |
-          cat > config/scribe_ci.php << 'EOF'
-          <?php
-          $config = include __DIR__ . '/scribe.php';
-          
-          // Completely avoid database operations
-          $config['database_connections_to_transact'] = [];
-          $config['examples']['models_source'] = ['factoryMake'];
-          
-          return $config;
-          EOF
+      - name: install php dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: migrate database
+        run: php artisan migrate --seed
 
       - name: Generate docs
-        env:
-          APP_ENV: testing
-        run: php artisan scribe:generate --config=scribe_ci
+        run: php artisan scribe:generate
 
       - name: Check for changes
         id: docs-check
