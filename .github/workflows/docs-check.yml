@@ -27,7 +27,7 @@ jobs:
           extensions: :php_psr
 
       - name: install php dependencies
-        run: composer install --no-dev --optimize-autoloader
+        run: composer install --optimize-autoloader
     
       - name: Create CI-specific Scribe config
         run: |
