@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "HackGreenville API Documentation",
-        "_postman_id": "b0e4f647-b522-4746-a54c-88c4f65393ef",
+        "_postman_id": "02f8e2c2-2ed0-4974-80ae-71c644ff7e03",
         "description": "Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -40,12 +40,12 @@
                                 },
                                 {
                                     "key": "tags",
-                                    "value": "1",
+                                    "value": "",
                                     "description": "Filter events by organization tag ID.",
-                                    "disabled": false
+                                    "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2025-01-01&end_date=2100-12-31&tags=1"
+                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2025-01-01&end_date=2100-12-31&tags="
                         },
                         "method": "GET",
                         "header": [
@@ -68,7 +68,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"event_name\":\"Eos voluptas consequatur illo non.\",\"group_name\":\"Mrs. Isabell Hettinger tech group\",\"group_url\":\"quasi\",\"url\":\"http:\\\/\\\/mcdermott.com\\\/itaque-officiis-labore-et-consequatur-fugit\",\"time\":\"2025-07-09T15:50:04.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":27,\"description\":\"Officiis quia et earum. Enim ipsum at ut sapiente. At eum officiis delectus est laboriosam.\",\"uuid\":\"de8966ac-dbf6-319a-a587-63673f068bd5\",\"data_as_of\":\"2025-07-09T15:50:04.909306Z\",\"service_id\":\"8\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"sit ut expedita molestiae perspiciatis\",\"address\":\"82332 Schulist Corners Apt. 190\\nWest Keaton, AK 72585-6815\",\"city\":\"Davisshire\",\"state\":\"Ex.\",\"zip\":\"80864\",\"country\":\"ZA\",\"lat\":\"3.87321\",\"lon\":\"-160.456401\"},\"created_at\":\"2025-07-09T15:50:04.000000Z\",\"is_paid\":null}]",
+                            "body": "[{\"event_name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"group_name\":\"Nash Corwin tech group!!!\",\"group_url\":\"doloribus\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"time\":\"2025-01-01T17:00:00.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":97,\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"uuid\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"data_as_of\":\"2025-01-01T12:00:00.000000Z\",\"service_id\":\"9\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":\"Sit.\",\"zip\":\"37540\",\"country\":\"KP\",\"lat\":\"69.526975\",\"lon\":\"85.868299\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]",
                             "name": ""
                         }
                     ]
@@ -82,12 +82,12 @@
                             "query": [
                                 {
                                     "key": "tags",
-                                    "value": "1",
+                                    "value": "",
                                     "description": "Filter organizations by organization tag ID.",
-                                    "disabled": false
+                                    "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v0\/orgs?tags=1"
+                            "raw": "{{baseUrl}}\/api\/v0\/orgs?tags="
                         },
                         "method": "GET",
                         "header": [
@@ -110,7 +110,241 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"title\":\"blanditiis\",\"path\":\"https:\\\/\\\/www.will.org\\\/est-vitae-voluptates-asperiores-corrupti-facilis-quia-enim-non\",\"changed\":\"2025-07-09T15:50:04.000000Z\",\"field_city\":\"Destinyport\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"vero\",\"field_homepage\":\"similique\",\"field_event_calendar_homepage\":\"http:\\\/\\\/www.marks.com\\\/rerum-temporibus-nihil-impedit-provident-perferendis.html\",\"field_primary_contact_person\":\"enim\",\"field_org_status\":\"active\",\"field_organization_type\":\"et\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":90}]",
+                            "body": "[{\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"changed\":\"2025-01-01T17:00:00.000000Z\",\"field_city\":\"Lake Robynland\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"fugit\",\"field_homepage\":\"dolores\",\"field_event_calendar_homepage\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"field_primary_contact_person\":\"facilis\",\"field_org_status\":\"active\",\"field_organization_type\":\"perferendis\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":123}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Events API v1",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/events",
+                            "query": [
+                                {
+                                    "key": "per_page",
+                                    "value": "50",
+                                    "description": "The number of items to show per page. Must be at least 1. Must not be greater than 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "The current page of items to display. Must be at least 1.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "start_date",
+                                    "value": "2025-01-01",
+                                    "description": "The start date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date before or equal to end_date.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2100-12-31",
+                                    "description": "The end date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date after or equal to start_date.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "tags[0]",
+                                    "value": "17",
+                                    "description": "The id of an existing record in the tags table.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "",
+                                    "description": "Filter events by event name (the \"event_name\" property). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "org_name",
+                                    "value": "",
+                                    "description": "The name of the organization associated with the event (the \"group_name\" property). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "service",
+                                    "value": "",
+                                    "description": "The service that imported the event (meetup_graphql, eventbrite, etc.). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "min_rsvp",
+                                    "value": "",
+                                    "description": "Must be at least 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "max_rsvp",
+                                    "value": "",
+                                    "description": "Must be at least 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "venue_city",
+                                    "value": "",
+                                    "description": "Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "venue_state",
+                                    "value": "",
+                                    "description": "Must be 2 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "is_paid",
+                                    "value": "",
+                                    "description": "Filter events that require payment (null means we currently cannot determine if event is paid).",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "sort_by",
+                                    "value": "event_name",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort_direction",
+                                    "value": "asc",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2025-01-01&end_date=2100-12-31&tags[0]=17&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This API provides access to event data stored in the HackGreenville database.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-01-01T17:00:00.000000Z\",\"ends_at\":\"2025-01-01T19:00:00.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"organization\":{\"id\":123,\"name\":\"Nash Corwin tech group!!!\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"37540\",\"country\":\"KP\",\"location\":{\"latitude\":\"69.526975\",\"longitude\":\"85.868299\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"9\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Organizations API v1",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/organizations",
+                            "query": [
+                                {
+                                    "key": "per_page",
+                                    "value": "50",
+                                    "description": "The number of items to show per page. Must be at least 1. Must not be greater than 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "The current page of items to display. Must be at least 1.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "tags[]",
+                                    "value": "",
+                                    "description": "Filter organizations by tag ID. The id of an existing record in the tags table.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "title",
+                                    "value": "",
+                                    "description": "Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "city",
+                                    "value": "",
+                                    "description": "Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "focus_area",
+                                    "value": "",
+                                    "description": "The organization category (Entrpreneurship, Security, etc.). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "organization_type",
+                                    "value": "",
+                                    "description": "The organization type (Meetup Groups, Code Schools, etc.). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "status",
+                                    "value": "",
+                                    "description": "The organization status (active, inactive, etc.). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "established_from",
+                                    "value": "",
+                                    "description": "The year the organization was established. Must be at least 1900. Must not be greater than 2025.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "established_to",
+                                    "value": "",
+                                    "description": "The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "sort_by",
+                                    "value": "title",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort_direction",
+                                    "value": "asc",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/organizations?per_page=50&page=1&tags[]=&title=&city=&focus_area=&organization_type=&status=&established_from=&established_to=&sort_by=title&sort_direction=asc"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This API provides access to organization data stored in the HackGreenville database.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":123,\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"city\":\"Lake Robynland\",\"service\":null,\"service_api_key\":null,\"focus_area\":\"fugit\",\"website_url\":\"dolores\",\"event_calendar_url\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"primary_contact\":\"facilis\",\"status\":\"active\",\"organization_type\":\"perferendis\",\"established_year\":2025,\"tags\":[],\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\"}]}",
                             "name": ""
                         }
                     ]
