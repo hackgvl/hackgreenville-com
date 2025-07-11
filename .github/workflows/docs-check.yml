@@ -28,14 +28,24 @@ jobs:
 
       - name: install php dependencies
         run: composer install --no-dev --optimize-autoloader
+    
+      - name: Create CI-specific Scribe config
+        run: |
+          cat > config/scribe_ci.php << 'EOF'
+          <?php
+          $config = include __DIR__ . '/scribe.php';
+          
+          // Completely avoid database operations
+          $config['database_connections_to_transact'] = [];
+          $config['examples']['models_source'] = ['factoryMake'];
+          
+          return $config;
+          EOF
 
       - name: Generate docs
         env:
-          SCRIBE_DATABASE_CONNECTIONS_TO_TRANSACT: "[]"
-          SCRIBE_EXAMPLES_MODELS_SOURCE: "factoryMake"
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ":memory:"
-        run: php artisan scribe:generate
+          APP_ENV: testing
+        run: php artisan scribe:generate --config=scribe_ci
 
       - name: Check for changes
         id: docs-check
