@@ -8,7 +8,7 @@ on:
       - develop
 
 jobs:
-  tests:
+  detect:
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -43,6 +43,9 @@ jobs:
 
       - name: install php dependencies
         run: composer install --no-dev --optimize-autoloader
+
+      - name: migrate database
+        run: php artisan migrate --seed
 
       - name: Generate docs
         run: php artisan scribe:generate
