@@ -97,7 +97,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 10, 2025</li>
+        <li>Last updated: July 11, 2025</li>
     </ul>
 </div>
 
@@ -188,30 +188,30 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;event_name&quot;: &quot;Repudiandae minima nihil officia rerum.&quot;,
-        &quot;group_name&quot;: &quot;Prof. Kristopher Wyman tech group&quot;,
-        &quot;group_url&quot;: &quot;id&quot;,
-        &quot;url&quot;: &quot;http://www.hane.com/nobis-non-ullam-consequatur-cumque-dignissimos-dolore-deleniti-aut&quot;,
-        &quot;time&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
+        &quot;event_name&quot;: &quot;Error beatae quasi labore officiis.&quot;,
+        &quot;group_name&quot;: &quot;Lavon Runolfsson tech group&quot;,
+        &quot;group_url&quot;: &quot;in&quot;,
+        &quot;url&quot;: &quot;http://www.morar.com/itaque-minima-dolore-aspernatur-voluptates-et-culpa-dolores.html&quot;,
+        &quot;time&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
         &quot;tags&quot;: &quot;&quot;,
         &quot;status&quot;: &quot;past&quot;,
-        &quot;rsvp_count&quot;: 46,
-        &quot;description&quot;: &quot;Dolor beatae tempora repellendus id esse deserunt eum. Non voluptas excepturi sint est sint.&quot;,
-        &quot;uuid&quot;: &quot;07be1d27-e496-3bf5-8dfb-66fbd0c1aa8e&quot;,
-        &quot;data_as_of&quot;: &quot;2025-07-10T13:58:46.773713Z&quot;,
+        &quot;rsvp_count&quot;: 96,
+        &quot;description&quot;: &quot;Beatae quidem beatae quidem tempore cupiditate. Consequatur nobis exercitationem asperiores.&quot;,
+        &quot;uuid&quot;: &quot;904f42e9-7232-3ff7-a707-fc85c75fe580&quot;,
+        &quot;data_as_of&quot;: &quot;2025-07-11T13:12:29.449833Z&quot;,
         &quot;service_id&quot;: &quot;6&quot;,
         &quot;service&quot;: &quot;eventbrite&quot;,
         &quot;venue&quot;: {
-            &quot;name&quot;: &quot;sit minima ipsam illum velit&quot;,
-            &quot;address&quot;: &quot;62317 Randy Highway Apt. 908\nSchimmelview, IN 12817&quot;,
-            &quot;city&quot;: &quot;Verniceland&quot;,
-            &quot;state&quot;: &quot;Sint.&quot;,
-            &quot;zip&quot;: &quot;88022-5153&quot;,
-            &quot;country&quot;: &quot;NP&quot;,
-            &quot;lat&quot;: &quot;-81.888645&quot;,
-            &quot;lon&quot;: &quot;-144.166307&quot;
+            &quot;name&quot;: &quot;necessitatibus neque occaecati voluptas voluptatem&quot;,
+            &quot;address&quot;: &quot;980 Senger Centers\nLuettgenstad, NC 43966&quot;,
+            &quot;city&quot;: &quot;Lake Myrtie&quot;,
+            &quot;state&quot;: &quot;Et.&quot;,
+            &quot;zip&quot;: &quot;34409&quot;,
+            &quot;country&quot;: &quot;TF&quot;,
+            &quot;lat&quot;: &quot;-3.223772&quot;,
+            &quot;lon&quot;: &quot;-35.570917&quot;
         },
-        &quot;created_at&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
         &quot;is_paid&quot;: null
     }
 ]</code>
@@ -388,21 +388,21 @@ response.json()</code></pre></div>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;title&quot;: &quot;voluptates&quot;,
-        &quot;path&quot;: &quot;http://goyette.com/occaecati-nam-sed-cumque-eveniet-amet-consequatur.html&quot;,
-        &quot;changed&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
-        &quot;field_city&quot;: &quot;Rippintown&quot;,
+        &quot;title&quot;: &quot;non&quot;,
+        &quot;path&quot;: &quot;http://www.weimann.com/dolor-ad-cumque-temporibus-beatae&quot;,
+        &quot;changed&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+        &quot;field_city&quot;: &quot;Anahaven&quot;,
         &quot;field_event_service&quot;: null,
         &quot;field_events_api_key&quot;: null,
-        &quot;field_focus_area&quot;: &quot;aut&quot;,
-        &quot;field_homepage&quot;: &quot;quisquam&quot;,
-        &quot;field_event_calendar_homepage&quot;: &quot;http://www.prosacco.info/ut-facere-blanditiis-dignissimos-est-omnis&quot;,
-        &quot;field_primary_contact_person&quot;: &quot;assumenda&quot;,
+        &quot;field_focus_area&quot;: &quot;et&quot;,
+        &quot;field_homepage&quot;: &quot;dolorem&quot;,
+        &quot;field_event_calendar_homepage&quot;: &quot;http://weimann.com/illum-et-ab-dolores-ipsum-ad.html&quot;,
+        &quot;field_primary_contact_person&quot;: &quot;voluptates&quot;,
         &quot;field_org_status&quot;: &quot;active&quot;,
-        &quot;field_organization_type&quot;: &quot;numquam&quot;,
+        &quot;field_organization_type&quot;: &quot;rerum&quot;,
         &quot;field_year_established&quot;: 2025,
         &quot;field_org_tags&quot;: &quot;&quot;,
-        &quot;uuid&quot;: 117
+        &quot;uuid&quot;: 75
     }
 ]</code>
  </pre>
@@ -573,12 +573,12 @@ response.json()</code></pre></div>
             &quot;name&quot;: &quot;Dolorum amet iste laborum eius est dolor.&quot;,
             &quot;description&quot;: &quot;Consequatur debitis et id. Qui id totam temporibus quia ipsam.&quot;,
             &quot;url&quot;: &quot;http://www.huels.org/dignissimos-error-sit-labore-quos.html&quot;,
-            &quot;starts_at&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
-            &quot;ends_at&quot;: &quot;2025-07-12T09:53:21.000000Z&quot;,
+            &quot;starts_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+            &quot;ends_at&quot;: &quot;2025-07-13T09:07:04.000000Z&quot;,
             &quot;rsvp_count&quot;: 97,
             &quot;status&quot;: &quot;past&quot;,
             &quot;organization&quot;: {
-                &quot;id&quot;: 118,
+                &quot;id&quot;: 76,
                 &quot;name&quot;: &quot;Nash Corwin tech group&quot;,
                 &quot;url&quot;: &quot;doloribus&quot;,
                 &quot;tags&quot;: []
@@ -602,8 +602,8 @@ response.json()</code></pre></div>
                 &quot;name&quot;: &quot;eventbrite&quot;,
                 &quot;id&quot;: &quot;6&quot;
             },
-            &quot;created_at&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
             &quot;is_paid&quot;: null
         }
     ]
@@ -738,26 +738,26 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The <code>id</code> of an existing record in the tags table.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>event_name</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="event_name"                data-endpoint="GETapi-v1-events"
+                              name="name"                data-endpoint="GETapi-v1-events"
                value=""
                data-component="query">
     <br>
-<p>Filter events by event name. Must not be greater than 255 characters.</p>
+<p>Filter events by event name (the &quot;event_name&quot; property). Must not be greater than 255 characters.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>group_name</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>org_name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="group_name"                data-endpoint="GETapi-v1-events"
+                              name="org_name"                data-endpoint="GETapi-v1-events"
                value=""
                data-component="query">
     <br>
-<p>The name of the group associated with the event. Must not be greater than 255 characters.</p>
+<p>The name of the organization associated with the event (the &quot;group_name&quot; property). Must not be greater than 255 characters.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>service</code></b>&nbsp;&nbsp;
@@ -928,7 +928,7 @@ response.json()</code></pre></div>
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 119,
+            &quot;id&quot;: 77,
             &quot;title&quot;: &quot;minus&quot;,
             &quot;path&quot;: &quot;http://reichel.info/&quot;,
             &quot;city&quot;: &quot;Lake Robynland&quot;,
@@ -942,8 +942,8 @@ response.json()</code></pre></div>
             &quot;organization_type&quot;: &quot;perferendis&quot;,
             &quot;established_year&quot;: 2025,
             &quot;tags&quot;: [],
-            &quot;created_at&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-07-10T13:58:46.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-07-11T13:12:29.000000Z&quot;
         }
     ]
 }</code>

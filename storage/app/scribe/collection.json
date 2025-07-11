@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "HackGreenville API Documentation",
-        "_postman_id": "dfb9a0d6-9098-40e3-beb6-fe8322df2d56",
+        "_postman_id": "4c80669a-3898-463d-9a00-ad3679da4eba",
         "description": "Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -68,7 +68,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"event_name\":\"Repudiandae minima nihil officia rerum.\",\"group_name\":\"Prof. Kristopher Wyman tech group\",\"group_url\":\"id\",\"url\":\"http:\\\/\\\/www.hane.com\\\/nobis-non-ullam-consequatur-cumque-dignissimos-dolore-deleniti-aut\",\"time\":\"2025-07-10T13:58:46.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":46,\"description\":\"Dolor beatae tempora repellendus id esse deserunt eum. Non voluptas excepturi sint est sint.\",\"uuid\":\"07be1d27-e496-3bf5-8dfb-66fbd0c1aa8e\",\"data_as_of\":\"2025-07-10T13:58:46.773713Z\",\"service_id\":\"6\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"sit minima ipsam illum velit\",\"address\":\"62317 Randy Highway Apt. 908\\nSchimmelview, IN 12817\",\"city\":\"Verniceland\",\"state\":\"Sint.\",\"zip\":\"88022-5153\",\"country\":\"NP\",\"lat\":\"-81.888645\",\"lon\":\"-144.166307\"},\"created_at\":\"2025-07-10T13:58:46.000000Z\",\"is_paid\":null}]",
+                            "body": "[{\"event_name\":\"Error beatae quasi labore officiis.\",\"group_name\":\"Lavon Runolfsson tech group\",\"group_url\":\"in\",\"url\":\"http:\\\/\\\/www.morar.com\\\/itaque-minima-dolore-aspernatur-voluptates-et-culpa-dolores.html\",\"time\":\"2025-07-11T13:12:29.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":96,\"description\":\"Beatae quidem beatae quidem tempore cupiditate. Consequatur nobis exercitationem asperiores.\",\"uuid\":\"904f42e9-7232-3ff7-a707-fc85c75fe580\",\"data_as_of\":\"2025-07-11T13:12:29.449833Z\",\"service_id\":\"6\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"necessitatibus neque occaecati voluptas voluptatem\",\"address\":\"980 Senger Centers\\nLuettgenstad, NC 43966\",\"city\":\"Lake Myrtie\",\"state\":\"Et.\",\"zip\":\"34409\",\"country\":\"TF\",\"lat\":\"-3.223772\",\"lon\":\"-35.570917\"},\"created_at\":\"2025-07-11T13:12:29.000000Z\",\"is_paid\":null}]",
                             "name": ""
                         }
                     ]
@@ -110,7 +110,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"title\":\"voluptates\",\"path\":\"http:\\\/\\\/goyette.com\\\/occaecati-nam-sed-cumque-eveniet-amet-consequatur.html\",\"changed\":\"2025-07-10T13:58:46.000000Z\",\"field_city\":\"Rippintown\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"aut\",\"field_homepage\":\"quisquam\",\"field_event_calendar_homepage\":\"http:\\\/\\\/www.prosacco.info\\\/ut-facere-blanditiis-dignissimos-est-omnis\",\"field_primary_contact_person\":\"assumenda\",\"field_org_status\":\"active\",\"field_organization_type\":\"numquam\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":117}]",
+                            "body": "[{\"title\":\"non\",\"path\":\"http:\\\/\\\/www.weimann.com\\\/dolor-ad-cumque-temporibus-beatae\",\"changed\":\"2025-07-11T13:12:29.000000Z\",\"field_city\":\"Anahaven\",\"field_event_service\":null,\"field_events_api_key\":null,\"field_focus_area\":\"et\",\"field_homepage\":\"dolorem\",\"field_event_calendar_homepage\":\"http:\\\/\\\/weimann.com\\\/illum-et-ab-dolores-ipsum-ad.html\",\"field_primary_contact_person\":\"voluptates\",\"field_org_status\":\"active\",\"field_organization_type\":\"rerum\",\"field_year_established\":2025,\"field_org_tags\":\"\",\"uuid\":75}]",
                             "name": ""
                         }
                     ]
@@ -153,15 +153,15 @@
                                     "disabled": false
                                 },
                                 {
-                                    "key": "event_name",
+                                    "key": "name",
                                     "value": "",
-                                    "description": "Filter events by event name. Must not be greater than 255 characters.",
+                                    "description": "Filter events by event name (the \"event_name\" property). Must not be greater than 255 characters.",
                                     "disabled": true
                                 },
                                 {
-                                    "key": "group_name",
+                                    "key": "org_name",
                                     "value": "",
-                                    "description": "The name of the group associated with the event. Must not be greater than 255 characters.",
+                                    "description": "The name of the organization associated with the event (the \"group_name\" property). Must not be greater than 255 characters.",
                                     "disabled": true
                                 },
                                 {
@@ -213,7 +213,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2025-01-01&end_date=2100-12-31&tags[0]=17&event_name=&group_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2025-01-01&end_date=2100-12-31&tags[0]=17&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [
@@ -236,7 +236,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-07-10T13:58:46.000000Z\",\"ends_at\":\"2025-07-12T09:53:21.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"organization\":{\"id\":118,\"name\":\"Nash Corwin tech group\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"nostrum et voluptas consequatur delectus\",\"address\":\"25306 Layne Ville Suite 791\\nGradyberg, MA 47809\",\"city\":\"Torphymouth\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"79883-0887\",\"country\":\"TT\",\"location\":{\"latitude\":\"30.811763\",\"longitude\":\"-32.616068\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"6\"},\"created_at\":\"2025-07-10T13:58:46.000000Z\",\"updated_at\":\"2025-07-10T13:58:46.000000Z\",\"is_paid\":null}]}",
+                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-07-11T13:12:29.000000Z\",\"ends_at\":\"2025-07-13T09:07:04.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"organization\":{\"id\":76,\"name\":\"Nash Corwin tech group\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"nostrum et voluptas consequatur delectus\",\"address\":\"25306 Layne Ville Suite 791\\nGradyberg, MA 47809\",\"city\":\"Torphymouth\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"79883-0887\",\"country\":\"TT\",\"location\":{\"latitude\":\"30.811763\",\"longitude\":\"-32.616068\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"6\"},\"created_at\":\"2025-07-11T13:12:29.000000Z\",\"updated_at\":\"2025-07-11T13:12:29.000000Z\",\"is_paid\":null}]}",
                             "name": ""
                         }
                     ]
@@ -344,7 +344,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":119,\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"city\":\"Lake Robynland\",\"service\":null,\"service_api_key\":null,\"focus_area\":\"fugit\",\"website_url\":\"dolores\",\"event_calendar_url\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"primary_contact\":\"facilis\",\"status\":\"active\",\"organization_type\":\"perferendis\",\"established_year\":2025,\"tags\":[],\"created_at\":\"2025-07-10T13:58:46.000000Z\",\"updated_at\":\"2025-07-10T13:58:46.000000Z\"}]}",
+                            "body": "{\"data\":[{\"id\":77,\"title\":\"minus\",\"path\":\"http:\\\/\\\/reichel.info\\\/\",\"city\":\"Lake Robynland\",\"service\":null,\"service_api_key\":null,\"focus_area\":\"fugit\",\"website_url\":\"dolores\",\"event_calendar_url\":\"https:\\\/\\\/www.lakin.com\\\/veniam-sed-fuga-aspernatur-natus-earum\",\"primary_contact\":\"facilis\",\"status\":\"active\",\"organization_type\":\"perferendis\",\"established_year\":2025,\"tags\":[],\"created_at\":\"2025-07-11T13:12:29.000000Z\",\"updated_at\":\"2025-07-11T13:12:29.000000Z\"}]}",
                             "name": ""
                         }
                     ]

@@ -153,4 +153,62 @@ class EventApiV1Test extends TestCase
         $response4->assertJsonCount(1, 'data');
         $response4->assertSee($unknown_event->event_name);
     }
+
+    public function test_can_filter_event_by_name() {
+        $event1 = Event::factory()->create([
+            'service_id' => 100,
+            'event_name' => 'foo',
+        ]);
+
+        Event::factory()->create([
+            'service_id' => 200,
+            'event_name' => 'bar',
+        ]);
+
+        $event3 = Event::factory()->create([
+            'service_id' => 300,
+            'event_name' => 'foobar',
+        ]);
+
+        $response1 = $this->getJson('/api/v1/events');
+        $response2 = $this->getJson('/api/v1/events?name=foo');
+
+        $response1->assertStatus(200);
+        $response2->assertStatus(200);
+
+        $response1->assertJsonCount(3, 'data');
+
+        $response2->assertJsonCount(2, 'data');
+        $response2->assertSee($event1->service_id);
+        $response2->assertSee($event3->service_id); // should show up because "foo" is in the event name
+    }
+
+    public function test_can_filter_event_by_org_name() {
+        $event1 = Event::factory()->create([
+            'service_id' => 100,
+            'group_name' => 'foo',
+        ]);
+
+        Event::factory()->create([
+            'service_id' => 200,
+            'group_name' => 'bar',
+        ]);
+
+        $event3 = Event::factory()->create([
+            'service_id' => 300,
+            'group_name' => 'foobar',
+        ]);
+
+        $response1 = $this->getJson('/api/v1/events');
+        $response2 = $this->getJson('/api/v1/events?org_name=foo');
+
+        $response1->assertStatus(200);
+        $response2->assertStatus(200);
+
+        $response1->assertJsonCount(3, 'data');
+
+        $response2->assertJsonCount(2, 'data');
+        $response2->assertSee($event1->service_id);
+        $response2->assertSee($event3->service_id); // should show up because "foo" is in the group name
+    }
 }

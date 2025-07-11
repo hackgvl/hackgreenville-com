@@ -31,8 +31,8 @@ class EventApiV1Request extends FormRequest
 
             'tags' => ['nullable', 'array'],
             'tags.*' => ['integer', 'exists:tags,id'],
-            'event_name' => ['nullable', 'string', 'max:255'],
-            'group_name' => ['nullable', 'string', 'max:255'],
+            'name' => ['nullable', 'string', 'max:255'],
+            'org_name' => ['nullable', 'string', 'max:255'],
             'service' => ['nullable', 'string', 'max:255'],
             'min_rsvp' => ['nullable', 'integer', 'min:0'],
             'max_rsvp' => [
@@ -80,11 +80,11 @@ class EventApiV1Request extends FormRequest
                 'example' => null,
                 'description' => 'Filter events by organization tag ID.',
             ],
-            'event_name' => [
+            'name' => [
                 'example' => null,
-                'description' => 'Filter events by event name',
+                'description' => 'Filter events by event name (the "event_name" property)',
             ],
-            'group_name' => ['example' => null, 'description' => 'The name of the group associated with the event'],
+            'org_name' => ['example' => null, 'description' => 'The name of the organization associated with the event (the "group_name" property)'],
             'service' => ['example' => null, 'description' => 'The service that imported the event (meetup_graphql, eventbrite, etc.)'],
             'min_rsvp' => [
                 'example' => null,
