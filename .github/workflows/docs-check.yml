@@ -32,18 +32,10 @@ jobs:
       - name: Generate docs
         env:
           SCRIBE_DATABASE_CONNECTIONS_TO_TRANSACT: "[]"
+          SCRIBE_EXAMPLES_MODELS_SOURCE: "factoryMake"
           DB_CONNECTION: sqlite
           DB_DATABASE: ":memory:"
-        run: |
-          # Create a temporary config that avoids database
-          php -r "
-          \$config = include 'config/scribe.php';
-          \$config['database_connections_to_transact'] = [];
-          \$config['examples']['models_source'] = ['factoryMake']; // Only use factory, no database
-          file_put_contents('config/scribe_temp.php', '<?php return ' . var_export(\$config, true) . ';');
-          "
-
-          php artisan scribe:generate --config=scribe_temp
+        run: php artisan scribe:generate
 
       - name: Check for changes
         id: docs-check
