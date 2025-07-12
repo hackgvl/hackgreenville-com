@@ -20,7 +20,36 @@ Our goal is to connect people to the tech-related community in the Greenville ar
 
 # Running the App
 
-See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running and administering the running application.
+## Quick Start
+
+**Option 1: Use composer dev (Recommended)**
+
+This runs everything together:
+```bash
+composer dev
+```
+
+This command starts:
+- Laravel PHP server on http://localhost:8000
+- Vite dev server on http://localhost:5173
+- Queue listener
+- Log tailing
+
+**Option 2: Run servers separately**
+
+If you prefer to run them in separate terminals:
+
+Terminal 1 - Start PHP server:
+```bash
+php artisan serve
+```
+
+Terminal 2 - Start Vite:
+```bash
+yarn dev
+```
+
+For more detailed setup and administration options, see the [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # Tech Stack Notes
 
