@@ -21,7 +21,7 @@ class JoinSlackTest extends DatabaseTestCase
 
         $this->post(route('join-slack.submit'), [
             'name' => 'John Doe',
-            'contact' => 'john@fake.email',
+            'contact' => 'john@fake.mailinator.com',
             'reason' => 'I love Greenville!',
             'url' => 'https://linkedin.com/in/not-a-bot',
             'rules' => 1,
@@ -31,7 +31,7 @@ class JoinSlackTest extends DatabaseTestCase
 
         Notification::assertSentTo(
             Notification::route('slack', config('services.slack.contact.webhook')),
-            fn (JoinMessage $notification, array $channels) => $notification->contact === 'john@fake.email'
+            fn (JoinMessage $notification, array $channels) => $notification->contact === 'john@fake.mailinator.com'
                     && $notification->name === 'John Doe'
                     && $notification->reason === 'I love Greenville!'
                     && $notification->url === 'https://linkedin.com/in/not-a-bot'
