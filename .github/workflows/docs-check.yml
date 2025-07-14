@@ -1,11 +1,7 @@
 name: Detect outdated Scribe docs
 
 on:
-  pull_request:
-    types: [ opened, synchronize, reopened ]
-    branches:
-      - master
-      - develop
+  push:
 
 jobs:
   detect:
