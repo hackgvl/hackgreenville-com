@@ -12,9 +12,9 @@ class OrgsApiV1Controller extends Controller
 {
     /**
      * Organizations API v1
-     * 
+     *
      * This API provides access to organization data stored in the HackGreenville database.
-     * 
+     *
      * @apiResource HackGreenville\Api\Resources\Orgs\V1\OrganizationCollection
      * @apiResourceModel App\Models\Org states=forDocumentation
      */

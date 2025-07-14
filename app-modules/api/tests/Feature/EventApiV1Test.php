@@ -100,11 +100,12 @@ class EventApiV1Test extends TestCase
         $response->assertJsonPath('meta.current_page', 1);
         $response->assertJsonPath('meta.last_page', 2);
     }
-    
-    public function test_can_filter_is_paid_events() {
+
+    public function test_can_filter_is_paid_events()
+    {
         $org = Org::factory()->create();
         $venue = Venue::factory()->create();
-        
+
         $free_event = Event::factory()->create([
             'organization_id' => $org->id,
             'venue_id' => $venue->id,
@@ -154,7 +155,8 @@ class EventApiV1Test extends TestCase
         $response4->assertSee($unknown_event->event_name);
     }
 
-    public function test_can_filter_event_by_name() {
+    public function test_can_filter_event_by_name()
+    {
         $event1 = Event::factory()->create([
             'service_id' => 100,
             'event_name' => 'foo',
@@ -183,7 +185,8 @@ class EventApiV1Test extends TestCase
         $response2->assertSee($event3->service_id); // should show up because "foo" is in the event name
     }
 
-    public function test_can_filter_event_by_org_name() {
+    public function test_can_filter_event_by_org_name()
+    {
         $event1 = Event::factory()->create([
             'service_id' => 100,
             'group_name' => 'foo',

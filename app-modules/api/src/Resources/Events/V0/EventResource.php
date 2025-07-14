@@ -2,8 +2,8 @@
 
 namespace HackGreenville\Api\Resources\Events\V0;
 
-use HackGreenville\Api\Resources\ApiResource;
 use App\Models\Event;
+use HackGreenville\Api\Resources\ApiResource;
 use Illuminate\Http\Request;
 
 class EventResource extends ApiResource

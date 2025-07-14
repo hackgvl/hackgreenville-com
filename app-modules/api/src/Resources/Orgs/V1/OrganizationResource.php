@@ -2,8 +2,8 @@
 
 namespace HackGreenville\Api\Resources\Orgs\V1;
 
-use Illuminate\Http\Request;
 use HackGreenville\Api\Resources\ApiResource;
+use Illuminate\Http\Request;
 
 class OrganizationResource extends ApiResource
 {

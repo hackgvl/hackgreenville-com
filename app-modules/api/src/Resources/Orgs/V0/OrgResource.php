@@ -3,8 +3,8 @@
 namespace HackGreenville\Api\Resources\Orgs\V0;
 
 use App\Models\Org;
-use Illuminate\Http\Request;
 use HackGreenville\Api\Resources\ApiResource;
+use Illuminate\Http\Request;
 
 class OrgResource extends ApiResource
 {
