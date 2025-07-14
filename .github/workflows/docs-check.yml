@@ -10,27 +10,10 @@ on:
 jobs:
   detect:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_DATABASE: hackgreenville
-          MYSQL_USER: hackgreenville
-          MYSQL_ROOT_PASSWORD: test
-          MYSQL_PASSWORD: test
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }} # Important: test the actual PR code
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -38,11 +21,20 @@ jobs:
           php-version: 8.1
           extensions: :php_psr
 
-      - name: copy environment variables to .env
-        run: cp .env.ci .env
-
       - name: install php dependencies
-        run: composer install --no-dev --optimize-autoloader
+        run: composer install --optimize-autoloader
+    
+      - name: Copy environment file
+        run: cp .env.example .env
+      
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: Set up SQLite database
+        run: |
+            touch database/database.sqlite
+            echo "DB_CONNECTION=sqlite" >> .env
+            echo "DB_DATABASE=database/database.sqlite" >> .env
 
       - name: migrate database
         run: php artisan migrate --seed
@@ -50,37 +42,7 @@ jobs:
       - name: Generate docs
         run: php artisan scribe:generate
 
-      - name: Check for changes
-        id: docs-check
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          if [ -n "$(git status --porcelain ./resources/views/scribe ./storage/app/scribe )" ]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo "❌ API documentation is out of date"
-            echo "Please run 'php artisan scribe:generate' and commit the changes"
-            git status
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "✅ API documentation is up to date"
-          fi
-      
-      - name: Create job summary
-        if: steps.docs-check.outputs.changed == 'true'
-        run: |
-          echo "## 📝 API Documentation Update Needed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "The API documentation appears to be out of date." >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Please run the following command and commit the changes:" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "php artisan scribe:generate" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "This will update the API documentation to reflect any changes made to your endpoints." >> $GITHUB_STEP_SUMMARY
-      
-      - name: Fail if docs are outdated
-        if: steps.docs-check.outputs.changed == 'true'
-        run: exit 1
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: Fix styling
