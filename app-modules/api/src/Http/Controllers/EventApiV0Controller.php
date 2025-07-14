@@ -11,9 +11,9 @@ class EventApiV0Controller
 {
     /**
      * Events API v0
-     * 
+     *
      * This API provides access to event data stored in the HackGreenville database.
-     * 
+     *
      * @apiResource HackGreenville\Api\Resources\Events\V0\EventCollection
      * @apiResourceModel App\Models\Event states=forDocumentation
      */
