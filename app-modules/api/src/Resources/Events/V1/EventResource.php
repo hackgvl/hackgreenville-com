@@ -22,6 +22,7 @@ class EventResource extends JsonResource
             'ends_at' => $this->resource->expire_at->toISOString(),
             'rsvp_count' => $this->resource->rsvp_count,
             'status' => $this->resource->getStatusAttribute(),
+            'is_paid' => $this->resource->is_paid,
             'organization' => [
                 'id' => $this->resource->organization->id,
                 'name' => $this->resource->group_name,
