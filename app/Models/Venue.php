@@ -72,7 +72,14 @@ class Venue extends Model
 
     public function fullAddress()
     {
-        return "{$this->name} - {$this->address} {$this->city}, {$this->state->abbr} {$this->zipcode}";
+        $location = collect([$this->city, $this->state?->abbr])
+            ->filter()
+            ->join(', ');
+
+        return collect([
+            "{$this->name} - {$this->address}",
+            trim("{$location} {$this->zipcode}"),
+        ])->filter()->join(' ');
     }
 
     public function state()
