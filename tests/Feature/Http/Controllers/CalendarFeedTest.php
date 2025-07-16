@@ -29,13 +29,14 @@ class CalendarFeedTest extends DatabaseTestCase
 
         $this->get(route('calendar-feed.index'))
             ->assertOk()
-            ->assertViewIs('calendar-feed.index')
-            ->assertViewHas('organizations', fn ($organizations) => $organizations->count() === 2
-                    && $organizations->contains('id', $first_org->id)
-                    && $organizations->contains('id', $second_org->id)
-                    && $organizations->contains('id', $inactive_org->id) === false
-                    && $organizations->firstWhere('id', $first_org->id)['checked']
-                    && $organizations->firstWhere('id', $second_org->id)['checked']);
+            ->assertInertia(fn ($page) => $page
+                ->component('CalendarFeed/Index')
+                ->has('organizations', 2)
+                ->where('organizations.0.id', $first_org->id)
+                ->where('organizations.0.checked', true)
+                ->where('organizations.1.id', $second_org->id)
+                ->where('organizations.1.checked', true)
+            );
     }
 
     public function test_show_generates_calendar_with_multiple_organizations_and_unique_uids(): void

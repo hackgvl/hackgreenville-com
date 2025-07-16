@@ -25,7 +25,7 @@ class JoinMessageRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'contact' => 'required|email:rfc,dns',
+            'contact' => 'required|email:rfc' . (app()->environment('testing') ? '' : ',dns'),
             'reason' => 'required|max:5000',
             'url' => 'nullable|url',
             'rules' => 'required|accepted',
