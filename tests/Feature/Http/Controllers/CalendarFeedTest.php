@@ -29,13 +29,14 @@ class CalendarFeedTest extends DatabaseTestCase
 
         $this->get(route('calendar-feed.index'))
             ->assertOk()
-            ->assertInertia(fn ($page) => $page
-                ->component('CalendarFeed/Index')
-                ->has('organizations', 2)
-                ->where('organizations.0.id', $first_org->id)
-                ->where('organizations.0.checked', true)
-                ->where('organizations.1.id', $second_org->id)
-                ->where('organizations.1.checked', true)
+            ->assertInertia(
+                fn ($page) => $page
+                    ->component('CalendarFeed/Index')
+                    ->has('organizations', 2)
+                    ->where('organizations.0.id', $first_org->id)
+                    ->where('organizations.0.checked', true)
+                    ->where('organizations.1.id', $second_org->id)
+                    ->where('organizations.1.checked', true)
             );
     }
 
