@@ -2,7 +2,7 @@ name: Run unit tests
 
 on:
   pull_request_target:
-    types: [ opened, synchronize, reopened ]
+    types: [ opened, synchronize, reopened, closed ]
     branches:
       - master
       - develop
@@ -56,12 +56,21 @@ jobs:
 
       - name: run tests
         run: php artisan test
+        
   pr_opened:
     if: github.event.action == 'opened'
     runs-on: ubuntu-latest
-    environment: staging
+    needs: tests
+    environment: 
+      name: preview-pr-${{ github.event.pull_request.number }}
+      url: ${{ steps.get_url.outputs.deployment_url }}
     container: ghcr.io/railwayapp/cli:latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+        
       - name: Link to project
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
@@ -71,26 +80,61 @@ jobs:
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: railway environment new pr-${{ github.event.pull_request.number }} --copy ${{ secrets.RAILWAY_ENVIRONMENT_ID }}
-
+        
+      - name: Deploy to new environment
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: |
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service hackgreenville.com
+          railway up --detach --service hackgreenville.com
+          
+      - name: Get deployment URL
+        id: get_url
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: |
+          sleep 30
+          URL=$(railway domain | grep -oE 'https://[^ ]+' | head -1)
+          echo "deployment_url=$URL" >> $GITHUB_OUTPUT
+          
   pr_updated:
     if: github.event.action == 'synchronize'
     runs-on: ubuntu-latest
-    environment: staging
+    needs: tests
+    environment: 
+      name: preview-pr-${{ github.event.pull_request.number }}
+      url: ${{ steps.get_url.outputs.deployment_url }}
     container: ghcr.io/railwayapp/cli:latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
         
-      - name: Link to project
+      - name: Check and create environment if needed
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
-        run: railway link --project ${{ secrets.LINK_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }}
+        run: |
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} || \
+          (railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment ${{ secrets.RAILWAY_ENVIRONMENT_ID }} && \
+          railway environment new pr-${{ github.event.pull_request.number }} --copy ${{ secrets.RAILWAY_ENVIRONMENT_ID }})
         
       - name: Deploy to Railway Environment
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
-        run: railway up --detach
-
+        run: |
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service hackgreenville.com
+          railway up --detach --service hackgreenville.com
+          
+      - name: Get deployment URL
+        id: get_url
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+        run: |
+          sleep 30
+          URL=$(railway domain | grep -oE 'https://[^ ]+' | head -1)
+          echo "deployment_url=$URL" >> $GITHUB_OUTPUT
+          
   pr_closed:
     if: github.event.action == 'closed'
     runs-on: ubuntu-latest
@@ -100,10 +144,9 @@ jobs:
       - name: Link to project
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
-        run: railway link --project ${{ secrets.LINK_PROJECT_ID }} --environment ${{ secrets.DUPLICATE_FROM_ID }}
+        run: railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment ${{ secrets.RAILWAY_ENVIRONMENT_ID }} --service hackgreenville.com
         
       - name: Delete Railway Environment for PR
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: railway environment delete pr-${{ github.event.pull_request.number }} || true
-
