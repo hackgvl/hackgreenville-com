@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Feature\Http\Controllers;
+
 use App\Models\Event;
 use Carbon\Carbon;
 use Tests\DatabaseTestCase;
