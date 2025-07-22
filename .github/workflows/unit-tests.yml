@@ -2,7 +2,7 @@ name: Run unit tests
 
 on:
   pull_request_target:
-    types: [ opened, synchronize, reopened ]
+    types: [ opened, synchronize, reopened, closed ]
     branches:
       - master
       - develop
@@ -68,6 +68,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
         
       - name: Link to project
         env:
@@ -106,6 +108,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
         
       - name: Check and create environment if needed
         env:
