@@ -63,6 +63,8 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $this->assertEquals(19, $event->rsvp_count);
         $this->assertEquals(1577833200, $event->active_at->utc()->unix());
+        $this->assertEquals('2019-12-31 18:00:00', $event->active_at->toDateTimeString());
+
         $this->assertEquals('America/New_York', $event->timezone);
         $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $event->uri);
         $this->assertNull($event->cancelled_at);
