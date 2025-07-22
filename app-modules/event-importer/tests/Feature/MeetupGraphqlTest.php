@@ -65,7 +65,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         // TODO: Can we get consistent UTC timezone on both local and GitHub Actions environment?
         // $this->assertEquals('2019-12-31T18:00:00.000000Z', $event->active_at->toISOString());
-        
+
         $this->assertEquals('America/New_York', $event->timezone);
         $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $event->uri);
         $this->assertNull($event->cancelled_at);
