@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <div class="container-fluid max-w-full px-4">
+    <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}">
             @include('includes.logo')
         </a>
-        <button class="navbar-toggler md:hidden" type="button" onclick="toggleMenu()"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,14 +22,14 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto md:ml-auto">
+            <ul class="navbar-nav ml-auto">
                 <x-nav-link route="join-slack" icon="fa-slack"
                             class="btn btn-outline-secondary">Join Slack</x-nav-link>
                 <li class="nav-item">
                     <a href="https://hackgreenville.slack.com"
-                       class="nav-link btn btn-outline-success active ml-0 md:ml-2" style="color: #202020;"
+                       class="nav-link btn btn-outline-success active ml-2" style="color: #202020;"
                        rel="noreferrer" target="_blank">
-                        <i class="hidden md:hidden lg:inline-block fa fa-slack"></i>
+                        <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
                         Log In to Slack
                     </a>
                 </li>
@@ -37,10 +37,3 @@
         </div>
     </div>
 </nav>
-
-<script>
-function toggleMenu() {
-    const menu = document.getElementById('navbarSupportedContent');
-    menu.classList.toggle('show');
-}
-</script>

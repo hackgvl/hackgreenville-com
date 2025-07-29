@@ -1,8 +1,8 @@
 @props(['route', 'icon', 'class' => ''])
 
-<li>
+<li class="nav-item">
     <a class="nav-link {{ Route::is($route) ? 'active' : '' }} {{ $class }}" href="{{ route($route) }}">
-        <i class="d-md-none d-lg-inline-block fa {{ $icon }}"></i>
+        <i class="md:hidden lg:inline-block fa {{ $icon }}"></i>
         {{ $slot }}
     </a>
 </li>
