@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <div class="container-fluid max-w-full px-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid max-w-full px-4 flex items-center justify-between">
         <a class="navbar-brand" href="{{ route('home') }}">
             @include('includes.logo')
         </a>
-        <button class="navbar-toggler md:hidden" type="button" onclick="toggleMenu()"
+        <button class="navbar-toggler lg:hidden" type="button" onclick="toggleMenu()"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-collapse lg:bg-transparent bg-primary" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <x-nav-link route="calendar.index" icon="fa-calendar">Calendar</x-nav-link>
@@ -21,14 +21,14 @@
                 <x-nav-link route="contact" icon="fa-paper-plane">Contact</x-nav-link>
                 
                 <!-- Mobile only Slack links -->
-                <li class="nav-item xl:hidden border-t border-gray-600 mt-2 pt-2">
-                    <a href="{{ route('join-slack') }}" class="nav-link">
+                <li class="nav-item block lg:hidden border-t border-gray-600 mt-4 pt-4">
+                    <a href="{{ route('join-slack') }}" class="block text-center border-2 border-gray-400 text-white hover:bg-gray-400 hover:text-primary px-4 py-2 rounded transition-colors mx-2">
                         <i class="fa fa-slack mr-1"></i>
                         Join Slack
                     </a>
                 </li>
-                <li class="nav-item xl:hidden">
-                    <a href="https://hackgreenville.slack.com" class="nav-link" rel="noreferrer" target="_blank">
+                <li class="nav-item block lg:hidden mt-3 mb-4">
+                    <a href="https://hackgreenville.slack.com" class="block text-center px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity mx-2" style="background-color: #60ae6d; color: #202020;" rel="noreferrer" target="_blank">
                         <i class="fa fa-slack mr-1"></i>
                         Log In to Slack
                     </a>

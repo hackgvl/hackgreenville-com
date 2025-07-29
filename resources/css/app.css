@@ -65,6 +65,10 @@
     @apply md:flex-nowrap md:justify-start;
   }
   
+  .navbar-expand-lg {
+    @apply lg:flex-nowrap lg:justify-start;
+  }
+  
   .navbar-brand {
     @apply inline-block py-1 mr-4 text-xl whitespace-nowrap;
   }
@@ -81,11 +85,11 @@
   
   
   .navbar-nav {
-    @apply flex flex-col md:flex-row list-none pl-0 mb-0;
+    @apply flex flex-col lg:flex-row list-none pl-0 mb-0;
   }
   
   .nav-link {
-    @apply block px-2 py-2 md:px-3 transition-colors duration-200 hover:text-gray-300;
+    @apply block px-2 py-2 lg:px-3 transition-colors duration-200 hover:text-gray-300;
   }
   
   .nav-link.active {
@@ -99,16 +103,20 @@
   /* Utility classes are already provided by Tailwind */
   
   .navbar-collapse {
-    @apply hidden md:flex md:flex-grow md:items-center;
+    @apply hidden lg:flex lg:flex-grow lg:items-center;
   }
   
   .navbar-collapse.show {
     @apply block;
   }
   
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
+    .navbar-collapse {
+      @apply absolute top-full left-0 right-0 z-50;
+    }
+    
     .navbar-collapse.show {
-      @apply block w-full;
+      @apply block w-full shadow-lg;
     }
   }
   

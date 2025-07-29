@@ -29,9 +29,9 @@
                         </p>
                     </div>
 
-                    <hr class="md:hidden my-8">
+                    <hr class="sm:hidden my-8">
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 items-center">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 items-center">
                         <div class="text-center">
                             <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto">
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
                         <div class="my-12">
                             <h2 class="display-5 text-center mt-12">Contribute</h2>
                             <div class="summary container max-w-7xl mx-auto px-4">
@@ -61,7 +61,7 @@
                         <div class="text-center">
                             <a href="https://github.com/hackgvl/hackgreenville-com"
                                class="no-underline text-gray-900 hover:text-gray-700">
-                                <p style="line-height:1; font-size:15em;" class="mt-12">
+                                <p style="line-height:1;" class="mt-12 text-8xl sm:text-9xl md:text-[15em]">
                                     <i class="fa fa-github"></i>
                                 </p>
                                 <p class="summary">Join the Project</p>
