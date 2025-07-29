@@ -66,9 +66,7 @@
     },
     "scripts": {
         "lint": [
-            "./vendor/bin/pint --quiet",
-            "php artisan cache:clear",
-            "@generate-ide-helper"
+            "./vendor/bin/pint --quiet"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

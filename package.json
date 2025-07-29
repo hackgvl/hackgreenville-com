@@ -33,6 +33,7 @@
         "postcss": "^8.5.6",
         "pre-commit": "^1.2.2",
         "sass": "^1.20.1",
+        "sass-embedded": "^1.89.2",
         "sass-loader": "^8.0.0",
         "sharrre": "^2.0.1",
         "tailwindcss": "^3.4.0",
