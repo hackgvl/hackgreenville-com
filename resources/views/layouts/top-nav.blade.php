@@ -19,17 +19,37 @@
                 <x-nav-link route="about" icon="fa-users">About Us</x-nav-link>
                 <x-nav-link route="contribute" icon="fa-handshake-o">Contribute</x-nav-link>
                 <x-nav-link route="contact" icon="fa-paper-plane">Contact</x-nav-link>
+                
+                <!-- Mobile only Slack links -->
+                <li class="nav-item xl:hidden border-t border-gray-600 mt-2 pt-2">
+                    <a href="{{ route('join-slack') }}" class="nav-link">
+                        <i class="fa fa-slack mr-1"></i>
+                        Join Slack
+                    </a>
+                </li>
+                <li class="nav-item xl:hidden">
+                    <a href="https://hackgreenville.slack.com" class="nav-link" rel="noreferrer" target="_blank">
+                        <i class="fa fa-slack mr-1"></i>
+                        Log In to Slack
+                    </a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto md:ml-auto">
-                <x-nav-link route="join-slack" icon="fa-slack"
-                            class="btn btn-outline-secondary">Join Slack</x-nav-link>
+            <ul class="navbar-nav ml-auto hidden xl:flex">
+                <li class="nav-item mr-2">
+                    <a href="{{ route('join-slack') }}"
+                       class="inline-block border-2 border-gray-400 text-white hover:bg-gray-400 hover:text-primary px-4 py-2 rounded transition-colors">
+                        <i class="fa fa-slack mr-1"></i>
+                        Join Slack
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="https://hackgreenville.slack.com"
-                       class="nav-link btn btn-outline-success active ml-0 md:ml-2" style="color: #202020;"
+                       class="inline-block px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity"
+                       style="background-color: #60ae6d; color: #202020;"
                        rel="noreferrer" target="_blank">
-                        <i class="hidden md:hidden lg:inline-block fa fa-slack"></i>
+                        <i class="fa fa-slack mr-1"></i>
                         Log In to Slack
                     </a>
                 </li>

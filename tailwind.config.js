@@ -19,6 +19,9 @@ export default {
         'raleway': ['Raleway', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
       },
+      screens: {
+        'nav-break': '1220px',
+      },
     },
   },
   plugins: [],

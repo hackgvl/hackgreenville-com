@@ -12,6 +12,21 @@
                 <div class="flex justify-around flex-wrap flex-col md:flex-row gap-3">
 
                     <div class="flex flex-col items-center h-full order-1">
+                        <h4 class="mb-4 text-xl font-semibold">Connect</h4>
+
+                        <div class="text-center footer-social-icons">
+                            <a href="https://www.meetup.com/hack-greenville/" class="footer-social-icon-wrapper inline-block mx-2" rel="nofollow" target="_blank">
+                                <img src="{{url('img/icons/meetup.svg')}}" class="footer-social-icon"
+                                     alt="Meetup" style="height: 65px;"/>
+                            </a>
+                            <a href="/join-slack" class="footer-social-icon-wrapper inline-block mx-2">
+                                <img src="{{url('img/icons/slack.png')}}" class="footer-social-icon"
+                                     alt="Slack"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center h-full order-2">
                         <h4 class="mb-4 text-xl font-semibold">Built with Laravel</h4>
 
                         <div class="text-center footer-technology-icons">
@@ -23,7 +38,7 @@
                     </div>
 
                     <!-- Grid column for Links -->
-                    <div class="order-2 mt-8 md:mt-0">
+                    <div class="order-3 mt-8 md:mt-0">
                         <!-- Links -->
                         <h4 class="mb-4 text-xl font-semibold">Links</h4>
 
@@ -95,7 +110,7 @@
 
                     </div>
 
-                    <div class="order-3 mt-8 md:mt-0">
+                    <div class="order-4 mt-8 md:mt-0">
                         <!-- Links -->
                         <h4 class="mb-4 text-xl font-semibold">Other Links</h4>
 
