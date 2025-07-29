@@ -32,7 +32,7 @@
     @yield('canonical')
 
     <!-- Styles -->
-    @vite(['resources/css/app.css', 'resources/css/tailwind.css', 'resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 
     @if(config('services.google.tagmanager.id'))
         <!-- Global site tag (gtag.js) - Google Analytics -->

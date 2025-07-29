@@ -7,15 +7,15 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <h1>Upcoming Events</h1>
+    <div class="container max-w-7xl mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-6">Upcoming Events</h1>
 
         <x-calendar-feed-promo />
 
-        <div class="mb-4">
+        <div class="mb-8">
             <form method="get">
 
-                <select class="form-control col-md-9" name="month" id="month">
+                <select class="block w-full md:w-3/4 px-3 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary" name="month" id="month">
                     <option value="">Filter by month</option>
                     @foreach( $months->keys() as $month )
                         <option value="{{$month}}" @if(request('month') == $month) selected="selected" @endif>
@@ -27,8 +27,8 @@
         </div>
 
         @foreach($months as $month => $events)
-            <div class="events mb-4" data-date="{{ $month }}">
-                <h3 class="font-weight-bolder">
+            <div class="events mb-8" data-date="{{ $month }}">
+                <h3 class="text-2xl font-bold mb-4">
                     {{ $month }}
                 </h3>
                 @foreach($events as $event)

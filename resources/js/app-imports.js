@@ -3,22 +3,16 @@ import Lodash from 'lodash';
 import moment from 'moment';
 import Swal from 'sweetalert2';
 import jquery from 'jquery';
-import popper from 'popper.js';
-import bootstrap from 'bootstrap';
 
 // Adding Lodash to the global scope so it can be used anywhere in the application
 window._ = Lodash;
 
 try {
-  // Setting Popper, jQuery and Bootstrap to the global scope.
-  // Popper is used for positioning tooltips and popovers in Bootstrap.
-  // jQuery is a fast, small, and feature-rich JavaScript library.
-  // Bootstrap is a powerful front-end framework for faster and easier web development.
-  window.Popper = popper.default;
+  // Setting jQuery to the global scope.
+  // jQuery is still used in some parts of the application
   window.$ = window.jQuery = jquery;
-  window.bootstrap = bootstrap;
 } catch (e) {
-  // An error occurred while setting Popper, jQuery or Bootstrap to the global scope
+  // An error occurred while setting jQuery to the global scope
 }
 
 try {

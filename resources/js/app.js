@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
+import './app-imports';
 
 $('.loading').hide().removeClass('d-none');
 

@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component classes that mirror Bootstrap's behavior */
+@layer components {
+  .btn {
+    @apply inline-block text-center select-none transition-all duration-150 rounded px-3 py-1.5;
+  }
+  
+  .btn-lg {
+    @apply px-5 py-2.5 text-lg rounded-lg;
+  }
+  
+  .btn-success {
+    @apply bg-success text-white hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 text-white hover:bg-gray-700 active:bg-gray-800;
+  }
+  
+  .jumbotron {
+    @apply py-8 px-4 mb-8 bg-gray-200 rounded-lg;
+  }
+  
+  .jumbotron-fluid {
+    @apply rounded-none max-w-full px-0;
+  }
+  
+  .display-4 {
+    @apply text-5xl font-light leading-tight;
+  }
+  
+  .display-5 {
+    @apply text-4xl font-light leading-tight;
+  }
+  
+  .lead {
+    @apply text-xl font-light;
+  }
+  
+  .text-gray {
+    @apply text-gray-800;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    @apply relative flex flex-wrap items-center justify-between px-4 py-2;
+  }
+  
+  .navbar-dark {
+    @apply text-white;
+  }
+  
+  .navbar-expand-md {
+    @apply md:flex-nowrap md:justify-start;
+  }
+  
+  .navbar-brand {
+    @apply inline-block py-1 mr-4 text-xl whitespace-nowrap;
+  }
+  
+  .navbar-toggler {
+    @apply py-1 px-2 text-sm font-semibold leading-none bg-transparent border border-transparent rounded;
+  }
+  
+  .navbar-toggler-icon {
+    @apply inline-block w-6 h-6 bg-no-repeat bg-center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-size: 100% 100%;
+  }
+  
+  .navbar-collapse {
+    @apply flex-grow items-center;
+  }
+  
+  .navbar-nav {
+    @apply flex flex-col md:flex-row list-none pl-0 mb-0;
+  }
+  
+  .nav-link {
+    @apply block px-2 py-2 md:px-3 transition-colors duration-200 hover:text-gray-300;
+  }
+  
+  .nav-link.active {
+    @apply font-semibold;
+  }
+  
+  .nav-item {
+    @apply relative;
+  }
+  
+  /* Utility classes are already provided by Tailwind */
+  
+  .collapse {
+    @apply hidden;
+  }
+  
+  .collapse.show {
+    @apply block;
+  }
+  
+  @media (min-width: 768px) {
+    .navbar-collapse {
+      @apply flex;
+    }
+  }
+  
+  /* Footer styles */
+  .page-footer {
+    @apply text-sm;
+  }
+  
+  .list-unstyled {
+    @apply list-none pl-0;
+  }
+  
+  /* Bootstrap grid utilities for footer */
+  .container-fluid {
+    @apply w-full px-4;
+  }
+  
+  .text-md-left {
+    @apply md:text-left;
+  }
+  
+  /* Gap utilities are already provided by Tailwind */
+  
+  /* Breadcrumb styles */
+  .breadcrumb {
+    @apply flex flex-wrap list-none px-4 py-2 mb-4 bg-gray-100 rounded;
+  }
+  
+  .breadcrumb li + li:before {
+    content: "/";
+    @apply px-2 text-gray-500;
+  }
+  
+  /* Loading spinner */
+  .loading {
+    @apply fixed inset-0 bg-black bg-opacity-60 z-50;
+  }
+  
+  .loading .fa-spin {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl;
+  }
+  
+  /* Utility classes */
+  .d-none {
+    @apply hidden;
+  }
+  
+  /* About page styles */
+  .title-heading {
+    @apply text-4xl font-bold mb-6;
+  }
+  
+  .lead-text {
+    @apply text-xl mb-4 leading-relaxed;
+  }
+  
+  .highlight-link {
+    @apply text-primary underline hover:text-blue-600;
+  }
+  
+  .user-mention {
+    @apply text-gray-700 hover:text-gray-900 underline;
+  }
+  
+  .highlight-code {
+    @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm;
+  }
+  
+  .values-list {
+    @apply list-disc pl-8 space-y-2;
+  }
+  
+  .values-list li {
+    @apply text-xl leading-relaxed;
+  }
+  
+  .font-weight-bold {
+    @apply font-bold;
+  }
+}
+
+/* Timeline styles */
+.timeline {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eee;
+  right: 25px;
+  margin-left: -1.5px;
+}
+
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+
+.timeline > li:after {
+  clear: both;
+}
+
+.timeline > li > .timeline-panel {
+  width: calc(100% - 75px);
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+.timeline-badge {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  right: 0;
+  margin-left: -25px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.timeline-badge.bg-success {
+  background-color: #60ae6d;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+
+.timeline-subtitle {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+}
+
+/* Homepage specific styles */
+#homepage-jumbotron {
+  background: url(/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+#homepage-jumbotron .overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+#homepage-jumbotron .container {
+  z-index: 3;
+  position: relative;
+}
+
+.screaming-hackgreenville-question {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+  .screaming-hackgreenville-question {
+    line-height: 0.8;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .display-4 {
+    @apply text-4xl;
+  }
+}
+
+#homepage .summary {
+  font-size: 1.25rem;
+}

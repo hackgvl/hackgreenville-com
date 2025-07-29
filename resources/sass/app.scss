@@ -6,10 +6,9 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import "bootstrap/scss/bootstrap";
+// Components
 @import 'slack-sign-up';
-//@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+// Font Awesome icons
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
 
 // Calendar
@@ -25,8 +24,6 @@
 
 // Codey the computer
 @import 'codey';
-// Bootstrap switch checkbox lib
-//@import "~bootstrap-switch/src/sass/bootstrap4/bootstrap-switch";
 // Sharrre sharing lib
 @import 'sharrre/src/sass/style';
 
@@ -51,7 +48,7 @@
 }
 
 .vertical-divider {
-    background-color: $text-muted;
+    background-color: #6c757d; // Bootstrap's text-muted color
     width: 0.2rem;
     margin: 0.3rem;
     height: 1.9rem;
@@ -90,7 +87,7 @@ a {
 
 .page-footer {
     a {
-        color: $gray-200;
+        color: #e9ecef; // Bootstrap's gray-200 color
     }
 
     .footer-social-icons,
@@ -118,7 +115,7 @@ a {
         margin-top: 10px;
 
         a {
-            color: $success;
+            color: #60ae6d; // success color from variables
             font-weight: bold;
         }
     }
@@ -188,15 +185,15 @@ a {
 // Site colors
 .bg {
     &-white {
-        background-color: $white;
+        background-color: #ffffff;
     }
 
     &-green {
-        background-color: $green;
+        background-color: #38c172;
     }
 
     &-blue {
-        background-color: $blue;
+        background-color: #3490dc;
     }
 
     &-yellow {
@@ -212,11 +209,7 @@ a {
     }
 
     &-off-white {
-        background-color: $gray-100;
-    }
-
-    &-green {
-        background-color: $green;
+        background-color: #f8f9fa; // Bootstrap's gray-100 color
     }
 }
 .text {
@@ -279,7 +272,7 @@ a {
 }
 
 .card-columns {
-  @include media-breakpoint-up(sm) {
+  @media (min-width: 576px) {
     column-count: 2;
     orphans: 1;
     widows: 1;
