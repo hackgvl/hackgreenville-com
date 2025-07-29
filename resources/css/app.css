@@ -79,9 +79,6 @@
     background-size: 100% 100%;
   }
   
-  .navbar-collapse {
-    @apply flex-grow items-center;
-  }
   
   .navbar-nav {
     @apply flex flex-col md:flex-row list-none pl-0 mb-0;
@@ -101,17 +98,17 @@
   
   /* Utility classes are already provided by Tailwind */
   
-  .collapse {
-    @apply hidden;
+  .navbar-collapse {
+    @apply hidden md:flex md:flex-grow md:items-center;
   }
   
-  .collapse.show {
+  .navbar-collapse.show {
     @apply block;
   }
   
-  @media (min-width: 768px) {
-    .navbar-collapse {
-      @apply flex;
+  @media (max-width: 767px) {
+    .navbar-collapse.show {
+      @apply block w-full;
     }
   }
   
