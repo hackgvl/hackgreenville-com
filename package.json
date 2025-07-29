@@ -24,6 +24,8 @@
         "lint:php"
     ],
     "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.11",
+        "autoprefixer": "^10.4.21",
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
@@ -31,10 +33,12 @@
         "lodash": "^4.17.15",
         "pm2": "^5.3.0",
         "popper.js": "^1.12",
+        "postcss": "^8.5.6",
         "pre-commit": "^1.2.2",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
         "sharrre": "^2.0.1",
+        "tailwindcss": "^4.1.11",
         "vite": "^4.5.3",
         "vite-plugin-image-optimizer": "^1.1.6"
     },

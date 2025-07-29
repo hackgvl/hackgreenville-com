@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component classes that mirror Bootstrap's behavior */
+@layer components {
+  .btn {
+    @apply inline-block font-medium text-center select-none align-middle transition-all duration-150 ease-in-out rounded px-3 py-1.5;
+  }
+  
+  .btn-lg {
+    @apply px-5 py-2.5 text-lg rounded-lg;
+  }
+  
+  .btn-success {
+    @apply bg-success text-white hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+  }
+  
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 text-white hover:bg-gray-700 active:bg-gray-800;
+  }
+  
+  .jumbotron {
+    @apply py-8 px-4 mb-8 bg-gray-200 rounded-lg;
+  }
+  
+  .jumbotron-fluid {
+    @apply rounded-none max-w-full px-0;
+  }
+  
+  .display-4 {
+    @apply text-5xl font-light leading-tight;
+  }
+  
+  .display-5 {
+    @apply text-4xl font-light leading-tight;
+  }
+  
+  .lead {
+    @apply text-xl font-light;
+  }
+  
+  .text-gray {
+    @apply text-gray-800;
+  }
+}
+
+/* Timeline styles */
+.timeline {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eee;
+  right: 25px;
+  margin-left: -1.5px;
+}
+
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+
+.timeline > li:after {
+  clear: both;
+}
+
+.timeline > li > .timeline-panel {
+  width: calc(100% - 75px);
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+.timeline-badge {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  right: 0;
+  margin-left: -25px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.timeline-badge.bg-success {
+  background-color: #60ae6d !important;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+
+.timeline-subtitle {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+}
+
+/* Homepage specific styles */
+#homepage-jumbotron {
+  background: url(/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+#homepage-jumbotron .overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+#homepage-jumbotron .container {
+  z-index: 3;
+  position: relative;
+}
+
+.screaming-hackgreenville-question {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+  .screaming-hackgreenville-question {
+    line-height: 0.8;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .display-4 {
+    @apply text-4xl;
+  }
+}
+
+#homepage .summary {
+  font-size: 1.25rem;
+}
