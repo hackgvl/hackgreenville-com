@@ -299,7 +299,7 @@
 
 /* Homepage specific styles */
 #homepage-jumbotron {
-  background: url(/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+  background: url(../sass/img/hackgreenville-banner.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -344,4 +344,199 @@
 
 #homepage .summary {
   font-size: 1.25rem;
+}
+
+/* Additional homepage styles */
+#homepage .page-title {
+  font-size: 70px;
+}
+
+@media (max-width: 400px) {
+  #homepage .page-title {
+    font-size: 40px;
+  }
+}
+
+/* Links styling */
+a {
+  transition: 0.3s;
+  text-decoration: underline;
+}
+
+.navbar-nav a,
+.page-footer a {
+  text-decoration: none;
+}
+
+/* Button fix */
+.btn {
+  text-decoration: none !important;
+}
+
+/* Brand image height */
+.navbar-brand .navbar-brand-img {
+  height: 4rem;
+}
+
+/* Footer specific styles */
+.page-footer a {
+  color: #e9ecef;
+}
+
+.page-footer .footer-copyright a {
+  color: #60ae6d;
+  font-weight: bold;
+}
+
+.page-footer .footer-social-icons,
+.page-footer .footer-technology-icons {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-technology-icon {
+  height: 35px;
+}
+
+.footer-social-icon {
+  height: 65px;
+}
+
+/* Body and main constraints */
+body {
+  min-width: 320px;
+}
+
+main {
+  min-height: 500px;
+}
+
+/* About page specific */
+#about-us ul {
+  margin-left: -15px;
+}
+
+#about-us p,
+#about-us li {
+  font-size: 1.25rem;
+}
+
+/* Color utility classes */
+.bg-white { background-color: #ffffff; }
+.bg-green { background-color: #38c172; }
+.bg-blue { background-color: #3490dc; }
+.bg-yellow { background-color: #ffa300; }
+.bg-purple { background-color: #201748; }
+.bg-gray { background-color: #c0c0c0; }
+.bg-off-white { background-color: #f8f9fa; }
+
+.text-brown { color: #222222; }
+.text-purple { color: #201748; }
+.text-white { color: #ffffff; }
+.text-black { color: #000000; }
+.text-green { color: #006341; }
+.text-gray { color: #202020; }
+
+/* Vertical divider */
+.vertical-divider {
+  background-color: #6c757d;
+  width: 0.2rem;
+  margin: 0.3rem;
+  height: 1.9rem;
+}
+
+/* Align center utility */
+.align-center {
+  margin: 0 auto;
+}
+
+/* Swatch holder for style guide */
+.swatch-holder {
+  width: 88px;
+  height: 88px;
+  background: #e1e1e1;
+  border: solid 1px #e1e1e1;
+}
+
+/* Gap utilities for older browsers */
+.gap-1 { gap: .75rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.25rem; }
+
+/* Flexible row columns */
+.flex-row-3-columns {
+  --gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.flex-row-3-columns h5 {
+  font-size: 1.8rem;
+}
+
+.flex-row-3-columns p {
+  font-size: 1.1rem;
+  line-height: 1.2em;
+}
+
+.flex-row-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row-column > :nth-last-child(2) {
+  flex-grow: 1;
+}
+
+.flex-row-column > :first-child + :last-child {
+  margin-top: calc(var(--gap) / 4);
+}
+
+.flex-row-3-columns > .flex-row-column {
+  width: calc((100% / 3) - (var(--gap) * 2 / 3));
+}
+
+@media screen and (max-width: 768px) {
+  .flex-row-3-columns > .flex-row-column {
+    width: 100%;
+  }
+}
+
+/* Card columns */
+.card-columns {
+  column-count: 1;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    column-count: 2;
+    orphans: 1;
+    widows: 1;
+  }
+  
+  .card-columns .card {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+/* Text decoration utility */
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+/* No scroll utility */
+.noscroll {
+  overflow: hidden;
+}
+
+/* Links grid */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
