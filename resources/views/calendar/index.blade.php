@@ -4,7 +4,7 @@
 @section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
 
 @section('content')
-    <div class="container">
+    <div class="max-w-7xl mx-auto px-4">
         <x-calendar-feed-promo />
 
         <div id="calendar"></div>

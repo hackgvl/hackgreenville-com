@@ -10,7 +10,7 @@
                 <h1 class="display-4">Build Stuff. Meet People. Do cool things.</h1>
                 <p class="lead my-12">Meetups &middot; Talks &middot; Projects</p>
                 <p class="lead">
-                    <a class="btn btn-success text-gray-800 btn-lg no-underline" href="/join-slack" role="button">Request to Join
+                    <a class="inline-block bg-success text-gray-800 px-8 py-4 rounded-lg text-xl font-medium no-underline hover:opacity-90 transition-opacity" href="/join-slack" role="button">Request to Join
                         Slack</a>
                 </p>
             </div>
@@ -44,7 +44,7 @@
                                 Explore the site for more meetups and events, and make sure to join our active <a
                                     href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
                             </p>
-                            <button onclick="location.href='/join-slack'" class="btn btn-outline-primary btn-lg mt-4">
+                            <button onclick="location.href='/join-slack'" class="inline-block border-2 border-primary text-primary px-8 py-4 rounded-lg text-xl font-medium mt-4 hover:bg-primary hover:text-white transition-colors">
                                 Join Us
                             </button>
                         </div>
@@ -110,7 +110,7 @@
                                                 <div>
                                                     <button
                                                         onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => str($event->description)->markdown()->toString(), 'confirmButtonText' => "Close"]))"
-                                                        class="btn btn-secondary"
+                                                        class="inline-block bg-gray-600 text-white px-4 py-2 rounded font-medium hover:bg-gray-700 transition-colors"
                                                         type="button"
                                                     >
                                                         Details

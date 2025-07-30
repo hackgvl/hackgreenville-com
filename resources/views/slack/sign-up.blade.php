@@ -21,25 +21,70 @@
             </div>
 
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-                {{ aire()->route('join-slack.submit') }}
-                
-                {{ aire()->summary()->verbose() }}
+                <form method="POST" action="{{ route('join-slack.submit') }}">
+                    @csrf
+                    
+                    @if ($errors->any())
+                        <div class="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                            <p class="font-medium mb-2">Please fix the following errors:</p>
+                            <ul class="list-disc list-inside">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-                <div class="mb-6">
-                    {{ aire()->input('name', __('Full Name'))->required()->addClass('w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary') }}
-                </div>
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">{{ __('Full Name') }} <span class="text-red-500">*</span></label>
+                        <input type="text" 
+                               name="name" 
+                               id="name" 
+                               value="{{ old('name') }}"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary @error('name') border-red-500 @enderror"
+                               required>
+                        @error('name')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-6">
-                    {{ aire()->email('contact', __('Email'))->required()->addClass('w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary') }}
-                </div>
+                    <div class="mb-6">
+                        <label for="contact" class="block text-sm font-medium text-gray-700 mb-2">{{ __('Email') }} <span class="text-red-500">*</span></label>
+                        <input type="email" 
+                               name="contact" 
+                               id="contact" 
+                               value="{{ old('contact') }}"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary @error('contact') border-red-500 @enderror"
+                               required>
+                        @error('contact')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-6">
-                    {{ aire()->textArea('reason', __('Share why you are joining HackGreenville and include any relevant local context that helps validate you\'re not a bot or spammer.'))->rows(4)->placeholder(__('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?'))->addClass('w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary h-32 resize-vertical') }}
-                </div>
+                    <div class="mb-6">
+                        <label for="reason" class="block text-sm font-medium text-gray-700 mb-2">{{ __('Share why you are joining HackGreenville and include any relevant local context that helps validate you\'re not a bot or spammer.') }}</label>
+                        <textarea name="reason" 
+                                  id="reason" 
+                                  rows="4"
+                                  placeholder="{{ __('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?') }}"
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary h-32 resize-vertical @error('reason') border-red-500 @enderror">{{ old('reason') }}</textarea>
+                        @error('reason')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-8">
-                    {{ aire()->url('url', __('Please provide a LinkedIn profile, or similar link, that validates details entered on this form. This helps us filter out otherwise convincing bots and spammers.'))->placeholder('https://linkedin.com/in/not-a-bot')->addClass('w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary') }}
-                </div>
+                    <div class="mb-8">
+                        <label for="url" class="block text-sm font-medium text-gray-700 mb-2">{{ __('Please provide a LinkedIn profile, or similar link, that validates details entered on this form. This helps us filter out otherwise convincing bots and spammers.') }}</label>
+                        <input type="url" 
+                               name="url" 
+                               id="url" 
+                               value="{{ old('url') }}"
+                               placeholder="https://linkedin.com/in/not-a-bot"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary @error('url') border-red-500 @enderror">
+                        @error('url')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
                 <div class="mb-8">
                     <p class="text-lg font-semibold mb-4">The Rules of HackGreenville are simple:</p>
                     <ul class="text-left space-y-4 text-gray-700">
@@ -71,18 +116,36 @@
                     </ul>
                 </div>
 
-                <div class="text-center">
-                    <div class="mb-6">
-                        {{ aire()->checkbox('rules', __('Do you accept the rules?'))->required()->addClass('mr-2') }}
-                    </div>
-                    
-                    <div class="mb-6">
-                        {!! HCaptcha::display(['class' => 'hcaptcha']) !!}
-                    </div>
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" 
+                                       name="rules" 
+                                       id="rules" 
+                                       value="1"
+                                       class="mr-2 rounded border-gray-300 text-primary focus:ring-primary @error('rules') border-red-500 @enderror"
+                                       {{ old('rules') ? 'checked' : '' }}
+                                       required>
+                                <span class="text-gray-700">{{ __('Do you accept the rules?') }} <span class="text-red-500">*</span></span>
+                            </label>
+                            @error('rules')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        
+                        <div class="mb-6">
+                            {!! HCaptcha::display(['class' => 'hcaptcha']) !!}
+                        </div>
 
-                    {{ aire()->submit('Join Slack')->addClass('bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer') }}
-                </div>
-                {{ aire()->close() }}
+                        @error('h-captcha-response')
+                            <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">{{ $message }}</div>
+                        @enderror
+
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
+                            Join Slack
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

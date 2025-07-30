@@ -3,6 +3,7 @@ import Lodash from 'lodash';
 import moment from 'moment';
 import Swal from 'sweetalert2';
 import jquery from 'jquery';
+import Alpine from 'alpinejs';
 
 // Adding Lodash to the global scope so it can be used anywhere in the application
 window._ = Lodash;
@@ -29,6 +30,15 @@ try {
   window.Swal = Swal;
 } catch (e) {
   // An error occurred while setting SweetAlert2 to the global scope
+}
+
+try {
+  // Setting Alpine.js to the global scope and starting it.
+  // Alpine.js is a lightweight JavaScript framework for composing behavior directly in HTML.
+  window.Alpine = Alpine;
+  Alpine.start();
+} catch (e) {
+  // An error occurred while setting Alpine.js to the global scope
 }
 
 /**
