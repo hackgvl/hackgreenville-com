@@ -89,7 +89,12 @@
   }
   
   .nav-link {
-    @apply block px-2 py-2 lg:px-3 transition-colors duration-200 hover:text-gray-300;
+    @apply block px-2 py-2 lg:px-3 transition-colors duration-200;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8);
   }
   
   .nav-link.active {

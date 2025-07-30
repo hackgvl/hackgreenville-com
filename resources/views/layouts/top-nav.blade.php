@@ -22,13 +22,13 @@
                 
                 <!-- Mobile only Slack links -->
                 <li class="nav-item block lg:hidden border-t border-gray-600 mt-4 pt-4">
-                    <a href="{{ route('join-slack') }}" class="block text-center border-2 border-gray-400 text-white hover:bg-gray-400 hover:text-primary px-4 py-2 rounded transition-colors mx-2">
+                    <a href="{{ route('join-slack') }}" class="block text-center border-2 border-gray-400 text-white hover:bg-gray-400 hover:text-primary px-4 py-2 rounded transition-colors mx-2 font-medium">
                         <i class="fa fa-slack mr-1"></i>
                         Join Slack
                     </a>
                 </li>
                 <li class="nav-item block lg:hidden mt-3 mb-4">
-                    <a href="https://hackgreenville.slack.com" class="block text-center px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity mx-2" style="background-color: #60ae6d; color: #202020;" rel="noreferrer" target="_blank">
+                    <a href="https://hackgreenville.slack.com" class="block text-center border-2 border-transparent px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity mx-2" style="background-color: #60ae6d; color: #202020;" rel="noreferrer" target="_blank">
                         <i class="fa fa-slack mr-1"></i>
                         Log In to Slack
                     </a>
@@ -39,14 +39,14 @@
             <ul class="navbar-nav ml-auto hidden xl:flex">
                 <li class="nav-item mr-2">
                     <a href="{{ route('join-slack') }}"
-                       class="inline-block border-2 border-gray-400 text-white hover:bg-gray-400 hover:text-primary px-4 py-2 rounded transition-colors">
+                       class="inline-block border-2 border-gray-400 text-white hover:bg-gray-400 hover:text-primary px-4 py-2 rounded transition-colors font-medium">
                         <i class="fa fa-slack mr-1"></i>
                         Join Slack
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="https://hackgreenville.slack.com"
-                       class="inline-block px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity"
+                       class="inline-block border-2 border-transparent px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity"
                        style="background-color: #60ae6d; color: #202020;"
                        rel="noreferrer" target="_blank">
                         <i class="fa fa-slack mr-1"></i>
