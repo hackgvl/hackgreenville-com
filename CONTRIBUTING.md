@@ -37,7 +37,6 @@
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Kudos](#kudos)
 
-
 # Contribution Guidelines
 
 Please play nice. We follow the ["Code of Conduct" mentioned on our Join Slack form](https://hackgreenville.com/join-slack).
@@ -57,6 +56,7 @@ Our focused task-based discussions happen mostly within GitHub [Issues](https://
 [Issues tagged with "Good First Issue"](https://github.com/hackgvl/hackgreenville-com/labels/good%20first%20issue) are typically an easy place to start.
 
 If you feel ready to contribute code to this project, then follow the sections and steps below.
+
 </details>
 
 <details><summary>Reporting a Bug or New Idea</summary>
@@ -70,12 +70,12 @@ If you can't find what you were looking for then [open a new issue](https://gith
 When in doubt, you can reach out to an active project contributor:
 
 | Name          | GitHub                                                   | Role                               |
-|:--------------|:---------------------------------------------------------|:-----------------------------------|
+| :------------ | :------------------------------------------------------- | :--------------------------------- |
 | Bogdan        | [@bogdankharchenko](https://github.com/bogdankharchenko) | Technical Lead, Laravel            |
 | Zach          | [@zach2825](https://github.com/zach2825)                 | Technical Lead, Laravel            |
 | Jim Ciallella | [@allella](https://github.com/allella)                   | Bugs, Documentation, Newcomer Help |
-</details>
 
+</details>
 
 # Forking the Project
 
@@ -89,10 +89,10 @@ Follow these steps to fork the `https://github.com/hackgvl/hackgreenville-com` r
 2. Click the "Fork" Button in the upper right-hand corner of the interface ([Need help?](https://help.github.com/articles/fork-a-repo/)).
 3. After the repository has been forked, you will be taken to your copy of the repository at `https://github.com/YOUR_USER_NAME/hackgreenville-com`.
 
-
 # Running the App
 
 ## Prerequisites
+
 You must have completed the steps above in the "Forking the Project" section before proceeding.
 
 <details><summary>System Requirements</summary>
@@ -150,17 +150,20 @@ git remote -v
 ```
 
 The output should look something like below:
+
 ```sh
 origin    https://github.com/YOUR_USER_NAME/hackgreenville-com.git (fetch)
 origin    https://github.com/YOUR_USER_NAME/hackgreenville-com.git (push)
 upstream    https://github.com/hackgvl/hackgreenville-com.git (fetch)
 upstream    https://github.com/hackgvl/hackgreenville-com.git (push)
 ```
+
 </details>
 
 ## Setup & Configuration Options
 
 ### Option 1 - Run via Native Host
+
 <details><summary>Native Host Details</summary>
 
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root.
@@ -186,7 +189,6 @@ sh scripts/handle-deploy-update.sh
 The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
 BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
 
-
 #### Generate App Key
 
 Once the app is running, run the following command to generate your [app encryption key](https://laravel.com/docs/10.x/encryption):
@@ -195,20 +197,42 @@ Once the app is running, run the following command to generate your [app encrypt
 php artisan key:generate
 ```
 
-#### Starting the Web Application
+## Quick Start
 
-In a terminal, run the following command to start the Laravel server.
+**Option 1: Use composer dev (Recommended)**
+
+This runs everything together:
 
 ```bash
 composer dev
 ```
 
-The app should now be accessible by visiting `http://localhost:8000` in your browser.
+This command starts:
+
+- Laravel PHP server on http://localhost:8000
+- Vite dev server on http://localhost:5173
+- Queue listener
+- Log tailing
+
+**Option 2: Run servers separately**
+
+If you prefer to run them in separate terminals:
+
+Terminal 1 - Start PHP server:
+
+```bash
+php artisan serve
+```
+
+Terminal 2 - Start Vite:
+
+```bash
+yarn dev
+```
 
 #### Import / Seed the Organizations and Events Data
 
 Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](/EVENTS_API.md). Without this step the application will have no data.
-
 
 ```bash
 php artisan import:events
@@ -217,6 +241,7 @@ php artisan import:events
 </details>
 
 ### Option 2 - Run via VS Code and GitHub Codespaces Dev Container
+
 <details><summary>VS Code and GitHub Codespaces Dev Container Details</summary>
 
 See [VS Code + GitHub Codespaces Dev Container documentation](https://github.com/microsoft/vscode-dev-containers#vs-code--github-codespaces-dev-container-definitions).
@@ -224,6 +249,7 @@ See [VS Code + GitHub Codespaces Dev Container documentation](https://github.com
 </details>
 
 ### Option 3 - Run via Docker & Laravel Sail
+
 <details><summary>Docker / Laravel Sail Details</summary>
 
 The Docker setup of this project should only be done for advanced users, or if needed for runtime compatibility issues.
@@ -231,13 +257,14 @@ The Docker setup of this project should only be done for advanced users, or if n
 #### Copying Docker Environment Variables
 
 First, you need to make a copy of the `.env.docker` file and rename it to `.env` at the
-project root. This can be accomplished by running `cp .env.docker .env` from the project root. 
+project root. This can be accomplished by running `cp .env.docker .env` from the project root.
 
 #### Installing the Dockerfile
 
 To run the Docker container for the web application, you'll need to generate the Laravel Sail docker files. You can generate the Laravel Sail docker files with either of the two options:
 
 ##### Option A: Using Composer
+
 If you have `composer` installed on your machine, you can run the following script to install the application dependencies, including Laravel Sail.
 
 ```bash
@@ -245,6 +272,7 @@ composer install
 ```
 
 ##### Option B: Installing with Laravel Sail
+
 If you do not have `composer` installed on your machine, you can install Laravel Sail directly using the following scripts:
 
 ```bash
@@ -318,6 +346,7 @@ To seed events and organizations into your application, run the following to imp
 ```bash
 docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 ```
+
 </details>
 
 # Interacting with Your Running App
@@ -344,6 +373,7 @@ Telescope is a Laravel Debugging tool that allows you to see all the requests ma
 - Debugging can be enabled in development by setting `TELESCOPE_ENABLED=TRUE` in your local `.env`
 
 ## Events API Configuration
+
 The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
 
 Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
@@ -354,6 +384,7 @@ Explanation of the .env defaults
 `EVENTS_API_DEFAULT_DAYS=1` would cause responses to include at least 1 day in the past. This variable is intended to help avoid ongoing events from disappearing from the API response until at least 24 hours after it started.
 
 ### Importing Events from Meetup GraphQL API
+
 In order to import events from organizations with a `meetup_graphql` service type, you will need to setup the following environment variables:
 
 `EVENT_IMPORTER_MEETUP_GRAPHQL_CLIENT_ID` - Your Meetup [OAuth client](https://www.meetup.com/api/oauth/list/)
@@ -367,13 +398,14 @@ The Meetup OAuth client private key file can be stored anywhere on your machine.
 
 # Admin Panel
 
-* The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
-* After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
-* To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
-* See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
-* Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages). 
+- The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
+- After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
+- To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
+- See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
+- Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages).
 
 # Synchronizing Your Fork with the Latest Development Code Changes
+
 Be sure you're on the desired branch, usually `git checkout develop`, and change to the project's base directory.
 
 Run the following update script, which is part of this repo's /scripts directory.
@@ -387,7 +419,7 @@ sh scripts/handle-deploy-update.sh
 - See the [HackGreenville style guide](https://hackgreenville.com/styles) for theming suggestions for fonts, headings, colors, and such.
 - See the [Laravel installation documentation](https://laravel.com/docs/10.x/installation) for more details.
 - Always follow the steps below when starting a new branch or pull request.
-- We use an npm package called [pre-commit](https://www.npmjs.com/package/pre-commit). If you want to commit without running the pre-commit hook just add the switch `--no-verify` 
+- We use an npm package called [pre-commit](https://www.npmjs.com/package/pre-commit). If you want to commit without running the pre-commit hook just add the switch `--no-verify`
 
 Contributions are made using [GitHub's Pull Request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (aka PR) pattern. This allows anyone to suggest changes for review, commenting, and eventual approval / merging into the main project's repo.
 
@@ -402,18 +434,18 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
     ```sh
     git status
     ```
-    
+
     You should get an output like this:
-    
+
     ```sh
     On branch develop
     Your branch is up-to-date with 'origin/develop'.
-    
+
     nothing to commit, working directory clean
     ```
-    
+
     If you are not on develop or your working directory is not clean, resolve any outstanding files/commits and checkout `develop`:
-    
+
     ```sh
     git checkout develop
     ```
@@ -422,26 +454,30 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
 
     This is very important to avoid conflicts later.
 
-    > **Note:** If you have any outstanding Pull Request that you made from the `develop` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from develop.
+    > **Note:** If you have any outstanding Pull Request that you made from the `develop` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should _always_ work on a branch separate from develop.
 
     This step **will sync the latest changes** from the main repository of HG.
 
     Update your local copy of the HG upstream repository:
+
     ```sh
     git fetch upstream
     ```
 
     Hard reset your develop branch with the HG develop:
+
     ```sh
     git reset --hard upstream/develop
     ```
 
     Push your develop branch to your origin to have a clean history on your fork on GitHub:
+
     ```sh
     git push origin develop --force
     ```
 
     You can validate if your current develop matches the upstream/develop or not by performing a diff:
+
     ```sh
     git diff upstream/develop
     ```
@@ -472,11 +508,11 @@ Before creating a new git "branch" you'll want to sync up with the "remote upstr
    Your branch name should start with `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
 Some examples of good branch names are:
-`    fix/update-nav-links
+`   fix/update-nav-links
     fix/calendar-popup-css
     docs/typos-in-readme
     feat/add-sponsors
-   `
+  `
 
 3. Edit files and write code on your favorite editor. Then, check and confirm the files you are updating:
 
@@ -551,10 +587,11 @@ Some examples of good branch names are:
    Keep your commit messages short. You can always add additional information in the description of the commit message.
 
 5. Push the new branch to your fork / origin. For example, if the name of your branch is `docs/typos-in-readme`, then your command should be:
-   ```sh
+   ````sh
     git push origin docs/typos-in-readme
     ```
-</details>
+   </details>
+   ````
 
 <details><summary>Step 3: Proposing a Pull Request (PR)</summary>
 
@@ -584,6 +621,7 @@ You have successfully created a PR. Congratulations! :tada:
 For typos and other wording changes, you can directly open a [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests) without first creating an issue.
 
 Issues are more for discussing larger problems associated with code or structural aspects of the application.
+
 </details>
 
 <details><summary>I am new to GitHub and Open Source, where should I start?</summary>
@@ -591,9 +629,11 @@ Issues are more for discussing larger problems associated with code or structura
 Read freeCodeCamp's [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 Then, come back and see our ["Ways to Help"](#ways-to-help) section on how to specificially get involved in this project.
+
 </details>
 
 # Kudos
+
 - Thanks to our [project contributors](https://github.com/hackgvl/hackgreenville-com#contributors-)
 - Thanks to [freeCodeCamp's Chapter project](https://github.com/freeCodeCamp/chapter) for the template for this CONTRIBUTING.md.
 - Thanks to all of the open-source projects, as seen in composer.json and package.json

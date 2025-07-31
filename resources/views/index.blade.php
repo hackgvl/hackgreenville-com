@@ -4,7 +4,7 @@
 
 @section('content')
     <div id="homepage">
-        <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid text-white bg-gray-900 relative">
+        <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid text-white bg-gray-900 relative" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
             <div class="overlay"></div>
             <div class="container max-w-7xl mx-auto py-20 text-center px-4">
                 <h1 class="display-4">Build Stuff. Meet People. Do cool things.</h1>

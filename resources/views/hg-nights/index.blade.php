@@ -8,7 +8,7 @@
     <div
       id="hg-nights-jumbotron"
       class="relative bg-primary text-white py-20 flex items-center min-h-[500px]"
-      style="background-image: url('{{ asset('img/hero-bg.jpg') }}'); background-size: cover; background-position: center;"
+      style="background-image: url('{{ asset('img/hg-nights-sm.jpg') }}'); background-size: cover; background-position: center;"
     >
       <div class="absolute inset-0 bg-primary bg-opacity-75"></div>
       <div class="container mx-auto px-4 relative z-10">
