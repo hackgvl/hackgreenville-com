@@ -7,209 +7,209 @@
   .btn {
     @apply inline-block text-center select-none transition-all duration-150 rounded px-3 py-1.5;
   }
-  
+
   .btn-lg {
     @apply px-5 py-2.5 text-lg rounded-lg;
   }
-  
+
   .btn-success {
     @apply bg-success text-white hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
   }
-  
+
   .btn-primary {
     @apply bg-primary text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
-  
+
   .btn-outline-primary {
     @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
   }
-  
+
   .btn-secondary {
     @apply bg-gray-600 text-white hover:bg-gray-700 active:bg-gray-800;
   }
-  
+
   .jumbotron {
     @apply py-8 px-4 mb-8 bg-gray-200 rounded-lg;
   }
-  
+
   .jumbotron-fluid {
     @apply rounded-none max-w-full px-0;
   }
-  
+
   .display-4 {
     @apply text-5xl font-light leading-tight;
   }
-  
+
   .display-5 {
     @apply text-4xl font-light leading-tight;
   }
-  
+
   .lead {
     @apply text-xl font-light;
   }
-  
+
   .text-gray {
     @apply text-gray-800;
   }
-  
+
   /* Navbar styles */
   .navbar {
     @apply relative flex flex-wrap items-center justify-between px-4 py-2;
   }
-  
+
   .navbar-dark {
     @apply text-white;
   }
-  
+
   .navbar-expand-md {
     @apply md:flex-nowrap md:justify-start;
   }
-  
+
   .navbar-brand {
     @apply inline-block py-1 mr-4 text-xl whitespace-nowrap;
   }
-  
+
   .navbar-toggler {
     @apply py-1 px-2 text-sm font-semibold leading-none bg-transparent border border-transparent rounded;
   }
-  
+
   .navbar-toggler-icon {
     @apply inline-block w-6 h-6 bg-no-repeat bg-center;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     background-size: 100% 100%;
   }
-  
+
   .navbar-collapse {
     @apply flex-grow items-center;
   }
-  
+
   .navbar-nav {
     @apply flex flex-col md:flex-row list-none pl-0 mb-0;
   }
-  
+
   .nav-link {
     @apply block px-2 py-2 md:px-3 transition-colors duration-200 hover:text-gray-300;
   }
-  
+
   .nav-link.active {
     @apply font-semibold;
   }
-  
+
   .nav-item {
     @apply relative;
   }
-  
+
   /* Utility classes */
   .mr-auto {
     @apply mr-auto;
   }
-  
+
   .ml-auto {
     @apply ml-auto;
   }
-  
+
   .collapse {
     @apply hidden;
   }
-  
+
   .collapse.show {
     @apply block;
   }
-  
+
   @media (min-width: 768px) {
     .navbar-collapse {
       @apply flex !important;
     }
   }
-  
+
   /* Footer styles */
   .page-footer {
     @apply text-sm;
   }
-  
+
   .list-unstyled {
     @apply list-none pl-0;
   }
-  
+
   /* Bootstrap grid utilities for footer */
   .container-fluid {
     @apply w-full px-4;
   }
-  
+
   .text-md-left {
     @apply md:text-left;
   }
-  
+
   /* Gap utilities */
   .gap-2 {
     @apply gap-2;
   }
-  
+
   .gap-3 {
     @apply gap-3;
   }
-  
+
   /* Breadcrumb styles */
   .breadcrumb {
     @apply flex flex-wrap list-none px-4 py-2 mb-4 bg-gray-100 rounded;
   }
-  
+
   .breadcrumb li + li:before {
-    content: "/";
+    content: '/';
     @apply px-2 text-gray-500;
   }
-  
+
   /* Loading spinner */
   .loading {
     @apply fixed inset-0 bg-black bg-opacity-60 z-50;
   }
-  
+
   .loading .fa-spin {
     @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl;
   }
-  
+
   /* Utility classes */
   .d-none {
     @apply hidden;
   }
-  
+
   .py-0 {
     @apply py-0;
   }
-  
+
   .py-4 {
     @apply py-4;
   }
-  
+
   /* About page styles */
   .title-heading {
     @apply text-4xl font-bold mb-6;
   }
-  
+
   .lead-text {
     @apply text-xl mb-4 leading-relaxed;
   }
-  
+
   .highlight-link {
     @apply text-primary underline hover:text-blue-600;
   }
-  
+
   .user-mention {
     @apply text-gray-700 hover:text-gray-900 underline;
   }
-  
+
   .highlight-code {
     @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm;
   }
-  
+
   .values-list {
     @apply list-disc pl-8 space-y-2;
   }
-  
+
   .values-list li {
     @apply text-xl leading-relaxed;
   }
-  
+
   .font-weight-bold {
     @apply font-bold;
   }
@@ -226,7 +226,7 @@
   top: 0;
   bottom: 0;
   position: absolute;
-  content: " ";
+  content: ' ';
   width: 3px;
   background-color: #eee;
   right: 25px;
@@ -240,7 +240,7 @@
 
 .timeline > li:before,
 .timeline > li:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 
@@ -353,7 +353,7 @@
     font-size: 3.5rem;
     margin-bottom: 3rem;
   }
-  
+
   .display-4 {
     @apply text-4xl;
   }
