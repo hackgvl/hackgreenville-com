@@ -304,7 +304,8 @@
 
 /* Homepage specific styles */
 #homepage-jumbotron {
-  background: url(../sass/img/hackgreenville-banner.jpg) no-repeat center center fixed;
+  /* Background image removed - file no longer exists after SASS cleanup */
+  background: #1a1a1a;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
