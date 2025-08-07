@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4eb67fa7aae31e5b9d2e405a1087465",
+    "content-hash": "b38f1d749b98277f175363d03ec4429b",
     "packages": [
         {
             "name": "amphp/amp",
@@ -3323,6 +3323,79 @@
                 }
             ],
             "time": "2023-10-12T05:21:21+00:00"
+        },
+        {
+            "name": "glhd/aire",
+            "version": "2.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/glhd/aire.git",
+                "reference": "f2807b9c4acd66618ff5ed31021a2f81f954026b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/glhd/aire/zipball/f2807b9c4acd66618ff5ed31021a2f81f954026b",
+                "reference": "f2807b9c4acd66618ff5ed31021a2f81f954026b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/events": ">=5.8.28 <10.48.0 || >10.48.1 <13.0.0",
+                "illuminate/support": ">=5.8.28 <10.48.0 || >10.48.1 <13.0.0",
+                "illuminate/view": ">=5.8.28 <10.48.0 || >10.48.1 <13.0.0"
+            },
+            "require-dev": {
+                "barryvdh/reflection-docblock": "^2.0",
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "guzzlehttp/guzzle": "~6.0|~7.0",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^6.24|^7.10|^8|^9|^10|11.x-dev|dev-master|dev-main",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^9|^10.5|^11.5",
+                "symfony/css-selector": "^5.4",
+                "symfony/dom-crawler": "^5.4"
+            },
+            "suggest": {
+                "glhd/aire-tailwind-custom-forms": "Use the Tailwind custom forms plugin for even nicer looking forms"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Aire": "Galahad\\Aire\\Support\\Facades\\Aire"
+                    },
+                    "providers": [
+                        "Galahad\\Aire\\Support\\AireServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Galahad\\Aire\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Morrell",
+                    "homepage": "http://www.cmorrell.com"
+                }
+            ],
+            "description": "Modern Laravel form builder. Remembers old input, retrieves error messages and comes with beautiful Tailwind-based markup out of the box.",
+            "keywords": [
+                "Forms",
+                "aire",
+                "laravel",
+                "tailwind"
+            ],
+            "support": {
+                "issues": "https://github.com/glhd/aire/issues",
+                "source": "https://github.com/glhd/aire/tree/2.14.0"
+            },
+            "time": "2025-03-04T14:40:38+00:00"
         },
         {
             "name": "glhd/conveyor-belt",
