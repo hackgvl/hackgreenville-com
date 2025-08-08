@@ -167,7 +167,11 @@ return [
         |
         */
         'none' => [
-            // Don't hide errors container - let JavaScript handle visibility
+            'input' => 'border-gray-300',
+            'textarea' => 'border-gray-300', 
+            'select' => 'border-gray-300',
+            'checkbox' => 'border-gray-300',
+            'group_errors' => 'hidden', // Hide error container when no validation state
         ],
 
         /*
@@ -184,7 +188,11 @@ return [
         |
         */
         'valid' => [
-            // Don't hide errors container - let JavaScript handle visibility
+            'input' => 'border-green-500',
+            'textarea' => 'border-green-500',
+            'select' => 'border-green-500',
+            'checkbox' => 'border-green-500',
+            'group_errors' => 'hidden', // Hide error container when valid
         ],
 
         /*
@@ -205,7 +213,7 @@ return [
             'textarea' => 'border-red-500',
             'select' => 'border-red-500',
             'checkbox' => 'border-red-500',
-            'group_errors' => 'text-red-600', // Ensure errors are visible when invalid
+            'group_errors' => 'block text-red-600', // Show error container and style when invalid
         ],
     ],
 
