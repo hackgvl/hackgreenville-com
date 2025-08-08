@@ -21,7 +21,13 @@
             </div>
 
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-                {{ aire()->route('join-slack.submit') }}
+                {{ aire()->route('join-slack.submit')->novalidate()->rules([
+                    'name' => 'required|max:255',
+                    'contact' => 'required|email',
+                    'reason' => 'required|max:5000',
+                    'url' => 'nullable|url',
+                    'rules' => 'required|accepted',
+                ]) }}
                 
                 {{ aire()->summary()->verbose() }}
 
@@ -67,7 +73,7 @@
                 <div class="text-center">
                     {{ aire()->checkbox('rules', __('Do you accept the rules?'))->required()->addClass('mb-6') }}
                     
-                    <div class="mb-6">
+                    <div class="mb-6 flex justify-center">
                         {!! HCaptcha::display(['class' => 'hcaptcha']) !!}
                     </div>
 

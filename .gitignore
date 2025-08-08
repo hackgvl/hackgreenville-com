@@ -35,3 +35,5 @@ public/build/
 
 # Scribe cache and temporary storage
 .scribe
+
+old /files

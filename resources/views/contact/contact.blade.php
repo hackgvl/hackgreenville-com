@@ -20,7 +20,11 @@
             </div>
 
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-                {{ aire()->route('contact.submit') }}
+                {{ aire()->route('contact.submit')->novalidate()->rules([
+                    'name' => 'required|max:255',
+                    'contact' => 'required|email',
+                    'message' => 'required|max:5000',
+                ]) }}
                 
                 {{ aire()->summary()->verbose() }}
 
@@ -28,8 +32,8 @@
                 {{ aire()->email('contact', 'Email')->required() }}
                 {{ aire()->textArea('message', 'Message')->rows(4)->required() }}
 
-                <div class="mb-6 text-center">
-                    {!! HCaptcha::display(['class' => 'hcaptcha mt-4 text-center']) !!}
+                <div class="mb-6 flex justify-center">
+                    {!! HCaptcha::display(['class' => 'hcaptcha']) !!}
                 </div>
 
                 @error('h-captcha-response')

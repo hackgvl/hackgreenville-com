@@ -106,8 +106,8 @@ return [
         'label' => 'block text-sm font-medium text-gray-700 mb-2',
 
         // Checkbox specific
-        'checkbox' => 'mr-2 rounded border-gray-300 text-primary focus:ring-primary',
-        'checkbox_label' => 'inline-flex items-center text-gray-700',
+        'checkbox' => 'mr-2 mt-1 rounded border-gray-300 text-primary focus:ring-primary',
+        'checkbox_label' => 'inline-flex items-start text-gray-700',
 
         // Groups
         'group' => 'mb-6',
@@ -119,6 +119,7 @@ return [
         // Error messages
         'error' => 'mt-1 text-sm text-red-600',
         'errors' => 'mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded',
+        'group_errors' => 'mt-2 mb-3', // Error list container (removed hidden class)
 
         // Summary
         'summary' => 'mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded',
@@ -165,7 +166,9 @@ return [
         | See default-theme.php for a full example of configuring class names.
         |
         */
-        'none' => [],
+        'none' => [
+            // Don't hide errors container - let JavaScript handle visibility
+        ],
 
         /*
         |--------------------------------------------------------------------------
@@ -180,7 +183,9 @@ return [
         | See default-theme.php for a full example of configuring class names.
         |
         */
-        'valid' => [],
+        'valid' => [
+            // Don't hide errors container - let JavaScript handle visibility
+        ],
 
         /*
         |--------------------------------------------------------------------------
@@ -200,6 +205,7 @@ return [
             'textarea' => 'border-red-500',
             'select' => 'border-red-500',
             'checkbox' => 'border-red-500',
+            'group_errors' => 'text-red-600', // Ensure errors are visible when invalid
         ],
     ],
 
