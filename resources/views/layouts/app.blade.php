@@ -83,25 +83,5 @@
 @yield('js')
 
 @stack('scripts')
-
-@if(config('aire.inline_validation'))
-    <script src="{{ asset('vendor/aire/js/aire.min.js') }}"></script>
-    <script>
-        // Configure Aire validation display
-        if (typeof window.Aire !== 'undefined') {
-            window.Aire.configure({
-                classnames: {
-                    none: {},
-                    valid: {},
-                    invalid: {
-                        'input': 'border-red-500',
-                        'textarea': 'border-red-500',
-                        'select': 'border-red-500'
-                    }
-                }
-            });
-        }
-    </script>
-@endif
 </body>
 </html>
