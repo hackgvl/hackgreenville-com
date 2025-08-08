@@ -168,7 +168,7 @@ return [
         */
         'none' => [
             'input' => 'border-gray-300',
-            'textarea' => 'border-gray-300', 
+            'textarea' => 'border-gray-300',
             'select' => 'border-gray-300',
             'checkbox' => 'border-gray-300',
             'group_errors' => 'hidden', // Hide error container when no validation state

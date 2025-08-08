@@ -35,6 +35,7 @@
                 {{ aire()->email('contact', __('Email'))->required() }}
                 {{ aire()->textArea('reason', __('Share why you are joining HackGreenville and include any relevant local context that helps validate you\'re not a bot or spammer.'))
                     ->rows(4)
+                    ->required()
                     ->placeholder(__('What interests you about HackGreenville? What connections do you have to the Upstate of South Carolina?')) }}
                 {{ aire()->url('url', __('Please provide a LinkedIn profile, or similar link, that validates details entered on this form. This helps us filter out otherwise convincing bots and spammers.'))
                     ->placeholder('https://linkedin.com/in/not-a-bot') }}
