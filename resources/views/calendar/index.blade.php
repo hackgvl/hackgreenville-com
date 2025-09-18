@@ -19,6 +19,7 @@
             const calendarEl = document.getElementById('calendar');
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
+                height: 'auto',
                 plugins: ['dayGrid', 'list'],
                 header: {
                     left: 'title',
