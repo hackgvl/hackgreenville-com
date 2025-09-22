@@ -5,13 +5,36 @@ namespace HackGreenville\EventImporter\Tests\Feature;
 use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
+use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Tests\Feature\BaseEventHandlerTest;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
 
-class MeetupRestTest extends DatabaseTestCase
+class MeetupRestTest extends BaseEventHandlerTest
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        config([
+            'event-import-handlers.handlers.' . EventServices::MeetupRest->value => MeetupRestHandler::class
+        ]);
+        config([
+            'event-import-handlers.active_handlers.' . EventServices::MeetupRest->value,
+        ]);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupRest;
+    }
+    
+    protected function getHandlerClass(): string
+    {
+        return MeetupRestHandler::class;
+    }
+
     public function test_active_meetup_event_is_imported_correctly(): void
     {
         Carbon::setTestNow('2020-01-01');

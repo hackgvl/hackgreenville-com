@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
-/*
-NOTE: This importer has been deprecated in favor of the MeetupGraphqlExtHandler which uses the newer
-      /gql-ext endpoint. This handler remains in the codebase for reference and historical purposes.
-*/
-class MeetupGraphqlHandler extends AbstractEventHandler
+class MeetupGraphqlExtHandler extends AbstractEventHandler
 {
     protected ?string $next_page_url = null;
     protected int $per_page_limit = 100;
@@ -27,13 +23,14 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     {
         $event = $data['node'];
 
+        $going = $event['rspvs']['yesCount'] ?? 0;
+
         $map = EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
             'url' => $event['eventUrl'],
             'starts_at' => Carbon::parse($event['dateTime']),
-            // Meetup (graphql) does not provide an event end time
             'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
             'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
             'cancelled_at' => match ($event['status']) {
@@ -41,7 +38,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 'cancelled' => now(),
                 default => null
             },
-            'rsvp' => $event['going'],
+            'rsvp' => $going,
             'service' => EventServices::MeetupGraphql,
             'service_id' => $event['token'] ?? $event['id'],
             'venue' => $this->mapIntoVenueData($data)
@@ -68,8 +65,9 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     protected function mapIntoVenueData(array $data): ?VenueData
     {
         $event = $data['node'];
+        $venues = $event['venues'];
 
-        if ( ! isset($event['venue'])) {
+        if ( ! isset($venues) || count($venues) === 0) {
             return null;
         }
 
@@ -77,7 +75,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             return null;
         }
 
-        $venue = $event['venue'];
+        $venue = $venues[0];
 
         try {
             return VenueData::from([
@@ -89,7 +87,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 'zip' => $venue['postalCode'],
                 'country' => $venue['country'],
                 'lat' => $venue['lat'],
-                'lon' => $venue['lng'],
+                'lon' => $venue['lon'],
             ]);
         } catch (Throwable $exception) {
             report($exception);
@@ -109,12 +107,13 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $data = $response->collect();
         $groupData = $data['data']['groupByUrlname'];
 
-        $pastEvents = $groupData['pastEvents']['edges'];
-        $upcomingEvents = $groupData['upcomingEvents']['edges'];
+        if ($groupData === null) {
+            Log::warning('No group data found for Meetup GraphQL organization', ['service_key' => $this->org->service_api_key]);
+            return collect();
+        }
 
-        $events = array_merge($pastEvents, $upcomingEvents);
-
-        $events = $this->filterEvents($events);
+        // The /gql-ext API endpoint returns only upcoming events.
+        $events = $groupData['events']['edges'];
 
         return collect($events);
     }
@@ -122,15 +121,23 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     protected function determineNextPage(Response $response): void
     {
         $data = $response->collect();
-        $upcomingEvents = $data['data']['groupByUrlname']['upcomingEvents'];
-        $pageInfo = $upcomingEvents['pageInfo'];
+        $groupData = $data['data']['groupByUrlname'];
+
+        // With the v2 API, if no upcoming events are found the group data is null
+        if ($groupData === null) {
+            $this->next_page_url = null;
+            return;
+        }
+
+        $events = $groupData['events'];
+        $pageInfo = $events['pageInfo'];
 
         if (false === $pageInfo['hasNextPage']) {
             $this->next_page_url = null;
             return;
         }
 
-        $this->next_page_url = $upcomingEvents['pageInfo']['endCursor'];
+        $this->next_page_url = $events['pageInfo']['endCursor'];
     }
 
     private function getMeetupEvents(): Response
@@ -139,27 +146,32 @@ class MeetupGraphqlHandler extends AbstractEventHandler
 
         $urlname = $this->org->service_api_key;
         $skip = $this->next_page_url !== null ? ', after: "' . $this->next_page_url . '"' : '';
+        $beforeDateTime = "\"" . now()->addDays($this->max_days_in_future)->startOfDay()->toIso8601String() . "\"";
+        $afterDateTime = "\"" . now()->subDays($this->max_days_in_past)->startOfDay()->toIso8601String() . "\"";
 
         $query = <<<GQL
         query {
           groupByUrlname(urlname: "{$urlname}" ) {
             id
             name
-            pastEvents(input: { first: {$this->per_page_limit} }, sortOrder: DESC) {
+            events(first: {$this->per_page_limit}, sort: DESC, filter: { afterDateTime: {$afterDateTime}, beforeDateTime: {$beforeDateTime} } {$skip}) {
               edges {
                 cursor
                 node {
-                  id
-                  token
+                  id # a unique but unstable identifier for the event. recurring events may change the value of the identifier
+                  token # a unique and stable identifier for the event.
                   title
                   eventUrl
                   description
-                  dateTime
-                  eventType
-                  status
-                  going
-                  createdAt
-                  venue {
+                  createdTime
+                  dateTime # scheduled time of event
+                  endTime # end time of event
+                  eventType # HYBRID/ ONLINE / PHYSICAL
+                  status # ACTIVE / AUTOSCHED / AUTOSCHED_CANCELLED / AUTOSCHED_DRAFT / AUTOSCHED_FINISHED / BLOCKED / CANCELLED / CANCELLED_PERM / DRAFT / PAST / PENDING / PROPOSED / TEMPLATE          
+                  rsvps {
+                    yesCount # how many people are going
+                  }
+                  venues {
                     id
                     name
                     address
@@ -168,7 +180,8 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                     postalCode
                     country
                     lat
-                    lng
+                    lon
+                    venueType # 'online' for virtual events. empty string for in-person events.
                   }
                 }
               }
@@ -177,75 +190,32 @@ class MeetupGraphqlHandler extends AbstractEventHandler
                 endCursor
                 hasNextPage
               }
-              count
-            }
-            upcomingEvents(input: { first: {$this->per_page_limit} {$skip} }, filter: { includeCancelled: true }, sortOrder: ASC) {
-              edges {
-                cursor
-                node {
-                  id
-                  token
-                  title
-                  eventUrl
-                  description
-                  dateTime
-                  eventType
-                  status
-                  going
-                  createdAt
-                  venue {
-                    id
-                    name
-                    address
-                    city
-                    state
-                    postalCode
-                    country
-                    lat
-                    lng
-                  }
-                }
-              }
-              pageInfo {
-                startCursor
-                endCursor
-                hasNextPage
-              }
-              count
+              totalCount
             }
           }
         }
         GQL;
 
+        if ($this->debug_log_enabled) {
+            Log::info('MeetupGraphql Query', [
+                Log::build([
+                    'driver' => 'single',
+                    'path' => storage_path('logs/meetup-graphql.log'),
+                ])->info('Query', [
+                    'org_service_key' => $this->org->service_api_key,
+                    'query' => $query,
+                ])
+            ]);
+        }
+
         $response = Http::baseUrl('https://api.meetup.com/')
             ->withToken($bearer_token['access_token'])
             ->throw()
-            ->post("/gql", [
+            ->post("/gql-ext", [
                 'query' => $query
             ]);
 
         return $response;
-    }
-
-    // Meetup's GraphQL API does not support date filtering on its API
-    // We need to filter the events ourselves
-    private function filterEvents(array $events): array
-    {
-        $start_date = now()->subDays($this->max_days_in_past)->startOfDay();
-        $end_date = now()->addDays($this->max_days_in_future)->endOfDay();
-
-        $filtered_events = [];
-
-        foreach ($events as $event) {
-            $eventDate = Carbon::parse($event['node']['dateTime']);
-            if ($eventDate < $start_date || $eventDate > $end_date) {
-                continue;
-            }
-
-            $filtered_events[] = $event;
-        }
-
-        return $filtered_events;
     }
 
     private function getBearerToken()

@@ -6,12 +6,13 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
+use HackGreenville\EventImporter\Tests\Feature\BaseEventHandlerTest;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\EventBriteHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
 
-class EventBriteTest extends DatabaseTestCase
+class EventBriteTest extends BaseEventHandlerTest
 {
     protected function setUp(): void
     {
@@ -22,6 +23,16 @@ class EventBriteTest extends DatabaseTestCase
         config(['services.eventbrite.private_token' => 'ABC']);
         config(['event-import-handlers.max_days_in_past' => 30]);
         config(['event-import-handlers.max_days_in_future' => 180]);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::EventBrite;
+    }
+    
+    protected function getHandlerClass(): string
+    {
+        return EventBriteHandler::class;
     }
 
     public function test_active_eventbrite_event_is_imported_correctly(): void
