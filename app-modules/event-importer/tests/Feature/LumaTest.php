@@ -6,9 +6,8 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
-use HackGreenville\EventImporter\Services\LumaHandler;
-use HackGreenville\EventImporter\Tests\Feature\BaseEventHandlerTest;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\LumaHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 
@@ -19,16 +18,6 @@ class LumaTest extends BaseEventHandlerTest
         parent::setUp();
 
         Carbon::setTestNow('2020-01-01');
-    }
-
-    protected function getEventService(): EventServices
-    {
-        return EventServices::Luma;
-    }
-    
-    protected function getHandlerClass(): string
-    {
-        return LumaHandler::class;
     }
 
     public function test_active_luma_event_is_imported_correctly(): void
@@ -84,6 +73,16 @@ class LumaTest extends BaseEventHandlerTest
             ])
             ->firstOrFail();
         $this->assertNull($event2->venue);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::Luma;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return LumaHandler::class;
     }
 
     protected function apiResponse(string $file): string

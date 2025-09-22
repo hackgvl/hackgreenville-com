@@ -5,9 +5,8 @@ namespace HackGreenville\EventImporter\Tests\Feature;
 use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
-use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
-use HackGreenville\EventImporter\Tests\Feature\BaseEventHandlerTest;
+use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 
@@ -23,16 +22,6 @@ class MeetupRestTest extends BaseEventHandlerTest
         config([
             'event-import-handlers.active_handlers.' . EventServices::MeetupRest->value,
         ]);
-    }
-
-    protected function getEventService(): EventServices
-    {
-        return EventServices::MeetupRest;
-    }
-    
-    protected function getHandlerClass(): string
-    {
-        return MeetupRestHandler::class;
     }
 
     public function test_active_meetup_event_is_imported_correctly(): void
@@ -91,6 +80,16 @@ HTML, $active_event->description);
 
         $this->assertEquals('cancelled', $cancelled_event->status);
         $this->assertNotNull($cancelled_event->cancelled_at);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupRest;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return MeetupRestHandler::class;
     }
 
     protected function getMeetupUrl(string $service_api_key): string

@@ -5,7 +5,6 @@ namespace HackGreenville\EventImporter\Tests\Feature;
 use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
-use HackGreenville\EventImporter\Tests\Feature\BaseEventHandlerTest;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
 use Illuminate\Support\Carbon;
@@ -32,16 +31,6 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         ]);
 
         $this->fakeHttpCalls();
-    }
-
-    protected function getEventService(): EventServices
-    {
-        return EventServices::MeetupGraphql;
-    }
-    
-    protected function getHandlerClass(): string
-    {
-        return MeetupGraphqlHandler::class;
     }
 
     public function test_meetup_event_is_imported_correctly(): void
@@ -196,6 +185,16 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         $this->expectExceptionMessage('File path ' . $file_path . ' does not exist.');
 
         $this->runImportCommand();
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupGraphql;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return MeetupGraphqlHandler::class;
     }
 
     protected function apiResponse(string $file): string

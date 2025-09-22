@@ -6,7 +6,6 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
-use HackGreenville\EventImporter\Tests\Feature\BaseEventHandlerTest;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\EventBriteHandler;
 use Illuminate\Support\Carbon;
@@ -23,16 +22,6 @@ class EventBriteTest extends BaseEventHandlerTest
         config(['services.eventbrite.private_token' => 'ABC']);
         config(['event-import-handlers.max_days_in_past' => 30]);
         config(['event-import-handlers.max_days_in_future' => 180]);
-    }
-
-    protected function getEventService(): EventServices
-    {
-        return EventServices::EventBrite;
-    }
-    
-    protected function getHandlerClass(): string
-    {
-        return EventBriteHandler::class;
     }
 
     public function test_active_eventbrite_event_is_imported_correctly(): void
@@ -114,6 +103,16 @@ class EventBriteTest extends BaseEventHandlerTest
         $this->assertEquals('cancelled', $cancelled_event->status);
         $this->assertNotNull($cancelled_event->cancelled_at);
         $this->assertFalse($cancelled_event->is_paid);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::EventBrite;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return EventBriteHandler::class;
     }
 
     protected function getEventbriteUrl(string $service_api_key): string
