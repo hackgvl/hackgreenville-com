@@ -1,9 +1,23 @@
 version: '3'
 services:
   hackgreenville:
-    extends:
-      file: docker-compose.yml
-      service: hackgreenville
+    build:
+      context: './vendor/laravel/sail/runtimes/${PHP_RUNTIME:-8.1}'
+      dockerfile: Dockerfile
+      args:
+        WWWGROUP: '${WWWGROUP:-www-data}'
+    image: hackgreenville
+    container_name: hackgreenville
+    ports:
+      - '${APP_PORT:-80}:80'
+      - '${APP_PORT:-5173}:5173' # vite development server
+    env_file: [] # overriding this property from the base compose file
+    volumes:
+      - './:/var/www/html'
+    restart: always
+    depends_on:
+    - hackgreenville-db
+    - hackgreenville-redis
   hackgreenville-db:
     ports:
       - 3306:3306

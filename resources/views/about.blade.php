@@ -17,10 +17,10 @@
         <h2 class="font-weight-bold">Initiatives</h2>
         <h3>HG Slack</h3>
         <p class="lead-text">Our <a href="/join-slack" class="highlight-link">Slack community</a> continues to be a
-            vibrant hub for insightful conversations and discovery.
+            daily hub for insightful conversations and discovery.
         </p>
         <h3>HG Nights</h3>
-        <p class="lead-text">Since 2023, we host a quarterly-ish <a class="highlight-link" href="/hg-nights"><em>HackGreenville Nights</em></a> gathering with socialing, good food, and optional short talks to bridge the gap between our monthly meetups and our annual conferences.</p>
+        <p class="lead-text">Since 2023, we host a quarterly-ish <a class="highlight-link" href="/hg-nights"><em>HackGreenville Nights</em></a> gathering with socializing, good food, and optional short talks to bridge the gap between our monthly meetups and our annual conferences.</p>
         <h3>HG Labs</h3>
         <p class="lead-text">
            This website, the <em><a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md" class="highlight-link">Organizations API</a></em>, and <em><a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md" class="highlight-link">Events API</a></em>,
@@ -47,7 +47,7 @@
         <ul class="values-list">
             <li>We expect everyone to abide by the <a href="/code-of-conduct">Code of Conduct</a> within our Slack and at in-person events.</li>
             <li>We exist to nurture personal growth, not to bring people down.
-                Constructive debate, even "Tabs" or "Spaces", is welcome, but please do not harrass or provoke.
+                Constructive debate, even "Tabs" or "Spaces", is welcome, but please do not harass or provoke.
             </li>
             <li>We welcome all hackers, makers, and tinker types. Our community extends beyond just software.</li>
             <li>Be respectful. Egos and biases have no place here.</li>

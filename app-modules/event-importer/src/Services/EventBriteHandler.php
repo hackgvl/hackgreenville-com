@@ -67,7 +67,6 @@ class EventBriteHandler extends AbstractEventHandler
         return $this->client()
             ->get("v3/organizers/{$this->org->service_api_key}/events/", [
                 'status' => 'all',
-                'order_by' => 'start_desc',
                 'expand' => 'event_sales_status',
                 'start_date.range_start' => now()->subDays($this->max_days_in_past)->format('Y-m-d\TH:i:s'),
                 'start_date.range_end' => now()->addDays($this->max_days_in_future)->format('Y-m-d\TH:i:s'),
