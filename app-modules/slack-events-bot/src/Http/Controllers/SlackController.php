@@ -175,7 +175,7 @@ class SlackController
             case '/check_api':
                 Log::info('Executing /check_api command', ['user_id' => $userId, 'team_domain' => $teamDomain]);
                 // Check cooldown
-                if (false && ! app()->isLocal() && $teamDomain) {
+                if (! app()->isLocal() && $teamDomain) {
                     $expiryTime = $this->databaseService->getCooldownExpiryTime($teamDomain, 'check_api');
 
                     if ($expiryTime && $expiryTime->isFuture()) {
