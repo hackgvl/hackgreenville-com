@@ -6,15 +6,16 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
-use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
+use HackGreenville\EventImporter\Services\MeetupGraphqlExtHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 
-class MeetupGraphqlTest extends BaseEventHandlerTest
+class MeetupGraphqlExtTest extends BaseEventHandlerTest
 {
     protected function setUp(): void
     {
         parent::setUp();
+
         Carbon::setTestNow('2020-01-01');
 
         config()->set('event-import-handlers.max_days_in_past', 10);
@@ -29,42 +30,37 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
             'service' => EventServices::MeetupGraphql,
             'service_api_key' => 'defcon864',
         ]);
-
-        $this->fakeHttpCalls();
     }
 
     public function test_meetup_event_is_imported_correctly(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
         $organization = $this->getOrganization();
-        $event = $this->queryEvent('301411834');
+        $event = $this->queryEvent('302190057');
 
-        $this->assertEquals('Build Carolina: empowering tech professionals in South Carolina through training', $event->event_name);
+        $this->assertEquals('DEF CON 864 Meeting', $event->event_name);
         $this->assertEquals($organization->title, $event->group_name);
-        $this->assertStringContainsString("Lauren McGlamery will share the mission of Build Carolina as a tech talent hub, fostering a vibrant community for tech professionals. We'll explore the various ways we achieve this, including:\n\n* " .
-        "Comprehensive training programs: We offer a range of training programs to address the industry's ever-evolving needs.\n* Dedicated support: We offer career guidance, mentorship opportunities, and other resources to empower aspiring tech " .
-        "professionals.\n* Supportive community for the tech ecosystem in SC: Our organization provides a platform for collaboration, knowledge sharing, and professional development.\n* Learning opportunities and giving back initiatives: We'll showcase ways " .
-        "experienced professionals can continue to expand their skills and contribute their knowledge and expertise to the community.\n\nWe'll also delve into our unique apprenticeship program, designed to bridge the gap between theory and practice for " .
-        "early-career professionals in any tech-based role. Learn how your organization can benefit from partnering with Build Carolina to build a robust tech workforce.\n\n**Agenda**\n\n" .
-        "1. Welcome & Announcements\n2. Presentation (*above*)\n3. Projects & Hobbies\n4. Networking", $event->description);
+        $this->assertEquals("Join us for the monthly DEF CON 864 group meeting", $event->description);
 
-        $this->assertEquals(19, $event->rsvp_count);
-        $this->assertEquals(1577833200, $event->active_at->utc()->unix());
-        $this->assertEquals('2019-12-31 18:00:00', $event->active_at->toDateTimeString());
+        $this->assertEquals(3, $event->rsvp_count);
+        $this->assertEquals(1578805140, $event->active_at->utc()->unix());
+        $this->assertEquals('2020-01-11 23:59:00', $event->active_at->toDateTimeString());
 
         $this->assertEquals('America/New_York', $event->timezone);
-        $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $event->uri);
-        $this->assertNull($event->cancelled_at);
+        $this->assertEquals('https://www.meetup.com/defcon864/events/302190057', $event->uri);
+        $this->assertEquals('2020-01-01 00:00:00', $event->cancelled_at->toDateTimeString());
         $this->assertNotNull($event->venue);
-        $this->assertEquals('past', $event->status);
+        $this->assertEquals('cancelled', $event->status);
     }
 
     public function test_meetup_event_venue_data_is_imported_correctly(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
-        $event = $this->queryEvent('301411834');
+        $event = $this->queryEvent('302190057');
         $venue = $event->venue;
 
         $this->assertEquals("101 N Main St #302", $venue->address);
@@ -76,8 +72,20 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         $this->assertEquals(-82.39968, $venue->lng);
     }
 
+    public function test_upcoming_event_is_imported_correctly(): void
+    {
+        $this->fakeHttpCalls();
+        $this->runImportCommand();
+
+        $upcoming_event = $this->queryEvent('302190058');
+
+        $this->assertNull($upcoming_event->cancelled_at);
+        $this->assertEquals('upcoming', $upcoming_event->status);
+    }
+
     public function test_cancelled_meetup_event_is_imported_correctly(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
         $cancelled_event = $this->queryEvent('302190057');
@@ -85,17 +93,9 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         $this->assertEquals('cancelled', $cancelled_event->status);
     }
 
-    public function test_past_meetup_event_is_imported_correctly(): void
-    {
-        $this->runImportCommand();
-
-        $past_event = $this->queryEvent('301559297');
-
-        $this->assertEquals('past', $past_event->status);
-    }
-
     public function test_online_event_venue_is_null(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
         $event = $this->queryEvent('pwdqjtygcpbkb');
@@ -106,6 +106,7 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
 
     public function test_past_meetup_event_past_max_days_not_imported(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
         $event = $this->queryEvent('300699290');
@@ -115,6 +116,7 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
 
     public function test_upcoming_meetup_event_past_max_days_not_imported(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
         $event = $this->queryEvent('pwdqjtygcqbhb');
@@ -124,6 +126,7 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
 
     public function test_duplicate_event_is_not_imported(): void
     {
+        $this->fakeHttpCalls();
         $this->runImportCommand();
 
         Event::factory()->create([
@@ -139,6 +142,28 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
 
         $event_duplicate = $this->queryEvent('mfuaiakmcxuzjsd');
         $this->assertNull($event_duplicate);
+    }
+
+    public function test_null_group_data_is_not_imported(): void
+    {
+        $eventCountBefore = Event::query()->count();
+
+        Http::fake([
+            'https://secure.meetup.com/oauth2/access' => Http::response(
+                $this->apiResponse('responses/accessToken/example-access-token.json'),
+                200
+            ),
+            'https://api.meetup.com/gql-ext' => Http::response(
+                $this->apiResponse('responses/groupByUrlName/v2/example-group-null.json'),
+                200
+            ),
+        ]);
+
+        $this->runImportCommand();
+
+        $eventCountAfter = Event::query()->count();
+
+        $this->assertEquals($eventCountBefore, $eventCountAfter);
     }
 
     public function test_config_validation_fails_with_missing_client_id(): void
@@ -194,7 +219,7 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
 
     protected function getHandlerClass(): string
     {
-        return MeetupGraphqlHandler::class;
+        return MeetupGraphqlExtHandler::class;
     }
 
     protected function apiResponse(string $file): string
@@ -233,8 +258,8 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         ]);
 
         Http::fake([
-            'https://api.meetup.com/gql' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v1/example-group.json'), // Example response from /gql-ext endpoint
+            'https://api.meetup.com/gql-ext' => Http::response(
+                $this->apiResponse('responses/groupByUrlName/v2/example-group.json'), // Example response from /gql-ext endpoint
                 200
             ),
         ]);
