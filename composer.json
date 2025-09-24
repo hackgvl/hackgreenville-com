@@ -77,10 +77,9 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover",
-            "@php artisan filament:upgrade",
-            "@php artisan ide-helper:generate --ansi --no-interaction",
-            "@php artisan ide-helper:meta --ansi --no-interaction",
-            "@php artisan ide-helper:models -N --no-interaction"
+            "@php artisan ide-helper:generate --ansi --no-interaction || echo 'IDE helper not available'",
+            "@php artisan ide-helper:meta --ansi --no-interaction || echo 'IDE helper not available'",
+            "@php artisan ide-helper:models -N --no-interaction || echo 'IDE helper not available'"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
