@@ -66,9 +66,7 @@
     },
     "scripts": {
         "lint": [
-            "./vendor/bin/pint --quiet",
-            "php artisan cache:clear",
-            "@generate-ide-helper"
+            "./vendor/bin/pint --quiet"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -81,16 +79,8 @@
             "@php artisan package:discover",
             "@php artisan filament:upgrade"
         ],
-        "generate-ide-helper": [
-            "@php artisan ide-helper:generate --ansi --no-interaction",
-            "@php artisan ide-helper:meta --ansi --no-interaction",
-            "@php artisan ide-helper:models -N --no-interaction"
-        ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta",
-            "@php artisan migrate --seed"
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall"
