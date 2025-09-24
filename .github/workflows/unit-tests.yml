@@ -98,7 +98,7 @@ jobs:
           echo "deployment_url=$URL" >> $GITHUB_OUTPUT
 
   pr_updated:
-    if: github.event.action == 'synchronize'
+    if: (github.event.action == 'synchronize' || github.event.action == 'reopened')
     runs-on: ubuntu-latest
     needs: tests
     environment:
@@ -136,7 +136,7 @@ jobs:
           echo "deployment_url=$URL" >> $GITHUB_OUTPUT
 
   pr_closed:
-    if: (github.event.action == 'synchronize' || github.event.action == 'reopened')
+    if: github.event.action == 'closed'
     runs-on: ubuntu-latest
     container: ghcr.io/railwayapp/cli:latest
     steps:
