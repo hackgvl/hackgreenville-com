@@ -10,8 +10,9 @@ use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\LumaHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use Tests\DatabaseTestCase;
 
-class LumaTest extends BaseEventHandlerTest
+class LumaTest extends DatabaseTestCase
 {
     protected function setUp(): void
     {
@@ -73,16 +74,6 @@ class LumaTest extends BaseEventHandlerTest
             ])
             ->firstOrFail();
         $this->assertNull($event2->venue);
-    }
-
-    protected function getEventService(): EventServices
-    {
-        return EventServices::Luma;
-    }
-
-    protected function getHandlerClass(): string
-    {
-        return LumaHandler::class;
     }
 
     protected function apiResponse(string $file): string

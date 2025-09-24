@@ -9,8 +9,9 @@ use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\MeetupGraphqlExtHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use Tests\DatabaseTestCase;
 
-class MeetupGraphqlExtTest extends BaseEventHandlerTest
+class MeetupGraphqlExtTest extends DatabaseTestCase
 {
     protected function setUp(): void
     {

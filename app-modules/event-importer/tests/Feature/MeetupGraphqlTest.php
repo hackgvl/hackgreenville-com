@@ -9,8 +9,9 @@ use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use Tests\DatabaseTestCase;
 
-class MeetupGraphqlTest extends BaseEventHandlerTest
+class MeetupGraphqlTest extends DatabaseTestCase
 {
     protected function setUp(): void
     {
@@ -24,6 +25,9 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         config()->set('event-import-handlers.meetup_graphql_client_id', 'foo');
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
+        config()->set('event-import-handlers.handlers', [
+			EventServices::MeetupGraphql->value => MeetupGraphqlHandler::class,
+		]);
 
         Org::factory()->create([
             'service' => EventServices::MeetupGraphql,
