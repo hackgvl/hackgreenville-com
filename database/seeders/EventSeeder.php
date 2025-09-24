@@ -8,6 +8,7 @@ use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -168,12 +169,12 @@ class EventSeeder extends Seeder
         foreach ($events as $eventData) {
             $organization = $organizations->get($eventData['organization']);
 
-            if (!$organization) {
-                throw new \Exception("Organization '{$eventData['organization']}' not found. Please run OrganizationSeeder first.");
+            if ( ! $organization) {
+                throw new Exception("Organization '{$eventData['organization']}' not found. Please run OrganizationSeeder first.");
             }
 
-            if (!$venue) {
-                throw new \Exception("Venue not found. Please run VenueSeeder first.");
+            if ( ! $venue) {
+                throw new Exception("Venue not found. Please run VenueSeeder first.");
             }
 
             unset($eventData['organization']);

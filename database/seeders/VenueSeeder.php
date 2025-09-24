@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\State;
 use App\Models\Venue;
+use Exception;
 use Illuminate\Database\Seeder;
 
 class VenueSeeder extends Seeder
@@ -13,8 +14,8 @@ class VenueSeeder extends Seeder
         // Get the South Carolina state record
         $southCarolina = State::where('abbr', 'SC')->first();
 
-        if (!$southCarolina) {
-            throw new \Exception('South Carolina state not found. Please run StatesSeeder first.');
+        if ( ! $southCarolina) {
+            throw new Exception('South Carolina state not found. Please run StatesSeeder first.');
         }
 
         $venues = [
