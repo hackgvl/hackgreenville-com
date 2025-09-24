@@ -39,14 +39,14 @@ jobs:
           php-version: 8.1
           extensions: :php_psr
 
+      - name: copy environment variables to .env
+        run: cp .env.ci .env
+
       - name: install php dependencies
         run: composer install
 
       - name: install node dependencies
         run: yarn install
-
-      - name: copy environment variables to .env
-        run: cp .env.ci .env
 
       - name: migrate database
         run: php artisan migrate --seed
