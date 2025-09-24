@@ -6,11 +6,11 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
-use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use Tests\DatabaseTestCase;
 
-class MeetupGraphqlTest extends BaseEventHandlerTest
+class MeetupGraphqlTest extends DatabaseTestCase
 {
     protected function setUp(): void
     {
@@ -25,12 +25,24 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
 
+        Http::fake([
+            'https://secure.meetup.com/oauth2/access' => Http::response(
+                $this->apiResponse('example-access-token.json'),
+                200
+            ),
+        ]);
+
+        Http::fake([
+            'https://api.meetup.com/gql' => Http::response(
+                $this->apiResponse('example-group.json'),
+                200
+            ),
+        ]);
+
         Org::factory()->create([
             'service' => EventServices::MeetupGraphql,
             'service_api_key' => 'defcon864',
         ]);
-
-        $this->fakeHttpCalls();
     }
 
     public function test_meetup_event_is_imported_correctly(): void
@@ -187,16 +199,6 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
         $this->runImportCommand();
     }
 
-    protected function getEventService(): EventServices
-    {
-        return EventServices::MeetupGraphql;
-    }
-
-    protected function getHandlerClass(): string
-    {
-        return MeetupGraphqlHandler::class;
-    }
-
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);
@@ -215,28 +217,11 @@ class MeetupGraphqlTest extends BaseEventHandlerTest
             ->firstOrFail();
     }
 
-    private function queryEvent(string $service_id): Event|null
+    private function queryEvent(string $service_id): Event | null
     {
         return Event::query()
             ->where('service', EventServices::MeetupGraphql)
             ->where('service_id', $service_id)
             ->first();
-    }
-
-    private function fakeHttpCalls(): void
-    {
-        Http::fake([
-            'https://secure.meetup.com/oauth2/access' => Http::response(
-                $this->apiResponse('responses/accessToken/example-access-token.json'),
-                200
-            ),
-        ]);
-
-        Http::fake([
-            'https://api.meetup.com/gql' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v1/example-group.json'), // Example response from /gql-ext endpoint
-                200
-            ),
-        ]);
     }
 }

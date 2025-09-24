@@ -7,11 +7,11 @@ use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
-use HackGreenville\EventImporter\Services\EventBriteHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use Tests\DatabaseTestCase;
 
-class EventBriteTest extends BaseEventHandlerTest
+class EventBriteTest extends DatabaseTestCase
 {
     protected function setUp(): void
     {
@@ -103,16 +103,6 @@ class EventBriteTest extends BaseEventHandlerTest
         $this->assertEquals('cancelled', $cancelled_event->status);
         $this->assertNotNull($cancelled_event->cancelled_at);
         $this->assertFalse($cancelled_event->is_paid);
-    }
-
-    protected function getEventService(): EventServices
-    {
-        return EventServices::EventBrite;
-    }
-
-    protected function getHandlerClass(): string
-    {
-        return EventBriteHandler::class;
     }
 
     protected function getEventbriteUrl(string $service_api_key): string

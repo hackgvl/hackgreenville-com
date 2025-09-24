@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
-/*
-NOTE: This importer has been deprecated in favor of the MeetupGraphqlExtHandler which uses the newer
-      /gql-ext endpoint. This handler remains in the codebase for reference and historical purposes.
-*/
 class MeetupGraphqlHandler extends AbstractEventHandler
 {
     protected ?string $next_page_url = null;
