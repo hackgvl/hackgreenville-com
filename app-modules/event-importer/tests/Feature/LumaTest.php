@@ -7,7 +7,6 @@ use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
-use HackGreenville\EventImporter\Services\LumaHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use Tests\DatabaseTestCase;

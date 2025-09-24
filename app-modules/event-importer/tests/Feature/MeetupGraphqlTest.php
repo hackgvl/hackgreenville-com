@@ -26,8 +26,8 @@ class MeetupGraphqlTest extends DatabaseTestCase
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
         config()->set('event-import-handlers.handlers', [
-			EventServices::MeetupGraphql->value => MeetupGraphqlHandler::class,
-		]);
+            EventServices::MeetupGraphql->value => MeetupGraphqlHandler::class,
+        ]);
 
         Org::factory()->create([
             'service' => EventServices::MeetupGraphql,
