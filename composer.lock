@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74defb137e7f4e7bd9a1a4a97b6d7153",
+    "content-hash": "acf2c838b48cc6456d784d14e545b6da",
     "packages": [
         {
             "name": "amphp/amp",
@@ -8069,6 +8069,68 @@
                 "source": "https://github.com/Scyllaly/hcaptcha/tree/4.4.7"
             },
             "time": "2024-08-31T06:44:47+00:00"
+        },
+        {
+            "name": "sebdesign/artisan-cloudflare",
+            "version": "v2.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebdesign/artisan-cloudflare.git",
+                "reference": "716255e5fbfd8def122a4b8d6d1128e4b6dfe810"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebdesign/artisan-cloudflare/zipball/716255e5fbfd8def122a4b8d6d1128e4b6dfe810",
+                "reference": "716255e5fbfd8def122a4b8d6d1128e4b6dfe810",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.0",
+                "illuminate/console": "^5.5|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/support": "^5.5|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": "^7.2.5|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9|^1.0",
+                "orchestra/testbench": "^3.5|^4.0|^5.0|^6.0|^8.0|^9.0|^10.0",
+                "phpunit/phpunit": "^7.0|^8.5|^9.3|^10.5|^11.5.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": "Sebdesign\\ArtisanCloudflare\\ServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sebdesign\\ArtisanCloudflare\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sébastien Nikolaou",
+                    "email": "info@sebdesign.eu",
+                    "homepage": "https://sebdesign.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel artisan commands for Cloudflare",
+            "homepage": "https://github.com/sebdesign/artisan-cloudflare",
+            "keywords": [
+                "api",
+                "artisan",
+                "cloudflare",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/sebdesign/artisan-cloudflare/issues",
+                "source": "https://github.com/sebdesign/artisan-cloudflare/tree/v2.8.0"
+            },
+            "time": "2025-02-20T11:35:05+00:00"
         },
         {
             "name": "seld/jsonlint",
