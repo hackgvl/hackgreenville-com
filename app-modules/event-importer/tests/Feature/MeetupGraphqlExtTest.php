@@ -213,16 +213,6 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
         $this->runImportCommand();
     }
 
-    protected function getEventService(): EventServices
-    {
-        return EventServices::MeetupGraphql;
-    }
-
-    protected function getHandlerClass(): string
-    {
-        return MeetupGraphqlExtHandler::class;
-    }
-
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);

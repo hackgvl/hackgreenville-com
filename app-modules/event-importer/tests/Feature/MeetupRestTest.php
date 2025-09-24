@@ -17,11 +17,12 @@ class MeetupRestTest extends DatabaseTestCase
     {
         parent::setUp();
 
-        config([
-            'event-import-handlers.handlers.' . EventServices::MeetupRest->value => MeetupRestHandler::class
+        config()->set('event-import-handlers.handlers', [
+            EventServices::MeetupRest->value => MeetupRestHandler::class,
         ]);
-        config([
-            'event-import-handlers.active_handlers.' . EventServices::MeetupRest->value,
+
+        config()->set('event-import-handlers.active_services', [
+            EventServices::MeetupRest->value
         ]);
     }
 
@@ -83,26 +84,16 @@ HTML, $active_event->description);
         $this->assertNotNull($cancelled_event->cancelled_at);
     }
 
-    protected function getEventService(): EventServices
-    {
-        return EventServices::MeetupRest;
-    }
-
-    protected function getHandlerClass(): string
-    {
-        return MeetupRestHandler::class;
-    }
-
     protected function getMeetupUrl(string $service_api_key): string
     {
-        return 'https://api.meetup.com/' . $service_api_key . '/events?sign=1&photo-host=public' .
-            '&status=upcoming%2Ccancelled%2Cpast&page=100&' .
-            'no_earlier_than=' . now()->subDays(env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30))->format('Y-m-d') . 'T00%3A00%3A00' .
-            '&no_later_than=' . now()->addDays(180)->format('Y-m-d') . 'T23%3A59%3A59';
+        return 'https://api.meetup.com/'.$service_api_key.'/events?sign=1&photo-host=public'.
+            '&status=upcoming%2Ccancelled%2Cpast&page=100&'.
+            'no_earlier_than='.now()->subDays(env('EVENT_IMPORTER_MAX_DAYS_IN_PAST', 30))->format('Y-m-d').'T00%3A00%3A00'.
+            '&no_later_than='.now()->addDays(180)->format('Y-m-d').'T23%3A59%3A59';
     }
 
     protected function apiResponse(string $file): string
     {
-        return file_get_contents(__DIR__ . '/../fixtures/meetup-rest/' . $file);
+        return file_get_contents(__DIR__.'/../fixtures/meetup-rest/'.$file);
     }
 }
