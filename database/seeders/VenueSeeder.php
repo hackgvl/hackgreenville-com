@@ -12,9 +12,9 @@ class VenueSeeder extends Seeder
     public function run()
     {
         // Get the South Carolina state record
-        $southCarolina = State::where('abbr', 'SC')->first();
+        $south_carolina = State::where('abbr', 'SC')->first();
 
-        if ( ! $southCarolina) {
+        if ( ! $south_carolina) {
             throw new Exception('South Carolina state not found. Please run StatesSeeder first.');
         }
 
@@ -25,7 +25,7 @@ class VenueSeeder extends Seeder
                 'address' => '400 Birnie St',
                 'zipcode' => '29605',
                 'city' => 'Greenville',
-                'state_id' => $southCarolina->id,
+                'state_id' => $south_carolina->id,
                 'country' => 'US',
                 'lat' => '34.8361',
                 'lng' => '-82.3643',
@@ -37,7 +37,7 @@ class VenueSeeder extends Seeder
                 'zipcode' => '29601',
                 'phone' => null,
                 'city' => 'Greenville',
-                'state_id' => $southCarolina->id,
+                'state_id' => $south_carolina->id,
                 'country' => 'US',
                 'lat' => '34.852020263672',
                 'lng' => '-82.399681091309',

@@ -16,208 +16,207 @@ class EventSeeder extends Seeder
 {
     public function run()
     {
-        $synergyMill = Venue::where('slug', 'synergy-mill')->first();
-        $openWorks = Venue::where('slug', 'openworks')->first();
+        // Load all venues and organizations into collections for easy lookup
+        $venues = Venue::all()->keyBy('slug');
+        $organizations = Org::all()->keyBy('slug');
 
-        if ( ! $synergyMill || ! $openWorks) {
-            throw new Exception('Required venues not found. Please run VenueSeeder first.');
+        if ($venues->isEmpty()) {
+            throw new Exception('No venues found. Please run VenueSeeder first.');
         }
-
-        $organizations = Org::all()->keyBy('title');
 
         if ($organizations->isEmpty()) {
             throw new Exception('No organizations found. Please run OrganizationSeeder first.');
         }
 
-        $events = [
-            // HackGreenville Events (MeetupGraphql)
+        $events = $this->getEventData();
+
+        foreach ($events as $event_data) {
+            $this->createEvent($event_data, $organizations, $venues);
+        }
+    }
+
+    private function createEvent(array $event_data, $organizations, $venues)
+    {
+        // Extract and validate organization
+        $organization = $organizations->get($event_data['org_slug']);
+        if (!$organization) {
+            throw new Exception("Organization '{$event_data['org_slug']}' not found.");
+        }
+
+        // Extract and validate venue
+        $venue = $venues->get($event_data['venue_slug']);
+        if (!$venue) {
+            throw new Exception("Venue '{$event_data['venue_slug']}' not found.");
+        }
+
+        // Build the event data
+        $event = [
+            'organization_id' => $organization->id,
+            'venue_id' => $venue->id,
+            'event_name' => $event_data['name'],
+            'group_name' => $event_data['group_name'] ?? $organization->title,
+            'description' => $event_data['description'],
+            'active_at' => $this->parseEventTime($event_data['starts_at']),
+            'expire_at' => $this->parseEventTime($event_data['ends_at']),
+            'service' => $event_data['service'] ?? $organization->service,
+            'service_id' => $event_data['service_id'],
+            'uri' => $event_data['uri'],
+            'rsvp_count' => $event_data['rsvp_count'] ?? 0,
+            'is_paid' => $event_data['is_paid'] ?? false,
+            'visibility' => $event_data['visibility'] ?? EventVisibility::Published,
+        ];
+
+        // Use updateOrCreate to avoid duplicates
+        Event::updateOrCreate(
             [
-                'organization' => 'HackGreenville',
-                'venue' => 'synergy-mill',
-                'event_name' => 'HackGreenville Monthly Meetup - February 2025',
-                'group_name' => 'HackGreenville',
+                'service' => $event['service'],
+                'service_id' => $event['service_id'],
+            ],
+            array_merge($event, ['event_uuid' => Str::uuid()->toString()])
+        );
+    }
+
+    private function parseEventTime($time_spec)
+    {
+        if ($time_spec instanceof \DateTime) {
+            return Carbon::instance($time_spec);
+        }
+
+        if (is_array($time_spec)) {
+            return Carbon::now()
+                ->addDays($time_spec['days'] ?? 0)
+                ->setTime($time_spec['hour'] ?? 0, $time_spec['minute'] ?? 0);
+        }
+
+        return Carbon::parse($time_spec);
+    }
+
+    private function getEventData(): array
+    {
+        return [
+            // HackGreenville Events
+            [
+                'org_slug' => 'hackgreenville',
+                'venue_slug' => 'synergy-mill',
+                'name' => 'HackGreenville Monthly Meetup - February 2025',
                 'description' => 'Join us for our monthly meetup where we discuss local tech news, upcoming events, and network with fellow developers and tech enthusiasts in the Upstate.',
-                'active_at' => Carbon::now()->addDays(7)->setTime(18, 30),
-                'expire_at' => Carbon::now()->addDays(7)->setTime(20, 30),
-                'service' => EventServices::MeetupGraphql,
-                'service_id' => '305890241',  // Real-looking Meetup event ID format
+                'starts_at' => ['days' => 7, 'hour' => 18, 'minute' => 30],
+                'ends_at' => ['days' => 7, 'hour' => 20, 'minute' => 30],
+                'service_id' => '305890241',
                 'uri' => 'https://www.meetup.com/hack-greenville/events/305890241',
                 'rsvp_count' => 45,
-                'visibility' => EventVisibility::Published,
             ],
             [
-                'organization' => 'HackGreenville',
-                'venue' => 'openworks',
-                'event_name' => 'Code & Coffee Saturday',
-                'group_name' => 'HackGreenville',
+                'org_slug' => 'hackgreenville',
+                'venue_slug' => 'openworks',
+                'name' => 'Code & Coffee Saturday',
                 'description' => 'Start your Saturday morning with coffee and code! Join us for casual coding, project sharing, and tech discussions.',
-                'active_at' => Carbon::now()->addDays(14)->setTime(9, 0),
-                'expire_at' => Carbon::now()->addDays(14)->setTime(11, 0),
-                'service' => EventServices::MeetupGraphql,
+                'starts_at' => ['days' => 14, 'hour' => 9, 'minute' => 0],
+                'ends_at' => ['days' => 14, 'hour' => 11, 'minute' => 0],
                 'service_id' => '305890242',
                 'uri' => 'https://www.meetup.com/hack-greenville/events/305890242',
                 'rsvp_count' => 22,
-                'visibility' => EventVisibility::Published,
             ],
             [
-                'organization' => 'HackGreenville',
-                'venue' => 'synergy-mill',
-                'event_name' => 'Lightning Talks Night',
-                'group_name' => 'HackGreenville',
+                'org_slug' => 'hackgreenville',
+                'venue_slug' => 'synergy-mill',
+                'name' => 'Lightning Talks Night',
                 'description' => 'Share your knowledge! Present a 5-minute lightning talk on any tech topic.',
-                'active_at' => Carbon::now()->addDays(21)->setTime(18, 30),
-                'expire_at' => Carbon::now()->addDays(21)->setTime(20, 30),
-                'service' => EventServices::MeetupGraphql,
+                'starts_at' => ['days' => 21, 'hour' => 18, 'minute' => 30],
+                'ends_at' => ['days' => 21, 'hour' => 20, 'minute' => 30],
                 'service_id' => '305890243',
                 'uri' => 'https://www.meetup.com/hack-greenville/events/305890243',
                 'rsvp_count' => 38,
-                'visibility' => EventVisibility::Published,
             ],
 
-            // Tech After Five Events (EventBrite)
+            // Tech After Five Events
             [
-                'organization' => 'Tech After Five',
-                'venue' => 'openworks',
-                'event_name' => 'Tech After Five - February Networking',
-                'group_name' => 'Tech After Five',
+                'org_slug' => 'tech-after-five',
+                'venue_slug' => 'openworks',
+                'name' => 'Tech After Five - February Networking',
                 'description' => 'Join us for the premier tech networking event in Greenville! Connect with entrepreneurs, developers, and tech professionals.',
-                'active_at' => Carbon::now()->addDays(10)->setTime(17, 30),
-                'expire_at' => Carbon::now()->addDays(10)->setTime(20, 0),
-                'service' => EventServices::EventBrite,
-                'service_id' => '987654321098',  // Real-looking EventBrite event ID format
+                'starts_at' => ['days' => 10, 'hour' => 17, 'minute' => 30],
+                'ends_at' => ['days' => 10, 'hour' => 20, 'minute' => 0],
+                'service_id' => '987654321098',
                 'uri' => 'https://www.eventbrite.com/e/tech-after-five-february-tickets-987654321098',
                 'rsvp_count' => 120,
                 'is_paid' => true,
-                'visibility' => EventVisibility::Published,
             ],
             [
-                'organization' => 'Tech After Five',
-                'venue' => 'synergy-mill',
-                'event_name' => 'Tech After Five - March Networking',
-                'group_name' => 'Tech After Five',
+                'org_slug' => 'tech-after-five',
+                'venue_slug' => 'synergy-mill',
+                'name' => 'Tech After Five - March Networking',
                 'description' => 'Monthly networking event for the Greenville tech community. Food, drinks, and great conversations!',
-                'active_at' => Carbon::now()->addDays(38)->setTime(17, 30),
-                'expire_at' => Carbon::now()->addDays(38)->setTime(20, 0),
-                'service' => EventServices::EventBrite,
+                'starts_at' => ['days' => 38, 'hour' => 17, 'minute' => 30],
+                'ends_at' => ['days' => 38, 'hour' => 20, 'minute' => 0],
                 'service_id' => '987654321099',
                 'uri' => 'https://www.eventbrite.com/e/tech-after-five-march-tickets-987654321099',
                 'rsvp_count' => 95,
                 'is_paid' => true,
-                'visibility' => EventVisibility::Published,
             ],
 
-            // Pixel Pushers Events (Luma)
+            // Pixel Pushers Events
             [
-                'organization' => 'Pixel Pushers',
-                'venue' => 'openworks',
-                'event_name' => 'Modern CSS: Container Queries & Cascade Layers',
-                'group_name' => 'Pixel Pushers',
+                'org_slug' => 'pixel-pushers',
+                'venue_slug' => 'openworks',
+                'name' => 'Modern CSS: Container Queries & Cascade Layers',
                 'description' => 'Deep dive into modern CSS features including container queries, cascade layers, and the latest in CSS design patterns.',
-                'active_at' => Carbon::now()->addDays(9)->setTime(18, 0),
-                'expire_at' => Carbon::now()->addDays(9)->setTime(20, 0),
-                'service' => EventServices::Luma,
-                'service_id' => 'evt-8xKmN3pQR5vZLJ2',  // Real-looking Luma event ID format
+                'starts_at' => ['days' => 9, 'hour' => 18, 'minute' => 0],
+                'ends_at' => ['days' => 9, 'hour' => 20, 'minute' => 0],
+                'service_id' => 'evt-8xKmN3pQR5vZLJ2',
                 'uri' => 'https://lu.ma/evt-8xKmN3pQR5vZLJ2',
                 'rsvp_count' => 28,
-                'visibility' => EventVisibility::Published,
             ],
             [
-                'organization' => 'Pixel Pushers',
-                'venue' => 'openworks',
-                'event_name' => 'Figma to Code: Best Practices',
-                'group_name' => 'Pixel Pushers',
+                'org_slug' => 'pixel-pushers',
+                'venue_slug' => 'openworks',
+                'name' => 'Figma to Code: Best Practices',
                 'description' => 'Learn how to efficiently translate Figma designs into production-ready code with modern tools and techniques.',
-                'active_at' => Carbon::now()->addDays(23)->setTime(18, 0),
-                'expire_at' => Carbon::now()->addDays(23)->setTime(20, 0),
-                'service' => EventServices::Luma,
+                'starts_at' => ['days' => 23, 'hour' => 18, 'minute' => 0],
+                'ends_at' => ['days' => 23, 'hour' => 20, 'minute' => 0],
                 'service_id' => 'evt-9yLnO4qRS6wAMK3',
                 'uri' => 'https://lu.ma/evt-9yLnO4qRS6wAMK3',
                 'rsvp_count' => 32,
-                'visibility' => EventVisibility::Published,
             ],
 
-            // Carolina Code Conf Events (ManuallyManaged)
+            // Carolina Code Conf Events
             [
-                'organization' => 'Carolina Code Conf',
-                'venue' => 'synergy-mill',
-                'event_name' => 'Carolina Code Conference 2025',
-                'group_name' => 'Carolina Code Conf',
+                'org_slug' => 'carolina-code-conf',
+                'venue_slug' => 'synergy-mill',
+                'name' => 'Carolina Code Conference 2025',
                 'description' => 'Annual conference bringing together developers from across the Carolinas for two days of learning and networking.',
-                'active_at' => Carbon::now()->addDays(60)->setTime(8, 0),
-                'expire_at' => Carbon::now()->addDays(61)->setTime(18, 0),
-                'service' => EventServices::ManuallyManaged,
+                'starts_at' => ['days' => 60, 'hour' => 8, 'minute' => 0],
+                'ends_at' => ['days' => 61, 'hour' => 18, 'minute' => 0],
                 'service_id' => 'ccc-2025-main',
                 'uri' => 'https://carolina.codes/2025',
                 'rsvp_count' => 200,
                 'is_paid' => true,
-                'visibility' => EventVisibility::Published,
             ],
             [
-                'organization' => 'Carolina Code Conf',
-                'venue' => 'openworks',
-                'event_name' => 'Pre-Conference Workshop: Cloud Native Development',
-                'group_name' => 'Carolina Code Conf',
+                'org_slug' => 'carolina-code-conf',
+                'venue_slug' => 'openworks',
+                'name' => 'Pre-Conference Workshop: Cloud Native Development',
                 'description' => 'Full-day workshop on building cloud-native applications with Kubernetes and serverless technologies.',
-                'active_at' => Carbon::now()->addDays(59)->setTime(9, 0),
-                'expire_at' => Carbon::now()->addDays(59)->setTime(17, 0),
-                'service' => EventServices::ManuallyManaged,
+                'starts_at' => ['days' => 59, 'hour' => 9, 'minute' => 0],
+                'ends_at' => ['days' => 59, 'hour' => 17, 'minute' => 0],
                 'service_id' => 'ccc-2025-workshop-1',
                 'uri' => 'https://carolina.codes/2025/workshops/cloud-native',
                 'rsvp_count' => 40,
                 'is_paid' => true,
-                'visibility' => EventVisibility::Published,
             ],
 
             // Past event for testing
             [
-                'organization' => 'HackGreenville',
-                'venue' => 'synergy-mill',
-                'event_name' => 'HackGreenville Year End Celebration 2024',
-                'group_name' => 'HackGreenville',
+                'org_slug' => 'hackgreenville',
+                'venue_slug' => 'synergy-mill',
+                'name' => 'HackGreenville Year End Celebration 2024',
                 'description' => 'Celebrated the year with the HackGreenville community! Food, drinks, and great conversations.',
-                'active_at' => Carbon::now()->subDays(30)->setTime(18, 0),
-                'expire_at' => Carbon::now()->subDays(30)->setTime(21, 0),
-                'service' => EventServices::MeetupGraphql,
+                'starts_at' => ['days' => -30, 'hour' => 18, 'minute' => 0],
+                'ends_at' => ['days' => -30, 'hour' => 21, 'minute' => 0],
                 'service_id' => '304890240',
                 'uri' => 'https://www.meetup.com/hack-greenville/events/304890240',
                 'rsvp_count' => 75,
-                'visibility' => EventVisibility::Published,
             ],
         ];
-
-        foreach ($events as $eventData) {
-            $organization = $organizations->get($eventData['organization']);
-
-            if ( ! $organization) {
-                throw new Exception("Organization '{$eventData['organization']}' not found. Please run OrganizationSeeder first.");
-            }
-
-            // Get the appropriate venue
-            $venue = null;
-            if ($eventData['venue'] === 'synergy-mill') {
-                $venue = $synergyMill;
-            } elseif ($eventData['venue'] === 'openworks') {
-                $venue = $openWorks;
-            }
-
-            if ( ! $venue) {
-                throw new Exception("Venue '{$eventData['venue']}' not found. Please run VenueSeeder first.");
-            }
-
-            unset($eventData['organization'], $eventData['venue']);
-
-
-            $eventData['organization_id'] = $organization->id;
-            $eventData['venue_id'] = $venue->id;
-
-            // Use updateOrCreate to avoid duplicates based on service and service_id
-            Event::updateOrCreate(
-                [
-                    'service' => $eventData['service'],
-                    'service_id' => $eventData['service_id'],
-                ],
-                array_merge($eventData, ['event_uuid' => Str::uuid()->toString()])
-            );
-        }
     }
 }
