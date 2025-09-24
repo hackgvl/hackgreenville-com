@@ -77,7 +77,10 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover",
-            "@php artisan filament:upgrade"
+            "@php artisan filament:upgrade",
+            "@php artisan ide-helper:generate --ansi --no-interaction",
+            "@php artisan ide-helper:meta --ansi --no-interaction",
+            "@php artisan ide-helper:models -N --no-interaction"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
