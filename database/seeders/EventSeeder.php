@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Enums\EventServices;
 use App\Enums\EventVisibility;
 use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
 use Carbon\Carbon;
+use DateTime;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -39,13 +39,13 @@ class EventSeeder extends Seeder
     {
         // Extract and validate organization
         $organization = $organizations->get($event_data['org_slug']);
-        if (!$organization) {
+        if ( ! $organization) {
             throw new Exception("Organization '{$event_data['org_slug']}' not found.");
         }
 
         // Extract and validate venue
         $venue = $venues->get($event_data['venue_slug']);
-        if (!$venue) {
+        if ( ! $venue) {
             throw new Exception("Venue '{$event_data['venue_slug']}' not found.");
         }
 
@@ -78,7 +78,7 @@ class EventSeeder extends Seeder
 
     private function parseEventTime($time_spec)
     {
-        if ($time_spec instanceof \DateTime) {
+        if ($time_spec instanceof DateTime) {
             return Carbon::instance($time_spec);
         }
 
