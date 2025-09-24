@@ -18,12 +18,22 @@ class EventSeeder extends Seeder
     {
         $synergyMill = Venue::where('slug', 'synergy-mill')->first();
         $openWorks = Venue::where('slug', 'openworks')->first();
+
+        if (!$synergyMill || !$openWorks) {
+            throw new Exception('Required venues not found. Please run VenueSeeder first.');
+        }
+
         $organizations = Org::all()->keyBy('title');
+
+        if ($organizations->isEmpty()) {
+            throw new Exception('No organizations found. Please run OrganizationSeeder first.');
+        }
 
         $events = [
             // HackGreenville Events (MeetupGraphql)
             [
                 'organization' => 'HackGreenville',
+                'venue' => 'synergy-mill',
                 'event_name' => 'HackGreenville Monthly Meetup - February 2025',
                 'group_name' => 'HackGreenville',
                 'description' => 'Join us for our monthly meetup where we discuss local tech news, upcoming events, and network with fellow developers and tech enthusiasts in the Upstate.',
@@ -37,6 +47,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'organization' => 'HackGreenville',
+                'venue' => 'openworks',
                 'event_name' => 'Code & Coffee Saturday',
                 'group_name' => 'HackGreenville',
                 'description' => 'Start your Saturday morning with coffee and code! Join us for casual coding, project sharing, and tech discussions.',
@@ -50,6 +61,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'organization' => 'HackGreenville',
+                'venue' => 'synergy-mill',
                 'event_name' => 'Lightning Talks Night',
                 'group_name' => 'HackGreenville',
                 'description' => 'Share your knowledge! Present a 5-minute lightning talk on any tech topic.',
@@ -65,6 +77,7 @@ class EventSeeder extends Seeder
             // Tech After Five Events (EventBrite)
             [
                 'organization' => 'Tech After Five',
+                'venue' => 'openworks',
                 'event_name' => 'Tech After Five - February Networking',
                 'group_name' => 'Tech After Five',
                 'description' => 'Join us for the premier tech networking event in Greenville! Connect with entrepreneurs, developers, and tech professionals.',
@@ -79,6 +92,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'organization' => 'Tech After Five',
+                'venue' => 'synergy-mill',
                 'event_name' => 'Tech After Five - March Networking',
                 'group_name' => 'Tech After Five',
                 'description' => 'Monthly networking event for the Greenville tech community. Food, drinks, and great conversations!',
@@ -95,6 +109,7 @@ class EventSeeder extends Seeder
             // Pixel Pushers Events (Luma)
             [
                 'organization' => 'Pixel Pushers',
+                'venue' => 'openworks',
                 'event_name' => 'Modern CSS: Container Queries & Cascade Layers',
                 'group_name' => 'Pixel Pushers',
                 'description' => 'Deep dive into modern CSS features including container queries, cascade layers, and the latest in CSS design patterns.',
@@ -108,6 +123,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'organization' => 'Pixel Pushers',
+                'venue' => 'openworks',
                 'event_name' => 'Figma to Code: Best Practices',
                 'group_name' => 'Pixel Pushers',
                 'description' => 'Learn how to efficiently translate Figma designs into production-ready code with modern tools and techniques.',
@@ -123,6 +139,7 @@ class EventSeeder extends Seeder
             // Carolina Code Conf Events (ManuallyManaged)
             [
                 'organization' => 'Carolina Code Conf',
+                'venue' => 'synergy-mill',
                 'event_name' => 'Carolina Code Conference 2025',
                 'group_name' => 'Carolina Code Conf',
                 'description' => 'Annual conference bringing together developers from across the Carolinas for two days of learning and networking.',
@@ -137,6 +154,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'organization' => 'Carolina Code Conf',
+                'venue' => 'openworks',
                 'event_name' => 'Pre-Conference Workshop: Cloud Native Development',
                 'group_name' => 'Carolina Code Conf',
                 'description' => 'Full-day workshop on building cloud-native applications with Kubernetes and serverless technologies.',
@@ -153,6 +171,7 @@ class EventSeeder extends Seeder
             // Past event for testing
             [
                 'organization' => 'HackGreenville',
+                'venue' => 'synergy-mill',
                 'event_name' => 'HackGreenville Year End Celebration 2024',
                 'group_name' => 'HackGreenville',
                 'description' => 'Celebrated the year with the HackGreenville community! Food, drinks, and great conversations.',
@@ -173,17 +192,32 @@ class EventSeeder extends Seeder
                 throw new Exception("Organization '{$eventData['organization']}' not found. Please run OrganizationSeeder first.");
             }
 
+            // Get the appropriate venue
+            $venue = null;
+            if ($eventData['venue'] === 'synergy-mill') {
+                $venue = $synergyMill;
+            } elseif ($eventData['venue'] === 'openworks') {
+                $venue = $openWorks;
+            }
+
             if ( ! $venue) {
-                throw new Exception("Venue not found. Please run VenueSeeder first.");
+                throw new Exception("Venue '{$eventData['venue']}' not found. Please run VenueSeeder first.");
             }
 
             unset($eventData['organization']);
+            unset($eventData['venue']);
 
             $eventData['organization_id'] = $organization->id;
             $eventData['venue_id'] = $venue->id;
-            $eventData['event_uuid'] = Str::uuid()->toString();
 
-            Event::create($eventData);
+            // Use updateOrCreate to avoid duplicates based on service and service_id
+            Event::updateOrCreate(
+                [
+                    'service' => $eventData['service'],
+                    'service_id' => $eventData['service_id'],
+                ],
+                array_merge($eventData, ['event_uuid' => Str::uuid()->toString()])
+            );
         }
     }
 }

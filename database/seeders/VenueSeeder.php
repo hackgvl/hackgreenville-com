@@ -45,7 +45,10 @@ class VenueSeeder extends Seeder
         ];
 
         foreach ($venues as $venue) {
-            Venue::create($venue);
+            Venue::updateOrCreate(
+                ['slug' => $venue['slug']],
+                $venue
+            );
         }
     }
 }
