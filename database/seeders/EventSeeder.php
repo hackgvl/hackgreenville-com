@@ -19,7 +19,7 @@ class EventSeeder extends Seeder
         $synergyMill = Venue::where('slug', 'synergy-mill')->first();
         $openWorks = Venue::where('slug', 'openworks')->first();
 
-        if (!$synergyMill || !$openWorks) {
+        if ( ! $synergyMill || ! $openWorks) {
             throw new Exception('Required venues not found. Please run VenueSeeder first.');
         }
 
@@ -204,8 +204,8 @@ class EventSeeder extends Seeder
                 throw new Exception("Venue '{$eventData['venue']}' not found. Please run VenueSeeder first.");
             }
 
-            unset($eventData['organization']);
-            unset($eventData['venue']);
+            unset($eventData['organization'], $eventData['venue']);
+
 
             $eventData['organization_id'] = $organization->id;
             $eventData['venue_id'] = $venue->id;
