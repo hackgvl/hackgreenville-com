@@ -79,8 +79,7 @@
             "@php artisan package:discover",
             "@php artisan ide-helper:generate --ansi --no-interaction || echo 'IDE helper not available'",
             "@php artisan ide-helper:meta --ansi --no-interaction || echo 'IDE helper not available'",
-            "@php artisan ide-helper:models -N --no-interaction || echo 'IDE helper not available'",
-            "@php artisan modules:sync || echo 'Modular not available'"
+            "@php artisan ide-helper:models -N --no-interaction || echo 'IDE helper not available'"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
