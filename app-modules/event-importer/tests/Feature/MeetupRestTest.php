@@ -6,12 +6,24 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
 
-class MeetupRestTest extends DatabaseTestCase
+class MeetupRestTest extends BaseEventHandlerTest
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        config([
+            'event-import-handlers.handlers.' . EventServices::MeetupRest->value => MeetupRestHandler::class
+        ]);
+        config([
+            'event-import-handlers.active_handlers.' . EventServices::MeetupRest->value,
+        ]);
+    }
+
     public function test_active_meetup_event_is_imported_correctly(): void
     {
         Carbon::setTestNow('2020-01-01');
@@ -68,6 +80,16 @@ HTML, $active_event->description);
 
         $this->assertEquals('cancelled', $cancelled_event->status);
         $this->assertNotNull($cancelled_event->cancelled_at);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupRest;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return MeetupRestHandler::class;
     }
 
     protected function getMeetupUrl(string $service_api_key): string
