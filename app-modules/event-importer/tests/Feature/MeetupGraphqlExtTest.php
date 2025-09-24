@@ -22,7 +22,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
         config()->set('event-import-handlers.max_days_in_past', 10);
         config()->set('event-import-handlers.max_days_in_future', 10);
 
-        config()->set('event-import-handlers.meetup_graphql_private_key_path', __DIR__.'/../fixtures/meetup-graphql/test_key.pem');
+        config()->set('event-import-handlers.meetup_graphql_private_key_path', __DIR__ . '/../fixtures/meetup-graphql/test_key.pem');
         config()->set('event-import-handlers.meetup_graphql_client_id', 'foo');
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
@@ -213,17 +213,17 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
 
     public function test_file_path_validation_fails_when_private_key_path_does_not_exist(): void
     {
-        $file_path = __DIR__.'/../fixtures/meetup-graphql/file_does_not_exist.pem';
+        $file_path = __DIR__ . '/../fixtures/meetup-graphql/file_does_not_exist.pem';
         config()->set('event-import-handlers.meetup_graphql_private_key_path', $file_path);
 
-        $this->expectExceptionMessage('File path '.$file_path.' does not exist.');
+        $this->expectExceptionMessage('File path ' . $file_path . ' does not exist.');
 
         $this->runImportCommand();
     }
 
     protected function apiResponse(string $file): string
     {
-        return file_get_contents(__DIR__.'/../fixtures/meetup-graphql/'.$file);
+        return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);
     }
 
     private function runImportCommand(): void
