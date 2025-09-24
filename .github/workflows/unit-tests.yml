@@ -138,15 +138,30 @@ jobs:
   pr_closed:
     if: github.event.action == 'closed'
     runs-on: ubuntu-latest
-    environment: staging
     container: ghcr.io/railwayapp/cli:latest
     steps:
       - name: Link to project
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment ${{ secrets.RAILWAY_ENVIRONMENT_ID }} --service hackgreenville.com
-        
+
       - name: Delete Railway Environment for PR
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: railway environment delete pr-${{ github.event.pull_request.number }} || true
+
+      - name: Delete GitHub Environment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              await github.rest.repos.deleteAnEnvironment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                environment_name: `preview-pr-${{ github.event.pull_request.number }}`
+              });
+              console.log('GitHub environment deleted successfully');
+            } catch (error) {
+              console.log('Environment may not exist or already deleted:', error.message);
+            }
