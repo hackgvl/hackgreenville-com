@@ -3,6 +3,7 @@
 use App\Enums\EventServices;
 use HackGreenville\EventImporter\Services\EventBriteHandler;
 use HackGreenville\EventImporter\Services\LumaHandler;
+use HackGreenville\EventImporter\Services\MeetupGraphqlExtHandler;
 use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
 use HackGreenville\EventImporter\Services\MeetupRestHandler;
 
@@ -17,7 +18,8 @@ return [
     'handlers' => [
         EventServices::EventBrite->value => EventBriteHandler::class,
         EventServices::MeetupRest->value => MeetupRestHandler::class,
-        EventServices::MeetupGraphql->value => MeetupGraphqlHandler::class,
+        EventServices::MeetupGraphql->value => MeetupGraphqlExtHandler::class,
+        // EventServices::MeetupGraphql->value => MeetupGraphqlHandler::class,
         EventServices::Luma->value => LumaHandler::class,
     ],
     'active_services' => [
