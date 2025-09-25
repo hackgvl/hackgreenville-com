@@ -16,8 +16,8 @@ class VenueResource extends JsonResource
             'address' => $this->resource->address,
             'city' => $this->resource->city,
             'state' => [
-                'code' => $this->resource->state->abbr,
-                'name' => $this->resource->state->name,
+                'code' => $this->resource->state,
+                'name' => $this->resource->state,
             ],
             'zipcode' => $this->resource->zipcode,
             'country' => $this->resource->country,

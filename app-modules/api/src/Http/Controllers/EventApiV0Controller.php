@@ -21,7 +21,7 @@ class EventApiV0Controller
     {
         return new EventCollection(
             resource: Event::query()
-                ->with(['organization.tags', 'venue.state'])
+                ->with(['organization.tags', 'venue'])
                 ->published()
                 ->when($request->filled('start_date'), function (Builder $query) use ($request) {
                     $query->where('active_at', '>=', $request->date('start_date')->startOfDay());

@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\State;
 use App\Models\Venue;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -21,7 +20,7 @@ class VenueFactory extends Factory
             'country' => $this->faker->countryCode(),
             'phone' => $this->faker->phoneNumber,
             'city' => $this->faker->city,
-            'state_id' => State::factory(),
+            'state' => $this->faker->stateAbbr,
             'lat' => $this->faker->latitude,
             'lng' => $this->faker->longitude,
         ];

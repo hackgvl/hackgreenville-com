@@ -2,21 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\State;
 use App\Models\Venue;
-use Exception;
 use Illuminate\Database\Seeder;
 
 class VenueSeeder extends Seeder
 {
     public function run()
     {
-        // Get the South Carolina state record
-        $south_carolina = State::where('abbr', 'SC')->first();
-
-        if ( ! $south_carolina) {
-            throw new Exception('South Carolina state not found. Please run StatesSeeder first.');
-        }
 
         $venues = [
             [
@@ -25,7 +17,7 @@ class VenueSeeder extends Seeder
                 'address' => '400 Birnie St',
                 'zipcode' => '29605',
                 'city' => 'Greenville',
-                'state_id' => $south_carolina->id,
+                'state' => 'SC',
                 'country' => 'US',
                 'lat' => '34.8361',
                 'lng' => '-82.3643',
@@ -37,7 +29,7 @@ class VenueSeeder extends Seeder
                 'zipcode' => '29601',
                 'phone' => null,
                 'city' => 'Greenville',
-                'state_id' => $south_carolina->id,
+                'state' => 'SC',
                 'country' => 'US',
                 'lat' => '34.852020263672',
                 'lng' => '-82.399681091309',

@@ -59,7 +59,7 @@ class LumaTest extends DatabaseTestCase
 
         $this->assertEquals('3300 Poinsett Hwy', $venue->address);
         $this->assertEquals('Greenville', $venue->city);
-        $this->assertEquals('SC', $venue->state->abbr);
+        $this->assertEquals('SC', $venue->state);
         $this->assertEquals('29613', $venue->zipcode);
         $this->assertEquals('US', $venue->country);
         $this->assertEquals('34.9274688', $venue->lat);
