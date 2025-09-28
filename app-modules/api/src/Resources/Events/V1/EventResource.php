@@ -11,7 +11,7 @@ class EventResource extends JsonResource
 
     public function toArray(Request $request): array
     {
-        $this->loadMissing(['organization.tags', 'venue.state']);
+        $this->loadMissing(['organization.tags', 'venue']);
 
         return [
             'id' => $this->resource->event_uuid,
