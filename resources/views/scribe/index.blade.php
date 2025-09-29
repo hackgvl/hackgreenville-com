@@ -566,6 +566,7 @@ response.json()</code></pre></div>
             &quot;ends_at&quot;: &quot;2025-01-01T19:00:00.000000Z&quot;,
             &quot;rsvp_count&quot;: 97,
             &quot;status&quot;: &quot;past&quot;,
+            &quot;is_paid&quot;: null,
             &quot;organization&quot;: {
                 &quot;id&quot;: 123,
                 &quot;name&quot;: &quot;Nash Corwin tech group!!!&quot;,
@@ -592,8 +593,7 @@ response.json()</code></pre></div>
                 &quot;id&quot;: &quot;9&quot;
             },
             &quot;created_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
-            &quot;is_paid&quot;: null
+            &quot;updated_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;
         }
     ]
 }</code>
@@ -760,6 +760,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The service that imported the event (meetup_graphql, eventbrite, etc.). Must not be greater than 255 characters.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_paid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="is_paid"                data-endpoint="GETapi-v1-events"
+               value=""
+               data-component="query">
+    <br>
+<p>Filter events that require payment (null means we currently cannot determine if event is paid).</p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>null</code></li> <li><code>true</code></li> <li><code>false</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>min_rsvp</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -802,19 +815,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="query">
     <br>
 <p>Must be 2 characters.</p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>is_paid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="is_paid"                data-endpoint="GETapi-v1-events"
-               value=""
-               data-component="query">
-    <br>
-<p>Filter events that require payment (null means we currently cannot determine if event is paid).</p>
-Must be one of:
-<ul style="list-style-type: square;"><li><code>null</code></li> <li><code>true</code></li> <li><code>false</code></li></ul>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;

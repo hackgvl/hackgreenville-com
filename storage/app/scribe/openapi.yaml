@@ -233,6 +233,21 @@ paths:
             nullable: true
         -
           in: query
+          name: is_paid
+          description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
+            example: null
+            nullable: true
+            enum:
+              - 'null'
+              - 'true'
+              - 'false'
+        -
+          in: query
           name: min_rsvp
           description: 'Must be at least 0.'
           example: null
@@ -275,21 +290,6 @@ paths:
             description: 'Must be 2 characters.'
             example: null
             nullable: true
-        -
-          in: query
-          name: is_paid
-          description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
-            example: null
-            nullable: true
-            enum:
-              - 'null'
-              - 'true'
-              - 'false'
         -
           in: query
           name: sort_by
@@ -339,6 +339,7 @@ paths:
                       ends_at: '2025-01-01T19:00:00.000000Z'
                       rsvp_count: 97
                       status: past
+                      is_paid: null
                       organization:
                         id: 123
                         name: 'Nash Corwin tech group!!!'
@@ -361,7 +362,6 @@ paths:
                         id: '9'
                       created_at: '2025-01-01T17:00:00.000000Z'
                       updated_at: '2025-01-01T17:00:00.000000Z'
-                      is_paid: null
                 properties:
                   data:
                     type: array
@@ -375,6 +375,7 @@ paths:
                         ends_at: '2025-01-01T19:00:00.000000Z'
                         rsvp_count: 97
                         status: past
+                        is_paid: null
                         organization:
                           id: 123
                           name: 'Nash Corwin tech group!!!'
@@ -397,7 +398,6 @@ paths:
                           id: '9'
                         created_at: '2025-01-01T17:00:00.000000Z'
                         updated_at: '2025-01-01T17:00:00.000000Z'
-                        is_paid: null
                     items:
                       type: object
                       properties:
@@ -425,6 +425,9 @@ paths:
                         status:
                           type: string
                           example: past
+                        is_paid:
+                          type: string
+                          example: null
                         organization:
                           type: object
                           properties:
@@ -491,9 +494,6 @@ paths:
                         updated_at:
                           type: string
                           example: '2025-01-01T17:00:00.000000Z'
-                        is_paid:
-                          type: string
-                          example: null
       tags:
         - Endpoints
       security: []

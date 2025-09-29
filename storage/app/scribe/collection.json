@@ -171,6 +171,12 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "is_paid",
+                                    "value": "",
+                                    "description": "Filter events that require payment (null means we currently cannot determine if event is paid).",
+                                    "disabled": true
+                                },
+                                {
                                     "key": "min_rsvp",
                                     "value": "",
                                     "description": "Must be at least 0.",
@@ -195,12 +201,6 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "is_paid",
-                                    "value": "",
-                                    "description": "Filter events that require payment (null means we currently cannot determine if event is paid).",
-                                    "disabled": true
-                                },
-                                {
                                     "key": "sort_by",
                                     "value": "event_name",
                                     "description": "",
@@ -213,7 +213,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2025-01-01&end_date=2100-12-31&tags[0]=17&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2025-01-01&end_date=2100-12-31&tags[0]=17&name=&org_name=&service=&is_paid=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&sort_by=event_name&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [
@@ -236,7 +236,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-01-01T17:00:00.000000Z\",\"ends_at\":\"2025-01-01T19:00:00.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"organization\":{\"id\":123,\"name\":\"Nash Corwin tech group!!!\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"37540\",\"country\":\"KP\",\"location\":{\"latitude\":\"69.526975\",\"longitude\":\"85.868299\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"9\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]}",
+                            "body": "{\"data\":[{\"id\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"starts_at\":\"2025-01-01T17:00:00.000000Z\",\"ends_at\":\"2025-01-01T19:00:00.000000Z\",\"rsvp_count\":97,\"status\":\"past\",\"is_paid\":null,\"organization\":{\"id\":123,\"name\":\"Nash Corwin tech group!!!\",\"url\":\"doloribus\",\"tags\":[]},\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":{\"code\":\"Sit.\",\"name\":\"Quia odit.\"},\"zipcode\":\"37540\",\"country\":\"KP\",\"location\":{\"latitude\":\"69.526975\",\"longitude\":\"85.868299\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"9\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\"}]}",
                             "name": ""
                         }
                     ]
