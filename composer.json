@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
-        "filament/filament": "^3.2",
+        "filament/filament": "^3.3",
         "firebase/php-jwt": "^6.10",
         "glhd/aire-bootstrap": "^2.1",
         "glhd/conveyor-belt": "*",

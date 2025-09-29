@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="feed-container" x-data="{
+            <div class="feed-container mt-4" x-data="{
             feeds: {{ \Illuminate\Support\Js::encode($organizations) }},
             copied: false,
             baseUrl: '{{ route('calendar-feed.show') }}',

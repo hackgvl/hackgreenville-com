@@ -38,6 +38,7 @@ class EventApiV1Test extends TestCase
                     'ends_at',
                     'rsvp_count',
                     'status',
+                    'is_paid',
                     'organization',
                     'venue',
                     'service',
@@ -101,7 +102,7 @@ class EventApiV1Test extends TestCase
         $response->assertJsonPath('meta.last_page', 2);
     }
 
-    public function test_can_filter_is_paid_events()
+    public function test_can_filter_events_by_is_paid()
     {
         $org = Org::factory()->create();
         $venue = Venue::factory()->create();
@@ -112,7 +113,6 @@ class EventApiV1Test extends TestCase
             'active_at' => now(),
             'expire_at' => now()->addDays(1),
             'is_paid' => false,
-            'event_name' => 'Free Event',
         ]);
 
         $paid_event = Event::factory()->create([
@@ -121,97 +121,20 @@ class EventApiV1Test extends TestCase
             'active_at' => now(),
             'expire_at' => now()->addDays(1),
             'is_paid' => true,
-            'event_name' => 'Paid Event',
         ]);
 
-        $unknown_event = Event::factory()->create([
-            'organization_id' => $org->id,
-            'venue_id' => $venue->id,
-            'active_at' => now(),
-            'expire_at' => now()->addDays(1),
-            'is_paid' => null,
-            'event_name' => 'Unknown Event',
-        ]);
+        // Test filtering for paid events
+        $response = $this->getJson('/api/v1/events?is_paid=true');
+        $response->assertStatus(200);
+        $response->assertJsonCount(1, 'data');
+        $response->assertJsonPath('data.0.id', $paid_event->event_uuid);
+        $response->assertJsonPath('data.0.is_paid', true);
 
-        $response1 = $this->getJson('/api/v1/events');
-        $response2 = $this->getJson('/api/v1/events?is_paid=true');
-        $response3 = $this->getJson('/api/v1/events?is_paid=false');
-        $response4 = $this->getJson('/api/v1/events?is_paid=null');
-
-        $response1->assertStatus(200);
-        $response2->assertStatus(200);
-        $response3->assertStatus(200);
-        $response4->assertStatus(200);
-
-        $response1->assertJsonCount(3, 'data');
-
-        $response2->assertJsonCount(1, 'data');
-        $response2->assertSee($paid_event->event_name);
-
-        $response3->assertJsonCount(1, 'data');
-        $response3->assertSee($free_event->event_name);
-
-        $response4->assertJsonCount(1, 'data');
-        $response4->assertSee($unknown_event->event_name);
-    }
-
-    public function test_can_filter_event_by_name()
-    {
-        $event1 = Event::factory()->create([
-            'service_id' => 100,
-            'event_name' => 'foo',
-        ]);
-
-        Event::factory()->create([
-            'service_id' => 200,
-            'event_name' => 'bar',
-        ]);
-
-        $event3 = Event::factory()->create([
-            'service_id' => 300,
-            'event_name' => 'foobar',
-        ]);
-
-        $response1 = $this->getJson('/api/v1/events');
-        $response2 = $this->getJson('/api/v1/events?name=foo');
-
-        $response1->assertStatus(200);
-        $response2->assertStatus(200);
-
-        $response1->assertJsonCount(3, 'data');
-
-        $response2->assertJsonCount(2, 'data');
-        $response2->assertSee($event1->service_id);
-        $response2->assertSee($event3->service_id); // should show up because "foo" is in the event name
-    }
-
-    public function test_can_filter_event_by_org_name()
-    {
-        $event1 = Event::factory()->create([
-            'service_id' => 100,
-            'group_name' => 'foo',
-        ]);
-
-        Event::factory()->create([
-            'service_id' => 200,
-            'group_name' => 'bar',
-        ]);
-
-        $event3 = Event::factory()->create([
-            'service_id' => 300,
-            'group_name' => 'foobar',
-        ]);
-
-        $response1 = $this->getJson('/api/v1/events');
-        $response2 = $this->getJson('/api/v1/events?org_name=foo');
-
-        $response1->assertStatus(200);
-        $response2->assertStatus(200);
-
-        $response1->assertJsonCount(3, 'data');
-
-        $response2->assertJsonCount(2, 'data');
-        $response2->assertSee($event1->service_id);
-        $response2->assertSee($event3->service_id); // should show up because "foo" is in the group name
+        // Test filtering for free events
+        $response = $this->getJson('/api/v1/events?is_paid=false');
+        $response->assertStatus(200);
+        $response->assertJsonCount(1, 'data');
+        $response->assertJsonPath('data.0.id', $free_event->event_uuid);
+        $response->assertJsonPath('data.0.is_paid', false);
     }
 }

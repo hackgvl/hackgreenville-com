@@ -46,6 +46,9 @@ class EventApiV1Controller extends Controller
             ->when($request->filled('service'), function (Builder $query) use ($request) {
                 $query->where('service', $request->input('service'));
             })
+            ->when($request->filled('is_paid'), function (Builder $query) use ($request) {
+                $query->where('is_paid', $request->boolean('is_paid'));
+            })
             ->when($request->filled('min_rsvp'), function (Builder $query) use ($request) {
                 $query->where('rsvp_count', '>=', $request->integer('min_rsvp'));
             })

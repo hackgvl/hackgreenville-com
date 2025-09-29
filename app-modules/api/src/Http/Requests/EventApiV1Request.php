@@ -34,6 +34,7 @@ class EventApiV1Request extends FormRequest
             'name' => ['nullable', 'string', 'max:255'],
             'org_name' => ['nullable', 'string', 'max:255'],
             'service' => ['nullable', 'string', 'max:255'],
+            'is_paid' => ['nullable', 'in:0,1,true,false'],
             'min_rsvp' => ['nullable', 'integer', 'min:0'],
             'max_rsvp' => [
                 'nullable',
