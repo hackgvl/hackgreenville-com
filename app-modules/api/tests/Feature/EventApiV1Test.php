@@ -107,7 +107,7 @@ class EventApiV1Test extends TestCase
         $org = Org::factory()->create();
         $venue = Venue::factory()->create();
 
-        $freeEvent = Event::factory()->create([
+        $free_event = Event::factory()->create([
             'organization_id' => $org->id,
             'venue_id' => $venue->id,
             'active_at' => now(),
@@ -115,7 +115,7 @@ class EventApiV1Test extends TestCase
             'is_paid' => false,
         ]);
 
-        $paidEvent = Event::factory()->create([
+        $paid_event = Event::factory()->create([
             'organization_id' => $org->id,
             'venue_id' => $venue->id,
             'active_at' => now(),
@@ -127,14 +127,14 @@ class EventApiV1Test extends TestCase
         $response = $this->getJson('/api/v1/events?is_paid=true');
         $response->assertStatus(200);
         $response->assertJsonCount(1, 'data');
-        $response->assertJsonPath('data.0.id', $paidEvent->event_uuid);
+        $response->assertJsonPath('data.0.id', $paid_event->event_uuid);
         $response->assertJsonPath('data.0.is_paid', true);
 
         // Test filtering for free events
         $response = $this->getJson('/api/v1/events?is_paid=false');
         $response->assertStatus(200);
         $response->assertJsonCount(1, 'data');
-        $response->assertJsonPath('data.0.id', $freeEvent->event_uuid);
+        $response->assertJsonPath('data.0.id', $free_event->event_uuid);
         $response->assertJsonPath('data.0.is_paid', false);
     }
 }

@@ -1,0 +1,44 @@
+name: Detect outdated Scribe docs
+
+on:
+  push:
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Important: test the actual PR code
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: :php_psr
+
+      - name: install php dependencies
+        run: composer install --optimize-autoloader
+    
+      - name: Copy environment file
+        run: cp .env.example .env
+      
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: Set up SQLite database
+        run: |
+            touch database/database.sqlite
+            echo "DB_CONNECTION=sqlite" >> .env
+            echo "DB_DATABASE=database/database.sqlite" >> .env
+
+      - name: migrate database
+        run: php artisan migrate --seed
+
+      - name: Generate docs
+        run: php artisan scribe:generate
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: Fix API docs

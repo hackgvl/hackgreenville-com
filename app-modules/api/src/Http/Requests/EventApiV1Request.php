@@ -31,8 +31,8 @@ class EventApiV1Request extends FormRequest
 
             'tags' => ['nullable', 'array'],
             'tags.*' => ['integer', 'exists:tags,id'],
-            'event_name' => ['nullable', 'string', 'max:255'],
-            'group_name' => ['nullable', 'string', 'max:255'],
+            'name' => ['nullable', 'string', 'max:255'],
+            'org_name' => ['nullable', 'string', 'max:255'],
             'service' => ['nullable', 'string', 'max:255'],
             'is_paid' => ['nullable', 'in:0,1,true,false'],
             'min_rsvp' => ['nullable', 'integer', 'min:0'],
@@ -44,6 +44,10 @@ class EventApiV1Request extends FormRequest
             ],
             'venue_city' => ['nullable', 'string', 'max:255'],
             'venue_state' => ['nullable', 'string', 'size:2'],
+            'is_paid' => [
+                'nullable',
+                'in:null,true,false',
+            ],
 
             'sort_by' => [
                 'nullable',
@@ -51,6 +55,52 @@ class EventApiV1Request extends FormRequest
                 Rule::in(['active_at', 'event_name', 'group_name', 'rsvp_count', 'created_at'])
             ],
             'sort_direction' => ['nullable', 'string', Rule::in(['asc', 'desc'])],
+        ];
+    }
+
+    public function queryParameters()
+    {
+        return [
+            'per_page' => [
+                'example' => 50,
+                'description' => 'The number of items to show per page',
+            ],
+            'page' => [
+                'example' => 1,
+                'description' => 'The current page of items to display',
+            ],
+            'start_date' => [
+                'description' => 'The start date for events filtering (inclusive).',
+                'example' => '2025-01-01',
+            ],
+            'end_date' => [
+                'description' => 'The end date for events filtering (inclusive).',
+                'example' => '2100-12-31',
+            ],
+            'tags' => [
+                'example' => null,
+                'description' => 'Filter events by organization tag ID.',
+            ],
+            'name' => [
+                'example' => null,
+                'description' => 'Filter events by event name (the "event_name" property)',
+            ],
+            'org_name' => ['example' => null, 'description' => 'The name of the organization associated with the event (the "group_name" property)'],
+            'service' => ['example' => null, 'description' => 'The service that imported the event (meetup_graphql, eventbrite, etc.)'],
+            'min_rsvp' => [
+                'example' => null,
+            ],
+            'max_rsvp' => [
+                'example' => null,
+            ],
+            'venue_city' => ['example' => null,],
+            'venue_state' => ['example' => null,],
+            'is_paid' => [
+                'example' => null,
+                'description' => 'Filter events that require payment (null means we currently cannot determine if event is paid)'
+            ],
+            'sort_by' => ['example' => 'event_name'],
+            'sort_direction' => ['example' => 'asc',],
         ];
     }
 

@@ -3,10 +3,10 @@
 namespace HackGreenville\Api\Resources\Orgs\V0;
 
 use App\Models\Org;
+use HackGreenville\Api\Resources\ApiResource;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-class OrgResource extends JsonResource
+class OrgResource extends ApiResource
 {
     /** @var Org $resource */
     public $resource;
@@ -28,7 +28,7 @@ class OrgResource extends JsonResource
             'field_organization_type' => $this->resource->organization_type,
             'field_year_established' => $this->resource->established_at->year,
             'field_org_tags' => $this->resource->tags->first()?->id ?? '',
-            'uuid' => $this->resource->id,
+            'uuid' => $this->getId($this->resource),
         ];
     }
 }

@@ -43,4 +43,34 @@ class EventFactory extends Factory
             'is_paid' => null,
         ];
     }
+
+    public function forDocumentation()
+    {
+        return $this->state(function (array $attributes) {
+            // Use a seeded faker instance for consistent values
+            $this->faker->seed(1234);
+
+            $venue = Venue::factory();
+            $org = Org::factory();
+
+            return [
+                'event_name' => $this->faker->sentence,
+                'group_name' => $this->faker->name . ' tech group!!!',
+                'description' => $this->faker->text(100),
+                'rsvp_count' => $this->faker->randomNumber(2),
+                'uri' => $this->faker->url,
+                'venue_id' => $venue,
+                'event_uuid' => $this->faker->uuid,
+                'cancelled_at' => null,
+                'service' => EventServices::EventBrite->value,
+                'service_id' => $this->faker->randomDigit(),
+                'organization_id' => $org,
+                'is_paid' => null,
+                'created_at' => '2025-01-01T12:00:00.000000Z',
+                'updated_at' => '2025-01-01T12:00:00.000000Z',
+                'active_at' => '2025-01-01T12:00:00.000000Z',
+                'expire_at' => '2025-01-01T14:00:00.000000Z',
+            ];
+        });
+    }
 }

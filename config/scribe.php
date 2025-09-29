@@ -144,7 +144,7 @@ return [
         'enabled' => true,
 
         'overrides' => [
-            // 'info.version' => '2.0.0',
+            'info._postman_id' => '02f8e2c2-2ed0-4974-80ae-71c644ff7e03',
         ],
     ],
 
@@ -183,7 +183,7 @@ return [
     // The format you pass to `date` will be passed to PHP's `date()` function.
     // The format you pass to `git` can be either "short" or "long".
     // Note: does not work for `external` docs types
-    'last_updated' => 'Last updated: {date:F j, Y}',
+    'last_updated' => null,
 
     'examples' => [
         // Set this to any number to generate the same example values for parameters on each run,
