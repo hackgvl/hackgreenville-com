@@ -44,7 +44,7 @@ class EventApiV0Test extends DatabaseTestCase
                         'name' => $event->venue->name,
                         'address' => $event->venue->address,
                         'city' => $event->venue->city,
-                        'state' => $event->venue->state->abbr,
+                        'state' => $event->venue->state,
                         'zip' => $event->venue->zipcode,
                         'country' => $event->venue->country,
                         'lat' => $event->venue->lat,

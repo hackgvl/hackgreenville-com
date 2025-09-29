@@ -2,7 +2,6 @@
 
 namespace HackGreenville\EventImporter\Data;
 
-use App\Models\State;
 use App\Models\Venue;
 use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Data;
@@ -31,18 +30,10 @@ class VenueData extends Data
             'zipcode' => $this->zip,
             'city' => $this->city,
             'country' => $this->country,
-            'state_id' => $this->resolveState()->id,
+            'state' => $this->state,
             'lat' => $this->lat,
             'lng' => $this->lon,
         ]);
     }
 
-    protected function resolveState(): State
-    {
-        return State::firstOrCreate([
-            'abbr' => $this->state,
-        ], [
-            'name' => $this->state,
-        ]);
-    }
 }

@@ -74,7 +74,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
 
         $this->assertEquals("101 N Main St #302", $venue->address);
         $this->assertEquals("Greenville", $venue->city);
-        $this->assertEquals("SC", $venue->state->abbr);
+        $this->assertEquals("SC", $venue->state);
         $this->assertEquals("29601", $venue->zipcode);
         $this->assertEquals("us", $venue->country);
         $this->assertEquals(34.85202, $venue->lat);
