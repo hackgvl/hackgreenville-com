@@ -108,22 +108,6 @@ class LumaHandler extends AbstractEventHandler
         return $this->filterEvents($events);
     }
 
-    private function filterEvents(Collection $events): Collection
-    {
-        $filteredEvents = [];
-
-        foreach($events as $event) {
-            // Filter out Luma events that were imported from an external source or are not managed by the organization
-            // (Luna's API docs do not provide explanation of what "is_manager" indicates)
-            if($event['platform'] != 'luma' || $event['is_manager'] != true) {
-                continue;
-            }
-            $filteredEvents[] = $event;
-        }
-
-        return collect($filteredEvents);
-    }
-
     protected function parseGoogleAddress(array $parts)
     {
         return new class ($parts) {
@@ -161,5 +145,21 @@ class LumaHandler extends AbstractEventHandler
                 $this->country = $parts[4];
             }
         };
+    }
+
+    private function filterEvents(Collection $events): Collection
+    {
+        $filteredEvents = [];
+
+        foreach ($events as $event) {
+            // Filter out Luma events that were imported from an external source or are not managed by the organization
+            // (Luna's API docs do not provide explanation of what "is_manager" indicates)
+            if ($event['platform'] !== 'luma' || $event['is_manager'] !== true) {
+                continue;
+            }
+            $filteredEvents[] = $event;
+        }
+
+        return collect($filteredEvents);
     }
 }
