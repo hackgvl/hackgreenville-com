@@ -152,7 +152,7 @@ class LumaHandler extends AbstractEventHandler
         $filteredEvents = [];
 
         foreach ($events as $event) {
-            // Filter out Luma events that were imported from an external source 
+            // Filter out Luma events that were imported from an external source
             // or are not managed by the organization (i.e. not cross-promotional events)
             if ($event['platform'] !== 'luma' || $event['is_manager'] !== true) {
                 continue;
