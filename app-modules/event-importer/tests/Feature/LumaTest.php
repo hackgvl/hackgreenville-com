@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\LumaHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use Tests\DatabaseTestCase;
@@ -23,7 +24,7 @@ class LumaTest extends DatabaseTestCase
     public function test_active_luma_event_is_imported_correctly(): void
     {
         Http::fake([
-            'https://api.lu.ma/calendar/get-items?calendar_api_id=cal-eBssGXM4Irgjp6j&period=future&pagination_limit=50' => Http::response($this->apiResponse('response.json')),
+            LumaHandler::$LUMA_API_BASE_URL . '/calendar/get-items?calendar_api_id=cal-eBssGXM4Irgjp6j&period=future&pagination_limit=50' => Http::response($this->apiResponse('response.json')),
         ]);
 
         $organization = Org::factory()->create([
@@ -73,6 +74,52 @@ class LumaTest extends DatabaseTestCase
             ])
             ->firstOrFail();
         $this->assertNull($event2->venue);
+    }
+
+    public function test_external_event_is_not_imported(): void
+    {
+        Http::fake([
+            LumaHandler::$LUMA_API_BASE_URL . '/calendar/get-items?calendar_api_id=cal-jLDJBTnVF9QGY6V&period=future&pagination_limit=50' => Http::response($this->apiResponse('response-external-event.json')),
+        ]);
+
+        $organization = Org::factory()->create([
+            'service' => EventServices::Luma->value,
+            'service_api_key' => 'cal-jLDJBTnVF9QGY6V',
+        ]);
+
+        $this->artisan(ImportEventsCommand::class);
+
+        $event = Event::query()
+            ->where([
+                'service' => EventServices::Luma->value,
+                'organization_id' => $organization->id,
+            ])
+            ->first();
+
+        $this->assertNull($event);
+    }
+
+    public function test_not_manager_event_is_not_imported(): void
+    {
+        Http::fake([
+            LumaHandler::$LUMA_API_BASE_URL . '/calendar/get-items?calendar_api_id=cal-jLDJBTnVF9QGY6V&period=future&pagination_limit=50' => Http::response($this->apiResponse('response-not-manager-event.json')),
+        ]);
+
+        $organization = Org::factory()->create([
+            'service' => EventServices::Luma->value,
+            'service_api_key' => 'cal-jLDJBTnVF9QGY6V',
+        ]);
+
+        $this->artisan(ImportEventsCommand::class);
+
+        $event = Event::query()
+            ->where([
+                'service' => EventServices::Luma->value,
+                'organization_id' => $organization->id
+            ])
+            ->first();
+
+        $this->assertNull($event);
     }
 
     protected function apiResponse(string $file): string
