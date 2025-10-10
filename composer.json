@@ -26,6 +26,7 @@
         "laravel/tinker": "^2.0",
         "malzariey/filament-daterangepicker-filter": "^2.7",
         "scyllaly/hcaptcha": "^4.4",
+        "sebdesign/artisan-cloudflare": "^2.8",
         "spatie/icalendar-generator": "^2.9",
         "spatie/laravel-data": "*"
     },
