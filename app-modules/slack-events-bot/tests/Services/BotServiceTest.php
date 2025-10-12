@@ -48,10 +48,6 @@ class BotServiceTest extends TestCase
     {
         $this->refreshApplication();
 
-
-
-
-
         $this->botService = Mockery::mock(BotService::class . '[getEventsForWeek, deleteMessagesForWeek]', [
             $this->databaseServiceMock,
             $this->messageBuilderServiceMock
