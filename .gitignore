@@ -12,6 +12,7 @@ npm-debug.log
 yarn-error.log
 .env
 database/database.sqlite*
+app-modules/slack-events-bot/slackbot-manifest.dev.json
 
 # IDE helper files. These can be auto generated when running composer update
 /_ide_helper.php

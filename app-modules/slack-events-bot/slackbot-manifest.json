@@ -3,7 +3,7 @@
       "name": "HackGreenvilleAPIBot",
       "description": "Allow Greenville APIs and tools to interact with the HackGreenville Slack.",
       "background_color": "#006341",
-      "long_description": "Posts invite requests, contact form, and events from the HackGreenville site and local API / tools to HG Slack channels. See https://github.com/hackgvl and the slack-events-bot repository for more details."
+      "long_description": "Posts invite requests, contact form, and events from the HackGreenville site and local API / tools to HG Slack channels. See https://github.com/hackgvl for more details."
   },
   "features": {
       "app_home": {
