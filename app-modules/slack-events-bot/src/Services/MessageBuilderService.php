@@ -114,7 +114,7 @@ class MessageBuilderService
     {
         $text = $this->eventService->generateText($event) . "\n\n";
 
-        if (empty(trim($text))) { // Check if text is empty or just whitespace
+        if (empty(mb_trim($text))) { // Check if text is empty or just whitespace
             return null;
         }
 

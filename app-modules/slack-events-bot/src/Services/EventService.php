@@ -9,7 +9,7 @@ class EventService
 {
     public function generateBlocks(Event $event): array
     {
-        $eventName = trim((string) $event->event_name);
+        $eventName = mb_trim((string) $event->event_name);
         if (empty($eventName)) {
             $eventName = 'Untitled Event';
         }

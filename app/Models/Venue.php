@@ -77,7 +77,7 @@ class Venue extends Model
 
         return collect([
             "{$this->name} - {$this->address}",
-            trim("{$location} {$this->zipcode}"),
+            mb_trim("{$location} {$this->zipcode}"),
         ])->filter()->join(' ');
     }
 
