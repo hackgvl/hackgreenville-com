@@ -62,9 +62,7 @@ class EventApiV1Controller extends Controller
             })
             ->when($request->filled('venue_state'), function (Builder $query) use ($request) {
                 $query->whereHas('venue', function (Builder $query) use ($request) {
-                    $query->whereHas('state', function (Builder $query) use ($request) {
-                        $query->where('abbr', $request->input('venue_state'));
-                    });
+                    $query->where('state', $request->input('venue_state'));
                 });
             })
             ->when($request->filled('sort_by') && in_array($request->input('sort_by'), [

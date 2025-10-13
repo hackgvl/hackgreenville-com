@@ -73,7 +73,7 @@ class EventBriteTest extends DatabaseTestCase
         ])
             ->firstOrFail();
 
-        $this->assertEquals('SC', $venue->state->abbr);
+        $this->assertEquals('SC', $venue->state);
     }
 
     public function test_cancelled_eventbrite_event_is_imported_correctly(): void
