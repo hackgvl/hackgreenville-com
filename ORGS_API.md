@@ -1,13 +1,13 @@
-# Interacting with the HackGreenville Orgs API
+# HackGreenville Orgs API
 
 The _Organizations API_ can be used to build your own custom applications from the structured JSON data representing the [HackGreenville organizations](https://hackgreenville.com/orgs).
 
 ## Interactive API Explorer
 
-Start with the [*interactive API explorer*](https://hackgreenville.com/docs/api) which:
-* Documents the query parameters / filters
-* allows you to use the "Try it out" button to generate API URLs
-* allows you to use the "Send Request" button to execute the API call within the explorer
+Start with the [interactive API explorer](https://hackgreenville.com/docs/api) which:
+* documents the query parameters that allow for filtering the results
+* allows you to use a built-in "_Try it out_" button to generate API URLs
+* allows you to use a built-in "_Send Request_" button to execute the API call within the explorer
 * shows sample JSON responses
 
 We support two API versions, v1 and v0.

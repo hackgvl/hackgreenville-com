@@ -1,13 +1,13 @@
-# Interacting with the HackGreenville Events API
+# HackGreenville Events API
 
 The _Events API_ can be used to build your own custom applications from the structured JSON data representing the [HackGreenville events](https://hackgreenville.com/events).
 
 ## Interactive API Explorer
 
 Start with the [interactive API explorer](https://hackgreenville.com/docs/api) which:
-* Documents the query parameters / filters
-* allows you to use the "Try it out" button to generate API URLs
-* allows you to use the "Send Request" button to execute the API call within the explorer
+* documents the query parameters that allow for filtering the results
+* allows you to use a built-in "_Try it out_" button to generate API URLs
+* allows you to use a built-in "_Send Request_" button to execute the API call within the explorer
 * shows sample JSON responses
 
 We support two API versions, v1 and v0.
