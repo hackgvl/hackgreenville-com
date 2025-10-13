@@ -11,7 +11,7 @@ Start with the [interactive API explorer](https://hackgreenville.com/docs/api) w
 * shows sample JSON responses
 
 ## Limitations and Gotchas
-* We support two API versions, v1 and v0, but we encourage building or migrating to v1.
+* We support two API versions, v1 and v0, but we encourage using v1.
 * The production / live website is cached and changes may take up to 4 hours to show due to the cache.
 * Tag IDs are not documented in the API explorer and require manual creation by the HG Labs volunteers. Example: tag ID 1 is for events hosted at OpenWorks Coworking.
 * Please do not hammer the APIs
