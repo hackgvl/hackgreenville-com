@@ -21,3 +21,7 @@ We support two API versions, v1 and v0.
 ## Contributor Notes
 * For those looking to help develop the _Organizations API_, the code is located at _app-modules/api/src/Http/Controllers/OrgsApiV0Controller.php_.
 * When viewing API's responses in a web browser, check the "Pretty Print" box in the browser to make it easy to read.
+
+## Kudos to Past Contributors
+* Thanks to @allella for the initial development on Drupal
+* Thanks to @bogdankharchenko for migrating the Drupal implementation to PHP / Laravel
