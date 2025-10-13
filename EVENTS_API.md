@@ -26,7 +26,7 @@ The code for the Events API is primarily located in _/app-modules/_
 
 * Controllers: _api/src/Http/Controllers/_
 * Resources: _api/src/Resources/_
-* Test fixtures: _api/tests/Feature/_
+* Tests: _api/tests/Feature/_
 
 ### Luma.com
 

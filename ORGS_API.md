@@ -23,7 +23,7 @@ The code for the Organizations API is primarily located in _/app-modules/_
 
 * Controllers: _api/src/Http/Controllers/_
 * Resources: _api/src/Resources/_
-* Test fixtures: _api/tests/Feature/_
+* Tests: _api/tests/Feature/_
 
 ## Kudos to Past Contributors
 * Thanks to @allella for the initial development on Drupal
