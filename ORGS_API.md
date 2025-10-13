@@ -1,18 +1,23 @@
 # Interacting with the HackGreenville Orgs API
 
-The _Organizations API_ can be used to build your own custom applications from the structured JSON data representing the [HackGreenville Organizations](https://hackgreenville.com/orgs).
+The _Organizations API_ can be used to build your own custom applications from the structured JSON data representing the [HackGreenville organizations](https://hackgreenville.com/orgs).
 
 ## Interactive API Explorer
-You can view the interactive API explorer via https://hackgreenville.com/docs/api
 
-## URLs and Query String Parameters
+Start with the [*interactive API explorer*](https://hackgreenville.com/docs/api) which:
+* Documents the query parameters / filters
+* allows you to use the "Try it out" button to generate API URLs
+* allows you to use the "Send Request" button to execute the API call within the explorer
+* shows sample JSON responses
 
-* [Show all organizations](https://hackgreenville.com/api/v0/orgs)
-* [Filter to only organizations with a certain tag ID](https://hackgreenville.com/api/v0/orgs?tags=1)
-  * Tag IDs are as defined by the admins at [HackGreenville Labs](https://hackgreenville.com/labs)
-  * For example, ID 1 is the tag for events related to [OpenWorks Coworking](https://joinopenworks.com).
+We support two API versions, v1 and v0.
+
+## Limitations and Gotchas
+* The production / live website is cached and changes may take up to 4 hours to show due to the cache.
+* Contact the contributors at [HackGreenville Labs](https://hackgreenville.com/labs) via Slack #hg-labs channel with any questions.
+* Tag IDs are not documented in the explorer tool, and require manual creating by the HG Labs volunteers. Ex. tag ID 1 is for events hosted to [OpenWorks Coworking](https://joinopenworks.com).
+* Please do not hammer the APIs
 
 ## Contributor Notes
-* The production / live website is cached and changes may take up to 4 hours to show due to the cache.
 * For those looking to help develop the _Organizations API_, the code is located at _app-modules/api/src/Http/Controllers/OrgsApiV0Controller.php_.
-* When viewing the API's response JSON, it's best to use Firefox, or enable the "Pretty Print" option in your browser.
+* When viewing API's responses in a web browser, check the "Pretty Print" box in the browser to make it easy to read.
