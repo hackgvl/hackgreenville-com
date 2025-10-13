@@ -197,6 +197,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\Filament\AdminPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+
+        /*
+         * Slack Events Bot
+         */
+        HackGreenville\SlackEventsBot\Providers\SlackEventsBotServiceProvider::class,
     ],
 
     /*

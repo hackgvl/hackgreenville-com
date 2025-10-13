@@ -23,7 +23,8 @@ class CalendarFeedController extends Controller
                 ->when(
                     value: $request->validOrganizations()->isNotEmpty(),
                     callback: function (Builder $query) use ($request) {
-                        $query->orderByFieldSequence('id', $request->validOrganizations()->pluck('id')->toArray())
+                        $query->whereIn('id', $request->validOrganizations()->pluck('id')->toArray())
+                            ->orderByFieldSequence('id', $request->validOrganizations()->pluck('id')->toArray())
                             ->orderBy('title');
                     },
                     default: fn (Builder $query) => $query->orderBy('title')

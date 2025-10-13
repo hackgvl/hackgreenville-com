@@ -9,7 +9,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.1",
+        "php": "^8.3",
         "ext-json": "*",
         "filament/filament": "^3.3",
         "firebase/php-jwt": "^6.10",
@@ -18,6 +18,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "hack-greenville/api": "*",
         "hack-greenville/event-importer": "*",
+        "hack-greenville/slack-events-bot": "*",
         "internachi/modular": "^2.0",
         "knuckleswtf/scribe": "^5.2",
         "laravel/framework": "^10.0",
