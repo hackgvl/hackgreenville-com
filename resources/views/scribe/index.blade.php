@@ -188,7 +188,7 @@ response.json()</code></pre></div>
     {
         &quot;event_name&quot;: &quot;Dolores dolorum amet iste laborum eius est dolor.&quot;,
         &quot;group_name&quot;: &quot;Nash Corwin tech group!!!&quot;,
-        &quot;group_url&quot;: &quot;doloribus&quot;,
+        &quot;group_url&quot;: &quot;quasi&quot;,
         &quot;url&quot;: &quot;http://www.huels.org/dignissimos-error-sit-labore-quos.html&quot;,
         &quot;time&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
         &quot;tags&quot;: &quot;&quot;,
@@ -203,11 +203,11 @@ response.json()</code></pre></div>
             &quot;name&quot;: &quot;est nostrum et voluptas consequatur&quot;,
             &quot;address&quot;: &quot;5090 Agustin Plaza\nThielfort, VA 23923&quot;,
             &quot;city&quot;: &quot;Estellehaven&quot;,
-            &quot;state&quot;: &quot;Sit.&quot;,
+            &quot;state&quot;: &quot;VA&quot;,
             &quot;zip&quot;: &quot;37540&quot;,
             &quot;country&quot;: &quot;KP&quot;,
-            &quot;lat&quot;: &quot;69.526975&quot;,
-            &quot;lon&quot;: &quot;85.868299&quot;
+            &quot;lat&quot;: &quot;42.934149&quot;,
+            &quot;lon&quot;: &quot;61.623526&quot;
         },
         &quot;created_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
         &quot;is_paid&quot;: null
@@ -570,7 +570,7 @@ response.json()</code></pre></div>
             &quot;organization&quot;: {
                 &quot;id&quot;: 123,
                 &quot;name&quot;: &quot;Nash Corwin tech group!!!&quot;,
-                &quot;url&quot;: &quot;doloribus&quot;,
+                &quot;url&quot;: &quot;quasi&quot;,
                 &quot;tags&quot;: []
             },
             &quot;venue&quot;: {
@@ -578,14 +578,14 @@ response.json()</code></pre></div>
                 &quot;address&quot;: &quot;5090 Agustin Plaza\nThielfort, VA 23923&quot;,
                 &quot;city&quot;: &quot;Estellehaven&quot;,
                 &quot;state&quot;: {
-                    &quot;code&quot;: &quot;Sit.&quot;,
-                    &quot;name&quot;: &quot;Quia odit.&quot;
+                    &quot;code&quot;: &quot;VA&quot;,
+                    &quot;name&quot;: &quot;VA&quot;
                 },
                 &quot;zipcode&quot;: &quot;37540&quot;,
                 &quot;country&quot;: &quot;KP&quot;,
                 &quot;location&quot;: {
-                    &quot;latitude&quot;: &quot;69.526975&quot;,
-                    &quot;longitude&quot;: &quot;85.868299&quot;
+                    &quot;latitude&quot;: &quot;42.934149&quot;,
+                    &quot;longitude&quot;: &quot;61.623526&quot;
                 }
             },
             &quot;service&quot;: {

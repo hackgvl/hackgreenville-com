@@ -63,7 +63,7 @@ paths:
                   -
                     event_name: 'Dolores dolorum amet iste laborum eius est dolor.'
                     group_name: 'Nash Corwin tech group!!!'
-                    group_url: doloribus
+                    group_url: quasi
                     url: 'http://www.huels.org/dignissimos-error-sit-labore-quos.html'
                     time: '2025-01-01T17:00:00.000000Z'
                     tags: ''
@@ -78,11 +78,11 @@ paths:
                       name: 'est nostrum et voluptas consequatur'
                       address: "5090 Agustin Plaza\nThielfort, VA 23923"
                       city: Estellehaven
-                      state: Sit.
+                      state: VA
                       zip: '37540'
                       country: KP
-                      lat: '69.526975'
-                      lon: '85.868299'
+                      lat: '42.934149'
+                      lon: '61.623526'
                     created_at: '2025-01-01T17:00:00.000000Z'
                     is_paid: null
       tags:
@@ -343,20 +343,20 @@ paths:
                       organization:
                         id: 123
                         name: 'Nash Corwin tech group!!!'
-                        url: doloribus
+                        url: quasi
                         tags: []
                       venue:
                         name: 'est nostrum et voluptas consequatur'
                         address: "5090 Agustin Plaza\nThielfort, VA 23923"
                         city: Estellehaven
                         state:
-                          code: Sit.
-                          name: 'Quia odit.'
+                          code: VA
+                          name: VA
                         zipcode: '37540'
                         country: KP
                         location:
-                          latitude: '69.526975'
-                          longitude: '85.868299'
+                          latitude: '42.934149'
+                          longitude: '61.623526'
                       service:
                         name: eventbrite
                         id: '9'
@@ -379,20 +379,20 @@ paths:
                         organization:
                           id: 123
                           name: 'Nash Corwin tech group!!!'
-                          url: doloribus
+                          url: quasi
                           tags: []
                         venue:
                           name: 'est nostrum et voluptas consequatur'
                           address: "5090 Agustin Plaza\nThielfort, VA 23923"
                           city: Estellehaven
                           state:
-                            code: Sit.
-                            name: 'Quia odit.'
+                            code: VA
+                            name: VA
                           zipcode: '37540'
                           country: KP
                           location:
-                            latitude: '69.526975'
-                            longitude: '85.868299'
+                            latitude: '42.934149'
+                            longitude: '61.623526'
                         service:
                           name: eventbrite
                           id: '9'
@@ -439,7 +439,7 @@ paths:
                               example: 'Nash Corwin tech group!!!'
                             url:
                               type: string
-                              example: doloribus
+                              example: quasi
                             tags:
                               type: array
                               example: []
@@ -460,10 +460,10 @@ paths:
                               properties:
                                 code:
                                   type: string
-                                  example: Sit.
+                                  example: VA
                                 name:
                                   type: string
-                                  example: 'Quia odit.'
+                                  example: VA
                             zipcode:
                               type: string
                               example: '37540'
@@ -475,10 +475,10 @@ paths:
                               properties:
                                 latitude:
                                   type: string
-                                  example: '69.526975'
+                                  example: '42.934149'
                                 longitude:
                                   type: string
-                                  example: '85.868299'
+                                  example: '61.623526'
                         service:
                           type: object
                           properties:
