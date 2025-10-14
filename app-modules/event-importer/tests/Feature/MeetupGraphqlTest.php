@@ -228,7 +228,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         Http::fake([
             'https://api.meetup.com/gql' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v1/example-group.json'), // Example response from /gql-ext endpoint
+                $this->apiResponse('responses/groupByUrlName/example-group.json'), // Example response from /gql-ext endpoint
                 200
             ),
         ]);

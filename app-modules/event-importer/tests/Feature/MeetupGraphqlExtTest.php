@@ -163,7 +163,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
                 200
             ),
             'https://api.meetup.com/gql-ext' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v2/example-group-null.json'),
+                $this->apiResponse('responses/groupByUrlName/example-group-null.json'),
                 200
             ),
         ]);
@@ -223,7 +223,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
 
     protected function apiResponse(string $file): string
     {
-        return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);
+        return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql-ext/' . $file);
     }
 
     private function runImportCommand(): void
@@ -258,7 +258,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
 
         Http::fake([
             'https://api.meetup.com/gql-ext' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v2/example-group.json'), // Example response from /gql-ext endpoint
+                $this->apiResponse('responses/groupByUrlName/example-group.json'), // Example response from /gql-ext endpoint
                 200
             ),
         ]);
