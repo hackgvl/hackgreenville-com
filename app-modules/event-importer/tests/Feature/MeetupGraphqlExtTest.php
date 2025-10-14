@@ -9,9 +9,9 @@ use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\MeetupGraphqlExtHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
+use Tests\AbstractEventHandlerTestCase;
 
-class MeetupGraphqlExtTest extends DatabaseTestCase
+class MeetupGraphqlExtTest extends AbstractEventHandlerTestCase
 {
     protected function setUp(): void
     {
@@ -26,14 +26,6 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
         config()->set('event-import-handlers.meetup_graphql_client_id', 'foo');
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
-
-        config()->set('event-import-handlers.handlers', [
-            EventServices::MeetupGraphql->value => MeetupGraphqlExtHandler::class,
-        ]);
-
-        config()->set('event-import-handlers.active_services', [
-            EventServices::MeetupGraphql->value,
-        ]);
 
         Org::factory()->create([
             'service' => EventServices::MeetupGraphql,
@@ -224,6 +216,16 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql-ext/' . $file);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupGraphql;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return MeetupGraphqlExtHandler::class;
     }
 
     private function runImportCommand(): void
