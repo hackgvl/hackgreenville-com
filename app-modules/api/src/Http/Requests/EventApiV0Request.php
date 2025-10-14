@@ -47,7 +47,7 @@ class EventApiV0Request extends FormRequest
                 'example' => '2100-12-31',
             ],
             'tags' => [
-                'example' => 1,
+                'example' => null,
                 'description' => 'Filter events by organization tag ID.',
             ],
         ];

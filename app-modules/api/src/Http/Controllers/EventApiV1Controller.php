@@ -10,6 +10,14 @@ use Illuminate\Database\Eloquent\Builder;
 
 class EventApiV1Controller extends Controller
 {
+    /**
+     * Events API v1
+     *
+     * This API provides access to event data stored in the HackGreenville database.
+     *
+     * @apiResource HackGreenville\Api\Resources\Events\V1\EventCollection
+     * @apiResourceModel App\Models\Event states=forDocumentation
+     */
     public function __invoke(EventApiV1Request $request)
     {
         $query = Event::query()
@@ -29,11 +37,11 @@ class EventApiV1Controller extends Controller
                     $query->whereIn('id', $request->input('tags'));
                 });
             })
-            ->when($request->filled('event_name'), function (Builder $query) use ($request) {
-                $query->where('event_name', 'like', '%' . $request->input('event_name') . '%');
+            ->when($request->filled('name'), function (Builder $query) use ($request) {
+                $query->where('event_name', 'like', '%' . $request->input('name') . '%');
             })
-            ->when($request->filled('group_name'), function (Builder $query) use ($request) {
-                $query->where('group_name', 'like', '%' . $request->input('group_name') . '%');
+            ->when($request->filled('org_name'), function (Builder $query) use ($request) {
+                $query->where('group_name', 'like', '%' . $request->input('org_name') . '%');
             })
             ->when($request->filled('service'), function (Builder $query) use ($request) {
                 $query->where('service', $request->input('service'));
@@ -64,6 +72,16 @@ class EventApiV1Controller extends Controller
                 $query->orderBy($request->input('sort_by'), $sortDirection);
             }, function (Builder $query) {
                 $query->orderBy('active_at', 'asc');
+            })
+            ->when($request->filled('is_paid'), function (Builder $query) use ($request) {
+                $param = $request->input('is_paid');
+                $is_null = $param === "null";
+
+                if ($is_null) {
+                    return $query->whereNull('is_paid');
+                }
+
+                $query->where('is_paid', $param === "true");
             });
 
         $perPage = $request->input('per_page', 15);
