@@ -79,22 +79,22 @@
       <h5 class="font-weight-bold">Speakers</h5>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Jās Eckard on
-          <a href="https://www.youtube.com/@HackGreenville/playlists">
+          <a href="https://www.youtube.com/watch?v=2bDJTJp2xr4&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=1">
             <em>Quantum Computing Glossary</em>
           </a>
 	</li>
         <li class="list-group-item">Nate Argaw on
-          <a href="https://www.youtube.com/@HackGreenville/playlists">
-            <em>Game Dev & The Journey for Balanc3d - A 3D Mobile Browser Game</em>
+          <a href="https://www.youtube.com/watch?v=rFtMZBFbj24&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=2">
+            <em>GVL Game Devs & The Journey for Balanc3d - A 3D Mobile Browser Game</em>
           </a>
         </li>
         <li class="list-group-item">Jeremy Nicoll on
-          <a href="https://www.youtube.com/@HackGreenville/playlists">
+          <a href="https://www.youtube.com/watch?v=3b9Px1V1qrg&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=3">
             <em>Stupid Simple Kubernetes with Terraform</em>
           </a>
         </li>
-        <li class="list-group-item">Dave Brothers & Andrew Orr on
-          <a href="https://www.youtube.com/@HackGreenville/playlists">
+        <li class="list-group-item">Dave Brothers on
+          <a href="https://www.youtube.com/watch?v=3o0z6-ilH3Q&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=4">
             <em>Origin Stories Series: How the HackGreenville Slack Came to Be</em>
           </a>
         </li>
