@@ -40,7 +40,7 @@ class CalendarFeedController extends Controller
     public function show(CalendarFeedRequest $request)
     {
         $events = Event::query()
-            ->with('organization', 'venue.state')
+            ->with('organization', 'venue')
             ->future()
             ->when($request->validOrganizations()->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $request->validOrganizations()->pluck('id')))
             ->get()

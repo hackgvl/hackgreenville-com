@@ -32,8 +32,8 @@ class VenueResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('city')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('state_id')
-                    ->maxLength(255),
+                Forms\Components\TextInput::make('state')
+                    ->maxLength(2),
                 Forms\Components\TextInput::make('lat')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('lng')
@@ -57,7 +57,7 @@ class VenueResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('city')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('state_id')
+                Tables\Columns\TextColumn::make('state')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

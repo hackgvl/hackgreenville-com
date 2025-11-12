@@ -1,0 +1,35 @@
+{
+  "entries": [
+    {
+      "api_id": "calev-hVsUvup9sHkpreA",
+      "calendar_api_id": "cal-jLDJBTnVF9QGY6V",
+      "platform": "external",
+      "status": "approved",
+      "submitted_by_user_api_id": "usr-RCswxnfNjXxYEPZ",
+      "tags": [],
+      "is_manager": false,
+      "event": {
+        "duration_interval": "P0Y0M0DT2H0M0S",
+        "geo_address_json": {
+          "type": "manual",
+          "address": "101 North Main St, Suite 302 on 3rd Floor"
+        },
+        "coordinate": {
+          "longitude": -82.40002,
+          "latitude": 34.851875
+        },
+        "host": "HackGreenville",
+        "name": "UpWiSE Neighbor Event: HackGreenville Nights - Fall Edition",
+        "start_at": "2025-10-21T22:00:00.000Z",
+        "timezone": "America/New_York",
+        "url": "https://www.meetup.com/hack-greenville/events/310839956/",
+        "geo_address_info": {
+          "type": "manual",
+          "address": "101 North Main St, Suite 302 on 3rd Floor",
+          "mode": "shown"
+        }
+      }
+    }
+  ],
+  "has_more": false
+}

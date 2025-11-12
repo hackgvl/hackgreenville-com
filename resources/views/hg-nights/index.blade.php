@@ -64,6 +64,44 @@
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-8">Past <em>HackGreenville Nights</em> Events</h2>
 
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h3 class="text-2xl font-bold mb-4">2025 - Oct | <em>"Medi-verse" Mediterranean & Greek</em></h3>
+          <div class="flex gap-4 mb-6">
+            <a href="https://www.meetup.com/hack-greenville/events/310839956/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+          </div>
+
+          <h5 class="text-lg font-bold mb-3">Kudos</h5>
+          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.blueridge.cx" class="text-primary hover:underline"><b>Blue Ridge Consultants</b></a> |
+               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
+               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
+          </p>
+          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
+
+          <h5 class="text-lg font-bold mb-3">Speakers</h5>
+          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
+            <li class="p-3">Jās Eckard on
+              <a href="https://www.youtube.com/watch?v=2bDJTJp2xr4&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=1" class="text-primary hover:underline">
+                <em>Quantum Computing Glossary</em>
+              </a>
+            </li>
+            <li class="p-3">Nate Argaw on
+              <a href="https://www.youtube.com/watch?v=rFtMZBFbj24&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=2" class="text-primary hover:underline">
+                <em>GVL Game Devs & The Journey for Balanc3d - A 3D Mobile Browser Game</em>
+              </a>
+            </li>
+            <li class="p-3">Jeremy Nicoll on
+              <a href="https://www.youtube.com/watch?v=3b9Px1V1qrg&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=3" class="text-primary hover:underline">
+                <em>Stupid Simple Kubernetes with Terraform</em>
+              </a>
+            </li>
+            <li class="p-3">Dave Brothers on
+              <a href="https://www.youtube.com/watch?v=3o0z6-ilH3Q&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=4" class="text-primary hover:underline">
+                <em>Origin Stories Series: How the HackGreenville Slack Came to Be</em>
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2025 - June | <em>"Full-stack Nachos"</em></h3>
@@ -72,7 +110,7 @@
             <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
           </div>
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.chirohd.com" class="text-primary hover:underline"><b>ChiroHD</b></a> | 
+          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.chirohd.com" class="text-primary hover:underline"><b>ChiroHD</b></a> |
                Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
                Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
           </p>
@@ -102,6 +140,7 @@
             </li>
           </ul>
         </div>
+
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2025 - Feb | <em>"Souperman IV: Quest for Peas"</em></h3>
           <div class="flex gap-4 mb-6">

@@ -6,12 +6,26 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use Tests\DatabaseTestCase;
 
 class MeetupRestTest extends DatabaseTestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        config()->set('event-import-handlers.handlers', [
+            EventServices::MeetupRest->value => MeetupRestHandler::class,
+        ]);
+
+        config()->set('event-import-handlers.active_services', [
+            EventServices::MeetupRest->value
+        ]);
+    }
+
     public function test_active_meetup_event_is_imported_correctly(): void
     {
         Carbon::setTestNow('2020-01-01');

@@ -339,6 +339,12 @@ After that, hit Ctrl-C in the original docker-compose to stop the application, a
 
 If there are any changes in the application code, you will need to run `docker-compose -f docker-compose.local.yml up --build` to recreate the container with your changes.
 
+To start an interactive shell session against your `hackgreenville` Docker container, run the following command:
+
+```bash
+docker exec -it hackgreenville bash 
+```
+
 #### Import / Seed Organizations and Events Data
 
 To seed events and organizations into your application, run the following to import events and organizations from the Open Upstate API:
