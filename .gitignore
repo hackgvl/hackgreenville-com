@@ -36,3 +36,4 @@ public/build/
 # Scribe cache and temporary storage
 .scribe
 
+.DS_Store
