@@ -6,7 +6,7 @@
 @section('content')
         <div class="container max-w-7xl mx-auto px-4 py-12">
             <div class="mb-12">
-                <div class="text-center">
+                <div class="text-left">
                     <h1 class="text-5xl font-bold mb-6">Contribute</h1>
                     <p class="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">Support the local organizations making things happen for our local tech workforce, makers, and tinkerers.</p>
                     <ul class="text-left max-w-3xl mx-auto space-y-3 text-lg">

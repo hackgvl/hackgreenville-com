@@ -190,7 +190,7 @@
   }
 
   .values-list {
-    @apply list-disc pl-8 space-y-2;
+    @apply list-disc pl-8 space-y-4;
   }
 
   .values-list li {
@@ -216,8 +216,8 @@
   content: ' ';
   width: 3px;
   background-color: #eee;
-  right: 25px;
-  margin-left: -1.5px;
+  left: 25px;
+  margin-right: -1.5px;
 }
 
 .timeline > li {
@@ -373,7 +373,7 @@ a {
 }
 
 /* Button fix */
-.btn {
+.btn, a[type="button"] {
   text-decoration: none !important;
 }
 

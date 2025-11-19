@@ -11,7 +11,7 @@
 				Supporting our HackGreenville tech projects
 			</p>
 		</div>
-		<div id="jumbotron-image" class="m-0 p-0 w-full md:w-1/2 lg:w-6/12 hidden md:block"></div>
+		<div id="jumbotron-image" class="m-0 p-0 w-full md:w-1/2 lg:w-6/12 hidden md:block" style="background-image: url('{{ asset('img/labs.png') }}'); background-size: cover; background-position: top left;"></div>
 	</div>
 
 	<div class="w-10/12 md:w-8/12 xl:w-6/12 mx-auto mt-12 flex flex-col justify-center">

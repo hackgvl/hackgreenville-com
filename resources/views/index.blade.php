@@ -84,9 +84,7 @@
                             @else
                                 @foreach ($upcoming_events as $event)
                                     <li class="timeline-inverted">
-                                        <div class="timeline-badge bg-success">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
+
                                         <div class="timeline-panel">
                                             <div class="timeline-heading">
                                                 <h4 class="timeline-title text-lg font-semibold">

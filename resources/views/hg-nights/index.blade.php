@@ -12,7 +12,7 @@
     >
       <div class="absolute inset-0 bg-primary bg-opacity-75"></div>
       <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-2xl mx-auto text-center">
+        <div class="max-w-6xl mx-auto text-center">
           <h1 class="text-5xl md:text-6xl font-bold mb-8">{{ __('HackGreenville Nights') }}</h1>
           <div class="bg-white text-primary rounded-lg p-6 mb-6">
             <p class="text-xl mb-6">
