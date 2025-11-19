@@ -373,7 +373,8 @@ a {
 }
 
 /* Button fix */
-.btn, a[type="button"] {
+.btn,
+a[type='button'] {
   text-decoration: none !important;
 }
 
