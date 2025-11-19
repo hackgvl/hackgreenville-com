@@ -16,6 +16,8 @@ use Throwable;
 
 class LumaHandler extends AbstractEventHandler
 {
+    public static $LUMA_API_BASE_URL = "https://api2.luma.com";
+
     protected function mapIntoEventData(array $data): EventData
     {
         return EventData::from([
@@ -36,7 +38,7 @@ class LumaHandler extends AbstractEventHandler
 
     protected function initialApiCall(): Response
     {
-        return Http::baseUrl('https://api.lu.ma/calendar/')
+        return Http::baseUrl(LumaHandler::$LUMA_API_BASE_URL . '/calendar/')
             ->withQueryParameters([
                 'calendar_api_id' => $this->org->service_api_key,
                 'period' => 'future',
@@ -102,7 +104,8 @@ class LumaHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
-        return $this->initialApiCall()->collect('entries');
+        $events = $this->initialApiCall()->collect('entries');
+        return $this->filterEvents($events);
     }
 
     protected function parseGoogleAddress(array $parts)
@@ -142,5 +145,21 @@ class LumaHandler extends AbstractEventHandler
                 $this->country = $parts[4];
             }
         };
+    }
+
+    private function filterEvents(Collection $events): Collection
+    {
+        $filteredEvents = [];
+
+        foreach ($events as $event) {
+            // Filter out Luma events that were imported from an external source
+            // or are not managed by the organization (i.e. not cross-promotional events)
+            if ($event['platform'] !== 'luma' || $event['is_manager'] !== true) {
+                continue;
+            }
+            $filteredEvents[] = $event;
+        }
+
+        return collect($filteredEvents);
     }
 }

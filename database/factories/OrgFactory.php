@@ -32,4 +32,29 @@ class OrgFactory extends Factory
             'category_id' => Category::factory(),
         ];
     }
+
+    public function forDocumentation()
+    {
+        return $this->state(function (array $attributes) {
+            // Use a seeded faker instance for consistent values
+            $this->faker->seed(1234);
+
+            return [
+                'slug' => $this->faker->slug,
+                'uri' => $this->faker->word(),
+                'title' => $this->faker->word(),
+                'path' => $this->faker->url(),
+                'city' => $this->faker->city(),
+                'focus_area' => $this->faker->word(),
+                'primary_contact_person' => $this->faker->word(),
+                'organization_type' => $this->faker->word(),
+                'event_calendar_uri' => $this->faker->url(),
+                'established_at' => '2025-01-01T12:00:00.000000Z',
+                'status' => OrganizationStatus::Active,
+                'category_id' => Category::factory(),
+                'created_at' => '2025-01-01T12:00:00.000000Z',
+                'updated_at' => '2025-01-01T12:00:00.000000Z',
+            ];
+        });
+    }
 }

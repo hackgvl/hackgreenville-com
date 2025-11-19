@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
-        "filament/filament": "^3.2",
+        "filament/filament": "^3.3",
         "firebase/php-jwt": "^6.10",
         "glhd/aire-bootstrap": "^2.1",
         "glhd/conveyor-belt": "*",
@@ -26,6 +26,7 @@
         "laravel/tinker": "^2.0",
         "malzariey/filament-daterangepicker-filter": "^2.7",
         "scyllaly/hcaptcha": "^4.4",
+        "sebdesign/artisan-cloudflare": "^2.8",
         "spatie/icalendar-generator": "^2.9",
         "spatie/laravel-data": "*"
     },
@@ -66,9 +67,7 @@
     },
     "scripts": {
         "lint": [
-            "./vendor/bin/pint --quiet",
-            "php artisan cache:clear",
-            "@generate-ide-helper"
+            "./vendor/bin/pint --quiet"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -79,18 +78,12 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover",
-            "@php artisan filament:upgrade"
-        ],
-        "generate-ide-helper": [
-            "@php artisan ide-helper:generate --ansi --no-interaction",
-            "@php artisan ide-helper:meta --ansi --no-interaction",
-            "@php artisan ide-helper:models -N --no-interaction"
+            "@php artisan ide-helper:generate --ansi --no-interaction || echo 'IDE helper not available'",
+            "@php artisan ide-helper:meta --ansi --no-interaction || echo 'IDE helper not available'",
+            "@php artisan ide-helper:models -N --no-interaction || echo 'IDE helper not available'"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta",
-            "@php artisan migrate --seed"
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall"

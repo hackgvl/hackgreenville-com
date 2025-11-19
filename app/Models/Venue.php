@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $zipcode
  * @property string|null $phone
  * @property string|null $city
- * @property string|null $state_id
+ * @property string|null $state
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -25,7 +25,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $country
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Event> $events
  * @property-read int|null $events_count
- * @property-read State|null $state
  * @method static \Database\Factories\VenueFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Venue newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Venue newQuery()
@@ -42,7 +41,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Venue whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Venue wherePhone($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Venue whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Venue whereStateId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Venue whereState($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Venue whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Venue whereZipcode($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Venue withTrashed()
@@ -64,7 +63,7 @@ class Venue extends Model
         'zipcode',
         'phone',
         'city',
-        'state_id',
+        'state',
         'country',
         'lat',
         'lng',
@@ -72,13 +71,9 @@ class Venue extends Model
 
     public function fullAddress()
     {
-        return "{$this->name} - {$this->address} {$this->city}, {$this->state->abbr} {$this->zipcode}";
+        return "{$this->name} - {$this->address} {$this->city}, {$this->state} {$this->zipcode}";
     }
 
-    public function state()
-    {
-        return $this->belongsTo(State::class);
-    }
 
     public function events()
     {

@@ -37,6 +37,30 @@ RUN yarn build
 # Clean up node_modules after build to reduce image size
 RUN rm -rf node_modules
 
+# Configure S6 overlay for Laravel scheduler (as root)
+USER root
+
+# Create S6 service directory for scheduler (controlled by ENABLE_SCHEDULER env var)
+RUN mkdir -p /etc/s6-overlay/s6-rc.d/laravel-scheduler && \
+    # Create the run script with conditional check
+    echo '#!/command/with-contenv bash' > /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '# Check if scheduler is enabled' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo 'if [ "${ENABLE_SCHEDULER}" = "true" ] || [ "${ENABLE_SCHEDULER}" = "1" ]; then' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '    echo "🗓️ Laravel Scheduler is ENABLED"' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '    cd /var/www/html' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '    exec php artisan schedule:work --verbose --no-interaction' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo 'else' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '    echo "🗓️ Laravel Scheduler is DISABLED (set ENABLE_SCHEDULER=true to enable)"' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '    # Keep the service running but doing nothing' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo '    exec sleep infinity' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    echo 'fi' >> /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    chmod +x /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
+    # Set service type to longrun
+    echo 'longrun' > /etc/s6-overlay/s6-rc.d/laravel-scheduler/type && \
+    # Add to user bundle so it starts automatically
+    mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d && \
+    touch /etc/s6-overlay/s6-rc.d/user/contents.d/laravel-scheduler
+
 EXPOSE 8080
 
 USER www-data

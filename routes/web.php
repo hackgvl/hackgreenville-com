@@ -12,6 +12,12 @@ use App\Http\Controllers\SlackController;
 use App\Http\Controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
+// Redirects are above the routes so they take
+// priority in the top-down matching
+Route::redirect('/nights', '/hg-nights', 301);
+Route::redirect('/give', '/contribute', 301);
+Route::redirect('/orgs/tedx-greenville', 'https://www.ted.com/tedx/events?autocomplete_filter=Greenville', 301);
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
 Route::get('/calendar/data', [CalendarController::class, 'data'])->name('calendar.data');
@@ -37,7 +43,3 @@ Route::get('/join-slack', [SlackController::class, 'join'])->name('join-slack');
 Route::post('/join-slack', [SlackController::class, 'submit'])->name('join-slack.submit');
 
 Route::get('/styles', [StyleController::class, 'index'])->name('styles.index');
-
-// Redirects
-Route::redirect('/nights', '/hg-nights', 301);
-Route::redirect('/give', '/contribute', 301);

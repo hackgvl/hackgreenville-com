@@ -6,6 +6,7 @@ use App\Enums\EventServices;
 use App\Models\Event;
 use App\Models\Org;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\MeetupGraphqlHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use Tests\DatabaseTestCase;
@@ -24,25 +25,16 @@ class MeetupGraphqlTest extends DatabaseTestCase
         config()->set('event-import-handlers.meetup_graphql_client_id', 'foo');
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
-
-        Http::fake([
-            'https://secure.meetup.com/oauth2/access' => Http::response(
-                $this->apiResponse('example-access-token.json'),
-                200
-            ),
-        ]);
-
-        Http::fake([
-            'https://api.meetup.com/gql' => Http::response(
-                $this->apiResponse('example-group.json'),
-                200
-            ),
+        config()->set('event-import-handlers.handlers', [
+            EventServices::MeetupGraphql->value => MeetupGraphqlHandler::class,
         ]);
 
         Org::factory()->create([
             'service' => EventServices::MeetupGraphql,
             'service_api_key' => 'defcon864',
         ]);
+
+        $this->fakeHttpCalls();
     }
 
     public function test_meetup_event_is_imported_correctly(): void
@@ -63,6 +55,8 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $this->assertEquals(19, $event->rsvp_count);
         $this->assertEquals(1577833200, $event->active_at->utc()->unix());
+        $this->assertEquals('2019-12-31 18:00:00', $event->active_at->toDateTimeString());
+
         $this->assertEquals('America/New_York', $event->timezone);
         $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $event->uri);
         $this->assertNull($event->cancelled_at);
@@ -79,7 +73,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $this->assertEquals("101 N Main St #302", $venue->address);
         $this->assertEquals("Greenville", $venue->city);
-        $this->assertEquals("SC", $venue->state->abbr);
+        $this->assertEquals("SC", $venue->state);
         $this->assertEquals("29601", $venue->zipcode);
         $this->assertEquals("us", $venue->country);
         $this->assertEquals(34.85202, $venue->lat);
@@ -215,11 +209,28 @@ class MeetupGraphqlTest extends DatabaseTestCase
             ->firstOrFail();
     }
 
-    private function queryEvent(string $service_id): Event | null
+    private function queryEvent(string $service_id): Event|null
     {
         return Event::query()
             ->where('service', EventServices::MeetupGraphql)
             ->where('service_id', $service_id)
             ->first();
+    }
+
+    private function fakeHttpCalls(): void
+    {
+        Http::fake([
+            'https://secure.meetup.com/oauth2/access' => Http::response(
+                $this->apiResponse('responses/accessToken/example-access-token.json'),
+                200
+            ),
+        ]);
+
+        Http::fake([
+            'https://api.meetup.com/gql' => Http::response(
+                $this->apiResponse('responses/groupByUrlName/v1/example-group.json'), // Example response from /gql-ext endpoint
+                200
+            ),
+        ]);
     }
 }

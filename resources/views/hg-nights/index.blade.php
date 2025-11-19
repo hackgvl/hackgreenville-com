@@ -57,6 +57,52 @@
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
 
 
+      <h3 class="mt-4">2025 - Oct | <em>"Medi-verse" Mediterranean & Greek</em></h3>
+      <div class="flex-row-3-columns w-100">
+        <div class="flex-row-column">
+          <p><a href="https://www.meetup.com/hack-greenville/events/310839956/" class="btn btn-info">Recap</a></p>
+        </div>
+        <div class="flex-row-column">
+          <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
+        </div>
+      </div>
+
+
+      <h5 class="font-weight-bold">Kudos</h5>
+      <p class="lead-text">Event Sponsorship by <a href="https://www.blueridge.cx"><b>Blue Ridge Consultants</b></a> | 
+           Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
+
+      <h5 class="font-weight-bold">Speakers</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Jās Eckard on
+          <a href="https://www.youtube.com/watch?v=2bDJTJp2xr4&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=1">
+            <em>Quantum Computing Glossary</em>
+          </a>
+	</li>
+        <li class="list-group-item">Nate Argaw on
+          <a href="https://www.youtube.com/watch?v=rFtMZBFbj24&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=2">
+            <em>GVL Game Devs & The Journey for Balanc3d - A 3D Mobile Browser Game</em>
+          </a>
+        </li>
+        <li class="list-group-item">Jeremy Nicoll on
+          <a href="https://www.youtube.com/watch?v=3b9Px1V1qrg&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=3">
+            <em>Stupid Simple Kubernetes with Terraform</em>
+          </a>
+        </li>
+        <li class="list-group-item">Dave Brothers on
+          <a href="https://www.youtube.com/watch?v=3o0z6-ilH3Q&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=4">
+            <em>Origin Stories Series: How the HackGreenville Slack Came to Be</em>
+          </a>
+        </li>
+      </ul>
+
+
+
+
       <h3 class="mt-4">2025 - June | <em>"Full-stack Nachos"</em></h3>
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
@@ -74,7 +120,7 @@
            Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
       </p>
 
-      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
 
       <h5 class="font-weight-bold">Speakers</h5>
       <ul class="list-group list-group-flush">
@@ -119,7 +165,7 @@
            Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
       </p>
 
-      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
 
       <h5 class="font-weight-bold">Speakers</h5>
       <ul class="list-group list-group-flush">
@@ -162,7 +208,7 @@
            Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
       </p>
 
-      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
 
       <h5 class="font-weight-bold">Speakers</h5>
       <ul class="list-group list-group-flush">
@@ -205,7 +251,7 @@
            Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
       </p>
 
-      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
 
       <h5 class="font-weight-bold">Speakers</h5>
       <ul class="list-group list-group-flush">
@@ -250,7 +296,7 @@
            Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
       </p>
 
-      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/">RefactorGVL</a></p>
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
 
       <h5 class="font-weight-bold">Speakers</h5>
       <ul class="list-group list-group-flush">

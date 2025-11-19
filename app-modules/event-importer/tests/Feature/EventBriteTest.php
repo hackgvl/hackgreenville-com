@@ -73,7 +73,7 @@ class EventBriteTest extends DatabaseTestCase
         ])
             ->firstOrFail();
 
-        $this->assertEquals('SC', $venue->state->abbr);
+        $this->assertEquals('SC', $venue->state);
     }
 
     public function test_cancelled_eventbrite_event_is_imported_correctly(): void
@@ -108,7 +108,7 @@ class EventBriteTest extends DatabaseTestCase
     protected function getEventbriteUrl(string $service_api_key): string
     {
         return 'https://www.eventbriteapi.com/v3/organizers/' . $service_api_key .
-        '/events/?token=ABC&status=all&order_by=start_desc&expand=event_sales_status' .
+        '/events/?token=ABC&status=all&expand=event_sales_status' .
         '&start_date.range_start=2019-12-02T00%3A00%3A00&start_date.range_end=2020-06-29T00%3A00%3A00';
     }
 

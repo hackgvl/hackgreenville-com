@@ -2,16 +2,16 @@
 
 namespace HackGreenville\Api\Resources\Events\V1;
 
+use HackGreenville\Api\Resources\ApiResource;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-class EventResource extends JsonResource
+class EventResource extends ApiResource
 {
     public $resource;
 
     public function toArray(Request $request): array
     {
-        $this->loadMissing(['organization.tags', 'venue.state']);
+        $this->loadMissing(['organization.tags', 'venue']);
 
         return [
             'id' => $this->resource->event_uuid,
@@ -22,8 +22,9 @@ class EventResource extends JsonResource
             'ends_at' => $this->resource->expire_at->toISOString(),
             'rsvp_count' => $this->resource->rsvp_count,
             'status' => $this->resource->getStatusAttribute(),
+            'is_paid' => $this->resource->is_paid,
             'organization' => [
-                'id' => $this->resource->organization->id,
+                'id' => $this->getId($this->resource->organization),
                 'name' => $this->resource->group_name,
                 'url' => $this->resource->organization->uri,
                 'tags' => $this->resource->organization->tags->map(fn ($tag) => [
@@ -38,6 +39,7 @@ class EventResource extends JsonResource
             ],
             'created_at' => $this->resource->created_at->toISOString(),
             'updated_at' => $this->resource->updated_at->toISOString(),
+            'is_paid' => $this->resource->is_paid,
         ];
     }
 
@@ -46,7 +48,7 @@ class EventResource extends JsonResource
         return [
             'meta' => [
                 'version' => '1.0',
-                'timestamp' => now()->toISOString(),
+                'timestamp' => $this->getTime(),
             ],
         ];
     }
