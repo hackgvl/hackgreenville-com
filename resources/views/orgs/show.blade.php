@@ -13,7 +13,7 @@
             </div>
 
             <div class="w-full md:w-auto">
-                <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="inline-flex items-center justify-center bg-primary text-white rounded-full px-6 py-3 shadow-sm hover:bg-blue-700 transition-colors w-full md:w-auto">
+                <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="inline-flex items-center justify-center bg-primary text-white rounded-full px-6 py-3 shadow-sm hover:bg-blue-700 transition-colors w-full md:w-auto no-underline">
                     <i class="fa fa-calendar mr-2"></i>
                     Subscribe
                 </a>

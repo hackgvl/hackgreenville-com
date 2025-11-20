@@ -38,7 +38,7 @@
                     </div>
 
                     <!-- Grid column for Links -->
-                    <div class="order-3 mt-8 md:mt-0">
+                    <div class="order-3 mt-8 md:mt-0 text-left">
                         <!-- Links -->
                         <h4 class="mb-4 text-xl font-semibold">Links</h4>
 
@@ -110,7 +110,7 @@
 
                     </div>
 
-                    <div class="order-4 mt-8 md:mt-0">
+                    <div class="order-4 mt-8 md:mt-0 text-left">
                         <!-- Links -->
                         <h4 class="mb-4 text-xl font-semibold">Other Links</h4>
 

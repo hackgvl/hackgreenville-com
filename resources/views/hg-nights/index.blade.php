@@ -20,7 +20,7 @@
             </p>
             <a
               href="https://www.meetup.com/hack-greenville/"
-              class="bg-success text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors inline-block"
+              class="bg-success text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors inline-block no-underline"
               target="_blank">
                 Join our Meetup Group
             </a>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="container mx-auto px-4 py-12">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-6">{{ __('Submit a Talk') }}</h2>
         <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
           <p class="text-lg mb-4">Talks are typically 5, 10, or 15 minutes on tech or tech-adjacent topics that don't fit the format of our existing local meetups or conferences.</p>
@@ -38,7 +38,7 @@
           <a
             href="https://forms.gle/oz4vDwrwG9c4h5Bo6"
             rel="nofollow"
-            class="bg-success text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors inline-block"
+            class="bg-success text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors inline-block no-underline"
             target="_blank">
               Submit a Talk
           </a>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="container mx-auto px-4 pb-12">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-6">{{ __('How to Get Involved') }}</h2>
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
           <ul class="divide-y divide-gray-200">
@@ -67,8 +67,8 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2025 - Oct | <em>"Medi-verse" Mediterranean & Greek</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/310839956/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+            <a href="https://www.meetup.com/hack-greenville/events/310839956/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
           </div>
 
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
@@ -106,8 +106,8 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2025 - June | <em>"Full-stack Nachos"</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/307794466/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+            <a href="https://www.meetup.com/hack-greenville/events/307794466/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
           </div>
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
           <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.chirohd.com" class="text-primary hover:underline"><b>ChiroHD</b></a> |
@@ -144,8 +144,8 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2025 - Feb | <em>"Souperman IV: Quest for Peas"</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/305856459/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+            <a href="https://www.meetup.com/hack-greenville/events/305856459/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
           </div>
 
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
@@ -183,8 +183,8 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2024 - Oct | <em>"Starch Trek"</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/303551633/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+            <a href="https://www.meetup.com/hack-greenville/events/303551633/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
           </div>
 
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
@@ -222,8 +222,8 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2024 - May | <em>"Subs and Sliders"</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/300300590/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+            <a href="https://www.meetup.com/hack-greenville/events/300300590/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
           </div>
 
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
@@ -260,8 +260,8 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2024 - February | <em>"Chili Bar"</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/299063777/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Videos</a>
+            <a href="https://www.meetup.com/hack-greenville/events/299063777/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
           </div>
 
           <h5 class="text-lg font-bold mb-3">Kudos</h5>
@@ -319,7 +319,7 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2023 - October | <em>"Taco Bar"</em></h3>
           <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/296051672/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Recap</a>
+            <a href="https://www.meetup.com/hack-greenville/events/296051672/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
           </div>
 
           <h5 class="text-lg font-bold mb-3">Kudos</h5>

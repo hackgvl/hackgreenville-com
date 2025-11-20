@@ -207,7 +207,7 @@
   }
 
   .values-list li {
-    @apply text-xl leading-relaxed;
+    @apply text-xl leading-relaxed ml-4;
   }
 
   .font-weight-bold {
@@ -229,7 +229,7 @@
   content: ' ';
   width: 3px;
   background-color: #eee;
-  right: 25px;
+  left: 25px;
   margin-left: -1.5px;
 }
 
@@ -286,7 +286,7 @@
   text-align: center;
   position: absolute;
   top: 16px;
-  right: 0;
+  left: 0;
   margin-left: -25px;
   background-color: #999999;
   z-index: 100;

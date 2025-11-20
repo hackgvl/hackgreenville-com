@@ -13,8 +13,8 @@
                 </p>
             </div>
             <div class="md:w-1/4 text-center md:text-right">
-                <a href="{{ route('calendar-feed.index') }}" 
-                   class="inline-block bg-white bg-opacity-90 text-blue-600 px-7 py-3 rounded-xl font-medium text-base hover:bg-opacity-100 hover:-translate-y-px hover:shadow-lg transition-all duration-200"
+                <a href="{{ route('calendar-feed.index') }}"
+                   class="inline-block bg-white bg-opacity-90 text-blue-600 px-7 py-3 rounded-xl font-medium text-base hover:bg-opacity-100 hover:-translate-y-px hover:shadow-lg transition-all duration-200 no-underline"
                    style="letter-spacing: -0.01em; backdrop-filter: blur(10px);">
                     Subscribe Now
                 </a>

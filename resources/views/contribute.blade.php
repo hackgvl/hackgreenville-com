@@ -8,8 +8,8 @@
             <div class="mb-12">
                 <div class="text-left">
                     <h1 class="text-5xl font-bold mb-6">Contribute</h1>
-                    <p class="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">Support the local organizations making things happen for our local tech workforce, makers, and tinkerers.</p>
-                    <ul class="text-left max-w-3xl mx-auto space-y-3 text-lg">
+                    <p class="text-xl text-gray-700 mb-8 max-w-4xl">Support the local organizations making things happen for our local tech workforce, makers, and tinkerers.</p>
+                    <ul class="text-left max-w-3xl space-y-3 text-lg">
                         <li class="flex items-start"><span class="mr-2">•</span><span><strong class="font-bold">Volunteer</strong> your time or resources to a project or program</span></li>
                         <li class="flex items-start"><span class="mr-2">•</span><span>Connect with <a href="/join-slack" class="text-primary hover:underline"><em>#community-organizers</em></a> and get the spotlight by <strong class="font-bold">sponsoring</strong> an event or initiative</span></li>
                         <li class="flex items-start"><span class="mr-2">•</span><span><strong class="font-bold">Donate</strong> to our local non-profits</span></li>
