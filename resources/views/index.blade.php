@@ -4,10 +4,10 @@
 
 @section('content')
     <div id="homepage">
-        <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid text-white bg-gray-900 relative" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
+        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative bg-cover bg-center" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
             <div class="overlay"></div>
-            <div class="container max-w-7xl mx-auto py-20 text-center px-4">
-                <h1 class="display-4">Build Stuff. Meet People. Do cool things.</h1>
+            <div class="max-w-7xl mx-auto py-20 text-center px-4">
+                <h1 class="text-5xl md:text-6xl font-light">Build Stuff. Meet People. Do cool things.</h1>
                 <p class="lead my-12">Meetups &middot; Talks &middot; Projects</p>
                 <p class="lead">
                     <a class="inline-block bg-success text-gray-800 px-8 py-4 rounded-lg text-xl font-medium no-underline hover:opacity-90 transition-opacity" href="/join-slack" role="button">Request to Join
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="container max-w-7xl mx-auto my-12 px-4">
+        <div class="max-w-7xl mx-auto my-12 px-4">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 <div class="md:col-span-6 lg:col-span-8">
                     <div class="text-center">
@@ -52,8 +52,8 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
                         <div class="my-12">
-                            <h2 class="display-5 text-center mt-12">Contribute</h2>
-                            <div class="summary container max-w-7xl mx-auto px-4">
+                            <h2 class="text-4xl font-light text-center mt-12">Contribute</h2>
+                            <div class="summary max-w-7xl mx-auto px-4">
                                 hackgreenville.com is built on the
                                 <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
                             </div>

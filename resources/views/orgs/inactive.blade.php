@@ -3,7 +3,7 @@
 @section('title', 'Inactive Tech Organizations')
 
 @section('content')
-    <div class="container max-w-7xl mx-auto px-4 py-8">
+    <div class="max-w-7xl mx-auto px-4 py-8">
 
         <h1 class="text-4xl font-bold mb-8">Local Tech Organizations <span class="text-danger">(Inactive Groups)</span></h1>
 

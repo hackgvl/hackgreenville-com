@@ -4,14 +4,14 @@
 @section('description', 'A quarterly event with social gathering and short talks for Greenville SC tech, hacker, tinkerer, maker, and DIY community members.')
 
 @section('content')
-  <div class="container-fluid px-0">
+  <div class="w-full">
     <div
       id="hg-nights-jumbotron"
       class="relative bg-primary text-white py-20 flex items-center min-h-[500px]"
       style="background-image: url('{{ asset('img/hg-nights-sm.jpg') }}'); background-size: cover; background-position: center;"
     >
       <div class="absolute inset-0 bg-primary bg-opacity-75"></div>
-      <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
         <div class="max-w-6xl mx-auto text-center">
           <h1 class="text-5xl md:text-6xl font-bold mb-8">{{ __('HackGreenville Nights') }}</h1>
           <div class="bg-white text-primary rounded-lg p-6 mb-6">
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 py-12">
+    <div class="max-w-7xl mx-auto px-4 py-12">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-6">{{ __('Submit a Talk') }}</h2>
         <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 pb-12">
+    <div class="max-w-7xl mx-auto px-4 pb-12">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-6">{{ __('How to Get Involved') }}</h2>
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 pb-12">
+    <div class="max-w-7xl mx-auto px-4 pb-12">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-8">Past <em>HackGreenville Nights</em> Events</h2>
 

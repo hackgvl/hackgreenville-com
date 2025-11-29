@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container max-w-6xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
         <h1 class="text-4xl font-bold mb-8 text-center">HackGreenville Style Guide</h1>
 
         <section class="pb-8 mb-8 border-b border-gray-200">

@@ -4,7 +4,7 @@
 @section('description', 'Discover the origins, mission, vision, and values of the HackGreenville community.')
 
 @section('content')
-    <div id="about-us" class="container max-w-7xl mx-auto px-4">
+    <div id="about-us" class="max-w-7xl mx-auto px-4">
         <h1 class="title-heading">About HackGreenville</h1>
 
         <h2 class="font-weight-bold text-2xl mt-8 mb-4">History</h2>

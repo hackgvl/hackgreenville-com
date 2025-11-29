@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="flex justify-center">
-        <div class="container max-w-4xl mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto px-4 py-12">
             <div class="text-center mb-12">
                 <h1 class="text-5xl font-bold mb-8">Contact HackGreenville</h1>
                 <ul class="text-left max-w-2xl mx-auto space-y-3 text-lg">

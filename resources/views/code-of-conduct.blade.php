@@ -4,7 +4,7 @@
 @section('description', 'The Code of Conduct for the HackGreenville community.')
 
 @section('content')
-    <div class="container max-w-4xl mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto px-4 py-12">
         <article class="prose prose-lg max-w-none">
             <h1 class="text-4xl font-bold mb-8 text-gray-900">HackGreenville Code of Conduct</h1>
 

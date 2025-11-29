@@ -4,7 +4,7 @@
 @section('description', "Opportunties to sponsor, volunteer, and donate with Upstate, SC tech, maker, and tinker non-profits or open-source projects.")
 
 @section('content')
-        <div class="container max-w-7xl mx-auto px-4 py-12">
+        <div class="max-w-7xl mx-auto px-4 py-12">
             <div class="mb-12">
                 <div class="text-left">
                     <h1 class="text-5xl font-bold mb-6">Contribute</h1>

@@ -2,7 +2,7 @@
 <footer class="page-footer font-small bg-primary text-white pt-12 pb-6">
 
     <!-- Footer Links -->
-    <div class="container-fluid text-left text-md-left max-w-7xl mx-auto">
+    <div class="w-full px-4 text-left md:text-left max-w-7xl mx-auto">
 
         <!-- Grid row -->
         <div class="flex flex-wrap">

@@ -3,7 +3,7 @@
     background: linear-gradient(135deg, #2937f0 0%, #9089fc 100%);
 }
 </style>
-<div class="container max-w-7xl mx-auto py-12 px-4">
+<div class="max-w-7xl mx-auto py-12 px-4">
     <div class="calendar-banner p-8 md:p-12 rounded-2xl overflow-hidden shadow-xl">
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-3/4 text-center md:text-left mb-6 md:mb-0">
