@@ -4,6 +4,454 @@
 
 /* Custom component classes that mirror Bootstrap's behavior */
 @layer components {
+  /* Bootstrap navbar equivalent in Tailwind */
+  .tw-navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .tw-navbar-expand-md {
+    @media (min-width: 1220px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (min-width: 1220px) {
+    .tw-navbar-expand-md .tw-container-fluid {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .tw-navbar-dark {
+    /* Text colors for dark navbar */
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .tw-navbar-dark a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+  }
+
+  .tw-navbar-dark a:hover {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+  }
+
+  .tw-navbar-dark .tw-active {
+    color: white;
+  }
+
+  .tw-bg-primary {
+    background-color: #201748;
+  }
+
+  /* Container */
+  .tw-container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1219.98px) {
+    .tw-navbar-expand-md > .tw-container-fluid {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  /* Navbar Brand */
+  .tw-navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  /* Logo image inside navbar-brand */
+  .tw-navbar-brand .navbar-brand-img {
+    height: 4rem;
+  }
+
+  .tw-navbar-dark .tw-navbar-brand {
+    color: white;
+  }
+
+  .tw-navbar-dark .tw-navbar-brand:hover,
+  .tw-navbar-dark .tw-navbar-brand:focus {
+    color: white;
+  }
+
+  /* Navbar Toggler */
+  .tw-navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  .tw-navbar-dark .tw-navbar-toggler {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .tw-navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: '';
+    background: no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .tw-navbar-dark .tw-navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  /* Navbar Collapse */
+  .tw-navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  /* Mobile: hide collapsed menu by default */
+  @media (max-width: 1219.98px) {
+    .tw-navbar-collapse {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #201748;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .tw-navbar-collapse.show {
+      display: block;
+    }
+
+    .tw-navbar-collapse .tw-navbar-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .tw-navbar-collapse .tw-navbar-nav .tw-nav-item {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tw-navbar-collapse .tw-navbar-nav .tw-nav-item:last-child {
+      border-bottom: none;
+    }
+
+    .tw-navbar-collapse .tw-navbar-nav .tw-nav-link {
+      padding: 0.75rem 1rem;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto {
+      margin-left: 0 !important;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Mobile button styling */
+    .tw-navbar-collapse .tw-ml-auto .tw-nav-item {
+      border-bottom: none;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto .tw-nav-link.tw-btn {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      border-radius: 0.25rem;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto .tw-btn-outline-secondary {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto .tw-btn-outline-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white !important;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto .tw-btn-outline-success {
+      background-color: #28a745;
+      border-color: #28a745;
+      color: white !important;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto .tw-btn-outline-success:hover {
+      background-color: #218838;
+      border-color: #218838;
+    }
+
+    .tw-navbar-collapse .tw-ml-auto .tw-ml-2 {
+      margin-left: 0 !important;
+    }
+  }
+
+  .tw-collapse {
+    display: none;
+  }
+
+  .tw-collapse.tw-show {
+    display: block;
+  }
+
+  @media (min-width: 1220px) {
+    .tw-navbar-expand-md .tw-navbar-toggler {
+      display: none;
+    }
+
+    .tw-navbar-expand-md .tw-navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tw-navbar-expand-md .tw-navbar-nav {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .tw-navbar-expand-md .tw-navbar-nav .tw-nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+  /* Navbar Nav */
+  .tw-navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0 !important;
+    list-style: none;
+  }
+
+  /* Nav Item & Link */
+  .tw-nav-item {
+    display: list-item;
+  }
+
+  .tw-nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Add spacing between icons and text in nav links */
+  .tw-nav-link i {
+    margin-right: 0.2rem;
+  }
+
+  /* Mobile: nav links have no horizontal padding */
+  .tw-navbar-nav .tw-nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Desktop: nav links get horizontal padding */
+  @media (min-width: 1220px) {
+    .tw-navbar-expand-md .tw-navbar-nav .tw-nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link:hover,
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link:focus {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-active {
+    color: white !important;
+  }
+
+  /* Override for buttons that are also nav-links - they should keep button colors */
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-secondary {
+    color: #6c757d !important;
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-secondary:hover {
+    color: #fff !important;
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-success {
+    color: #28a745 !important;
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-success:hover {
+    color: #fff !important;
+  }
+
+  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-success.tw-active {
+    color: #fff !important;
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+  }
+
+  /* Make active links semi-bold as per custom styles */
+  .tw-navbar-nav .tw-active {
+    font-weight: 600;
+  }
+
+  /* Utilities */
+  .tw-mr-auto {
+    margin-right: auto !important;
+  }
+
+  .tw-ml-auto {
+    margin-left: auto !important;
+  }
+
+  .tw-ml-2 {
+    margin-left: 0.5rem !important;
+  }
+
+  /* Display utilities - updated for 1220px breakpoint */
+  .tw-d-md-none {
+    @media (min-width: 1220px) {
+      display: none !important;
+    }
+  }
+
+  .tw-d-lg-inline-block {
+    display: none !important;
+    @media (min-width: 1220px) {
+      display: inline-block !important;
+    }
+  }
+
+  /* TW Buttons */
+  .tw-btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+  }
+
+  /* When button is also a nav-link, override padding */
+  .tw-nav-link.tw-btn {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .tw-btn:hover {
+    text-decoration: none;
+  }
+
+  .tw-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .tw-btn-outline-secondary {
+    color: #6c757d;
+    background-color: transparent;
+    background-image: none;
+    border-color: #6c757d;
+  }
+
+  .tw-btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .tw-btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  .tw-btn-outline-secondary.tw-active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .tw-btn-outline-success {
+    color: #28a745;
+    background-color: transparent;
+    background-image: none;
+    border-color: #28a745;
+  }
+
+  .tw-btn-outline-success:hover {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .tw-btn-outline-success:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+  }
+
+  .tw-btn-outline-success.tw-active {
+    color: #fff !important;
+    background-color: #60ae6d;
+    border-color: #60ae6d;
+  }
+
+  /* When button is active and in dark navbar, should have dark text on green */
+  .tw-navbar-dark .tw-navbar-nav .tw-btn-outline-success.tw-active,
+  .tw-navbar-dark .tw-navbar-nav .tw-btn.tw-btn-outline-success.tw-active,
+  .tw-navbar-dark
+    .tw-navbar-nav
+    .tw-nav-link.tw-btn.tw-btn-outline-success.tw-active {
+    color: #0f3919 !important;
+    background-color: #60ae6d !important;
+    border-color: #60ae6d !important;
+  }
+
   .btn {
     @apply inline-block text-center select-none transition-all duration-150 rounded px-3 py-1.5;
   }

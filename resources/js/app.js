@@ -12,6 +12,21 @@ window.showMoreTimeline = function (args) {
   Swal.fire(args);
 };
 
+// Navbar hamburger toggle for mobile
+$(document).ready(function () {
+  $('.tw-navbar-toggler').on('click', function () {
+    var target = $(this).data('target');
+    $(target).toggleClass('show');
+  });
+
+  // Close menu when clicking outside
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.tw-navbar').length) {
+      $('.tw-navbar-collapse').removeClass('show');
+    }
+  });
+});
+
 // Simplified Aire form validation - only manage submit button for working fields
 document.addEventListener('DOMContentLoaded', function () {
   // Register nullable rule for Aire.js (for optional URL field)
