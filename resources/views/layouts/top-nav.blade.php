@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">
+<nav class="tw-navbar tw-navbar-expand-md tw-navbar-dark tw-bg-primary" style="position: relative;">
+    <div class="tw-container-fluid">
+        <a class="tw-navbar-brand" href="{{ route('home') }}">
             @include('includes.logo')
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <button class="tw-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="tw-navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="tw-navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            <ul class="tw-navbar-nav tw-mr-auto">
                 <x-nav-link route="calendar.index" icon="fa-calendar">Calendar</x-nav-link>
                 <x-nav-link route="events.index" icon="fa-calendar-check-o">Events</x-nav-link>
                 <x-nav-link route="orgs.index" icon="fa-building">Organizations</x-nav-link>
@@ -22,14 +22,14 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="tw-navbar-nav tw-ml-auto">
                 <x-nav-link route="join-slack" icon="fa-slack"
-                            class="btn btn-outline-secondary">Join Slack</x-nav-link>
-                <li class="nav-item">
+                            class="tw-btn tw-btn-outline-secondary">Join Slack</x-nav-link>
+                <li class="tw-nav-item">
                     <a href="https://hackgreenville.slack.com"
-                       class="nav-link btn btn-outline-success active ml-2" style="color: #202020;"
+                       class="tw-nav-link tw-btn tw-btn-outline-success tw-active tw-ml-2"
                        rel="noreferrer" target="_blank">
-                        <i class="d-md-none d-lg-inline-block fa fa-slack"></i>
+                        <i class="tw-d-md-none tw-d-lg-inline-block fa fa-slack"></i>
                         Log In to Slack
                     </a>
                 </li>
