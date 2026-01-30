@@ -21,12 +21,12 @@ paths:
           in: query
           name: start_date
           description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-          example: '2025-01-01'
+          example: '2026-01-01'
           required: false
           schema:
             type: string
             description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-            example: '2025-01-01'
+            example: '2026-01-01'
             nullable: true
         -
           in: query
@@ -71,7 +71,7 @@ paths:
                     rsvp_count: 97
                     description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
                     uuid: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                    data_as_of: '2025-01-01T12:00:00.000000Z'
+                    data_as_of: '2026-01-01T12:00:00.000000Z'
                     service_id: '9'
                     service: eventbrite
                     venue:
@@ -166,12 +166,12 @@ paths:
           in: query
           name: start_date
           description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-          example: '2025-01-01'
+          example: '2026-01-01'
           required: false
           schema:
             type: string
             description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-            example: '2025-01-01'
+            example: '2026-01-01'
             nullable: true
         -
           in: query
@@ -595,23 +595,23 @@ paths:
         -
           in: query
           name: established_from
-          description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2025.'
+          description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2026.'
           example: null
           required: false
           schema:
             type: integer
-            description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2025.'
+            description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2026.'
             example: null
             nullable: true
         -
           in: query
           name: established_to
-          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.'
+          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.'
           example: null
           required: false
           schema:
             type: integer
-            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.'
+            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.'
             example: null
             nullable: true
         -

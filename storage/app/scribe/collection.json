@@ -28,7 +28,7 @@
                             "query": [
                                 {
                                     "key": "start_date",
-                                    "value": "2025-01-01",
+                                    "value": "2026-01-01",
                                     "description": "The start date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date before or equal to end_date.",
                                     "disabled": false
                                 },
@@ -45,7 +45,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2025-01-01&end_date=2100-12-31&tags="
+                            "raw": "{{baseUrl}}\/api\/v0\/events?start_date=2026-01-01&end_date=2100-12-31&tags="
                         },
                         "method": "GET",
                         "header": [
@@ -68,7 +68,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "[{\"event_name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"group_name\":\"Nash Corwin tech group!!!\",\"group_url\":\"quasi\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"time\":\"2025-01-01T17:00:00.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":97,\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"uuid\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"data_as_of\":\"2025-01-01T12:00:00.000000Z\",\"service_id\":\"9\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":\"VA\",\"zip\":\"37540\",\"country\":\"KP\",\"lat\":\"42.934149\",\"lon\":\"61.623526\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]",
+                            "body": "[{\"event_name\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"group_name\":\"Nash Corwin tech group!!!\",\"group_url\":\"quasi\",\"url\":\"http:\\\/\\\/www.huels.org\\\/dignissimos-error-sit-labore-quos.html\",\"time\":\"2025-01-01T17:00:00.000000Z\",\"tags\":\"\",\"status\":\"past\",\"rsvp_count\":97,\"description\":\"Consequatur debitis et id. Qui id totam temporibus quia ipsam.\",\"uuid\":\"71edad68-e2ce-3042-9ff4-fd7f82df6cd1\",\"data_as_of\":\"2026-01-01T12:00:00.000000Z\",\"service_id\":\"9\",\"service\":\"eventbrite\",\"venue\":{\"name\":\"est nostrum et voluptas consequatur\",\"address\":\"5090 Agustin Plaza\\nThielfort, VA 23923\",\"city\":\"Estellehaven\",\"state\":\"VA\",\"zip\":\"37540\",\"country\":\"KP\",\"lat\":\"42.934149\",\"lon\":\"61.623526\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"is_paid\":null}]",
                             "name": ""
                         }
                     ]
@@ -136,7 +136,7 @@
                                 },
                                 {
                                     "key": "start_date",
-                                    "value": "2025-01-01",
+                                    "value": "2026-01-01",
                                     "description": "The start date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date before or equal to end_date.",
                                     "disabled": false
                                 },
@@ -213,7 +213,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2025-01-01&end_date=2100-12-31&tags[0]=17&name=&org_name=&service=&is_paid=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&sort_by=event_name&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags[0]=17&name=&org_name=&service=&is_paid=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&sort_by=event_name&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [
@@ -299,13 +299,13 @@
                                 {
                                     "key": "established_from",
                                     "value": "",
-                                    "description": "The year the organization was established. Must be at least 1900. Must not be greater than 2025.",
+                                    "description": "The year the organization was established. Must be at least 1900. Must not be greater than 2026.",
                                     "disabled": true
                                 },
                                 {
                                     "key": "established_to",
                                     "value": "",
-                                    "description": "The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.",
+                                    "description": "The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.",
                                     "disabled": true
                                 },
                                 {
