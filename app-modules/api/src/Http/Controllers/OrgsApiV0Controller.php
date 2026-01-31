@@ -14,7 +14,7 @@ class OrgsApiV0Controller extends Controller
      * Organizations API v0
      *
      * This API provides access to organization data stored in the HackGreenville database.
-     * 
+     *
      * Please see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md) for more information about the organization API.
      *
      * @apiResource HackGreenville\Api\Resources\Orgs\V0\OrganizationsCollection
