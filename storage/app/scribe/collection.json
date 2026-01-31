@@ -59,7 +59,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This API provides access to event data stored in the HackGreenville database.",
+                        "description": "This API provides access to event data stored in the HackGreenville database.\n\nPlease see the [Event API docs](https:\/\/github.com\/hackgvl\/hackgreenville-com\/blob\/develop\/EVENTS_API.md) for more information about the event API.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -101,7 +101,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This API provides access to organization data stored in the HackGreenville database.",
+                        "description": "This API provides access to organization data stored in the HackGreenville database.\n\nPlease see the [Organization API docs](https:\/\/github.com\/hackgvl\/hackgreenville-com\/blob\/develop\/ORGS_API.md) for more information about the organization API.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -227,7 +227,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This API provides access to event data stored in the HackGreenville database.",
+                        "description": "This API provides access to event data stored in the HackGreenville database.\n\n* Please see the [Event API docs](https:\/\/github.com\/hackgvl\/hackgreenville-com\/blob\/develop\/EVENTS_API.md) for more information about the event API.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -335,7 +335,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This API provides access to organization data stored in the HackGreenville database.",
+                        "description": "This API provides access to organization data stored in the HackGreenville database.\n\n* Please see the [Organization API docs](https:\/\/github.com\/hackgvl\/hackgreenville-com\/blob\/develop\/ORGS_API.md) for more information about the organization API.",
                         "auth": {
                             "type": "noauth"
                         }

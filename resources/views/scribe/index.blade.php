@@ -124,6 +124,7 @@
 </p>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</p>
 
 <span id="example-requests-GETapi-v0-events">
 <blockquote>Example request:</blockquote>
@@ -326,6 +327,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</p>
 
 <span id="example-requests-GETapi-v0-orgs">
 <blockquote>Example request:</blockquote>
@@ -485,6 +487,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
+<ul>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</li>
+</ul>
 
 <span id="example-requests-GETapi-v1-events">
 <blockquote>Example request:</blockquote>
@@ -850,6 +855,9 @@ Must be one of:
 </p>
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
+<ul>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</li>
+</ul>
 
 <span id="example-requests-GETapi-v1-organizations">
 <blockquote>Example request:</blockquote>

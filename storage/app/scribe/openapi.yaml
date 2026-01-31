@@ -15,7 +15,7 @@ paths:
     get:
       summary: 'Events API v0'
       operationId: eventsAPIV0
-      description: 'This API provides access to event data stored in the HackGreenville database.'
+      description: "This API provides access to event data stored in the HackGreenville database.\n\nPlease see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for more information about the event API."
       parameters:
         -
           in: query
@@ -92,7 +92,7 @@ paths:
     get:
       summary: 'Organizations API v0'
       operationId: organizationsAPIV0
-      description: 'This API provides access to organization data stored in the HackGreenville database.'
+      description: "This API provides access to organization data stored in the HackGreenville database.\n\nPlease see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md) for more information about the organization API."
       parameters:
         -
           in: query
@@ -138,7 +138,7 @@ paths:
     get:
       summary: 'Events API v1'
       operationId: eventsAPIV1
-      description: 'This API provides access to event data stored in the HackGreenville database.'
+      description: "This API provides access to event data stored in the HackGreenville database.\n\n* Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for more information about the event API."
       parameters:
         -
           in: query
@@ -501,7 +501,7 @@ paths:
     get:
       summary: 'Organizations API v1'
       operationId: organizationsAPIV1
-      description: 'This API provides access to organization data stored in the HackGreenville database.'
+      description: "This API provides access to organization data stored in the HackGreenville database.\n\n* Please see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md) for more information about the organization API."
       parameters:
         -
           in: query
