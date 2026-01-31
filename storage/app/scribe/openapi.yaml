@@ -165,23 +165,23 @@ paths:
         -
           in: query
           name: start_date
-          description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+          description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
           example: '2026-01-01'
           required: false
           schema:
             type: string
-            description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+            description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
             example: '2026-01-01'
             nullable: true
         -
           in: query
           name: end_date
-          description: 'The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+          description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
           example: '2100-12-31'
           required: false
           schema:
             type: string
-            description: 'The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+            description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
             example: '2100-12-31'
             nullable: true
         -
@@ -595,23 +595,23 @@ paths:
         -
           in: query
           name: established_from
-          description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2026.'
+          description: 'The year the organization was established. Must be at least 1900. Must not be greater than current year.'
           example: null
           required: false
           schema:
             type: integer
-            description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2026.'
+            description: 'The year the organization was established. Must be at least 1900. Must not be greater than current year.'
             example: null
             nullable: true
         -
           in: query
           name: established_to
-          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.'
+          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.'
           example: null
           required: false
           schema:
             type: integer
-            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.'
+            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.'
             example: null
             nullable: true
         -

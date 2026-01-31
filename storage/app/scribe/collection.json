@@ -137,13 +137,13 @@
                                 {
                                     "key": "start_date",
                                     "value": "2026-01-01",
-                                    "description": "The start date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date before or equal to end_date.",
+                                    "description": "The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https:\/\/github.com\/hackgvl\/hackgreenville-com\/blob\/develop\/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format Y-m-d. Must be a date before or equal to end_date.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "end_date",
                                     "value": "2100-12-31",
-                                    "description": "The end date for events filtering (inclusive). Must be a valid date in the format Y-m-d. Must be a date after or equal to start_date.",
+                                    "description": "The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https:\/\/github.com\/hackgvl\/hackgreenville-com\/blob\/develop\/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format Y-m-d. Must be a date after or equal to start_date.",
                                     "disabled": false
                                 },
                                 {
@@ -299,13 +299,13 @@
                                 {
                                     "key": "established_from",
                                     "value": "",
-                                    "description": "The year the organization was established. Must be at least 1900. Must not be greater than 2026.",
+                                    "description": "The year the organization was established. Must be at least 1900. Must not be greater than current year.",
                                     "disabled": true
                                 },
                                 {
                                     "key": "established_to",
                                     "value": "",
-                                    "description": "The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.",
+                                    "description": "The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.",
                                     "disabled": true
                                 },
                                 {

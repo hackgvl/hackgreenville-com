@@ -17,6 +17,8 @@ class OrgsApiV1Controller extends Controller
      *
      * @apiResource HackGreenville\Api\Resources\Orgs\V1\OrganizationCollection
      * @apiResourceModel App\Models\Org states=forDocumentation
+     * @queryParam established_from integer The year the organization was established. Must be at least 1900. Must not be greater than current year. Example: null
+     * @queryParam established_to integer The year the organization was dissolved. Must be at least 1900. Must not be greater than current year. Example: null
      */
     public function __invoke(OrgsApiV1Request $request)
     {

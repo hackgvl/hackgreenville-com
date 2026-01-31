@@ -700,7 +700,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2026-01-01"
                data-component="query">
     <br>
-<p>The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
+<p>The start date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -711,7 +711,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2100-12-31"
                data-component="query">
     <br>
-<p>The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
+<p>The end date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tags</code></b>&nbsp;&nbsp;
@@ -857,7 +857,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -870,6 +870,8 @@ Must be one of:
 const params = {
     "per_page": "50",
     "page": "1",
+    "established_from": "",
+    "established_to": "",
     "sort_by": "title",
     "sort_direction": "asc",
 };
@@ -895,6 +897,8 @@ url = '{{ config("app.url") }}/api/v1/organizations'
 params = {
   'per_page': '50',
   'page': '1',
+  'established_from': '',
+  'established_to': '',
   'sort_by': 'title',
   'sort_direction': 'asc',
 }
@@ -1107,7 +1111,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="query">
     <br>
-<p>The year the organization was established. Must be at least 1900. Must not be greater than 2026.</p>
+<p>The year the organization was established. Must be at least 1900. Must not be greater than current year.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>established_to</code></b>&nbsp;&nbsp;
@@ -1118,7 +1122,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="query">
     <br>
-<p>The year the organization was dissolved. Must be at least 1900. Must not be greater than 2026.</p>
+<p>The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
