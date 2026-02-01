@@ -137,4 +137,26 @@ class EventApiV1Test extends TestCase
         $response->assertJsonPath('data.0.id', $free_event->event_uuid);
         $response->assertJsonPath('data.0.is_paid', false);
     }
+
+    public function test_deleted_org_events_do_not_show()
+    {
+        $active_org = Org::factory()->create();
+        $deleted_org = Org::factory()->create();
+        $deleted_org->delete();
+
+        $active_event = Event::factory()->create([
+            'organization_id' => $active_org->id,
+        ]);
+
+        $deleted_event = Event::factory()->create([
+            'organization_id' => $deleted_org->id,
+        ]);
+
+        $response = $this->getJson('/api/v1/events')
+            ->assertSessionDoesntHaveErrors()
+            ->assertStatus(200)
+            ->assertDontSeeText($deleted_event->event_name)
+            ->assertSeeText($active_event->event_name);
+
+    }
 }
