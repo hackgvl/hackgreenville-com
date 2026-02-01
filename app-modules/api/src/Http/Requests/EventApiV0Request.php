@@ -40,7 +40,7 @@ class EventApiV0Request extends FormRequest
         return [
             'start_date' => [
                 'description' => 'The start date for events filtering (inclusive).',
-                'example' => '2025-01-01',
+                'example' => '2026-01-01',
             ],
             'end_date' => [
                 'description' => 'The end date for events filtering (inclusive).',

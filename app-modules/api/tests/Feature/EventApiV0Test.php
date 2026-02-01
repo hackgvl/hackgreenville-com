@@ -53,4 +53,25 @@ class EventApiV0Test extends DatabaseTestCase
                 ],
             ]);
     }
+
+    public function test_event_api_v0_deleted_organization_event_does_not_show(): void
+    {
+        // Lock-in the time
+        $this->travelTo(now());
+
+        $event_org_deleted = Event::factory()->create([
+            'cancelled_at' => now(),
+        ]);
+        $event_org_deleted->organization->delete();
+
+        $event_org_active = Event::factory()->create([
+            'cancelled_at' => now(),
+        ]);
+
+        $this->getJson(route('api.v0.events.index'))
+            ->assertSessionDoesntHaveErrors()
+            ->assertStatus(200)
+            ->assertDontSeeText($event_org_deleted->event_name)
+            ->assertSeeText($event_org_active->event_name);
+    }
 }

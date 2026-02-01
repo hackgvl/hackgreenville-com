@@ -15,8 +15,12 @@ class OrgsApiV1Controller extends Controller
      *
      * This API provides access to organization data stored in the HackGreenville database.
      *
+     * * Please see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md) for more information about the organization API.
+     *
      * @apiResource HackGreenville\Api\Resources\Orgs\V1\OrganizationCollection
      * @apiResourceModel App\Models\Org states=forDocumentation
+     * @queryParam established_from integer The year the organization was established. Must be at least 1900. Must not be greater than current year. Example: null
+     * @queryParam established_to integer The year the organization was dissolved. Must be at least 1900. Must not be greater than current year. Example: null
      */
     public function __invoke(OrgsApiV1Request $request)
     {

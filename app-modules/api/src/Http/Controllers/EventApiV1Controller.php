@@ -15,6 +15,8 @@ class EventApiV1Controller extends Controller
      *
      * This API provides access to event data stored in the HackGreenville database.
      *
+     * * Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for more information about the event API.
+     *
      * @apiResource HackGreenville\Api\Resources\Events\V1\EventCollection
      * @apiResourceModel App\Models\Event states=forDocumentation
      */
@@ -23,6 +25,9 @@ class EventApiV1Controller extends Controller
         $query = Event::query()
             ->with(['organization', 'venue'])
             ->published()
+            ->whereHas('organization', function (Builder $query) {
+                $query->whereNull('deleted_at'); // Don't show events for deleted organizations
+            })
             ->when($request->filled('start_date'), function (Builder $query) use ($request) {
                 $query->where('active_at', '>=', $request->date('start_date')->startOfDay());
             })
