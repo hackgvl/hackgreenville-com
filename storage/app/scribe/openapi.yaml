@@ -15,18 +15,18 @@ paths:
     get:
       summary: 'Events API v0'
       operationId: eventsAPIV0
-      description: 'This API provides access to event data stored in the HackGreenville database.'
+      description: "This API provides access to event data stored in the HackGreenville database.\n\nPlease see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for more information about the event API."
       parameters:
         -
           in: query
           name: start_date
           description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-          example: '2025-01-01'
+          example: '2026-01-01'
           required: false
           schema:
             type: string
             description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-            example: '2025-01-01'
+            example: '2026-01-01'
             nullable: true
         -
           in: query
@@ -71,7 +71,7 @@ paths:
                     rsvp_count: 97
                     description: 'Consequatur debitis et id. Qui id totam temporibus quia ipsam.'
                     uuid: 71edad68-e2ce-3042-9ff4-fd7f82df6cd1
-                    data_as_of: '2025-01-01T12:00:00.000000Z'
+                    data_as_of: '2026-01-01T12:00:00.000000Z'
                     service_id: '9'
                     service: eventbrite
                     venue:
@@ -92,7 +92,7 @@ paths:
     get:
       summary: 'Organizations API v0'
       operationId: organizationsAPIV0
-      description: 'This API provides access to organization data stored in the HackGreenville database.'
+      description: "This API provides access to organization data stored in the HackGreenville database.\n\nPlease see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md) for more information about the organization API."
       parameters:
         -
           in: query
@@ -138,7 +138,7 @@ paths:
     get:
       summary: 'Events API v1'
       operationId: eventsAPIV1
-      description: 'This API provides access to event data stored in the HackGreenville database.'
+      description: "This API provides access to event data stored in the HackGreenville database.\n\n* Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for more information about the event API."
       parameters:
         -
           in: query
@@ -165,23 +165,23 @@ paths:
         -
           in: query
           name: start_date
-          description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-          example: '2025-01-01'
+          description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+          example: '2026-01-01'
           required: false
           schema:
             type: string
-            description: 'The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
-            example: '2025-01-01'
+            description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+            example: '2026-01-01'
             nullable: true
         -
           in: query
           name: end_date
-          description: 'The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+          description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
           example: '2100-12-31'
           required: false
           schema:
             type: string
-            description: 'The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+            description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
             example: '2100-12-31'
             nullable: true
         -
@@ -501,7 +501,7 @@ paths:
     get:
       summary: 'Organizations API v1'
       operationId: organizationsAPIV1
-      description: 'This API provides access to organization data stored in the HackGreenville database.'
+      description: "This API provides access to organization data stored in the HackGreenville database.\n\n* Please see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md) for more information about the organization API."
       parameters:
         -
           in: query
@@ -595,23 +595,23 @@ paths:
         -
           in: query
           name: established_from
-          description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2025.'
+          description: 'The year the organization was established. Must be at least 1900. Must not be greater than current year.'
           example: null
           required: false
           schema:
             type: integer
-            description: 'The year the organization was established. Must be at least 1900. Must not be greater than 2025.'
+            description: 'The year the organization was established. Must be at least 1900. Must not be greater than current year.'
             example: null
             nullable: true
         -
           in: query
           name: established_to
-          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.'
+          description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.'
           example: null
           required: false
           schema:
             type: integer
-            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.'
+            description: 'The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.'
             example: null
             nullable: true
         -
