@@ -7,11 +7,12 @@ use App\Models\Event;
 use App\Models\Org;
 use App\Models\Venue;
 use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Services\EventBriteHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
+use Tests\AbstractEventHandlerTestCase;
 
-class EventBriteTest extends DatabaseTestCase
+class EventBriteTest extends AbstractEventHandlerTestCase
 {
     protected function setUp(): void
     {
@@ -115,5 +116,15 @@ class EventBriteTest extends DatabaseTestCase
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/eventbrite/' . $file);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::EventBrite;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return EventBriteHandler::class;
     }
 }

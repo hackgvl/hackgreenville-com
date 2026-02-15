@@ -9,21 +9,13 @@ use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\MeetupRestHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
+use Tests\AbstractEventHandlerTestCase;
 
-class MeetupRestTest extends DatabaseTestCase
+class MeetupRestTest extends AbstractEventHandlerTestCase
 {
     protected function setUp(): void
     {
         parent::setUp();
-
-        config()->set('event-import-handlers.handlers', [
-            EventServices::MeetupRest->value => MeetupRestHandler::class,
-        ]);
-
-        config()->set('event-import-handlers.active_services', [
-            EventServices::MeetupRest->value
-        ]);
     }
 
     public function test_active_meetup_event_is_imported_correctly(): void
@@ -95,5 +87,15 @@ HTML, $active_event->description);
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/meetup-rest/' . $file);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupRest;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return MeetupRestHandler::class;
     }
 }
