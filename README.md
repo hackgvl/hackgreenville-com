@@ -1,5 +1,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![HackGreenville](https://www.hackgreenville.com/img/logo-v2.png)
@@ -11,7 +13,6 @@ The official repository for HackGreenville.com tech community website, maintaine
 # Purpose
 
 Our goal is to connect people to the tech-related community in the Greenville area. We do this by supporting discovery applications to promote the area's events and organizations and hosting a vibrant [HackGreenville Slack](https://hackgreenville.com/join-slack).
-
 
 # Forking, Contributing, and Synchronizing Changes
 
@@ -26,10 +27,11 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running a
 
 ## APIs
 
-* [Organizations](https://hackgreenville.com/orgs) data may be queried via the [Organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).
-* [Events](https://hackgreenville.com/events) data may be queried via the [Events API](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md).
+- [Organizations](https://hackgreenville.com/orgs) data may be queried via the [Organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).
+- [Events](https://hackgreenville.com/events) data may be queried via the [Events API](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md).
 
 ## Laravel
+
 This project uses the [Laravel PHP framework](https://laravel.com). The [CONTRIBUTING.md](CONTRIBUTING.md) goes into more technical details.
 
 # Contributors ✨

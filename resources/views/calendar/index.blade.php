@@ -4,7 +4,7 @@
 @section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
 
 @section('content')
-    <div class="container">
+    <div class="max-w-7xl mx-auto px-4">
         <x-calendar-feed-promo />
 
         <div id="calendar"></div>
@@ -92,7 +92,7 @@
                 let layoutRoot = calendarEl.querySelector('.fc-dayGridMonth-view');
 
                 if (layoutRoot === null) {
-                    console.warn('layout root not found');
+                    // Layout root not found
                     return;
                 }
 
@@ -100,7 +100,7 @@
 
                 // current week can be found at end of last month, within this month, or beginning of next month
                 if (thisWeek === null) {
-                    console.warn('Current week is not on this page.');
+                    // Current week is not on this page
                     return;
                 }
 
