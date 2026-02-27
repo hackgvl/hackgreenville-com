@@ -60,7 +60,7 @@
       <h3 class="mt-4">2026 - Feb | <em>"Hackin' Ball G - An Asian A-fare'</em></h3>
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
-          <p><a href="https://www.meetup.com/hack-greenville/events/310839956/" class="btn btn-info">Recap</a></p>
+          <p><a href="https://www.meetup.com/hack-greenville/events/313138324/" class="btn btn-info">Recap</a></p>
         </div>
         <div class="flex-row-column">
           <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
