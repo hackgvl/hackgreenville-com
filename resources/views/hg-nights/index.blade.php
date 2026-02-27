@@ -57,6 +57,51 @@
       <h2 class="font-weight-bold">Past <em>HackGreenville Nights</em> Events</h2>
 
 
+      <h3 class="mt-4">2026 - Feb | <em>"Hackin' Ball G - An Asian A-fare'</em></h3>
+      <div class="flex-row-3-columns w-100">
+        <div class="flex-row-column">
+          <p><a href="https://www.meetup.com/hack-greenville/events/310839956/" class="btn btn-info">Recap</a></p>
+        </div>
+        <div class="flex-row-column">
+          <p><a href="https://www.youtube.com/@HackGreenville/playlists" class="btn btn-info">Videos</a></p>
+        </div>
+      </div>
+
+
+      <h5 class="font-weight-bold">Kudos</h5>
+      <p class="lead-text">Event Sponsorship by <a href="https://chipp.ai"><b>Chipp.ai</b></a> | 
+           Hosted by <a href="https://joinopenworks.com">OpenWorks Coworking</a> |
+           Video by <a href="https://synergymill.com">Synergy Mill Makerspace</a>
+      </p>
+
+      <p>Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com">RefactorGVL</a></p>
+
+      <h5 class="font-weight-bold">Speakers</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Jeremy Wight on
+          <a href="https://www.youtube.com/watch?v=JOpc6ARGS6M&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=3">
+            <em>Why a Non Profit Entity Type Could Be Your Super Power for Tech Social Impact</em>
+          </a>
+	</li>
+        <li class="list-group-item">Zach Hall on
+          <a href="https://www.youtube.com/watch?v=gXGBWc3emGs&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=2">
+            <em>TV Station in a Box: Introducing Television Simulator Studio</em>
+          </a>
+        </li>
+        <li class="list-group-item">Heather Bowes on
+          <a href="https://www.youtube.com/watch?v=3A_LDUNBWYs&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=4">
+            <em>Setting Up an SD-WAN Mesh Network with Starlink & T-Mobile During Hurricane Helene</em>
+          </a>
+        </li>
+        <li class="list-group-item">Phil Yanov on
+          <a href="https://www.youtube.com/watch?v=OTgrxBO8MRE&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=1">
+            <em>Origin Stories Series: The Early Days</em>
+          </a>
+        </li>
+      </ul>
+
+
+
       <h3 class="mt-4">2025 - Oct | <em>"Medi-verse" Mediterranean & Greek</em></h3>
       <div class="flex-row-3-columns w-100">
         <div class="flex-row-column">
