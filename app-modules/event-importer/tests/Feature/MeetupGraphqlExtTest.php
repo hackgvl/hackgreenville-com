@@ -9,9 +9,9 @@ use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
 use HackGreenville\EventImporter\Services\MeetupGraphqlExtHandler;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
-use Tests\DatabaseTestCase;
+use Tests\AbstractEventHandlerTestCase;
 
-class MeetupGraphqlExtTest extends DatabaseTestCase
+class MeetupGraphqlExtTest extends AbstractEventHandlerTestCase
 {
     protected function setUp(): void
     {
@@ -26,14 +26,6 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
         config()->set('event-import-handlers.meetup_graphql_client_id', 'foo');
         config()->set('event-import-handlers.meetup_graphql_member_id', 'bar');
         config()->set('event-import-handlers.meetup_graphql_private_key_id', 'abc123');
-
-        config()->set('event-import-handlers.handlers', [
-            EventServices::MeetupGraphql->value => MeetupGraphqlExtHandler::class,
-        ]);
-
-        config()->set('event-import-handlers.active_services', [
-            EventServices::MeetupGraphql->value,
-        ]);
 
         Org::factory()->create([
             'service' => EventServices::MeetupGraphql,
@@ -163,7 +155,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
                 200
             ),
             'https://api.meetup.com/gql-ext' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v2/example-group-null.json'),
+                $this->apiResponse('responses/groupByUrlName/example-group-null.json'),
                 200
             ),
         ]);
@@ -223,7 +215,17 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
 
     protected function apiResponse(string $file): string
     {
-        return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql/' . $file);
+        return file_get_contents(__DIR__ . '/../fixtures/meetup-graphql-ext/' . $file);
+    }
+
+    protected function getEventService(): EventServices
+    {
+        return EventServices::MeetupGraphql;
+    }
+
+    protected function getHandlerClass(): string
+    {
+        return MeetupGraphqlExtHandler::class;
     }
 
     private function runImportCommand(): void
@@ -258,7 +260,7 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
 
         Http::fake([
             'https://api.meetup.com/gql-ext' => Http::response(
-                $this->apiResponse('responses/groupByUrlName/v2/example-group.json'), // Example response from /gql-ext endpoint
+                $this->apiResponse('responses/groupByUrlName/example-group.json'), // Example response from /gql-ext endpoint
                 200
             ),
         ]);
