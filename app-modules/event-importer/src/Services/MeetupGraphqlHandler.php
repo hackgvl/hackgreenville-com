@@ -287,7 +287,7 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'iat' => time(),
             'exp' => time() + 240,
         ];
-        
+
         return JWT::encode($payload, $private_key, 'RS256', null, $headers);
     }
 
