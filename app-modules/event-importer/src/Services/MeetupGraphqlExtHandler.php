@@ -234,13 +234,17 @@ class MeetupGraphqlExtHandler extends AbstractEventHandler
 
     private function getJwtKey()
     {
-        $file_path = config('event-import-handlers.meetup_graphql_private_key_path');
+        $privateKey = config('event-import-handlers.meetup_graphql_private_key');
 
-        if ( ! file_exists($file_path)) {
-            throw new RuntimeException('File path ' . $file_path . ' does not exist.');
+        if (empty($privateKey)) {
+            $file_path = config('event-import-handlers.meetup_graphql_private_key_path');
+
+            if ( ! file_exists($file_path)) {
+                throw new RuntimeException('File path ' . $file_path . ' does not exist.');
+            }
+
+            $privateKey = file_get_contents($file_path);
         }
-
-        $privateKey = file_get_contents($file_path);
         $headers = [
             'kid' => config('event-import-handlers.meetup_graphql_private_key_id'),
         ];
@@ -268,8 +272,9 @@ class MeetupGraphqlExtHandler extends AbstractEventHandler
             throw new RuntimeException('meetup_graphql_private_key_id config value must be set.');
         }
 
-        if (config('event-import-handlers.meetup_graphql_private_key_path') === null) {
-            throw new RuntimeException('meetup_graphql_private_key_path config value must be set.');
+        if (config('event-import-handlers.meetup_graphql_private_key') === null
+            && config('event-import-handlers.meetup_graphql_private_key_path') === null) {
+            throw new RuntimeException('meetup_graphql_private_key or meetup_graphql_private_key_path config value must be set.');
         }
     }
 }

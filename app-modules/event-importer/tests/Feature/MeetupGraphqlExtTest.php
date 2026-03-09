@@ -202,11 +202,12 @@ class MeetupGraphqlExtTest extends DatabaseTestCase
         $this->runImportCommand();
     }
 
-    public function test_config_validation_fails_with_missing_private_key_path(): void
+    public function test_config_validation_fails_with_missing_private_key(): void
     {
+        config()->set('event-import-handlers.meetup_graphql_private_key', null);
         config()->set('event-import-handlers.meetup_graphql_private_key_path', null);
 
-        $this->expectExceptionMessage('meetup_graphql_private_key_path config value must be set.');
+        $this->expectExceptionMessage('meetup_graphql_private_key or meetup_graphql_private_key_path config value must be set.');
 
         $this->runImportCommand();
     }
