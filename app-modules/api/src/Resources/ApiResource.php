@@ -10,7 +10,7 @@ abstract class ApiResource extends JsonResource
     protected function getTime(): string
     {
         if ($this->isRunningScribe()) {
-            return '2025-01-01T12:00:00.000000Z';
+            return '2026-01-01T12:00:00.000000Z';
         }
 
         return now()->toISOString();

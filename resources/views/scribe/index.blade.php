@@ -124,6 +124,7 @@
 </p>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</p>
 
 <span id="example-requests-GETapi-v0-events">
 <blockquote>Example request:</blockquote>
@@ -131,7 +132,7 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/events?start_date=2025-01-01&amp;end_date=2100-12-31" \
+    --get "{{ config("app.url") }}/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -142,7 +143,7 @@
 );
 
 const params = {
-    "start_date": "2025-01-01",
+    "start_date": "2026-01-01",
     "end_date": "2100-12-31",
 };
 Object.keys(params)
@@ -165,7 +166,7 @@ import json
 
 url = '{{ config("app.url") }}/api/v0/events'
 params = {
-  'start_date': '2025-01-01',
+  'start_date': '2026-01-01',
   'end_date': '2100-12-31',
 }
 headers = {
@@ -196,7 +197,7 @@ response.json()</code></pre></div>
         &quot;rsvp_count&quot;: 97,
         &quot;description&quot;: &quot;Consequatur debitis et id. Qui id totam temporibus quia ipsam.&quot;,
         &quot;uuid&quot;: &quot;71edad68-e2ce-3042-9ff4-fd7f82df6cd1&quot;,
-        &quot;data_as_of&quot;: &quot;2025-01-01T12:00:00.000000Z&quot;,
+        &quot;data_as_of&quot;: &quot;2026-01-01T12:00:00.000000Z&quot;,
         &quot;service_id&quot;: &quot;9&quot;,
         &quot;service&quot;: &quot;eventbrite&quot;,
         &quot;venue&quot;: {
@@ -291,10 +292,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="GETapi-v0-events"
-               value="2025-01-01"
+               value="2026-01-01"
                data-component="query">
     <br>
-<p>The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2025-01-01</code></p>
+<p>The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -326,6 +327,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</p>
 
 <span id="example-requests-GETapi-v0-orgs">
 <blockquote>Example request:</blockquote>
@@ -485,6 +487,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
+<ul>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</li>
+</ul>
 
 <span id="example-requests-GETapi-v1-events">
 <blockquote>Example request:</blockquote>
@@ -492,7 +497,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/events?per_page=50&amp;page=1&amp;start_date=2025-01-01&amp;end_date=2100-12-31&amp;tags[]=17&amp;sort_by=event_name&amp;sort_direction=asc" \
+    --get "{{ config("app.url") }}/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=17&amp;sort_by=event_name&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -505,7 +510,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const params = {
     "per_page": "50",
     "page": "1",
-    "start_date": "2025-01-01",
+    "start_date": "2026-01-01",
     "end_date": "2100-12-31",
     "tags[0]": "17",
     "sort_by": "event_name",
@@ -533,7 +538,7 @@ url = '{{ config("app.url") }}/api/v1/events'
 params = {
   'per_page': '50',
   'page': '1',
-  'start_date': '2025-01-01',
+  'start_date': '2026-01-01',
   'end_date': '2100-12-31',
   'tags[0]': '17',
   'sort_by': 'event_name',
@@ -697,10 +702,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="GETapi-v1-events"
-               value="2025-01-01"
+               value="2026-01-01"
                data-component="query">
     <br>
-<p>The start date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2025-01-01</code></p>
+<p>The start date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -711,7 +716,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2100-12-31"
                data-component="query">
     <br>
-<p>The end date for events filtering (inclusive). Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
+<p>The end date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tags</code></b>&nbsp;&nbsp;
@@ -850,6 +855,9 @@ Must be one of:
 </p>
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
+<ul>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</li>
+</ul>
 
 <span id="example-requests-GETapi-v1-organizations">
 <blockquote>Example request:</blockquote>
@@ -857,7 +865,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -870,6 +878,8 @@ Must be one of:
 const params = {
     "per_page": "50",
     "page": "1",
+    "established_from": "",
+    "established_to": "",
     "sort_by": "title",
     "sort_direction": "asc",
 };
@@ -895,6 +905,8 @@ url = '{{ config("app.url") }}/api/v1/organizations'
 params = {
   'per_page': '50',
   'page': '1',
+  'established_from': '',
+  'established_to': '',
   'sort_by': 'title',
   'sort_direction': 'asc',
 }
@@ -1107,7 +1119,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="query">
     <br>
-<p>The year the organization was established. Must be at least 1900. Must not be greater than 2025.</p>
+<p>The year the organization was established. Must be at least 1900. Must not be greater than current year.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>established_to</code></b>&nbsp;&nbsp;
@@ -1118,7 +1130,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="query">
     <br>
-<p>The year the organization was dissolved. Must be at least 1900. Must not be greater than 2025.</p>
+<p>The year the organization was dissolved. Must be at least 1900. Must not be greater than current year.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
