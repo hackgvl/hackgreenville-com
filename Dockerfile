@@ -31,6 +31,9 @@ RUN composer install \
 
 RUN composer dump-autoload --optimize --classmap-authoritative
 
+# Run deploy command
+RUN php artisan deploy:railway
+
 # Build frontend assets
 RUN yarn build
 
