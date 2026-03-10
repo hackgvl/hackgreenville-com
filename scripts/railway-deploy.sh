@@ -7,6 +7,7 @@ echo "JavaScript dependencies installation completed."
 # Run Laravel optimization commands
 echo "Configuring Laravel"
 php artisan icons:cache
+php artisan filament:assets
 php artisan filament:cache-components
 php artisan cloudflare:cache:purge
 echo "Laravel optimization completed."
