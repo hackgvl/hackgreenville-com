@@ -18,5 +18,3 @@ echo "Vite build completed! Assets have been bundled and/or optimized."
 
 # Finish
 echo "Deployment completed."
-
-chmod +x ./scripts/railway-cron.sh && ./scripts/railway-cron.sh
