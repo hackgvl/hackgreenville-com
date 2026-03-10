@@ -61,8 +61,14 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/laravel-scheduler && \
     mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d && \
     touch /etc/s6-overlay/s6-rc.d/user/contents.d/laravel-scheduler
 
+# Create S6 oneshot service for deploy init tasks (runs once on container start)
+RUN mkdir -p /etc/s6-overlay/s6-rc.d/deploy-init && \
+    echo 'oneshot' > /etc/s6-overlay/s6-rc.d/deploy-init/type && \
+    printf '#!/command/with-contenv bash\ncd /var/www/html\nexec php artisan deploy:railway\n' \
+        > /etc/s6-overlay/s6-rc.d/deploy-init/up && \
+    chmod +x /etc/s6-overlay/s6-rc.d/deploy-init/up && \
+    touch /etc/s6-overlay/s6-rc.d/user/contents.d/deploy-init
+
 EXPOSE 8080
 
 USER www-data
-
-CMD ["php artisan deploy:railway"]
