@@ -365,9 +365,10 @@ In order to import events from organizations with a `meetup_graphql` service typ
 `EVENT_IMPORTER_MEETUP_GRAPHQL_CLIENT_ID` - Your Meetup [OAuth client](https://www.meetup.com/api/oauth/list/)
 `EVENT_IMPORTER_MEETUP_GRAPHQL_MEMBER_ID` - Your Meetup user ID. You can find this user ID in the URL of your profile page or by running `query { self { id name } }` in the Meetup [GraphQL playground](https://www.meetup.com/api/playground/#graphQl-playground).
 `EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_ID` - The ID of a private key associated to your OAuth client. You'll be using this private key to [sign the JWT](https://www.meetup.com/api/authentication/#p04-jwt-flow-section) to request access tokens.
-`EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_ID` - The path to the Meetup OAuth private key.
+`EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY` - The PEM-encoded private key value. If set, the key path is not used.
+`EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY_PATH` - The path to the Meetup OAuth private key file. Used only if `EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY` is not set.
 
-The Meetup OAuth client private key file can be stored anywhere on your machine. If you put the private key in the repository root, you can put it under `*.pem` and the file will be ignored by version control. If placed in the repository root and you run the project in Docker, the private key path will be `/var/www/html/your_private_key.pem`.
+The Meetup OAuth client private key file can be stored anywhere on your machine. If you put the private key in the repository root, you can put it under `*.pem` and the file will be ignored by version control. If placed in the repository root and you run the project in Docker, the private key path will be `/var/www/html/your_private_key.pem`. Alternatively, you can set the `EVENT_IMPORTER_MEETUP_GRAPHQL_PRIVATE_KEY` env variable directly with the PEM contents to avoid using a file.
 
 **NOTE**: Meetup requires a [Pro account](https://www.meetup.com/meetup-pro/) in order to create an OAuth client.
 
