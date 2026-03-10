@@ -31,9 +31,6 @@ RUN composer install \
 
 RUN composer dump-autoload --optimize --classmap-authoritative
 
-# Run deploy command
-RUN php artisan deploy:railway
-
 # Build frontend assets
 RUN yarn build
 
@@ -67,3 +64,5 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/laravel-scheduler && \
 EXPOSE 8080
 
 USER www-data
+
+CMD ["php artisan deploy:railway"]
