@@ -1,6 +1,7 @@
 @extends('layouts.app', ['remove_space' => true])
 
 @section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
+@section('description', 'Discover tech meetups, events, and organizations in Greenville, SC. Connect with local hackers, makers, and tinkerers through our Slack community and calendar of upcoming events.')
 
 @section('content')
     <div id="homepage" class="overflow-x-hidden">
@@ -29,7 +30,7 @@
             <div class="max-w-6xl mx-auto px-4">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center">
-                        <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto rounded-lg shadow-md">
+                        <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto rounded-lg shadow-md" loading="lazy">
                     </div>
                     <div>
                         <p class="text-basetext-gray-700 leading-relaxed">
@@ -50,9 +51,9 @@
 
         {{-- Upcoming Events --}}
         <div class="max-w-4xl mx-auto px-4 py-16 sm:py-20">
-            <h3 class="text-center text-3xl font-semibold mb-10">
+            <h2 class="text-center text-3xl font-semibold mb-10">
                 Upcoming Events
-            </h3>
+            </h2>
             @if ($upcoming_events->isEmpty())
                 <p class="text-center text-gray-500">
                     <strong class="font-bold">No</strong> events to display.
@@ -63,7 +64,7 @@
                         <div class="flex items-center justify-between gap-4 py-3 px-2">
                             <div class="min-w-0">
                                 <div class="flex items-center gap-2 flex-wrap">
-                                    <a href="{{ $event->url }}" rel="external" class="font-semibold text-base text-gray-900 hover:text-primary truncate block">
+                                    <a href="{{ $event->url }}" rel="noopener" class="font-semibold text-base text-gray-900 hover:text-primary truncate block">
                                         {{ $event->event_name }}
                                     </a>
                                     @if($event->cancelled_at)
@@ -78,7 +79,7 @@
                                 </p>
                             </div>
                             @if(!$event->cancelled_at)
-                                <a href="{{ $event->url }}" rel="external" class="shrink-0 text-sm bg-gray-100 text-gray-700 px-3 py-1.5 rounded hover:bg-gray-200 transition-colors no-underline">
+                                <a href="{{ $event->url }}" rel="noopener" class="shrink-0 text-sm bg-gray-100 text-gray-700 px-3 py-1.5 rounded hover:bg-gray-200 transition-colors no-underline">
                                     View Event
                                 </a>
                             @endif

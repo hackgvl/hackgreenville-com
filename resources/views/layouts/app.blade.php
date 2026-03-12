@@ -20,25 +20,26 @@
     <link rel="shortcut icon" href="{{asset('favicon.png')}}?1"/>
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{config('app.url')}}">
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', config('app.name'))">
     <meta property="og:description"
           content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
-    <meta property="og:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
+    <meta property="og:image" content="@yield('og_image', config('app.url') . '/img/hackgreenville-banner-preview.png')">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{config('app.url')}}">
+    <meta property="twitter:url" content="{{ url()->current() }}">
     <meta property="twitter:title" content="@yield('title', config('app.name'))">
     <meta property="twitter:description"
           content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')">
-    <meta property="twitter:image" content="{{config('app.url')}}/img/hackgreenville-banner-preview.png">
+    <meta property="twitter:image" content="@yield('og_image', config('app.url') . '/img/hackgreenville-banner-preview.png')">
 
-    @yield('canonical')
+    <link rel="canonical" href="@yield('canonical', url()->current())" />
 
     <!-- Styles (all fonts bundled in third-party.css via Vite) -->
     @vite(['resources/css/app.css', 'resources/css/third-party.css', 'resources/js/app.js'])
 
     @if(config('services.google.tagmanager.id'))
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async
                 src="https://www.googletagmanager.com/gtag/js?id={{config('services.google.tagmanager.id')}}"></script>
@@ -55,9 +56,36 @@
         </script>
     @endif
 
-    <script src='{{url('vendors/fullcalendar/packages/core/main.min.js')}}'></script>
-    <script src='{{url('vendors/fullcalendar/packages/daygrid/main.js')}}'></script>
-    <script src='{{url('vendors/fullcalendar/packages/list/main.js')}}'></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "HackGreenville",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ config('app.url') }}/img/hackgreenville-banner-preview.png",
+                "description": "HackGreenville is a community of hackers, makers, and tinkerers in the Greenville, SC area fostering personal growth through sharing and promoting local tech opportunities.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Greenville",
+                    "addressRegion": "SC",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://hackgreenville.slack.com",
+                    "https://www.meetup.com/hack-greenville/",
+                    "https://github.com/hackgvl"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "name": "HackGreenville",
+                "url": "{{ config('app.url') }}"
+            }
+        ]
+    }
+    </script>
 
     @yield('head')
 </head>

@@ -26,7 +26,7 @@
                                         {{ $org->title }}
                                     </a>
                                     @if($org->event_calendar_uri)
-                                        <a href="{{$org->event_calendar_uri }}" rel="external" class="text-gray-300 hover:text-primary transition-colors shrink-0" title="Events site">
+                                        <a href="{{$org->event_calendar_uri }}" rel="noopener" class="text-gray-300 hover:text-primary transition-colors shrink-0" title="Events site">
                                             <x-lucide-external-link class="w-3 h-3 inline"/>
                                         </a>
                                     @endif

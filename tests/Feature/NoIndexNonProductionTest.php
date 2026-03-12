@@ -24,8 +24,8 @@ class NoIndexNonProductionTest extends TestCase
         $response = $this->get('/robots.txt');
 
         $response->assertOk();
-        $expected = "User-agent: *\nDisallow:";
-        $this->assertEquals($expected, $response->getContent());
+        $this->assertStringContainsString("User-agent: *\nDisallow:", $response->getContent());
+        $this->assertStringContainsString('Sitemap:', $response->getContent());
     }
 
     public function test_non_production_responses_have_x_robots_tag_header(): void

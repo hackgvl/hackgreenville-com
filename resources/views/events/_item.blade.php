@@ -4,7 +4,7 @@
 	<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
 		<div class="md:col-span-3">
 			<a href="{{ $event->toGoogleCalendarUrl() }}"
-			   rel="external"
+			   rel="noopener"
 			   class="group inline-block text-gray-700 hover:text-primary no-underline"
 			   title="Add to Calendar"
 			   aria-label="Add to Calendar">
@@ -19,7 +19,7 @@
 		</div>
 		<div class="md:col-span-7">
 			<div>
-				<a href="{{ $event->url }}" rel="external" class="text-primary hover:underline text-sm font-medium">
+				<a href="{{ $event->url }}" rel="noopener" class="text-primary hover:underline text-sm font-medium">
 					@if($event->cancelled_at)
 						<span class="text-danger">
 							[CANCELLED]

@@ -10,7 +10,7 @@
 
             <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                 <div class="bg-gray-50 px-6 py-4 border-b">
-                    <h3 class="text-xl font-bold">How Does it Work?</h3>
+                    <h2 class="text-xl font-bold">How Does it Work?</h2>
                 </div>
                 <div class="p-6">
                     <ul>
@@ -85,9 +85,9 @@
         }">
                 <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                     <div class="bg-gray-50 px-6 py-4 border-b">
-                        <h3 class="text-xl font-bold">
+                        <h2 class="text-xl font-bold">
                             Organizations
-                        </h3>
+                        </h2>
                     </div>
                     <div class="p-6">
 

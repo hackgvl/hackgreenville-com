@@ -2,8 +2,39 @@
 
 @section('title', 'List of Greenville, SC Area Tech Events')
 @section('description', 'A list view of upcoming tech events happening in the Greenville, SC area.')
-@section('canonical')
-    <link rel="canonical" href="/events" />
+
+@section('head')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Upcoming Tech Events in Greenville, SC",
+        "itemListElement": [
+            @foreach($months->flatten() as $i => $event)
+            {
+                "@type": "ListItem",
+                "position": {{ $i + 1 }},
+                "item": {
+                    "@type": "Event",
+                    "name": {{ Js::from($event->event_name) }},
+                    "startDate": "{{ $event->active_at->toIso8601String() }}",
+                    @if($event->expire_at)
+                    "endDate": "{{ $event->expire_at->toIso8601String() }}",
+                    @endif
+                    "eventStatus": "https://schema.org/{{ $event->cancelled_at ? 'EventCancelled' : 'EventScheduled' }}",
+                    "url": {{ Js::from($event->url) }},
+                    "organizer": {
+                        "@type": "Organization",
+                        "name": {{ Js::from($event->group_name) }},
+                        "url": "{{ route('orgs.show', $event->organization) }}"
+                    },
+                    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+                }
+            }@if(!$loop->last),@endif
+            @endforeach
+        ]
+    }
+    </script>
 @endsection
 
 @section('content')
@@ -31,9 +62,9 @@
             @foreach($months as $month => $events)
                 <div class="events" data-date="{{ $month }}">
                     <div class="bg-gray-100 px-6 py-3 border-b border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-800">
+                        <h2 class="text-lg font-semibold text-gray-800">
                             {{ $month }}
-                        </h3>
+                        </h2>
                     </div>
                     <div class="divide-y divide-gray-200">
                         @foreach($events as $event)
@@ -46,8 +77,8 @@
 
         <div class="mt-8 text-sm text-gray-600">
             <ul class="list-disc pl-5 space-y-2">
-                <li>This data is sourced from <a href="https://data.openupstate.org" rel="external" class="text-primary hover:underline">a community-curated REST API</a>.</li>
-                <li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" rel="external" class="text-primary hover:underline">HackGreenville Labs.</a></li>
+                <li>This data is sourced from <a href="https://data.openupstate.org" rel="noopener" class="text-primary hover:underline">a community-curated REST API</a>.</li>
+                <li>To contribute to this project, please connect with <a href="https://codeforgreenville.org" rel="noopener" class="text-primary hover:underline">HackGreenville Labs.</a></li>
                 <li>To suggest an addition or update to the data, please submit a <a href="https://data.openupstate.org/contact/suggestions" class="text-primary hover:underline">suggestion</a>.</li>
             </ul>
         </div>

@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://hackgreenville.com/sitemap.xml

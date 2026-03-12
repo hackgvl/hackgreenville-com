@@ -8,8 +8,11 @@ use App\Http\Controllers\HGNightsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabsController;
 use App\Http\Controllers\OrgsController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SlackController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::get('/robots.txt', function () {
     $file = app()->environment('production')

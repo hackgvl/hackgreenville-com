@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contribute Around Greenville, SC')
-@section('description', "Opportunties to sponsor, volunteer, and donate with Upstate, SC tech, maker, and tinker non-profits or open-source projects.")
+@section('description', "Opportunities to sponsor, volunteer, and donate with Upstate, SC tech, maker, and tinker non-profits or open-source projects.")
 
 @section('content')
         <div class="max-w-4xl mx-auto px-4 py-8">

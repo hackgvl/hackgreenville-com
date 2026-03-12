@@ -14,7 +14,7 @@
 				</p>
 			</div>
 			<div class="md:w-7/12 hidden md:block">
-				<img src="{{ asset('img/labs.png') }}" alt="HackGreenville Labs" class="w-full h-auto rounded-lg">
+				<img src="{{ asset('img/labs.png') }}" alt="HackGreenville Labs" class="w-full h-auto rounded-lg" loading="lazy">
 			</div>
 		</div>
 	</div>

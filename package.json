@@ -38,7 +38,7 @@
         "vite-plugin-image-optimizer": "^1.1.6"
     },
     "dependencies": {
-        "@fontsource-variable/geist": "^5.2.8",
+        "@fontsource-variable/inter": "^5.2.8",
         "@fullcalendar/core": "^4.4.0",
         "@fullcalendar/daygrid": "^4.4.0",
         "@fullcalendar/list": "^4.4.2",

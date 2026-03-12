@@ -3,6 +3,12 @@
 @section('title', 'Calendar of Greenville, SC Area Tech Events')
 @section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
 
+@section('head')
+    <script defer src='{{ url('vendors/fullcalendar/packages/core/main.min.js') }}'></script>
+    <script defer src='{{ url('vendors/fullcalendar/packages/daygrid/main.js') }}'></script>
+    <script defer src='{{ url('vendors/fullcalendar/packages/list/main.js') }}'></script>
+@endsection
+
 @section('content')
     <div class="max-w-7xl mx-auto px-4">
         <x-calendar-feed-promo />

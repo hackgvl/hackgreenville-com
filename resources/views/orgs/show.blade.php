@@ -3,6 +3,36 @@
 @section('title', $org->title)
 @section('description', 'Highlights of the '. $org->title . ' organization of '. $org->city . ', SC, including upcoming events, organizer, and history.')
 
+@section('head')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": {{ Js::from($org->title) }},
+        @if($org->uri)
+        "url": {{ Js::from($org->uri) }},
+        @endif
+        @if($org->description)
+        "description": {{ Js::from(strip_tags($org->description)) }},
+        @endif
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": {{ Js::from($org->city ?? 'Greenville') }},
+            "addressRegion": "SC",
+            "addressCountry": "US"
+        },
+        @if($org->established_at)
+        "foundingDate": "{{ $org->established_at->format('Y') }}",
+        @endif
+        "memberOf": {
+            "@type": "Organization",
+            "name": "HackGreenville",
+            "url": "{{ config('app.url') }}"
+        }
+    }
+    </script>
+@endsection
+
 @section('content')
     <div class="max-w-3xl mx-auto px-4 py-8">
         {{-- Header --}}
@@ -32,13 +62,13 @@
             @if($org->event_calendar_uri)
                 <div class="flex flex-col sm:flex-row sm:items-center px-4 py-2.5 gap-1 sm:gap-4">
                     <span class="text-gray-500 sm:w-40 shrink-0 font-medium">Event Homepage</span>
-                    <a href="{{ $org->event_calendar_uri }}" rel="external" class="text-primary hover:underline truncate">{{ $org->event_calendar_uri }}</a>
+                    <a href="{{ $org->event_calendar_uri }}" rel="noopener" class="text-primary hover:underline truncate">{{ $org->event_calendar_uri }}</a>
                 </div>
             @endif
             @if($org->uri)
                 <div class="flex flex-col sm:flex-row sm:items-center px-4 py-2.5 gap-1 sm:gap-4">
                     <span class="text-gray-500 sm:w-40 shrink-0 font-medium">Homepage</span>
-                    <a href="{{ $org->uri }}" rel="external" class="text-primary hover:underline truncate">{{ $org->uri }}</a>
+                    <a href="{{ $org->uri }}" rel="noopener" class="text-primary hover:underline truncate">{{ $org->uri }}</a>
                 </div>
             @endif
             @if($org->primary_contact_person)
