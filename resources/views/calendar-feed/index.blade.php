@@ -4,19 +4,19 @@
 @section('description', 'Generate an iCal calendar feed to pull events for one, many, or all organizations promoted by HackGreenville into your calendar app')
 
 @section('content')
-    <div class="container py-5  d-flex justify-content-center">
-        <div class="col-lg-8 col-sm-12">
-            <h1 class="font-weight-bold">Subscribe to a Personalized Calendar</h1>
+    <div class="max-w-7xl mx-auto px-4 py-5">
+        <div class="w-full lg:w-2/3 mx-auto">
+            <h1 class="text-4xl font-bold mb-4">Subscribe to a Personalized Calendar</h1>
 
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="font-weight-bold">How Does it Work?</h3>
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="bg-gray-50 px-6 py-4 border-b">
+                    <h3 class="text-xl font-bold">How Does it Work?</h3>
                 </div>
-                <div class="card-body">
+                <div class="p-6">
                     <ul>
                         <li>Select one or more organizations to follow and press 'Generate Calendar Feed Link'</li>
                         <li>Add this generated link to your preferred calendar application, often configured under 'By URL', 'iCal / WebCal', or 'From Web'
-                            <ul>
+                            <ul class="ml-6 mt-2">
                                 <li><a href="https://support.google.com/calendar/answer/37100#:~:text=Use%20a%20link%20to%20add%20a%20public%20calendar" rel="nofollow">Google</a></li>
                                 <li><a href="https://support.microsoft.com/en-us/office/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web-cff1429c-5af6-41ec-a5b4-74f2c278e98c#ID0EDLBBDDD" rel="nofollow">Outlook</a></li>
                                 <li><a href="https://support.mozilla.org/en-US/kb/creating-new-calendars#w_on-the-network-connect-to-your-online-calendars" rel="nofollow">Thunderbird</a></li>
@@ -83,15 +83,15 @@
                 }
             }
         }">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="font-weight-bold">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="bg-gray-50 px-6 py-4 border-b">
+                        <h3 class="text-xl font-bold">
                             Organizations
                         </h3>
                     </div>
-                    <div class="card-body">
+                    <div class="p-6">
 
-                        <div class="feed-item bg-white/5 m-2 select-all-item" @click="toggleAll()">
+                        <div class="feed-item m-2 select-all-item" @click="toggleAll()">
                             <div class="custom-control custom-switch">
                                 <input type="checkbox"
                                        class="custom-control-input"
@@ -121,24 +121,28 @@
                                 <span
                                     class="feed-name"
                                     :class="{
-                                        'font-weight-bold': feed.checked,
+                                        'font-bold': feed.checked,
                                     }"
                                     x-text="feed.title"></span>
                             </div>
                         </template>
+                        
+                        <div x-show="feeds.length === 0" class="text-center py-8 text-gray-500">
+                            No organizations available at this time.
+                        </div>
 
-                        <div class="text-center mt-4 d-flex flex-column align-items-center">
-                            <a :href="feedUrl('webcal://')" class="btn btn-primary text-decoration-none mb-3">
+                        <div class="text-center mt-4 flex flex-col items-center">
+                            <a :href="feedUrl('webcal://')" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors no-underline mb-3">
                                 Generate Calendar Feed Link
                             </a>
 
-                            <input type="text" class="form-control mb-3" :value="feedUrl" readonly />
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-3 bg-gray-50" :value="feedUrl" readonly />
 
                             <button class="copy-btn"
                                     @click="copyLink()"
                                     :class="{ 'copied': copied }">
                                 <template x-if="!copied">
-                                    <svg class="copy-icon mr-2" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="copy-icon mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 4V16C8 17.1046 8.89543 18 10 18H20C21.1046 18 22 17.1046 22 16V7.41421C22 6.88378 21.7893 6.37507 21.4142 6L20 4.58579C19.6249 4.21071 19.1162 4 18.5858 4H10C8.89543 4 8 4.89543 8 6"
                                               stroke="currentColor"
                                               stroke-width="2"
@@ -152,7 +156,7 @@
                                     </svg>
                                 </template>
                                 <template x-if="copied">
-                                    <svg class="copy-icon mr-2" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="copy-icon mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </template>
@@ -166,109 +170,99 @@
         </div>
 
         <style>
-        .feed-container {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        }
-
         .feed-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            border-radius: 8px;
-            background: #f8fafc;
-            transition: all 0.2s ease;
-            cursor: pointer;
+            @apply flex items-center p-4 mb-3 rounded-lg bg-gray-50 transition-colors cursor-pointer;
         }
 
         .feed-item:hover {
-            background: #edf2f7;
+            @apply bg-gray-100;
         }
 
         .feed-divider {
-            height: 1px;
-            background: rgba(0, 0, 0, 0.08);
-            margin-bottom: 1rem;
+            @apply h-px bg-gray-200 mb-4;
         }
 
         .select-all-item {
-            background: #f1f5f9;
+            @apply bg-slate-100;
         }
 
         .select-all-item:hover {
-            background: #e2e8f0;
+            @apply bg-slate-200;
         }
 
         .feed-name {
-            margin-left: 1rem;
-            font-weight: 500;
-            color: #4a5568;
+            @apply ml-4 font-medium text-gray-700;
         }
 
+        /* Custom switch styling to match Bootstrap switches */
         .custom-switch {
+            @apply relative inline-block;
             padding-left: 2.25rem;
         }
 
-        .custom-control-input:checked ~ .custom-control-label::before {
-            background-color: #4299e1;
-            border-color: #4299e1;
+        .custom-control-input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
         }
 
         .custom-control-label {
+            position: relative;
             cursor: pointer;
+            user-select: none;
         }
 
-        .subscribe-btn {
-            background: #4299e1;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            color: white;
-            font-weight: 500;
-            border-radius: 8px;
-            transition: all 0.2s ease;
+        .custom-control-label::before {
+            position: absolute;
+            left: -2.25rem;
+            top: 0.1rem;
+            display: block;
+            width: 2rem;
+            height: 1.125rem;
+            pointer-events: all;
+            content: "";
+            background-color: #cbd5e0;
+            border: #adb5bd solid 1px;
+            border-radius: 0.5rem;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
         }
 
-        .subscribe-btn:hover {
-            background: #3182ce;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
+        .custom-control-label::after {
+            position: absolute;
+            left: -2.25rem;
+            top: calc(0.1rem + 2px);
+            display: block;
+            width: calc(1.125rem - 4px);
+            height: calc(1.125rem - 4px);
+            content: "";
+            background-color: #fff;
+            border-radius: 0.5rem;
+            transition: transform 0.15s ease-in-out;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            @apply bg-primary border-primary;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::after {
+            transform: translateX(0.875rem);
+        }
+
+        .custom-control-input:indeterminate ~ .custom-control-label::before {
+            @apply bg-primary border-primary;
+            opacity: 0.5;
         }
 
         .copy-btn {
-            background: #f1f5f9;
-            border: 1px solid #e2e8f0;
-            padding: 0.75rem 1.5rem;
-            color: #475569;
-            font-weight: 500;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
+            @apply bg-slate-100 border border-slate-200 px-6 py-3 text-slate-700 font-medium rounded-lg transition-all inline-flex items-center;
         }
 
         .copy-btn:hover {
-            background: #e2e8f0;
-            transform: translateY(-1px);
+            @apply bg-slate-200 -translate-y-px;
         }
 
         .copy-btn.copied {
-            background: #86efac;
-            border-color: #86efac;
-            color: #065f46;
-        }
-
-        .gap-3 {
-            gap: 1rem;
-        }
-
-        .feed-icon {
-            width: 24px;
-            height: 24px;
-            fill: #4299e1;
-            margin-right: 0.5rem;
+            @apply bg-green-300 border-green-300 text-green-900;
         }
         </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
 @endsection
