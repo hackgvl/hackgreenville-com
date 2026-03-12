@@ -12,6 +12,14 @@ use App\Http\Controllers\SlackController;
 use App\Http\Controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/robots.txt', function () {
+    $file = app()->environment('production')
+        ? 'robots.txt'
+        : 'robots-non-prod.txt';
+
+    return response(file_get_contents(public_path($file)), 200, ['Content-Type' => 'text/plain']);
+});
+
 // Redirects are above the routes so they take
 // priority in the top-down matching
 Route::redirect('/nights', '/hg-nights', 301);

@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
 
+    @unless(app()->environment('production'))
+        <meta name="robots" content="noindex, nofollow">
+    @endunless
+
     <meta name="description"
           content="@yield('description', 'HackGreenville exists to foster personal growth among the hackers of Greenville, SC and the surrounding area.')"/>
 
@@ -32,7 +36,7 @@
     @yield('canonical')
 
     <!-- Styles -->
-    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/third-party.css', 'resources/js/app.js'])
 
     @if(config('services.google.tagmanager.id'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -63,14 +67,14 @@
 
     @if($__env->yieldContent('breadcrumbs'))
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb flex flex-wrap list-none px-4 py-2 mb-4 bg-gray-100 rounded">
                 @yield('breadcrumbs')
             </ol>
         </nav>
     @endif
 
-    <div class="loading @if(!isset($show_loading)) d-none @endif">
-        <i class="fa fa-spin fa-spinner"></i>
+    <div class="loading @if(!isset($show_loading)) hidden @endif fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
+        <i class="fa fa-spin fa-spinner text-5xl text-white"></i>
     </div>
 
     <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">

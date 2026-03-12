@@ -5,15 +5,13 @@
 
 @section('content')
     <div id="contact">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 mx-1 mt-5 text-center">
-                    <h1 class="mb-3">{{ __('Thank you!') }}</h1>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mt-20">
+                <h1 class="text-4xl font-bold mb-3">{{ __('Thank you!') }}</h1>
 
-                    <p class="summary">
-                        {{ __('We\'ll try to get back to you as soon as possible!') }}
-                    </p>
-                </div>
+                <p class="text-xl">
+                    {{ __('We\'ll try to get back to you as soon as possible!') }}
+                </p>
             </div>
         </div>
     </div>
