@@ -215,6 +215,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "JenBauer",
+      "name": "Jen Bauer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43556044?v=4",
+      "profile": "http://jenbauer.carrd.com",
+      "contributions": [
+        "bug",
+        "userTesting"
+      ]
     }
   ],
   "contributorsPerLine": 7,
