@@ -65,6 +65,45 @@
         <h2 class="text-3xl font-bold mb-8">Past <em>HackGreenville Nights</em> Events</h2>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h3 class="text-2xl font-bold mb-4">2026 - Feb | <em>"Hackin' Ball G - An Asian A-fare'"</em></h3>
+          <div class="flex gap-4 mb-6">
+            <a href="https://www.meetup.com/hack-greenville/events/313138324/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
+            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
+          </div>
+
+          <h5 class="text-lg font-bold mb-3">Kudos</h5>
+          <p class="text-lg mb-4">Event Sponsorship by <a href="https://chipp.ai" class="text-primary hover:underline"><b>Chipp.ai</b></a> |
+               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
+               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
+          </p>
+          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
+
+          <h5 class="text-lg font-bold mb-3">Speakers</h5>
+          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
+            <li class="p-3">Jeremy Wight on
+              <a href="https://www.youtube.com/watch?v=JOpc6ARGS6M&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=3" class="text-primary hover:underline">
+                <em>Why a Non Profit Entity Type Could Be Your Super Power for Tech Social Impact</em>
+              </a>
+            </li>
+            <li class="p-3">Zach Hall on
+              <a href="https://www.youtube.com/watch?v=gXGBWc3emGs&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=2" class="text-primary hover:underline">
+                <em>TV Station in a Box: Introducing Television Simulator Studio</em>
+              </a>
+            </li>
+            <li class="p-3">Heather Bowes on
+              <a href="https://www.youtube.com/watch?v=3A_LDUNBWYs&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=4" class="text-primary hover:underline">
+                <em>Setting Up an SD-WAN Mesh Network with Starlink & T-Mobile During Hurricane Helene</em>
+              </a>
+            </li>
+            <li class="p-3">Phil Yanov on
+              <a href="https://www.youtube.com/watch?v=OTgrxBO8MRE&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=1" class="text-primary hover:underline">
+                <em>Origin Stories Series: The Early Days</em>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h3 class="text-2xl font-bold mb-4">2025 - Oct | <em>"Medi-verse" Mediterranean & Greek</em></h3>
           <div class="flex gap-4 mb-6">
             <a href="https://www.meetup.com/hack-greenville/events/310839956/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
