@@ -139,7 +139,11 @@
       "profile": "https://github.com/bogdankharchenko",
       "contributions": [
         "code",
-        "design"
+        "design",
+        "infra",
+        "review",
+        "test",
+        "bug"
       ]
     },
     {
