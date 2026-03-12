@@ -35,15 +35,7 @@
 
     @yield('canonical')
 
-    <!-- Fonts (preconnect + display=swap to prevent FOIT/FOUT flicker) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Styles -->
+    <!-- Styles (all fonts bundled in third-party.css via Vite) -->
     @vite(['resources/css/app.css', 'resources/css/third-party.css', 'resources/js/app.js'])
 
     @if(config('services.google.tagmanager.id'))
