@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/robots.txt', function () {
     $file = app()->environment('production')
-        ? 'robots.txt'
+        ? 'robots-prod.txt'
         : 'robots-non-prod.txt';
 
     return response(file_get_contents(public_path($file)), 200, ['Content-Type' => 'text/plain']);
