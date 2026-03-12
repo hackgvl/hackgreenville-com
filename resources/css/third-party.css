@@ -1,0 +1,38 @@
+/* Third party CSS imports that can't be converted to Tailwind */
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,200');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
+/* FullCalendar - Required for calendar functionality */
+@import '@fullcalendar/core/main.min.css';
+@import '@fullcalendar/daygrid/main.min.css';
+@import '@fullcalendar/list/main.min.css';
+
+/* SweetAlert2 - Required for modals */
+@import 'sweetalert2/dist/sweetalert2.min.css';
+
+/* Calendar specific styles */
+#calendar {
+  min-height: 800px;
+}
+
+.fc-content {
+  cursor: pointer;
+  white-space: normal !important;
+}
+
+/* SweetAlert custom width */
+.swal-wide {
+  width: 50em !important;
+}
+
+/* Loading overlay - specific positioning that Tailwind can't easily replicate */
+.loading .fa-spin {
+  position: relative;
+  top: 50vh;
+  left: 50vw;
+  font-size: 50px;
+}

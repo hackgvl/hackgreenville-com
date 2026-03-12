@@ -4,21 +4,21 @@
 
 @section('content')
     <div id="homepage">
-        <div id="homepage-jumbotron" class="jumbotron jumbotron-fluid text-white bg-dark position-relative">
+        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative bg-cover bg-center" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
             <div class="overlay"></div>
-            <div class="container py-5 text-center">
-                <h1 class="display-4">Build Stuff. Meet People. Do cool things.</h1>
-                <p class="lead my-5">Meetups &middot; Talks &middot; Projects</p>
+            <div class="max-w-7xl mx-auto py-20 text-center px-4">
+                <h1 class="text-5xl md:text-6xl font-light">Build Stuff. Meet People. Do cool things.</h1>
+                <p class="lead my-12">Meetups &middot; Talks &middot; Projects</p>
                 <p class="lead">
-                    <a class="btn btn-success text-gray btn-lg" href="/join-slack" role="button">Request to Join
+                    <a class="inline-block bg-success text-gray-800 px-8 py-4 rounded-lg text-xl font-medium no-underline hover:opacity-90 transition-opacity" href="/join-slack" role="button">Request to Join
                         Slack</a>
                 </p>
             </div>
         </div>
 
-        <div class="container my-5">
-            <div class="row">
-                <div class="col-md-6 col-lg-8">
+        <div class="max-w-7xl mx-auto my-12 px-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-6 lg:col-span-8">
                     <div class="text-center">
                         <h3 class="screaming-hackgreenville-question">What is HackGreenville?</h3>
 
@@ -29,39 +29,39 @@
                         </p>
                     </div>
 
-                    <hr class="d-md-none">
+                    <hr class="sm:hidden my-8">
 
-                    <div class="row mt-5 align-items-center">
-                        <div class="col-md-6 text-center">
-                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="img-fluid">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 items-center">
+                        <div class="text-center">
+                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto">
                         </div>
-                        <div class="col-md-6">
+                        <div>
                             <p class="summary">
-                                HG is the <code>"GO TO"</code> resource for discovering and connecting with Upstate SC
+                                HG is the <code class="bg-gray-100 px-1 py-0.5 rounded">"GO TO"</code> resource for discovering and connecting with Upstate SC
                                 tech hackers, makers, and tinkerers.
                             </p>
                             <p class="summary">
                                 Explore the site for more meetups and events, and make sure to join our active <a
-                                    href="/join-slack">Slack community</a> to connect further!
+                                    href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
                             </p>
-                            <button onclick="location.href='/join-slack'" class="btn btn-outline-primary btn-lg">
+                            <button onclick="location.href='/join-slack'" class="inline-block border-2 border-primary text-primary px-8 py-4 rounded-lg text-xl font-medium mt-4 hover:bg-primary hover:text-white transition-colors">
                                 Join Us
                             </button>
                         </div>
                     </div>
 
-                    <div class="row mt-5">
-                        <div class="col-md-6 my-5">
-                            <h2 class="display-5 text-center mt-5">Contribute</h2>
-                            <div class="summary container">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
+                        <div class="my-12">
+                            <h2 class="text-4xl font-light text-center mt-12">Contribute</h2>
+                            <div class="summary max-w-7xl mx-auto px-4">
                                 hackgreenville.com is built on the
-                                <a href="https://laravel.com/">Laravel</a> PHP framework
+                                <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
                             </div>
                         </div>
-                        <div class="col-md-6 text-center">
+                        <div class="text-center">
                             <a href="https://github.com/hackgvl/hackgreenville-com"
-                               class="text-decoration-none text-dark">
-                                <p style="line-height:1; font-size:15em;" class="mt-5">
+                               class="no-underline text-gray-900 hover:text-gray-700">
+                                <p style="line-height:1;" class="mt-12 text-8xl sm:text-9xl md:text-[15em]">
                                     <i class="fa fa-github"></i>
                                 </p>
                                 <p class="summary">Join the Project</p>
@@ -69,9 +69,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mt-sm-5 mt-md-3">
+                <div class="md:col-span-6 lg:col-span-4 mt-5 md:mt-3">
                     <div>
-                        <h3 class="text-center">
+                        <h3 class="text-center text-2xl font-semibold mb-6">
                             Upcoming Events
                         </h3>
                         <ul
@@ -79,17 +79,15 @@
                         >
                             @if ($upcoming_events->isEmpty())
                                 <li>
-                                    <strong>No</strong> events to display.
+                                    <strong class="font-bold">No</strong> events to display.
                                 </li>
                             @else
                                 @foreach ($upcoming_events as $event)
                                     <li class="timeline-inverted">
-                                        <div class="timeline-badge bg-success">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
+
                                         <div class="timeline-panel">
                                             <div class="timeline-heading">
-                                                <h4 class="timeline-title">
+                                                <h4 class="timeline-title text-lg font-semibold">
                                                     @if($event->cancelled_at)
                                                         <div class="text-danger">
                                                             [CANCELLED]
@@ -97,11 +95,11 @@
                                                     @endif
                                                     {{ $event->event_name }}
                                                 </h4>
-                                                <p class="timeline-subtitle h6">
+                                                <p class="timeline-subtitle h6 text-base">
                                                     {{ $event->organization->title }}
                                                 </p>
                                                 <p>
-                                                    <small class="text-muted">
+                                                    <small class="text-gray-500 text-sm">
                                                         <i class="fa fa-calendar"></i> {{ $event->active_at->format('M/d h:i A') }}
                                                     </small>
                                                 </p>
@@ -110,7 +108,7 @@
                                                 <div>
                                                     <button
                                                         onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => str($event->description)->markdown()->toString(), 'confirmButtonText' => "Close"]))"
-                                                        class="btn btn-secondary"
+                                                        class="inline-block bg-gray-600 text-white px-4 py-2 rounded font-medium hover:bg-gray-700 transition-colors"
                                                         type="button"
                                                     >
                                                         Details
