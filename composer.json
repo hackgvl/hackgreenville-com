@@ -24,6 +24,7 @@
         "laravel/helpers": "^1.2",
         "laravel/slack-notification-channel": "^2.4",
         "laravel/tinker": "^2.0",
+        "mallardduck/blade-lucide-icons": "^1.26",
         "malzariey/filament-daterangepicker-filter": "^2.7",
         "scyllaly/hcaptcha": "^4.4",
         "sebdesign/artisan-cloudflare": "^2.8",

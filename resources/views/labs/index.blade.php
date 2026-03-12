@@ -4,33 +4,37 @@
 @section('description', 'Building local Open Source & Open Data tools to support the tech community and beyond')
 
 @section('content')
-	<div class="flex flex-wrap justify-center text-black bg-white mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-44">
-		<div class="w-full md:w-1/2 lg:w-5/12 md:ml-[8.333333%] py-12 md:py-20 flex flex-col justify-center items-center text-center px-4">
-			<h1 class="text-3xl md:text-4xl font-bold mb-4">{{ __('HackGreenville Labs') }}</h1>
-			<p class="lead my-1">
-				Supporting our HackGreenville tech projects
-			</p>
+	{{-- Hero --}}
+	<div class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+		<div class="flex flex-col md:flex-row items-center gap-10">
+			<div class="md:w-5/12 text-center md:text-left">
+				<h1 class="text-3xl md:text-4xl font-bold mb-3">{{ __('HackGreenville Labs') }}</h1>
+				<p class="text-lg text-gray-600">
+					Supporting our HackGreenville tech projects
+				</p>
+			</div>
+			<div class="md:w-7/12 hidden md:block">
+				<img src="{{ asset('img/labs.png') }}" alt="HackGreenville Labs" class="w-full h-auto rounded-lg">
+			</div>
 		</div>
-		<div id="jumbotron-image" class="m-0 p-0 w-full md:w-1/2 lg:w-6/12 hidden md:block min-h-[300px] lg:min-h-[400px] xl:min-h-[500px] bg-cover bg-left-top" style="background-image: url('{{ asset('img/labs.png') }}');"></div>
 	</div>
 
-	<div class="w-11/12 sm:w-10/12 md:w-8/12 xl:w-6/12 mx-auto mt-12 flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
-		<h2 class="text-3xl font-bold mb-6">{{ __('Our Projects') }}</h2>
-		<div class="flex flex-col my-3 p-0 w-full">
-			@foreach($projects as $index=>$project)
-				@include('labs._project', ['project' => (object) $project, 'index' => $index, 'total' => count($projects)])
+	{{-- Projects --}}
+	<div class="max-w-3xl mx-auto px-4 pb-12">
+		<h2 class="text-2xl font-bold mb-4">{{ __('Our Projects') }}</h2>
+		<div class="border border-gray-200 rounded-lg overflow-hidden divide-y divide-gray-200">
+			@foreach($projects as $index => $project)
+				@include('labs._project', ['project' => (object) $project])
 			@endforeach
 		</div>
 	</div>
 
-	<div class="p-20 flex flex-col justify-center text-center">
-		<h3 class="text-2xl font-semibold mb-4">{{ __('Want to get involved?') }}</h3>
-		<h5 class="text-xl">
-		  Join the
-			<a href="{{ route('join-slack') }}" class="text-success font-bold hover:underline">
-				HackGreenville Slack
-			</a>
-			and our <em>#hg-labs</em> channel
-		</h5>
+	{{-- CTA --}}
+	<div class="max-w-3xl mx-auto px-4 pb-16 text-center">
+		<p class="text-gray-600">
+			Want to get involved? Join the
+			<a href="{{ route('join-slack') }}" class="text-success font-semibold hover:underline">HackGreenville Slack</a>
+			and our <em>#hg-labs</em> channel.
+		</p>
 	</div>
 @endsection

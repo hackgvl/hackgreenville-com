@@ -15,9 +15,7 @@ export default {
         'danger': '#f44336',
       },
       fontFamily: {
-        'sans': ['Nunito', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
-        'raleway': ['Raleway', 'sans-serif'],
-        'montserrat': ['Montserrat', 'sans-serif'],
+        'sans': ['Geist Variable', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
       },
       screens: {
         'nav-break': '1220px',

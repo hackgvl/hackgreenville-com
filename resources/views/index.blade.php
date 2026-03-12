@@ -4,125 +4,103 @@
 
 @section('content')
     <div id="homepage" class="overflow-x-hidden">
+        {{-- Hero --}}
         <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative bg-cover bg-center" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
             <div class="overlay"></div>
-            <div class="max-w-7xl mx-auto py-12 sm:py-20 text-center px-4">
+            <div class="max-w-7xl mx-auto py-16 sm:py-24 text-center px-4 relative z-10">
                 <h1 class="text-3xl sm:text-5xl md:text-6xl font-light text-white drop-shadow-lg">Build Stuff. Meet People. Do cool things.</h1>
                 <p class="lead my-8 sm:my-12 text-gray-100">Meetups &middot; Talks &middot; Projects</p>
-                <p class="lead">
-                    <a class="inline-block bg-success text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-medium no-underline hover:opacity-90 transition-opacity drop-shadow-md" href="/join-slack" role="button">Request to Join
-                        Slack</a>
-                </p>
+                <a class="inline-block bg-success text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-medium no-underline hover:opacity-90 transition-opacity drop-shadow-md" href="/join-slack" role="button">Request to Join Slack</a>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto my-12 px-4">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <div class="md:col-span-6 lg:col-span-8">
+        {{-- What is HackGreenville --}}
+        <div class="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-center">
+            <h2 class="text-2xl sm:text-3xl font-light mb-4">What is HackGreenville?</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                HackGreenville is a community of "hackers" located in and around Greenville, SC. Our
+                community exists to foster personal growth for community
+                members through sharing and promoting local tech opportunities.
+            </p>
+        </div>
+
+        {{-- Join Us + meetup image --}}
+        <div class="bg-gray-50 py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center">
-                        <h3 class="screaming-hackgreenville-question">What is HackGreenville?</h3>
-
-                        <p class="summary">
-                            HackGreenville is a community of "hackers" located in and around Greenville, SC. Our
-                            community exists to foster personal growth for community
-                            members through sharing and promoting local tech opportunities.
-                        </p>
+                        <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto rounded-lg shadow-md">
                     </div>
-
-                    <hr class="sm:hidden my-8">
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 items-center">
-                        <div class="text-center">
-                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto">
-                        </div>
-                        <div>
-                            <p class="summary">
-                                HG is the <code class="bg-gray-100 px-1 py-0.5 rounded">"GO TO"</code> resource for discovering and connecting with Upstate SC
-                                tech hackers, makers, and tinkerers.
-                            </p>
-                            <p class="summary">
-                                Explore the site for more meetups and events, and make sure to join our active <a
-                                    href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
-                            </p>
-                            <button onclick="location.href='/join-slack'" class="inline-block border-2 border-primary text-primary px-8 py-4 rounded-lg text-xl font-medium mt-4 hover:bg-primary hover:text-white transition-colors">
-                                Join Us
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-                        <div class="my-12">
-                            <h2 class="text-4xl font-light text-center mt-12">Contribute</h2>
-                            <div class="summary max-w-7xl mx-auto px-4">
-                                hackgreenville.com is built on the
-                                <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <a href="https://github.com/hackgvl/hackgreenville-com"
-                               class="no-underline text-gray-900 hover:text-gray-700">
-                                <p style="line-height:1;" class="mt-12 text-7xl sm:text-8xl lg:text-9xl">
-                                    <i class="fa fa-github"></i>
-                                </p>
-                                <p class="summary">Join the Project</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:col-span-6 lg:col-span-4 mt-5 md:mt-3">
                     <div>
-                        <h3 class="text-center text-2xl font-semibold mb-6">
-                            Upcoming Events
-                        </h3>
-                        <ul
-                            @class(['timeline'=>$upcoming_events->isNotEmpty()])
-                        >
-                            @if ($upcoming_events->isEmpty())
-                                <li>
-                                    <strong class="font-bold">No</strong> events to display.
-                                </li>
-                            @else
-                                @foreach ($upcoming_events as $event)
-                                    <li class="timeline-inverted">
-
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title text-lg font-semibold">
-                                                    @if($event->cancelled_at)
-                                                        <div class="text-danger">
-                                                            [CANCELLED]
-                                                        </div>
-                                                    @endif
-                                                    {{ $event->event_name }}
-                                                </h4>
-                                                <p class="timeline-subtitle h6 text-base">
-                                                    {{ $event->organization->title }}
-                                                </p>
-                                                <p>
-                                                    <small class="text-gray-500 text-sm">
-                                                        <i class="fa fa-calendar"></i> {{ $event->active_at->format('M/d h:i A') }}
-                                                    </small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <div>
-                                                    <button
-                                                        onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => str($event->description)->markdown()->toString(), 'confirmButtonText' => "Close"]))"
-                                                        class="inline-block bg-gray-600 text-white px-4 py-2 rounded font-medium hover:bg-gray-700 transition-colors"
-                                                        type="button"
-                                                    >
-                                                        Details
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            @endif
-                        </ul>
+                        <p class="summary text-gray-700 leading-relaxed">
+                            HG is the <code class="bg-gray-200 px-1.5 py-0.5 rounded text-sm">"GO TO"</code> resource for discovering and connecting with Upstate SC
+                            tech hackers, makers, and tinkerers.
+                        </p>
+                        <p class="summary mt-4 text-gray-700 leading-relaxed">
+                            Explore the site for more meetups and events, and make sure to join our active <a
+                                href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
+                        </p>
+                        <a href="/join-slack" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-lg text-lg font-medium mt-6 no-underline hover:bg-primary hover:text-white transition-colors">
+                            Join Us
+                        </a>
                     </div>
-
                 </div>
+            </div>
+        </div>
+
+        {{-- Upcoming Events --}}
+        <div class="max-w-4xl mx-auto px-4 py-16 sm:py-20">
+            <h3 class="text-center text-3xl font-semibold mb-10">
+                Upcoming Events
+            </h3>
+            @if ($upcoming_events->isEmpty())
+                <p class="text-center text-gray-500">
+                    <strong class="font-bold">No</strong> events to display.
+                </p>
+            @else
+                <div class="divide-y divide-gray-200">
+                    @foreach ($upcoming_events as $event)
+                        <div class="flex items-center justify-between gap-4 py-3 px-2">
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <a href="{{ $event->url }}" rel="external" class="font-semibold text-base text-gray-900 hover:text-primary truncate block">
+                                        {{ $event->event_name }}
+                                    </a>
+                                    @if($event->cancelled_at)
+                                        <span class="text-danger text-xs font-bold">[CANCELLED]</span>
+                                    @endif
+                                </div>
+                                <p class="text-sm text-gray-500">
+                                    <a href="{{ route('orgs.show', $event->organization) }}" class="text-gray-500 hover:text-primary">{{ $event->organization->title }}</a>
+                                </p>
+                                <p class="text-sm text-gray-400">
+                                    <x-lucide-calendar class="w-3.5 h-3.5 inline"/> {{ $event->active_at->format('F j') }}, {{ $event->active_at->format('i') === '00' ? $event->active_at->format('ga') : $event->active_at->format('g:ia') }}
+                                </p>
+                            </div>
+                            @if(!$event->cancelled_at)
+                                <a href="{{ $event->url }}" rel="external" class="shrink-0 text-sm bg-gray-100 text-gray-700 px-3 py-1.5 rounded hover:bg-gray-200 transition-colors no-underline">
+                                    View Event
+                                </a>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
+
+        {{-- Contribute --}}
+        <div class="bg-gray-50 py-16">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-light mb-4">Contribute</h2>
+                <p class="summary text-gray-700 mb-8">
+                    hackgreenville.com is built on the
+                    <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
+                </p>
+                <a href="https://github.com/hackgvl/hackgreenville-com"
+                   class="inline-flex items-center gap-3 no-underline text-gray-900 hover:text-primary transition-colors text-xl">
+                    <x-lucide-github class="w-12 h-12"/>
+                    <span class="font-medium">Join the Project</span>
+                </a>
             </div>
         </div>
     </div>

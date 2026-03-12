@@ -27,17 +27,16 @@
   }
 
   .tw-navbar-dark {
-    /* Text colors for dark navbar */
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.85);
   }
 
   .tw-navbar-dark a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
   }
 
   .tw-navbar-dark a:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: white;
     text-decoration: none;
   }
 
@@ -295,42 +294,38 @@
   }
 
   .tw-navbar-dark .tw-navbar-nav .tw-nav-link {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
   }
 
   .tw-navbar-dark .tw-navbar-nav .tw-nav-link:hover,
   .tw-navbar-dark .tw-navbar-nav .tw-nav-link:focus {
-    color: rgba(255, 255, 255, 0.75) !important;
+    color: white !important;
   }
 
   .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-active {
     color: white !important;
   }
 
-  /* Override for buttons that are also nav-links - they should keep button colors */
-  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-secondary {
-    color: #6c757d !important;
-  }
-
-  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-secondary:hover {
-    color: #fff !important;
-  }
-
+  /* Join Slack CTA button */
   .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-success {
-    color: #28a745 !important;
+    color: #fff !important;
+    background-color: #60ae6d;
+    border-color: #60ae6d;
+    border-radius: 9999px;
+    padding: 0.4rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
   }
 
   .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-success:hover {
-    color: #fff !important;
+    background-color: #4e9a5b;
+    border-color: #4e9a5b;
   }
 
-  .tw-navbar-dark .tw-navbar-nav .tw-nav-link.tw-btn-outline-success.tw-active {
-    color: #fff !important;
-    background-color: #28a745 !important;
-    border-color: #28a745 !important;
-  }
-
-  /* Make active links semi-bold as per custom styles */
+  /* Make active links slightly bolder */
   .tw-navbar-nav .tw-active {
     font-weight: 600;
   }
@@ -607,9 +602,6 @@
     @apply fixed inset-0 bg-black bg-opacity-60 z-50;
   }
 
-  .loading .fa-spin {
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl;
-  }
 
   /* Utility classes */
   .d-none {
@@ -622,7 +614,7 @@
   }
 
   .lead-text {
-    @apply text-xl mb-4 leading-relaxed;
+    @apply text-base mb-4 leading-relaxed;
   }
 
   .highlight-link {
@@ -638,11 +630,11 @@
   }
 
   .values-list {
-    @apply list-disc pl-8 space-y-4;
+    @apply list-disc pl-8 space-y-2;
   }
 
   .values-list li {
-    @apply text-xl leading-relaxed;
+    @apply text-base leading-relaxed;
   }
 
   .font-weight-bold {
@@ -775,24 +767,6 @@
   position: relative;
 }
 
-.screaming-hackgreenville-question {
-  font-weight: 300;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-}
-
-@media (min-width: 640px) {
-  .screaming-hackgreenville-question {
-    font-size: 3.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .screaming-hackgreenville-question {
-    font-size: 5rem;
-  }
-}
 
 @media (max-width: 576px) {
   .display-4 {

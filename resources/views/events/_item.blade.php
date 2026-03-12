@@ -12,7 +12,7 @@
 					{{ $event->active_at->format('M jS Y') }}
 				</div>
 				<div class="text-xs text-gray-600 group-hover:text-primary">
-					<i class="fa fa-calendar-plus-o mr-1"></i>
+					<x-lucide-calendar-plus class="w-3 h-3 mr-1 inline"/>
 					{{ $event->active_at->format('l') }} • {{ $event->active_at->format('g:i A') }}
 				</div>
 			</a>

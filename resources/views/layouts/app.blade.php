@@ -74,7 +74,7 @@
     @endif
 
     <div class="loading @if(!isset($show_loading)) hidden @endif fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
-        <i class="fa fa-spin fa-spinner text-5xl text-white"></i>
+        <x-lucide-loader-circle class="w-12 h-12 text-white animate-spin"/>
     </div>
 
     <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">

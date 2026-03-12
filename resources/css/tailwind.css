@@ -164,9 +164,6 @@
     @apply fixed inset-0 bg-black bg-opacity-60 z-50;
   }
 
-  .loading .fa-spin {
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl;
-  }
 
   /* Utility classes */
   .d-none {
@@ -340,20 +337,7 @@
   position: relative;
 }
 
-.screaming-hackgreenville-question {
-  font-size: 5.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
 @media (max-width: 576px) {
-  .screaming-hackgreenville-question {
-    line-height: 0.8;
-    font-size: 3.5rem;
-    margin-bottom: 3rem;
-  }
-
   .display-4 {
     @apply text-4xl;
   }
