@@ -13,11 +13,11 @@ use App\Http\Controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/robots.txt', function () {
-    $content = app()->environment('production')
-        ? "User-agent: *\nDisallow:"
-        : "User-agent: *\nDisallow: /";
+    $file = app()->environment('production')
+        ? 'robots.txt'
+        : 'robots-non-prod.txt';
 
-    return response($content, 200, ['Content-Type' => 'text/plain']);
+    return response(file_get_contents(public_path($file)), 200, ['Content-Type' => 'text/plain']);
 });
 
 // Redirects are above the routes so they take
