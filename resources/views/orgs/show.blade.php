@@ -4,33 +4,28 @@
 @section('description', 'Highlights of the '. $org->title . ' organization of '. $org->city . ', SC, including upcoming events, organizer, and history.')
 
 @section('head')
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": {{ \Illuminate\Support\Js::from($org->title) }},
-        @if($org->uri)
-        "url": {{ \Illuminate\Support\Js::from($org->uri) }},
-        @endif
-        @if($org->description)
-        "description": {{ \Illuminate\Support\Js::from(strip_tags($org->description)) }},
-        @endif
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": {{ \Illuminate\Support\Js::from($org->city ?? 'Greenville') }},
-            "addressRegion": "SC",
-            "addressCountry": "US"
-        },
-        @if($org->established_at)
-        "foundingDate": "{{ $org->established_at->format('Y') }}",
-        @endif
-        "memberOf": {
-            "@type": "Organization",
-            "name": "HackGreenville",
-            "url": "{{ config('app.url') }}"
-        }
-    }
-    </script>
+    @php
+        $orgSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => $org->title,
+            'address' => [
+                '@type' => 'PostalAddress',
+                'addressLocality' => $org->city ?? 'Greenville',
+                'addressRegion' => 'SC',
+                'addressCountry' => 'US',
+            ],
+            'memberOf' => [
+                '@type' => 'Organization',
+                'name' => 'HackGreenville',
+                'url' => config('app.url'),
+            ],
+        ];
+        if ($org->uri) $orgSchema['url'] = $org->uri;
+        if ($org->description) $orgSchema['description'] = strip_tags($org->description);
+        if ($org->established_at) $orgSchema['foundingDate'] = $org->established_at->format('Y');
+    @endphp
+    <script type="application/ld+json">{!! json_encode($orgSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
 @endsection
 
 @section('content')

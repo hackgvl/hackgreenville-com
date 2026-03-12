@@ -4,37 +4,40 @@
 @section('description', 'A list view of upcoming tech events happening in the Greenville, SC area.')
 
 @section('head')
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Upcoming Tech Events in Greenville, SC",
-        "itemListElement": [
-            @foreach($months->flatten() as $i => $event)
-            {
-                "@type": "ListItem",
-                "position": {{ $i + 1 }},
-                "item": {
-                    "@type": "Event",
-                    "name": {{ \Illuminate\Support\Js::from($event->event_name) }},
-                    "startDate": "{{ $event->active_at->toIso8601String() }}",
-                    @if($event->expire_at)
-                    "endDate": "{{ $event->expire_at->toIso8601String() }}",
-                    @endif
-                    "eventStatus": "https://schema.org/{{ $event->cancelled_at ? 'EventCancelled' : 'EventScheduled' }}",
-                    "url": {{ \Illuminate\Support\Js::from($event->url) }},
-                    "organizer": {
-                        "@type": "Organization",
-                        "name": {{ \Illuminate\Support\Js::from($event->group_name) }},
-                        "url": "{{ route('orgs.show', $event->organization) }}"
-                    },
-                    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
-                }
-            }@if(!$loop->last),@endif
-            @endforeach
-        ]
-    }
-    </script>
+    @php
+        $allEvents = $months->flatten();
+        $jsonLdItems = $allEvents->map(function ($event, $i) {
+            $item = [
+                '@type' => 'ListItem',
+                'position' => $i + 1,
+                'item' => [
+                    '@type' => 'Event',
+                    'name' => $event->event_name,
+                    'startDate' => $event->active_at->toIso8601String(),
+                    'eventStatus' => 'https://schema.org/' . ($event->cancelled_at ? 'EventCancelled' : 'EventScheduled'),
+                    'url' => $event->url,
+                    'eventAttendanceMode' => 'https://schema.org/MixedEventAttendanceMode',
+                ],
+            ];
+            if ($event->expire_at) {
+                $item['item']['endDate'] = $event->expire_at->toIso8601String();
+            }
+            if ($event->organization) {
+                $item['item']['organizer'] = [
+                    '@type' => 'Organization',
+                    'name' => $event->group_name,
+                    'url' => route('orgs.show', $event->organization),
+                ];
+            }
+            return $item;
+        })->values();
+    @endphp
+    <script type="application/ld+json">{!! json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'name' => 'Upcoming Tech Events in Greenville, SC',
+        'itemListElement' => $jsonLdItems,
+    ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
 @endsection
 
 @section('content')
