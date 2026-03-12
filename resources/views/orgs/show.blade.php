@@ -8,16 +8,16 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": {{ Js::from($org->title) }},
+        "name": {{ \Illuminate\Support\Js::from($org->title) }},
         @if($org->uri)
-        "url": {{ Js::from($org->uri) }},
+        "url": {{ \Illuminate\Support\Js::from($org->uri) }},
         @endif
         @if($org->description)
-        "description": {{ Js::from(strip_tags($org->description)) }},
+        "description": {{ \Illuminate\Support\Js::from(strip_tags($org->description)) }},
         @endif
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": {{ Js::from($org->city ?? 'Greenville') }},
+            "addressLocality": {{ \Illuminate\Support\Js::from($org->city ?? 'Greenville') }},
             "addressRegion": "SC",
             "addressCountry": "US"
         },

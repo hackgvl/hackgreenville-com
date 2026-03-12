@@ -4,9 +4,9 @@
 @section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
 
 @section('head')
-    <script defer src='{{ url('vendors/fullcalendar/packages/core/main.min.js') }}'></script>
-    <script defer src='{{ url('vendors/fullcalendar/packages/daygrid/main.js') }}'></script>
-    <script defer src='{{ url('vendors/fullcalendar/packages/list/main.js') }}'></script>
+    <script src='{{ url('vendors/fullcalendar/packages/core/main.min.js') }}' data-turbo-track="reload"></script>
+    <script src='{{ url('vendors/fullcalendar/packages/daygrid/main.js') }}' data-turbo-track="reload"></script>
+    <script src='{{ url('vendors/fullcalendar/packages/list/main.js') }}' data-turbo-track="reload"></script>
 @endsection
 
 @section('content')
@@ -37,10 +37,11 @@
                     url: '{{ route('calendar.data') }}',
                 },
                 loading: function (isLoading, view) {
-                    if (isLoading) {// isLoading gives boolean value
-                        $("#loading-overlay").fadeIn('fast');
+                    var overlay = document.getElementById('loading-overlay');
+                    if (isLoading) {
+                        overlay.style.display = 'flex';
                     } else {
-                        $("#loading-overlay").fadeOut('fast');
+                        overlay.style.display = 'none';
 
                         if (firstRender) setTimeout(maybeMoveToCurrentWeek, 100);
                     }

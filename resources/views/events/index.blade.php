@@ -16,16 +16,16 @@
                 "position": {{ $i + 1 }},
                 "item": {
                     "@type": "Event",
-                    "name": {{ Js::from($event->event_name) }},
+                    "name": {{ \Illuminate\Support\Js::from($event->event_name) }},
                     "startDate": "{{ $event->active_at->toIso8601String() }}",
                     @if($event->expire_at)
                     "endDate": "{{ $event->expire_at->toIso8601String() }}",
                     @endif
                     "eventStatus": "https://schema.org/{{ $event->cancelled_at ? 'EventCancelled' : 'EventScheduled' }}",
-                    "url": {{ Js::from($event->url) }},
+                    "url": {{ \Illuminate\Support\Js::from($event->url) }},
                     "organizer": {
                         "@type": "Organization",
-                        "name": {{ Js::from($event->group_name) }},
+                        "name": {{ \Illuminate\Support\Js::from($event->group_name) }},
                         "url": "{{ route('orgs.show', $event->organization) }}"
                     },
                     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
