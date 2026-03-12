@@ -178,38 +178,6 @@
     @apply py-4;
   }
 
-  /* About page styles */
-  .title-heading {
-    @apply text-4xl font-bold mb-6;
-  }
-
-  .lead-text {
-    @apply text-xl mb-4 leading-relaxed;
-  }
-
-  .highlight-link {
-    @apply text-primary underline hover:text-blue-600;
-  }
-
-  .user-mention {
-    @apply text-gray-700 hover:text-gray-900 underline;
-  }
-
-  .highlight-code {
-    @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm;
-  }
-
-  .values-list {
-    @apply list-disc pl-8 space-y-2;
-  }
-
-  .values-list li {
-    @apply text-xl leading-relaxed ml-4;
-  }
-
-  .font-weight-bold {
-    @apply font-bold;
-  }
 }
 
 /* Timeline styles */
@@ -343,6 +311,3 @@
   }
 }
 
-#homepage .summary {
-  font-size: 1.25rem;
-}

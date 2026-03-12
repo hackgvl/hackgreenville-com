@@ -4,9 +4,9 @@
 @section('description', 'Generate an iCal calendar feed to pull events for one, many, or all organizations promoted by HackGreenville into your calendar app')
 
 @section('content')
-    <div class="max-w-7xl mx-auto px-4 py-5">
-        <div class="w-full lg:w-2/3 mx-auto">
-            <h1 class="text-4xl font-bold mb-4">Subscribe to a Personalized Calendar</h1>
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="w-full mx-auto">
+            <h1 class="text-3xl font-bold mb-8">Subscribe to a Personalized Calendar</h1>
 
             <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                 <div class="bg-gray-50 px-6 py-4 border-b">

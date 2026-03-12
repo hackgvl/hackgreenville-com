@@ -9,7 +9,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabsController;
 use App\Http\Controllers\OrgsController;
 use App\Http\Controllers\SlackController;
-use App\Http\Controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/robots.txt', function () {
@@ -49,5 +48,3 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 
 Route::get('/join-slack', [SlackController::class, 'join'])->name('join-slack');
 Route::post('/join-slack', [SlackController::class, 'submit'])->name('join-slack.submit');
-
-Route::get('/styles', [StyleController::class, 'index'])->name('styles.index');

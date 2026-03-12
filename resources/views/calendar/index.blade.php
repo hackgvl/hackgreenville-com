@@ -32,9 +32,9 @@
                 },
                 loading: function (isLoading, view) {
                     if (isLoading) {// isLoading gives boolean value
-                        $(".loading").fadeIn('fast');
+                        $("#loading-overlay").fadeIn('fast');
                     } else {
-                        $(".loading").fadeOut('fast');
+                        $("#loading-overlay").fadeOut('fast');
 
                         if (firstRender) setTimeout(maybeMoveToCurrentWeek, 100);
                     }

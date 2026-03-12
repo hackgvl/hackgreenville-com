@@ -22,7 +22,6 @@
                     <li><a href="{{route('contribute')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5"><x-lucide-handshake class="w-3.5 h-3.5"/> Contribute</a></li>
                     <li><a href="{{route('contact')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5"><x-lucide-send class="w-3.5 h-3.5"/> Contact</a></li>
                     <li><a href="{{route('code-of-conduct')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5"><x-lucide-check class="w-3.5 h-3.5"/> Code of Conduct</a></li>
-                    <li><a href="{{route('styles.index')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5"><x-lucide-image class="w-3.5 h-3.5"/> Our Style</a></li>
                 </ul>
             </div>
 

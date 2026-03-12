@@ -4,12 +4,12 @@
 @section('description', "Opportunties to sponsor, volunteer, and donate with Upstate, SC tech, maker, and tinker non-profits or open-source projects.")
 
 @section('content')
-        <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto px-4 py-8">
             <div class="mb-12">
                 <div class="text-left">
-                    <h1 class="text-5xl font-bold mb-6">Contribute</h1>
-                    <p class="text-xl text-gray-700 mb-8 max-w-4xl">Support the local organizations making things happen for our local tech workforce, makers, and tinkerers.</p>
-                    <ul class="text-left max-w-3xl space-y-3 text-lg">
+                    <h1 class="text-3xl font-bold mb-6">Contribute</h1>
+                    <p class="text-base text-gray-700 mb-8">Support the local organizations making things happen for our local tech workforce, makers, and tinkerers.</p>
+                    <ul class="text-left space-y-3 text-base">
                         <li class="flex items-start"><span class="mr-2">•</span><span><strong class="font-bold">Volunteer</strong> your time or resources to a project or program</span></li>
                         <li class="flex items-start"><span class="mr-2">•</span><span>Connect with <a href="/join-slack" class="text-primary hover:underline"><em>#community-organizers</em></a> and get the spotlight by <strong class="font-bold">sponsoring</strong> an event or initiative</span></li>
                         <li class="flex items-start"><span class="mr-2">•</span><span><strong class="font-bold">Donate</strong> to our local non-profits</span></li>

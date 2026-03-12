@@ -6,10 +6,10 @@
     <div id="homepage" class="overflow-x-hidden">
         {{-- Hero --}}
         <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative bg-cover bg-center" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
-            <div class="overlay"></div>
+            <div class="absolute inset-0 bg-black/50 z-[2]"></div>
             <div class="max-w-7xl mx-auto py-16 sm:py-24 text-center px-4 relative z-10">
                 <h1 class="text-3xl sm:text-5xl md:text-6xl font-light text-white drop-shadow-lg">Build Stuff. Meet People. Do cool things.</h1>
-                <p class="lead my-8 sm:my-12 text-gray-100">Meetups &middot; Talks &middot; Projects</p>
+                <p class="text-xl font-light my-8 sm:my-12 text-gray-100">Meetups &middot; Talks &middot; Projects</p>
                 <a class="inline-block bg-success text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-medium no-underline hover:opacity-90 transition-opacity drop-shadow-md" href="/join-slack" role="button">Request to Join Slack</a>
             </div>
         </div>
@@ -32,11 +32,11 @@
                         <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto rounded-lg shadow-md">
                     </div>
                     <div>
-                        <p class="summary text-gray-700 leading-relaxed">
+                        <p class="text-basetext-gray-700 leading-relaxed">
                             HG is the <code class="bg-gray-200 px-1.5 py-0.5 rounded text-sm">"GO TO"</code> resource for discovering and connecting with Upstate SC
                             tech hackers, makers, and tinkerers.
                         </p>
-                        <p class="summary mt-4 text-gray-700 leading-relaxed">
+                        <p class="text-basemt-4 text-gray-700 leading-relaxed">
                             Explore the site for more meetups and events, and make sure to join our active <a
                                 href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
                         </p>
@@ -92,7 +92,7 @@
         <div class="bg-gray-50 py-16">
             <div class="max-w-3xl mx-auto px-4 text-center">
                 <h2 class="text-3xl font-light mb-4">Contribute</h2>
-                <p class="summary text-gray-700 mb-8">
+                <p class="text-basetext-gray-700 mb-8">
                     hackgreenville.com is built on the
                     <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
                 </p>

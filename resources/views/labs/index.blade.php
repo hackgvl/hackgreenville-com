@@ -8,7 +8,7 @@
 	<div class="max-w-4xl mx-auto px-4 py-12 md:py-16">
 		<div class="flex flex-col md:flex-row items-center gap-10">
 			<div class="md:w-5/12 text-center md:text-left">
-				<h1 class="text-3xl md:text-4xl font-bold mb-3">{{ __('HackGreenville Labs') }}</h1>
+				<h1 class="text-3xl font-bold mb-3">{{ __('HackGreenville Labs') }}</h1>
 				<p class="text-lg text-gray-600">
 					Supporting our HackGreenville tech projects
 				</p>

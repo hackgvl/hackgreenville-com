@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="max-w-7xl mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold mb-8">Upcoming Events</h1>
+        <h1 class="text-3xl font-bold mb-8">Upcoming Events</h1>
 
         <div class="mb-6">
             <x-calendar-feed-promo />

@@ -65,15 +65,7 @@
 <div id="app">
     @include('layouts.top-nav')
 
-    @if($__env->yieldContent('breadcrumbs'))
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb flex flex-wrap list-none px-4 py-2 mb-4 bg-gray-100 rounded">
-                @yield('breadcrumbs')
-            </ol>
-        </nav>
-    @endif
-
-    <div class="loading @if(!isset($show_loading)) hidden @endif fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
+    <div class="@if(!isset($show_loading)) hidden @endif fixed inset-0 bg-black/60 z-50 flex items-center justify-center" id="loading-overlay">
         <x-lucide-loader-circle class="w-12 h-12 text-white animate-spin"/>
     </div>
 

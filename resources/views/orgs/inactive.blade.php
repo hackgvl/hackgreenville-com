@@ -5,7 +5,7 @@
 @section('content')
     <div class="max-w-7xl mx-auto px-4 py-8">
 
-        <h1 class="text-4xl font-bold mb-8">Local Tech Organizations <span class="text-danger">(Inactive Groups)</span></h1>
+        <h1 class="text-3xl font-bold mb-8">Local Tech Organizations <span class="text-danger">(Inactive Groups)</span></h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($inactiveOrgs as $cat_inc => $category)
