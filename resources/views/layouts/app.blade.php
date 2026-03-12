@@ -35,10 +35,6 @@
 
     @yield('canonical')
 
-    <!-- Preload Geist font for faster rendering -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-          href="{{ Vite::asset('node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') }}">
-
     <!-- Styles (all fonts bundled in third-party.css via Vite) -->
     @vite(['resources/css/app.css', 'resources/css/third-party.css', 'resources/js/app.js'])
 
