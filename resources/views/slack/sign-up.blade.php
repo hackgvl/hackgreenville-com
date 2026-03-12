@@ -90,6 +90,13 @@
     </div>
     
     @push('scripts')
-        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+        <script src="https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit" async defer></script>
+        <script>
+            window.onHcaptchaLoad = function() {
+                document.querySelectorAll('.h-captcha').forEach(function(el) {
+                    if (!el.hasChildNodes()) hcaptcha.render(el);
+                });
+            };
+        </script>
     @endpush
 @endsection

@@ -6,29 +6,27 @@
 
 import './app-imports';
 
-$('.loading').hide().removeClass('d-none');
-
 window.showMoreTimeline = function (args) {
   Swal.fire(args);
 };
 
-// Navbar hamburger toggle for mobile
-$(document).ready(function () {
-  $('.tw-navbar-toggler').on('click', function () {
-    var target = $(this).data('target');
-    $(target).toggleClass('show');
-  });
-
-  // Close menu when clicking outside
-  $(document).on('click', function (e) {
-    if (!$(e.target).closest('.tw-navbar').length) {
-      $('.tw-navbar-collapse').removeClass('show');
-    }
-  });
+// Use event delegation so handlers survive Turbo body replacements
+$(document).on('click', '.tw-navbar-toggler', function () {
+  var target = $(this).data('target');
+  $(target).toggleClass('show');
 });
 
-// Simplified Aire form validation - only manage submit button for working fields
-document.addEventListener('DOMContentLoaded', function () {
+$(document).on('click', function (e) {
+  if (!$(e.target).closest('.tw-navbar').length) {
+    $('.tw-navbar-collapse').removeClass('show');
+  }
+});
+
+// turbo:load fires on initial load AND every Turbo navigation
+document.addEventListener('turbo:load', function () {
+  // Hide loading overlay on non-calendar pages
+  $('.loading').hide();
+
   // Register nullable rule for Aire.js (for optional URL field)
   if (typeof window.Validator !== 'undefined') {
     window.Validator.register('nullable', function (val) {

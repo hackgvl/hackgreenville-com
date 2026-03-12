@@ -12,11 +12,12 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
+    <script>
+        (function () {
             let firstRender = true;
 
             const calendarEl = document.getElementById('calendar');
+            if (!calendarEl) return;
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 height: 'auto',
@@ -114,6 +115,6 @@
             }
 
             calendar.render();
-        });
+        })();
     </script>
 @endsection

@@ -1,4 +1,5 @@
 // Importing third-party libraries
+import * as Turbo from '@hotwired/turbo';
 import Lodash from 'lodash';
 import moment from 'moment';
 import Swal from 'sweetalert2';

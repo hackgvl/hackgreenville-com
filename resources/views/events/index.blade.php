@@ -56,23 +56,21 @@
 @endsection
 
 @section('js')
-    <script type="module">
-    $(function() {
-        /**
-         * on change filter the events. If there is nothing selected show all the events.
-         **/
-        $('#month').change(function() {
-            const val = $(this).children('option:selected').val();
-            const events = $('.events');
-            if (val) {
-                events.hide();
-                $('.events[data-date=\'' + val + '\']').show();
+    <script>
+    /**
+     * on change filter the events. If there is nothing selected show all the events.
+     **/
+    $('#month').change(function() {
+        const val = $(this).children('option:selected').val();
+        const events = $('.events');
+        if (val) {
+            events.hide();
+            $('.events[data-date=\'' + val + '\']').show();
 
-                return true;
-            }
+            return true;
+        }
 
-            events.show();
-        });
+        events.show();
     });
     </script>
 @endsection

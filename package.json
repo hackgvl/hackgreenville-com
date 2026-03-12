@@ -41,6 +41,7 @@
         "@fullcalendar/core": "^4.4.0",
         "@fullcalendar/daygrid": "^4.4.0",
         "@fullcalendar/list": "^4.4.2",
+        "@hotwired/turbo": "^8.0.23",
         "alpinejs": "^3.14.9",
         "dotenv": "^16.3.1",
         "moment": "^2.24.0",

@@ -1,10 +1,6 @@
 /* Third party CSS imports that can't be converted to Tailwind */
 
-/* Font imports */
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,200');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+/* Font imports moved to <link> tags in layouts/app.blade.php for faster loading */
 
 /* FullCalendar - Required for calendar functionality */
 @import '@fullcalendar/core/main.min.css';
