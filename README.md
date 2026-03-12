@@ -1,7 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![HackGreenville](https://www.hackgreenville.com/img/logo-v2.png)
@@ -66,6 +64,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alex-Grimes"><img src="https://avatars.githubusercontent.com/u/66704965?v=4?s=100" width="100px;" alt="Alexander Grimes"/><br /><sub><b>Alexander Grimes</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=Alex-Grimes" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/alhelwany"><img src="https://avatars.githubusercontent.com/u/115778766?v=4?s=100" width="100px;" alt="Mhd Ghaith Alhelwany"/><br /><sub><b>Mhd Ghaith Alhelwany</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=alhelwany" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/msmahon"><img src="https://avatars.githubusercontent.com/u/6668279?v=4?s=100" width="100px;" alt="Mitchell Mahoney"/><br /><sub><b>Mitchell Mahoney</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=msmahon" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/beetz12"><img src="https://avatars.githubusercontent.com/u/1282474?v=4?s=100" width="100px;" alt="beetz12"/><br /><sub><b>beetz12</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=beetz12" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
