@@ -2,29 +2,29 @@
 
 namespace App\Providers;
 
+use App\Events\UserCreated;
+use App\Listeners\EmailNewUser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
+        if (config('app.force_ssl')) {
+            URL::forceScheme('https');
+        }
+
         Paginator::useBootstrap();
+
+        Event::listen(UserCreated::class, EmailNewUser::class);
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
         Model::preventLazyLoading(App::environment(['local', 'testing']));
         Model::shouldBeStrict(App::environment(['local', 'testing']));
