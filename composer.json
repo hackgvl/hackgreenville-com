@@ -35,7 +35,6 @@
         "ext-pdo_sqlite": "*",
         "ext-sqlite3": "*",
         "barryvdh/laravel-debugbar": "^3.14",
-        "barryvdh/laravel-ide-helper": "*",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.10",
         "laravel/sail": "^1.5",
@@ -78,10 +77,7 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover",
-            "@php artisan ide-helper:generate --ansi --no-interaction || echo 'IDE helper not available'",
-            "@php artisan ide-helper:meta --ansi --no-interaction || echo 'IDE helper not available'",
-            "@php artisan ide-helper:models -N --no-interaction || echo 'IDE helper not available'"
+            "@php artisan package:discover"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

@@ -14,64 +14,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use RuntimeException;
 
-/**
- * App\Models\Event
- *
- * @property int $id
- * @property int|null $organization_id
- * @property EventServices $service
- * @property string $service_id
- * @property string $event_name
- * @property string $group_name
- * @property string $description
- * @property boolean|null $is_paid
- * @property int|null $rsvp_count
- * @property \Illuminate\Support\Carbon|null $active_at
- * @property \Illuminate\Support\Carbon|null $cancelled_at
- * @property string $uri
- * @property int|null $venue_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property \Illuminate\Support\Carbon|null $expire_at
- * @property string|null $event_uuid
- * @property-read string $state
- * @property-read string $status
- * @property-read string $title
- * @property-read string|bool $unique_identifier
- * @property-read string $url
- * @property-read Org|null $organization
- * @property-read Venue|null $venue
- * @method static Builder|Event datesBetween($start, $end)
- * @method static \Database\Factories\EventFactory factory($count = null, $state = [])
- * @method static Builder|Event getActive()
- * @method static Builder|Event newModelQuery()
- * @method static Builder|Event newQuery()
- * @method static Builder|Event onlyTrashed()
- * @method static Builder|Event query()
- * @method static Builder|Event search()
- * @method static Builder|Event startOfMonth()
- * @method static Builder|Event whereActiveAt($value)
- * @method static Builder|Event whereCancelledAt($value)
- * @method static Builder|Event whereCreatedAt($value)
- * @method static Builder|Event whereDeletedAt($value)
- * @method static Builder|Event whereDescription($value)
- * @method static Builder|Event whereEventName($value)
- * @method static Builder|Event whereEventUuid($value)
- * @method static Builder|Event whereExpireAt($value)
- * @method static Builder|Event whereGroupName($value)
- * @method static Builder|Event whereId($value)
- * @method static Builder|Event whereOrganizationId($value)
- * @method static Builder|Event whereRsvpCount($value)
- * @method static Builder|Event whereService($value)
- * @method static Builder|Event whereServiceId($value)
- * @method static Builder|Event whereUpdatedAt($value)
- * @method static Builder|Event whereUri($value)
- * @method static Builder|Event whereVenueId($value)
- * @method static Builder|Event withTrashed()
- * @method static Builder|Event withoutTrashed()
- * @mixin \Eloquent
- */
 class Event extends BaseModel
 {
     use HasFactory;
@@ -148,11 +90,6 @@ class Event extends BaseModel
             );
     }
 
-    /**
-     * accessor url to uri
-     *
-     * @return string
-     */
     public function getUrlAttribute(): string
     {
         return $this->uri;

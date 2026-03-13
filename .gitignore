@@ -13,10 +13,6 @@ yarn-error.log
 .env
 database/database.sqlite*
 
-# IDE helper files. These can be auto generated when running composer update
-/_ide_helper.php
-/_ide_helper_models.php
-.phpstorm.meta.php
 public/js
 public/css
 public/mix-manifest.json

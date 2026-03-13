@@ -39,6 +39,6 @@ class ImportEventsCommand extends Command
                 ImportEventForOrganization::process($event_data, $org);
             }
 
-        } while (++$current_page < $last_page);
+        } while (++$current_page <= $last_page);
     }
 }

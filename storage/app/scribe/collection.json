@@ -171,12 +171,6 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "is_paid",
-                                    "value": "",
-                                    "description": "Filter events that require payment (null means we currently cannot determine if event is paid).",
-                                    "disabled": true
-                                },
-                                {
                                     "key": "min_rsvp",
                                     "value": "",
                                     "description": "Must be at least 0.",
@@ -201,6 +195,12 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "is_paid",
+                                    "value": "",
+                                    "description": "Filter events that require payment (null means we currently cannot determine if event is paid).",
+                                    "disabled": true
+                                },
+                                {
                                     "key": "sort_by",
                                     "value": "event_name",
                                     "description": "",
@@ -213,7 +213,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags[0]=16&name=&org_name=&service=&is_paid=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&sort_by=event_name&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags[0]=16&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [

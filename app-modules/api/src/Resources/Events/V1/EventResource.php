@@ -32,14 +32,13 @@ class EventResource extends ApiResource
                     'name' => $tag->name,
                 ]),
             ],
-            'venue' => new VenueResource($this->resource->venue),
+            'venue' => $this->resource->venue ? new VenueResource($this->resource->venue) : null,
             'service' => [
                 'name' => $this->resource->service,
                 'id' => $this->resource->service_id,
             ],
             'created_at' => $this->resource->created_at->toISOString(),
             'updated_at' => $this->resource->updated_at->toISOString(),
-            'is_paid' => $this->resource->is_paid,
         ];
     }
 
