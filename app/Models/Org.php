@@ -73,7 +73,7 @@ class Org extends BaseModel
 
     public function getEventHandler(): AbstractEventHandler
     {
-            $handler = collect(config('event-import-handlers.handlers'))
+        $handler = collect(config('event-import-handlers.handlers'))
             ->firstOrFail(fn ($handler, $service) => $this->service->value === $service);
 
         return new $handler($this);
