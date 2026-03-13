@@ -11,7 +11,7 @@ class HomeController extends Controller
         return view('index', [
             'upcoming_events' => Event::future()
                 ->published()
-                ->with('organization')
+                ->with('organization', 'venue')
                 ->limit(5)
                 ->get(),
         ]);

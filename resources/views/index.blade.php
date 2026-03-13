@@ -1,127 +1,103 @@
 @extends('layouts.app', ['remove_space' => true])
 
 @section('title', 'Hackgreenville - A Developer Community in the Greenville SC Area')
+@section('description', 'Discover tech meetups, events, and organizations in Greenville, SC. Connect with local hackers, makers, and tinkerers through our Slack community and calendar of upcoming events.')
 
 @section('content')
     <div id="homepage" class="overflow-x-hidden">
-        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative bg-cover bg-center" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
-            <div class="overlay"></div>
-            <div class="max-w-7xl mx-auto py-12 sm:py-20 text-center px-4">
-                <h1 class="text-3xl sm:text-5xl md:text-6xl font-light text-white drop-shadow-lg">Build Stuff. Meet People. Do cool things.</h1>
-                <p class="lead my-8 sm:my-12 text-gray-100">Meetups &middot; Talks &middot; Projects</p>
-                <p class="lead">
-                    <a class="inline-block bg-success text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-medium no-underline hover:opacity-90 transition-opacity drop-shadow-md" href="/join-slack" role="button">Request to Join
-                        Slack</a>
-                </p>
+        {{-- Hero --}}
+        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative overflow-hidden min-h-[28rem] sm:min-h-[32rem] flex items-center">
+            <img src="{{ asset('img/hackgreenville-banner.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-gray-900/60 to-gray-900/40 z-[2]"></div>
+            <div class="max-w-7xl mx-auto w-full px-6 sm:px-8 py-16 sm:py-24 relative z-10">
+                <div class="max-w-2xl">
+                    <p class="text-sm sm:text-base font-medium tracking-widest uppercase text-success mb-4 sm:mb-6">Greenville, SC Tech Community</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+                        Build Stuff.<br class="hidden sm:block"/>
+                        Meet People.<br class="hidden sm:block"/>
+                        Do Cool Things.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 mt-5 sm:mt-6 max-w-lg">
+                        Join hundreds of local hackers, makers, and tinkerers sharing meetups, talks, and projects.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 mt-8 sm:mt-10">
+                        <a class="inline-block bg-success text-white px-7 py-3.5 rounded-lg text-base font-semibold no-underline hover:bg-green-600 transition-colors" href="/join-slack">
+                            Join Our Slack
+                        </a>
+                        <a class="inline-block bg-white/10 backdrop-blur text-white px-7 py-3.5 rounded-lg text-base font-semibold no-underline hover:bg-white/20 transition-colors border border-white/20" href="{{ route('events.index') }}">
+                            Browse Events
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto my-12 px-4">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <div class="md:col-span-6 lg:col-span-8">
-                    <div class="text-center">
-                        <h3 class="screaming-hackgreenville-question">What is HackGreenville?</h3>
-
-                        <p class="summary">
-                            HackGreenville is a community of "hackers" located in and around Greenville, SC. Our
-                            community exists to foster personal growth for community
-                            members through sharing and promoting local tech opportunities.
+        {{-- About + Image --}}
+        <div class="py-16 sm:py-20">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                    <div class="text-center lg:text-left">
+                        <img src="{{ url('img/meetup.jpeg') }}" alt="HackGreenville community meetup" class="max-w-full h-auto rounded-lg shadow-md" loading="lazy">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-light mb-4">What is HackGreenville?</h2>
+                        <p class="text-base text-gray-700 leading-relaxed mb-3">
+                            HackGreenville is a community of "hackers" in and around Greenville, SC. We exist to foster personal growth through sharing and promoting local tech opportunities.
+                        </p>
+                        <p class="text-base text-gray-700 leading-relaxed">
+                            We're the go-to resource for discovering and connecting with Upstate SC tech hackers, makers, and tinkerers. Explore the site for meetups and events, or join our active
+                            <a href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further.
                         </p>
                     </div>
-
-                    <hr class="sm:hidden my-8">
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 items-center">
-                        <div class="text-center">
-                            <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto">
-                        </div>
-                        <div>
-                            <p class="summary">
-                                HG is the <code class="bg-gray-100 px-1 py-0.5 rounded">"GO TO"</code> resource for discovering and connecting with Upstate SC
-                                tech hackers, makers, and tinkerers.
-                            </p>
-                            <p class="summary">
-                                Explore the site for more meetups and events, and make sure to join our active <a
-                                    href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
-                            </p>
-                            <button onclick="location.href='/join-slack'" class="inline-block border-2 border-primary text-primary px-8 py-4 rounded-lg text-xl font-medium mt-4 hover:bg-primary hover:text-white transition-colors">
-                                Join Us
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-                        <div class="my-12">
-                            <h2 class="text-4xl font-light text-center mt-12">Contribute</h2>
-                            <div class="summary max-w-7xl mx-auto px-4">
-                                hackgreenville.com is built on the
-                                <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <a href="https://github.com/hackgvl/hackgreenville-com"
-                               class="no-underline text-gray-900 hover:text-gray-700">
-                                <p style="line-height:1;" class="mt-12 text-7xl sm:text-8xl lg:text-9xl">
-                                    <i class="fa fa-github"></i>
-                                </p>
-                                <p class="summary">Join the Project</p>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-                <div class="md:col-span-6 lg:col-span-4 mt-5 md:mt-3">
-                    <div>
-                        <h3 class="text-center text-2xl font-semibold mb-6">
-                            Upcoming Events
-                        </h3>
-                        <ul
-                            @class(['timeline'=>$upcoming_events->isNotEmpty()])
-                        >
-                            @if ($upcoming_events->isEmpty())
-                                <li>
-                                    <strong class="font-bold">No</strong> events to display.
-                                </li>
-                            @else
-                                @foreach ($upcoming_events as $event)
-                                    <li class="timeline-inverted">
+            </div>
+        </div>
 
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title text-lg font-semibold">
-                                                    @if($event->cancelled_at)
-                                                        <div class="text-danger">
-                                                            [CANCELLED]
-                                                        </div>
-                                                    @endif
-                                                    {{ $event->event_name }}
-                                                </h4>
-                                                <p class="timeline-subtitle h6 text-base">
-                                                    {{ $event->organization->title }}
-                                                </p>
-                                                <p>
-                                                    <small class="text-gray-500 text-sm">
-                                                        <i class="fa fa-calendar"></i> {{ $event->active_at->format('M/d h:i A') }}
-                                                    </small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <div>
-                                                    <button
-                                                        onClick="showMoreTimeline(@js(['title' => $event->event_name, 'html' => str($event->description)->markdown()->toString(), 'confirmButtonText' => "Close"]))"
-                                                        class="inline-block bg-gray-600 text-white px-4 py-2 rounded font-medium hover:bg-gray-700 transition-colors"
-                                                        type="button"
-                                                    >
-                                                        Details
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            @endif
-                        </ul>
+        {{-- Upcoming Events --}}
+        <div class="bg-gray-50 py-16 sm:py-20">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-center text-2xl sm:text-3xl font-light mb-8">
+                    Upcoming Events
+                </h2>
+                @if ($upcoming_events->isEmpty())
+                    <p class="text-center text-gray-500">
+                        <strong class="font-bold">No</strong> events to display.
+                    </p>
+                @else
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden divide-y divide-gray-200">
+                        @foreach ($upcoming_events as $event)
+                            @include('events._item', ['event' => $event])
+                        @endforeach
                     </div>
+                    <div class="text-center mt-6">
+                        <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-blue-700 no-underline transition-colors">
+                            View all events
+                            <x-lucide-arrow-right class="w-3.5 h-3.5"/>
+                        </a>
+                    </div>
+                @endif
+            </div>
+        </div>
 
+        {{-- Get Involved --}}
+        <div class="py-16 sm:py-20">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-2xl sm:text-3xl font-light mb-3">Get Involved</h2>
+                <p class="text-base text-gray-600 mb-8 max-w-xl mx-auto">
+                    HackGreenville is open source and community-driven. Contribute code, suggest features, or help improve the platform.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://github.com/hackgvl/hackgreenville-com"
+                       rel="noopener"
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
+                        <x-lucide-github class="w-5 h-5"/>
+                        View on GitHub
+                    </a>
+                    <a href="{{ route('contribute') }}"
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
+                        <x-lucide-handshake class="w-5 h-5"/>
+                        Volunteer &amp; Sponsor
+                    </a>
                 </div>
             </div>
         </div>

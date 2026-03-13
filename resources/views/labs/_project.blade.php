@@ -1,61 +1,28 @@
-<?php ?>
-
-<a
-	href="{{ $project->link }}"
-	target="_blank"
-	@class([
-		'block m-0 p-4 project flex border border-gray-300 shadow-sm hover:shadow-md transition-shadow bg-white no-underline',
-		'rounded-t-lg' => $index == 0,
-		'rounded-b-lg' => $index == ($total - 1),
-		'border-t-0' => $index > 0
-	])
->
-	<div class="flex flex-col flex-grow">
-		<div class="mb-2">
-			<span class="inline text-black font-bold">{{ $project->name }}</span>
-			<span class="inline mx-1">—</span>
-			<span class="inline text-gray-700">{{ $project->description }}</span>
+<a href="{{ $project->link }}" rel="noopener" target="_blank"
+   class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors no-underline">
+	<div class="flex-grow min-w-0">
+		<div class="mb-0.5">
+			<span class="text-gray-900 font-semibold text-sm">{{ $project->name }}</span>
+			<span class="text-gray-400 mx-1">&mdash;</span>
+			<span class="text-gray-600 text-sm">{{ $project->description }}</span>
 		</div>
-		<div class="text-sm text-gray-600">
-			@switch($project->linkType)
-				@case('github')
-					<i class="fa fa-github mx-1"></i>
-					{{ __('Github') }}
-					@break
-
-				@default
-					<i class="fa fa-external-link mx-1"></i>
-					{{ __('Website') }}
-					@break
-			@endswitch
-		</div>
+		<span class="text-xs text-gray-400">
+			@if($project->linkType === 'github')
+				<x-lucide-github class="w-3 h-3 inline"/> Github
+			@else
+				<x-lucide-external-link class="w-3 h-3 inline"/> Website
+			@endif
+		</span>
 	</div>
 	@switch($project->status)
 		@case('active')
-			<span
-				class="flex justify-center items-center px-2 py-1 rounded text-sm font-bold ml-auto self-start"
-				style="color: green; background-color: rgb(220, 255, 220)"
-			>
-				{{ __('Active') }}
-			</span>
+			<span class="shrink-0 text-xs font-semibold px-2 py-0.5 rounded bg-green-50 text-green-700">Active</span>
 			@break
-
 		@case('considering')
-			<span
-				class="flex justify-center items-center px-2 py-1 rounded text-sm font-bold ml-auto self-start"
-				style="color: rgb(100, 99, 33); background-color: rgb(247, 245, 163)"
-			>
-				{{ __('Considering') }}
-			</span>
+			<span class="shrink-0 text-xs font-semibold px-2 py-0.5 rounded bg-yellow-50 text-yellow-700">Considering</span>
 			@break
-
 		@case('retired')
-			<span
-				class="flex justify-center items-center px-2 py-1 rounded text-sm font-bold ml-auto self-start"
-				style="color: rgb(116, 116, 116); background-color: rgb(226, 226, 226)"
-			>
-				{{ __('Retired') }}
-			</span>
+			<span class="shrink-0 text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-500">Retired</span>
 			@break
 	@endswitch
 </a>

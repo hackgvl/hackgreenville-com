@@ -3,121 +3,113 @@
 @section('title', $org->title)
 @section('description', 'Highlights of the '. $org->title . ' organization of '. $org->city . ', SC, including upcoming events, organizer, and history.')
 
-@section('content')
-    <div class="max-w-7xl mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-            <div class="mb-3 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold text-primary">
-                    {{ $org->title }}
-                </h1>
-            </div>
+@section('head')
+    @php
+        $orgSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => $org->title,
+            'address' => [
+                '@type' => 'PostalAddress',
+                'addressLocality' => $org->city ?? 'Greenville',
+                'addressRegion' => 'SC',
+                'addressCountry' => 'US',
+            ],
+            'memberOf' => [
+                '@type' => 'Organization',
+                'name' => 'HackGreenville',
+                'url' => config('app.url'),
+            ],
+        ];
+        if ($org->uri) $orgSchema['url'] = $org->uri;
+        if ($org->description) $orgSchema['description'] = strip_tags($org->description);
+        if ($org->established_at) $orgSchema['foundingDate'] = $org->established_at->format('Y');
+    @endphp
+    <script type="application/ld+json">{!! json_encode($orgSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
+@endsection
 
-            <div class="w-full md:w-auto">
-                <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="inline-flex items-center justify-center bg-primary text-white rounded-full px-6 py-3 shadow-sm hover:bg-blue-700 transition-colors w-full md:w-auto no-underline">
-                    <i class="fa fa-calendar mr-2"></i>
-                    Subscribe
-                </a>
+@section('content')
+    <div class="max-w-4xl mx-auto px-4 py-8">
+
+        {{-- Back link --}}
+        <a href="{{ route('orgs.index') }}" class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-primary no-underline transition-colors mb-6">
+            <x-lucide-arrow-left class="w-3.5 h-3.5"/>
+            Organizations
+        </a>
+
+        {{-- Header --}}
+        <div class="mb-8">
+            <div class="flex items-center gap-3 flex-wrap mb-1">
+                <h1 class="text-3xl font-bold text-gray-900">{{ $org->title }}</h1>
+                @if(!$org->isActive())
+                    <span class="inline-block text-gray-400 text-xs font-semibold border border-gray-300 px-2 py-0.5 rounded">Inactive</span>
+                @endif
             </div>
+            <p class="text-sm text-gray-500">
+                {{ $org->focus_area }} &middot; {{ $org->city }} &middot; Est. {{ $org->established_at->year }}@if($org->inactive_at) &middot; Inactive {{ $org->inactive_at->year }}@endif
+            </p>
         </div>
 
-        <blockquote class="border-l-4 border-gray-300 pl-4 italic mb-6">
-            {!! $org->description !!}
-        </blockquote>
+        {{-- Description --}}
+        @if($org->description)
+            <div class="text-gray-700 leading-relaxed mb-10">
+                {!! $org->description !!}
+            </div>
+        @endif
 
-        <table class="w-full border-collapse">
-            <tbody>
+        {{-- Details --}}
+        <section class="mb-10">
+            <div class="flex items-center gap-3 mb-4">
+                <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Details</h2>
+                <div class="h-px bg-gray-200 flex-1"></div>
+            </div>
+
+            <div class="space-y-0 text-sm">
                 @if($org->event_calendar_uri)
-                    <tr class="border-b">
-                        <th scope="row" class="text-left py-3 pr-4 font-medium">
-                            Event Homepage
-                        </th>
-                        <td class="py-3">
-                            <a href="{{ $org->event_calendar_uri }}" class="text-primary underline hover:text-blue-600">{{ $org->event_calendar_uri }}</a>
-                        </td>
-                    </tr>
+                    <div class="flex flex-col sm:flex-row sm:items-center py-2.5 border-b border-gray-100 gap-1 sm:gap-4">
+                        <span class="text-gray-400 sm:w-36 shrink-0">Event Homepage</span>
+                        <a href="{{ $org->event_calendar_uri }}" rel="noopener" class="text-primary hover:text-blue-600 no-underline truncate transition-colors">{{ $org->event_calendar_uri }}</a>
+                    </div>
                 @endif
                 @if($org->uri)
-                    <tr class="border-b">
-                        <th scope="row" class="text-left py-3 pr-4 font-medium">
-                            Organization Homepage
-                        </th>
-                        <td class="py-3">
-                            <a href="{{ $org->uri }}" class="text-primary underline hover:text-blue-600">{{ $org->uri }}</a>
-                        </td>
-                    </tr>
+                    <div class="flex flex-col sm:flex-row sm:items-center py-2.5 border-b border-gray-100 gap-1 sm:gap-4">
+                        <span class="text-gray-400 sm:w-36 shrink-0">Homepage</span>
+                        <a href="{{ $org->uri }}" rel="noopener" class="text-primary hover:text-blue-600 no-underline truncate transition-colors">{{ $org->uri }}</a>
+                    </div>
                 @endif
-                <tr class="border-b">
-                    <th scope="row" class="text-left py-3 pr-4 font-medium">
-                        City
-                    </th>
-                    <td class="py-3">
-                        {{ $org->city }}
-                    </td>
-                </tr>
-                <tr class="border-b">
-                    <th scope="row" class="text-left py-3 pr-4 font-medium">
-                        Focus Area
-                    </th>
-                    <td class="py-3">
-                        {{ $org->focus_area }}
-                    </td>
-                </tr>
-                <tr class="border-b">
-                    <th scope="row" class="text-left py-3 pr-4 font-medium">
-                        Contact Person
-                    </th>
-                    <td class="py-3">
-                        {{ $org->primary_contact_person }}
-                    </td>
-                </tr>
-                <tr class="border-b">
-                    <th scope="row" class="text-left py-3 pr-4 font-medium">
-                        Organization Type
-                    </th>
-                    <td class="py-3">
-                        {{ $org->organization_type }}
-                    </td>
-                </tr>
-                <tr class="border-b">
-                    <th scope="row" class="text-left py-3 pr-4 font-medium">
-                        Year Established
-                    </th>
-                    <td class="py-3">
-                        {{ $org->established_at->year }}
-                    </td>
-                </tr>
-                @if($org->inactive_at)
-                    <tr class="border-b">
-                        <th scope="row" class="text-left py-3 pr-4 font-medium">
-                            Year Inactive
-                        </th>
-                        <td class="py-3">
-                            {{ $org->inactive_at->year }}
-                        </td>
-                    </tr>
+                @if($org->primary_contact_person)
+                    <div class="flex flex-col sm:flex-row sm:items-center py-2.5 border-b border-gray-100 gap-1 sm:gap-4">
+                        <span class="text-gray-400 sm:w-36 shrink-0">Contact</span>
+                        <span class="text-gray-700">{{ $org->primary_contact_person }}</span>
+                    </div>
                 @endif
-                <tr class="border-b">
-                    <th scope="row" class="text-left py-3 pr-4 font-medium">
-                        Organization Status
-                    </th>
-                    <td class="py-3">
-                        <div class="text-2xl">
-                            @if($org->isActive())
-                                <span class="inline-block bg-success text-white px-3 py-1 rounded text-base font-medium">Active</span>
-                            @else
-                                <span class="inline-block bg-blue-500 text-white px-3 py-1 rounded text-base font-medium">Inactive</span>
-                            @endif
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <div class="flex flex-col sm:flex-row sm:items-center py-2.5 border-b border-gray-100 gap-1 sm:gap-4">
+                    <span class="text-gray-400 sm:w-36 shrink-0">Type</span>
+                    <span class="text-gray-700">{{ $org->organization_type }}</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center py-2.5 gap-1 sm:gap-4">
+                    <span class="text-gray-400 sm:w-36 shrink-0">Subscribe</span>
+                    <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="text-gray-500 hover:text-primary no-underline inline-flex items-center gap-1.5 transition-colors">
+                        <x-lucide-rss class="w-3.5 h-3.5"/> Calendar feed
+                    </a>
+                </div>
+            </div>
+        </section>
 
+        {{-- Upcoming Events --}}
         @if($org->events->isNotEmpty())
-            <h2 class="text-3xl font-bold mt-8 mb-4">Upcoming Events</h2>
-            @foreach($org->events as $event)
-                @include('events._item', ['event' => $event])
-            @endforeach
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Upcoming Events</h2>
+                    <div class="h-px bg-gray-200 flex-1"></div>
+                    <span class="text-xs text-gray-300 font-medium tabular-nums">{{ $org->events->count() }}</span>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden divide-y divide-gray-100">
+                    @foreach($org->events as $event)
+                        @include('events._item', ['event' => $event])
+                    @endforeach
+                </div>
+            </section>
         @endif
     </div>
 @endsection
