@@ -786,20 +786,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The service that imported the event (meetup_graphql, eventbrite, etc.). Must not be greater than 255 characters.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>is_paid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="is_paid"                data-endpoint="GETapi-v1-events"
-               value=""
-               data-component="query">
-    <br>
-<p>Filter events that require payment (null means we currently cannot determine if event is paid).</p>
-Must be one of:
-<ul style="list-style-type: square;"><li><code>null</code></li> <li><code>true</code></li> <li><code>false</code></li></ul>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>min_rsvp</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -846,6 +832,20 @@ Must be one of:
                data-component="query">
     <br>
 <p>Must be 2 characters.</p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_paid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="is_paid"                data-endpoint="GETapi-v1-events"
+               value=""
+               data-component="query">
+    <br>
+<p>Filter events that require payment (null means we currently cannot determine if event is paid).</p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>null</code></li> <li><code>true</code></li> <li><code>false</code></li></ul>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;

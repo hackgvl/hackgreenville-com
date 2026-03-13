@@ -355,21 +355,6 @@ paths:
             nullable: true
         -
           in: query
-          name: is_paid
-          description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
-          example: null
-          required: false
-          schema:
-            type: string
-            description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
-            example: null
-            enum:
-              - 'null'
-              - 'true'
-              - 'false'
-            nullable: true
-        -
-          in: query
           name: min_rsvp
           description: 'Must be at least 0.'
           example: null
@@ -411,6 +396,21 @@ paths:
             type: string
             description: 'Must be 2 characters.'
             example: null
+            nullable: true
+        -
+          in: query
+          name: is_paid
+          description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter events that require payment (null means we currently cannot determine if event is paid).'
+            example: null
+            enum:
+              - 'null'
+              - 'true'
+              - 'false'
             nullable: true
         -
           in: query
