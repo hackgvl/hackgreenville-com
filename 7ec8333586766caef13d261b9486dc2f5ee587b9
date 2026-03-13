@@ -1,0 +1,29 @@
+resources/views/components/calendar-feed-promo.blade.php
+  434c7e7e9c24dde9 2-5,8-9
+resources/views/index.blade.php
+  434c7e7e9c24dde9 62,64
+resources/views/events/_item.blade.php
+  434c7e7e9c24dde9 3-5,20-21,25-29,31-34,37,39,43,45
+app/Http/Controllers/HomeController.php
+  434c7e7e9c24dde9 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.10",
+  "base_commit_sha": "7ec8333586766caef13d261b9486dc2f5ee587b9",
+  "prompts": {
+    "434c7e7e9c24dde9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f55b496a-3b97-4152-86e8-f4c945ac9c6b",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 35,
+      "total_deletions": 58,
+      "accepted_lines": 27,
+      "overriden_lines": 0
+    }
+  }
+}
