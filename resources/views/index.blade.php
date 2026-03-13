@@ -59,31 +59,9 @@
                     <strong class="font-bold">No</strong> events to display.
                 </p>
             @else
-                <div class="divide-y divide-gray-200">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden divide-y divide-gray-200">
                     @foreach ($upcoming_events as $event)
-                        <div class="flex items-center justify-between gap-4 py-3 px-2">
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <a href="{{ $event->url }}" rel="noopener" class="font-semibold text-base text-gray-900 hover:text-primary truncate block">
-                                        {{ $event->event_name }}
-                                    </a>
-                                    @if($event->cancelled_at)
-                                        <span class="text-danger text-xs font-bold">[CANCELLED]</span>
-                                    @endif
-                                </div>
-                                <p class="text-sm text-gray-500">
-                                    <a href="{{ route('orgs.show', $event->organization) }}" class="text-gray-500 hover:text-primary">{{ $event->organization->title }}</a>
-                                </p>
-                                <p class="text-sm text-gray-400">
-                                    <x-lucide-calendar class="w-3.5 h-3.5 inline"/> {{ $event->active_at->format('F j') }}, {{ $event->active_at->format('i') === '00' ? $event->active_at->format('ga') : $event->active_at->format('g:ia') }}
-                                </p>
-                            </div>
-                            @if(!$event->cancelled_at)
-                                <a href="{{ $event->url }}" rel="noopener" class="shrink-0 text-sm bg-gray-100 text-gray-700 px-3 py-1.5 rounded hover:bg-gray-200 transition-colors no-underline">
-                                    View Event
-                                </a>
-                            @endif
-                        </div>
+                        @include('events._item', ['event' => $event])
                     @endforeach
                 </div>
             @endif
