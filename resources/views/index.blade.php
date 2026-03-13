@@ -6,80 +6,99 @@
 @section('content')
     <div id="homepage" class="overflow-x-hidden">
         {{-- Hero --}}
-        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative bg-cover bg-center" style="background-image: url('{{ asset('img/hackgreenville-banner.jpg') }}');">
-            <div class="absolute inset-0 bg-black/50 z-[2]"></div>
-            <div class="max-w-7xl mx-auto py-16 sm:py-24 text-center px-4 relative z-10">
-                <h1 class="text-3xl sm:text-5xl md:text-6xl font-light text-white drop-shadow-lg">Build Stuff. Meet People. Do cool things.</h1>
-                <p class="text-xl font-light my-8 sm:my-12 text-gray-100">Meetups &middot; Talks &middot; Projects</p>
-                <a class="inline-block bg-success text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-lg sm:text-xl font-medium no-underline hover:opacity-90 transition-opacity drop-shadow-md" href="/join-slack" role="button">Request to Join Slack</a>
-            </div>
-        </div>
-
-        {{-- What is HackGreenville --}}
-        <div class="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-center">
-            <h2 class="text-2xl sm:text-3xl font-light mb-4">What is HackGreenville?</h2>
-            <p class="text-lg text-gray-700 leading-relaxed">
-                HackGreenville is a community of "hackers" located in and around Greenville, SC. Our
-                community exists to foster personal growth for community
-                members through sharing and promoting local tech opportunities.
-            </p>
-        </div>
-
-        {{-- Join Us + meetup image --}}
-        <div class="bg-gray-50 py-16">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="text-center">
-                        <img src="{{url('img/meetup.jpeg')}}" alt="Join Us" class="max-w-full h-auto rounded-lg shadow-md" loading="lazy">
-                    </div>
-                    <div>
-                        <p class="text-basetext-gray-700 leading-relaxed">
-                            HG is the <code class="bg-gray-200 px-1.5 py-0.5 rounded text-sm">"GO TO"</code> resource for discovering and connecting with Upstate SC
-                            tech hackers, makers, and tinkerers.
-                        </p>
-                        <p class="text-basemt-4 text-gray-700 leading-relaxed">
-                            Explore the site for more meetups and events, and make sure to join our active <a
-                                href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further!
-                        </p>
-                        <a href="/join-slack" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-lg text-lg font-medium mt-6 no-underline hover:bg-primary hover:text-white transition-colors">
-                            Join Us
+        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative overflow-hidden min-h-[28rem] sm:min-h-[32rem] flex items-center">
+            <img src="{{ asset('img/hackgreenville-banner.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-gray-900/60 to-gray-900/40 z-[2]"></div>
+            <div class="max-w-7xl mx-auto w-full px-6 sm:px-8 py-16 sm:py-24 relative z-10">
+                <div class="max-w-2xl">
+                    <p class="text-sm sm:text-base font-medium tracking-widest uppercase text-success mb-4 sm:mb-6">Greenville, SC Tech Community</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+                        Build Stuff.<br class="hidden sm:block"/>
+                        Meet People.<br class="hidden sm:block"/>
+                        Do Cool Things.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 mt-5 sm:mt-6 max-w-lg">
+                        Join hundreds of local hackers, makers, and tinkerers sharing meetups, talks, and projects.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 mt-8 sm:mt-10">
+                        <a class="inline-block bg-success text-white px-7 py-3.5 rounded-lg text-base font-semibold no-underline hover:bg-green-600 transition-colors" href="/join-slack">
+                            Join Our Slack
+                        </a>
+                        <a class="inline-block bg-white/10 backdrop-blur text-white px-7 py-3.5 rounded-lg text-base font-semibold no-underline hover:bg-white/20 transition-colors border border-white/20" href="{{ route('events.index') }}">
+                            Browse Events
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- Upcoming Events --}}
-        <div class="max-w-4xl mx-auto px-4 py-16 sm:py-20">
-            <h2 class="text-center text-3xl font-semibold mb-10">
-                Upcoming Events
-            </h2>
-            @if ($upcoming_events->isEmpty())
-                <p class="text-center text-gray-500">
-                    <strong class="font-bold">No</strong> events to display.
-                </p>
-            @else
-                <div class="bg-white rounded-lg shadow-sm overflow-hidden divide-y divide-gray-200">
-                    @foreach ($upcoming_events as $event)
-                        @include('events._item', ['event' => $event])
-                    @endforeach
+        {{-- About + Image --}}
+        <div class="py-16 sm:py-20">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                    <div class="text-center lg:text-left">
+                        <img src="{{ url('img/meetup.jpeg') }}" alt="HackGreenville community meetup" class="max-w-full h-auto rounded-lg shadow-md" loading="lazy">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-light mb-4">What is HackGreenville?</h2>
+                        <p class="text-base text-gray-700 leading-relaxed mb-3">
+                            HackGreenville is a community of "hackers" in and around Greenville, SC. We exist to foster personal growth through sharing and promoting local tech opportunities.
+                        </p>
+                        <p class="text-base text-gray-700 leading-relaxed">
+                            We're the go-to resource for discovering and connecting with Upstate SC tech hackers, makers, and tinkerers. Explore the site for meetups and events, or join our active
+                            <a href="/join-slack" class="text-primary hover:text-blue-600 underline">Slack community</a> to connect further.
+                        </p>
+                    </div>
                 </div>
-            @endif
+            </div>
         </div>
 
-        {{-- Contribute --}}
-        <div class="bg-gray-50 py-16">
+        {{-- Upcoming Events --}}
+        <div class="bg-gray-50 py-16 sm:py-20">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-center text-2xl sm:text-3xl font-light mb-8">
+                    Upcoming Events
+                </h2>
+                @if ($upcoming_events->isEmpty())
+                    <p class="text-center text-gray-500">
+                        <strong class="font-bold">No</strong> events to display.
+                    </p>
+                @else
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden divide-y divide-gray-200">
+                        @foreach ($upcoming_events as $event)
+                            @include('events._item', ['event' => $event])
+                        @endforeach
+                    </div>
+                    <div class="text-center mt-6">
+                        <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-blue-700 no-underline transition-colors">
+                            View all events
+                            <x-lucide-arrow-right class="w-3.5 h-3.5"/>
+                        </a>
+                    </div>
+                @endif
+            </div>
+        </div>
+
+        {{-- Get Involved --}}
+        <div class="py-16 sm:py-20">
             <div class="max-w-3xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-light mb-4">Contribute</h2>
-                <p class="text-basetext-gray-700 mb-8">
-                    hackgreenville.com is built on the
-                    <a href="https://laravel.com/" class="text-primary hover:text-blue-600 underline">Laravel</a> PHP framework
+                <h2 class="text-2xl sm:text-3xl font-light mb-3">Get Involved</h2>
+                <p class="text-base text-gray-600 mb-8 max-w-xl mx-auto">
+                    HackGreenville is open source and community-driven. Contribute code, suggest features, or help improve the platform.
                 </p>
-                <a href="https://github.com/hackgvl/hackgreenville-com"
-                   class="inline-flex items-center gap-3 no-underline text-gray-900 hover:text-primary transition-colors text-xl">
-                    <x-lucide-github class="w-12 h-12"/>
-                    <span class="font-medium">Join the Project</span>
-                </a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://github.com/hackgvl/hackgreenville-com"
+                       rel="noopener"
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
+                        <x-lucide-github class="w-5 h-5"/>
+                        View on GitHub
+                    </a>
+                    <a href="{{ route('contribute') }}"
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
+                        <x-lucide-handshake class="w-5 h-5"/>
+                        Volunteer &amp; Sponsor
+                    </a>
+                </div>
             </div>
         </div>
     </div>

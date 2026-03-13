@@ -12,14 +12,64 @@
     <div class="hidden peer-checked:block nav-break:flex nav-break:flex-grow nav-break:items-center nav-break:justify-between nav-break:relative nav-break:bg-transparent nav-break:shadow-none nav-break:p-0 nav-break:w-auto absolute top-full left-0 right-0 z-50 bg-primary p-4 shadow-lg w-full"
          id="navMenu">
         <ul class="flex flex-col nav-break:flex-row nav-break:items-center list-none pl-0 mb-0 mr-auto divide-y divide-white/10 nav-break:divide-y-0">
-            <x-nav-link route="events.index">Events</x-nav-link>
-            <x-nav-link route="calendar.index">Calendar</x-nav-link>
+
+            {{-- Events dropdown (desktop) --}}
+            <li class="hidden nav-break:block relative group">
+                <a href="{{ route('events.index') }}"
+                   class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors {{ Route::is('events.index') || Route::is('calendar.index') ? 'text-white font-semibold' : 'text-white/70 hover:text-white' }}">
+                    Events
+                    <x-lucide-chevron-down class="w-3 h-3"/>
+                </a>
+                <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute left-0 top-full pt-1 z-50">
+                    <ul class="bg-white rounded-lg shadow-lg border border-gray-200 py-1 min-w-[10rem] list-none pl-0 mb-0">
+                        <li>
+                            <a href="{{ route('events.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Event List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('calendar.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Calendar View
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            {{-- Mobile: events links flat --}}
+            <x-nav-link route="events.index" class="nav-break:hidden">Events</x-nav-link>
+            <x-nav-link route="calendar.index" class="nav-break:hidden">Calendar</x-nav-link>
+
             <x-nav-link route="orgs.index">Organizations</x-nav-link>
             <x-nav-link route="labs.index">Labs</x-nav-link>
             <x-nav-link route="hg-nights.index">HG Nights</x-nav-link>
             <x-nav-link route="about">About</x-nav-link>
-            <x-nav-link route="contribute">Contribute</x-nav-link>
-            <x-nav-link route="contact">Contact</x-nav-link>
+
+            {{-- More dropdown (desktop) --}}
+            <li class="hidden nav-break:block relative group">
+                <button class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors text-white/70 hover:text-white">
+                    More
+                    <x-lucide-chevron-down class="w-3 h-3"/>
+                </button>
+                <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute right-0 top-full pt-1 z-50">
+                    <ul class="bg-white rounded-lg shadow-lg border border-gray-200 py-1 min-w-[10rem] list-none pl-0 mb-0">
+                        <li>
+                            <a href="{{ route('contribute') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Contribute
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('contact') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            {{-- Mobile: more links flat --}}
+            <x-nav-link route="contribute" class="nav-break:hidden">Contribute</x-nav-link>
+            <x-nav-link route="contact" class="nav-break:hidden">Contact</x-nav-link>
         </ul>
 
         <div class="mt-2 pt-2 border-t border-white/20 nav-break:mt-0 nav-break:pt-0 nav-break:border-0 nav-break:ml-4">

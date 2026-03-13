@@ -1,18 +1,20 @@
-@extends('layouts.app', ['remove_space' => true])
+@extends('layouts.app')
 
 @section('title', 'Contact HackGreenville')
 @section('description', 'Send non-spammy questions or comments to the HackGreenville community.')
 
 @section('content')
-    <div id="contact">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mt-20">
-                <h1 class="text-3xl font-bold mb-3">{{ __('Thank you!') }}</h1>
-
-                <p class="text-base">
-                    {{ __('We\'ll try to get back to you as soon as possible!') }}
-                </p>
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto text-center py-16">
+            <div class="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-5">
+                <x-lucide-check class="w-6 h-6 text-success"/>
             </div>
+            <h1 class="text-2xl font-bold mb-2">{{ __('Thank you!') }}</h1>
+            <p class="text-gray-500 text-sm">{{ __('We\'ll try to get back to you as soon as possible.') }}</p>
+            <a href="/" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-blue-700 no-underline transition-colors mt-6">
+                <x-lucide-arrow-left class="w-3.5 h-3.5"/>
+                Back to home
+            </a>
         </div>
     </div>
 @endsection
