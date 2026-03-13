@@ -47,9 +47,9 @@ class MeetupRestHandler extends AbstractEventHandler
             'name' => $data['name'],
             'description' => $data['description'],
             'url' => $data['link'],
-            'starts_at' => Carbon::createFromTimestampMs($data['time']),
+            'starts_at' => Carbon::createFromTimestampMs($data['time'])->setTimezone(config('app.timezone')),
             // Meetup (rest) does not provide an event end time
-            'ends_at' => Carbon::createFromTimestampMs($data['time'])->addHours(2),
+            'ends_at' => Carbon::createFromTimestampMs($data['time'])->setTimezone(config('app.timezone'))->addHours(2),
             'timezone' => Carbon::createFromTimestampMs($data['time'])->utcOffset($data['utc_offset'] / 1000)->timezoneName,
             'cancelled_at' => match ($data['status']) {
                 'cancelled' => now(),

@@ -43,6 +43,6 @@ return [
      * ],
      */
     'zones' => [
-        env('CLOUDFLARE_PRODUCTION_ZONE_ID') => [],
+        env('CLOUDFLARE_PRODUCTION_ZONE_ID', '') => [],
     ],
 ];

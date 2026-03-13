@@ -3,7 +3,7 @@
 ## Project Overview
 
 This is the HackGreenville community website built with:
-- **Backend**: Laravel 10 (PHP 8.1+)
+- **Backend**: Laravel 12 (PHP 8.5+)
 - **Frontend**: Bootstrap 4, jQuery, Sass
 - **Database**: MySQL/SQLite
 - **Admin Panel**: Filament 3.3
@@ -16,7 +16,7 @@ The project follows a modular architecture with separate app-modules for API and
 ## AI Development Team Configuration
 *Configured by team-configurator on 2025-07-29*
 
-Your project uses: Laravel 10, Bootstrap 4, MySQL, Filament Admin
+Your project uses: Laravel 12, Bootstrap 4, MySQL, Filament Admin
 
 ### Specialist Assignments
 

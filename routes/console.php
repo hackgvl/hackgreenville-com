@@ -1,12 +1,12 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Console Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of your Closure based console
-| commands. Each Closure is bound to a command instance allowing a
-| simple approach to interacting with each command's IO methods.
-|
-*/
+use HackGreenville\EventImporter\Console\Commands\ImportEventsCommand;
+use HackGreenville\EventImporter\Console\Commands\PruneMissingEventsCommand;
+use Illuminate\Support\Facades\Schedule;
+
+Schedule::command(ImportEventsCommand::class)->hourly();
+Schedule::command(PruneMissingEventsCommand::class)->dailyAt('02:00');
+
+if (config('telescope.enabled')) {
+    Schedule::command('telescope:prune')->daily();
+}
