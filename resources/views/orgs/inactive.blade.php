@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('title', 'Inactive Tech Organizations')
+@section('description', 'A list of inactive tech organizations and meetup groups in the Greenville, SC area.')
 
 @section('content')
     <div class="max-w-7xl mx-auto px-4 py-8">
 
-        <h1 class="text-4xl font-bold mb-8">Local Tech Organizations <span class="text-danger">(Inactive Groups)</span></h1>
+        <h1 class="text-3xl font-bold mb-8">Local Tech Organizations <span class="text-danger">(Inactive Groups)</span></h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($inactiveOrgs as $cat_inc => $category)
@@ -25,8 +26,8 @@
                                     </div>
                                     @if($org->event_calendar_uri)
                                         <div class="flex-shrink-0">
-                                            <a href="{{$org->event_calendar_uri }}" rel="external" class="text-primary hover:underline text-xs whitespace-nowrap">
-                                                Events Site<i class="fa fa-external-link ml-0.5 text-xs"></i>
+                                            <a href="{{$org->event_calendar_uri }}" rel="noopener" class="text-primary hover:underline text-xs whitespace-nowrap">
+                                                Events Site<x-lucide-external-link class="w-3 h-3 ml-0.5 inline"/>
                                             </a>
                                         </div>
                                     @endif
@@ -52,11 +53,11 @@
 
         <div class="mt-8 text-sm text-gray-600">
             <ul class="list-disc pl-5 space-y-2">
-                <li>This data is sourced from <a href="https://data.openupstate.org" rel="external" class="text-primary hover:underline">a community-curated
+                <li>This data is sourced from <a href="https://data.openupstate.org" rel="noopener" class="text-primary hover:underline">a community-curated
                         REST API</a>.
                 </li>
                 <li>To contribute to this project, please connect with <a href="https://codeforgreenville.org"
-                                                                          rel="external" class="text-primary hover:underline">HackGreenville Labs.</a></li>
+                                                                          rel="noopener" class="text-primary hover:underline">HackGreenville Labs.</a></li>
                 <li>To suggest an addition or update to the data, please submit a <a
                             href="https://data.openupstate.org/contact/suggestions" class="text-primary hover:underline">suggestion</a>.
                 </li>

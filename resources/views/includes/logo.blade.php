@@ -1,4 +1,4 @@
-<img class="navbar-brand-img"
+<img class="h-16"
      alt="{{ config('app.name', 'HackGreenville') }}"
      {{-- this was added to make it look nice on Filament regardless of light or dark mode --}}
      src="{{ match($darkMode ?? true) {

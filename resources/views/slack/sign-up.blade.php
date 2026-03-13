@@ -7,7 +7,7 @@
     <div id="join-slack" class="bg-gray-100 min-h-screen py-12">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-8">
-                <h1 class="text-4xl font-bold mb-6 text-gray-800">{{ __('Sign up for HackGreenville!') }}</h1>
+                <h1 class="text-3xl font-bold mb-6 text-gray-800">{{ __('Sign up for HackGreenville!') }}</h1>
 
                 <div class="mb-6">
                     <a href="https://hackgreenville.slack.com" class="inline-block bg-success text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors" rel="nofollow" target="_blank">
@@ -90,6 +90,13 @@
     </div>
     
     @push('scripts')
-        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+        <script src="https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit" async defer></script>
+        <script>
+            window.onHcaptchaLoad = function() {
+                document.querySelectorAll('.h-captcha').forEach(function(el) {
+                    if (!el.hasChildNodes()) hcaptcha.render(el);
+                });
+            };
+        </script>
     @endpush
 @endsection

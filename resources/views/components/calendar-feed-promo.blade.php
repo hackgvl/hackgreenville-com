@@ -1,24 +1,12 @@
-<style>
-.calendar-banner {
-    background: linear-gradient(135deg, #2937f0 0%, #9089fc 100%);
-}
-</style>
-<div class="max-w-7xl mx-auto py-12 px-4">
-    <div class="calendar-banner p-8 md:p-12 rounded-2xl overflow-hidden shadow-xl">
-        <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-3/4 text-center md:text-left mb-6 md:mb-0">
-                <h2 class="text-white text-3xl font-semibold mb-2" style="letter-spacing: -0.02em;">Stay in sync with your events</h2>
-                <p class="text-white text-lg opacity-90" style="letter-spacing: -0.01em;">
-                    Subscribe to our calendar feed and get real-time updates across all your devices.
-                </p>
-            </div>
-            <div class="md:w-1/4 text-center md:text-right">
-                <a href="{{ route('calendar-feed.index') }}"
-                   class="inline-block bg-white bg-opacity-90 text-blue-600 px-7 py-3 rounded-xl font-medium text-base hover:bg-opacity-100 hover:-translate-y-px hover:shadow-lg transition-all duration-200 no-underline"
-                   style="letter-spacing: -0.01em; backdrop-filter: blur(10px);">
-                    Subscribe Now
-                </a>
-            </div>
-        </div>
+<div class="max-w-7xl mx-auto mb-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 border border-blue-200 rounded-lg px-5 py-3 bg-blue-50">
+        <p class="text-gray-700 text-sm m-0">
+            <x-lucide-calendar-check class="w-4 h-4 mr-1 inline text-blue-400"/>
+            Never miss a meetup! Add local tech events directly to your favorite calendar app.
+        </p>
+        <a href="{{ route('calendar-feed.index') }}"
+           class="shrink-0 bg-blue-600 text-white px-4 py-1.5 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors no-underline">
+            Get the Feed
+        </a>
     </div>
 </div>

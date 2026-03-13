@@ -10,24 +10,24 @@ class LabsController extends Controller
         $projects = [
             [
                 'name' => __('HackGreenville.com'),
-                'description' => __('Tech events in Greenville, SC'),
+                'description' => __('The community website for Greenville, SC tech events, organizations, and resources'),
                 'link' => 'https://github.com/hackgvl/hackgreenville-com#readme',
                 'linkType' => 'github',
                 'status' => 'active',
-            ],
-            [
-                'name' => __('Events API'),
-                'description' => __('Public API for tech event information'),
-                'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md',
-                'linkType' => 'github',
-                'status' => 'active',
-            ],
-            [
-                'name' => __('Organizations API'),
-                'description' => __('Public API for tech event information'),
-                'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md',
-                'linkType' => 'github',
-                'status' => 'active',
+                'children' => [
+                    [
+                        'name' => __('Events API'),
+                        'description' => __('Public API for tech event information'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md',
+                        'linkType' => 'github',
+                    ],
+                    [
+                        'name' => __('Organizations API'),
+                        'description' => __('Public API for tech organization data'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md',
+                        'linkType' => 'github',
+                    ],
+                ],
             ],
             [
                 'name' => __('HackGreenville Slack Events Bot'),

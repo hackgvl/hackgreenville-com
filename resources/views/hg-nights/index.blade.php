@@ -4,380 +4,179 @@
 @section('description', 'A quarterly event with social gathering and short talks for Greenville SC tech, hacker, tinkerer, maker, and DIY community members.')
 
 @section('content')
-  <div class="w-full">
-    <div
-      id="hg-nights-jumbotron"
-      class="relative bg-primary text-white py-20 flex items-center min-h-[500px]"
-      style="background-image: url('{{ asset('img/hg-nights-sm.jpg') }}'); background-size: cover; background-position: center;"
-    >
-      <div class="absolute inset-0 bg-primary bg-opacity-75"></div>
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="max-w-6xl mx-auto text-center">
-          <h1 class="text-5xl md:text-6xl font-bold mb-8">{{ __('HackGreenville Nights') }}</h1>
-          <div class="bg-white text-primary rounded-lg p-6 mb-6">
-            <p class="text-xl mb-6">
-              A Quarterly Gathering of Greenville's Tech, Hacker, Tinkerer, Maker, and DIY Community
-            </p>
-            <a
-              href="https://www.meetup.com/hack-greenville/"
-              class="bg-success text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors inline-block no-underline"
-              target="_blank">
-                Join our Meetup Group
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+	{{-- Hero --}}
+	<div class="relative bg-gray-900 text-white overflow-hidden min-h-[24rem] sm:min-h-[28rem] flex items-center">
+		<img src="{{ asset('img/hg-nights-sm.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true" loading="eager"/>
+		<div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/40 z-[2]"></div>
+		<div class="max-w-5xl mx-auto w-full px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+			<div class="max-w-2xl">
+				<p class="text-sm font-medium tracking-widest uppercase text-green-400 mb-4">Quarterly Community Event</p>
+				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">HackGreenville Nights</h1>
+				<p class="text-lg text-gray-300 leading-relaxed max-w-lg mb-8">
+					A gathering of Greenville's tech, hacker, tinkerer, maker, and DIY community. Great food, short talks, and good people.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-3">
+					<a href="https://www.meetup.com/hack-greenville/"
+					   rel="noopener" target="_blank"
+					   class="inline-block bg-success text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-green-600 transition-colors">
+						Join our Meetup Group
+					</a>
+					<a href="https://forms.gle/oz4vDwrwG9c4h5Bo6"
+					   rel="nofollow noopener" target="_blank"
+					   class="inline-block bg-white/10 backdrop-blur text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-white/20 transition-colors border border-white/20">
+						Submit a Talk
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="max-w-7xl mx-auto px-4 py-12">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">{{ __('Submit a Talk') }}</h2>
-        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <p class="text-lg mb-4">Talks are typically 5, 10, or 15 minutes on tech or tech-adjacent topics that don't fit the format of our existing local meetups or conferences.</p>
-          <p class="text-lg mb-6">Thinking about starting a new group? Pitch the topic here and get a feel for the level of interest.</p>
-          <a
-            href="https://forms.gle/oz4vDwrwG9c4h5Bo6"
-            rel="nofollow"
-            class="bg-success text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors inline-block no-underline"
-            target="_blank">
-              Submit a Talk
-          </a>
-        </div>
-      </div>
-    </div>
+	{{-- Submit a Talk + Get Involved --}}
+	<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+			<div>
+				<h2 class="text-xl font-semibold mb-3">Submit a Talk</h2>
+				<p class="text-sm text-gray-600 leading-relaxed mb-2">
+					Talks are typically 5, 10, or 15 minutes on tech or tech-adjacent topics that don't fit the format of existing local meetups or conferences.
+				</p>
+				<p class="text-sm text-gray-600 leading-relaxed mb-4">
+					Thinking about starting a new group? Pitch the topic here and get a feel for the level of interest.
+				</p>
+				<a href="https://forms.gle/oz4vDwrwG9c4h5Bo6"
+				   rel="nofollow noopener" target="_blank"
+				   class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-blue-700 no-underline transition-colors">
+					Submit a talk proposal
+					<x-lucide-arrow-right class="w-3.5 h-3.5"/>
+				</a>
+			</div>
+			<div>
+				<h2 class="text-xl font-semibold mb-3">Get Involved</h2>
+				<ul class="space-y-2 text-sm text-gray-600">
+					<li class="flex items-start gap-2">
+						<x-lucide-megaphone class="w-4 h-4 text-gray-400 shrink-0 mt-0.5"/>
+						<span>Spread the word and invite others to <a href="https://forms.gle/oz4vDwrwG9c4h5Bo6" rel="nofollow noopener" target="_blank" class="text-primary hover:text-blue-700 no-underline">pitch a talk</a></span>
+					</li>
+					<li class="flex items-start gap-2">
+						<x-lucide-calendar class="w-4 h-4 text-gray-400 shrink-0 mt-0.5"/>
+						<span>Join our <a href="https://www.meetup.com/hack-greenville/" rel="noopener" target="_blank" class="text-primary hover:text-blue-700 no-underline">Meetup group</a> to receive updates</span>
+					</li>
+					<li class="flex items-start gap-2">
+						<x-lucide-message-square class="w-4 h-4 text-gray-400 shrink-0 mt-0.5"/>
+						<span>Hop into the <a href="/join-slack" class="text-primary hover:text-blue-700 no-underline">HackGreenville Slack</a> <em>#community-organizers</em> channel to volunteer</span>
+					</li>
+					<li class="flex items-start gap-2">
+						<x-lucide-heart class="w-4 h-4 text-gray-400 shrink-0 mt-0.5"/>
+						<span><a href="/contact" class="text-primary hover:text-blue-700 no-underline">Become a HG Nights sponsor</a></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-    <div class="max-w-7xl mx-auto px-4 pb-12">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">{{ __('How to Get Involved') }}</h2>
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <ul class="divide-y divide-gray-200">
-            <li class="p-4 hover:bg-gray-50 transition-colors">Spread the word and invite others to <a href="https://forms.gle/oz4vDwrwG9c4h5Bo6" rel="nofollow" class="text-primary hover:underline">pitch a talk</a></li>
-            <li class="p-4 hover:bg-gray-50 transition-colors">Join our <a href="https://www.meetup.com/hack-greenville/" class="text-primary hover:underline"><em>Meetup</em> group</a> to receive updates</li>
-            <li class="p-4 hover:bg-gray-50 transition-colors">Hop into the <a href="/join-slack" class="text-primary hover:underline">HackGreenville Slack</a> <em>#community-organizers</em> channel to volunteer</li>
-            <li class="p-4 hover:bg-gray-50 transition-colors"><a href="/contact" class="text-primary hover:underline">Become a <em>HG Nights</em> sponsor</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+	{{-- Past Events --}}
+	<div class="bg-gray-50">
+		<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+			<div class="flex items-center gap-3 mb-8">
+				<h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Past Events</h2>
+				<div class="h-px bg-gray-200 flex-1"></div>
+				<span class="text-xs text-gray-300 font-medium tabular-nums">{{ count($events) }}</span>
+			</div>
 
-    <div class="max-w-7xl mx-auto px-4 pb-12">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8">Past <em>HackGreenville Nights</em> Events</h2>
+			<div class="space-y-6">
+				@foreach($events as $event)
+					@php $event = (object) $event; @endphp
+					<div class="rounded-lg border border-gray-200 bg-white overflow-hidden">
+						{{-- Event header --}}
+						<div class="p-5 sm:p-6">
+							<div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+								<div>
+									<span class="text-xs font-medium text-gray-400 uppercase tracking-wide">{{ $event->label }}</span>
+									<h3 class="text-lg font-bold text-gray-900 mt-0.5">&ldquo;{{ $event->theme }}&rdquo;</h3>
+								</div>
+								<div class="flex items-center gap-2 shrink-0">
+									<a href="{{ $event->recap_url }}" rel="noopener" target="_blank"
+									   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors no-underline">
+										<x-lucide-external-link class="w-3 h-3"/>
+										Recap
+									</a>
+									@if($event->videos_url)
+										<a href="{{ $event->videos_url }}" rel="noopener" target="_blank"
+										   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors no-underline">
+											<x-lucide-play class="w-3 h-3"/>
+											Videos
+										</a>
+									@endif
+								</div>
+							</div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2026 - Feb | <em>"Hackin' Ball G - An Asian A-fare'"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/313138324/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
+							{{-- Sponsor --}}
+							<a href="{{ $event->sponsor_url }}" rel="noopener" target="_blank"
+							   class="inline-flex items-center gap-3 px-3 py-2 rounded-md border border-gray-100 no-underline hover:border-gray-200 hover:bg-gray-50 transition-colors group mb-4">
+								<span class="text-[0.65rem] font-medium uppercase tracking-wide text-gray-400">Sponsor</span>
+								@if($event->sponsor_logo)
+									<img src="{{ asset('img/sponsors/' . $event->sponsor_logo) }}" alt="{{ $event->sponsor }}" class="h-6 w-auto max-w-[100px] object-contain" loading="lazy"/>
+								@else
+									<span class="text-sm font-semibold text-gray-700 group-hover:text-primary transition-colors">{{ $event->sponsor }}</span>
+								@endif
+							</a>
 
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://chipp.ai" class="text-primary hover:underline"><b>Chipp.ai</b></a> |
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
+							{{-- Credits --}}
+							<div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-400">
+								@if($event->host)
+									<span>Hosted by <a href="{{ $event->host_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->host }}</a></span>
+								@endif
+								@if($event->video_by)
+									<span>Video by <a href="{{ $event->video_by_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->video_by }}</a></span>
+								@endif
+							</div>
+						</div>
 
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Jeremy Wight on
-              <a href="https://www.youtube.com/watch?v=JOpc6ARGS6M&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=3" class="text-primary hover:underline">
-                <em>Why a Non Profit Entity Type Could Be Your Super Power for Tech Social Impact</em>
-              </a>
-            </li>
-            <li class="p-3">Zach Hall on
-              <a href="https://www.youtube.com/watch?v=gXGBWc3emGs&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=2" class="text-primary hover:underline">
-                <em>TV Station in a Box: Introducing Television Simulator Studio</em>
-              </a>
-            </li>
-            <li class="p-3">Heather Bowes on
-              <a href="https://www.youtube.com/watch?v=3A_LDUNBWYs&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=4" class="text-primary hover:underline">
-                <em>Setting Up an SD-WAN Mesh Network with Starlink & T-Mobile During Hurricane Helene</em>
-              </a>
-            </li>
-            <li class="p-3">Phil Yanov on
-              <a href="https://www.youtube.com/watch?v=OTgrxBO8MRE&list=PL8vFrjH8DfOFAhjxMScV5Ge8A__v9bqWM&index=1" class="text-primary hover:underline">
-                <em>Origin Stories Series: The Early Days</em>
-              </a>
-            </li>
-          </ul>
-        </div>
+						{{-- Speakers --}}
+						<div class="border-t border-gray-100">
+							@foreach($event->speakers as $speaker)
+								@php $speaker = (object) $speaker; @endphp
+								<div class="flex items-start gap-3 px-5 sm:px-6 py-2.5 border-b border-gray-50 last:border-b-0 group {{ isset($speaker->url) ? 'hover:bg-blue-50/30' : '' }}">
+									<x-lucide-mic class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-1"/>
+									<div class="flex-1 min-w-0 text-sm">
+										<span class="text-gray-500">{{ $speaker->name }}</span>
+										<span class="text-gray-300 mx-1">&mdash;</span>
+										@if(isset($speaker->url))
+											<a href="{{ $speaker->url }}" rel="noopener" target="_blank"
+											   class="text-gray-700 hover:text-primary no-underline transition-colors"><em>{{ $speaker->title }}</em></a>
+										@else
+											<em class="text-gray-600">{{ $speaker->title }}</em>
+										@endif
+									</div>
+									@if(isset($speaker->url))
+										<a href="{{ $speaker->url }}" rel="noopener" target="_blank"
+										   class="text-gray-200 group-hover:text-red-500 shrink-0 mt-1 transition-colors" title="Watch on YouTube">
+											<x-lucide-youtube class="w-3.5 h-3.5"/>
+										</a>
+									@endif
+								</div>
+							@endforeach
+						</div>
+					</div>
+				@endforeach
+			</div>
+		</div>
+	</div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2025 - Oct | <em>"Medi-verse" Mediterranean & Greek</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/310839956/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
-
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.blueridge.cx" class="text-primary hover:underline"><b>Blue Ridge Consultants</b></a> |
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Jās Eckard on
-              <a href="https://www.youtube.com/watch?v=2bDJTJp2xr4&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=1" class="text-primary hover:underline">
-                <em>Quantum Computing Glossary</em>
-              </a>
-            </li>
-            <li class="p-3">Nate Argaw on
-              <a href="https://www.youtube.com/watch?v=rFtMZBFbj24&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=2" class="text-primary hover:underline">
-                <em>GVL Game Devs & The Journey for Balanc3d - A 3D Mobile Browser Game</em>
-              </a>
-            </li>
-            <li class="p-3">Jeremy Nicoll on
-              <a href="https://www.youtube.com/watch?v=3b9Px1V1qrg&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=3" class="text-primary hover:underline">
-                <em>Stupid Simple Kubernetes with Terraform</em>
-              </a>
-            </li>
-            <li class="p-3">Dave Brothers on
-              <a href="https://www.youtube.com/watch?v=3o0z6-ilH3Q&list=PL8vFrjH8DfOGIYsJEkSPz__oQTvoE4m0S&index=4" class="text-primary hover:underline">
-                <em>Origin Stories Series: How the HackGreenville Slack Came to Be</em>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2025 - June | <em>"Full-stack Nachos"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/307794466/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.chirohd.com" class="text-primary hover:underline"><b>ChiroHD</b></a> |
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Jen Bauer on
-              <a href="https://www.youtube.com/watch?v=3KioPbXDfYo&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=1" class="text-primary hover:underline">
-                <em>Level Up Your Legacy</em>
-              </a>
-	    </li>
-            <li class="p-3">Bogdan Kharchenko on
-              <a href="https://www.youtube.com/watch?v=BDivM3znbzQ&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=2" class="text-primary hover:underline">
-                <em>HackGreenville Labs</em>
-              </a>
-            </li>
-            <li class="p-3">Violet Kester on
-              <a href="https://www.youtube.com/watch?v=4PJSxQUz0oU&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=3" class="text-primary hover:underline">
-                <em>Fluid Design and Musical Harmony: A simple method for implementing truly responsive web applications</em>
-              </a>
-            </li>
-            <li class="p-3">AMA w/ Luke Kapustka, Nick Mansfield, JT Webb on
-              <a href="https://www.youtube.com/watch?v=W5QzMMS10Q0&list=PL8vFrjH8DfOGYQuir7fy0ccwDKw9SLCTD&index=4" class="text-primary hover:underline">
-                <em>We're Penetration Testers, Ask us Anything</em>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2025 - Feb | <em>"Souperman IV: Quest for Peas"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/305856459/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
-
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://home.mymechanic.app" class="text-primary hover:underline"><b>myMechanic</b></a> | 
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">David He on
-              <a href="https://www.youtube.com/watch?v=ZaRFJqOg28s&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=1" class="text-primary hover:underline">
-                <em>Beyond Coding: How Windsurf AI is Making Software Development Accessible to Everyone</em>
-              </a>
-	    </li>
-            <li class="p-3">Paul Sullivan on
-              <a href="https://www.youtube.com/watch?v=u-2QHjU3Y3c&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=2" class="text-primary hover:underline">
-                <em>The Elixir Ecosystem</em>
-              </a>
-            </li>
-            <li class="p-3">Zach Hall on
-              <a href="https://www.youtube.com/watch?v=wfiDn5Ff2i4&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=3" class="text-primary hover:underline">
-                <em>Simulating Analog Television on the Web</em>
-              </a>
-            </li>
-            <li class="p-3">Andrew Lechowicz on
-              <a href="https://www.youtube.com/watch?v=OSVy1nGj5Y8&list=PL8vFrjH8DfOHEdVwM3ZlJGre_UBm3hWEa&index=4" class="text-primary hover:underline">
-                <em>Detecting Flaky Tests: Increasing Trust in Your Test</em>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2024 - Oct | <em>"Starch Trek"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/303551633/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
-
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.brightball.com" class="text-primary hover:underline"><b>Brightball</b></a> | 
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Caleb McQuaid on
-              <a href="https://www.youtube.com/watch?v=-1FoF2T2ZZU&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=1" class="text-primary hover:underline">
-                <em>Encore! Encore!</em>
-              </a>
-	    </li>
-            <li class="p-3"> Barry Jones on
-              <a href="https://www.youtube.com/watch?v=AOis3O5kO70&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=2" class="text-primary hover:underline">
-                <em>Story Points are Pointless, Measure Queues</em>
-              </a>
-            </li>
-            <li class="p-3"> Heather Bowes on
-              <a href="https://www.youtube.com/watch?v=2Vsaq2bUl4E&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=3" class="text-primary hover:underline">
-                <em>Running a House Off an Electric Car</em>
-              </a>
-            </li>
-            <li class="p-3">Brian Kennedy on
-              <a href="https://www.youtube.com/watch?v=XW5J_KGWIAA&list=PL8vFrjH8DfOHk8ACRhnu0WktPBVIwi-Dt&index=4" class="text-primary hover:underline">
-                <em>Project-based IaC, You're Doing IaC Wrong | Part 2 - Tools and Quality</em>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2024 - May | <em>"Subs and Sliders"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/300300590/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
-
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.neurelo.com" class="text-primary hover:underline"><b>Neurelo</b></a> | 
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |  
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Andrew Thompson on
-              <a href="https://www.youtube.com/watch?v=mWFX1lvIGSQ&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=2&pp=iAQB" class="text-primary hover:underline">
-                <em>How Not to Give a Talk</em>
-              </a>
-	    </li>
-            <li class="p-3"> James Shockley on
-              <a href="https://www.youtube.com/watch?v=wMrcyxZO-Lw&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=4&pp=iAQB" class="text-primary hover:underline">
-                <em>Scratch, Dent, and Data: Engineering A Used Appliance Information Advantage Out Of Necessity</em>
-              </a>
-            </li>
-            <li class="p-3"> Joel Griffith on
-              <a href="https://www.youtube.com/watch?v=Yp79uQf923E&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=3&pp=iAQB" class="text-primary hover:underline">
-                <em>Random Numbers from Cosmic Rays (Step 1)</em>
-              </a>
-            </li>
-            <li class="p-3">Pete Dunlap on
-              <a href="https://www.youtube.com/watch?v=5rwe99c5dA0&list=PL8vFrjH8DfOHQ_cG3KC34jmlcNT55Ki_p&index=1&pp=iAQB" class="text-primary hover:underline">
-                <em>Decentralized Community Building Via Twilio</em>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2024 - February | <em>"Chili Bar"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/299063777/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-            <a href="https://www.youtube.com/@HackGreenville/playlists" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Videos</a>
-          </div>
-
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://stemsearchgroup.com/" class="text-primary hover:underline"><b>STEM Search Group</b></a> | 
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a> |  
-               Video by <a href="https://synergymill.com" class="text-primary hover:underline">Synergy Mill Makerspace</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers | Fiscal support by <a href="https://refactorgvl.com/" class="text-primary hover:underline">RefactorGVL</a></p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Bogdan Kharchenko on
-              <a href="https://www.youtube.com/watch?v=-BlfOb9Y7HY&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=6&pp=iAQB" class="text-primary hover:underline">
-                <em>Data Transfer Objects with PHP, as used by HackGreenville.com</em>
-              </a>
-	    </li>
-            <li class="p-3">Brian Kennedy on
-              <a href="https://www.youtube.com/watch?v=9I_yclPk_T8&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=2&pp=iAQB" class="text-primary hover:underline">
-                <em>You're Doing IaC Wrong</em>
-              </a>
-	    </li>
-            <li class="p-3">Christina Roberts on
-              <a href="https://www.youtube.com/watch?v=ZKOhdr6d9a4&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=8&pp=iAQB" class="text-primary hover:underline">
-                <em>Volunteer Opportunities w/ Agile Learning Institute</em>
-              </a>
-	    </li>
-            <li class="p-3">Gavin Coyle on
-              <a href="https://www.youtube.com/watch?v=7njpu6PgNsw&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=3&pp=iAQB" class="text-primary hover:underline">
-                <em>Addressing Workforce Planning Challenges Through Mentorship</em>
-              </a>
-	    </li>
-            <li class="p-3">Jās Eckard on
-              <a href="https://www.youtube.com/watch?v=945VSaNrJvM&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=7&pp=iAQB" class="text-primary hover:underline">
-                <em>Intro to UCLUG and BASH's History Feature</em>
-              </a>
-	    </li>
-            <li class="p-3">Jim Ciallella on
-              <a href="https://www.youtube.com/watch?v=k5JhLpfGFMM&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=5&pp=iAQB" class="text-primary hover:underline">
-                <em>Lean Livin': How a Local Internet Provider Paid Me $6240 / hr</em>
-              </a>
-            </li>
-            <li class="p-3">Pamela Wood Browne on
-              <a href="https://www.youtube.com/watch?v=TvWIu_b3t2o&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=4&pp=iAQB" class="text-primary hover:underline">
-                <em>Intro to Code With The Carolinas and Current Projects</em>
-              </a>
-            </li>
-            <li class="p-3">Paul on
-              <a href="https://www.youtube.com/watch?v=ZVBo5VDso2Q&list=PL8vFrjH8DfOHLH2hc_g87jLyiUWoupFtx&index=1&pp=iAQB" class="text-primary hover:underline">
-                <em>Censorship-resistant P2P Messaging via Briar and the Local-first Software Movement</em>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4">2023 - October | <em>"Taco Bar"</em></h3>
-          <div class="flex gap-4 mb-6">
-            <a href="https://www.meetup.com/hack-greenville/events/296051672/" class="bg-info text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors no-underline">Recap</a>
-          </div>
-
-          <h5 class="text-lg font-bold mb-3">Kudos</h5>
-          <p class="text-lg mb-4">Event Sponsorship by <a href="https://www.simplybinary.com" class="text-primary hover:underline"><b>Simply Binary</b></a> | 
-               Hosted by <a href="https://joinopenworks.com" class="text-primary hover:underline">OpenWorks Coworking</a>
-          </p>
-          <p class="mb-6">Food and event logistics by HackGreenville volunteers</p>
-
-          <h5 class="text-lg font-bold mb-3">Speakers</h5>
-          <ul class="divide-y divide-gray-200 bg-gray-50 rounded">
-            <li class="p-3">Joey Loman on <em>Quick Intro to Synergy Mill Project Opportunities</em></li>
-            <li class="p-3">Pete Broderick on <em>System Level Thinking</em></li>
-            <li class="p-3">Olivia Sculley on <em>Quick Intro to HG Labs Project Opportunities</em></li>
-            <li class="p-3">Robert Roskam on <em>How to Sanely Test Complex Systems</em></li>
-            <li class="p-3">Ryan Lanciaux on <em>Cooking Up Better Applications with Inspiration from the Culinary World</em></li>
-            <li class="p-3">Zach Robichaud on <em>Development Tooling with Laravel</em></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+	{{-- CTA --}}
+	<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+		<div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+			<div>
+				<h2 class="text-xl font-semibold mb-1">Want to sponsor or speak?</h2>
+				<p class="text-gray-600 text-sm">Reach out via the contact form or hop into our Slack.</p>
+			</div>
+			<div class="flex items-center gap-3">
+				<a href="{{ route('contact') }}" class="inline-block border border-gray-200 text-gray-800 px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:border-gray-300 hover:bg-gray-50 transition-colors whitespace-nowrap">
+					Contact Us
+				</a>
+				<a href="{{ route('join-slack') }}" class="inline-block bg-success text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-green-600 transition-colors whitespace-nowrap">
+					Join Slack
+				</a>
+			</div>
+		</div>
+	</div>
 @endsection

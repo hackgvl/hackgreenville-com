@@ -13,6 +13,10 @@ class HGNightsController extends Controller
      */
     public function index()
     {
-        return view('hg-nights.index');
+        $events = require resource_path('data/hg-nights.php');
+
+        return view('hg-nights.index', [
+            'events' => $events,
+        ]);
     }
 }

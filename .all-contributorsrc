@@ -139,7 +139,11 @@
       "profile": "https://github.com/bogdankharchenko",
       "contributions": [
         "code",
-        "design"
+        "design",
+        "infra",
+        "review",
+        "test",
+        "bug"
       ]
     },
     {
@@ -201,6 +205,25 @@
       "profile": "https://github.com/msmahon",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "beetz12",
+      "name": "beetz12",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1282474?v=4",
+      "profile": "https://github.com/beetz12",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "JenBauer",
+      "name": "Jen Bauer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43556044?v=4",
+      "profile": "http://jenbauer.carrd.com",
+      "contributions": [
+        "bug",
+        "userTesting"
       ]
     }
   ],

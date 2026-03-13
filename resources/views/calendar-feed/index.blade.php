@@ -4,13 +4,13 @@
 @section('description', 'Generate an iCal calendar feed to pull events for one, many, or all organizations promoted by HackGreenville into your calendar app')
 
 @section('content')
-    <div class="max-w-7xl mx-auto px-4 py-5">
-        <div class="w-full lg:w-2/3 mx-auto">
-            <h1 class="text-4xl font-bold mb-4">Subscribe to a Personalized Calendar</h1>
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="w-full mx-auto">
+            <h1 class="text-3xl font-bold mb-8">Subscribe to a Personalized Calendar</h1>
 
             <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                 <div class="bg-gray-50 px-6 py-4 border-b">
-                    <h3 class="text-xl font-bold">How Does it Work?</h3>
+                    <h2 class="text-xl font-bold">How Does it Work?</h2>
                 </div>
                 <div class="p-6">
                     <ul>
@@ -85,41 +85,37 @@
         }">
                 <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                     <div class="bg-gray-50 px-6 py-4 border-b">
-                        <h3 class="text-xl font-bold">
+                        <h2 class="text-xl font-bold">
                             Organizations
-                        </h3>
+                        </h2>
                     </div>
                     <div class="p-6">
 
-                        <div class="feed-item m-2 select-all-item" @click="toggleAll()">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox"
-                                       class="custom-control-input"
-                                       id="selectAll"
-                                       :checked="allSelected"
-                                       :indeterminate="someSelected"
-                                       @click="toggleAll()">
-                                <label class="custom-control-label" for="selectAll"></label>
-                            </div>
-                            <span class="feed-name">Select All / None</span>
+                        <div class="flex items-center p-4 mb-3 rounded-lg bg-slate-100 cursor-pointer hover:bg-slate-200 transition-colors" @click="toggleAll()">
+                            <button type="button"
+                                    class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
+                                    :class="allSelected ? 'bg-primary' : (someSelected ? 'bg-primary opacity-50' : 'bg-gray-300')"
+                                    @click.stop="toggleAll()">
+                                <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200 ease-in-out"
+                                      :class="allSelected || someSelected ? 'translate-x-5' : 'translate-x-0'"></span>
+                            </button>
+                            <span class="ml-4 font-medium text-gray-700">Select All / None</span>
                         </div>
 
-                        <div class="feed-divider"></div>
+                        <div class="h-px bg-gray-200 mb-4"></div>
 
                         <template x-for="feed in feeds" :key="feed.id">
-                            <div class="feed-item m-2"
+                            <div class="flex items-center p-4 mb-3 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
                                  @click="toggleFeed(feed)">
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox"
-                                           class="custom-control-input"
-                                           :id="feed.id"
-                                           x-model="feed.checked"
-                                           @click="toggleFeed(feed)"
-                                    />
-                                    <label class="custom-control-label" :for="feed.id"></label>
-                                </div>
+                                <button type="button"
+                                        class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
+                                        :class="feed.checked ? 'bg-primary' : 'bg-gray-300'"
+                                        @click.stop="toggleFeed(feed)">
+                                    <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200 ease-in-out"
+                                          :class="feed.checked ? 'translate-x-5' : 'translate-x-0'"></span>
+                                </button>
                                 <span
-                                    class="feed-name"
+                                    class="ml-4 font-medium text-gray-700"
                                     :class="{
                                         'font-bold': feed.checked,
                                     }"
@@ -138,11 +134,11 @@
 
                             <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-3 bg-gray-50" :value="feedUrl" readonly />
 
-                            <button class="copy-btn"
-                                    @click="copyLink()"
-                                    :class="{ 'copied': copied }">
+                            <button @click="copyLink()"
+                                    class="inline-flex items-center px-6 py-3 font-medium rounded-lg border transition-all"
+                                    :class="copied ? 'bg-green-300 border-green-300 text-green-900' : 'bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200 hover:-translate-y-px'">
                                 <template x-if="!copied">
-                                    <svg class="copy-icon mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 4V16C8 17.1046 8.89543 18 10 18H20C21.1046 18 22 17.1046 22 16V7.41421C22 6.88378 21.7893 6.37507 21.4142 6L20 4.58579C19.6249 4.21071 19.1162 4 18.5858 4H10C8.89543 4 8 4.89543 8 6"
                                               stroke="currentColor"
                                               stroke-width="2"
@@ -156,7 +152,7 @@
                                     </svg>
                                 </template>
                                 <template x-if="copied">
-                                    <svg class="copy-icon mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </template>
@@ -169,100 +165,4 @@
 
         </div>
 
-        <style>
-        .feed-item {
-            @apply flex items-center p-4 mb-3 rounded-lg bg-gray-50 transition-colors cursor-pointer;
-        }
-
-        .feed-item:hover {
-            @apply bg-gray-100;
-        }
-
-        .feed-divider {
-            @apply h-px bg-gray-200 mb-4;
-        }
-
-        .select-all-item {
-            @apply bg-slate-100;
-        }
-
-        .select-all-item:hover {
-            @apply bg-slate-200;
-        }
-
-        .feed-name {
-            @apply ml-4 font-medium text-gray-700;
-        }
-
-        /* Custom switch styling to match Bootstrap switches */
-        .custom-switch {
-            @apply relative inline-block;
-            padding-left: 2.25rem;
-        }
-
-        .custom-control-input {
-            position: absolute;
-            z-index: -1;
-            opacity: 0;
-        }
-
-        .custom-control-label {
-            position: relative;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .custom-control-label::before {
-            position: absolute;
-            left: -2.25rem;
-            top: 0.1rem;
-            display: block;
-            width: 2rem;
-            height: 1.125rem;
-            pointer-events: all;
-            content: "";
-            background-color: #cbd5e0;
-            border: #adb5bd solid 1px;
-            border-radius: 0.5rem;
-            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-        }
-
-        .custom-control-label::after {
-            position: absolute;
-            left: -2.25rem;
-            top: calc(0.1rem + 2px);
-            display: block;
-            width: calc(1.125rem - 4px);
-            height: calc(1.125rem - 4px);
-            content: "";
-            background-color: #fff;
-            border-radius: 0.5rem;
-            transition: transform 0.15s ease-in-out;
-        }
-
-        .custom-control-input:checked ~ .custom-control-label::before {
-            @apply bg-primary border-primary;
-        }
-
-        .custom-control-input:checked ~ .custom-control-label::after {
-            transform: translateX(0.875rem);
-        }
-
-        .custom-control-input:indeterminate ~ .custom-control-label::before {
-            @apply bg-primary border-primary;
-            opacity: 0.5;
-        }
-
-        .copy-btn {
-            @apply bg-slate-100 border border-slate-200 px-6 py-3 text-slate-700 font-medium rounded-lg transition-all inline-flex items-center;
-        }
-
-        .copy-btn:hover {
-            @apply bg-slate-200 -translate-y-px;
-        }
-
-        .copy-btn.copied {
-            @apply bg-green-300 border-green-300 text-green-900;
-        }
-        </style>
 @endsection

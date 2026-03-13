@@ -2,7 +2,7 @@
 <nav class="nav-main bg-primary fixed top-0 left-0 right-0 z-50">
   <div class="flex items-center justify-between px-4">
     <a class="flex items-center text-white no-underline" href="/">
-      <i class="fa fa-server mr-2"></i>
+      <x-lucide-server class="w-4 h-4 mr-2 inline"/>
       <span>HackGreenville</span>
     </a>
 
@@ -15,21 +15,21 @@
       <ul class="nav-menu flex items-center gap-4">
         <li>
           <a class="text-white hover:text-gray-200 no-underline" href="/orgs">
-            <i class="fa fa-users mr-1"></i>
+            <x-lucide-users class="w-4 h-4 mr-1 inline"/>
             <span>Organizations</span>
           </a>
         </li>
 
         <li>
           <a class="text-white hover:text-gray-200 no-underline" title="Sign up for the HackGreenville Slack" href="/join-slack">
-            <i class="fa fa-slack mr-1"></i>
+            <x-lucide-slack class="w-4 h-4 mr-1 inline"/>
             <span>Join Slack</span>
           </a>
         </li>
 
         <li>
           <a class="text-white hover:text-gray-200 no-underline" title="Login to the HackGreenville Slack" href="https://hackgreenville.slack.com">
-            <i class="fa fa-slack mr-1"></i>
+            <x-lucide-slack class="w-4 h-4 mr-1 inline"/>
             <span>Slack Login</span>
           </a>
         </li>

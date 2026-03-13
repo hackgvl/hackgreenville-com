@@ -85,12 +85,12 @@ jobs:
           railway up --detach --verbose \
             --project ${{ secrets.RAILWAY_PROJECT_ID }} \
             --environment pr-${{ github.event.pull_request.number }} \
-            --service hackgreenville.com
+            --service stage.hackgreenville.com
 
       - name: Get deployment URL
         id: get_url
         run: |
-          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service hackgreenville.com
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service stage.hackgreenville.com
           sleep 30
           URL=$(railway domain | grep -oE 'https://[^ ]+' | head -1)
           echo "deployment_url=$URL" >> $GITHUB_OUTPUT
@@ -123,12 +123,12 @@ jobs:
           railway up --detach --verbose \
             --project ${{ secrets.RAILWAY_PROJECT_ID }} \
             --environment pr-${{ github.event.pull_request.number }} \
-            --service hackgreenville.com
+            --service stage.hackgreenville.com
 
       - name: Get deployment URL
         id: get_url
         run: |
-          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service hackgreenville.com
+          railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment pr-${{ github.event.pull_request.number }} --service stage.hackgreenville.com
           sleep 30
           URL=$(railway domain | grep -oE 'https://[^ ]+' | head -1)
           echo "deployment_url=$URL" >> $GITHUB_OUTPUT
@@ -142,7 +142,7 @@ jobs:
       RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
     steps:
       - name: Link to project
-        run: railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment ${{ secrets.RAILWAY_ENVIRONMENT_ID }} --service hackgreenville.com
+        run: railway link --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment ${{ secrets.RAILWAY_ENVIRONMENT_ID }} --service stage.hackgreenville.com
 
       - name: Delete Railway Environment for PR
         run: railway environment delete pr-${{ github.event.pull_request.number }} --yes || true
