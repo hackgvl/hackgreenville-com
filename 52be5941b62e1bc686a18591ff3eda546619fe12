@@ -1,0 +1,29 @@
+app/Providers/AppServiceProvider.php
+  831a39ac4fb48bad 5-6,10-11,16,18-21,23-24,27
+bootstrap/providers.php
+  831a39ac4fb48bad 1-6
+routes/console.php
+  831a39ac4fb48bad 3-12
+bootstrap/app.php
+  831a39ac4fb48bad 3-6,8-15,17-18,20-30,32-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "52be5941b62e1bc686a18591ff3eda546619fe12",
+  "prompts": {
+    "831a39ac4fb48bad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "49fa1cde-bbcd-4560-966d-d5e479548cd7",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 61,
+      "total_deletions": 178,
+      "accepted_lines": 61,
+      "overriden_lines": 0
+    }
+  }
+}
