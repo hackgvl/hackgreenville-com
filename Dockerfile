@@ -1,4 +1,4 @@
-FROM serversideup/php:8.1-fpm-nginx
+FROM serversideup/php:8.5-fpm-nginx
 
 # Install additional packages
 USER root
