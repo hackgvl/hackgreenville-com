@@ -1,165 +1,68 @@
-<!-- Footer -->
-<footer class="page-footer font-small bg-primary text-white pt-12 pb-6">
+<footer class="bg-primary text-white pt-12 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
 
-    <!-- Footer Links -->
-    <div class="w-full px-4 text-left md:text-left max-w-7xl mx-auto">
+        {{-- Tagline --}}
+        <div class="mb-10">
+            <a href="/" class="text-white no-underline hover:text-white">
+                <span class="text-lg font-bold tracking-tight">HackGreenville</span>
+            </a>
+            <p class="text-gray-400 text-sm mt-1">Build stuff. Meet people. Do cool things.</p>
+        </div>
 
-        <!-- Grid row -->
-        <div class="flex flex-wrap">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 
-            <!-- Grid column for Social and Technology Icons -->
-            <div class="w-full mt-0 mt-6 md:mt-0">
-                <div class="flex justify-around flex-wrap flex-col md:flex-row gap-3">
-
-                    <div class="flex flex-col items-center h-full order-1">
-                        <h4 class="mb-4 text-xl font-semibold">Connect</h4>
-
-                        <div class="text-center footer-social-icons">
-                            <a href="https://www.meetup.com/hack-greenville/" class="footer-social-icon-wrapper inline-block mx-2" rel="nofollow" target="_blank">
-                                <img src="{{url('img/icons/meetup.svg')}}" class="footer-social-icon"
-                                     alt="Meetup" style="height: 65px;"/>
-                            </a>
-                            <a href="/join-slack" class="footer-social-icon-wrapper inline-block mx-2">
-                                <img src="{{url('img/icons/slack.png')}}" class="footer-social-icon"
-                                     alt="Slack"/>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center h-full order-2">
-                        <h4 class="mb-4 text-xl font-semibold">Built with Laravel</h4>
-
-                        <div class="text-center footer-technology-icons">
-                            <a href="https://laravel.com" class="footer-technology-icon-wrapper" rel="nofollow">
-                                <img src="{{url('img/icons/laravel-226015.png')}}" class="footer-technology-icon"
-                                     alt="Laravel"/>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Grid column for Links -->
-                    <div class="order-3 mt-8 md:mt-0 text-left">
-                        <!-- Links -->
-                        <h4 class="mb-4 text-xl font-semibold">Links</h4>
-
-                        <ul class="list-unstyled grid grid-cols-2 gap-2 links-grid">
-                            <li>
-                                <a href="{{route('calendar.index')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-calendar"></i>
-                                    {{__('Calendar')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('events.index')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-calendar-check-o"></i>
-                                    {{__('Events')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('orgs.index')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-building"></i>
-                                    {{__('Organizations')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('labs.index')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-flask"></i>
-                                    {{__('Labs')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('hg-nights.index')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-moon-o"></i>
-                                    {{__('HG Nights')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('about')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-users"></i>
-                                    {{__('About Us')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('contribute')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-handshake-o"></i>
-                                    {{__('Contribute')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('contact')}}"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-paper-plane"></i>
-                                    {{__('Contact')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/join-slack"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-slack"></i>
-                                    {{__('Join Slack')}}
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    <div class="order-4 mt-8 md:mt-0 text-left">
-                        <!-- Links -->
-                        <h4 class="mb-4 text-xl font-semibold">Other Links</h4>
-
-                        <ul class="list-unstyled flex flex-col gap-2">
-                            <li>
-                                <a class="@if(Route::is('code-of-conduct.*')) font-semibold @endif text-gray-200 hover:text-white" href="{{route('code-of-conduct')}}">
-                                    <i class="fa fa-check"></i>
-                                    {{ __('Code of Conduct') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a class="@if(Route::is('styles.*')) font-semibold @endif text-gray-200 hover:text-white" href="{{route('styles.index')}}">
-                                    <i class="fa fa-picture-o"></i>
-                                    {{ __('Our Style') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/hackgvl/hackgreenville-com" target="_new"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-github"></i>
-                                    {{__('Join the Project')}}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/docs/api" target="_new"
-                                   class="text-gray-200 hover:text-white">
-                                    <i class="fa fa-wrench"></i>
-                                    {{__('Explore Our API')}}
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <!-- End of Grid column -->
-                </div>
+            {{-- Navigate --}}
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Navigate</h5>
+                <ul class="list-none pl-0 space-y-2 text-sm">
+                    <li><a href="{{route('calendar.index')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-calendar class="w-3.5 h-3.5"/> Calendar</a></li>
+                    <li><a href="{{route('events.index')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-calendar-check class="w-3.5 h-3.5"/> Events</a></li>
+                    <li><a href="{{route('orgs.index')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-building class="w-3.5 h-3.5"/> Organizations</a></li>
+                    <li><a href="{{route('labs.index')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-flask-conical class="w-3.5 h-3.5"/> Labs</a></li>
+                    <li><a href="{{route('hg-nights.index')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-moon class="w-3.5 h-3.5"/> HG Nights</a></li>
+                </ul>
             </div>
-            <!-- End of Grid column -->
+
+            {{-- Community --}}
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Community</h5>
+                <ul class="list-none pl-0 space-y-2 text-sm">
+                    <li><a href="{{route('about')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-users class="w-3.5 h-3.5"/> About Us</a></li>
+                    <li><a href="{{route('contribute')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-handshake class="w-3.5 h-3.5"/> Contribute</a></li>
+                    <li><a href="{{route('contact')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-send class="w-3.5 h-3.5"/> Contact</a></li>
+                    <li><a href="{{route('code-of-conduct')}}" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-shield-check class="w-3.5 h-3.5"/> Code of Conduct</a></li>
+                </ul>
+            </div>
+
+            {{-- Connect --}}
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Connect</h5>
+                <ul class="list-none pl-0 space-y-2 text-sm">
+                    <li><a href="/join-slack" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-slack class="w-3.5 h-3.5"/> Join Slack</a></li>
+                    <li><a href="https://hackgreenville.slack.com" rel="noreferrer noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-slack class="w-3.5 h-3.5"/> Log In to Slack</a></li>
+                    <li><a href="https://www.meetup.com/hack-greenville/" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-users-round class="w-3.5 h-3.5"/> Meetup</a></li>
+                </ul>
+            </div>
+
+            {{-- Developers --}}
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Developers</h5>
+                <ul class="list-none pl-0 space-y-2 text-sm">
+                    <li><a href="https://github.com/hackgvl/hackgreenville-com" rel="noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-github class="w-3.5 h-3.5"/> Join the Project</a></li>
+                    <li><a href="/docs/api" rel="noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-wrench class="w-3.5 h-3.5"/> Explore Our API</a></li>
+                    <li>
+                        <span class="text-gray-400 inline-flex items-center gap-1.5"><x-lucide-code class="w-3.5 h-3.5"/> Built with</span>
+                        <a href="https://laravel.com" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline transition-colors">Laravel</a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
-        <!-- End of Grid row -->
 
+        {{-- Copyright --}}
+        <div class="border-t border-white/10 mt-10 pt-5 text-center text-xs text-gray-400">
+            &copy; {{date('Y')}} <a href="http://hackgreenville.com" class="text-success hover:text-green-400 font-semibold no-underline transition-colors">HackGreenville</a>.
+            A program of <a href="https://refactorgvl.com/" rel="nofollow noopener" target="_blank" class="text-success hover:text-green-400 font-semibold no-underline transition-colors">RefactorGVL</a> non-profit.
+        </div>
     </div>
-    <!-- End of Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-6">
-        <p class="text-sm">© {{date('Y')}} Copyright: <a href="http://hackgreenville.com" target="hg-home" class="text-success font-bold hover:text-green-400">HackGreenville</a>. HackGreenville is a program of the <a href="https://refactorgvl.com/" target="refactorgvl" class="text-success font-bold hover:text-green-400">RefactorGVL</a> non-profit.</p>
-    </div>
-    <!-- End of Copyright -->
-
 </footer>
-<!-- End of Footer -->

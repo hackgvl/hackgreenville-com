@@ -164,9 +164,6 @@
     @apply fixed inset-0 bg-black bg-opacity-60 z-50;
   }
 
-  .loading .fa-spin {
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl;
-  }
 
   /* Utility classes */
   .d-none {
@@ -181,38 +178,6 @@
     @apply py-4;
   }
 
-  /* About page styles */
-  .title-heading {
-    @apply text-4xl font-bold mb-6;
-  }
-
-  .lead-text {
-    @apply text-xl mb-4 leading-relaxed;
-  }
-
-  .highlight-link {
-    @apply text-primary underline hover:text-blue-600;
-  }
-
-  .user-mention {
-    @apply text-gray-700 hover:text-gray-900 underline;
-  }
-
-  .highlight-code {
-    @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm;
-  }
-
-  .values-list {
-    @apply list-disc pl-8 space-y-2;
-  }
-
-  .values-list li {
-    @apply text-xl leading-relaxed ml-4;
-  }
-
-  .font-weight-bold {
-    @apply font-bold;
-  }
 }
 
 /* Timeline styles */
@@ -340,25 +305,9 @@
   position: relative;
 }
 
-.screaming-hackgreenville-question {
-  font-size: 5.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
 @media (max-width: 576px) {
-  .screaming-hackgreenville-question {
-    line-height: 0.8;
-    font-size: 3.5rem;
-    margin-bottom: 3rem;
-  }
-
   .display-4 {
     @apply text-4xl;
   }
 }
 
-#homepage .summary {
-  font-size: 1.25rem;
-}

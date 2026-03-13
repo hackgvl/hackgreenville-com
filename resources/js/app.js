@@ -10,22 +10,17 @@ window.showMoreTimeline = function (args) {
   Swal.fire(args);
 };
 
-// Use event delegation so handlers survive Turbo body replacements
-$(document).on('click', '.tw-navbar-toggler', function () {
-  var target = $(this).data('target');
-  $(target).toggleClass('show');
-});
-
+// Close mobile nav when clicking outside
 $(document).on('click', function (e) {
-  if (!$(e.target).closest('.tw-navbar').length) {
-    $('.tw-navbar-collapse').removeClass('show');
+  if (!$(e.target).closest('#main-nav').length) {
+    document.getElementById('nav-toggle').checked = false;
   }
 });
 
 // turbo:load fires on initial load AND every Turbo navigation
 document.addEventListener('turbo:load', function () {
   // Hide loading overlay on non-calendar pages
-  $('.loading').hide();
+  $('#loading-overlay').hide();
 
   // Register nullable rule for Aire.js (for optional URL field)
   if (typeof window.Validator !== 'undefined') {
