@@ -27,7 +27,7 @@ class EventResource extends ApiResource
             'data_as_of' => $this->getTime(),
             'service_id' => $this->resource->service_id,
             'service' => $this->resource->service,
-            'venue' => new VenueResource($this->resource->venue),
+            'venue' => $this->resource->venue ? new VenueResource($this->resource->venue) : null,
             'created_at' => $this->resource->created_at->toISOString(),
             'is_paid' => $this->resource->is_paid,
         ];

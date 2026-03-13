@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 /**
  * App\Models\Tag
  *
@@ -25,6 +27,8 @@ namespace App\Models;
  */
 class Tag extends BaseModel
 {
+    use SoftDeletes;
+
     public function orgs()
     {
         return $this->belongsToMany(Org::class);
