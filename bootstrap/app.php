@@ -18,22 +18,22 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectUsersTo(fn () => route('filament.admin.pages.dashboard'));
 
         $middleware->group('filament-web', [
-            \Illuminate\Cookie\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\Session\Middleware\AuthenticateSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Filament\Http\Middleware\DisableBladeIconComponents::class,
-            \Filament\Http\Middleware\DispatchServingFilamentEvent::class,
+            Illuminate\Cookie\Middleware\EncryptCookies::class,
+            Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            Illuminate\Session\Middleware\StartSession::class,
+            Illuminate\Session\Middleware\AuthenticateSession::class,
+            Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+            Illuminate\Routing\Middleware\SubstituteBindings::class,
+            Filament\Http\Middleware\DisableBladeIconComponents::class,
+            Filament\Http\Middleware\DispatchServingFilamentEvent::class,
         ]);
 
         $middleware->group('filament-auth', [
-            \Filament\Http\Middleware\Authenticate::class,
+            Filament\Http\Middleware\Authenticate::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+
     })
     ->create();
