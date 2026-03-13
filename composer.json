@@ -9,10 +9,10 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.1",
+        "php": "^8.5",
         "ext-json": "*",
         "filament/filament": "^3.3",
-        "firebase/php-jwt": "^6.10",
+        "firebase/php-jwt": "^7.0",
         "glhd/aire": "^2.14",
         "glhd/conveyor-belt": "*",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -20,11 +20,11 @@
         "hack-greenville/event-importer": "*",
         "internachi/modular": "^2.0",
         "knuckleswtf/scribe": "^5.2",
-        "laravel/framework": "^10.0",
+        "laravel/framework": "^12.0",
         "laravel/helpers": "^1.2",
-        "laravel/slack-notification-channel": "^2.4",
-        "laravel/tinker": "^2.0",
-        "malzariey/filament-daterangepicker-filter": "^2.7",
+        "laravel/slack-notification-channel": "^3.0",
+        "laravel/tinker": "^2.10",
+        "malzariey/filament-daterangepicker-filter": "^3.4",
         "scyllaly/hcaptcha": "^4.4",
         "sebdesign/artisan-cloudflare": "^2.8",
         "spatie/icalendar-generator": "^2.9",
@@ -33,15 +33,15 @@
     "require-dev": {
         "ext-pdo_sqlite": "*",
         "ext-sqlite3": "*",
-        "barryvdh/laravel-debugbar": "^3.8",
+        "barryvdh/laravel-debugbar": "^3.14",
         "barryvdh/laravel-ide-helper": "*",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.10",
         "laravel/sail": "^1.5",
-        "laravel/telescope": "*",
+        "laravel/telescope": "^5.0",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^7.7",
-        "phpunit/phpunit": "^10.2",
+        "nunomaduro/collision": "^8.0",
+        "phpunit/phpunit": "^11.0",
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
@@ -83,10 +83,7 @@
             "@php artisan ide-helper:models -N --no-interaction || echo 'IDE helper not available'"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
-        ],
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "serve": [
             "php artisan serve"
@@ -105,7 +102,7 @@
         "optimize-autoloader": true,
         "allow-plugins": {},
         "platform": {
-            "php": "8.1.33"
+            "php": "8.5.0"
         }
     },
     "minimum-stability": "stable",
