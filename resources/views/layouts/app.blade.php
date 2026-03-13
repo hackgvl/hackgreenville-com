@@ -58,7 +58,7 @@
 
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
+        "@@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "Organization",
@@ -107,5 +107,11 @@
 @yield('js')
 
 @stack('scripts')
+
+@if(app()->environment('local'))
+    <div class="fixed top-0 left-0 z-50 px-2 py-0.5 rounded text-[10px] font-mono text-white/80 bg-orange-600/70 backdrop-blur-sm pointer-events-none">
+        {{ trim(exec('git branch --show-current')) }}
+    </div>
+@endif
 </body>
 </html>
