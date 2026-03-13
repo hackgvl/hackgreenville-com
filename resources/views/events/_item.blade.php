@@ -1,5 +1,6 @@
 <?php /** @var \App\Models\Event $event */ ?>
 
+
 <div class="px-6 py-4 hover:bg-gray-50 transition-colors">
 	<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
 		<div class="md:col-span-3">
