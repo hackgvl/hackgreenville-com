@@ -1,0 +1,23 @@
+.github/workflows/pint.yml
+  831a39ac4fb48bad 15-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "291f91ba7a55b4d32d01125be447257f0ef5e864",
+  "prompts": {
+    "831a39ac4fb48bad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "49fa1cde-bbcd-4560-966d-d5e479548cd7",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 0,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
