@@ -64,7 +64,7 @@
                         <strong class="font-bold">No</strong> events to display.
                     </p>
                 @else
-                    <div class="bg-white rounded-lg shadow-sm overflow-hidden divide-y divide-gray-200">
+                    <div class="bg-white rounded-lg shadow-xs overflow-hidden divide-y divide-gray-200">
                         @foreach ($upcoming_events as $event)
                             @include('events._item', ['event' => $event])
                         @endforeach
@@ -72,7 +72,7 @@
                     <div class="text-center mt-6">
                         <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-blue-700 no-underline transition-colors">
                             View all events
-                            <x-lucide-arrow-right class="w-3.5 h-3.5"/>
+                            <x-lucide-arrow-right aria-hidden="true" class="w-3.5 h-3.5"/>
                         </a>
                     </div>
                 @endif
@@ -90,12 +90,12 @@
                     <a href="https://github.com/hackgvl/hackgreenville-com"
                        rel="noopener"
                        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
-                        <x-lucide-github class="w-5 h-5"/>
+                        <x-lucide-github aria-hidden="true" class="w-5 h-5"/>
                         View on GitHub
                     </a>
                     <a href="{{ route('contribute') }}"
                        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
-                        <x-lucide-handshake class="w-5 h-5"/>
+                        <x-lucide-handshake aria-hidden="true" class="w-5 h-5"/>
                         Volunteer &amp; Sponsor
                     </a>
                 </div>

@@ -54,7 +54,8 @@
         {{-- Calendar feed promo + filter --}}
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <form method="get" class="m-0">
-                <select class="block w-full sm:w-auto px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white" name="month" id="month">
+                <label for="month" class="sr-only">Filter by month</label>
+                <select class="block w-full sm:w-auto px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary bg-white" name="month" id="month">
                     <option value="">All months</option>
                     @foreach( $months->keys() as $month )
                         <option value="{{$month}}" @if(request('month') == $month) selected="selected" @endif>
@@ -66,7 +67,7 @@
 
             <a href="{{ route('calendar-feed.index') }}"
                class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary no-underline transition-colors">
-                <x-lucide-calendar-check class="w-3.5 h-3.5"/>
+                <x-lucide-calendar-check aria-hidden="true" class="w-3.5 h-3.5"/>
                 Subscribe to calendar feed
             </a>
         </div>
@@ -76,7 +77,7 @@
             @foreach($months as $month => $events)
                 <div class="events" data-date="{{ $month }}">
                     <div class="flex items-center gap-3 px-4 sm:px-6 py-3 bg-gray-50/80 border-b border-gray-200">
-                        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">{{ $month }}</h2>
+                        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">{{ $month }}</h2>
                         <div class="h-px bg-gray-200 flex-1"></div>
                         <span class="text-xs text-gray-300 font-medium tabular-nums">{{ $events->count() }}</span>
                     </div>
@@ -92,24 +93,24 @@
         {{-- Footer notes --}}
         <div class="mt-8">
             <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Sources &amp; Data</span>
+                <span class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Sources &amp; Data</span>
                 <div class="h-px bg-gray-200 flex-1"></div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="flex items-start gap-2.5">
-                    <x-lucide-database class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-0.5"/>
+                    <x-lucide-database aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-0.5"/>
                     <p class="text-xs text-gray-500 leading-relaxed">
                         Aggregated from <a href="https://meetup.com" rel="noopener" class="text-primary hover:text-blue-600 underline">Meetup</a>, <a href="https://lu.ma" rel="noopener" class="text-primary hover:text-blue-600 underline">Luma</a>, and <a href="https://eventbrite.com" rel="noopener" class="text-primary hover:text-blue-600 underline">Eventbrite</a>
                     </p>
                 </div>
                 <div class="flex items-start gap-2.5">
-                    <x-lucide-git-pull-request class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-0.5"/>
+                    <x-lucide-git-pull-request aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-0.5"/>
                     <p class="text-xs text-gray-500 leading-relaxed">
                         Contribute via <a href="/labs" class="text-primary hover:text-blue-600 underline">HackGreenville Labs</a>
                     </p>
                 </div>
                 <div class="flex items-start gap-2.5">
-                    <x-lucide-message-square-plus class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-0.5"/>
+                    <x-lucide-message-square-plus aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-0.5"/>
                     <p class="text-xs text-gray-500 leading-relaxed">
                         <a href="{{ route('contact') }}" class="text-primary hover:text-blue-600 underline">Suggest</a> an addition or update
                     </p>

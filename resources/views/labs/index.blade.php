@@ -20,7 +20,7 @@
 	{{-- Projects --}}
 	<div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
 		<div class="flex items-center gap-3 mb-8">
-			<h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">Projects</h2>
+			<h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Projects</h2>
 			<div class="h-px bg-gray-200 flex-1"></div>
 			<span class="text-xs text-gray-300 font-medium tabular-nums">{{ count($projects) }}</span>
 		</div>
@@ -33,9 +33,9 @@
 					   class="group flex items-start gap-4 p-5 hover:bg-blue-50/30 transition-colors no-underline">
 						<div class="shrink-0 w-9 h-9 rounded-lg bg-gray-100 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
 							@if($project->linkType === 'github')
-								<x-lucide-github class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors"/>
+								<x-lucide-github aria-hidden="true" class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors"/>
 							@else
-								<x-lucide-globe class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors"/>
+								<x-lucide-globe aria-hidden="true" class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors"/>
 							@endif
 						</div>
 						<div class="flex-1 min-w-0">
@@ -51,7 +51,7 @@
 							</div>
 							<p class="text-sm text-gray-500 leading-snug">{{ $project->description }}</p>
 						</div>
-						<x-lucide-arrow-up-right class="w-4 h-4 text-gray-300 group-hover:text-primary shrink-0 mt-0.5 transition-colors"/>
+						<x-lucide-arrow-up-right aria-hidden="true" class="w-4 h-4 text-gray-300 group-hover:text-primary shrink-0 mt-0.5 transition-colors"/>
 					</a>
 
 					@if(!empty($project->children))
@@ -62,10 +62,10 @@
 								   class="group flex items-center gap-3 px-5 py-3 pl-[4.25rem] hover:bg-blue-50/40 transition-colors no-underline border-b border-gray-100 last:border-b-0">
 									<div class="flex-1 min-w-0">
 										<span class="text-sm text-gray-700 font-medium group-hover:text-primary transition-colors">{{ $child->name }}</span>
-										<span class="text-gray-400 mx-1.5">&middot;</span>
-										<span class="text-sm text-gray-400">{{ $child->description }}</span>
+										<span class="text-gray-500 mx-1.5">&middot;</span>
+										<span class="text-sm text-gray-500">{{ $child->description }}</span>
 									</div>
-									<x-lucide-arrow-up-right class="w-3.5 h-3.5 text-gray-300 group-hover:text-primary shrink-0 transition-colors"/>
+									<x-lucide-arrow-up-right aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 group-hover:text-primary shrink-0 transition-colors"/>
 								</a>
 							@endforeach
 						</div>

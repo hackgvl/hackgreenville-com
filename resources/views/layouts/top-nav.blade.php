@@ -1,24 +1,25 @@
-<nav class="relative flex flex-wrap items-center justify-between px-4 py-2 bg-primary" id="main-nav">
+<nav class="relative flex flex-wrap items-center justify-between px-4 py-2 bg-primary" id="main-nav" aria-label="Main">
     <a class="inline-block py-1 mr-4 no-underline" href="{{ route('home') }}">
         @include('includes.logo')
     </a>
 
     <input type="checkbox" id="nav-toggle" class="hidden peer" aria-hidden="true"/>
     <label for="nav-toggle" class="nav-break:hidden px-3 py-1 rounded border border-white/10 cursor-pointer"
-           role="button" aria-controls="navMenu" aria-label="Toggle navigation">
-        <x-lucide-menu class="w-6 h-6 text-white/70"/>
+           aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <x-lucide-menu aria-hidden="true" class="w-6 h-6 text-white/70"/>
     </label>
 
-    <div class="hidden peer-checked:block nav-break:flex nav-break:flex-grow nav-break:items-center nav-break:justify-between nav-break:relative nav-break:bg-transparent nav-break:shadow-none nav-break:p-0 nav-break:w-auto absolute top-full left-0 right-0 z-50 bg-primary p-4 shadow-lg w-full"
-         id="navMenu">
+    <div class="hidden peer-checked:block nav-break:flex nav-break:grow nav-break:items-center nav-break:justify-between nav-break:relative nav-break:bg-transparent nav-break:shadow-none nav-break:p-0 nav-break:w-auto absolute top-full left-0 right-0 z-50 bg-primary p-4 shadow-lg w-full"
+         id="navMenu" role="navigation">
         <ul class="flex flex-col nav-break:flex-row nav-break:items-center list-none pl-0 mb-0 mr-auto divide-y divide-white/10 nav-break:divide-y-0">
 
             {{-- Events dropdown (desktop) --}}
             <li class="hidden nav-break:block relative group">
                 <a href="{{ route('events.index') }}"
+                   aria-haspopup="true"
                    class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors {{ Route::is('events.index') || Route::is('calendar.index') ? 'text-white font-semibold' : 'text-white/70 hover:text-white' }}">
                     Events
-                    <x-lucide-chevron-down class="w-3 h-3"/>
+                    <x-lucide-chevron-down aria-hidden="true" class="w-3 h-3"/>
                 </a>
                 <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute left-0 top-full pt-1 z-50">
                     <ul class="bg-white rounded-lg shadow-lg border border-gray-200 py-1 min-w-[10rem] list-none pl-0 mb-0">
@@ -47,9 +48,9 @@
 
             {{-- More dropdown (desktop) --}}
             <li class="hidden nav-break:block relative group">
-                <button class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors text-white/70 hover:text-white">
+                <button aria-haspopup="true" class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors text-white/70 hover:text-white">
                     More
-                    <x-lucide-chevron-down class="w-3 h-3"/>
+                    <x-lucide-chevron-down aria-hidden="true" class="w-3 h-3"/>
                 </button>
                 <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute right-0 top-full pt-1 z-50">
                     <ul class="bg-white rounded-lg shadow-lg border border-gray-200 py-1 min-w-[10rem] list-none pl-0 mb-0">
@@ -80,3 +81,9 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.getElementById('nav-toggle').addEventListener('change', function() {
+    document.querySelector('label[for="nav-toggle"]').setAttribute('aria-expanded', this.checked ? 'true' : 'false');
+});
+</script>
