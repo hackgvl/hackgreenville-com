@@ -61,7 +61,7 @@
                     <div class="h-px bg-gray-200 flex-1"></div>
                 </div>
 
-                {{ aire()->route('contact.submit')->novalidate()->rules([
+                {{ aire()->route('contact.submit')->data('turbo', 'false')->novalidate()->rules([
                     'name' => 'required|max:255',
                     'contact' => 'required|email',
                     'message' => 'required|max:5000',
