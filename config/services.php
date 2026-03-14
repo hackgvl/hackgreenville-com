@@ -45,4 +45,9 @@ return [
         'private_token' => env('EVENTBRITE_PRIVATE_TOKEN'),
     ],
 
+    'turnstile' => [
+        'key' => env('TURNSTILE_SITE_KEY'),
+        'secret' => env('TURNSTILE_SECRET_KEY'),
+    ],
+
 ];

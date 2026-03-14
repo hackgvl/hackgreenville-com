@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use App\Notifications\JoinMessage;
 use Illuminate\Support\Facades\Notification;
-use Scyllaly\HCaptcha\Facades\HCaptcha;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 use Tests\DatabaseTestCase;
 
 class JoinSlackTest extends DatabaseTestCase
@@ -14,10 +14,7 @@ class JoinSlackTest extends DatabaseTestCase
         $this->withoutMiddleware();
 
         Notification::fake();
-
-        HCaptcha::shouldReceive('verifyResponse')
-            ->once()
-            ->andReturn(true);
+        Turnstile::fake();
 
         $this->post(route('join-slack.submit'), [
             'name' => 'John Doe',
@@ -25,7 +22,7 @@ class JoinSlackTest extends DatabaseTestCase
             'reason' => 'I love Greenville!',
             'url' => 'https://linkedin.com/in/not-a-bot',
             'rules' => 1,
-            'h-captcha-response' => 1234,
+            'cf-turnstile-response' => 'fake-token',
         ])
             ->assertSessionHasNoErrors();
 
