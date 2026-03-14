@@ -1,122 +1,38 @@
-# HackGreenville.com Project Configuration
+# HackGreenville.com
 
-## Project Overview
+## Stack
+- **Backend**: Laravel 12 (PHP 8.5+), Filament 3.3 admin
+- **Database**: MySQL 8.0 (SQLite in-memory for tests)
+- **Frontend**: Tailwind CSS 4, Alpine.js (lazy), Turbo Drive
+- **Build**: Vite 7, Yarn, Node 22.12+
+- **API**: Versioned REST (v0, v1), Scribe docs at `/docs/api`
+- **Queue**: Redis driver, `slack` and `default` queues
+- **Deploy**: Railway, Docker (Laravel Sail), GitHub Actions CI
+- **Code Style**: Laravel Pint (PSR-12), Prettier for JS/CSS
 
-This is the HackGreenville community website built with:
-- **Backend**: Laravel 12 (PHP 8.5+)
-- **Frontend**: Tailwind CSS 3, jQuery
-- **Database**: MySQL/SQLite
-- **Admin Panel**: Filament 3.3
-- **Build Tools**: Vite, Composer, Yarn
-- **API**: Custom RESTful API with versioning (v0, v1)
-- **Features**: Event management, organization directory, calendar feeds, Slack integration
+## Project Structure
+- `/app` — Core app (Models, Enums, Filament resources, Mail, Notifications)
+- `/app-modules/api` — Versioned API controllers
+- `/app-modules/event-importer` — Handlers for Eventbrite, Meetup, Luma, OpenUpstate
+- `/app-modules/slack-events-bot` — Slack bot for event summaries
+- `/resources/views` — Blade templates
+- `/resources/js` — Vite entry points
 
-The project follows a modular architecture with separate app-modules for API and event importing functionality.
+## Scheduled Commands
+- `ImportEventsCommand` — hourly
+- `PruneMissingEventsCommand` — daily at 02:00
 
-## AI Development Team Configuration
-*Configured by team-configurator on 2025-07-29*
+## Frontend Conventions
+- **No jQuery, Lodash, or Moment.js** — use vanilla JS and native APIs
+- **Modals**: Native `<dialog>` element, not libraries
+- **Date formatting**: `Intl.DateTimeFormat` or FullCalendar's `formatRange()`
+- **Code splitting**: Page-specific libraries are lazy-loaded, not bundled globally
+  - `calendar-libs.js` — FullCalendar + CSS, loaded only on `/calendar`
+  - Alpine.js — auto-loaded only when `[x-data]` is on the page
+  - Global bundle (`app.js`) stays lean — only Turbo + site-wide JS
+- Inline `<script>` in Blade must use `type="module"` to run after Vite bundle
 
-Your project uses: Laravel 12, Tailwind CSS 3, MySQL, Filament Admin
-
-### Specialist Assignments
-
-#### Backend Development
-- **Laravel Expert** → @laravel-backend-expert
-  - Service layer implementation, command handlers
-  - Repository patterns, dependency injection
-  - Job queues, event listeners, notifications
-  - Middleware, service providers, console commands
-
-#### Database & ORM
-- **Eloquent Specialist** → @laravel-eloquent-expert
-  - Model relationships, query optimization
-  - Database migrations, seeders, factories
-  - Eloquent scopes, observers, and events
-  - Performance tuning for large datasets
-
-#### API Development
-- **API Architect** → @api-architect
-  - RESTful API design and versioning strategies
-  - API resource transformations
-  - Request validation and error handling
-  - API documentation with Scribe
-
-#### Frontend Development
-- **Frontend Developer** → @frontend-developer
-  - Tailwind CSS components and layouts
-  - jQuery interactions and AJAX
-  - Responsive design implementation
-
-#### Code Quality
-- **Code Reviewer** → @code-reviewer
-  - Laravel best practices and conventions
-  - PSR standards compliance
-  - Security vulnerability detection
-  - Performance bottleneck identification
-
-- **Performance Optimizer** → @performance-optimizer
-  - Query optimization and N+1 problem solving
-  - Caching strategies (Redis, database, view)
-  - Asset optimization and lazy loading
-  - Database indexing recommendations
-
-### How to Use Your Team
-
-**For Backend Tasks:**
-```
-"Add a new feature to track event attendance"
-"Implement email notifications for new events"
-"Create a service to import events from Eventbrite"
-```
-
-**For Database Work:**
-```
-"Optimize the events query that's running slowly"
-"Add a many-to-many relationship between events and tags"
-"Create migrations for a new sponsors feature"
-```
-
-**For API Development:**
-```
-"Create v2 API endpoints for organizations"
-"Add filtering and pagination to events API"
-"Implement API rate limiting"
-```
-
-**For Frontend Tasks:**
-```
-"Update the events calendar to be mobile-responsive"
-"Add a search filter to the organizations page"
-"Improve the form validation on contact page"
-```
-
-**For Code Reviews:**
-```
-"Review my changes to the event import system"
-"Check for security issues in the new API endpoints"
-"Analyze performance of the calendar feed generation"
-```
-
-### Project-Specific Context
-
-**Key Directories:**
-- `/app` - Core Laravel application
-- `/app-modules/api` - API module with versioned controllers
-- `/app-modules/event-importer` - Event import handlers for various platforms
-- `/app-modules/slack-events-bot` - Slack bot for posting event summaries
-- `/resources/views` - Blade templates
-- `/app/Filament` - Admin panel resources
-
-**Important Features:**
-- Multi-source event importing (Eventbrite, Meetup, Luma)
-- Calendar feed generation (iCal format)
-- Organization management with status tracking
-- Slack integration for community sign-ups
-- Filament admin panel for content management
-
-**Testing:**
-- PHPUnit tests in `/tests`
-- API tests for each version
-- Event importer tests with fixtures
-
-Your specialized AI team is ready to help build and improve HackGreenville.com!
+## Testing & Validation
+- After implementing features, run `./vendor/bin/pint` to fix code style and `php artisan test` to verify tests pass
+- `yarn build` must pass cleanly after frontend changes
+- PHPUnit 11, test suites: Feature, Unit, plus app-module tests
