@@ -17,8 +17,18 @@ jobs:
         with:
           php-version: '8.5'
 
-      - name: Fix styling issues
+      - name: Fix PHP styling issues
         uses: aglipanci/laravel-pint-action@v2
+
+      - name: Get changed files for rustywind
+        id: changed-files
+        run: |
+          FILES=$(git diff --name-only --diff-filter=d HEAD~1 -- '*.blade.php' '*.js' '*.jsx' '*.ts' '*.tsx' '*.vue' '*.html' | tr '\n' ' ')
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+
+      - name: Fix Tailwind class order
+        if: steps.changed-files.outputs.files != ''
+        run: npx rustywind --write ${{ steps.changed-files.outputs.files }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v6
