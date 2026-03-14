@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
+
 class LabsController extends Controller
 {
     public function index()
     {
         $remove_space = true;
+        $contributors = Cache::get('github_contributors', collect());
         $projects = [
             [
                 'name' => __('HackGreenville.com'),
@@ -15,6 +18,18 @@ class LabsController extends Controller
                 'linkType' => 'github',
                 'status' => 'active',
                 'children' => [
+                    [
+                        'name' => __('Event Importer'),
+                        'description' => __('Aggregates events from Eventbrite, Meetup, Luma, and more'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/event-importer',
+                        'linkType' => 'github',
+                    ],
+                    [
+                        'name' => __('Slack Events Bot'),
+                        'description' => __('Automated weekly tech event notifications in Slack'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/slack-events-bot',
+                        'linkType' => 'github',
+                    ],
                     [
                         'name' => __('Events API'),
                         'description' => __('Public API for tech event information'),
@@ -28,13 +43,6 @@ class LabsController extends Controller
                         'linkType' => 'github',
                     ],
                 ],
-            ],
-            [
-                'name' => __('HackGreenville Slack Events Bot'),
-                'description' => __('Automated weekly tech event notifications in Slack'),
-                'link' => 'https://github.com/hackgvl/slack-events-bot',
-                'linkType' => 'github',
-                'status' => 'active',
             ],
             [
                 'name' => __('Map Layers API'),
@@ -52,6 +60,6 @@ class LabsController extends Controller
             ],
         ];
 
-        return view('labs.index', compact('projects', 'remove_space'));
+        return view('labs.index', compact('projects', 'contributors', 'remove_space'));
     }
 }

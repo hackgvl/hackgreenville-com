@@ -75,13 +75,36 @@
 		</div>
 	</div>
 
-	{{-- CTA --}}
+	{{-- Contributors + CTA --}}
 	<div class="bg-gray-50">
 		<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
-			<div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+			@if($contributors->isNotEmpty())
+				<div class="text-center mb-10">
+					<h2 class="text-xl font-semibold mb-1">Built by the Community</h2>
+					<p class="text-gray-500 text-sm">{{ $contributors->count() }} contributors and counting</p>
+				</div>
+
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 max-w-3xl mx-auto">
+					@foreach($contributors as $contributor)
+						<a href="{{ $contributor['html_url'] }}" target="_blank" rel="noopener"
+						   title="{{ $contributor['login'] }}" class="no-underline">
+							<img
+								src="{{ $contributor['avatar_url'] }}&s=80"
+								alt="{{ $contributor['login'] }}"
+								width="48"
+								height="48"
+								loading="lazy"
+								class="rounded-full ring-2 ring-white shadow-sm transition duration-200 hover:scale-110 hover:ring-success hover:shadow-md"
+							>
+						</a>
+					@endforeach
+				</div>
+			@endif
+
+			<div class="flex flex-col sm:flex-row items-center justify-between gap-6 @if($contributors->isNotEmpty()) pt-8 border-t border-gray-200 @endif">
 				<div>
 					<h2 class="text-xl font-semibold mb-1">Want to contribute?</h2>
-					<p class="text-gray-600 text-sm">Join our Slack and hop into <em class="font-medium">#hg-labs</em> to get started.</p>
+					<p class="text-gray-600 text-sm">Join our Slack and hop into <a href="https://hackgreenville.slack.com/channels/hg-labs" target="_blank" rel="noopener" class="font-medium text-gray-900 underline decoration-success/40 hover:decoration-success transition-colors">#hg-labs</a> to get started.</p>
 				</div>
 				<a href="{{ route('join-slack') }}" class="inline-block bg-success text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-green-600 transition-colors whitespace-nowrap">
 					Join Slack
