@@ -16,6 +16,18 @@ class LabsController extends Controller
                 'status' => 'active',
                 'children' => [
                     [
+                        'name' => __('Event Importer'),
+                        'description' => __('Aggregates events from Eventbrite, Meetup, Luma, and more'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/event-importer',
+                        'linkType' => 'github',
+                    ],
+                    [
+                        'name' => __('Slack Events Bot'),
+                        'description' => __('Automated weekly tech event notifications in Slack'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/slack-events-bot',
+                        'linkType' => 'github',
+                    ],
+                    [
                         'name' => __('Events API'),
                         'description' => __('Public API for tech event information'),
                         'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md',
@@ -28,13 +40,6 @@ class LabsController extends Controller
                         'linkType' => 'github',
                     ],
                 ],
-            ],
-            [
-                'name' => __('HackGreenville Slack Events Bot'),
-                'description' => __('Automated weekly tech event notifications in Slack'),
-                'link' => 'https://github.com/hackgvl/slack-events-bot',
-                'linkType' => 'github',
-                'status' => 'active',
             ],
             [
                 'name' => __('Map Layers API'),
