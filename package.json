@@ -35,7 +35,6 @@
         "@fullcalendar/list": "^4.4.2",
         "@hotwired/turbo": "^8.0.23",
         "alpinejs": "^3.14.9",
-        "geist": "^1.7.0",
-        "sweetalert2": "^11.7.12"
+        "geist": "^1.7.0"
     }
 }

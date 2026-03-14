@@ -21,23 +21,36 @@
 
         <div id="calendar"></div>
     </div>
+
+    <dialog id="event-dialog" class="fixed inset-0 m-auto rounded-lg shadow-xl p-0 max-w-lg w-full max-h-[calc(100dvh-3rem)] flex flex-col backdrop:bg-black/50 not-open:hidden">
+        <div class="flex items-center justify-between p-4 border-b shrink-0">
+            <h2 id="event-dialog-title" class="text-lg font-semibold pr-4 m-0"></h2>
+            <form method="dialog">
+                <button class="text-gray-400 hover:text-gray-600 text-2xl leading-none cursor-pointer" aria-label="Close">&times;</button>
+            </form>
+        </div>
+        <div id="event-dialog-body" class="p-4 text-left overflow-y-auto min-h-0"></div>
+        <div id="event-dialog-actions" class="flex gap-3 justify-end p-4 border-t empty:hidden shrink-0"></div>
+    </dialog>
 @endsection
 
 @section('js')
     <script type="module">
-        (function () {
-            let firstRender = true;
-
+        (async function () {
             const calendarEl = document.getElementById('calendar');
             if (!calendarEl) return;
 
-            const calendar = new FullCalendar.Calendar(calendarEl, {
+            const { Calendar, dayGridPlugin, listPlugin } = await window.loadCalendarLibs();
+
+            let firstRender = true;
+
+            const calendar = new Calendar(calendarEl, {
                 height: 'auto',
-                plugins: [FullCalendarPlugins.dayGrid, FullCalendarPlugins.list],
+                plugins: [dayGridPlugin, listPlugin],
                 header: {
                     left: 'title',
                     center: '',
-                    right: 'listWeek,dayGridMonth,dayGridDay,prev,next' // user can switch between the two
+                    right: 'listWeek,dayGridMonth,dayGridDay,prev,next'
                 },
                 events: {
                     url: '{{ route('calendar.data') }}',
@@ -54,66 +67,62 @@
                 },
                 eventClick: function (info) {
                     const event_link = info.event.extendedProps.event_url;
+                    const cancelled = info.event.extendedProps.cancelled;
 
                     const dateRange = info.event.formatRange({
                         weekday: 'long', month: '2-digit', day: '2-digit',
                         hour: '2-digit', minute: '2-digit', hour12: true
                     });
 
-                    let desc = `<div class="text-left">`;
-                    desc += `<strong>Dates:</strong> ${dateRange}`;
-                    desc += '<br />';
-                    desc += '<br />';
-                    desc += info.event.extendedProps.description.replace(/\<a/, '<a rel="external"');
-                    desc += '</div>';
-
-                    const swalProps = {
-                        title: info.event.title,
-                        html: desc,
-                        type: 'info',
-                        showCloseButton: true,
-                    };
-
-                    const cancelled = info.event.extendedProps.cancelled;
-
-                    if (!cancelled) {
-                        swalProps['confirmButtonText'] = 'Add to Google Calendar!';
-                        swalProps['cancelButtonText'] = 'Visit Event Page';
-                        swalProps['showCancelButton'] = true;
-                        swalProps['confirmButtonColor'] = '#3085d6';
-                        swalProps['cancelButtonColor'] = '#00a508';
+                    const dialog = document.getElementById('event-dialog');
+                    if (!dialog || typeof dialog.showModal !== 'function') {
+                        window.open(event_link, '_blank');
+                        return;
                     }
 
-                    Swal.fire(swalProps).then((result) => {
+                    document.getElementById('event-dialog-title').textContent = info.event.title;
 
-                        if (cancelled) {
-                            return true;
-                        }
+                    let body = `<strong>Dates:</strong> ${dateRange}<br/><br/>`;
+                    body += info.event.extendedProps.description.replace(/\<a/, '<a rel="external"');
+                    document.getElementById('event-dialog-body').innerHTML = body;
 
-                        if (result.value) {
-                            window.open(info.event.extendedProps.add_to_google_calendar_url, '_blank');
-                        } else if (result.dismiss == "cancel") {
-                            window.open(event_link, '_blank');
-                        }
-                    });
+                    const actions = document.getElementById('event-dialog-actions');
+                    if (!cancelled) {
+                        actions.innerHTML = `
+                            <a href="${info.event.extendedProps.add_to_google_calendar_url}" target="_blank"
+                               class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 no-underline text-sm">
+                                Add to Google Calendar!
+                            </a>
+                            <a href="${event_link}" target="_blank"
+                               class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 no-underline text-sm">
+                                Visit Event Page
+                            </a>`;
+                    } else {
+                        actions.innerHTML = '';
+                    }
+
+                    dialog.showModal();
 
                     info.el.style.borderColor = info.el.style.borderColor == 'red' ? 'black' : 'red';
                 }
+            });
+
+            // Close dialog on backdrop click
+            const dialog = document.getElementById('event-dialog');
+            dialog.addEventListener('click', (e) => {
+                if (e.target === dialog) dialog.close();
             });
 
             function maybeMoveToCurrentWeek() {
                 let layoutRoot = calendarEl.querySelector('.fc-dayGridMonth-view');
 
                 if (layoutRoot === null) {
-                    // Layout root not found
                     return;
                 }
 
                 let thisWeek = layoutRoot.querySelector('.fc-today').closest('.fc-week');
 
-                // current week can be found at end of last month, within this month, or beginning of next month
                 if (thisWeek === null) {
-                    // Current week is not on this page
                     return;
                 }
 

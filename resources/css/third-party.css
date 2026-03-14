@@ -1,9 +1,3 @@
-/* Third party CSS imports - @import must come first */
-@import '@fullcalendar/core/main.min.css';
-@import '@fullcalendar/daygrid/main.min.css';
-@import '@fullcalendar/list/main.min.css';
-@import 'sweetalert2/dist/sweetalert2.min.css';
-
 /* Geist Sans Variable Font - by Vercel (https://vercel.com/font) */
 @font-face {
   font-family: 'Geist';
@@ -22,9 +16,4 @@
 .fc-content {
   cursor: pointer;
   white-space: normal !important;
-}
-
-/* SweetAlert custom width */
-.swal-wide {
-  width: 50em !important;
 }
