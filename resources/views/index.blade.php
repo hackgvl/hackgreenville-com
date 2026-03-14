@@ -64,7 +64,7 @@
                         <strong class="font-bold">No</strong> events to display.
                     </p>
                 @else
-                    <div class="bg-white rounded-lg shadow-sm overflow-hidden divide-y divide-gray-200">
+                    <div class="bg-white rounded-lg shadow-xs overflow-hidden divide-y divide-gray-200">
                         @foreach ($upcoming_events as $event)
                             @include('events._item', ['event' => $event])
                         @endforeach

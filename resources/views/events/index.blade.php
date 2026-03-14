@@ -55,7 +55,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <form method="get" class="m-0">
                 <label for="month" class="sr-only">Filter by month</label>
-                <select class="block w-full sm:w-auto px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white" name="month" id="month">
+                <select class="block w-full sm:w-auto px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary bg-white" name="month" id="month">
                     <option value="">All months</option>
                     @foreach( $months->keys() as $month )
                         <option value="{{$month}}" @if(request('month') == $month) selected="selected" @endif>

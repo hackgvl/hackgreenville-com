@@ -3,6 +3,9 @@
     "license": "SEE LICENSE IN LICENSE.MD",
     "description": "website for hackgreenville",
     "private": false,
+    "engines": {
+        "node": ">=22.12.0"
+    },
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -24,17 +27,16 @@
         "lint:php"
     ],
     "devDependencies": {
-        "autoprefixer": "^10.4.21",
+        "@tailwindcss/vite": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
-        "laravel-vite-plugin": "^1.2.0",
+        "laravel-vite-plugin": "^2.0.0",
         "lodash": "^4.17.15",
         "pm2": "^5.3.0",
-        "postcss": "^8.5.6",
         "pre-commit": "^1.2.2",
         "sharrre": "^2.0.1",
-        "tailwindcss": "^3.4.0",
-        "vite": "^4.5.3",
+        "tailwindcss": "^4.0.0",
+        "vite": "^7.0.7",
         "vite-plugin-image-optimizer": "^1.1.6"
     },
     "dependencies": {

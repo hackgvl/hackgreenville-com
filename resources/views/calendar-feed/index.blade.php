@@ -8,7 +8,7 @@
         <div class="w-full mx-auto">
             <h1 class="text-3xl font-bold mb-8">Subscribe to a Personalized Calendar</h1>
 
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="bg-white rounded-lg shadow-xs overflow-hidden">
                 <div class="bg-gray-50 px-6 py-4 border-b">
                     <h2 class="text-xl font-bold">How Does it Work?</h2>
                 </div>
@@ -83,7 +83,7 @@
                 }
             }
         }">
-                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="bg-white rounded-lg shadow-xs overflow-hidden">
                     <div class="bg-gray-50 px-6 py-4 border-b">
                         <h2 class="text-xl font-bold">
                             Organizations
@@ -96,7 +96,7 @@
                                     role="switch"
                                     :aria-checked="allSelected ? 'true' : 'false'"
                                     aria-label="Select all organizations"
-                                    class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
+                                    class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
                                     :class="allSelected ? 'bg-primary' : (someSelected ? 'bg-primary opacity-50' : 'bg-gray-300')"
                                     @click.stop="toggleAll()">
                                 <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200 ease-in-out"
@@ -114,7 +114,7 @@
                                         role="switch"
                                         :aria-checked="feed.checked ? 'true' : 'false'"
                                         :aria-label="'Toggle ' + feed.title"
-                                        class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
+                                        class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
                                         :class="feed.checked ? 'bg-primary' : 'bg-gray-300'"
                                         @click.stop="toggleFeed(feed)">
                                     <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200 ease-in-out"

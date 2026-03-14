@@ -1,6 +1,6 @@
 <a href="{{ $project->link }}" rel="noopener" target="_blank"
    class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors no-underline">
-	<div class="flex-grow min-w-0">
+	<div class="grow min-w-0">
 		<div class="mb-0.5">
 			<span class="text-gray-900 font-semibold text-sm">{{ $project->name }}</span>
 			<span class="text-gray-500 mx-1">&mdash;</span>

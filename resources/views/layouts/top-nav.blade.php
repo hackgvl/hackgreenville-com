@@ -9,7 +9,7 @@
         <x-lucide-menu aria-hidden="true" class="w-6 h-6 text-white/70"/>
     </label>
 
-    <div class="hidden peer-checked:block nav-break:flex nav-break:flex-grow nav-break:items-center nav-break:justify-between nav-break:relative nav-break:bg-transparent nav-break:shadow-none nav-break:p-0 nav-break:w-auto absolute top-full left-0 right-0 z-50 bg-primary p-4 shadow-lg w-full"
+    <div class="hidden peer-checked:block nav-break:flex nav-break:grow nav-break:items-center nav-break:justify-between nav-break:relative nav-break:bg-transparent nav-break:shadow-none nav-break:p-0 nav-break:w-auto absolute top-full left-0 right-0 z-50 bg-primary p-4 shadow-lg w-full"
          id="navMenu" role="navigation">
         <ul class="flex flex-col nav-break:flex-row nav-break:items-center list-none pl-0 mb-0 mr-auto divide-y divide-white/10 nav-break:divide-y-0">
 
