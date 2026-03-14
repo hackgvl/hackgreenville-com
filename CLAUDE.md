@@ -4,7 +4,7 @@
 
 This is the HackGreenville community website built with:
 - **Backend**: Laravel 12 (PHP 8.5+)
-- **Frontend**: Bootstrap 4, jQuery, Sass
+- **Frontend**: Tailwind CSS 3, jQuery
 - **Database**: MySQL/SQLite
 - **Admin Panel**: Filament 3.3
 - **Build Tools**: Vite, Composer, Yarn
@@ -16,7 +16,7 @@ The project follows a modular architecture with separate app-modules for API and
 ## AI Development Team Configuration
 *Configured by team-configurator on 2025-07-29*
 
-Your project uses: Laravel 12, Bootstrap 4, MySQL, Filament Admin
+Your project uses: Laravel 12, Tailwind CSS 3, MySQL, Filament Admin
 
 ### Specialist Assignments
 
@@ -43,9 +43,8 @@ Your project uses: Laravel 12, Bootstrap 4, MySQL, Filament Admin
 
 #### Frontend Development
 - **Frontend Developer** → @frontend-developer
-  - Bootstrap 4 components and layouts
+  - Tailwind CSS components and layouts
   - jQuery interactions and AJAX
-  - Sass/CSS architecture
   - Responsive design implementation
 
 #### Code Quality
@@ -104,6 +103,7 @@ Your project uses: Laravel 12, Bootstrap 4, MySQL, Filament Admin
 - `/app` - Core Laravel application
 - `/app-modules/api` - API module with versioned controllers
 - `/app-modules/event-importer` - Event import handlers for various platforms
+- `/app-modules/slack-events-bot` - Slack bot for posting event summaries
 - `/resources/views` - Blade templates
 - `/app/Filament` - Admin panel resources
 

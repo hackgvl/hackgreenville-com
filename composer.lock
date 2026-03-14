@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69121b2bedfadfc8cab25ea8ba8da40d",
+    "content-hash": "909ffbeadba8030ae8d2914841f8c408",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2983,6 +2983,42 @@
             "license": [
                 "proprietary"
             ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "hack-greenville/slack-events-bot",
+            "version": "1.0",
+            "dist": {
+                "type": "path",
+                "url": "app-modules/slack-events-bot",
+                "reference": "91a773ff075dc9917f87512e7ca55d7929ca7800"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "HackGreenville\\SlackEventsBot\\Providers\\SlackEventsBotServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HackGreenville\\SlackEventsBot\\": "src/",
+                    "HackGreenville\\SlackEventsBot\\Database\\Factories\\": "./database/factories/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "HackGreenville\\SlackEventsBot\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Slack bot that relays information from HackGreenville Labs' Events API to Slack channels",
             "transport-options": {
                 "symlink": true,
                 "relative": true

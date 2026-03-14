@@ -28,3 +28,7 @@ services:
     extends:
       file: docker-compose.yml
       service: hackgreenville-redis
+  hackgreenville-queue:
+    extends:
+      file: docker-compose.yml
+      service: hackgreenville-queue

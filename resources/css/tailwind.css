@@ -164,7 +164,6 @@
     @apply fixed inset-0 bg-black bg-opacity-60 z-50;
   }
 
-
   /* Utility classes */
   .d-none {
     @apply hidden;
@@ -177,7 +176,6 @@
   .py-4 {
     @apply py-4;
   }
-
 }
 
 /* Timeline styles */
@@ -310,4 +308,3 @@
     @apply text-4xl;
   }
 }
-

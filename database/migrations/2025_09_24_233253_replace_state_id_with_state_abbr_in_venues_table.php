@@ -17,15 +17,14 @@ return new class extends Migration {
         });
 
         // Update existing data - convert state_id to state abbreviation
-        DB::statement('
-            UPDATE venues
-            SET state = (
-                SELECT abbr
-                FROM states
-                WHERE states.id = venues.state_id
-            )
-            WHERE state_id IS NOT NULL
-        ');
+        DB::table('venues')->whereNotNull('state_id')->chunkById(100, function ($venues) {
+            foreach ($venues as $venue) {
+                $abbr = DB::table('states')->where('id', $venue->state_id)->value('abbr');
+                if ($abbr) {
+                    DB::table('venues')->where('id', $venue->id)->update(['state' => $abbr]);
+                }
+            }
+        });
 
         // Make state column not nullable after data migration
         Schema::table('venues', function (Blueprint $table) {
@@ -49,15 +48,14 @@ return new class extends Migration {
         });
 
         // Convert state abbreviations back to state_id
-        DB::statement('
-            UPDATE venues
-            SET state_id = (
-                SELECT id
-                FROM states
-                WHERE states.abbr = venues.state
-            )
-            WHERE state IS NOT NULL
-        ');
+        DB::table('venues')->whereNotNull('state')->chunkById(100, function ($venues) {
+            foreach ($venues as $venue) {
+                $stateId = DB::table('states')->where('abbr', $venue->state)->value('id');
+                if ($stateId) {
+                    DB::table('venues')->where('id', $venue->id)->update(['state_id' => $stateId]);
+                }
+            }
+        });
 
         // Drop the state column
         Schema::table('venues', function (Blueprint $table) {
