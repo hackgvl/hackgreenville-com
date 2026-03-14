@@ -33,6 +33,7 @@ class VenueResource extends Resource
                 Forms\Components\TextInput::make('city')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('state')
+                    ->required()
                     ->maxLength(2),
                 Forms\Components\TextInput::make('lat')
                     ->maxLength(255),
