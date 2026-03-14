@@ -200,6 +200,25 @@ class CalendarFeedTest extends DatabaseTestCase
         );
     }
 
+    public function test_index_filters_to_only_selected_organizations(): void
+    {
+        $selected_org = Org::factory()->create([
+            'title' => 'Selected Org',
+            'status' => OrganizationStatus::Active,
+        ]);
+
+        $unselected_org = Org::factory()->create([
+            'title' => 'Unselected Org',
+            'status' => OrganizationStatus::Active,
+        ]);
+
+        $this->get(route('calendar-feed.index', ['orgs' => (string) $selected_org->id]))
+            ->assertOk()
+            ->assertViewHas('organizations', fn ($organizations) => $organizations->count() === 1
+                    && $organizations->contains('id', $selected_org->id)
+                    && $organizations->contains('id', $unselected_org->id) === false);
+    }
+
     public function test_older_events_never_show_up_on_calendar_feed(): void
     {
         $organization = Org::factory()->create(['status' => OrganizationStatus::Active]);
