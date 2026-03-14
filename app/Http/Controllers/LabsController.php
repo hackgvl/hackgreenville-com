@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
+
 class LabsController extends Controller
 {
     public function index()
     {
         $remove_space = true;
+        $contributors = Cache::get('github_contributors', collect());
         $projects = [
             [
                 'name' => __('HackGreenville.com'),
@@ -57,6 +60,6 @@ class LabsController extends Controller
             ],
         ];
 
-        return view('labs.index', compact('projects', 'remove_space'));
+        return view('labs.index', compact('projects', 'contributors', 'remove_space'));
     }
 }

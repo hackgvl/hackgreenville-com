@@ -17,6 +17,9 @@ class DeployRailwayCommand extends Command
         $this->call(CacheCommand::class);
         $this->call(AssetsCommand::class);
         $this->call(CacheCommand::class);
+
+        rescue(fn () => $this->call(CacheGitHubContributorsCommand::class), report: false);
+
         $this->call(Purge::class);
 
         return ExitCommand::SUCCESS;
