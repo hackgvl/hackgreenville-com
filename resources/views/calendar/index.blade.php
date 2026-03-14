@@ -3,12 +3,6 @@
 @section('title', 'Calendar of Greenville, SC Area Tech Events')
 @section('description', 'A monthly calendar view of upcoming tech events in the Greenville, SC area.')
 
-@section('head')
-    <script src='{{ url('vendors/fullcalendar/packages/core/main.min.js') }}' data-turbo-track="reload"></script>
-    <script src='{{ url('vendors/fullcalendar/packages/daygrid/main.js') }}' data-turbo-track="reload"></script>
-    <script src='{{ url('vendors/fullcalendar/packages/list/main.js') }}' data-turbo-track="reload"></script>
-@endsection
-
 @section('content')
     <div class="max-w-5xl mx-auto px-4 py-8">
 
@@ -30,7 +24,7 @@
 @endsection
 
 @section('js')
-    <script>
+    <script type="module">
         (function () {
             let firstRender = true;
 
@@ -39,7 +33,7 @@
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 height: 'auto',
-                plugins: ['dayGrid', 'list'],
+                plugins: [FullCalendarPlugins.dayGrid, FullCalendarPlugins.list],
                 header: {
                     left: 'title',
                     center: '',
@@ -60,15 +54,14 @@
                 },
                 eventClick: function (info) {
                     const event_link = info.event.extendedProps.event_url;
-                    const datetime_format = 'MM/DD hh:mm A';
 
-                    let calendar_desc = `Event link: ${event_link}`;
-                    calendar_desc += '<br />';
-                    calendar_desc += info.event.extendedProps.description;
+                    const dateRange = info.event.formatRange({
+                        weekday: 'long', month: '2-digit', day: '2-digit',
+                        hour: '2-digit', minute: '2-digit', hour12: true
+                    });
 
                     let desc = `<div class="text-left">`;
-                    desc += `<strong>Dates:</strong> ${moment(info.event.start).
-                        format(`(dddd) ${datetime_format}`)} - ${moment(info.event.end).format(datetime_format)}`;
+                    desc += `<strong>Dates:</strong> ${dateRange}`;
                     desc += '<br />';
                     desc += '<br />';
                     desc += info.event.extendedProps.description.replace(/\<a/, '<a rel="external"');

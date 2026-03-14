@@ -11,8 +11,8 @@ window.showMoreTimeline = function (args) {
 };
 
 // Close mobile nav when clicking outside
-$(document).on('click', function (e) {
-  if (!$(e.target).closest('#main-nav').length) {
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('#main-nav')) {
     document.getElementById('nav-toggle').checked = false;
   }
 });
@@ -20,7 +20,8 @@ $(document).on('click', function (e) {
 // turbo:load fires on initial load AND every Turbo navigation
 document.addEventListener('turbo:load', function () {
   // Hide loading overlay on non-calendar pages
-  $('#loading-overlay').hide();
+  const loadingOverlay = document.getElementById('loading-overlay');
+  if (loadingOverlay) loadingOverlay.style.display = 'none';
 
   // Register nullable rule for Aire.js (for optional URL field)
   if (typeof window.Validator !== 'undefined') {
