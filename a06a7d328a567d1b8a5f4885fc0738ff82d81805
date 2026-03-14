@@ -1,0 +1,23 @@
+CLAUDE.md
+  509a5d741a4639c2 2-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "a06a7d328a567d1b8a5f4885fc0738ff82d81805",
+  "prompts": {
+    "509a5d741a4639c2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "700a7a68-8609-46d8-b12f-e28178e87e7c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 57,
+      "total_deletions": 141,
+      "accepted_lines": 37,
+      "overriden_lines": 0
+    }
+  }
+}
