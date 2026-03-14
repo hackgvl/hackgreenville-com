@@ -76,11 +76,9 @@
 
                 {{ aire()->textArea('message', 'Message')->rows(5)->required() }}
 
-                <div class="mb-6 flex justify-start">
-                    {!! HCaptcha::display(['class' => 'hcaptcha']) !!}
-                </div>
+                <x-turnstile data-appearance="interaction-only" />
 
-                @error('h-captcha-response')
+                @error('cf-turnstile-response')
                     <div class="mb-4 p-3 bg-red-50 border border-red-300 text-red-700 rounded-lg text-sm">{{ $message }}</div>
                 @enderror
 
@@ -92,13 +90,6 @@
     </div>
 
     @push('scripts')
-        <script src="https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit" async defer></script>
-        <script>
-            window.onHcaptchaLoad = function() {
-                document.querySelectorAll('.h-captcha').forEach(function(el) {
-                    if (!el.hasChildNodes()) hcaptcha.render(el);
-                });
-            };
-        </script>
+        <x-turnstile.scripts />
     @endpush
 @endsection

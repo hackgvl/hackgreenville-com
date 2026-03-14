@@ -74,11 +74,9 @@
                 <div class="text-center">
                     {{ aire()->checkbox('rules', __('Do you accept the rules?'))->required()->addClass('mb-6') }}
                     
-                    <div class="mb-6 flex justify-center">
-                        {!! HCaptcha::display(['class' => 'hcaptcha']) !!}
-                    </div>
+                    <x-turnstile data-appearance="interaction-only" />
 
-                    @error('h-captcha-response')
+                    @error('cf-turnstile-response')
                         <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">{{ $message }}</div>
                     @enderror
 
@@ -90,13 +88,6 @@
     </div>
     
     @push('scripts')
-        <script src="https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit" async defer></script>
-        <script>
-            window.onHcaptchaLoad = function() {
-                document.querySelectorAll('.h-captcha').forEach(function(el) {
-                    if (!el.hasChildNodes()) hcaptcha.render(el);
-                });
-            };
-        </script>
+        <x-turnstile.scripts />
     @endpush
 @endsection

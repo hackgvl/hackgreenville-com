@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class JoinMessageRequest extends FormRequest
 {
@@ -29,7 +30,7 @@ class JoinMessageRequest extends FormRequest
             'reason' => 'required|max:5000',
             'url' => 'nullable|url',
             'rules' => 'required|accepted',
-            'h-captcha-response' => 'required|HCaptcha'
+            'cf-turnstile-response' => ['required', new Turnstile]
         ];
     }
 
@@ -43,8 +44,7 @@ class JoinMessageRequest extends FormRequest
         return [
             'rules.required' => __('Please accept the rules to join HackGreenville.'),
             'rules.accepted' => __('You must accept the rules to join HackGreenville.'),
-            'h-captcha-response.required' => __('Please verify that you are not a robot.'),
-            'h-captcha-response.captcha' => __('Captcha error! try again later or contact site admin.'),
+            'cf-turnstile-response.required' => __('Please verify that you are not a robot.'),
         ];
     }
 }
