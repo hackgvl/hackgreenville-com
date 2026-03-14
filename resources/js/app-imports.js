@@ -3,6 +3,9 @@ import * as Turbo from '@hotwired/turbo';
 // Lazy-load FullCalendar + CSS only when needed (calendar page)
 window.loadCalendarLibs = () => import('./calendar-libs.js');
 
+// Lazy-load Labs hero particle canvas only on /labs
+window.loadLabsHero = () => import('./labs-hero.js');
+
 // Lazy-load Alpine.js only when page has Alpine components
 function maybeLoadAlpine() {
   if (document.querySelector('[x-data]') && !window.Alpine) {
