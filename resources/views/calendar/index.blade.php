@@ -20,7 +20,7 @@
             </div>
             <a href="{{ route('calendar-feed.index') }}"
                class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary no-underline transition-colors shrink-0">
-                <x-lucide-rss class="w-3.5 h-3.5"/>
+                <x-lucide-rss aria-hidden="true" class="w-3.5 h-3.5"/>
                 Subscribe to feed
             </a>
         </div>

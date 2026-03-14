@@ -90,14 +90,17 @@
     @yield('head')
 </head>
 <body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:px-6 focus:py-3 focus:bg-gray-900 focus:text-white focus:font-semibold focus:no-underline">Skip to main content</a>
+
 <div id="app">
     @include('layouts.top-nav')
 
-    <div class="@if(!isset($show_loading)) hidden @endif fixed inset-0 bg-black/60 z-50 flex items-center justify-center" id="loading-overlay">
-        <x-lucide-loader-circle class="w-12 h-12 text-white animate-spin"/>
+    <div class="@if(!isset($show_loading)) hidden @endif fixed inset-0 bg-black/60 z-50 flex items-center justify-center" id="loading-overlay" role="status" aria-live="polite">
+        <x-lucide-loader-circle aria-hidden="true" class="w-12 h-12 text-white animate-spin"/>
+        <span class="sr-only">Loading content</span>
     </div>
 
-    <main class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">
+    <main id="main-content" class=" @if(isset($remove_space)) py-0 @else py-4 @endif ">
         @yield('content')
     </main>
 

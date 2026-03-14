@@ -77,7 +77,7 @@
                     <x-turnstile data-appearance="interaction-only" />
 
                     @error('cf-turnstile-response')
-                        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">{{ $message }}</div>
+                        <div role="alert" class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">{{ $message }}</div>
                     @enderror
 
                     {{ aire()->submit('Join Slack') }}

@@ -19,7 +19,7 @@
             @foreach($activeCategories as $organizations)
                 <section>
                     <div class="flex items-center gap-3 mb-4">
-                        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">{{ $organizations->first()->category->label }}</h2>
+                        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">{{ $organizations->first()->category->label }}</h2>
                         <div class="h-px bg-gray-200 flex-1"></div>
                         <span class="text-xs text-gray-300 font-medium tabular-nums">{{ $organizations->count() }}</span>
                     </div>
@@ -36,8 +36,8 @@
                                     <a href="{{ $org->event_calendar_uri }}"
                                        rel="noopener"
                                        class="text-gray-200 group-hover:text-gray-400 transition-colors shrink-0"
-                                       title="Events site">
-                                        <x-lucide-external-link class="w-3 h-3"/>
+                                       aria-label="{{ $org->title }} events site (opens in new tab)">
+                                        <x-lucide-external-link aria-hidden="true" class="w-3 h-3"/>
                                     </a>
                                 @endif
                             </div>
@@ -52,10 +52,10 @@
             @if($organizations->first()->category->isInactive())
                 <details class="mt-10 group">
                     <summary class="flex items-center gap-3 cursor-pointer select-none mb-4">
-                        <h2 class="text-xs font-bold text-gray-300 uppercase tracking-widest whitespace-nowrap group-hover:text-gray-400 transition-colors">{{ $organizations->first()->category->label }}</h2>
+                        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap group-hover:text-gray-400 transition-colors">{{ $organizations->first()->category->label }}</h2>
                         <div class="h-px bg-gray-200 flex-1"></div>
                         <span class="text-xs text-gray-300 font-medium tabular-nums">{{ $organizations->count() }}</span>
-                        <x-lucide-chevron-down class="w-3.5 h-3.5 text-gray-300 group-open:rotate-180 transition-transform"/>
+                        <x-lucide-chevron-down aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 group-open:rotate-180 transition-transform"/>
                     </summary>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
                         @foreach($organizations as $org)

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "accessibility": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "computedHash": "6462f04969f59f771150e6410e6a11fa397f2934be0b51e8650f495feed1e28d"
+    }
+  }
+}

@@ -93,6 +93,9 @@
 
                         <div class="flex items-center p-4 mb-3 rounded-lg bg-slate-100 cursor-pointer hover:bg-slate-200 transition-colors" @click="toggleAll()">
                             <button type="button"
+                                    role="switch"
+                                    :aria-checked="allSelected ? 'true' : 'false'"
+                                    aria-label="Select all organizations"
                                     class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
                                     :class="allSelected ? 'bg-primary' : (someSelected ? 'bg-primary opacity-50' : 'bg-gray-300')"
                                     @click.stop="toggleAll()">
@@ -108,6 +111,9 @@
                             <div class="flex items-center p-4 mb-3 rounded-lg bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
                                  @click="toggleFeed(feed)">
                                 <button type="button"
+                                        role="switch"
+                                        :aria-checked="feed.checked ? 'true' : 'false'"
+                                        :aria-label="'Toggle ' + feed.title"
                                         class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out"
                                         :class="feed.checked ? 'bg-primary' : 'bg-gray-300'"
                                         @click.stop="toggleFeed(feed)">
@@ -132,13 +138,14 @@
                                 Generate Calendar Feed Link
                             </a>
 
-                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-3 bg-gray-50" :value="feedUrl" readonly />
+                            <label for="feed-url" class="sr-only">Generated calendar feed URL</label>
+                            <input type="text" id="feed-url" class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-3 bg-gray-50" :value="feedUrl" readonly />
 
                             <button @click="copyLink()"
                                     class="inline-flex items-center px-6 py-3 font-medium rounded-lg border transition-all"
                                     :class="copied ? 'bg-green-300 border-green-300 text-green-900' : 'bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200 hover:-translate-y-px'">
                                 <template x-if="!copied">
-                                    <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg aria-hidden="true" class="mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 4V16C8 17.1046 8.89543 18 10 18H20C21.1046 18 22 17.1046 22 16V7.41421C22 6.88378 21.7893 6.37507 21.4142 6L20 4.58579C19.6249 4.21071 19.1162 4 18.5858 4H10C8.89543 4 8 4.89543 8 6"
                                               stroke="currentColor"
                                               stroke-width="2"
@@ -152,7 +159,7 @@
                                     </svg>
                                 </template>
                                 <template x-if="copied">
-                                    <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg aria-hidden="true" class="mr-2 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </template>

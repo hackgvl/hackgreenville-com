@@ -7,7 +7,7 @@
 			<div class="font-semibold text-sm text-gray-700">
 				{{ $event->active_at->format('M jS Y') }}
 			</div>
-			<div class="text-xs text-gray-400 mt-0.5">
+			<div class="text-xs text-gray-500 mt-0.5">
 				{{ $event->active_at->format('l') }} • {{ $event->active_at->format('g:i A') }}
 			</div>
 		</div>
@@ -20,13 +20,13 @@
 				@endif
 				{{ $event->event_name }}
 			</a>
-			<div class="text-xs text-gray-400 mt-0.5">
-				<a href="{{ route('orgs.show', $event->organization) }}" class="text-gray-400 hover:text-gray-600 no-underline transition-colors">
+			<div class="text-xs text-gray-500 mt-0.5">
+				<a href="{{ route('orgs.show', $event->organization) }}" class="text-gray-500 hover:text-gray-700 no-underline transition-colors">
 					{{ $event->group_name }}
 				</a>
 			</div>
 			{{-- Date: mobile --}}
-			<div class="text-xs text-gray-400 mt-0.5 md:hidden">
+			<div class="text-xs text-gray-500 mt-0.5 md:hidden">
 				{{ $event->active_at->format('M j') }} • {{ $event->active_at->format('g:i A') }}
 			</div>
 		</div>
@@ -37,15 +37,14 @@
 				<a href="{{ $event->toGoogleCalendarUrl() }}"
 				   rel="noopener"
 				   class="text-gray-200 hover:text-primary transition-colors md:opacity-0 md:group-hover/row:opacity-100"
-				   title="Add to Google Calendar"
-				   aria-label="Add to Google Calendar">
-					<x-lucide-calendar-plus class="w-4 h-4"/>
+				   aria-label="Add {{ $event->event_name }} to Google Calendar">
+					<x-lucide-calendar-plus aria-hidden="true" class="w-4 h-4"/>
 				</a>
 				<a href="{{ $event->url }}"
 				   rel="noopener"
 				   class="text-gray-200 hover:text-primary transition-colors"
-				   title="View event">
-					<x-lucide-arrow-up-right class="w-4 h-4"/>
+				   aria-label="View {{ $event->event_name }}">
+					<x-lucide-arrow-up-right aria-hidden="true" class="w-4 h-4"/>
 				</a>
 			@else
 				<span class="text-xs text-gray-300 font-medium">Cancelled</span>

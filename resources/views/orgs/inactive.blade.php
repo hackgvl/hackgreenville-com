@@ -27,7 +27,7 @@
                                     @if($org->event_calendar_uri)
                                         <div class="flex-shrink-0">
                                             <a href="{{$org->event_calendar_uri }}" rel="noopener" class="text-primary hover:underline text-xs whitespace-nowrap">
-                                                Events Site<x-lucide-external-link class="w-3 h-3 ml-0.5 inline"/>
+                                                Events Site<x-lucide-external-link aria-hidden="true" class="w-3 h-3 ml-0.5 inline"/>
                                             </a>
                                         </div>
                                     @endif
