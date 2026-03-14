@@ -12,6 +12,8 @@ npm-debug.log
 yarn-error.log
 .env
 database/database.sqlite*
+app-modules/slack-events-bot/slackbot-manifest.dev.json
+app-modules/slack-events-bot/vendor/
 
 public/js
 public/css
@@ -33,3 +35,7 @@ public/build/
 .scribe
 
 .DS_Store
+
+_ide_helper_models.php
+_ide_helper.php
+.phpstorm.meta.php

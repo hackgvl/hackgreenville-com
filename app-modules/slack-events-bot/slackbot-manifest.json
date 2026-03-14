@@ -1,0 +1,58 @@
+{
+  "display_information": {
+      "name": "HackGreenvilleAPIBot",
+      "description": "Allow Greenville APIs and tools to interact with the HackGreenville Slack.",
+      "background_color": "#006341",
+      "long_description": "Posts invite requests, contact form, and events from the HackGreenville site and local API / tools to HG Slack channels. See https://github.com/hackgvl for more details."
+  },
+  "features": {
+      "app_home": {
+          "home_tab_enabled": true,
+          "messages_tab_enabled": true,
+          "messages_tab_read_only_enabled": false
+      },
+      "bot_user": {
+          "display_name": "HackGreenville APIs",
+          "always_online": true
+      },
+      "slash_commands": [
+          {
+              "command": "/add_channel",
+              "url": "https://hackgreenville.com/slack/events",
+              "description": "Posts the app in the Slack channel",
+              "should_escape": false
+          },
+          {
+              "command": "/remove_channel",
+              "url": "https://hackgreenville.com/slack/events",
+              "description": "Removes the app from this slack channel",
+              "should_escape": false
+          },
+          {
+              "command": "/check_api",
+              "url": "https://hackgreenville.com/slack/events",
+              "description": "Manually checks OpenData API for events",
+              "should_escape": false
+          }
+      ]
+  },
+  "oauth_config": {
+      "redirect_urls": [
+          "https://hackgreenville.com/slack/auth"
+      ],
+      "scopes": {
+          "bot": [
+              "chat:write",
+              "chat:write.public",
+              "commands",
+              "incoming-webhook",
+              "users:read"
+          ]
+      }
+  },
+  "settings": {
+      "org_deploy_enabled": false,
+      "socket_mode_enabled": false,
+      "token_rotation_enabled": false
+  }
+}

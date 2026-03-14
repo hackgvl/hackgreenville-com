@@ -1,0 +1,25 @@
+{
+    "name": "hack-greenville/slack-events-bot",
+    "description": "Slack bot that relays information from HackGreenville Labs' Events API to Slack channels",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0",
+    "autoload": {
+        "psr-4": {
+            "HackGreenville\\SlackEventsBot\\": "src/",
+            "HackGreenville\\SlackEventsBot\\Database\\Factories\\": "./database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HackGreenville\\SlackEventsBot\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HackGreenville\\SlackEventsBot\\Providers\\SlackEventsBotServiceProvider"
+            ]
+        }
+    }
+}
