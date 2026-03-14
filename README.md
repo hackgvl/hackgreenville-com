@@ -25,8 +25,12 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md) for the various options for running a
 
 ## APIs
 
-- [Organizations](https://hackgreenville.com/orgs) data may be queried via the [Organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md).
-- [Events](https://hackgreenville.com/events) data may be queried via the [Events API](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md).
+- [Organizations](https://hackgreenville.com/orgs) data may be queried via the [Organizations API](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md).
+- [Events](https://hackgreenville.com/events) data may be queried via the [Events API](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md).
+
+## Slack Events Bot
+
+- The [Slack Events Bot](app-modules/slack-events-bot/README.md) posts weekly event summaries to configured Slack channels.
 
 ## Laravel
 
