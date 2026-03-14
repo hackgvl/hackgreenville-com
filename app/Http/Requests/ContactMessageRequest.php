@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class ContactMessageRequest extends FormRequest
 {
@@ -27,7 +28,7 @@ class ContactMessageRequest extends FormRequest
             'name' => 'required|max:255',
             'contact' => 'required|email:rfc,dns',
             'message' => 'required|max:5000',
-            'h-captcha-response' => 'required|HCaptcha'
+            'cf-turnstile-response' => ['required', new Turnstile]
         ];
     }
 
@@ -39,8 +40,7 @@ class ContactMessageRequest extends FormRequest
     public function messages()
     {
         return [
-            'h-captcha-response.required' => __('Please verify that you are not a robot.'),
-            'h-captcha-response.captcha' => __('Captcha error! try again later or contact site admin.'),
+            'cf-turnstile-response.required' => __('Please verify that you are not a robot.'),
         ];
     }
 }
