@@ -5,8 +5,9 @@
 
 @section('content')
 	{{-- Hero --}}
-	<div class="bg-primary text-white">
-		<div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+	<div class="bg-primary text-white relative overflow-hidden" id="labs-hero">
+		<canvas id="labs-hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+		<div class="max-w-5xl mx-auto px-4 py-16 sm:py-20 relative">
 			<div class="max-w-2xl">
 				<p class="text-sm font-medium tracking-widest uppercase text-green-300 mb-4">Open Source</p>
 				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">HackGreenville Labs</h1>
@@ -112,4 +113,14 @@
 			</div>
 		</div>
 	</div>
+@endsection
+
+@section('js')
+	<script type="module">
+		const canvas = document.getElementById('labs-hero-canvas');
+		if (canvas) {
+			const { initHeroCanvas } = await window.loadLabsHero();
+			initHeroCanvas(canvas);
+		}
+	</script>
 @endsection
