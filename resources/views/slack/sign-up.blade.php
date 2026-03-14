@@ -21,7 +21,7 @@
             </div>
 
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-                {{ aire()->route('join-slack.submit')->novalidate()->rules([
+                {{ aire()->route('join-slack.submit')->data('turbo', 'false')->novalidate()->rules([
                     'name' => 'required|max:255',
                     'contact' => 'required|email',
                     'reason' => 'required|max:5000',
