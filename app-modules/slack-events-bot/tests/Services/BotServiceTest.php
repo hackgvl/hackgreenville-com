@@ -9,6 +9,7 @@ use HackGreenville\SlackEventsBot\Models\SlackMessage;
 use HackGreenville\SlackEventsBot\Services\BotService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
 use HackGreenville\SlackEventsBot\Services\MessageBuilderService;
+use HackGreenville\SlackEventsBot\Services\SlackApiClient;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -31,7 +32,8 @@ class BotServiceTest extends DatabaseTestCase
 
         $this->botService = new BotService(
             $this->databaseServiceMock,
-            $this->messageBuilderServiceMock
+            $this->messageBuilderServiceMock,
+            new SlackApiClient
         );
     }
 
@@ -41,7 +43,8 @@ class BotServiceTest extends DatabaseTestCase
 
         $this->botService = Mockery::mock(BotService::class . '[getEventsForWeek, deleteMessagesForWeek]', [
             $this->databaseServiceMock,
-            $this->messageBuilderServiceMock
+            $this->messageBuilderServiceMock,
+            new SlackApiClient,
         ])->makePartial()->shouldAllowMockingProtectedMethods();
 
         $this->botService->shouldReceive('getEventsForWeek')
@@ -65,7 +68,8 @@ class BotServiceTest extends DatabaseTestCase
 
         $this->botService = Mockery::mock(BotService::class . '[getEventsForWeek]', [
             $this->databaseServiceMock,
-            $this->messageBuilderServiceMock
+            $this->messageBuilderServiceMock,
+            new SlackApiClient,
         ])->makePartial()->shouldAllowMockingProtectedMethods();
 
         $this->botService->shouldReceive('getEventsForWeek')

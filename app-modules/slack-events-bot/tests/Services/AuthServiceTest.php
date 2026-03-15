@@ -4,6 +4,7 @@ namespace HackGreenville\SlackEventsBot\Tests\Services;
 
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use HackGreenville\SlackEventsBot\Services\AuthService;
+use HackGreenville\SlackEventsBot\Services\SlackApiClient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -100,7 +101,7 @@ class AuthServiceTest extends DatabaseTestCase
         $teamId = 'T123';
 
         // Test case: User is admin
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
+        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]', [app(SlackApiClient::class)]);
         $this->authService->shouldReceive('getUserInfo')
             ->once()
             ->with($userId, $teamId)
@@ -109,7 +110,7 @@ class AuthServiceTest extends DatabaseTestCase
         $this->assertTrue($this->authService->isAdmin($userId, $teamId));
 
         // Test case: User is not admin
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
+        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]', [app(SlackApiClient::class)]);
         $this->authService->shouldReceive('getUserInfo')
             ->once()
             ->with($userId, $teamId)
@@ -118,7 +119,7 @@ class AuthServiceTest extends DatabaseTestCase
         $this->assertFalse($this->authService->isAdmin($userId, $teamId));
 
         // Test case: User info not available (e.g., 'user' key missing or 'is_admin' missing)
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
+        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]', [app(SlackApiClient::class)]);
         $this->authService->shouldReceive('getUserInfo')
             ->once()
             ->with($userId, $teamId)
@@ -126,7 +127,7 @@ class AuthServiceTest extends DatabaseTestCase
 
         $this->assertFalse($this->authService->isAdmin($userId, $teamId));
 
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
+        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]', [app(SlackApiClient::class)]);
         $this->authService->shouldReceive('getUserInfo')
             ->once()
             ->with($userId, $teamId)

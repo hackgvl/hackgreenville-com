@@ -6,17 +6,15 @@ use App\Models\Event;
 use Carbon\Carbon;
 use Exception;
 use HackGreenville\SlackEventsBot\Exceptions\UnsafeMessageSpilloverException;
-use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Throwable;
 
 class BotService
 {
     public function __construct(
         private DatabaseService $databaseService,
         private MessageBuilderService $messageBuilderService,
+        private SlackApiClient $slackApiClient,
     ) {
     }
 
@@ -45,9 +43,7 @@ class BotService
         foreach ($channels as $channel) {
             $slackChannelId = $channel->slack_channel_id;
 
-            if ( ! $channel->workspace) {
-                Log::warning("Channel {$slackChannelId} has no associated workspace. Deleting orphaned channel.");
-                $this->databaseService->removeChannel($slackChannelId);
+            if ($this->isOrphanedChannel($channel)) {
                 continue;
             }
 
@@ -75,7 +71,7 @@ class BotService
                         if ( ! $existingMsgDetail) {
                             Log::info("Posting new message " . ($msgIdx + 1) . " for week {$week->format('F j')} in {$slackChannelId}");
 
-                            $slackResponse = $this->postNewMessage($slackChannelId, $msgBlocks, $msgText, $token);
+                            $slackResponse = $this->slackApiClient->postMessage($token, $slackChannelId, $msgBlocks, $msgText);
 
                             $this->databaseService->createMessage(
                                 $week,
@@ -92,25 +88,7 @@ class BotService
 
                             $timestamp = $existingMsgDetail['timestamp'];
 
-                            $slackResponse = Http::withToken($token)
-                                ->retry(3, fn (int $attempt, $exception) => $this->retryDelay($attempt, $exception))
-                                ->post('https://slack.com/api/chat.update', [
-                                    'ts' => $timestamp,
-                                    'channel' => $slackChannelId,
-                                    'blocks' => $msgBlocks,
-                                    'text' => $msgText,
-                                ]);
-
-                            $json = $slackResponse->json();
-
-                            if ( ! $slackResponse->successful() || ! ($json['ok'] ?? false)) {
-                                $error = $json['error'] ?? 'unknown_error';
-                                Log::error("Failed to update message {$timestamp} in Slack channel {$slackChannelId}", [
-                                    'error' => $error,
-                                    'response' => $json,
-                                ]);
-                                throw new Exception("Slack API error when updating message: {$error}");
-                            }
+                            $this->slackApiClient->updateMessage($token, $slackChannelId, $timestamp, $msgBlocks, $msgText);
 
                             $this->databaseService->updateMessage(
                                 $week,
@@ -202,9 +180,7 @@ class BotService
         foreach ($messagesToDelete as $message) {
             $slackChannelId = $message->channel->slack_channel_id;
 
-            if ( ! $message->channel->workspace) {
-                Log::warning("Channel {$slackChannelId} has no associated workspace. Deleting orphaned channel.");
-                $this->databaseService->removeChannel($slackChannelId);
+            if ($this->isOrphanedChannel($message->channel)) {
                 continue;
             }
 
@@ -228,16 +204,9 @@ class BotService
 
     private function deleteSlackMessage(string $slackChannelId, string $timestamp, string $token): void
     {
-        $deleteResponse = Http::withToken($token)
-            ->retry(3, fn (int $attempt, $exception) => $this->retryDelay($attempt, $exception))
-            ->post('https://slack.com/api/chat.delete', [
-                'channel' => $slackChannelId,
-                'ts'      => $timestamp,
-            ]);
-
-        $deleteJson = $deleteResponse->json();
-        $deleteOk = $deleteJson['ok'] ?? false;
-        $deleteError = $deleteJson['error'] ?? 'unknown';
+        $json = $this->slackApiClient->deleteMessage($token, $slackChannelId, $timestamp);
+        $deleteOk = $json['ok'] ?? false;
+        $deleteError = $json['error'] ?? 'unknown';
 
         if ($deleteOk || $deleteError === 'message_not_found') {
             $this->databaseService->deleteMessage($slackChannelId, $timestamp);
@@ -248,6 +217,19 @@ class BotService
                 'error' => $deleteError,
             ]);
         }
+    }
+
+    private function isOrphanedChannel(object $channel): bool
+    {
+        if ($channel->workspace) {
+            return false;
+        }
+
+        $slackChannelId = $channel->slack_channel_id;
+        Log::warning("Channel {$slackChannelId} has no associated workspace. Deleting orphaned channel.");
+        $this->databaseService->removeChannel($slackChannelId);
+
+        return true;
     }
 
     /**
@@ -274,43 +256,5 @@ class BotService
         }
 
         return $newestMessageInChannel->week->greaterThan($week);
-    }
-
-    private function retryDelay(int $attempt, ?Throwable $exception): int
-    {
-        if ($exception instanceof RequestException) {
-            $retryAfter = $exception->response?->header('Retry-After');
-            if ($retryAfter && is_numeric($retryAfter)) {
-                return (int) $retryAfter * 1000;
-            }
-        }
-
-        return $attempt * 1000;
-    }
-
-    private function postNewMessage(string $slackChannelId, array $msgBlocks, string $msgText, string $token): array
-    {
-        $slackResponse = Http::withToken($token)
-            ->retry(3, fn (int $attempt, $exception) => $this->retryDelay($attempt, $exception))
-            ->post('https://slack.com/api/chat.postMessage', [
-                'channel' => $slackChannelId,
-                'blocks' => $msgBlocks,
-                'text' => $msgText,
-                'unfurl_links' => false,
-                'unfurl_media' => false,
-            ]);
-
-        $json = $slackResponse->json();
-
-        if ( ! $slackResponse->successful() || ! ($json['ok'] ?? false)) {
-            $error = $json['error'] ?? 'unknown_error';
-            Log::error("Failed to post new message to Slack channel {$slackChannelId}", [
-                'error' => $error,
-                'response' => $json,
-            ]);
-            throw new Exception("Slack API error when posting message: {$error}");
-        }
-
-        return $json;
     }
 }

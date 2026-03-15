@@ -20,8 +20,7 @@ class EventService
             $description = 'No description';
         }
 
-        $rawUrl = str_replace(['>', '|'], '', (string) $event->url);
-        $sanitizedUrl = filter_var($rawUrl, FILTER_VALIDATE_URL) ? $rawUrl : '#';
+        $sanitizedUrl = $this->sanitizeUrl($event->url);
 
         return [
             [
@@ -53,8 +52,7 @@ class EventService
 
     public function generateText(Event $event): string
     {
-        $rawUrl = str_replace(['>', '|'], '', (string) $event->url);
-        $sanitizedUrl = filter_var($rawUrl, FILTER_VALIDATE_URL) ? $rawUrl : '#';
+        $sanitizedUrl = $this->sanitizeUrl($event->url);
 
         return sprintf(
             "%s\nOrganization: %s\nDescription: %s\nLink: %s\nStatus: %s\nLocation: %s\nTime: %s",
@@ -66,6 +64,13 @@ class EventService
             $event->venue ? $event->venue->fullAddress() : 'No location',
             $event->active_at->format('F j, Y g:i A T')
         );
+    }
+
+    private function sanitizeUrl(?string $url): string
+    {
+        $rawUrl = str_replace(['>', '|'], '', (string) $url);
+
+        return filter_var($rawUrl, FILTER_VALIDATE_URL) ? $rawUrl : '#';
     }
 
     private function printStatus(string $status): string
