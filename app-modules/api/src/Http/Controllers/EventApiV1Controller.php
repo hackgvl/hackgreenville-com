@@ -67,11 +67,8 @@ class EventApiV1Controller extends Controller
                     $query->where('state', $request->input('venue_state'));
                 });
             })
-            ->when($request->filled('sort_by') && in_array($request->input('sort_by'), [
-                'active_at', 'event_name', 'group_name', 'rsvp_count', 'created_at'
-            ]), function (Builder $query) use ($request) {
-                $sortDirection = $request->input('sort_direction') === 'desc' ? 'desc' : 'asc';
-                $query->orderBy($request->input('sort_by'), $sortDirection);
+            ->when($request->filled('sort_by'), function (Builder $query) use ($request) {
+                $query->orderBy($request->input('sort_by'), $request->input('sort_direction', 'asc'));
             }, function (Builder $query) {
                 $query->orderBy('active_at', 'asc');
             })
