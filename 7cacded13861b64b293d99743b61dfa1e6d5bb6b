@@ -1,0 +1,35 @@
+app-modules/slack-events-bot/tests/Services/BotServiceTest.php
+  e1fd9beb6b4763df 12,35,46,71
+app-modules/slack-events-bot/tests/Services/AuthServiceTest.php
+  e1fd9beb6b4763df 7,104,113,122,130
+app-modules/slack-events-bot/src/Services/AuthService.php
+  e1fd9beb6b4763df 12-15,24
+app-modules/slack-events-bot/src/Services/BotService.php
+  e1fd9beb6b4763df 17,46,74,91,183,207-209,222-225,227-232
+app-modules/slack-events-bot/src/Services/SlackApiClient.php
+  e1fd9beb6b4763df 1-93
+app-modules/slack-events-bot/src/Exceptions/SlackApiException.php
+  e1fd9beb6b4763df 1-9
+app-modules/slack-events-bot/src/Services/EventService.php
+  e1fd9beb6b4763df 23,55,69-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "7cacded13861b64b293d99743b61dfa1e6d5bb6b",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 226,
+      "total_deletions": 227,
+      "accepted_lines": 223,
+      "overriden_lines": 3
+    }
+  }
+}
