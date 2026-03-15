@@ -12,6 +12,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Throwable;
 
 /*
 NOTE: This importer has been deprecated in favor of the MeetupGraphqlExtHandler which uses the newer
