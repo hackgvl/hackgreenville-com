@@ -28,15 +28,17 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     {
         $event = $data['node'];
 
+        $startsAt = Carbon::parse($event['dateTime']);
+
         $map = EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
             'url' => $event['eventUrl'],
-            'starts_at' => Carbon::parse($event['dateTime']),
+            'starts_at' => $startsAt,
             // Meetup (graphql) does not provide an event end time
-            'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
-            'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
+            'ends_at' => $startsAt->copy()->addHours(2),
+            'timezone' => $startsAt->timezoneName,
             'cancelled_at' => match ($event['status']) {
                 'CANCELLED' => now(),
                 'cancelled' => now(),

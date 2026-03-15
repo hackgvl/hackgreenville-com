@@ -26,14 +26,16 @@ class MeetupGraphqlExtHandler extends AbstractEventHandler
 
         $going = $event['rspvs']['yesCount'] ?? 0;
 
+        $startsAt = Carbon::parse($event['dateTime']);
+
         $map = EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
             'url' => $event['eventUrl'],
-            'starts_at' => Carbon::parse($event['dateTime']),
-            'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
-            'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
+            'starts_at' => $startsAt,
+            'ends_at' => $startsAt->copy()->addHours(2),
+            'timezone' => $startsAt->timezoneName,
             'cancelled_at' => match ($event['status']) {
                 'CANCELLED' => now(),
                 'cancelled' => now(),
