@@ -100,6 +100,13 @@ class Event extends BaseModel
 
     }
 
+    public function getDisplayNameAttribute(): string
+    {
+        return $this->isCancelled()
+            ? '[CANCELLED] ' . $this->event_name
+            : $this->event_name;
+    }
+
     public function toGoogleCalendarUrl(): string
     {
         $starts_at = $this->active_at->format('Ymd\THis');
