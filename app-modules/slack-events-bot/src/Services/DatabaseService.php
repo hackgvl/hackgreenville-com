@@ -54,7 +54,7 @@ class DatabaseService
 
     public function getMostRecentMessageForChannel(string $slackChannelId): ?SlackMessage
     {
-        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+        $channel = $this->findChannel($slackChannelId);
 
         if ( ! $channel) {
             return null;
@@ -86,7 +86,7 @@ class DatabaseService
      */
     public function removeChannel(string $slackChannelId): int
     {
-        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+        $channel = $this->findChannel($slackChannelId);
 
         if ( ! $channel) {
             return 0;
@@ -104,7 +104,7 @@ class DatabaseService
 
     public function deleteMessage(string $slackChannelId, string $messageTimestamp): int
     {
-        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+        $channel = $this->findChannel($slackChannelId);
 
         if ( ! $channel) {
             return 0;
@@ -159,6 +159,11 @@ class DatabaseService
                 'bot_user_id' => $data['bot_user_id'],
             ]
         );
+    }
+
+    private function findChannel(string $slackChannelId): ?SlackChannel
+    {
+        return SlackChannel::where('slack_channel_id', $slackChannelId)->first();
     }
 
     private function resolveChannel(string $slackChannelId): SlackChannel
