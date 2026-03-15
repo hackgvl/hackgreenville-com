@@ -8,14 +8,12 @@ use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use RuntimeException;
 
 class Event extends BaseModel
 {
-    use HasFactory;
     use HasUniqueIdentifier;
     use SoftDeletes;
 
