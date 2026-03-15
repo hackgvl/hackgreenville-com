@@ -1,0 +1,23 @@
+app-modules/slack-events-bot/tests/Console/Commands/DeleteOldMessagesCommandTest.php
+  c9bfc395e0d42fd4 5,7,18-21,23-26,32-34,40-43,45-48,54-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "8ad16734c0446ae352691304a21870959b6f397c",
+  "prompts": {
+    "c9bfc395e0d42fd4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2ae221d-0c1f-4d27-a27a-da1c99c45f48",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 27,
+      "total_deletions": 7,
+      "accepted_lines": 26,
+      "overriden_lines": 0
+    }
+  }
+}
