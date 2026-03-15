@@ -1,0 +1,41 @@
+resources/views/events/index.blade.php
+  e1fd9beb6b4763df 18
+app-modules/api/tests/Feature/EventApiV0Test.php
+  e1fd9beb6b4763df 32
+app-modules/event-importer/src/Services/Concerns/AbstractEventHandler.php
+  e1fd9beb6b4763df 38
+resources/views/events/_item.blade.php
+  e1fd9beb6b4763df 17,43
+app/Http/Controllers/CalendarFeedController.php
+  e1fd9beb6b4763df 48,58-59
+app-modules/api/src/Resources/Events/V0/EventResource.php
+  e1fd9beb6b4763df 20,23
+app-modules/slack-events-bot/src/Services/EventService.php
+  e1fd9beb6b4763df 23,43,55,63
+app/Http/Controllers/CalendarController.php
+  e1fd9beb6b4763df 38
+app/Models/Event.php
+  e1fd9beb6b4763df 67,72,85
+app-modules/api/src/Resources/Events/V1/EventResource.php
+  e1fd9beb6b4763df 20,24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "a1a5007df97cf11d37f4d8770d43c4c9bc84e6dd",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 28,
+      "total_deletions": 43,
+      "accepted_lines": 23,
+      "overriden_lines": 0
+    }
+  }
+}
