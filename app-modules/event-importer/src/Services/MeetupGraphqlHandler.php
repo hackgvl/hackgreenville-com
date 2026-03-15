@@ -48,20 +48,13 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'venue' => $this->mapIntoVenueData($data)
         ]);
 
-        if ($this->debug_log_enabled) {
-            Log::info('Mapped MeetupGraphql event data', [
-                Log::build([
-                    'driver' => 'single',
-                    'path' => storage_path('logs/meetup-graphql.log'),
-                ])->info('MeetupGraphql', [
-                    'org_service_key' => $this->org->service_api_key,
-                    'service_id' => $event['id'],
-                    'token' => $event['token'] ?? null,
-                    'starts_at' => $map->starts_at->toISOString(),
-                    'name' => $map->name,
-                ])
-            ]);
-        }
+        $this->meetupDebugLog('MeetupGraphql', [
+            'org_service_key' => $this->org->service_api_key,
+            'service_id' => $event['id'],
+            'token' => $event['token'] ?? null,
+            'starts_at' => $map->starts_at->toISOString(),
+            'name' => $map->name,
+        ]);
 
         return $map;
     }

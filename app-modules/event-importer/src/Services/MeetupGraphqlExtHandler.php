@@ -45,20 +45,13 @@ class MeetupGraphqlExtHandler extends AbstractEventHandler
             'venue' => $this->mapIntoVenueData($data)
         ]);
 
-        if ($this->debug_log_enabled) {
-            Log::info('Mapped MeetupGraphql event data', [
-                Log::build([
-                    'driver' => 'single',
-                    'path' => storage_path('logs/meetup-graphql.log'),
-                ])->info('MeetupGraphql', [
-                    'org_service_key' => $this->org->service_api_key,
-                    'service_id' => $event['id'],
-                    'token' => $event['token'] ?? null,
-                    'starts_at' => $map->starts_at->toISOString(),
-                    'name' => $map->name,
-                ])
-            ]);
-        }
+        $this->meetupDebugLog('MeetupGraphql', [
+            'org_service_key' => $this->org->service_api_key,
+            'service_id' => $event['id'],
+            'token' => $event['token'] ?? null,
+            'starts_at' => $map->starts_at->toISOString(),
+            'name' => $map->name,
+        ]);
 
         return $map;
     }
@@ -197,17 +190,10 @@ class MeetupGraphqlExtHandler extends AbstractEventHandler
         }
         GQL;
 
-        if ($this->debug_log_enabled) {
-            Log::info('MeetupGraphql Query', [
-                Log::build([
-                    'driver' => 'single',
-                    'path' => storage_path('logs/meetup-graphql.log'),
-                ])->info('Query', [
-                    'org_service_key' => $this->org->service_api_key,
-                    'query' => $query,
-                ])
-            ]);
-        }
+        $this->meetupDebugLog('Query', [
+            'org_service_key' => $this->org->service_api_key,
+            'query' => $query,
+        ]);
 
         $response = Http::baseUrl('https://api.meetup.com/')
             ->withToken($bearer_token['access_token'])

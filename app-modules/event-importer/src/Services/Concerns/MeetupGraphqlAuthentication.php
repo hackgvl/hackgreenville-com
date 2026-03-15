@@ -4,10 +4,23 @@ namespace HackGreenville\EventImporter\Services\Concerns;
 
 use Firebase\JWT\JWT;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
 trait MeetupGraphqlAuthentication
 {
+    protected function meetupDebugLog(string $label, array $context): void
+    {
+        if ( ! $this->debug_log_enabled) {
+            return;
+        }
+
+        Log::build([
+            'driver' => 'single',
+            'path' => storage_path('logs/meetup-graphql.log'),
+        ])->info($label, $context);
+    }
+
     private function getBearerToken(): array
     {
         $this->validateConfigValues();
