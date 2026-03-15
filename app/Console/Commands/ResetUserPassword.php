@@ -49,7 +49,7 @@ class ResetUserPassword extends Command
                 throw new Exception("Unable to reset user's password.");
             }
 
-            $this->info("User successfully reset.");
+            $this->logInfo("User successfully reset.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
