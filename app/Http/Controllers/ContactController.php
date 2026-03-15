@@ -4,22 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactMessageRequest;
 use App\Notifications\ContactMessage;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Notification;
 
 class ContactController extends Controller
 {
-    public function contact()
+    public function contact(): View
     {
         return view('contact.contact');
     }
 
-    /**
-     * Submits a new contact entry
-     *
-     * @param  \Illuminate\Http\ContactMessageRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function submit(ContactMessageRequest $request)
+    public function submit(ContactMessageRequest $request): View
     {
         $validated = $request->validated();
 
