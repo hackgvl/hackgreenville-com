@@ -268,51 +268,6 @@ class DatabaseServiceTest extends DatabaseTestCase
     }
 
     #[Test]
-    public function it_deletes_messages_for_a_week(): void
-    {
-        $workspace = SlackWorkspace::factory()->create();
-        $channel = SlackChannel::factory()->create(['slack_workspace_id' => $workspace->id]);
-
-        $weekToDelete = Carbon::now();
-        $otherWeek = Carbon::now()->subWeek();
-
-        SlackMessage::create([
-            'week' => $weekToDelete->toDateTimeString(),
-            'message' => 'Message 1',
-            'message_timestamp' => '1',
-            'channel_id' => $channel->id,
-            'sequence_position' => 1,
-        ]);
-        SlackMessage::create([
-            'week' => $weekToDelete->toDateTimeString(),
-            'message' => 'Message 2',
-            'message_timestamp' => '2',
-            'channel_id' => $channel->id,
-            'sequence_position' => 2,
-        ]);
-        SlackMessage::create([
-            'week' => Carbon::now()->subWeek()->toDateTimeString(), // Different week
-            'message' => 'Message 3',
-            'message_timestamp' => '3',
-            'channel_id' => $channel->id,
-            'sequence_position' => 1,
-        ]);
-
-        $deletedRows = $this->databaseService->deleteMessagesForWeek($weekToDelete);
-
-        $this->assertEquals(2, $deletedRows);
-        $this->assertDatabaseMissing('slack_messages', [
-            'message' => 'Message 1',
-        ]);
-        $this->assertDatabaseMissing('slack_messages', [
-            'message' => 'Message 2',
-        ]);
-        $this->assertDatabaseHas('slack_messages', [
-            'message' => 'Message 3',
-        ]);
-    }
-
-    #[Test]
     public function it_deletes_a_specific_message(): void
     {
         $workspace = SlackWorkspace::factory()->create();

@@ -97,11 +97,6 @@ class DatabaseService
         return $channel->delete() ? 1 : 0;
     }
 
-    public function deleteMessagesForWeek(Carbon $week): int
-    {
-        return SlackMessage::whereDate('week', $week->toDateString())->delete();
-    }
-
     public function deleteMessage(string $slackChannelId, string $messageTimestamp): int
     {
         $channel = $this->findChannel($slackChannelId);
