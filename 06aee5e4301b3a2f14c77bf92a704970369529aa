@@ -1,0 +1,27 @@
+app-modules/event-importer/src/Services/Concerns/MeetupGraphqlAuthentication.php
+  e1fd9beb6b4763df 7,12-23
+app-modules/event-importer/src/Services/MeetupGraphqlHandler.php
+  e1fd9beb6b4763df 51,56-57
+app-modules/event-importer/src/Services/MeetupGraphqlExtHandler.php
+  e1fd9beb6b4763df 48,193,195-196
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "06aee5e4301b3a2f14c77bf92a704970369529aa",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 31,
+      "total_deletions": 39,
+      "accepted_lines": 20,
+      "overriden_lines": 0
+    }
+  }
+}
