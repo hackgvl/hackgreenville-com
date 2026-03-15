@@ -6,6 +6,7 @@ use App\Models\Event;
 use Carbon\Carbon;
 use Exception;
 use HackGreenville\SlackEventsBot\Exceptions\UnsafeMessageSpilloverException;
+use HackGreenville\SlackEventsBot\Models\SlackChannel;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 
@@ -23,97 +24,17 @@ class BotService
         $channels = $this->databaseService->getSlackChannels();
         $existingMessages = $this->databaseService->getMessages($week);
 
-        $messageDetails = [];
-        $existingCountByChannel = [];
-        foreach ($channels as $channel) {
-            $channelId = $channel->slack_channel_id;
-            $messageDetails[$channelId] = [];
-            $channelExistingMessages = $existingMessages->where('channel.slack_channel_id', $channelId);
-            $existingCountByChannel[$channelId] = $channelExistingMessages->count();
-
-            foreach ($channelExistingMessages as $existingMessage) {
-                $position = $existingMessage->sequence_position;
-                $messageDetails[$channelId][$position] = [
-                    'timestamp' => $existingMessage->message_timestamp,
-                    'message_text' => $existingMessage->message,
-                ];
-            }
-        }
+        [$messageDetails, $existingCountByChannel] = $this->buildMessageCache($channels, $existingMessages);
 
         foreach ($channels as $channel) {
             $slackChannelId = $channel->slack_channel_id;
 
-            if ($this->isOrphanedChannel($channel)) {
+            if ($this->removeIfOrphaned($channel)) {
                 continue;
             }
 
-            $token = $channel->workspace->access_token;
             try {
-                foreach ($messages as $msgIdx => $msg) {
-                    $msgText = $msg['text'];
-                    $msgBlocks = $msg['blocks'];
-
-                    $existingMsgDetail = $messageDetails[$slackChannelId][$msgIdx] ?? null;
-
-                    if (
-                        ! $existingMsgDetail
-                        || $msgText !== $existingMsgDetail['message_text']
-                    ) {
-                        if ($this->isUnsafeToSpillover(
-                            $existingCountByChannel[$slackChannelId] ?? 0,
-                            count($messages),
-                            $week,
-                            $slackChannelId
-                        )) {
-                            throw new UnsafeMessageSpilloverException;
-                        }
-
-                        if ( ! $existingMsgDetail) {
-                            Log::info("Posting new message " . ($msgIdx + 1) . " for week {$week->format('F j')} in {$slackChannelId}");
-
-                            $slackResponse = $this->slackApiClient->postMessage($token, $slackChannelId, $msgBlocks, $msgText);
-
-                            $this->databaseService->createMessage(
-                                $week,
-                                $msgText,
-                                $slackResponse['ts'],
-                                $slackChannelId,
-                                $msgIdx
-                            );
-                        } else {
-                            Log::info(
-                                "Updating message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
-                                "in {$slackChannelId} due to text content change."
-                            );
-
-                            $timestamp = $existingMsgDetail['timestamp'];
-
-                            $this->slackApiClient->updateMessage($token, $slackChannelId, $timestamp, $msgBlocks, $msgText);
-
-                            $this->databaseService->updateMessage(
-                                $week,
-                                $msgText,
-                                $timestamp,
-                                $slackChannelId
-                            );
-                        }
-                    } else {
-                        Log::info(
-                            "Message " . ($msgIdx + 1) . " for week of {$week->format('F j')} " .
-                            "in {$slackChannelId} hasn't changed, not updating"
-                        );
-                    }
-                }
-                // Handle deletion of messages if the new set has fewer messages
-                $currentMessageCountForChannel = count($messageDetails[$slackChannelId] ?? []);
-                for ($i = count($messages); $i < $currentMessageCountForChannel; $i++) {
-                    $timestampToDelete = $messageDetails[$slackChannelId][$i]['timestamp'] ?? null;
-                    if ($timestampToDelete) {
-                        Log::info("Deleting old message (sequence_position {$i}) for week of {$week->format('F j')} in {$slackChannelId}. No longer needed.");
-                        $this->deleteSlackMessage($slackChannelId, $timestampToDelete, $token);
-                    }
-                }
-
+                $this->syncChannelMessages($channel, $week, $messages, $messageDetails, $existingCountByChannel);
             } catch (UnsafeMessageSpilloverException $e) {
                 Log::error(
                     "Cannot update messages: new events caused message count to increase but next week's post already exists. Cannot resize.",
@@ -180,13 +101,117 @@ class BotService
         foreach ($messagesToDelete as $message) {
             $slackChannelId = $message->channel->slack_channel_id;
 
-            if ($this->isOrphanedChannel($message->channel)) {
+            if ($this->removeIfOrphaned($message->channel)) {
                 continue;
             }
 
             $token = $message->channel->workspace->access_token;
             Log::info("Deleting stale message {$message->message_timestamp} in channel {$slackChannelId}.");
             $this->deleteSlackMessage($slackChannelId, $message->message_timestamp, $token);
+        }
+    }
+
+    /**
+     * Build lookup dictionaries for existing messages, keyed by channel and sequence position.
+     *
+     * @return array{0: array<string, array<int, array{timestamp: string, message_text: string}>>, 1: array<string, int>}
+     */
+    private function buildMessageCache(Collection $channels, Collection $existingMessages): array
+    {
+        $messageDetails = [];
+        $existingCountByChannel = [];
+
+        foreach ($channels as $channel) {
+            $channelId = $channel->slack_channel_id;
+            $messageDetails[$channelId] = [];
+            $channelExistingMessages = $existingMessages->where('channel.slack_channel_id', $channelId);
+            $existingCountByChannel[$channelId] = $channelExistingMessages->count();
+
+            foreach ($channelExistingMessages as $existingMessage) {
+                $messageDetails[$channelId][$existingMessage->sequence_position] = [
+                    'timestamp' => $existingMessage->message_timestamp,
+                    'message_text' => $existingMessage->message,
+                ];
+            }
+        }
+
+        return [$messageDetails, $existingCountByChannel];
+    }
+
+    /**
+     * Synchronize messages for a single channel: post new, update changed, delete excess.
+     */
+    private function syncChannelMessages(
+        SlackChannel $channel,
+        Carbon $week,
+        array $messages,
+        array $messageDetails,
+        array $existingCountByChannel,
+    ): void {
+        $slackChannelId = $channel->slack_channel_id;
+        $token = $channel->workspace->access_token;
+        $existingCount = $existingCountByChannel[$slackChannelId] ?? 0;
+
+        // Check spillover once per channel — the result is constant for all messages
+        $spilloverUnsafe = $this->isUnsafeToSpillover($existingCount, count($messages), $week, $slackChannelId);
+
+        foreach ($messages as $msgIdx => $msg) {
+            $msgText = $msg['text'];
+            $msgBlocks = $msg['blocks'];
+            $existingMsgDetail = $messageDetails[$slackChannelId][$msgIdx] ?? null;
+
+            if ($existingMsgDetail && $msgText === $existingMsgDetail['message_text']) {
+                Log::info(
+                    "Message " . ($msgIdx + 1) . " for week of {$week->format('F j')} " .
+                    "in {$slackChannelId} hasn't changed, not updating"
+                );
+
+                continue;
+            }
+
+            if ($spilloverUnsafe) {
+                throw new UnsafeMessageSpilloverException;
+            }
+
+            if ( ! $existingMsgDetail) {
+                Log::info("Posting new message " . ($msgIdx + 1) . " for week {$week->format('F j')} in {$slackChannelId}");
+
+                $slackResponse = $this->slackApiClient->postMessage($token, $slackChannelId, $msgBlocks, $msgText);
+
+                $this->databaseService->createMessage(
+                    $week,
+                    $msgText,
+                    $slackResponse['ts'],
+                    $slackChannelId,
+                    $msgIdx
+                );
+            } else {
+                Log::info(
+                    "Updating message " . ($msgIdx + 1) . " for week {$week->format('F j')} " .
+                    "in {$slackChannelId} due to text content change."
+                );
+
+                $timestamp = $existingMsgDetail['timestamp'];
+
+                $this->slackApiClient->updateMessage($token, $slackChannelId, $timestamp, $msgBlocks, $msgText);
+
+                $this->databaseService->updateMessage(
+                    $week,
+                    $msgText,
+                    $timestamp,
+                    $slackChannelId
+                );
+            }
+        }
+
+        // Delete excess messages when the new set has fewer
+        $currentMessageCount = count($messageDetails[$slackChannelId] ?? []);
+        for ($i = count($messages); $i < $currentMessageCount; $i++) {
+            $timestampToDelete = $messageDetails[$slackChannelId][$i]['timestamp'] ?? null;
+            if ($timestampToDelete) {
+                Log::info("Deleting old message (sequence_position {$i}) for week of {$week->format('F j')} in {$slackChannelId}. No longer needed.");
+                $this->deleteSlackMessage($slackChannelId, $timestampToDelete, $token);
+            }
         }
     }
 
@@ -219,7 +244,12 @@ class BotService
         }
     }
 
-    private function isOrphanedChannel(object $channel): bool
+    /**
+     * Check if the channel's workspace has been removed, and clean up if so.
+     *
+     * Named to make the side effect (channel deletion) explicit at call sites.
+     */
+    private function removeIfOrphaned(SlackChannel $channel): bool
     {
         if ($channel->workspace) {
             return false;
@@ -240,8 +270,8 @@ class BotService
      * appending new messages would place them after the newer week — breaking chronological order.
      */
     private function isUnsafeToSpillover(
-        int    $existingMessagesLength,
-        int    $newMessagesLength,
+        int $existingMessagesLength,
+        int $newMessagesLength,
         Carbon $week,
         string $slackChannelId
     ): bool {

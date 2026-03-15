@@ -7,6 +7,7 @@ use HackGreenville\SlackEventsBot\Models\SlackChannel;
 use HackGreenville\SlackEventsBot\Models\SlackCooldown;
 use HackGreenville\SlackEventsBot\Models\SlackMessage;
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
 
 class DatabaseService
@@ -163,6 +164,7 @@ class DatabaseService
 
     private function resolveChannel(string $slackChannelId): SlackChannel
     {
-        return SlackChannel::where('slack_channel_id', $slackChannelId)->firstOrFail();
+        return $this->findChannel($slackChannelId)
+            ?? throw new ModelNotFoundException("No query results for SlackChannel [{$slackChannelId}].");
     }
 }
