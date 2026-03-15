@@ -57,7 +57,7 @@ HTML, $active_event->description);
         $this->assertEquals(1702951200, $active_event->expire_at->utc()->unix());
         $this->assertEquals('https://www.meetup.com/code-for-the-carolinas-greenville/events/lvgwftyfcqbxb/', $active_event->uri);
         $this->assertNull($active_event->venue_id);
-        $this->assertEquals('upcoming', $active_event->status);
+        $this->assertEquals('upcoming', $active_event->status());
         $this->assertNull($active_event->cancelled_at);
         $this->assertEquals('America/New_York', $active_event->timezone);
     }
@@ -80,7 +80,7 @@ HTML, $active_event->description);
 
         $cancelled_event = Event::query()->where('event_uuid', 'ef6d125478d91ff962d92f8f36ca0b26')->firstOrFail();
 
-        $this->assertEquals('cancelled', $cancelled_event->status);
+        $this->assertEquals('cancelled', $cancelled_event->status());
         $this->assertNotNull($cancelled_event->cancelled_at);
     }
 

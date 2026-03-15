@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Exception;
 use Illuminate\Console\Command;
@@ -11,8 +10,6 @@ use Throwable;
 
 class ResetUserPassword extends Command
 {
-    use LogOutput;
-
     /**
      * The name and signature of the console command.
      *
@@ -53,7 +50,7 @@ class ResetUserPassword extends Command
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->logError($throwable->getMessage());
+            $this->error($throwable->getMessage());
             return self::FAILURE;
         }
     }

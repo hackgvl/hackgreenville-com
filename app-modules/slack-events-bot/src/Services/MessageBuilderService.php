@@ -94,12 +94,13 @@ class MessageBuilderService
      */
     private function buildHeader(Carbon $weekStart, int $index, int $total): array
     {
-        $text = sprintf(
-            "HackGreenville Events for the week of %s - %d of %d\n\n===\n\n",
+        $title = sprintf(
+            'HackGreenville Events for the week of %s - %d of %d',
             $weekStart->format('F j'),
             $index,
             $total
         );
+        $text = $title . "\n\n===\n\n";
 
         return [
             'blocks' => [
@@ -107,12 +108,7 @@ class MessageBuilderService
                     'type' => 'header',
                     'text' => [
                         'type' => 'plain_text',
-                        'text' => sprintf(
-                            'HackGreenville Events for the week of %s - %d of %d',
-                            $weekStart->format('F j'),
-                            $index,
-                            $total
-                        ),
+                        'text' => $title,
                     ],
                 ],
                 ['type' => 'divider'],
@@ -130,14 +126,15 @@ class MessageBuilderService
      */
     private function buildSingleEventBlock(Event $event): ?array
     {
-        $text = $this->eventService->generateText($event) . "\n\n";
+        $generated = $this->eventService->generate($event);
+        $text = $generated['text'] . "\n\n";
 
-        if (empty(mb_trim($text))) { // Check if text is empty or just whitespace
+        if (empty(mb_trim($text))) {
             return null;
         }
 
         return [
-            'blocks' => array_merge($this->eventService->generateBlocks($event), [['type' => 'divider']]),
+            'blocks' => array_merge($generated['blocks'], [['type' => 'divider']]),
             'text' => $text,
             'text_length' => mb_strlen($text),
         ];

@@ -61,7 +61,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
         $this->assertEquals('https://www.meetup.com/defcon864/events/301411834', $event->uri);
         $this->assertNull($event->cancelled_at);
         $this->assertNotNull($event->venue);
-        $this->assertEquals('past', $event->status);
+        $this->assertEquals('past', $event->status());
     }
 
     public function test_meetup_event_venue_data_is_imported_correctly(): void
@@ -86,7 +86,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $cancelled_event = $this->queryEvent('302190057');
 
-        $this->assertEquals('cancelled', $cancelled_event->status);
+        $this->assertEquals('cancelled', $cancelled_event->status());
     }
 
     public function test_past_meetup_event_is_imported_correctly(): void
@@ -95,7 +95,7 @@ class MeetupGraphqlTest extends DatabaseTestCase
 
         $past_event = $this->queryEvent('301559297');
 
-        $this->assertEquals('past', $past_event->status);
+        $this->assertEquals('past', $past_event->status());
     }
 
     public function test_online_event_venue_is_null(): void

@@ -11,68 +11,34 @@ class ContactMessage extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $name;
-    public $contact;
-    public $message;
-
-    /**
-     * Create a new notification instance.
-     *
-     * @param  string $name
-     * @param  string $contact
-     * @param  string $message
-     * @return ContactMessage
-     */
-    public function __construct($name, $contact, $message)
-    {
-        $this->name = $name;
-        $this->contact = $contact;
-        $this->message = $message;
+    public function __construct(
+        public string $name,
+        public string $contact,
+        public string $message,
+    ) {
     }
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function via($notifiable)
+    public function via($notifiable): array
     {
         return ['slack'];
     }
 
-    /**
-     * Get the Slack representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return SlackMessage
-     */
-    public function toSlack($notifiable)
+    public function toSlack($notifiable): SlackMessage
     {
-        $name = $this->name;
-        $contact = $this->contact;
-        $message = $this->message;
-
         return (new SlackMessage)
             ->success()
             ->content('A new contact submission has been received')
-            ->attachment(function ($attachment) use ($name, $contact, $message) {
-                $attachment->title('Reply via email', url("mailto:{$contact}"))
+            ->attachment(function ($attachment) {
+                $attachment->title('Reply via email', url("mailto:{$this->contact}"))
                     ->fields([
-                        'Name' => $name,
-                        'Contact' => $contact,
-                        'Message' => $message,
+                        'Name' => $this->name,
+                        'Contact' => $this->contact,
+                        'Message' => $this->message,
                     ]);
             });
     }
 
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
+    public function toArray($notifiable): array
     {
         return [
             'Name' => $this->name,

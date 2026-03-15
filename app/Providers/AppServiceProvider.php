@@ -26,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        Model::preventLazyLoading(App::environment(['local', 'testing']));
         Model::shouldBeStrict(App::environment(['local', 'testing']));
 
         if (config('telescope.enabled')) {

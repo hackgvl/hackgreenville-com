@@ -2,7 +2,9 @@
 
 namespace HackGreenville\SlackEventsBot\Tests\Console\Commands;
 
+use Carbon\Carbon;
 use Exception;
+use HackGreenville\SlackEventsBot\Models\SlackMessage;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
 use Mockery\MockInterface;
 use PHPUnit\Framework\Attributes\Test;
@@ -13,27 +15,45 @@ class DeleteOldMessagesCommandTest extends DatabaseTestCase
     #[Test]
     public function it_deletes_old_messages_with_default_days_option(): void
     {
-        $this->mock(DatabaseService::class, function (MockInterface $mock) {
-            $mock->shouldReceive('deleteOldMessages')->once()->with(90);
-        });
+        // Create an old message (older than 90 days)
+        SlackMessage::factory()->create([
+            'week' => Carbon::now()->subDays(100)->startOfWeek(Carbon::SUNDAY),
+        ]);
+
+        // Create a recent message (should be kept)
+        $recentMessage = SlackMessage::factory()->create([
+            'week' => Carbon::now()->startOfWeek(Carbon::SUNDAY),
+        ]);
 
         $this->artisan('slack:delete-old-messages')
             ->expectsOutput('Deleting messages and cooldowns older than 90 days...')
             ->expectsOutput('Old messages and cooldowns deleted successfully!')
             ->assertSuccessful();
+
+        $this->assertDatabaseCount('slack_messages', 1);
+        $this->assertDatabaseHas('slack_messages', ['id' => $recentMessage->id]);
     }
 
     #[Test]
     public function it_deletes_old_messages_with_custom_days_option(): void
     {
-        $this->mock(DatabaseService::class, function (MockInterface $mock) {
-            $mock->shouldReceive('deleteOldMessages')->once()->with(30);
-        });
+        // Create a message older than 30 days
+        SlackMessage::factory()->create([
+            'week' => Carbon::now()->subDays(40)->startOfWeek(Carbon::SUNDAY),
+        ]);
+
+        // Create a recent message (should be kept)
+        $recentMessage = SlackMessage::factory()->create([
+            'week' => Carbon::now()->startOfWeek(Carbon::SUNDAY),
+        ]);
 
         $this->artisan('slack:delete-old-messages', ['--days' => 30])
             ->expectsOutput('Deleting messages and cooldowns older than 30 days...')
             ->expectsOutput('Old messages and cooldowns deleted successfully!')
             ->assertSuccessful();
+
+        $this->assertDatabaseCount('slack_messages', 1);
+        $this->assertDatabaseHas('slack_messages', ['id' => $recentMessage->id]);
     }
 
     #[Test]

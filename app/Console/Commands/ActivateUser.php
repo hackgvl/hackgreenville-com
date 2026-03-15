@@ -2,15 +2,12 @@
 
 namespace App\Console\Commands;
 
-use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Throwable;
 
 class ActivateUser extends Command
 {
-    use LogOutput;
-
     /**
      * The name and signature of the console command.
      *
@@ -43,11 +40,11 @@ class ActivateUser extends Command
             $user->active = true;
             $user->save();
 
-            $this->logInfo("User successfully activated.");
+            $this->info("User successfully activated.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->logError($throwable->getMessage());
+            $this->error($throwable->getMessage());
             return self::FAILURE;
         }
     }

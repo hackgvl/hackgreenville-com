@@ -24,7 +24,7 @@ class ImportEventForOrganization
                     'cancelled_at' => $data->cancelled_at,
                     'uri' => $data->url,
                     'venue_id' => $data->hasVenue()
-                        ? $data->venue->resolveVenue($data)->id
+                        ? $data->venue->resolveVenue()->id
                         : null,
                     'event_uuid' => $data->uniqueIdentifierHash(),
                     'organization_id' => $org->id,

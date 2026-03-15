@@ -20,11 +20,6 @@ class CheckEventsApi implements ShouldQueue
     public int $maxExceptions = 2;
     public array $backoff = [30, 120, 300];
 
-    public function __construct()
-    {
-        $this->onQueue('slack');
-    }
-
     /**
      * Execute the job.
      */

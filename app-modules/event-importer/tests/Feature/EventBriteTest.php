@@ -56,11 +56,11 @@ class EventBriteTest extends DatabaseTestCase
         $this->assertEquals('2018-03-10 08:30:00', $active_event->active_at->toDateTimeString());
         $this->assertEquals('2018-03-10 17:30:00', $active_event->expire_at->toDateTimeString());
         $this->assertEquals('America/New_York', $active_event->timezone);
-        $this->assertEquals('https://www.eventbrite.com/e/bsides-greenville-2018-tickets-39146789100', $active_event->url);
+        $this->assertEquals('https://www.eventbrite.com/e/bsides-greenville-2018-tickets-39146789100', $active_event->url());
         $this->assertNull($active_event->cancelled_at);
         $this->assertTrue($active_event->is_paid);
 
-        $this->assertEquals('past', $active_event->status);
+        $this->assertEquals('past', $active_event->status());
 
         $venue = Venue::query()->where([
             'name' => 'Fluor Management Center',
@@ -100,7 +100,7 @@ class EventBriteTest extends DatabaseTestCase
 
         $cancelled_event = Event::query()->where('event_uuid', '4510a60271a2eb0bb01847268607366d')->firstOrFail();
 
-        $this->assertEquals('cancelled', $cancelled_event->status);
+        $this->assertEquals('cancelled', $cancelled_event->status());
         $this->assertNotNull($cancelled_event->cancelled_at);
         $this->assertFalse($cancelled_event->is_paid);
     }

@@ -26,7 +26,7 @@ class EventBriteHandler extends AbstractEventHandler
             'url' => $data['url'],
             'starts_at' => Carbon::parse($data['start']['local']),
             'ends_at' => Carbon::parse($data['end']['local']),
-            'timezone' => Carbon::parse($data['start']['timezone']),
+            'timezone' => $data['start']['timezone'],
             // Yes "canceled" is misspelled
             'cancelled_at' => 'canceled' === $data['status'] || 'event_cancelled' === Arr::get($data, 'event_sales_status.message_code')
                 ? now()
@@ -85,14 +85,14 @@ class EventBriteHandler extends AbstractEventHandler
         $token = config('services.eventbrite.private_token');
 
         if (empty($token)) {
-            throw new RuntimeException('Missing EventBright Private Token');
+            throw new RuntimeException('Missing EventBrite Private Token');
         }
 
         return Http::baseUrl('https://www.eventbriteapi.com/')
             ->throw()
             ->timeout(180)
             ->withQueryParameters([
-                'token' => config('services.eventbrite.private_token'),
+                'token' => $token,
             ]);
     }
 }
