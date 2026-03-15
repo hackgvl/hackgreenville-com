@@ -1,0 +1,23 @@
+app-modules/event-importer/src/Services/MeetupRestHandler.php
+  e1fd9beb6b4763df 115,117-118,120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "531fd45b3291fba999e19eb8cbfa095dfd88d4ec",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 10,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    }
+  }
+}
