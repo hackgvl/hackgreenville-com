@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use BladeUI\Icons\Console\CacheCommand;
 use Filament\Support\Commands\AssetsCommand;
 use Illuminate\Console\Command;
-use Psy\Command\ExitCommand;
 use Sebdesign\ArtisanCloudflare\Commands\Cache\Purge;
 
 class DeployRailwayCommand extends Command
@@ -22,6 +21,6 @@ class DeployRailwayCommand extends Command
 
         $this->call(Purge::class);
 
-        return ExitCommand::SUCCESS;
+        return self::SUCCESS;
     }
 }
