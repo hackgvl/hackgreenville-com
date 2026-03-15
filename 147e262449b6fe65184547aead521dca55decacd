@@ -1,0 +1,27 @@
+app/Models/Event.php
+  e1fd9beb6b4763df 61-65
+app-modules/api/src/Http/Controllers/EventApiV0Controller.php
+  e1fd9beb6b4763df 28
+app-modules/api/src/Http/Controllers/EventApiV1Controller.php
+  e1fd9beb6b4763df 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "147e262449b6fe65184547aead521dca55decacd",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 7,
+      "total_deletions": 6,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  }
+}
