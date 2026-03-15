@@ -12,6 +12,7 @@ class HomeController extends Controller
             'upcoming_events' => Event::future()
                 ->published()
                 ->with('organization', 'venue')
+                ->oldest('active_at')
                 ->limit(5)
                 ->get(),
         ]);

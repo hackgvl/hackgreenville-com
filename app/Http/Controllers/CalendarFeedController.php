@@ -42,6 +42,7 @@ class CalendarFeedController extends Controller
         $events = Event::query()
             ->with('organization', 'venue')
             ->future()
+            ->oldest('active_at')
             ->when($request->validOrganizations()->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $request->validOrganizations()->pluck('id')))
             ->get()
             ->mapWithKeys(fn (Event $event, $i) => [

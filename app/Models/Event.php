@@ -58,10 +58,9 @@ class Event extends BaseModel
             ->when( ! $startDate && ! $endDate, fn (Builder $q) => $q->where('active_at', '>=', now()->subDays(config('events-api.default_days'))));
     }
 
-    public function scopeFuture(Builder $query)
+    public function scopeFuture(Builder $query): void
     {
-        $query->where('active_at', '>=', now())
-            ->orderBy('active_at', 'asc');
+        $query->where('active_at', '>=', now());
     }
 
     public function url(): string
