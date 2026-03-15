@@ -60,6 +60,14 @@ class Event extends BaseModel
         $query->whereHas('organization', fn (Builder $q) => $q->whereNull('deleted_at'));
     }
 
+    public function scopeFilterByDateRange(Builder $query, ?Carbon $startDate, ?Carbon $endDate): void
+    {
+        $query
+            ->when($startDate, fn (Builder $q) => $q->where('active_at', '>=', $startDate->startOfDay()))
+            ->when($endDate, fn (Builder $q) => $q->where('active_at', '<=', $endDate->endOfDay()))
+            ->when( ! $startDate && ! $endDate, fn (Builder $q) => $q->where('active_at', '>=', now()->subDays(config('events-api.default_days'))));
+    }
+
     public function scopeFuture(Builder $query)
     {
         $query->where('active_at', '>=', now())
