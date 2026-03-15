@@ -29,6 +29,8 @@ class CalendarController extends Controller
             ])
             ->get()
             ->map(function (Event $event) {
+                $cancelled = $event->isCancelled();
+
                 return [
                     'start' => $event->active_at,
                     'end' => $event->expire_at->copy()->addHours(2),
@@ -36,14 +38,11 @@ class CalendarController extends Controller
                     'title' => $event->organization->title . "\n" . $event->display_name,
                     'description' => str($event->description)
                         ->markdown()
-                        ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
+                        ->when($cancelled, fn (Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),
 
                     'allDay' => false,
-                    'cancelled' => $event->isCancelled(),
-                    'color' => match (true) {
-                        $event->isCancelled() => 'red',
-                        default => null,
-                    },
+                    'cancelled' => $cancelled,
+                    'color' => $cancelled ? 'red' : null,
                     'add_to_google_calendar_url' => $event->toGoogleCalendarUrl(),
                     'event_url' => $event->uri,
                 ];
