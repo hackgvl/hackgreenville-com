@@ -21,7 +21,7 @@ class AuthService
             throw new RuntimeException("Workspace with team ID {$teamId} not found.");
         }
 
-        return $this->slackApiClient->getUserInfo($workspace->access_token, $userId);
+        return $this->slackApiClient->withToken($workspace->access_token)->users()->info($userId);
     }
 
     public function isAdmin(string $userId, string $teamId): bool

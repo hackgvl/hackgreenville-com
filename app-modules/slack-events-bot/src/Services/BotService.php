@@ -105,9 +105,9 @@ class BotService
                 continue;
             }
 
-            $token = $message->channel->workspace->access_token;
+            $api = $this->slackApiClient->withToken($message->channel->workspace->access_token);
             Log::info("Deleting stale message {$message->message_timestamp} in channel {$slackChannelId}.");
-            $this->deleteSlackMessage($slackChannelId, $message->message_timestamp, $token);
+            $this->deleteSlackMessage($slackChannelId, $message->message_timestamp, $api);
         }
     }
 
@@ -149,7 +149,7 @@ class BotService
         array $existingCountByChannel,
     ): void {
         $slackChannelId = $channel->slack_channel_id;
-        $token = $channel->workspace->access_token;
+        $api = $this->slackApiClient->withToken($channel->workspace->access_token);
         $existingCount = $existingCountByChannel[$slackChannelId] ?? 0;
 
         // Check spillover once per channel — the result is constant for all messages
@@ -176,7 +176,7 @@ class BotService
             if ( ! $existingMsgDetail) {
                 Log::info("Posting new message " . ($msgIdx + 1) . " for week {$week->format('F j')} in {$slackChannelId}");
 
-                $slackResponse = $this->slackApiClient->postMessage($token, $slackChannelId, $msgBlocks, $msgText);
+                $slackResponse = $api->chat()->postMessage($slackChannelId, $msgBlocks, $msgText);
 
                 $this->databaseService->createMessage(
                     $week,
@@ -193,7 +193,7 @@ class BotService
 
                 $timestamp = $existingMsgDetail['timestamp'];
 
-                $this->slackApiClient->updateMessage($token, $slackChannelId, $timestamp, $msgBlocks, $msgText);
+                $api->chat()->update($slackChannelId, $timestamp, $msgBlocks, $msgText);
 
                 $this->databaseService->updateMessage(
                     $week,
@@ -210,7 +210,7 @@ class BotService
             $timestampToDelete = $messageDetails[$slackChannelId][$i]['timestamp'] ?? null;
             if ($timestampToDelete) {
                 Log::info("Deleting old message (sequence_position {$i}) for week of {$week->format('F j')} in {$slackChannelId}. No longer needed.");
-                $this->deleteSlackMessage($slackChannelId, $timestampToDelete, $token);
+                $this->deleteSlackMessage($slackChannelId, $timestampToDelete, $api);
             }
         }
     }
@@ -227,9 +227,9 @@ class BotService
         }
     }
 
-    private function deleteSlackMessage(string $slackChannelId, string $timestamp, string $token): void
+    private function deleteSlackMessage(string $slackChannelId, string $timestamp, SlackApiClient $api): void
     {
-        $json = $this->slackApiClient->deleteMessage($token, $slackChannelId, $timestamp);
+        $json = $api->chat()->delete($slackChannelId, $timestamp);
         $deleteOk = $json['ok'] ?? false;
         $deleteError = $json['error'] ?? 'unknown';
 
