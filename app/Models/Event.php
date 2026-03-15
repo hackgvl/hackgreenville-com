@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use RuntimeException;
 
 class Event extends BaseModel
 {
@@ -98,12 +97,7 @@ class Event extends BaseModel
             return 'past';
         }
 
-        if ($this->active_at->isFuture()) {
-            return 'upcoming';
-        }
-
-        throw new RuntimeException('Unable to determine status');
-
+        return 'upcoming';
     }
 
     public function getDisplayNameAttribute(): string
