@@ -1,0 +1,29 @@
+app-modules/slack-events-bot/src/Services/EventService.php
+  c9bfc395e0d42fd4 10-17,19-24,30,35,42,45-46,48,50,52,57,60,62-65,67-78
+app-modules/slack-events-bot/src/Services/MessageBuilderService.php
+  c9bfc395e0d42fd4 97-98,103,111,129-130,132,137
+app-modules/slack-events-bot/src/Services/DatabaseService.php
+  c9bfc395e0d42fd4 10,167-168
+app-modules/slack-events-bot/src/Services/BotService.php
+  c9bfc395e0d42fd4 9,27,32,37,104,114-157,161-163,168-180,193-198,205-209,214,247-252
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "6e4cc48296b0b1cf12af4542c1a946c3b393038d",
+  "prompts": {
+    "c9bfc395e0d42fd4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2ae221d-0c1f-4d27-a27a-da1c99c45f48",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 168,
+      "total_deletions": 127,
+      "accepted_lines": 137,
+      "overriden_lines": 0
+    }
+  }
+}
