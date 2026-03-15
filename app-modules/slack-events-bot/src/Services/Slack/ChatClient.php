@@ -34,6 +34,12 @@ class ChatClient extends BaseClient
         return $this->validateResponse($response, "updating message {$timestamp} in channel {$this->channelId}");
     }
 
+    /**
+     * Delete a message. Returns raw JSON without validation because the caller
+     * needs to inspect the error — 'message_not_found' is treated as success.
+     *
+     * @see \HackGreenville\SlackEventsBot\Services\BotService::deleteSlackMessage()
+     */
     public function delete(string $timestamp): array
     {
         $response = $this->postWithRetry('chat.delete', [

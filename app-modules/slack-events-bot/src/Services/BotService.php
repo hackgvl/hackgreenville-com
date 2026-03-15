@@ -202,8 +202,8 @@ class BotService
         }
 
         // Delete excess messages when the new set has fewer
-        $currentMessageCount = count($messageDetails[$slackChannelId] ?? []);
-        for ($i = count($messages); $i < $currentMessageCount; $i++) {
+        $previousMessageCount = count($messageDetails[$slackChannelId] ?? []);
+        for ($i = count($messages); $i < $previousMessageCount; $i++) {
             $timestampToDelete = $messageDetails[$slackChannelId][$i]['timestamp'] ?? null;
             if ($timestampToDelete) {
                 Log::info("Deleting old message (sequence_position {$i}) for week of {$week->format('F j')} in {$slackChannelId}. No longer needed.");

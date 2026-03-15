@@ -38,6 +38,10 @@ abstract class BaseClient
         return $json;
     }
 
+    /**
+     * Calculate retry delay in milliseconds. Respects Slack's Retry-After
+     * header (returned in seconds) when present, otherwise backs off linearly.
+     */
     private function retryDelay(int $attempt, ?Throwable $exception): int
     {
         if ($exception instanceof RequestException) {

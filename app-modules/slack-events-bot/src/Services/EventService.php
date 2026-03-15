@@ -39,7 +39,7 @@ class EventService
                 'type' => 'section',
                 'text' => [
                     'type' => 'plain_text',
-                    'text' => Str::limit($event->description, 250) ?: 'No description',
+                    'text' => Str::limit(mb_trim((string) $event->description), 250) ?: 'No description',
                 ],
                 'fields' => [
                     ['type' => 'mrkdwn', 'text' => '*' . Str::limit($orgTitle) . '*'],
