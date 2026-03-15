@@ -2,38 +2,20 @@
 
 namespace HackGreenville\SlackEventsBot\Services;
 
+use HackGreenville\SlackEventsBot\Models\SlackChannel;
+use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use HackGreenville\SlackEventsBot\Services\Slack\ChatClient;
 use HackGreenville\SlackEventsBot\Services\Slack\UsersClient;
-use RuntimeException;
 
 class SlackApiClient
 {
-    private ?string $token = null;
-
-    public function withToken(string $token): static
+    public function chat(SlackChannel $channel): ChatClient
     {
-        $clone = clone $this;
-        $clone->token = $token;
-
-        return $clone;
+        return new ChatClient($channel->workspace->access_token, $channel->slack_channel_id);
     }
 
-    public function chat(): ChatClient
+    public function users(SlackWorkspace $workspace): UsersClient
     {
-        return new ChatClient($this->requireToken());
-    }
-
-    public function users(): UsersClient
-    {
-        return new UsersClient($this->requireToken());
-    }
-
-    private function requireToken(): string
-    {
-        if ( ! $this->token) {
-            throw new RuntimeException('Token must be set via withToken() before making API calls.');
-        }
-
-        return $this->token;
+        return new UsersClient($workspace->access_token);
     }
 }
