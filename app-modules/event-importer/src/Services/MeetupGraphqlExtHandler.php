@@ -61,17 +61,12 @@ class MeetupGraphqlExtHandler extends AbstractEventHandler
     protected function mapIntoVenueData(array $data): ?VenueData
     {
         $event = $data['node'];
-        $venues = $event['venues'];
 
-        if ( ! isset($venues) || count($venues) === 0) {
+        if (empty($event['venues']) || $event['eventType'] === 'ONLINE') {
             return null;
         }
 
-        if ($event['eventType'] === 'ONLINE') {
-            return null;
-        }
-
-        $venue = $venues[0];
+        $venue = $event['venues'][0];
 
         try {
             return VenueData::from([
