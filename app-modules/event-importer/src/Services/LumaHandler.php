@@ -111,24 +111,9 @@ class LumaHandler extends AbstractEventHandler
 
     protected function eventResults(int $page): Collection
     {
-        $events = $this->initialApiCall()->collect('entries');
-
-        return $this->filterEvents($events);
-    }
-
-    private function filterEvents(Collection $events): Collection
-    {
-        $filteredEvents = [];
-
-        foreach ($events as $event) {
-            // Filter out Luma events that were imported from an external source
-            // or are not managed by the organization (i.e. not cross-promotional events)
-            if ($event['platform'] !== 'luma' || $event['is_manager'] !== true) {
-                continue;
-            }
-            $filteredEvents[] = $event;
-        }
-
-        return collect($filteredEvents);
+        return $this->initialApiCall()
+            ->collect('entries')
+            ->filter(fn (array $event) => $event['platform'] === 'luma' && $event['is_manager'] === true)
+            ->values();
     }
 }
