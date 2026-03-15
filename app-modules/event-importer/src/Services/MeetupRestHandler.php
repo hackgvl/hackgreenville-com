@@ -10,7 +10,6 @@ use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Str;
 use Throwable;
 
 class MeetupRestHandler extends AbstractEventHandler
@@ -113,16 +112,12 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function determineNextPage(Response $response): void
     {
-        if ($links = $response->header('Link')) {
-            $link = collect($links)
-                ->flatMap(fn ($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
-                ->implode('');
+        $link = $response->header('Link');
 
-            if (empty($link)) {
-                $this->next_page_url = null;
-            } else {
-                $this->next_page_url = $link;
-            }
+        if ($link && preg_match('/<(.+?)>;\s*rel="next"/i', $link, $matches)) {
+            $this->next_page_url = $matches[1];
+        } else {
+            $this->next_page_url = null;
         }
     }
 }
