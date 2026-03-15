@@ -1,0 +1,25 @@
+app-modules/event-importer/src/Data/VenueData.php
+  e1fd9beb6b4763df 25
+app-modules/event-importer/src/Services/ImportEventForOrganization.php
+  e1fd9beb6b4763df 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "90bd61fc34c258bbfb0c3e13ff342fb70659fecc",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 2,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}
