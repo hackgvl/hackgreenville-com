@@ -1,0 +1,23 @@
+app-modules/slack-events-bot/tests/Services/BotServiceTest.php
+  c9bfc395e0d42fd4 8,10,19,25,31,42-44,46,48-51,53-54,58,64-66,68,70-73,75-76,80,90-94,102-106,119-123,125-131,139-142,155-158,161-167,175-178,190-194,196-203,205-212,214-217,231-235,237-243,262-270,286-290
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "78e36c6345a22820979060d762efc022d1038af6",
+  "prompts": {
+    "c9bfc395e0d42fd4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2ae221d-0c1f-4d27-a27a-da1c99c45f48",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 130,
+      "total_deletions": 225,
+      "accepted_lines": 127,
+      "overriden_lines": 0
+    }
+  }
+}
