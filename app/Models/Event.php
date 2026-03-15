@@ -78,15 +78,6 @@ class Event extends BaseModel
         return $this->uri;
     }
 
-    public function getStateAttribute(): string
-    {
-        if ($this->active_at->isPast()) {
-            return 'passed';
-        }
-
-        return 'upcoming';
-    }
-
     public function getStatusAttribute(): string
     {
         if ($this->cancelled_at) {
