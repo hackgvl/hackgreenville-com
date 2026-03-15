@@ -1,0 +1,23 @@
+app-modules/slack-events-bot/src/Services/DatabaseService.php
+  e1fd9beb6b4763df 57,89,107,164-168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "472bea9b1dc3f1d8cd826437414ab5961818c43f",
+  "prompts": {
+    "e1fd9beb6b4763df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1450f0b2-2e67-4388-9dac-620eee31cc53",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 3,
+      "accepted_lines": 8,
+      "overriden_lines": 0
+    }
+  }
+}
