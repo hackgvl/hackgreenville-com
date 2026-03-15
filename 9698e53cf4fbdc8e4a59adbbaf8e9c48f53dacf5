@@ -1,0 +1,27 @@
+app/Http/Controllers/CalendarFeedController.php
+  c9bfc395e0d42fd4 45
+app/Models/Event.php
+  c9bfc395e0d42fd4 61,63
+app/Http/Controllers/HomeController.php
+  c9bfc395e0d42fd4 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "9698e53cf4fbdc8e4a59adbbaf8e9c48f53dacf5",
+  "prompts": {
+    "c9bfc395e0d42fd4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2ae221d-0c1f-4d27-a27a-da1c99c45f48",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 3,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    }
+  }
+}
