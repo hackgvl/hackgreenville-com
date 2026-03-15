@@ -45,7 +45,7 @@ class CalendarFeedController extends Controller
             ->when($request->validOrganizations()->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $request->validOrganizations()->pluck('id')))
             ->get()
             ->mapWithKeys(fn (Event $event, $i) => [
-                $i => CalendarEvent::create($event->display_name)
+                $i => CalendarEvent::create($event->displayName())
                     ->uniqueIdentifier(sha1($event->id))
                     ->startsAt($event->active_at)
                     ->endsAt($event->expire_at)
@@ -55,8 +55,8 @@ class CalendarFeedController extends Controller
                         name: $event->venue?->name ?? 'Virtual'
                     )
                     ->classification(Classification::public())
-                    ->description("Check out latest event details at {$event->url}")
-                    ->url($event->url),
+                    ->description("Check out latest event details at {$event->url()}")
+                    ->url($event->url()),
             ])
             ->toArray();
 

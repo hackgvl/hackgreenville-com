@@ -15,7 +15,7 @@
                     'name' => $event->event_name,
                     'startDate' => $event->active_at->toIso8601String(),
                     'eventStatus' => 'https://schema.org/' . ($event->cancelled_at ? 'EventCancelled' : 'EventScheduled'),
-                    'url' => $event->url,
+                    'url' => $event->url(),
                     'eventAttendanceMode' => 'https://schema.org/MixedEventAttendanceMode',
                 ],
             ];

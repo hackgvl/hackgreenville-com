@@ -20,7 +20,7 @@ class EventService
             $description = 'No description';
         }
 
-        $sanitizedUrl = $this->sanitizeUrl($event->url);
+        $sanitizedUrl = $this->sanitizeUrl($event->url());
 
         return [
             [
@@ -40,7 +40,7 @@ class EventService
                     ['type' => 'mrkdwn', 'text' => '*' . Str::limit($event->organization?->title ?? 'Unknown Organization') . '*'],
                     ['type' => 'mrkdwn', 'text' => '<' . $sanitizedUrl . '|*Link* :link:>'],
                     ['type' => 'mrkdwn', 'text' => '*Status*'],
-                    ['type' => 'mrkdwn', 'text' => $this->printStatus($event->status)],
+                    ['type' => 'mrkdwn', 'text' => $this->printStatus($event->status())],
                     ['type' => 'mrkdwn', 'text' => '*Location*'],
                     ['type' => 'mrkdwn', 'text' => $event->venue ? $event->venue->fullAddress() : 'No location'],
                     ['type' => 'mrkdwn', 'text' => '*Time*'],
@@ -52,7 +52,7 @@ class EventService
 
     public function generateText(Event $event): string
     {
-        $sanitizedUrl = $this->sanitizeUrl($event->url);
+        $sanitizedUrl = $this->sanitizeUrl($event->url());
 
         return sprintf(
             "%s\nOrganization: %s\nDescription: %s\nLink: %s\nStatus: %s\nLocation: %s\nTime: %s",
@@ -60,7 +60,7 @@ class EventService
             Str::limit($event->organization?->title ?? 'Unknown Organization', 250),
             Str::limit($event->description, 250),
             $sanitizedUrl,
-            $this->printStatus($event->status),
+            $this->printStatus($event->status()),
             $event->venue ? $event->venue->fullAddress() : 'No location',
             $event->active_at->format('F j, Y g:i A T')
         );

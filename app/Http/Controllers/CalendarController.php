@@ -35,7 +35,7 @@ class CalendarController extends Controller
                     'start' => $event->active_at,
                     'end' => $event->expire_at->copy()->addHours(2),
 
-                    'title' => $event->organization->title . "\n" . $event->display_name,
+                    'title' => $event->organization->title . "\n" . $event->displayName(),
                     'description' => str($event->description)
                         ->markdown()
                         ->when($cancelled, fn (Stringable $str) => $str->prepend('<h3 class="text-danger">This event was cancelled</h3><br />')),

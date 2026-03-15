@@ -48,10 +48,10 @@ class LumaTest extends DatabaseTestCase
         $this->assertEquals(1, $event1->rsvp_count);
         $this->assertEquals('2025-07-12 12:30:00', $event1->active_at->toDateTimeString());
         $this->assertEquals('America/New_York', $event1->timezone);
-        $this->assertEquals('https://lu.ma/zadco7op', $event1->url);
+        $this->assertEquals('https://lu.ma/zadco7op', $event1->url());
         $this->assertNull($event1->cancelled_at);
 
-        $this->assertEquals('upcoming', $event1->status);
+        $this->assertEquals('upcoming', $event1->status());
 
         $venue = Venue::query()->where([
             'name' => 'Furman University',

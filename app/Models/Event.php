@@ -7,7 +7,6 @@ use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -30,14 +29,6 @@ class Event extends BaseModel
         'service' => EventServices::class,
         'visibility' => EventVisibility::class,
     ];
-
-    public function getUniqueIdentifierAttribute(): bool|string
-    {
-        $service = $this->service;
-        $service_id = $this->service_id;
-
-        return json_encode(compact('service', 'service_id'));
-    }
 
     public function venue(): BelongsTo
     {
@@ -73,12 +64,12 @@ class Event extends BaseModel
             ->orderBy('active_at', 'asc');
     }
 
-    public function getUrlAttribute(): string
+    public function url(): string
     {
         return $this->uri;
     }
 
-    public function getStatusAttribute(): string
+    public function status(): string
     {
         if ($this->cancelled_at) {
             return 'cancelled';
@@ -91,7 +82,7 @@ class Event extends BaseModel
         return 'upcoming';
     }
 
-    public function getDisplayNameAttribute(): string
+    public function displayName(): string
     {
         return $this->isCancelled()
             ? '[CANCELLED] ' . $this->event_name
@@ -126,10 +117,4 @@ class Event extends BaseModel
         return null !== $this->cancelled_at;
     }
 
-    protected function expireAt(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
-        );
-    }
 }

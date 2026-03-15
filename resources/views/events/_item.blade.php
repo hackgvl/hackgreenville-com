@@ -1,4 +1,4 @@
-<?php /** @var \App\Models\Event $event */ ?>
+<?php /** @var App\Models\Event $event */ ?>
 
 <div class="group/row px-4 sm:px-6 py-3 sm:py-4 hover:bg-gray-50/80 transition-colors">
 	<div class="flex items-start gap-3 md:grid md:grid-cols-12 md:gap-4 md:items-center">
@@ -14,7 +14,7 @@
 
 		{{-- Event info --}}
 		<div class="flex-1 min-w-0 md:col-span-7">
-			<a href="{{ $event->url }}" rel="noopener" class="text-gray-700 hover:text-primary text-sm font-medium no-underline transition-colors">
+			<a href="{{ $event->url() }}" rel="noopener" class="text-gray-700 hover:text-primary text-sm font-medium no-underline transition-colors">
 				@if($event->cancelled_at)
 					<span class="text-danger font-semibold">[CANCELLED]</span>
 				@endif
@@ -40,7 +40,7 @@
 				   aria-label="Add {{ $event->event_name }} to Google Calendar">
 					<x-lucide-calendar-plus aria-hidden="true" class="w-4 h-4"/>
 				</a>
-				<a href="{{ $event->url }}"
+				<a href="{{ $event->url() }}"
 				   rel="noopener"
 				   class="text-gray-200 hover:text-primary transition-colors"
 				   aria-label="View {{ $event->event_name }}">
