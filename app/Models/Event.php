@@ -58,6 +58,11 @@ class Event extends BaseModel
         $query->where('visibility', EventVisibility::Published);
     }
 
+    public function scopeWithActiveOrganization(Builder $query): void
+    {
+        $query->whereHas('organization', fn (Builder $q) => $q->whereNull('deleted_at'));
+    }
+
     public function scopeFuture(Builder $query)
     {
         $query->where('active_at', '>=', now())
