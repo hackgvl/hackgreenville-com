@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Console\Commands\Traits\LogOutput;
 use App\Events\UserCreated;
 use App\Models\User;
 use Illuminate\Console\Command;
@@ -11,8 +10,6 @@ use Throwable;
 
 class CreateUser extends Command
 {
-    use LogOutput;
-
     /**
      * The name and signature of the console command.
      *
@@ -52,10 +49,10 @@ class CreateUser extends Command
 
             UserCreated::dispatch($user);
 
-            $this->logInfo("Successfully created user for email '{$user->email}'.");
+            $this->info("Successfully created user for email '{$user->email}'.");
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->logError($throwable->getMessage());
+            $this->error($throwable->getMessage());
             return self::FAILURE;
         }
     }
