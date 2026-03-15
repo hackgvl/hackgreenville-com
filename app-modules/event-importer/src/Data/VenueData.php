@@ -22,7 +22,7 @@ class VenueData extends Data
     ) {
     }
 
-    public function resolveVenue(EventData $data): Venue
+    public function resolveVenue(): Venue
     {
         return Venue::updateOrCreate([
             'name' => $this->name,
