@@ -6,7 +6,6 @@ use App\Enums\EventServices;
 use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
-use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -67,32 +66,6 @@ class Event extends BaseModel
     {
         $query->where('active_at', '>=', now())
             ->orderBy('active_at', 'asc');
-    }
-
-    public function scopeGetActive(Builder $query): Builder
-    {
-        return $query
-            ->where('active_at', '>=', DB::raw('NOW()'))
-            ->orderBy('active_at', 'asc');
-    }
-
-    public function scopeStartOfMonth(Builder $query): Builder
-    {
-        return $query
-            ->where('active_at', '>=', date('Y-m-1'))
-            ->orderBy('active_at', 'asc');
-    }
-
-    public function scopeDatesBetween(Builder $query, $start, $end): Builder
-    {
-        return $query
-            ->whereBetween(
-                DB::raw('DATE(`active_at`)'),
-                [
-                    date('Y-m-d', strtotime($start)),
-                    date('Y-m-d', strtotime($end)),
-                ],
-            );
     }
 
     public function getUrlAttribute(): string
