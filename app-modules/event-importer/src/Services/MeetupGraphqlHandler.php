@@ -113,11 +113,12 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $pastEvents = $groupData['pastEvents']['edges'];
         $upcomingEvents = $groupData['upcomingEvents']['edges'];
 
-        $events = array_merge($pastEvents, $upcomingEvents);
+        $startDate = now()->subDays($this->max_days_in_past)->startOfDay();
+        $endDate = now()->addDays($this->max_days_in_future)->endOfDay();
 
-        $events = $this->filterEvents($events);
-
-        return collect($events);
+        return collect(array_merge($pastEvents, $upcomingEvents))
+            ->filter(fn (array $event) => Carbon::parse($event['node']['dateTime'])->between($startDate, $endDate))
+            ->values();
     }
 
     protected function determineNextPage(Response $response): void
@@ -226,27 +227,6 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             ]);
 
         return $response;
-    }
-
-    // Meetup's GraphQL API does not support date filtering on its API
-    // We need to filter the events ourselves
-    private function filterEvents(array $events): array
-    {
-        $start_date = now()->subDays($this->max_days_in_past)->startOfDay();
-        $end_date = now()->addDays($this->max_days_in_future)->endOfDay();
-
-        $filtered_events = [];
-
-        foreach ($events as $event) {
-            $eventDate = Carbon::parse($event['node']['dateTime']);
-            if ($eventDate < $start_date || $eventDate > $end_date) {
-                continue;
-            }
-
-            $filtered_events[] = $event;
-        }
-
-        return $filtered_events;
     }
 
 }
