@@ -1,0 +1,33 @@
+app-modules/slack-events-bot/src/Services/Slack/UsersClient.php
+  c9bfc395e0d42fd4 1-18
+app-modules/slack-events-bot/src/Services/AuthService.php
+  c9bfc395e0d42fd4 24
+app-modules/slack-events-bot/src/Services/Slack/BaseClient.php
+  c9bfc395e0d42fd4 1-52
+app-modules/slack-events-bot/src/Services/Slack/ChatClient.php
+  c9bfc395e0d42fd4 1-41
+app-modules/slack-events-bot/src/Services/BotService.php
+  c9bfc395e0d42fd4 108,110,152,179,196,213,230,232
+app-modules/slack-events-bot/src/Services/SlackApiClient.php
+  c9bfc395e0d42fd4 5-7,11,13,15-16,18,21,23,26,28,31,33-34,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "ddc7a274ca0d166e968ae157927080414e64698a",
+  "prompts": {
+    "c9bfc395e0d42fd4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2ae221d-0c1f-4d27-a27a-da1c99c45f48",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Bogdan Kharchenko <scriptor@gmail.com>",
+      "messages": [],
+      "total_additions": 136,
+      "total_deletions": 79,
+      "accepted_lines": 136,
+      "overriden_lines": 0
+    }
+  }
+}
