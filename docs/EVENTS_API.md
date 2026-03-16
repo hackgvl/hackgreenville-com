@@ -13,7 +13,7 @@ Start with the [interactive API explorer](https://hackgreenville.com/docs/api) w
 ## Limitations, Gotchas, and Contributor Tips
 * We support two API versions, v1 and v0, but we encourage using v1.
 * The production / live website is cached and changes may take up to 4 hours to show due to the cache.
-* The Events API's responses are controlled by [server .env variables](/CONTRIBUTING.md#environment-variables) that may limit the data available to calling / consuming applications.
+* The Events API's responses are controlled by [server .env variables](../CONTRIBUTING.md#environment-variables) that may limit the data available to calling / consuming applications.
 * All timestamps are in UTC.  
 * The event description fields may include HTML markup.  This application does not sanitize those fields and it's unclear if the upstream source should be trusted, so sanitize any output to avoid malicious cross-site scripting (XSS).
 * Results are returned only in JSON format.
