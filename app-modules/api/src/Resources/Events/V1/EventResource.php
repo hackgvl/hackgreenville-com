@@ -17,11 +17,11 @@ class EventResource extends ApiResource
             'id' => $this->resource->event_uuid,
             'name' => $this->resource->event_name,
             'description' => $this->resource->description,
-            'url' => $this->resource->url,
+            'url' => $this->resource->url(),
             'starts_at' => $this->resource->active_at->toISOString(),
             'ends_at' => $this->resource->expire_at->toISOString(),
             'rsvp_count' => $this->resource->rsvp_count,
-            'status' => $this->resource->getStatusAttribute(),
+            'status' => $this->resource->status(),
             'is_paid' => $this->resource->is_paid,
             'organization' => [
                 'id' => $this->getId($this->resource->organization),

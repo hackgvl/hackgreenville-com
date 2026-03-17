@@ -25,22 +25,12 @@ class EventApiV0Controller
             resource: Event::query()
                 ->with(['organization.tags', 'venue'])
                 ->published()
-                ->whereHas('organization', function (Builder $query) {
-                    $query->whereNull('deleted_at'); // Don't show events for deleted organizations
-                })
-                ->when($request->filled('start_date'), function (Builder $query) use ($request) {
-                    $query->where('active_at', '>=', $request->date('start_date')->startOfDay());
-                })
-                ->when($request->filled('end_date'), function (Builder $query) use ($request) {
-                    $query->where('active_at', '<=', $request->date('end_date')->endOfDay());
-                })
+                ->withActiveOrganization()
+                ->filterByDateRange($request->date('start_date'), $request->date('end_date'))
                 ->when($request->filled('tags'), function (Builder $query) use ($request) {
                     $query->whereHas('organization.tags', function (Builder $query) use ($request) {
                         $query->where('id', $request->integer('tags'));
                     });
-                })
-                ->when($request->isNotFilled(['start_date', 'end_date']), function (Builder $query) {
-                    $query->where('active_at', '>=', now()->subDays(config('events-api.default_days')));
                 })
                 ->oldest('active_at')
                 ->get()

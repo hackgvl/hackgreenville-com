@@ -1,4 +1,5 @@
-<nav class="relative flex flex-wrap items-center justify-between px-4 py-2 bg-primary" id="main-nav" aria-label="Main">
+<nav class="bg-primary" id="main-nav" aria-label="Main">
+    <div class="relative flex flex-wrap items-center justify-between px-4 py-2 max-w-6xl mx-auto">
     <a class="inline-block py-1 mr-4 no-underline" href="{{ route('home') }}">
         @include('includes.logo')
     </a>
@@ -79,6 +80,7 @@
                 Join Slack
             </a>
         </div>
+    </div>
     </div>
 </nav>
 

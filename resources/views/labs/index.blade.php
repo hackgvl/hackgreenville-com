@@ -7,7 +7,7 @@
 	{{-- Hero --}}
 	<div class="bg-primary text-white relative overflow-hidden" id="labs-hero">
 		<canvas id="labs-hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
-		<div class="max-w-5xl mx-auto px-4 py-16 sm:py-20 relative">
+		<div class="max-w-6xl mx-auto px-4 py-16 sm:py-20 relative">
 			<div class="max-w-2xl">
 				<p class="text-sm font-medium tracking-widest uppercase text-green-300 mb-4">Open Source</p>
 				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">HackGreenville Labs</h1>
@@ -19,7 +19,7 @@
 	</div>
 
 	{{-- Projects --}}
-	<div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+	<div class="max-w-6xl mx-auto px-4 py-16 sm:py-20">
 		<div class="flex items-center gap-3 mb-8">
 			<h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Projects</h2>
 			<div class="h-px bg-gray-200 flex-1"></div>
@@ -78,7 +78,7 @@
 
 	{{-- Contributors + CTA --}}
 	<div class="bg-gray-50">
-		<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+		<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
 			@if($contributors->isNotEmpty())
 				<div class="text-center mb-10">
 					<h2 class="text-xl font-semibold mb-1">Built by the Community</h2>

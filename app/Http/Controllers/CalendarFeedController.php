@@ -6,7 +6,6 @@ use App\Http\Requests\CalendarFeedRequest;
 use App\Models\Event;
 use App\Models\Org;
 use Illuminate\Contracts\Database\Query\Builder;
-use Illuminate\Support\Stringable;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event as CalendarEvent;
 use Spatie\IcalendarGenerator\Enums\Classification;
@@ -43,14 +42,11 @@ class CalendarFeedController extends Controller
         $events = Event::query()
             ->with('organization', 'venue')
             ->future()
+            ->oldest('active_at')
             ->when($request->validOrganizations()->isNotEmpty(), fn ($query) => $query->whereIn('organization_id', $request->validOrganizations()->pluck('id')))
             ->get()
             ->mapWithKeys(fn (Event $event, $i) => [
-                $i => CalendarEvent::create(
-                    str($event->event_name)
-                        ->when($event->isCancelled(), fn (Stringable $str) => $str->prepend('[CANCELLED] '))
-                        ->toString()
-                )
+                $i => CalendarEvent::create($event->displayName())
                     ->uniqueIdentifier(sha1($event->id))
                     ->startsAt($event->active_at)
                     ->endsAt($event->expire_at)
@@ -60,8 +56,8 @@ class CalendarFeedController extends Controller
                         name: $event->venue?->name ?? 'Virtual'
                     )
                     ->classification(Classification::public())
-                    ->description("Check out latest event details at {$event->url}")
-                    ->url($event->url),
+                    ->description("Check out latest event details at {$event->url()}")
+                    ->url($event->url()),
             ])
             ->toArray();
 

@@ -51,11 +51,8 @@ class OrgsApiV1Controller extends Controller
             ->when($request->filled('established_to'), function (Builder $query) use ($request) {
                 $query->whereYear('established_at', '<=', $request->input('established_to'));
             })
-            ->when($request->filled('sort_by') && in_array($request->input('sort_by'), [
-                'title', 'city', 'established_at', 'updated_at', 'created_at'
-            ]), function (Builder $query) use ($request) {
-                $sortDirection = $request->input('sort_direction') === 'desc' ? 'desc' : 'asc';
-                $query->orderBy($request->input('sort_by'), $sortDirection);
+            ->when($request->filled('sort_by'), function (Builder $query) use ($request) {
+                $query->orderBy($request->input('sort_by'), $request->input('sort_direction', 'asc'));
             }, function (Builder $query) {
                 $query->orderBy('title', 'asc');
             });

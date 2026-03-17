@@ -19,6 +19,13 @@ class DeleteOldMessagesCommand extends Command
     public function handle(): int
     {
         $days = (int) ($this->option('days') ?? config('slack-events-bot.old_messages_retention_days'));
+
+        if ($days < 1) {
+            $this->error('Days must be at least 1.');
+
+            return self::FAILURE;
+        }
+
         $this->info("Deleting messages and cooldowns older than {$days} days...");
 
         try {

@@ -15,7 +15,7 @@
                     'name' => $event->event_name,
                     'startDate' => $event->active_at->toIso8601String(),
                     'eventStatus' => 'https://schema.org/' . ($event->cancelled_at ? 'EventCancelled' : 'EventScheduled'),
-                    'url' => $event->url,
+                    'url' => $event->url(),
                     'eventAttendanceMode' => 'https://schema.org/MixedEventAttendanceMode',
                 ],
             ];
@@ -41,7 +41,7 @@
 @endsection
 
 @section('content')
-    <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
 
         {{-- Header --}}
         <div class="mb-10">

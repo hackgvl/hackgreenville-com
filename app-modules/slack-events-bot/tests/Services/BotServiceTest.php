@@ -5,51 +5,30 @@ namespace HackGreenville\SlackEventsBot\Tests\Services;
 use App\Models\Event;
 use Carbon\Carbon;
 use HackGreenville\SlackEventsBot\Exceptions\UnsafeMessageSpilloverException;
+use HackGreenville\SlackEventsBot\Models\SlackChannel;
 use HackGreenville\SlackEventsBot\Models\SlackMessage;
+use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use HackGreenville\SlackEventsBot\Services\BotService;
-use HackGreenville\SlackEventsBot\Services\DatabaseService;
-use HackGreenville\SlackEventsBot\Services\MessageBuilderService;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
-use Mockery;
 use Tests\DatabaseTestCase;
 
 class BotServiceTest extends DatabaseTestCase
 {
-    private $databaseServiceMock;
-    private $messageBuilderServiceMock;
-    private $botService;
+    private BotService $botService;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->databaseServiceMock = Mockery::mock(DatabaseService::class);
-        $this->messageBuilderServiceMock = Mockery::mock(MessageBuilderService::class);
-
-        $this->botService = new BotService(
-            $this->databaseServiceMock,
-            $this->messageBuilderServiceMock
-        );
+        $this->botService = $this->app->make(BotService::class);
     }
 
     public function test_handle_posting_to_slack_no_events()
     {
         Log::spy();
-
-        $this->botService = Mockery::mock(BotService::class . '[getEventsForWeek, deleteMessagesForWeek]', [
-            $this->databaseServiceMock,
-            $this->messageBuilderServiceMock
-        ])->makePartial()->shouldAllowMockingProtectedMethods();
-
-        $this->botService->shouldReceive('getEventsForWeek')
-            ->atLeast()->once()
-            ->andReturn(new Collection);
-
-        $this->botService->shouldReceive('deleteMessagesForWeek')
-            ->atLeast()->once();
+        Http::fake();
 
         $this->botService->handlePostingToSlack();
 
@@ -60,71 +39,45 @@ class BotServiceTest extends DatabaseTestCase
     public function test_handle_posting_to_slack_with_events()
     {
         Log::spy();
+        Http::fake([
+            'https://slack.com/api/chat.postMessage' => Http::response(['ok' => true, 'ts' => '123.456'], 200),
+        ]);
 
-        $events = new Collection([Mockery::mock(Event::class)]);
+        $weekStart = now()->copy()->startOfWeek(Carbon::SUNDAY);
 
-        $this->botService = Mockery::mock(BotService::class . '[getEventsForWeek]', [
-            $this->databaseServiceMock,
-            $this->messageBuilderServiceMock
-        ])->makePartial()->shouldAllowMockingProtectedMethods();
+        Event::factory()->create([
+            'active_at' => $weekStart->copy()->addDay(),
+            'expire_at' => $weekStart->copy()->addDays(2),
+        ]);
 
-        $this->botService->shouldReceive('getEventsForWeek')
-            ->atLeast()->once()
-            ->andReturn($events);
-
-        $this->messageBuilderServiceMock->shouldReceive('buildEventBlocks')
-            ->atLeast()->once()
-            ->with(Mockery::any())
-            ->andReturn(new Collection);
-
-        $this->messageBuilderServiceMock->shouldReceive('chunkMessages')
-            ->atLeast()->once()
-            ->with(Mockery::any(), Mockery::any())
-            ->andReturn([]);
-
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->atLeast()->once()
-            ->andReturn(new Collection);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->atLeast()->once()
-            ->andReturn(new Collection);
+        $workspace = SlackWorkspace::factory()->create();
+        SlackChannel::factory()->create(['slack_workspace_id' => $workspace->id]);
 
         $this->botService->handlePostingToSlack();
 
-        $this->assertTrue(true);
+        $this->assertDatabaseCount('slack_messages', 1);
     }
 
     public function test_parse_events_for_week()
     {
         Log::spy();
+        Http::fake([
+            'https://slack.com/api/chat.postMessage' => Http::response(['ok' => true, 'ts' => '123.456'], 200),
+        ]);
 
-        $events = new Collection([Mockery::mock(Event::class)]);
-        $weekStart = Carbon::now()->startOfWeek();
-        $eventBlocks = new Collection([['type' => 'section', 'text' => ['type' => 'mrkdwn', 'text' => 'Event 1']]]);
-        $chunkedMessages = [['text' => 'Message 1', 'blocks' => []]];
+        $weekStart = Carbon::now()->startOfWeek(Carbon::SUNDAY);
 
-        $this->messageBuilderServiceMock->shouldReceive('buildEventBlocks')
-            ->once()
-            ->with(Mockery::any())
-            ->andReturn($eventBlocks);
+        $events = Event::factory()->count(2)->create([
+            'active_at' => $weekStart->copy()->addDay(),
+            'expire_at' => $weekStart->copy()->addDays(2),
+        ]);
 
-        $this->messageBuilderServiceMock->shouldReceive('chunkMessages')
-            ->once()
-            ->with(Mockery::any(), Mockery::any())
-            ->andReturn($chunkedMessages);
-
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn(new Collection);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->andReturn(new Collection);
+        $workspace = SlackWorkspace::factory()->create();
+        SlackChannel::factory()->create(['slack_workspace_id' => $workspace->id]);
 
         $this->botService->parseEventsForWeek($events, $weekStart);
 
-        $this->assertTrue(true);
+        $this->assertDatabaseCount('slack_messages', 1);
     }
 
     public function test_post_or_update_messages_post_new()
@@ -133,33 +86,24 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'New message', 'blocks' => []]];
-        $channels = new Collection([
-            (object) ['slack_channel_id' => 'C123', 'workspace' => (object) ['access_token' => 'xoxb-token']],
+
+        $workspace = SlackWorkspace::factory()->create();
+        SlackChannel::factory()->create([
+            'slack_channel_id' => 'C123',
+            'slack_workspace_id' => $workspace->id,
         ]);
-        $existingMessages = new Collection;
-
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn($channels);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->with($week)
-            ->andReturn($existingMessages);
-
-        $this->databaseServiceMock->shouldReceive('getMostRecentMessageForChannel')
-            ->zeroOrMoreTimes()
-            ->andReturn(null);
 
         Http::fake([
             'https://slack.com/api/chat.postMessage' => Http::response(['ok' => true, 'ts' => '123.456'], 200),
         ]);
 
-        $this->databaseServiceMock->shouldReceive('createMessage')
-            ->once()
-            ->with($week, 'New message', '123.456', 'C123', 0);
-
         $this->botService->postOrUpdateMessages($week, $messages);
+
+        $this->assertDatabaseHas('slack_messages', [
+            'message' => 'New message',
+            'message_timestamp' => '123.456',
+            'sequence_position' => 0,
+        ]);
 
         Log::shouldHaveReceived('info')
             ->withArgs(fn ($message) => Str::contains($message, 'Posting new message'));
@@ -171,40 +115,31 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'Updated message', 'blocks' => []]];
-        $channels = new Collection([
-            (object) ['slack_channel_id' => 'C123', 'workspace' => (object) ['access_token' => 'xoxb-token']],
-        ]);
-        $existingMessages = new Collection([
-            (object) [
-                'channel' => (object) ['slack_channel_id' => 'C123'],
-                'sequence_position' => 0,
-                'message_timestamp' => '123.456',
-                'message' => 'Old message',
-            ],
+
+        $workspace = SlackWorkspace::factory()->create();
+        $channel = SlackChannel::factory()->create([
+            'slack_channel_id' => 'C123',
+            'slack_workspace_id' => $workspace->id,
         ]);
 
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn($channels);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->with($week)
-            ->andReturn($existingMessages);
-
-        $this->databaseServiceMock->shouldReceive('getMostRecentMessageForChannel')
-            ->zeroOrMoreTimes()
-            ->andReturn(null);
+        SlackMessage::factory()->create([
+            'week' => $week->toDateTimeString(),
+            'message' => 'Old message',
+            'message_timestamp' => '123.456',
+            'channel_id' => $channel->id,
+            'sequence_position' => 0,
+        ]);
 
         Http::fake([
             'https://slack.com/api/chat.update' => Http::response(['ok' => true], 200),
         ]);
 
-        $this->databaseServiceMock->shouldReceive('updateMessage')
-            ->once()
-            ->with($week, 'Updated message', '123.456', 'C123');
-
         $this->botService->postOrUpdateMessages($week, $messages);
+
+        $this->assertDatabaseHas('slack_messages', [
+            'message' => 'Updated message',
+            'message_timestamp' => '123.456',
+        ]);
 
         Log::shouldHaveReceived('info')
             ->withArgs(fn ($message) => Str::contains($message, 'Updating message'));
@@ -216,36 +151,30 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = []; // No new messages
-        $channels = new Collection([
-            (object) ['slack_channel_id' => 'C123', 'workspace' => (object) ['access_token' => 'xoxb-token']],
-        ]);
-        $existingMessages = new Collection([
-            (object) [
-                'channel' => (object) ['slack_channel_id' => 'C123'],
-                'sequence_position' => 0,
-                'message_timestamp' => '123.456',
-                'message' => 'Old message to be deleted',
-            ],
+
+        $workspace = SlackWorkspace::factory()->create();
+        $channel = SlackChannel::factory()->create([
+            'slack_channel_id' => 'C123',
+            'slack_workspace_id' => $workspace->id,
         ]);
 
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn($channels);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->with($week)
-            ->andReturn($existingMessages);
+        SlackMessage::factory()->create([
+            'week' => $week->toDateTimeString(),
+            'message' => 'Old message to be deleted',
+            'message_timestamp' => '123.456',
+            'channel_id' => $channel->id,
+            'sequence_position' => 0,
+        ]);
 
         Http::fake([
             'https://slack.com/api/chat.delete' => Http::response(['ok' => true], 200),
         ]);
 
-        $this->databaseServiceMock->shouldReceive('deleteMessage')
-            ->once()
-            ->with('C123', '123.456');
-
         $this->botService->postOrUpdateMessages($week, $messages);
+
+        $this->assertDatabaseMissing('slack_messages', [
+            'message_timestamp' => '123.456',
+        ]);
 
         Log::shouldHaveReceived('info')
             ->withArgs(fn ($message) => Str::contains($message, 'Deleting old message'));
@@ -255,39 +184,37 @@ class BotServiceTest extends DatabaseTestCase
     {
         Log::spy();
 
+        $week = Carbon::now()->startOfWeek();
+        $messages = [['text' => 'New message 1', 'blocks' => []], ['text' => 'New message 2', 'blocks' => []]];
+
+        $workspace = SlackWorkspace::factory()->create();
+        $channel = SlackChannel::factory()->create([
+            'slack_channel_id' => 'C123',
+            'slack_workspace_id' => $workspace->id,
+        ]);
+
+        // Existing message for current week (1 message)
+        SlackMessage::factory()->create([
+            'week' => $week->toDateTimeString(),
+            'message' => 'Old message',
+            'message_timestamp' => '123.456',
+            'channel_id' => $channel->id,
+            'sequence_position' => 0,
+        ]);
+
+        // A message for the next week already exists — makes spillover unsafe
+        SlackMessage::factory()->create([
+            'week' => $week->copy()->addWeek()->toDateTimeString(),
+            'message' => 'Next week message',
+            'message_timestamp' => '789.012',
+            'channel_id' => $channel->id,
+            'sequence_position' => 0,
+        ]);
+
         Http::fake([
             'https://slack.com/api/chat.update' => Http::response(['ok' => true], 200),
             'https://slack.com/api/chat.postMessage' => Http::response(['ok' => true, 'ts' => '123.456'], 200),
         ]);
-
-        $week = Carbon::now()->startOfWeek();
-        $messages = [['text' => 'New message 1', 'blocks' => []], ['text' => 'New message 2', 'blocks' => []]];
-        $channels = new Collection([
-            (object) ['slack_channel_id' => 'C123', 'workspace' => (object) ['access_token' => 'xoxb-token']],
-        ]);
-        $existingMessages = new Collection([
-            (object) [
-                'channel' => (object) ['slack_channel_id' => 'C123'],
-                'sequence_position' => 0,
-                'message_timestamp' => '123.456',
-                'message' => 'Old message',
-            ],
-        ]);
-
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn($channels);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->with($week)
-            ->andReturn($existingMessages);
-
-        $this->databaseServiceMock->shouldReceive('getMostRecentMessageForChannel')
-            ->once()
-            ->andReturn(new SlackMessage(['week' => $week->copy()->addWeek()->toDateTimeString()]));
-
-        $this->databaseServiceMock->shouldNotReceive('updateMessage');
 
         $this->expectException(UnsafeMessageSpilloverException::class);
 
@@ -300,30 +227,20 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'Updated message', 'blocks' => []]];
-        $channels = new Collection([
-            (object) ['slack_channel_id' => 'C123', 'workspace' => (object) ['access_token' => 'xoxb-token']],
-        ]);
-        $existingMessages = new Collection([
-            (object) [
-                'channel' => (object) ['slack_channel_id' => 'C123'],
-                'sequence_position' => 0,
-                'message_timestamp' => '123.456',
-                'message' => 'Old message',
-            ],
+
+        $workspace = SlackWorkspace::factory()->create();
+        $channel = SlackChannel::factory()->create([
+            'slack_channel_id' => 'C123',
+            'slack_workspace_id' => $workspace->id,
         ]);
 
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn($channels);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->with($week)
-            ->andReturn($existingMessages);
-
-        $this->databaseServiceMock->shouldReceive('getMostRecentMessageForChannel')
-            ->zeroOrMoreTimes()
-            ->andReturn(null);
+        SlackMessage::factory()->create([
+            'week' => $week->toDateTimeString(),
+            'message' => 'Old message',
+            'message_timestamp' => '123.456',
+            'channel_id' => $channel->id,
+            'sequence_position' => 0,
+        ]);
 
         Http::fake([
             'https://slack.com/api/chat.update' => Http::response(['ok' => false, 'error' => 'update_failed'], 200),
@@ -341,34 +258,22 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'New message', 'blocks' => []]];
-        $channels = new Collection([
-            (object) ['slack_channel_id' => 'C_FAIL', 'workspace' => (object) ['access_token' => 'xoxb-token']],
-            (object) ['slack_channel_id' => 'C_OK', 'workspace' => (object) ['access_token' => 'xoxb-token']],
+
+        $workspace = SlackWorkspace::factory()->create();
+        SlackChannel::factory()->create([
+            'slack_channel_id' => 'C_FAIL',
+            'slack_workspace_id' => $workspace->id,
         ]);
-        $existingMessages = new Collection;
-
-        $this->databaseServiceMock->shouldReceive('getSlackChannels')
-            ->once()
-            ->andReturn($channels);
-
-        $this->databaseServiceMock->shouldReceive('getMessages')
-            ->once()
-            ->with($week)
-            ->andReturn($existingMessages);
-
-        $this->databaseServiceMock->shouldReceive('getMostRecentMessageForChannel')
-            ->zeroOrMoreTimes()
-            ->andReturn(null);
+        SlackChannel::factory()->create([
+            'slack_channel_id' => 'C_OK',
+            'slack_workspace_id' => $workspace->id,
+        ]);
 
         Http::fake([
             'https://slack.com/api/chat.postMessage' => Http::sequence()
                 ->push(['ok' => false, 'error' => 'channel_not_found'], 200)
                 ->push(['ok' => true, 'ts' => '789.012'], 200),
         ]);
-
-        $this->databaseServiceMock->shouldReceive('createMessage')
-            ->once()
-            ->with($week, 'New message', '789.012', 'C_OK', 0);
 
         $this->botService->postOrUpdateMessages($week, $messages);
 
@@ -377,6 +282,10 @@ class BotServiceTest extends DatabaseTestCase
 
         Log::shouldHaveReceived('info')
             ->withArgs(fn ($message) => Str::contains($message, 'Posting new message'));
-    }
 
+        $this->assertDatabaseHas('slack_messages', [
+            'message' => 'New message',
+            'message_timestamp' => '789.012',
+        ]);
+    }
 }

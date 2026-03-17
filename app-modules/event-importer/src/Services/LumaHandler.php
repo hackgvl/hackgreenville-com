@@ -79,8 +79,27 @@ class LumaHandler extends AbstractEventHandler
         }
 
         try {
-            $address = $this->parseGoogleAddress($parts);
+            // Handle addresses with or without a location name prefix
+            if (count($parts) === 4) {
+                $name = '';
+                array_unshift($parts, null);
+            } else {
+                $name = $parts[0];
+            }
 
+            $stateZip = explode(' ', $parts[3]);
+
+            return VenueData::from([
+                'id' => $data['event']['geo_address_info']['place_id'],
+                'name' => $name,
+                'address' => $parts[1],
+                'city' => $parts[2],
+                'state' => $stateZip[0],
+                'zip' => $stateZip[1],
+                'country' => mb_substr($parts[4], 0, 2),
+                'lon' => $data['event']['coordinate']['longitude'],
+                'lat' => $data['event']['coordinate']['latitude'],
+            ]);
         } catch (Throwable $exception) {
             Log::debug('Luma - Unable to parse address.', [
                 'data' => $data,
@@ -88,78 +107,13 @@ class LumaHandler extends AbstractEventHandler
 
             return null;
         }
-        return VenueData::from([
-            'id' => $data['event']['geo_address_info']['place_id'],
-            'name' => $address->name,
-            'address' => $address->address1,
-            'city' => $address->city,
-            'state' => $address->state,
-            'zip' => $address->zipcode,
-            'country' => mb_substr($address->country, 0, 2),
-            'lon' => $data['event']['coordinate']['longitude'],
-            'lat' => $data['event']['coordinate']['latitude'],
-        ]);
-
     }
 
     protected function eventResults(int $page): Collection
     {
-        $events = $this->initialApiCall()->collect('entries');
-        return $this->filterEvents($events);
-    }
-
-    protected function parseGoogleAddress(array $parts)
-    {
-        return new class ($parts) {
-            public string $name;
-
-            public ?string $address1;
-
-            public ?string $city;
-
-            public ?string $state;
-
-            public ?string $zipcode;
-
-            public ?string $country;
-
-            public function __construct(array $parts)
-            {
-                // No "Location Name"
-                if (count($parts) === 4) {
-                    $this->name = '';
-                    array_unshift($parts, null);
-                } else {
-                    $this->name = $parts[0];
-                }
-
-                $state_zip = explode(' ', $parts[3]);
-
-                $state = $state_zip[0];
-                $zip = $state_zip[1];
-
-                $this->address1 = $parts[1];
-                $this->city = $parts[2];
-                $this->state = $state;
-                $this->zipcode = $zip;
-                $this->country = $parts[4];
-            }
-        };
-    }
-
-    private function filterEvents(Collection $events): Collection
-    {
-        $filteredEvents = [];
-
-        foreach ($events as $event) {
-            // Filter out Luma events that were imported from an external source
-            // or are not managed by the organization (i.e. not cross-promotional events)
-            if ($event['platform'] !== 'luma' || $event['is_manager'] !== true) {
-                continue;
-            }
-            $filteredEvents[] = $event;
-        }
-
-        return collect($filteredEvents);
+        return $this->initialApiCall()
+            ->collect('entries')
+            ->filter(fn (array $event) => $event['platform'] === 'luma' && $event['is_manager'] === true)
+            ->values();
     }
 }

@@ -1,26 +1,34 @@
 # HackGreenville.com
 
 ## Stack
-- **Backend**: Laravel 12 (PHP 8.5+), Filament 3.3 admin
+- **Backend**: Laravel 12 (PHP ^8.5), Filament 3.3 admin panel
 - **Database**: MySQL 8.0 (SQLite in-memory for tests)
 - **Frontend**: Tailwind CSS 4, Alpine.js (lazy), Turbo Drive
 - **Build**: Vite 7, Yarn, Node 22.12+
 - **API**: Versioned REST (v0, v1), Scribe docs at `/docs/api`
 - **Queue**: Redis driver, `slack` and `default` queues
 - **Deploy**: Railway, Docker (Laravel Sail), GitHub Actions CI
-- **Code Style**: Laravel Pint (PSR-12), Prettier for JS/CSS
 
-## Project Structure
-- `/app` — Core app (Models, Enums, Filament resources, Mail, Notifications)
-- `/app-modules/api` — Versioned API controllers
-- `/app-modules/event-importer` — Handlers for Eventbrite, Meetup, Luma, OpenUpstate
-- `/app-modules/slack-events-bot` — Slack bot for event summaries
-- `/resources/views` — Blade templates
-- `/resources/js` — Vite entry points
+## Development Commands
+- `composer dev` — starts Laravel server + queue worker + Vite + log tailing (recommended)
+- `yarn dev` — Vite dev server only
+- `yarn build` — production frontend build
+- `./vendor/bin/pint` — fix PHP code style (PSR-12)
+- `yarn lint` — Prettier for JS/CSS
+- `php artisan scribe:generate` — regenerate API docs
 
-## Scheduled Commands
-- `ImportEventsCommand` — hourly
-- `PruneMissingEventsCommand` — daily at 02:00
+## Git Workflow
+- Base branch: `develop` (all PRs target this)
+- Branch naming: `feat/description`, `fix/description`, `docs/description`
+
+## Modular Architecture
+Self-contained modules live in `/app-modules/` and are auto-discovered via internachi/modular. Each module has its own CLAUDE.md with module-specific context:
+- `app-modules/api` — versioned REST API
+- `app-modules/event-importer` — imports events from Eventbrite, Meetup, Luma
+- `app-modules/slack-events-bot` — posts event summaries to Slack
+
+## Filament Admin
+- Resources: Event, Category, Org, Tag, Venue (in `app/Filament/Resources/`)
 
 ## Frontend Conventions
 - **No jQuery, Lodash, or Moment.js** — use vanilla JS and native APIs
@@ -33,6 +41,7 @@
 - Inline `<script>` in Blade must use `type="module"` to run after Vite bundle
 
 ## Testing & Validation
-- After implementing features, run `./vendor/bin/pint` to fix code style and `php artisan test` to verify tests pass
+- After implementing features, run `./vendor/bin/pint` then `php artisan test`
 - `yarn build` must pass cleanly after frontend changes
+- Prefer running single test files over the full suite for speed
 - PHPUnit 11, test suites: Feature, Unit, plus app-module tests

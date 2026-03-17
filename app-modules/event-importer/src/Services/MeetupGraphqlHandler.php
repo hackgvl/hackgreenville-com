@@ -4,15 +4,15 @@ namespace HackGreenville\EventImporter\Services;
 
 use App\Enums\EventServices;
 use Carbon\Carbon;
-use Firebase\JWT\JWT;
 use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
+use HackGreenville\EventImporter\Services\Concerns\MeetupGraphqlAuthentication;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use RuntimeException;
+use Throwable;
 
 /*
 NOTE: This importer has been deprecated in favor of the MeetupGraphqlExtHandler which uses the newer
@@ -20,6 +20,7 @@ NOTE: This importer has been deprecated in favor of the MeetupGraphqlExtHandler 
 */
 class MeetupGraphqlHandler extends AbstractEventHandler
 {
+    use MeetupGraphqlAuthentication;
     protected ?string $next_page_url = null;
     protected int $per_page_limit = 100;
 
@@ -27,15 +28,17 @@ class MeetupGraphqlHandler extends AbstractEventHandler
     {
         $event = $data['node'];
 
+        $startsAt = Carbon::parse($event['dateTime']);
+
         $map = EventData::from([
             'id' => $event['id'],
             'name' => $event['title'],
             'description' => $event['description'],
             'url' => $event['eventUrl'],
-            'starts_at' => Carbon::parse($event['dateTime']),
+            'starts_at' => $startsAt,
             // Meetup (graphql) does not provide an event end time
-            'ends_at' => Carbon::parse($event['dateTime'])->addHours(2),
-            'timezone' => Carbon::parse($event['dateTime'])->timezoneName,
+            'ends_at' => $startsAt->copy()->addHours(2),
+            'timezone' => $startsAt->timezoneName,
             'cancelled_at' => match ($event['status']) {
                 'CANCELLED' => now(),
                 'cancelled' => now(),
@@ -47,20 +50,13 @@ class MeetupGraphqlHandler extends AbstractEventHandler
             'venue' => $this->mapIntoVenueData($data)
         ]);
 
-        if ($this->debug_log_enabled) {
-            Log::info('Mapped MeetupGraphql event data', [
-                Log::build([
-                    'driver' => 'single',
-                    'path' => storage_path('logs/meetup-graphql.log'),
-                ])->info('MeetupGraphql', [
-                    'org_service_key' => $this->org->service_api_key,
-                    'service_id' => $event['id'],
-                    'token' => $event['token'] ?? null,
-                    'starts_at' => $map->starts_at->toISOString(),
-                    'name' => $map->name,
-                ])
-            ]);
-        }
+        $this->meetupDebugLog('MeetupGraphql', [
+            'org_service_key' => $this->org->service_api_key,
+            'service_id' => $event['id'],
+            'token' => $event['token'] ?? null,
+            'starts_at' => $map->starts_at->toISOString(),
+            'name' => $map->name,
+        ]);
 
         return $map;
     }
@@ -112,11 +108,12 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         $pastEvents = $groupData['pastEvents']['edges'];
         $upcomingEvents = $groupData['upcomingEvents']['edges'];
 
-        $events = array_merge($pastEvents, $upcomingEvents);
+        $startDate = now()->subDays($this->max_days_in_past)->startOfDay();
+        $endDate = now()->addDays($this->max_days_in_future)->endOfDay();
 
-        $events = $this->filterEvents($events);
-
-        return collect($events);
+        return collect(array_merge($pastEvents, $upcomingEvents))
+            ->filter(fn (array $event) => Carbon::parse($event['node']['dateTime'])->between($startDate, $endDate))
+            ->values();
     }
 
     protected function determineNextPage(Response $response): void
@@ -227,87 +224,4 @@ class MeetupGraphqlHandler extends AbstractEventHandler
         return $response;
     }
 
-    // Meetup's GraphQL API does not support date filtering on its API
-    // We need to filter the events ourselves
-    private function filterEvents(array $events): array
-    {
-        $start_date = now()->subDays($this->max_days_in_past)->startOfDay();
-        $end_date = now()->addDays($this->max_days_in_future)->endOfDay();
-
-        $filtered_events = [];
-
-        foreach ($events as $event) {
-            $eventDate = Carbon::parse($event['node']['dateTime']);
-            if ($eventDate < $start_date || $eventDate > $end_date) {
-                continue;
-            }
-
-            $filtered_events[] = $event;
-        }
-
-        return $filtered_events;
-    }
-
-    private function getBearerToken()
-    {
-        $this->validateConfigValues();
-
-        $jwt_key = $this->getJwtKey();
-
-        $response = Http::asForm()->throw()->post('https://secure.meetup.com/oauth2/access', [
-            'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-            'assertion' => $jwt_key,
-        ]);
-
-        return $response->json();
-    }
-
-    private function getJwtKey()
-    {
-        $private_key = config('event-import-handlers.meetup_graphql_private_key');
-
-        if (empty($private_key)) {
-            $file_path = config('event-import-handlers.meetup_graphql_private_key_path');
-
-            if ( ! file_exists($file_path)) {
-                throw new RuntimeException('File path ' . $file_path . ' does not exist.');
-            }
-
-            $private_key = file_get_contents($file_path);
-        }
-
-        $headers = [
-            'kid' => config('event-import-handlers.meetup_graphql_private_key_id'),
-        ];
-
-        $payload = [
-            'iss' => config('event-import-handlers.meetup_graphql_client_id'),
-            'sub' => config('event-import-handlers.meetup_graphql_member_id'),
-            'aud' => 'api.meetup.com',
-            'iat' => time(),
-            'exp' => time() + 240,
-        ];
-
-        return JWT::encode($payload, $private_key, 'RS256', null, $headers);
-    }
-
-    private function validateConfigValues(): void
-    {
-        if (config('event-import-handlers.meetup_graphql_client_id') === null) {
-            throw new RuntimeException('meetup_graphql_client_id config value must be set.');
-        }
-
-        if (config('event-import-handlers.meetup_graphql_member_id') === null) {
-            throw new RuntimeException('meetup_graphql_member_id config value must be set.');
-        }
-
-        if (config('event-import-handlers.meetup_graphql_private_key_id') === null) {
-            throw new RuntimeException('meetup_graphql_private_key_id config value must be set.');
-        }
-
-        if (config('event-import-handlers.meetup_graphql_private_key') === null
-            && config('event-import-handlers.meetup_graphql_private_key_path') === null) {
-            throw new RuntimeException('meetup_graphql_private_key or meetup_graphql_private_key_path config value must be set.');
-        }
-    }
 }

@@ -4,12 +4,15 @@ namespace HackGreenville\SlackEventsBot\Services;
 
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
 class AuthService
 {
+    public function __construct(private SlackApiClient $slackApiClient)
+    {
+    }
+
     public function getUserInfo(string $userId, string $teamId): array
     {
         $workspace = SlackWorkspace::where('team_id', $teamId)->first();
@@ -18,19 +21,7 @@ class AuthService
             throw new RuntimeException("Workspace with team ID {$teamId} not found.");
         }
 
-        $response = Http::withToken($workspace->access_token)
-            ->get('https://slack.com/api/users.info', [
-                'user' => $userId,
-            ]);
-
-        $json = $response->json();
-
-        if ( ! ($json['ok'] ?? false)) {
-            $error = $json['error'] ?? 'unknown_error';
-            throw new RuntimeException("Slack API error when fetching user info: {$error}");
-        }
-
-        return $json;
+        return $this->slackApiClient->users($workspace)->info($userId);
     }
 
     public function isAdmin(string $userId, string $teamId): bool

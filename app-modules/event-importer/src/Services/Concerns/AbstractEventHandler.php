@@ -35,7 +35,7 @@ abstract class AbstractEventHandler
 
     public function eventExistsOnService(Event $event): bool
     {
-        return Http::get($event->url)->successful();
+        return Http::get($event->url())->successful();
     }
 
     /** @return array{int, Collection<EventData>} */

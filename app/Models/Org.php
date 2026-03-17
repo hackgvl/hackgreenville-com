@@ -5,13 +5,11 @@ namespace App\Models;
 use App\Enums\EventServices;
 use App\Enums\OrganizationStatus;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Org extends BaseModel
 {
-    use HasFactory;
     use SoftDeletes;
 
     protected $casts = [

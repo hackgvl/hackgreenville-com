@@ -9,7 +9,7 @@
         <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative overflow-hidden min-h-[28rem] sm:min-h-[32rem] flex items-center">
             <img src="{{ asset('img/hackgreenville-banner.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true"/>
             <div class="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-gray-900/60 to-gray-900/40 z-[2]"></div>
-            <div class="max-w-7xl mx-auto w-full px-6 sm:px-8 py-16 sm:py-24 relative z-10">
+            <div class="max-w-6xl mx-auto w-full px-6 sm:px-8 py-16 sm:py-24 relative z-10">
                 <div class="max-w-2xl">
                     <p class="text-sm sm:text-base font-medium tracking-widest uppercase text-success mb-4 sm:mb-6">Greenville, SC Tech Community</p>
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
@@ -55,7 +55,7 @@
 
         {{-- Upcoming Events --}}
         <div class="bg-gray-50 py-16 sm:py-20">
-            <div class="max-w-4xl mx-auto px-4">
+            <div class="max-w-6xl mx-auto px-4">
                 <h2 class="text-center text-2xl sm:text-3xl font-light mb-8">
                     Upcoming Events
                 </h2>

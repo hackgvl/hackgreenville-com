@@ -10,7 +10,6 @@ use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Str;
 use Throwable;
 
 class MeetupRestHandler extends AbstractEventHandler
@@ -42,15 +41,18 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function mapIntoEventData(array $data): EventData
     {
+        $startsAt = Carbon::createFromTimestampMs($data['time'])->setTimezone(config('app.timezone'));
+        $timezone = Carbon::createFromTimestampMs($data['time'])->utcOffset($data['utc_offset'] / 1000)->timezoneName;
+
         return EventData::from([
             'id' => $data['id'],
             'name' => $data['name'],
             'description' => $data['description'],
             'url' => $data['link'],
-            'starts_at' => Carbon::createFromTimestampMs($data['time'])->setTimezone(config('app.timezone')),
+            'starts_at' => $startsAt,
             // Meetup (rest) does not provide an event end time
-            'ends_at' => Carbon::createFromTimestampMs($data['time'])->setTimezone(config('app.timezone'))->addHours(2),
-            'timezone' => Carbon::createFromTimestampMs($data['time'])->utcOffset($data['utc_offset'] / 1000)->timezoneName,
+            'ends_at' => $startsAt->copy()->addHours(2),
+            'timezone' => $timezone,
             'cancelled_at' => match ($data['status']) {
                 'cancelled' => now(),
                 default => null
@@ -110,16 +112,12 @@ class MeetupRestHandler extends AbstractEventHandler
 
     protected function determineNextPage(Response $response): void
     {
-        if ($links = $response->header('Link')) {
-            $link = collect($links)
-                ->flatMap(fn ($data) => Str::of($data)->match('/<(.*)>; rel="next"/i')->toString())
-                ->implode('');
+        $link = $response->header('Link');
 
-            if (empty($link)) {
-                $this->next_page_url = null;
-            } else {
-                $this->next_page_url = $link;
-            }
+        if ($link && preg_match('/<(.+?)>;\s*rel="next"/i', $link, $matches)) {
+            $this->next_page_url = $matches[1];
+        } else {
+            $this->next_page_url = null;
         }
     }
 }

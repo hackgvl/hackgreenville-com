@@ -2,15 +2,12 @@
 
 namespace App\Console\Commands;
 
-use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Throwable;
 
 class DeactivateUser extends Command
 {
-    use LogOutput;
-
     /**
      * The name and signature of the console command.
      *
@@ -43,11 +40,11 @@ class DeactivateUser extends Command
             $user->active = false;
             $user->save();
 
-            $this->logInfo("User successfully deactivated.");
+            $this->info("User successfully deactivated.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->logError($throwable->getMessage());
+            $this->error($throwable->getMessage());
             return self::FAILURE;
         }
     }

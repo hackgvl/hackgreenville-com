@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Console\Commands\Traits\LogOutput;
 use App\Models\User;
 use Exception;
 use Illuminate\Console\Command;
@@ -10,8 +9,6 @@ use Throwable;
 
 class DeleteUser extends Command
 {
-    use LogOutput;
-
     /**
      * The name and signature of the console command.
      *
@@ -46,11 +43,11 @@ class DeleteUser extends Command
                 throw new Exception("Unable to delete user with email '{$user->email}'.");
             }
 
-            $this->logInfo("User deleted successfully.");
+            $this->info("User deleted successfully.");
 
             return self::SUCCESS;
         } catch (Throwable $throwable) {
-            $this->logError($throwable->getMessage());
+            $this->error($throwable->getMessage());
             return self::FAILURE;
         }
     }

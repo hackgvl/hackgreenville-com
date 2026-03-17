@@ -6,17 +6,12 @@ use App\Enums\EventServices;
 use App\Enums\EventVisibility;
 use App\Traits\HasUniqueIdentifier;
 use Carbon\Carbon;
-use DB;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use RuntimeException;
 
 class Event extends BaseModel
 {
-    use HasFactory;
     use HasUniqueIdentifier;
     use SoftDeletes;
 
@@ -35,14 +30,6 @@ class Event extends BaseModel
         'visibility' => EventVisibility::class,
     ];
 
-    public function getUniqueIdentifierAttribute(): bool|string
-    {
-        $service = $this->service;
-        $service_id = $this->service_id;
-
-        return json_encode(compact('service', 'service_id'));
-    }
-
     public function venue(): BelongsTo
     {
         return $this->belongsTo(Venue::class);
@@ -58,53 +45,30 @@ class Event extends BaseModel
         $query->where('visibility', EventVisibility::Published);
     }
 
-    public function scopeFuture(Builder $query)
+    public function scopeWithActiveOrganization(Builder $query): void
     {
-        $query->where('active_at', '>=', now())
-            ->orderBy('active_at', 'asc');
+        $query->whereHas('organization', fn (Builder $q) => $q->whereNull('deleted_at'));
     }
 
-    public function scopeGetActive(Builder $query): Builder
+    public function scopeFilterByDateRange(Builder $query, ?Carbon $startDate, ?Carbon $endDate): void
     {
-        return $query
-            ->where('active_at', '>=', DB::raw('NOW()'))
-            ->orderBy('active_at', 'asc');
+        $query
+            ->when($startDate, fn (Builder $q) => $q->where('active_at', '>=', $startDate->startOfDay()))
+            ->when($endDate, fn (Builder $q) => $q->where('active_at', '<=', $endDate->endOfDay()))
+            ->when( ! $startDate && ! $endDate, fn (Builder $q) => $q->where('active_at', '>=', now()->subDays(config('events-api.default_days'))));
     }
 
-    public function scopeStartOfMonth(Builder $query): Builder
+    public function scopeFuture(Builder $query): void
     {
-        return $query
-            ->where('active_at', '>=', date('Y-m-1'))
-            ->orderBy('active_at', 'asc');
+        $query->where('active_at', '>=', now());
     }
 
-    public function scopeDatesBetween(Builder $query, $start, $end): Builder
-    {
-        return $query
-            ->whereBetween(
-                DB::raw('DATE(`active_at`)'),
-                [
-                    date('Y-m-d', strtotime($start)),
-                    date('Y-m-d', strtotime($end)),
-                ],
-            );
-    }
-
-    public function getUrlAttribute(): string
+    public function url(): string
     {
         return $this->uri;
     }
 
-    public function getStateAttribute(): string
-    {
-        if ($this->active_at->isPast()) {
-            return 'passed';
-        }
-
-        return 'upcoming';
-    }
-
-    public function getStatusAttribute(): string
+    public function status(): string
     {
         if ($this->cancelled_at) {
             return 'cancelled';
@@ -114,12 +78,14 @@ class Event extends BaseModel
             return 'past';
         }
 
-        if ($this->active_at->isFuture()) {
-            return 'upcoming';
-        }
+        return 'upcoming';
+    }
 
-        throw new RuntimeException('Unable to determine status');
-
+    public function displayName(): string
+    {
+        return $this->isCancelled()
+            ? '[CANCELLED] ' . $this->event_name
+            : $this->event_name;
     }
 
     public function toGoogleCalendarUrl(): string
@@ -150,10 +116,4 @@ class Event extends BaseModel
         return null !== $this->cancelled_at;
     }
 
-    protected function expireAt(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => Carbon::parse($value ?? $this->active_at->copy()->addHours(2)),
-        );
-    }
 }

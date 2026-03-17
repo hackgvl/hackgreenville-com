@@ -7,6 +7,7 @@ use HackGreenville\SlackEventsBot\Models\SlackChannel;
 use HackGreenville\SlackEventsBot\Models\SlackCooldown;
 use HackGreenville\SlackEventsBot\Models\SlackMessage;
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
 
 class DatabaseService
@@ -54,7 +55,7 @@ class DatabaseService
 
     public function getMostRecentMessageForChannel(string $slackChannelId): ?SlackMessage
     {
-        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+        $channel = $this->findChannel($slackChannelId);
 
         if ( ! $channel) {
             return null;
@@ -86,7 +87,7 @@ class DatabaseService
      */
     public function removeChannel(string $slackChannelId): int
     {
-        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+        $channel = $this->findChannel($slackChannelId);
 
         if ( ! $channel) {
             return 0;
@@ -97,14 +98,9 @@ class DatabaseService
         return $channel->delete() ? 1 : 0;
     }
 
-    public function deleteMessagesForWeek(Carbon $week): int
-    {
-        return SlackMessage::whereDate('week', $week->toDateString())->delete();
-    }
-
     public function deleteMessage(string $slackChannelId, string $messageTimestamp): int
     {
-        $channel = SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+        $channel = $this->findChannel($slackChannelId);
 
         if ( ! $channel) {
             return 0;
@@ -161,8 +157,14 @@ class DatabaseService
         );
     }
 
+    private function findChannel(string $slackChannelId): ?SlackChannel
+    {
+        return SlackChannel::where('slack_channel_id', $slackChannelId)->first();
+    }
+
     private function resolveChannel(string $slackChannelId): SlackChannel
     {
-        return SlackChannel::where('slack_channel_id', $slackChannelId)->firstOrFail();
+        return $this->findChannel($slackChannelId)
+            ?? throw new ModelNotFoundException("No query results for SlackChannel [{$slackChannelId}].");
     }
 }

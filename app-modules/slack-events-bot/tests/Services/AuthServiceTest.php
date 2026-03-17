@@ -22,27 +22,20 @@ class AuthServiceTest extends DatabaseTestCase
         $this->authService = $this->app->make(AuthService::class);
     }
 
-    /**
-     * Test getUserInfo method.
-     */
     public function test_get_user_info()
     {
         $teamId = 'T123';
         $userId = 'U123';
-        $accessToken = 'xoxb-test-token';
 
-        // Mock Http facade
-        Http::shouldReceive('withToken')
-            ->with($accessToken)
-            ->andReturnSelf();
-
-        Http::shouldReceive('get')
-            ->with('https://slack.com/api/users.info', ['user' => $userId])
-            ->andReturn(new \Illuminate\Http\Client\Response(new \GuzzleHttp\Psr7\Response(200, [], json_encode(['ok' => true, 'user' => ['id' => $userId, 'is_admin' => true]]))));
+        Http::fake([
+            'https://slack.com/api/users.info*' => Http::response([
+                'ok' => true,
+                'user' => ['id' => $userId, 'is_admin' => true],
+            ]),
+        ]);
 
         SlackWorkspace::factory()->create([
             'team_id' => $teamId,
-            'access_token' => $accessToken,
         ]);
 
         $userInfo = $this->authService->getUserInfo($userId, $teamId);
@@ -67,20 +60,16 @@ class AuthServiceTest extends DatabaseTestCase
     {
         $teamId = 'T123';
         $userId = 'U123';
-        $accessToken = 'xoxb-test-token';
 
-        // Mock Http facade to return an error
-        Http::shouldReceive('withToken')
-            ->with($accessToken)
-            ->andReturnSelf();
-
-        Http::shouldReceive('get')
-            ->with('https://slack.com/api/users.info', ['user' => $userId])
-            ->andReturn(new \Illuminate\Http\Client\Response(new \GuzzleHttp\Psr7\Response(200, [], json_encode(['ok' => false, 'error' => 'user_not_found']))));
+        Http::fake([
+            'https://slack.com/api/users.info*' => Http::response([
+                'ok' => false,
+                'error' => 'user_not_found',
+            ]),
+        ]);
 
         SlackWorkspace::factory()->create([
             'team_id' => $teamId,
-            'access_token' => $accessToken,
         ]);
 
         Log::spy();
@@ -91,46 +80,69 @@ class AuthServiceTest extends DatabaseTestCase
         $this->authService->getUserInfo($userId, $teamId);
     }
 
-    /**
-     * Test isAdmin method.
-     */
-    public function test_is_admin()
+    public function test_is_admin_returns_true_for_admin_user()
     {
         $userId = 'U123';
         $teamId = 'T123';
 
-        // Test case: User is admin
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
-        $this->authService->shouldReceive('getUserInfo')
-            ->once()
-            ->with($userId, $teamId)
-            ->andReturn(['ok' => true, 'user' => ['is_admin' => true]]);
+        SlackWorkspace::factory()->create(['team_id' => $teamId]);
+
+        Http::fake([
+            'https://slack.com/api/users.info*' => Http::response([
+                'ok' => true,
+                'user' => ['is_admin' => true],
+            ]),
+        ]);
 
         $this->assertTrue($this->authService->isAdmin($userId, $teamId));
+    }
 
-        // Test case: User is not admin
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
-        $this->authService->shouldReceive('getUserInfo')
-            ->once()
-            ->with($userId, $teamId)
-            ->andReturn(['ok' => true, 'user' => ['is_admin' => false]]);
+    public function test_is_admin_returns_false_for_non_admin_user()
+    {
+        $userId = 'U123';
+        $teamId = 'T123';
+
+        SlackWorkspace::factory()->create(['team_id' => $teamId]);
+
+        Http::fake([
+            'https://slack.com/api/users.info*' => Http::response([
+                'ok' => true,
+                'user' => ['is_admin' => false],
+            ]),
+        ]);
 
         $this->assertFalse($this->authService->isAdmin($userId, $teamId));
+    }
 
-        // Test case: User info not available (e.g., 'user' key missing or 'is_admin' missing)
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
-        $this->authService->shouldReceive('getUserInfo')
-            ->once()
-            ->with($userId, $teamId)
-            ->andReturn(['ok' => true, 'user' => []]); // Missing 'is_admin'
+    public function test_is_admin_returns_false_when_is_admin_key_missing()
+    {
+        $userId = 'U123';
+        $teamId = 'T123';
+
+        SlackWorkspace::factory()->create(['team_id' => $teamId]);
+
+        Http::fake([
+            'https://slack.com/api/users.info*' => Http::response([
+                'ok' => true,
+                'user' => [],
+            ]),
+        ]);
 
         $this->assertFalse($this->authService->isAdmin($userId, $teamId));
+    }
 
-        $this->authService = Mockery::mock(AuthService::class . '[getUserInfo]');
-        $this->authService->shouldReceive('getUserInfo')
-            ->once()
-            ->with($userId, $teamId)
-            ->andReturn(['ok' => true]); // Missing 'user' key
+    public function test_is_admin_returns_false_when_user_key_missing()
+    {
+        $userId = 'U123';
+        $teamId = 'T123';
+
+        SlackWorkspace::factory()->create(['team_id' => $teamId]);
+
+        Http::fake([
+            'https://slack.com/api/users.info*' => Http::response([
+                'ok' => true,
+            ]),
+        ]);
 
         $this->assertFalse($this->authService->isAdmin($userId, $teamId));
     }

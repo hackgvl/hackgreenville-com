@@ -29,7 +29,7 @@ class EventApiV0Test extends DatabaseTestCase
                     'group_name' => $event->group_name,
                     'group_url' => $event->organization->uri,
                     'is_paid' => $event->is_paid,
-                    'url' => $event->url,
+                    'url' => $event->url(),
                     'time' => $event->active_at->toISOString(),
                     'tags' => $event->organization->tags->first()->id,
                     'rsvp_count' => $event->rsvp_count,
