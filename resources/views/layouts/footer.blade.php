@@ -1,5 +1,5 @@
 <footer class="bg-primary text-white pt-12 pb-6" aria-label="Site footer">
-    <div class="max-w-5xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto px-4">
 
         {{-- Tagline --}}
         <div class="mb-10">

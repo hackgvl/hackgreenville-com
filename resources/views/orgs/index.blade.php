@@ -4,7 +4,7 @@
 @section('description', 'A list of tech meetups, code schools, tech conferences / hack-a-thons near Greenville, SC, including inactive organizations.')
 
 @section('content')
-    <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
 
         <div class="mb-10">
             <h1 class="text-3xl font-bold">Local Tech Organizations</h1>

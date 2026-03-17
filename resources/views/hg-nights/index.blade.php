@@ -8,7 +8,7 @@
 	<div class="relative bg-gray-900 text-white overflow-hidden min-h-[24rem] sm:min-h-[28rem] flex items-center">
 		<img src="{{ asset('img/hg-nights-sm.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true" loading="eager"/>
 		<div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/40 z-[2]"></div>
-		<div class="max-w-5xl mx-auto w-full px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+		<div class="max-w-6xl mx-auto w-full px-4 sm:px-6 py-16 sm:py-20 relative z-10">
 			<div class="max-w-2xl">
 				<p class="text-sm font-medium tracking-widest uppercase text-green-400 mb-4">Quarterly Community Event</p>
 				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">HackGreenville Nights</h1>
@@ -32,7 +32,7 @@
 	</div>
 
 	{{-- Submit a Talk + Get Involved --}}
-	<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+	<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 			<div>
 				<h2 class="text-xl font-semibold mb-3">Submit a Talk</h2>
@@ -75,7 +75,7 @@
 
 	{{-- Past Events --}}
 	<div class="bg-gray-50">
-		<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+		<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
 			<div class="flex items-center gap-3 mb-8">
 				<h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Past Events</h2>
 				<div class="h-px bg-gray-200 flex-1"></div>
@@ -164,7 +164,7 @@
 	</div>
 
 	{{-- CTA --}}
-	<div class="max-w-5xl mx-auto px-4 py-14 sm:py-16">
+	<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
 		<div class="flex flex-col sm:flex-row items-center justify-between gap-6">
 			<div>
 				<h2 class="text-xl font-semibold mb-1">Want to sponsor or speak?</h2>

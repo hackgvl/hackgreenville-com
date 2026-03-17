@@ -4,7 +4,7 @@
 @section('description', 'Send non-spammy questions or comments to the HackGreenville community.')
 
 @section('content')
-    <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
         <div class="max-w-md mx-auto text-center py-16">
             <div class="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-5">
                 <x-lucide-check aria-hidden="true" class="w-6 h-6 text-success"/>

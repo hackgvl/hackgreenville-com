@@ -41,7 +41,7 @@
 @endsection
 
 @section('content')
-    <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
 
         {{-- Header --}}
         <div class="mb-10">

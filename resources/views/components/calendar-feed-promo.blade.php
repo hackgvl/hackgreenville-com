@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto mb-6">
+<div class="max-w-6xl mx-auto mb-6">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-3 border border-blue-200 rounded-lg px-5 py-3 bg-blue-50">
         <p class="text-gray-700 text-sm m-0">
             <x-lucide-calendar-check aria-hidden="true" class="w-4 h-4 mr-1 inline text-blue-400"/>
