@@ -54,8 +54,8 @@ class CalendarFeedTest extends DatabaseTestCase
         $first_org_events = Event::factory(3)->create([
             'organization_id' => $first_org->id,
             'cancelled_at' => null,
-            'active_at' => now(),
-            'expire_at' => now()->addHours(2),
+            'active_at' => now()->addHour(),
+            'expire_at' => now()->addHours(3),
             'event_name' => 'Event 1',
         ]);
 
@@ -131,8 +131,8 @@ class CalendarFeedTest extends DatabaseTestCase
             'organization_id' => $organization->id,
             'cancelled_at' => null,
             'event_name' => 'Active Event',
-            'active_at' => now(),
-            'expire_at' => now()->addHours(2),
+            'active_at' => now()->addHour(),
+            'expire_at' => now()->addHours(3),
         ]);
 
         $cancelled_event = Event::factory()->create([
