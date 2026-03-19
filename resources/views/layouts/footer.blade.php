@@ -51,8 +51,10 @@
                     <li><a href="https://github.com/hackgvl/hackgreenville-com" rel="noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-github aria-hidden="true" class="w-3.5 h-3.5"/> Join the Project<span class="sr-only"> (opens in new tab)</span></a></li>
                     <li><a href="/docs/api" rel="noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-wrench aria-hidden="true" class="w-3.5 h-3.5"/> Explore Our API<span class="sr-only"> (opens in new tab)</span></a></li>
                     <li>
-                        <span class="text-gray-400 inline-flex items-center gap-1.5"><x-lucide-code aria-hidden="true" class="w-3.5 h-3.5"/> Built with</span>
-                        <a href="https://laravel.com" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline transition-colors">Laravel<span class="sr-only"> (opens in new tab)</span></a>
+                        <span class="text-gray-400 inline-flex items-center gap-1.5">
+                            <x-lucide-code aria-hidden="true" class="w-3.5 h-3.5"/> Built with
+                            <a href="https://laravel.com" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline transition-colors">Laravel<span class="sr-only"> (opens in new tab)</span></a>
+                        </span>
                     </li>
                 </ul>
             </div>
