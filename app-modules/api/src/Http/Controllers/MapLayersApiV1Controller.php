@@ -13,10 +13,13 @@ class MapLayersApiV1Controller extends Controller
     /**
      * Map Layers API v1
      *
-     * This API provides access to community-curated map layer data.
+     * This API provides access to community-curated map layer data for the Greenville, SC area.
+     *
+     * Each map layer represents a collection of geographic features (e.g. breweries, parks, trails)
+     * sourced from community-maintained Google Spreadsheets and served as GeoJSON.
      *
      * @apiResource HackGreenville\Api\Resources\MapLayers\V1\MapLayerCollection
-     * @apiResourceModel App\Models\MapLayer
+     * @apiResourceModel App\Models\MapLayer states=forDocumentation
      */
     public function __invoke(MapLayersApiV1Request $request)
     {

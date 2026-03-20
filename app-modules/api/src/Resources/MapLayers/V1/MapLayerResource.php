@@ -22,7 +22,7 @@ class MapLayerResource extends ApiResource
             'center_longitude' => (float) $this->resource->center_longitude,
             'zoom_level' => $this->resource->zoom_level,
             'geojson_link' => $this->resource->geojson_link,
-            'geojson_url' => route('api.v1.map-layers.geojson', ['mapLayer' => $this->resource->slug]),
+            'geojson_url' => $this->getGeoJsonUrl(),
             'contribute_link' => $this->resource->contribute_link,
             'raw_data_link' => $this->resource->raw_data_link,
             'maintainers' => $this->resource->maintainers ?? [],
@@ -39,5 +39,18 @@ class MapLayerResource extends ApiResource
                 'timestamp' => $this->getTime(),
             ],
         ];
+    }
+
+    private function getGeoJsonUrl(): ?string
+    {
+        if ( ! $this->resource->slug) {
+            return null;
+        }
+
+        if ($this->isRunningScribe()) {
+            return config('app.url') . "/api/v1/map-layers/{$this->resource->slug}/geojson";
+        }
+
+        return route('api.v1.map-layers.geojson', ['mapLayer' => $this->resource->slug]);
     }
 }

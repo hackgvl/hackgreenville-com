@@ -155,9 +155,7 @@ class MapLayersControllerTest extends DatabaseTestCase
 
         $response->assertOk();
         $response->assertSeeText('Open Map Data');
-        $response->assertViewHas('layers', function ($layers) {
-            return $layers->isEmpty();
-        });
+        $response->assertViewHas('layers', fn ($layers) => $layers->isEmpty());
     }
 
     public function test_map_layers_page_excludes_soft_deleted_layers(): void
