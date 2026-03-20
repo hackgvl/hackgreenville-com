@@ -585,7 +585,7 @@ response.json()</code></pre></div>
             &quot;description&quot;: &quot;Aut ex quo iure eos explicabo accusamus. Et qui ipsa itaque autem mollitia.&quot;,
             &quot;url&quot;: &quot;https://kunde.net/est-quaerat-enim-accusantium-alias-magnam.html&quot;,
             &quot;starts_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
-            &quot;ends_at&quot;: &quot;2025-01-01T14:00:00.000000Z&quot;,
+            &quot;ends_at&quot;: &quot;2025-01-01T19:00:00.000000Z&quot;,
             &quot;rsvp_count&quot;: 28,
             &quot;status&quot;: &quot;past&quot;,
             &quot;is_paid&quot;: null,
@@ -1293,7 +1293,7 @@ response.json()</code></pre></div>
             &quot;center_longitude&quot;: -82.3985,
             &quot;zoom_level&quot;: 10,
             &quot;geojson_link&quot;: &quot;http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure&quot;,
-            &quot;geojson_url&quot;: &quot;https://dev.sculley.dev/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
+            &quot;geojson_url&quot;: &quot;http://localhost:8000/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
             &quot;contribute_link&quot;: &quot;https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html&quot;,
             &quot;raw_data_link&quot;: &quot;http://vonrueden.com/&quot;,
             &quot;maintainers&quot;: [
