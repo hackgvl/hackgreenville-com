@@ -12,8 +12,8 @@
             },
             "properties": {
                 "title": "Greenville City Hall",
-                "notes": "206 S Main St #10 Greenville, SC 29601",
-                "property3": ""
+                "address": "206 S Main St #10 Greenville, SC 29601",
+                "phone": ""
             }
         },
         {
@@ -27,8 +27,8 @@
             },
             "properties": {
                 "title": "Mauldin City Hall",
-                "notes": "5 E Butler Rd Mauldin, SC 29662",
-                "property3": ""
+                "address": "5 E Butler Rd Mauldin, SC 29662",
+                "phone": ""
             }
         },
         {
@@ -42,8 +42,8 @@
             },
             "properties": {
                 "title": "Simpsonville City Hall",
-                "notes": "118 NE Main St Simpsonville, SC 29681",
-                "property3": ""
+                "address": "118 NE Main St Simpsonville, SC 29681",
+                "phone": ""
             }
         },
         {
@@ -57,8 +57,8 @@
             },
             "properties": {
                 "title": "Fountain Inn City Hall",
-                "notes": "200 N Main St Fountain Inn, SC 29644",
-                "property3": ""
+                "address": "200 N Main St Fountain Inn, SC 29644",
+                "phone": ""
             }
         },
         {
@@ -72,8 +72,8 @@
             },
             "properties": {
                 "title": "Greer City Hall",
-                "notes": "301 E Poinsett St Greer, SC 29651",
-                "property3": ""
+                "address": "301 E Poinsett St Greer, SC 29651",
+                "phone": ""
             }
         },
         {
@@ -87,8 +87,8 @@
             },
             "properties": {
                 "title": "Spartanburg City Hall",
-                "notes": "145 W Broad St, Spartanburg, SC 29306",
-                "property3": "(864) 596-2019"
+                "address": "145 W Broad St, Spartanburg, SC 29306",
+                "phone": "(864) 596-2019"
             }
         },
         {
@@ -102,8 +102,8 @@
             },
             "properties": {
                 "title": "Clemson City Hall",
-                "notes": "1250 Tiger Blvd # 1, Clemson, SC 29631",
-                "property3": ""
+                "address": "1250 Tiger Blvd # 1, Clemson, SC 29631",
+                "phone": ""
             }
         }
     ]

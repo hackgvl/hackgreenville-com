@@ -11,9 +11,7 @@
                 ]
             },
             "properties": {
-                "title": "Greenville Zoo Lot #1",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Greenville Zoo Lot #1"
             }
         },
         {
@@ -26,9 +24,7 @@
                 ]
             },
             "properties": {
-                "title": "Greenville Zoo Lot #2",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Greenville Zoo Lot #2"
             }
         },
         {
@@ -41,9 +37,7 @@
                 ]
             },
             "properties": {
-                "title": "Lakehurst Lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Lakehurst Lot"
             }
         },
         {
@@ -56,9 +50,7 @@
                 ]
             },
             "properties": {
-                "title": "Lower Church Lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Lower Church Lot"
             }
         },
         {
@@ -71,9 +63,7 @@
                 ]
             },
             "properties": {
-                "title": "Upper Church Lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Upper Church Lot"
             }
         },
         {
@@ -86,9 +76,7 @@
                 ]
             },
             "properties": {
-                "title": "Starlanes Lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Starlanes Lot"
             }
         },
         {
@@ -101,9 +89,7 @@
                 ]
             },
             "properties": {
-                "title": "Hudson St. Lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Hudson St. Lot"
             }
         },
         {
@@ -116,9 +102,7 @@
                 ]
             },
             "properties": {
-                "title": "Swamp Rabbit Cafe and Grocer",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Swamp Rabbit Cafe and Grocer"
             }
         },
         {
@@ -131,9 +115,7 @@
                 ]
             },
             "properties": {
-                "title": "Furman lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Furman lot"
             }
         },
         {
@@ -146,9 +128,7 @@
                 ]
             },
             "properties": {
-                "title": "Grandview lot",
-                "notes": null,
-                "property3": null
+                "title_(property_1)": "Grandview lot"
             }
         }
     ]

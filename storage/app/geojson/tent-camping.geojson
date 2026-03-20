@@ -13,8 +13,8 @@
             "properties": {
                 "title": "Burrells Ford Campground",
                 "notes": "Campground River",
-                "hours": "24 hours a day, 7 days a week",
-                "fees": "Free"
+                "hours_of_operation": "24 hours a day, 7 days a week",
+                "prices": "Free"
             }
         },
         {
@@ -29,8 +29,8 @@
             "properties": {
                 "title": "Calhoun Falls State Park",
                 "notes": "Surrounding Lake",
-                "hours": "24 hours a day, 7 days a week",
-                "fees": ""
+                "hours_of_operation": "24 hours a day, 7 days a week",
+                "prices": ""
             }
         },
         {
@@ -45,8 +45,8 @@
             "properties": {
                 "title": "Cheraw State Park",
                 "notes": "Golf Course\nCampground Lake",
-                "hours": "7 AM - 9 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 9 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -61,8 +61,8 @@
             "properties": {
                 "title": "Croft State Park",
                 "notes": "Equestrian Facilities",
-                "hours": "7 AM - 9 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 9 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -77,8 +77,8 @@
             "properties": {
                 "title": "Devils Fork Camp Site",
                 "notes": "Campground Lake",
-                "hours": "7 AM - 9 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 9 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -93,8 +93,8 @@
             "properties": {
                 "title": "Edisto Beach State Park",
                 "notes": "Hiking and Biking Trails",
-                "hours": "8 AM - 6 PM (Mon - Fri)",
-                "fees": ""
+                "hours_of_operation": "8 AM - 6 PM (Mon - Fri)",
+                "prices": ""
             }
         },
         {
@@ -109,8 +109,8 @@
             "properties": {
                 "title": "Hickory Knob State Park",
                 "notes": "Resort and Campground",
-                "hours": "24 hours a day, 7 days a week",
-                "fees": ""
+                "hours_of_operation": "24 hours a day, 7 days a week",
+                "prices": ""
             }
         },
         {
@@ -125,8 +125,8 @@
             "properties": {
                 "title": "Hunting Island State Park",
                 "notes": "Publicly Open Lighthouse",
-                "hours": "6 AM - 6 PM (All days EST)\n6 AM - 9 PM (All days EDT)",
-                "fees": ""
+                "hours_of_operation": "6 AM - 6 PM (All days EST)\n6 AM - 9 PM (All days EDT)",
+                "prices": ""
             }
         },
         {
@@ -141,8 +141,8 @@
             "properties": {
                 "title": "Keowee-Toxaway State Park",
                 "notes": "Tent Circle",
-                "hours": "9 AM - 6 PM (Sat - Thu EST)\n9 AM - 8 PM (Friday EST)\n9 AM - 9 PM (All days EDT)",
-                "fees": ""
+                "hours_of_operation": "9 AM - 6 PM (Sat - Thu EST)\n9 AM - 8 PM (Friday EST)\n9 AM - 9 PM (All days EDT)",
+                "prices": ""
             }
         },
         {
@@ -157,8 +157,8 @@
             "properties": {
                 "title": "Kings Mountain State Park",
                 "notes": "Visitor's Center",
-                "hours": "7 AM - 6 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 6 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -173,8 +173,8 @@
             "properties": {
                 "title": "Lake GreenWood State Park",
                 "notes": "Boating and Bass Fishing\nAnnual Triathlon",
-                "hours": "6 AM - 6 PM (All days EST)\n6 AM - 10 PM (All days EDT)",
-                "fees": ""
+                "hours_of_operation": "6 AM - 6 PM (All days EST)\n6 AM - 10 PM (All days EDT)",
+                "prices": ""
             }
         },
         {
@@ -189,8 +189,8 @@
             "properties": {
                 "title": "Lake Wateree State Park",
                 "notes": "Boating and Fishing\nHiking and Biking Trails",
-                "hours": "7 AM - 7 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 7 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -205,8 +205,8 @@
             "properties": {
                 "title": "Oconee State Park",
                 "notes": "Campground Lake",
-                "hours": "7 AM - 7 PM (Sun - Thu)\n7 AM - 9 PM (Fri - Sat)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 7 PM (Sun - Thu)\n7 AM - 9 PM (Fri - Sat)",
+                "prices": ""
             }
         },
         {
@@ -221,8 +221,8 @@
             "properties": {
                 "title": "Paris Mountain State Park",
                 "notes": "Campground",
-                "hours": "8 AM - 9 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "8 AM - 9 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -237,8 +237,8 @@
             "properties": {
                 "title": "Sadlers Creek State Park",
                 "notes": "Campground Lake",
-                "hours": "7 AM - 6 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 6 PM (7 days a week)",
+                "prices": ""
             }
         },
         {
@@ -253,8 +253,8 @@
             "properties": {
                 "title": "Table Rock State Park",
                 "notes": "Mountain Backdrop\nTwo Campground Lakes",
-                "hours": "7 AM - 7 PM (Sun - Thu)\n7 AM - 9 PM (Fri - Sat)",
-                "fees": ""
+                "hours_of_operation": "7 AM - 7 PM (Sun - Thu)\n7 AM - 9 PM (Fri - Sat)",
+                "prices": ""
             }
         },
         {
@@ -269,8 +269,8 @@
             "properties": {
                 "title": "Twin Lake State Park",
                 "notes": "Campground Lake",
-                "hours": "8 AM - 10 PM (7 days a week)",
-                "fees": ""
+                "hours_of_operation": "8 AM - 10 PM (7 days a week)",
+                "prices": ""
             }
         }
     ]

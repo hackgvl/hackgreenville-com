@@ -11,9 +11,8 @@
                 ]
             },
             "properties": {
-                "title": "Mr. Mickey",
-                "notes": "By the fountain of a large uptown hotel",
-                "property3": null
+                "mouse": "Mr. Mickey",
+                "hint": "By the fountain of a large uptown hotel"
             }
         },
         {
@@ -26,9 +25,8 @@
                 ]
             },
             "properties": {
-                "title": "Mrs. Minnie",
-                "notes": "Across the street from Mr. Mickey, on a parking barrier",
-                "property3": null
+                "mouse": "Mrs. Minnie",
+                "hint": "Across the street from Mr. Mickey, on a parking barrier"
             }
         },
         {
@@ -41,9 +39,8 @@
                 ]
             },
             "properties": {
-                "title": "Milkey ",
-                "notes": "South of Piazza Bergamo",
-                "property3": null
+                "mouse": "Milkey",
+                "hint": "South of Piazza Bergamo"
             }
         },
         {
@@ -56,9 +53,8 @@
                 ]
             },
             "properties": {
-                "title": "Mickey Jr.",
-                "notes": "At the steps of an underground coffee shop",
-                "property3": null
+                "mouse": "Mickey Jr.",
+                "hint": "At the steps of an underground coffee shop"
             }
         },
         {
@@ -71,9 +67,8 @@
                 ]
             },
             "properties": {
-                "title": "Miss Minnie",
-                "notes": "Up, up and away! Is it a bird, a plane, or Miss Minnie?",
-                "property3": null
+                "mouse": "Miss Minnie",
+                "hint": "Up, up and away! Is it a bird, a plane, or Miss Minnie?"
             }
         },
         {
@@ -86,9 +81,8 @@
                 ]
             },
             "properties": {
-                "title": "Melissa ",
-                "notes": "Just south of Mexican wraps and Chinese cuisine",
-                "property3": null
+                "mouse": "Melissa",
+                "hint": "Just south of Mexican wraps and Chinese cuisine"
             }
         },
         {
@@ -101,9 +95,8 @@
                 ]
             },
             "properties": {
-                "title": "Mitch ",
-                "notes": "Just below Sticky Fingers @ entrance to Wochovia Plaza",
-                "property3": null
+                "mouse": "Mitch",
+                "hint": "Just below Sticky Fingers @ entrance to Wochovia Plaza"
             }
         },
         {
@@ -116,9 +109,8 @@
                 ]
             },
             "properties": {
-                "title": "Mifflin ",
-                "notes": "Sitting below wall next to an old corner bank",
-                "property3": null
+                "mouse": "Mifflin",
+                "hint": "Sitting below wall next to an old corner bank"
             }
         },
         {
@@ -131,9 +123,8 @@
                 ]
             },
             "properties": {
-                "title": "Uncle Miles",
-                "notes": "If it rains, I hope I don\u2019t get washed away",
-                "property3": null
+                "mouse": "Uncle Miles",
+                "hint": "If it rains, I hope I don\u2019t get washed away"
             }
         }
     ]

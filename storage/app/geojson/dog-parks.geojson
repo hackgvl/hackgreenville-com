@@ -12,7 +12,7 @@
             },
             "properties": {
                 "title": "Pavilion Recreation Complex Dog Park",
-                "city": "Taylors"
+                "location": "Taylors"
             }
         },
         {
@@ -26,7 +26,7 @@
             },
             "properties": {
                 "title": "Pelham Mill Dog Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -40,7 +40,7 @@
             },
             "properties": {
                 "title": "Conestee Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -54,7 +54,7 @@
             },
             "properties": {
                 "title": "Swamp Rabbit Trail",
-                "city": "Downtown Greenville "
+                "location": "Downtown Greenville"
             }
         },
         {
@@ -68,7 +68,7 @@
             },
             "properties": {
                 "title": "Paris Mountain State Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -82,7 +82,7 @@
             },
             "properties": {
                 "title": "Falls Park on the Reedy",
-                "city": "Downtown Greenville "
+                "location": "Downtown Greenville"
             }
         },
         {
@@ -96,7 +96,7 @@
             },
             "properties": {
                 "title": "Lake Conestee Nature Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -110,7 +110,7 @@
             },
             "properties": {
                 "title": "Red Barn Dog Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -124,7 +124,7 @@
             },
             "properties": {
                 "title": "Plantations Dog Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -138,7 +138,7 @@
             },
             "properties": {
                 "title": "Cleveland Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -152,7 +152,7 @@
             },
             "properties": {
                 "title": "Rock Quarry Garden",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -166,7 +166,7 @@
             },
             "properties": {
                 "title": "Legacy Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -180,7 +180,7 @@
             },
             "properties": {
                 "title": "McPherson Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -194,7 +194,7 @@
             },
             "properties": {
                 "title": "Timmons Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -208,7 +208,7 @@
             },
             "properties": {
                 "title": "Holmes Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -222,7 +222,7 @@
             },
             "properties": {
                 "title": "Poinsett Park",
-                "city": "Travelers Rest "
+                "location": "Travelers Rest"
             }
         },
         {
@@ -236,7 +236,7 @@
             },
             "properties": {
                 "title": "North Main Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -250,7 +250,7 @@
             },
             "properties": {
                 "title": "Herdklotz Park",
-                "city": "Greenville "
+                "location": "Greenville"
             }
         },
         {
@@ -263,8 +263,8 @@
                 ]
             },
             "properties": {
-                "title": "Hagood Park\/Bark Park ",
-                "city": "Easley "
+                "title": "Hagood Park\/Bark Park",
+                "location": "Easley"
             }
         },
         {
@@ -277,8 +277,8 @@
                 ]
             },
             "properties": {
-                "title": "Simpsonville Dog Spot ",
-                "city": "Simpsonville "
+                "title": "Simpsonville Dog Spot",
+                "location": "Simpsonville"
             }
         }
     ]

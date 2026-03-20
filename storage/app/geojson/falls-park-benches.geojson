@@ -12,8 +12,7 @@
             },
             "properties": {
                 "title": "Bench 1",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -27,8 +26,7 @@
             },
             "properties": {
                 "title": "Bench 2",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -42,8 +40,7 @@
             },
             "properties": {
                 "title": "Bench 3",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -57,8 +54,7 @@
             },
             "properties": {
                 "title": "Bench 4",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -72,8 +68,7 @@
             },
             "properties": {
                 "title": "Bench 5",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -87,8 +82,7 @@
             },
             "properties": {
                 "title": "Bench 6",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -102,8 +96,7 @@
             },
             "properties": {
                 "title": "Bench 7",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -111,14 +104,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.400366,
                     34.84363616
                 ]
             },
             "properties": {
                 "title": "Bench 9",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -132,8 +124,7 @@
             },
             "properties": {
                 "title": "Bench 10",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -147,8 +138,7 @@
             },
             "properties": {
                 "title": "Bench 11",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -162,8 +152,7 @@
             },
             "properties": {
                 "title": "Bench 12",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -177,8 +166,7 @@
             },
             "properties": {
                 "title": "Bench 13",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -192,8 +180,7 @@
             },
             "properties": {
                 "title": "Bench 14",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -207,8 +194,7 @@
             },
             "properties": {
                 "title": "Bench 15",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -222,8 +208,7 @@
             },
             "properties": {
                 "title": "Bench 16",
-                "notes": "made of stone",
-                "property3": null
+                "notes": "made of stone"
             }
         },
         {
@@ -231,14 +216,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.402444,
                     34.84397957
                 ]
             },
             "properties": {
                 "title": "Bench 17",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -252,8 +236,7 @@
             },
             "properties": {
                 "title": "Bench 18",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -262,13 +245,12 @@
                 "type": "Point",
                 "coordinates": [
                     -82.40221407,
-                    0
+                    -82.40210852638538
                 ]
             },
             "properties": {
                 "title": "Bench 19",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -282,8 +264,7 @@
             },
             "properties": {
                 "title": "Bench 20",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -297,8 +278,7 @@
             },
             "properties": {
                 "title": "Bench 21",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -312,8 +292,7 @@
             },
             "properties": {
                 "title": "Bench 22",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -321,14 +300,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.4006943,
                     34.84499548
                 ]
             },
             "properties": {
                 "title": "Bench 23",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -342,8 +320,7 @@
             },
             "properties": {
                 "title": "Bench 24",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -357,8 +334,7 @@
             },
             "properties": {
                 "title": "Bench 25",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -372,8 +348,7 @@
             },
             "properties": {
                 "title": "Bench 26",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -387,8 +362,7 @@
             },
             "properties": {
                 "title": "Bench 27",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -402,8 +376,7 @@
             },
             "properties": {
                 "title": "Bench 28",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -417,8 +390,7 @@
             },
             "properties": {
                 "title": "Bench 29",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -432,8 +404,7 @@
             },
             "properties": {
                 "title": "Bench 30",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -447,8 +418,7 @@
             },
             "properties": {
                 "title": "Bench 31",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -462,8 +432,7 @@
             },
             "properties": {
                 "title": "Bench 32",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -477,8 +446,7 @@
             },
             "properties": {
                 "title": "Bench 33",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -492,8 +460,7 @@
             },
             "properties": {
                 "title": "Bench 34",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -507,8 +474,7 @@
             },
             "properties": {
                 "title": "Bench 35",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -522,8 +488,7 @@
             },
             "properties": {
                 "title": "Bench 36",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -537,8 +502,7 @@
             },
             "properties": {
                 "title": "Bench 37",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -552,8 +516,7 @@
             },
             "properties": {
                 "title": "Bench 38",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -567,8 +530,7 @@
             },
             "properties": {
                 "title": "Bench 39",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -582,8 +544,7 @@
             },
             "properties": {
                 "title": "Bench 40",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -597,8 +558,7 @@
             },
             "properties": {
                 "title": "Bench 41",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -606,14 +566,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.401403,
                     34.845085
                 ]
             },
             "properties": {
                 "title": "Bench 42",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -627,8 +586,7 @@
             },
             "properties": {
                 "title": "Bench 43",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -642,8 +600,7 @@
             },
             "properties": {
                 "title": "Bench 44",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -651,14 +608,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.401462,
                     34.845838
                 ]
             },
             "properties": {
                 "title": "Bench 45",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -672,8 +628,7 @@
             },
             "properties": {
                 "title": "Bench 46",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -687,8 +642,7 @@
             },
             "properties": {
                 "title": "Bench 47",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -702,8 +656,7 @@
             },
             "properties": {
                 "title": "Bench 48",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -711,14 +664,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.4019664,
                     34.84624801
                 ]
             },
             "properties": {
                 "title": "Bench 49",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -732,8 +684,7 @@
             },
             "properties": {
                 "title": "Bench 50",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -747,8 +698,7 @@
             },
             "properties": {
                 "title": "Bench 51",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -756,14 +706,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.40233318,
                     34.84660787
                 ]
             },
             "properties": {
                 "title": "Bench 52",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -777,8 +726,7 @@
             },
             "properties": {
                 "title": "Bench 53",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -792,8 +740,7 @@
             },
             "properties": {
                 "title": "Bench 54",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -807,8 +754,7 @@
             },
             "properties": {
                 "title": "Bench 55",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -822,8 +768,7 @@
             },
             "properties": {
                 "title": "Bench 56",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -837,8 +782,7 @@
             },
             "properties": {
                 "title": "Bench 57",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -852,8 +796,7 @@
             },
             "properties": {
                 "title": "Stone Seating",
-                "notes": "Sacred CIrcle",
-                "property3": null
+                "notes": "Sacred CIrcle"
             }
         },
         {
@@ -867,8 +810,7 @@
             },
             "properties": {
                 "title": "Swinging Bench 1",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -882,8 +824,7 @@
             },
             "properties": {
                 "title": "Swinging Bench 2",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -891,14 +832,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.4026527,
                     34.8438139
                 ]
             },
             "properties": {
                 "title": "Swinging Bench 3",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -912,8 +852,7 @@
             },
             "properties": {
                 "title": "Swinging Bench 4",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -927,8 +866,7 @@
             },
             "properties": {
                 "title": "Swinging Bench 5",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         },
         {
@@ -936,14 +874,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
+                    -82.4005871,
                     34.84377872
                 ]
             },
             "properties": {
                 "title": "Swinging Bench 6",
-                "notes": "",
-                "property3": null
+                "notes": ""
             }
         }
     ]

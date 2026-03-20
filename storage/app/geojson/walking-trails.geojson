@@ -12,8 +12,8 @@
             },
             "properties": {
                 "title": "Butler Springs Park",
-                "notes": "301 Butler Springs Road Greenville, SC 29615",
-                "property3": "Central Greenville County"
+                "address": "301 Butler Springs Road Greenville, SC 29615",
+                "region": "Central Greenville County"
             }
         },
         {
@@ -27,8 +27,8 @@
             },
             "properties": {
                 "title": "Cedar Falls",
-                "notes": "201 Cedar Falls Road Fountain Inn, SC 29644",
-                "property3": "Southern Greenville County"
+                "address": "201 Cedar Falls Road Fountain Inn, SC 29644",
+                "region": "Southern Greenville County"
             }
         },
         {
@@ -42,8 +42,8 @@
             },
             "properties": {
                 "title": "Chico Bolin Park",
-                "notes": "115 Wilhelm Winter Street Travelers Rest, SC 29690",
-                "property3": "Northern Greenville County"
+                "address": "115 Wilhelm Winter Street Travelers Rest, SC 29690",
+                "region": "Northern Greenville County"
             }
         },
         {
@@ -57,8 +57,8 @@
             },
             "properties": {
                 "title": "Conestee Park",
-                "notes": "840 Mauldin Road Greenville, SC 29607",
-                "property3": "Southern Greenville County"
+                "address": "840 Mauldin Road Greenville, SC 29607",
+                "region": "Southern Greenville County"
             }
         },
         {
@@ -72,8 +72,8 @@
             },
             "properties": {
                 "title": "David Jackson Park",
-                "notes": "25 Fowler Road Taylors, SC 29687",
-                "property3": "Northern Greenville County"
+                "address": "25 Fowler Road Taylors, SC 29687",
+                "region": "Northern Greenville County"
             }
         },
         {
@@ -87,8 +87,8 @@
             },
             "properties": {
                 "title": "Gary L. Pittman Memorial Park",
-                "notes": "420 Blacks Road Greenville, SC 29615",
-                "property3": "Central Greenville County"
+                "address": "420 Blacks Road Greenville, SC 29615",
+                "region": "Central Greenville County"
             }
         },
         {
@@ -102,8 +102,8 @@
             },
             "properties": {
                 "title": "Lake Conestee Nature Park",
-                "notes": "601 Fork Shoals Road Greenville, SC 29605",
-                "property3": "Southern Greenville County"
+                "address": "601 Fork Shoals Road Greenville, SC 29605",
+                "region": "Southern Greenville County"
             }
         },
         {
@@ -117,8 +117,8 @@
             },
             "properties": {
                 "title": "Lakeside Park",
-                "notes": "1500 Piedmont Highway Piedmont, SC 29673",
-                "property3": "Southern Greenville County"
+                "address": "1500 Piedmont Highway Piedmont, SC 29673",
+                "region": "Southern Greenville County"
             }
         },
         {
@@ -132,8 +132,8 @@
             },
             "properties": {
                 "title": "Lincoln Park",
-                "notes": "169 Harnitha Lane Taylors, SC 29687",
-                "property3": "Northern Greenville County"
+                "address": "169 Harnitha Lane Taylors, SC 29687",
+                "region": "Northern Greenville County"
             }
         },
         {
@@ -147,8 +147,8 @@
             },
             "properties": {
                 "title": "Loretta C. Wood Park",
-                "notes": "10270 Augusta Road Pelzer, SC 29699",
-                "property3": "Southern Greenville County"
+                "address": "10270 Augusta Road Pelzer, SC 29699",
+                "region": "Southern Greenville County"
             }
         },
         {
@@ -162,8 +162,8 @@
             },
             "properties": {
                 "title": "Mesa Soccer Complex",
-                "notes": "1020 Anderson Ridge Road Greer, SC 29651",
-                "property3": "Central Greenville County"
+                "address": "1020 Anderson Ridge Road Greer, SC 29651",
+                "region": "Central Greenville County"
             }
         },
         {
@@ -177,8 +177,8 @@
             },
             "properties": {
                 "title": "Pelham Mill Park",
-                "notes": "2770 E Phillips Road Greenville, SC 29615",
-                "property3": "Central Greenville County"
+                "address": "2770 E Phillips Road Greenville, SC 29615",
+                "region": "Central Greenville County"
             }
         },
         {
@@ -192,8 +192,8 @@
             },
             "properties": {
                 "title": "Piedmont Athletic Complex",
-                "notes": "150 Woodmont School Road Piedmont, SC 29673",
-                "property3": "Southern Greenville County"
+                "address": "150 Woodmont School Road Piedmont, SC 29673",
+                "region": "Southern Greenville County"
             }
         },
         {
@@ -207,8 +207,8 @@
             },
             "properties": {
                 "title": "Piney Mountain Park",
-                "notes": "501 Worley Road Greenville, SC 29609",
-                "property3": "Northern Greenville County"
+                "address": "501 Worley Road Greenville, SC 29609",
+                "region": "Northern Greenville County"
             }
         },
         {
@@ -222,8 +222,8 @@
             },
             "properties": {
                 "title": "Pleasant Ridge Park",
-                "notes": "4232 Hwy. 11 Marietta, SC 29661",
-                "property3": "Northern Greenville County"
+                "address": "4232 Hwy. 11 Marietta, SC 29661",
+                "region": "Northern Greenville County"
             }
         },
         {
@@ -237,8 +237,8 @@
             },
             "properties": {
                 "title": "Poinsett Park",
-                "notes": "5 Pine Forest Road Travelers Rest, SC 29690",
-                "property3": "Northern Greenville County"
+                "address": "5 Pine Forest Road Travelers Rest, SC 29690",
+                "region": "Northern Greenville County"
             }
         },
         {
@@ -252,8 +252,8 @@
             },
             "properties": {
                 "title": "Riverbend Equestrian Park",
-                "notes": "175 Riverbend Road Greenville, SC 29617",
-                "property3": "Northern Greenville County"
+                "address": "175 Riverbend Road Greenville, SC 29617",
+                "region": "Northern Greenville County"
             }
         }
     ]

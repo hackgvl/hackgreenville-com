@@ -11,9 +11,9 @@
                 ]
             },
             "properties": {
-                "title": "Arboretum Falls",
-                "notes": "10 Feet",
-                "property3": "0.1 Mile"
+                "name": "Arboretum Falls",
+                "fall_height": "10 Feet",
+                "distance_from_road": "0.1 Mile"
             }
         },
         {
@@ -26,9 +26,9 @@
                 ]
             },
             "properties": {
-                "title": "Ben's Sluice",
-                "notes": "10 Feet",
-                "property3": "1.5 Miles"
+                "name": "Ben's Sluice",
+                "fall_height": "10 Feet",
+                "distance_from_road": "1.5 Miles"
             }
         },
         {
@@ -41,9 +41,9 @@
                 ]
             },
             "properties": {
-                "title": "Cedar Shoals",
-                "notes": "12 Feet",
-                "property3": "roadside"
+                "name": "Cedar Shoals",
+                "fall_height": "12 Feet",
+                "distance_from_road": "roadside"
             }
         },
         {
@@ -56,9 +56,9 @@
                 ]
             },
             "properties": {
-                "title": "Confusion Falls",
-                "notes": "20 Feet",
-                "property3": "2.9 miles"
+                "name": "Confusion Falls",
+                "fall_height": "20 Feet",
+                "distance_from_road": "2.9 miles"
             }
         },
         {
@@ -71,9 +71,9 @@
                 ]
             },
             "properties": {
-                "title": "Dargans Cascade",
-                "notes": "25 Feet",
-                "property3": "3.9 Miles"
+                "name": "Dargans Cascade",
+                "fall_height": "25 Feet",
+                "distance_from_road": "3.9 Miles"
             }
         },
         {
@@ -86,9 +86,9 @@
                 ]
             },
             "properties": {
-                "title": "Falls Creek Falls",
-                "notes": "100 Feet",
-                "property3": "1.2 Miles"
+                "name": "Falls Creek Falls",
+                "fall_height": "100 Feet",
+                "distance_from_road": "1.2 Miles"
             }
         },
         {
@@ -101,9 +101,9 @@
                 ]
             },
             "properties": {
-                "title": "Jones Gap Falls",
-                "notes": "50 Feet",
-                "property3": "1.1 Miles"
+                "name": "Jones Gap Falls",
+                "fall_height": "50 Feet",
+                "distance_from_road": "1.1 Miles"
             }
         },
         {
@@ -116,9 +116,9 @@
                 ]
             },
             "properties": {
-                "title": "Lower Reedy River Falls",
-                "notes": "15 Feet",
-                "property3": "0.1 Mile"
+                "name": "Lower Reedy River Falls",
+                "fall_height": "15 Feet",
+                "distance_from_road": "0.1 Mile"
             }
         },
         {
@@ -131,9 +131,9 @@
                 ]
             },
             "properties": {
-                "title": "Lower Wildcat Falls",
-                "notes": "20 Feet",
-                "property3": "roadside"
+                "name": "Lower Wildcat Falls",
+                "fall_height": "20 Feet",
+                "distance_from_road": "roadside"
             }
         },
         {
@@ -146,9 +146,9 @@
                 ]
             },
             "properties": {
-                "title": "Moonshine Falls",
-                "notes": "40 Feet",
-                "property3": "2.8 Miles"
+                "name": "Moonshine Falls",
+                "fall_height": "40 Feet",
+                "distance_from_road": "2.8 Miles"
             }
         },
         {
@@ -161,9 +161,9 @@
                 ]
             },
             "properties": {
-                "title": "Rainbow Falls",
-                "notes": "100 Feet",
-                "property3": "0.5 Mile"
+                "name": "Rainbow Falls",
+                "fall_height": "100 Feet",
+                "distance_from_road": "0.5 Mile"
             }
         },
         {
@@ -176,9 +176,9 @@
                 ]
             },
             "properties": {
-                "title": "Raven Cliff Falls",
-                "notes": "400 Feet",
-                "property3": "2.0 Miles"
+                "name": "Raven Cliff Falls",
+                "fall_height": "400 Feet",
+                "distance_from_road": "2.0 Miles"
             }
         },
         {
@@ -191,9 +191,9 @@
                 ]
             },
             "properties": {
-                "title": "Reedy River Falls",
-                "notes": "40 Feet",
-                "property3": "0.1 Mile"
+                "name": "Reedy River Falls",
+                "fall_height": "40 Feet",
+                "distance_from_road": "0.1 Mile"
             }
         },
         {
@@ -206,9 +206,9 @@
                 ]
             },
             "properties": {
-                "title": "Rock Quarry Falls",
-                "notes": "10 Feet",
-                "property3": "roadside"
+                "name": "Rock Quarry Falls",
+                "fall_height": "10 Feet",
+                "distance_from_road": "roadside"
             }
         },
         {
@@ -221,9 +221,9 @@
                 ]
             },
             "properties": {
-                "title": "Slickum Falls",
-                "notes": "75 Feet",
-                "property3": "0.2 Mile"
+                "name": "Slickum Falls",
+                "fall_height": "75 Feet",
+                "distance_from_road": "0.2 Mile"
             }
         },
         {
@@ -236,9 +236,9 @@
                 ]
             },
             "properties": {
-                "title": "Toll Road Falls",
-                "notes": "12 Feet",
-                "property3": "1.9 Miles"
+                "name": "Toll Road Falls",
+                "fall_height": "12 Feet",
+                "distance_from_road": "1.9 Miles"
             }
         },
         {
@@ -251,9 +251,9 @@
                 ]
             },
             "properties": {
-                "title": "Upper Wildcat Falls",
-                "notes": "100 Feet",
-                "property3": "0.4 Mile"
+                "name": "Upper Wildcat Falls",
+                "fall_height": "100 Feet",
+                "distance_from_road": "0.4 Mile"
             }
         },
         {
@@ -266,9 +266,9 @@
                 ]
             },
             "properties": {
-                "title": "Wildcat Branch Falls",
-                "notes": "",
-                "property3": ""
+                "name": "Wildcat Branch Falls",
+                "fall_height": "",
+                "distance_from_road": ""
             }
         }
     ]

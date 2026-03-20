@@ -11,9 +11,9 @@
                 ]
             },
             "properties": {
-                "title": "Adams Family Cemetery",
-                "notes": "",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Adams Family Cemetery",
+                "reference": "",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -26,9 +26,9 @@
                 ]
             },
             "properties": {
-                "title": "Baker's Chapel AME Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "1601 White Horse Rd"
+                "name": "Baker's Chapel AME Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "1601 White Horse Rd"
             }
         },
         {
@@ -41,9 +41,9 @@
                 ]
             },
             "properties": {
-                "title": "Ballew-Pierce Family Cemetery",
-                "notes": "#53 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Ballew-Pierce Family Cemetery",
+                "reference": "#53 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -56,9 +56,9 @@
                 ]
             },
             "properties": {
-                "title": "Barnett Family Cemetery",
-                "notes": "#59 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Barnett Family Cemetery",
+                "reference": "#59 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -71,9 +71,9 @@
                 ]
             },
             "properties": {
-                "title": "Barton's Memorial Pentecostal Holiness Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "3752 N Hwy 101"
+                "name": "Barton's Memorial Pentecostal Holiness Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "3752 N Hwy 101"
             }
         },
         {
@@ -86,9 +86,9 @@
                 ]
             },
             "properties": {
-                "title": "Bartons Memorial Church Cemetery",
-                "notes": "#117 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Bartons Memorial Church Cemetery",
+                "reference": "#117 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -101,9 +101,9 @@
                 ]
             },
             "properties": {
-                "title": "Bates Family Cemetery",
-                "notes": "#66 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Bates Family Cemetery",
+                "reference": "#66 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -116,9 +116,9 @@
                 ]
             },
             "properties": {
-                "title": "Belue Family Cemetery",
-                "notes": "#18 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Belue Family Cemetery",
+                "reference": "#18 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -131,9 +131,9 @@
                 ]
             },
             "properties": {
-                "title": "Benjamin G. Howard Family Cemetery",
-                "notes": "#64A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Benjamin G. Howard Family Cemetery",
+                "reference": "#64A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -146,9 +146,9 @@
                 ]
             },
             "properties": {
-                "title": "Benson Family Cemetery",
-                "notes": "#134 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Benson Family Cemetery",
+                "reference": "#134 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -161,9 +161,9 @@
                 ]
             },
             "properties": {
-                "title": "Berryhill Family Cemetery",
-                "notes": "#144 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Berryhill Family Cemetery",
+                "reference": "#144 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -176,9 +176,9 @@
                 ]
             },
             "properties": {
-                "title": "Bethany Church Cemetery",
-                "notes": "#84 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Bethany Church Cemetery",
+                "reference": "#84 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -191,9 +191,9 @@
                 ]
             },
             "properties": {
-                "title": "Bethel United Methodist Church",
-                "notes": "Cemetery Survey book, 1984 (in library SC 929.5 SC Green)",
-                "property3": "501 Holland Rd"
+                "name": "Bethel United Methodist Church",
+                "reference": "Cemetery Survey book, 1984 (in library SC 929.5 SC Green)",
+                "notes": "501 Holland Rd"
             }
         },
         {
@@ -206,9 +206,9 @@
                 ]
             },
             "properties": {
-                "title": "Blue Ridge Baptist Church Cemetery",
-                "notes": "#109 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Blue Ridge Baptist Church Cemetery",
+                "reference": "#109 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -221,9 +221,9 @@
                 ]
             },
             "properties": {
-                "title": "Blythe Family Cemetery",
-                "notes": "#27 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Blythe Family Cemetery",
+                "reference": "#27 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -236,9 +236,9 @@
                 ]
             },
             "properties": {
-                "title": "Boswell Family Cemetery",
-                "notes": "#93 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Boswell Family Cemetery",
+                "reference": "#93 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -251,9 +251,9 @@
                 ]
             },
             "properties": {
-                "title": "Bruce Family Cemetery",
-                "notes": "#154 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Bruce Family Cemetery",
+                "reference": "#154 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -266,9 +266,9 @@
                 ]
             },
             "properties": {
-                "title": "Camp Creek Baptist Church Cemetery",
-                "notes": "#101 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Camp Creek Baptist Church Cemetery",
+                "reference": "#101 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -281,9 +281,9 @@
                 ]
             },
             "properties": {
-                "title": "Cannon Family Cemetery",
-                "notes": "#100 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Cannon Family Cemetery",
+                "reference": "#100 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -296,9 +296,9 @@
                 ]
             },
             "properties": {
-                "title": "Cantrell-Shipman Family Cemetery",
-                "notes": "#12A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Cantrell-Shipman Family Cemetery",
+                "reference": "#12A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -311,9 +311,9 @@
                 ]
             },
             "properties": {
-                "title": "Capps Family Cemetery",
-                "notes": "#14 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Capps Family Cemetery",
+                "reference": "#14 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -326,9 +326,9 @@
                 ]
             },
             "properties": {
-                "title": "Chastain Family Cemetery",
-                "notes": "#94 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Chastain Family Cemetery",
+                "reference": "#94 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -341,9 +341,9 @@
                 ]
             },
             "properties": {
-                "title": "Cherry Hill Baptist Church Cemetery",
-                "notes": "#33 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Cherry Hill Baptist Church Cemetery",
+                "reference": "#33 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -356,9 +356,9 @@
                 ]
             },
             "properties": {
-                "title": "Clark Family Cemetery",
-                "notes": "#137 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Clark Family Cemetery",
+                "reference": "#137 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -371,9 +371,9 @@
                 ]
             },
             "properties": {
-                "title": "Clearview Baptist Church Cemetery",
-                "notes": "#143 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Clearview Baptist Church Cemetery",
+                "reference": "#143 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -386,9 +386,9 @@
                 ]
             },
             "properties": {
-                "title": "Cleveland Family Cemetery",
-                "notes": "#73 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Cleveland Family Cemetery",
+                "reference": "#73 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -401,9 +401,9 @@
                 ]
             },
             "properties": {
-                "title": "Cleveland First Baptist Church Cemetery",
-                "notes": "#64 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Cleveland First Baptist Church Cemetery",
+                "reference": "#64 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -416,9 +416,9 @@
                 ]
             },
             "properties": {
-                "title": "Coleman Family Cemetery",
-                "notes": "#32 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Coleman Family Cemetery",
+                "reference": "#32 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -431,9 +431,9 @@
                 ]
             },
             "properties": {
-                "title": "Coleman Memorial Gardens Cemetery",
-                "notes": "#126 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Coleman Memorial Gardens Cemetery",
+                "reference": "#126 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -446,9 +446,9 @@
                 ]
             },
             "properties": {
-                "title": "Cool Springs Primitive Baptist Church Cemetery",
-                "notes": "#86 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Cool Springs Primitive Baptist Church Cemetery",
+                "reference": "#86 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -461,9 +461,9 @@
                 ]
             },
             "properties": {
-                "title": "Cox Chapel Baptist Church Cemetery",
-                "notes": "#76 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Cox Chapel Baptist Church Cemetery",
+                "reference": "#76 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -476,9 +476,9 @@
                 ]
             },
             "properties": {
-                "title": "Cox Family Cemetery",
-                "notes": "#123 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Cox Family Cemetery",
+                "reference": "#123 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -491,9 +491,9 @@
                 ]
             },
             "properties": {
-                "title": "Crain Burying Ground Family Cemetery",
-                "notes": "#106 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Crain Burying Ground Family Cemetery",
+                "reference": "#106 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -506,9 +506,9 @@
                 ]
             },
             "properties": {
-                "title": "Cross Plains Baptist Church Cemetery",
-                "notes": "#31 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Cross Plains Baptist Church Cemetery",
+                "reference": "#31 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -521,9 +521,9 @@
                 ]
             },
             "properties": {
-                "title": "Davenport Family Cemetery",
-                "notes": "#10 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Davenport Family Cemetery",
+                "reference": "#10 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -536,9 +536,9 @@
                 ]
             },
             "properties": {
-                "title": "Dicey Langston Springfield Family Cemetery",
-                "notes": "#135 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Dicey Langston Springfield Family Cemetery",
+                "reference": "#135 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -551,9 +551,9 @@
                 ]
             },
             "properties": {
-                "title": "Double Springs Baptist Church Cemetery",
-                "notes": "#149 in Northern Greenville County Cemeteries book, 1999; Three Greenville County Cemeteries (survey)  book, 1973 (in library SC 929.5 SC Greenville)",
-                "property3": "3800 Locust Hill Rd"
+                "name": "Double Springs Baptist Church Cemetery",
+                "reference": "#149 in Northern Greenville County Cemeteries book, 1999; Three Greenville County Cemeteries (survey)  book, 1973 (in library SC 929.5 SC Greenville)",
+                "notes": "3800 Locust Hill Rd"
             }
         },
         {
@@ -566,9 +566,9 @@
                 ]
             },
             "properties": {
-                "title": "Douthit Family Cemetery",
-                "notes": "#1 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Douthit Family Cemetery",
+                "reference": "#1 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -581,9 +581,9 @@
                 ]
             },
             "properties": {
-                "title": "Drake Family Cemetery",
-                "notes": "#12 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Drake Family Cemetery",
+                "reference": "#12 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -596,9 +596,9 @@
                 ]
             },
             "properties": {
-                "title": "Duncan Chapel Pentecostal Holiness Church Cemetery",
-                "notes": "#149A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Duncan Chapel Pentecostal Holiness Church Cemetery",
+                "reference": "#149A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -611,9 +611,9 @@
                 ]
             },
             "properties": {
-                "title": "Duncan Family Cemetery",
-                "notes": "#145 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Duncan Family Cemetery",
+                "reference": "#145 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -626,9 +626,9 @@
                 ]
             },
             "properties": {
-                "title": "Ebenezer Baptist Church Cemetery",
-                "notes": "#127 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Ebenezer Baptist Church Cemetery",
+                "reference": "#127 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -641,9 +641,9 @@
                 ]
             },
             "properties": {
-                "title": "Ebenezer Welcome Baptist Church Cemetery",
-                "notes": "#62 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Ebenezer Welcome Baptist Church Cemetery",
+                "reference": "#62 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -656,9 +656,9 @@
                 ]
             },
             "properties": {
-                "title": "Edwards-Stroud Family Cemetery",
-                "notes": "#80 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Edwards-Stroud Family Cemetery",
+                "reference": "#80 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -671,9 +671,9 @@
                 ]
             },
             "properties": {
-                "title": "Emory-Lindsey Family Cemetery",
-                "notes": "#45 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Emory-Lindsey Family Cemetery",
+                "reference": "#45 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -686,9 +686,9 @@
                 ]
             },
             "properties": {
-                "title": "Enoree Baptist Church Cemetery",
-                "notes": "#136 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Enoree Baptist Church Cemetery",
+                "reference": "#136 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -701,9 +701,9 @@
                 ]
             },
             "properties": {
-                "title": "Eubanks (or Ewbanks) Family (Grace Chapel) Cemetery",
-                "notes": "#130 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Eubanks (or Ewbanks) Family (Grace Chapel) Cemetery",
+                "reference": "#130 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -716,9 +716,9 @@
                 ]
             },
             "properties": {
-                "title": "Faith Baptist Temple Cemetery",
-                "notes": "#147 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Faith Baptist Temple Cemetery",
+                "reference": "#147 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -731,9 +731,9 @@
                 ]
             },
             "properties": {
-                "title": "Few (Old) Family Cemetery",
-                "notes": "#55 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Few (Old) Family Cemetery",
+                "reference": "#55 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -746,9 +746,9 @@
                 ]
             },
             "properties": {
-                "title": "Fews Chapel (Old) Cemetery",
-                "notes": "#113 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Fews Chapel (Old) Cemetery",
+                "reference": "#113 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -761,9 +761,9 @@
                 ]
             },
             "properties": {
-                "title": "Fews Chapel United Methodist Church Cemetery",
-                "notes": "#112 in Northern Greenville County Cemeteries book, 1999 & Three Greenville County Cemeteries (survey)  book, 1973 (in library SC 929.5 SC Greenville)",
-                "property3": "4000 N Hwy 101"
+                "name": "Fews Chapel United Methodist Church Cemetery",
+                "reference": "#112 in Northern Greenville County Cemeteries book, 1999 & Three Greenville County Cemeteries (survey)  book, 1973 (in library SC 929.5 SC Greenville)",
+                "notes": "4000 N Hwy 101"
             }
         },
         {
@@ -776,9 +776,9 @@
                 ]
             },
             "properties": {
-                "title": "First Baptist Church - Mauldin",
-                "notes": "Cemetery Survey book, 1984 (in library SC 929.5 SC Green)",
-                "property3": "106 Owens Ln"
+                "name": "First Baptist Church - Mauldin",
+                "reference": "Cemetery Survey book, 1984 (in library SC 929.5 SC Green)",
+                "notes": "106 Owens Ln"
             }
         },
         {
@@ -791,9 +791,9 @@
                 ]
             },
             "properties": {
-                "title": "Forrest-Southern Family Cemetery",
-                "notes": "#87 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Forrest-Southern Family Cemetery",
+                "reference": "#87 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -806,9 +806,9 @@
                 ]
             },
             "properties": {
-                "title": "Friendship Baptist Church Cemetery",
-                "notes": "#8 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Friendship Baptist Church Cemetery",
+                "reference": "#8 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -821,9 +821,9 @@
                 ]
             },
             "properties": {
-                "title": "Gap Creek Baptist Church",
-                "notes": "#13 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Gap Creek Baptist Church",
+                "reference": "#13 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -836,9 +836,9 @@
                 ]
             },
             "properties": {
-                "title": "Glassy Mountain Baptist Church Cemetery",
-                "notes": "#42 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Glassy Mountain Baptist Church Cemetery",
+                "reference": "#42 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -851,9 +851,9 @@
                 ]
             },
             "properties": {
-                "title": "Glassy Mountain Church of God Cemetery",
-                "notes": "#35 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Glassy Mountain Church of God Cemetery",
+                "reference": "#35 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -866,9 +866,9 @@
                 ]
             },
             "properties": {
-                "title": "Golden Grove Baptist Church (Old) Cemetery",
-                "notes": "#78 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Golden Grove Baptist Church (Old) Cemetery",
+                "reference": "#78 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -881,9 +881,9 @@
                 ]
             },
             "properties": {
-                "title": "Golden Grove Baptist Church Cemetery",
-                "notes": "#79 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Golden Grove Baptist Church Cemetery",
+                "reference": "#79 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -896,9 +896,9 @@
                 ]
             },
             "properties": {
-                "title": "Goodlett Family Cemetery",
-                "notes": "#74 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Goodlett Family Cemetery",
+                "reference": "#74 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -911,9 +911,9 @@
                 ]
             },
             "properties": {
-                "title": "Gosnell #1 (Zack) Family Cemetery",
-                "notes": "#16 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Gosnell #1 (Zack) Family Cemetery",
+                "reference": "#16 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -926,9 +926,9 @@
                 ]
             },
             "properties": {
-                "title": "Gosnell #2 Family Cemetery",
-                "notes": "#46 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Gosnell #2 Family Cemetery",
+                "reference": "#46 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -941,9 +941,9 @@
                 ]
             },
             "properties": {
-                "title": "Gosnell-Pruitt Family Cemetery",
-                "notes": "#36 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Gosnell-Pruitt Family Cemetery",
+                "reference": "#36 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -956,9 +956,9 @@
                 ]
             },
             "properties": {
-                "title": "Gowensville Baptist Church Cemetery",
-                "notes": "#54 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Gowensville Baptist Church Cemetery",
+                "reference": "#54 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -971,9 +971,9 @@
                 ]
             },
             "properties": {
-                "title": "Graceland Cemetery West",
-                "notes": "",
-                "property3": "4814 White Horse Rd"
+                "name": "Graceland Cemetery West",
+                "reference": "",
+                "notes": "4814 White Horse Rd"
             }
         },
         {
@@ -986,9 +986,9 @@
                 ]
             },
             "properties": {
-                "title": "Graceland East Memorial Park",
-                "notes": "",
-                "property3": "2206 Woodruff Rd"
+                "name": "Graceland East Memorial Park",
+                "reference": "",
+                "notes": "2206 Woodruff Rd"
             }
         },
         {
@@ -1001,9 +1001,9 @@
                 ]
             },
             "properties": {
-                "title": "Grandview Memorial Gardens Cemetery",
-                "notes": "#129 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Grandview Memorial Gardens Cemetery",
+                "reference": "#129 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1016,9 +1016,9 @@
                 ]
             },
             "properties": {
-                "title": "Gum Springs Pentecostal Holiness Church Cemetery",
-                "notes": "#114 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Gum Springs Pentecostal Holiness Church Cemetery",
+                "reference": "#114 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1031,9 +1031,9 @@
                 ]
             },
             "properties": {
-                "title": "Hall Family Cemetery",
-                "notes": "#75 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hall Family Cemetery",
+                "reference": "#75 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1046,9 +1046,9 @@
                 ]
             },
             "properties": {
-                "title": "Hanks Family Cemetery",
-                "notes": "#103 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hanks Family Cemetery",
+                "reference": "#103 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1061,9 +1061,9 @@
                 ]
             },
             "properties": {
-                "title": "Hardin Family Cemetery",
-                "notes": "#3 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hardin Family Cemetery",
+                "reference": "#3 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1076,9 +1076,9 @@
                 ]
             },
             "properties": {
-                "title": "Harkins Family Cemetery",
-                "notes": "#2 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Harkins Family Cemetery",
+                "reference": "#2 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1091,9 +1091,9 @@
                 ]
             },
             "properties": {
-                "title": "Hart Family Cemetery",
-                "notes": "#65 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hart Family Cemetery",
+                "reference": "#65 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1106,9 +1106,9 @@
                 ]
             },
             "properties": {
-                "title": "Hart-Jones Family (Salem) Cemetery",
-                "notes": "#11 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hart-Jones Family (Salem) Cemetery",
+                "reference": "#11 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1121,9 +1121,9 @@
                 ]
             },
             "properties": {
-                "title": "Hensley Family Cemetery",
-                "notes": "#43 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hensley Family Cemetery",
+                "reference": "#43 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1136,9 +1136,9 @@
                 ]
             },
             "properties": {
-                "title": "Highland Baptist Church Cemetery",
-                "notes": "#41 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Highland Baptist Church Cemetery",
+                "reference": "#41 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1151,9 +1151,9 @@
                 ]
             },
             "properties": {
-                "title": "Highland Church of God Cemetery",
-                "notes": "#40 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Highland Church of God Cemetery",
+                "reference": "#40 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1166,9 +1166,9 @@
                 ]
             },
             "properties": {
-                "title": "Highland Church of God of Prophecy Cemetery",
-                "notes": "#118 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Highland Church of God of Prophecy Cemetery",
+                "reference": "#118 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1181,9 +1181,9 @@
                 ]
             },
             "properties": {
-                "title": "Hightower-Hagood Family Cemetery",
-                "notes": "#19 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hightower-Hagood Family Cemetery",
+                "reference": "#19 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1196,9 +1196,9 @@
                 ]
             },
             "properties": {
-                "title": "Hightower-Hagood Family Cemetery",
-                "notes": "#22 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hightower-Hagood Family Cemetery",
+                "reference": "#22 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1211,9 +1211,9 @@
                 ]
             },
             "properties": {
-                "title": "Hilltop-Garland Family Cemetery",
-                "notes": "#24 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hilltop-Garland Family Cemetery",
+                "reference": "#24 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1226,9 +1226,9 @@
                 ]
             },
             "properties": {
-                "title": "Hood-Morgan Family Cemetery",
-                "notes": "#47 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Hood-Morgan Family Cemetery",
+                "reference": "#47 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1241,9 +1241,9 @@
                 ]
             },
             "properties": {
-                "title": "Howard (Capt. Thomas) Family Cemetery",
-                "notes": "#38 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Howard (Capt. Thomas) Family Cemetery",
+                "reference": "#38 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1256,9 +1256,9 @@
                 ]
             },
             "properties": {
-                "title": "Hunter-Gilbert Family Cemetery",
-                "notes": "Three Greenville County Cemeteries (survey)  book, 1974 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land; approximate location"
+                "name": "Hunter-Gilbert Family Cemetery",
+                "reference": "Three Greenville County Cemeteries (survey)  book, 1974 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land; approximate location"
             }
         },
         {
@@ -1271,9 +1271,9 @@
                 ]
             },
             "properties": {
-                "title": "Jackson Family Cemetery",
-                "notes": "#104 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Jackson Family Cemetery",
+                "reference": "#104 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1286,9 +1286,9 @@
                 ]
             },
             "properties": {
-                "title": "Jackson Family Cemetery",
-                "notes": "#105 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Jackson Family Cemetery",
+                "reference": "#105 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1301,9 +1301,9 @@
                 ]
             },
             "properties": {
-                "title": "Jackson Grove United Methodist Church Cemetery",
-                "notes": "#141 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Jackson Grove United Methodist Church Cemetery",
+                "reference": "#141 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1316,9 +1316,9 @@
                 ]
             },
             "properties": {
-                "title": "Jenkins (Rolly) Family Cemetery",
-                "notes": "#142 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Jenkins (Rolly) Family Cemetery",
+                "reference": "#142 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1331,9 +1331,9 @@
                 ]
             },
             "properties": {
-                "title": "Jubilee Baptist Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey; #151 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "525 Old Rutherford Rd"
+                "name": "Jubilee Baptist Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey; #151 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "525 Old Rutherford Rd"
             }
         },
         {
@@ -1346,9 +1346,9 @@
                 ]
             },
             "properties": {
-                "title": "Kitchen Patch Cemetery",
-                "notes": "#61 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Kitchen Patch Cemetery",
+                "reference": "#61 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1361,9 +1361,9 @@
                 ]
             },
             "properties": {
-                "title": "Landrum Johnson Family Cemetery",
-                "notes": "#15A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Landrum Johnson Family Cemetery",
+                "reference": "#15A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1376,9 +1376,9 @@
                 ]
             },
             "properties": {
-                "title": "Liberty United Methodist Church Cemetery",
-                "notes": "#57 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Liberty United Methodist Church Cemetery",
+                "reference": "#57 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1391,9 +1391,9 @@
                 ]
             },
             "properties": {
-                "title": "Lima Baptist Church",
-                "notes": "#28 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Lima Baptist Church",
+                "reference": "#28 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1406,9 +1406,9 @@
                 ]
             },
             "properties": {
-                "title": "Lister Family Cemetery",
-                "notes": "#58 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Lister Family Cemetery",
+                "reference": "#58 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1421,9 +1421,9 @@
                 ]
             },
             "properties": {
-                "title": "Locust Hill Baptist Church Cemetery",
-                "notes": "#99 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Locust Hill Baptist Church Cemetery",
+                "reference": "#99 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1436,9 +1436,9 @@
                 ]
             },
             "properties": {
-                "title": "Loftis Family Cemetery",
-                "notes": "#111 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Loftis Family Cemetery",
+                "reference": "#111 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1451,9 +1451,9 @@
                 ]
             },
             "properties": {
-                "title": "Marietta First Baptist Church Cemetery",
-                "notes": "#72 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Marietta First Baptist Church Cemetery",
+                "reference": "#72 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1466,9 +1466,9 @@
                 ]
             },
             "properties": {
-                "title": "Marietta First Freewill Baptist Church Cemetery",
-                "notes": "#69 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Marietta First Freewill Baptist Church Cemetery",
+                "reference": "#69 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1481,9 +1481,9 @@
                 ]
             },
             "properties": {
-                "title": "Mauldin United Methodist Church",
-                "notes": "Cemetery Survey book, 1984 (in library SC 929.5 SC Green)",
-                "property3": "100 E Butler Rd\n"
+                "name": "Mauldin United Methodist Church",
+                "reference": "Cemetery Survey book, 1984 (in library SC 929.5 SC Green)",
+                "notes": "100 E Butler Rd"
             }
         },
         {
@@ -1496,9 +1496,9 @@
                 ]
             },
             "properties": {
-                "title": "Mayfield Family Cemetery",
-                "notes": "#9 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Mayfield Family Cemetery",
+                "reference": "#9 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1511,9 +1511,9 @@
                 ]
             },
             "properties": {
-                "title": "McCarrell Family Cemetery",
-                "notes": "#125 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "McCarrell Family Cemetery",
+                "reference": "#125 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1526,9 +1526,9 @@
                 ]
             },
             "properties": {
-                "title": "McJunkin Family Cemetery",
-                "notes": "#4 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "McJunkin Family Cemetery",
+                "reference": "#4 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1541,9 +1541,9 @@
                 ]
             },
             "properties": {
-                "title": "McJunkin Family Cemetery",
-                "notes": "#67 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "McJunkin Family Cemetery",
+                "reference": "#67 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1556,9 +1556,9 @@
                 ]
             },
             "properties": {
-                "title": "Meadow Fork Baptist Church Cemetery",
-                "notes": "#91 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Meadow Fork Baptist Church Cemetery",
+                "reference": "#91 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1571,9 +1571,9 @@
                 ]
             },
             "properties": {
-                "title": "Milford Baptist Church Cemetery",
-                "notes": "#150 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Milford Baptist Church Cemetery",
+                "reference": "#150 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1586,9 +1586,9 @@
                 ]
             },
             "properties": {
-                "title": "Moody-Turner-Anders-Rowland Family Cemetery",
-                "notes": "#7 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Moody-Turner-Anders-Rowland Family Cemetery",
+                "reference": "#7 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1601,9 +1601,9 @@
                 ]
             },
             "properties": {
-                "title": "Moon Family Cemetery",
-                "notes": "#146 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Moon Family Cemetery",
+                "reference": "#146 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1616,9 +1616,9 @@
                 ]
             },
             "properties": {
-                "title": "Mosteller Family Cemetery",
-                "notes": "#155 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Mosteller Family Cemetery",
+                "reference": "#155 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1631,9 +1631,9 @@
                 ]
             },
             "properties": {
-                "title": "Mount Ararat Baptist Church Cemetery",
-                "notes": "#83 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mount Ararat Baptist Church Cemetery",
+                "reference": "#83 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1646,9 +1646,9 @@
                 ]
             },
             "properties": {
-                "title": "Mount Carmel United Methodist Church",
-                "notes": "#25 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mount Carmel United Methodist Church",
+                "reference": "#25 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1661,9 +1661,9 @@
                 ]
             },
             "properties": {
-                "title": "Mount Lebanon Baptist Church Cemetery",
-                "notes": "#120 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mount Lebanon Baptist Church Cemetery",
+                "reference": "#120 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1676,9 +1676,9 @@
                 ]
             },
             "properties": {
-                "title": "Mount Pilgrim Baptist Church Cemetery",
-                "notes": "#68 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mount Pilgrim Baptist Church Cemetery",
+                "reference": "#68 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1691,9 +1691,9 @@
                 ]
             },
             "properties": {
-                "title": "Mount Pleasant Baptist Church Cemetery",
-                "notes": "#37 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mount Pleasant Baptist Church Cemetery",
+                "reference": "#37 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1706,9 +1706,9 @@
                 ]
             },
             "properties": {
-                "title": "Mountain Grove Church Cemetery",
-                "notes": "#97 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mountain Grove Church Cemetery",
+                "reference": "#97 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1721,9 +1721,9 @@
                 ]
             },
             "properties": {
-                "title": "Mountain Hill Baptist Church Cemetery",
-                "notes": "#44 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mountain Hill Baptist Church Cemetery",
+                "reference": "#44 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1736,9 +1736,9 @@
                 ]
             },
             "properties": {
-                "title": "Mountain View United Methodist Church Cemetery",
-                "notes": "#96 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mountain View United Methodist Church Cemetery",
+                "reference": "#96 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1751,9 +1751,9 @@
                 ]
             },
             "properties": {
-                "title": "Mountan View Church of God of Prophecy Cemetery",
-                "notes": "#56 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mountan View Church of God of Prophecy Cemetery",
+                "reference": "#56 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1766,9 +1766,9 @@
                 ]
             },
             "properties": {
-                "title": "Mullinax-Johnson Family Cemetery",
-                "notes": "#15 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Mullinax-Johnson Family Cemetery",
+                "reference": "#15 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1781,9 +1781,9 @@
                 ]
             },
             "properties": {
-                "title": "Mush Creek Baptist Church Cemetery",
-                "notes": "#92 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Mush Creek Baptist Church Cemetery",
+                "reference": "#92 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1796,9 +1796,9 @@
                 ]
             },
             "properties": {
-                "title": "New Liberty Baptist Church Cemetery",
-                "notes": "#81 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "New Liberty Baptist Church Cemetery",
+                "reference": "#81 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1811,9 +1811,9 @@
                 ]
             },
             "properties": {
-                "title": "New Pilgrim Baptist Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "105 Bethany Rd"
+                "name": "New Pilgrim Baptist Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "105 Bethany Rd"
             }
         },
         {
@@ -1826,9 +1826,9 @@
                 ]
             },
             "properties": {
-                "title": "New Salem Baptist Church Cemetery",
-                "notes": "#39 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "New Salem Baptist Church Cemetery",
+                "reference": "#39 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1841,9 +1841,9 @@
                 ]
             },
             "properties": {
-                "title": "North Fork Baptist Church",
-                "notes": "#30 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "North Fork Baptist Church",
+                "reference": "#30 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1856,9 +1856,9 @@
                 ]
             },
             "properties": {
-                "title": "Oak Grove Baptist Church Cemetery",
-                "notes": "#52 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Oak Grove Baptist Church Cemetery",
+                "reference": "#52 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1871,9 +1871,9 @@
                 ]
             },
             "properties": {
-                "title": "Old Pilgrim Baptist Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "3540 Woodruff Rd"
+                "name": "Old Pilgrim Baptist Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "3540 Woodruff Rd"
             }
         },
         {
@@ -1886,9 +1886,9 @@
                 ]
             },
             "properties": {
-                "title": "Oneal Church of God Cemetery",
-                "notes": "#122 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Oneal Church of God Cemetery",
+                "reference": "#122 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1901,9 +1901,9 @@
                 ]
             },
             "properties": {
-                "title": "Parnell-Couch Family Cemetery",
-                "notes": "#77 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Parnell-Couch Family Cemetery",
+                "reference": "#77 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1916,9 +1916,9 @@
                 ]
             },
             "properties": {
-                "title": "Pennington Family Cemetery",
-                "notes": "#110 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Pennington Family Cemetery",
+                "reference": "#110 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1931,9 +1931,9 @@
                 ]
             },
             "properties": {
-                "title": "Petty-Pool Family Cemetery",
-                "notes": "#138 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Petty-Pool Family Cemetery",
+                "reference": "#138 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1946,9 +1946,9 @@
                 ]
             },
             "properties": {
-                "title": "Pickett Family Cemetery",
-                "notes": "#26 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Pickett Family Cemetery",
+                "reference": "#26 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -1961,9 +1961,9 @@
                 ]
             },
             "properties": {
-                "title": "Pleasant Hill Baptist Church Cemetery",
-                "notes": "#108 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Pleasant Hill Baptist Church Cemetery",
+                "reference": "#108 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1976,9 +1976,9 @@
                 ]
             },
             "properties": {
-                "title": "Pleasant View Baptist Church Cemetery",
-                "notes": "#85 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Pleasant View Baptist Church Cemetery",
+                "reference": "#85 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -1991,9 +1991,9 @@
                 ]
             },
             "properties": {
-                "title": "Pool Family Cemetery",
-                "notes": "#140 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Pool Family Cemetery",
+                "reference": "#140 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2006,9 +2006,9 @@
                 ]
             },
             "properties": {
-                "title": "Potters Field Cemetery",
-                "notes": "#121 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Potters Field Cemetery",
+                "reference": "#121 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2021,9 +2021,9 @@
                 ]
             },
             "properties": {
-                "title": "Powell Family Cemetery",
-                "notes": "#128 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Powell Family Cemetery",
+                "reference": "#128 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2036,9 +2036,9 @@
                 ]
             },
             "properties": {
-                "title": "Pruitt Family Cemetery",
-                "notes": "#17 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Pruitt Family Cemetery",
+                "reference": "#17 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2051,9 +2051,9 @@
                 ]
             },
             "properties": {
-                "title": "Rector Family Cemetery",
-                "notes": "#156 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Rector Family Cemetery",
+                "reference": "#156 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2066,9 +2066,9 @@
                 ]
             },
             "properties": {
-                "title": "Reid #1 Family Cemetery",
-                "notes": "#49 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Reid #1 Family Cemetery",
+                "reference": "#49 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2081,9 +2081,9 @@
                 ]
             },
             "properties": {
-                "title": "Reid #2 Family Cemetery",
-                "notes": "#50 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Reid #2 Family Cemetery",
+                "reference": "#50 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2096,9 +2096,9 @@
                 ]
             },
             "properties": {
-                "title": "Revis Family Cemetery",
-                "notes": "#48 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Revis Family Cemetery",
+                "reference": "#48 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2111,9 +2111,9 @@
                 ]
             },
             "properties": {
-                "title": "Richland Cemetery",
-                "notes": "",
-                "property3": "Sunflower St; on National Register of Historic Places"
+                "name": "Richland Cemetery",
+                "reference": "",
+                "notes": "Sunflower St; on National Register of Historic Places"
             }
         },
         {
@@ -2126,9 +2126,9 @@
                 ]
             },
             "properties": {
-                "title": "Rock Springs Baptist Church Cemetery",
-                "notes": "#51 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Rock Springs Baptist Church Cemetery",
+                "reference": "#51 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2141,9 +2141,9 @@
                 ]
             },
             "properties": {
-                "title": "Rush Family Cemetery",
-                "notes": "#153 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Rush Family Cemetery",
+                "reference": "#153 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2156,9 +2156,9 @@
                 ]
             },
             "properties": {
-                "title": "Saint Luke United Methodist Church Cemetery",
-                "notes": "#139 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Saint Luke United Methodist Church Cemetery",
+                "reference": "#139 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2171,9 +2171,9 @@
                 ]
             },
             "properties": {
-                "title": "Saint Paul's United Methodist Church Cemetery",
-                "notes": "#116 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Saint Paul's United Methodist Church Cemetery",
+                "reference": "#116 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2186,9 +2186,9 @@
                 ]
             },
             "properties": {
-                "title": "Salem United Methodist Church",
-                "notes": "Salem United Methodist Church Cemetery Directory book, 2010 (in library SC 929.5 SC Greenville)",
-                "property3": "2700 White Horse Rd"
+                "name": "Salem United Methodist Church",
+                "reference": "Salem United Methodist Church Cemetery Directory book, 2010 (in library SC 929.5 SC Greenville)",
+                "notes": "2700 White Horse Rd"
             }
         },
         {
@@ -2201,9 +2201,9 @@
                 ]
             },
             "properties": {
-                "title": "Salmon (George) Family Cemetery",
-                "notes": "#82 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Salmon (George) Family Cemetery",
+                "reference": "#82 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2216,9 +2216,9 @@
                 ]
             },
             "properties": {
-                "title": "Sheldon Famly Cemetery",
-                "notes": "#133 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Sheldon Famly Cemetery",
+                "reference": "#133 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2231,9 +2231,9 @@
                 ]
             },
             "properties": {
-                "title": "Slater Church of God Cemetery",
-                "notes": "#70 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Slater Church of God Cemetery",
+                "reference": "#70 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2246,9 +2246,9 @@
                 ]
             },
             "properties": {
-                "title": "South Saluda Church Cemetery",
-                "notes": "#6 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "South Saluda Church Cemetery",
+                "reference": "#6 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2261,9 +2261,9 @@
                 ]
             },
             "properties": {
-                "title": "Springwood Cemetery",
-                "notes": "Springwood Cemetery Interment Locator book (in library SC 929.5 SC Green)",
-                "property3": "410 N Main St; on National Register of Historic Places"
+                "name": "Springwood Cemetery",
+                "reference": "Springwood Cemetery Interment Locator book (in library SC 929.5 SC Green)",
+                "notes": "410 N Main St; on National Register of Historic Places"
             }
         },
         {
@@ -2276,9 +2276,9 @@
                 ]
             },
             "properties": {
-                "title": "St Paul's Methodist Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "3856 N Hwy 101"
+                "name": "St Paul's Methodist Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "3856 N Hwy 101"
             }
         },
         {
@@ -2291,9 +2291,9 @@
                 ]
             },
             "properties": {
-                "title": "St. Luke's Methodist Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "280 Pine Log Ford Rd"
+                "name": "St. Luke's Methodist Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "280 Pine Log Ford Rd"
             }
         },
         {
@@ -2306,9 +2306,9 @@
                 ]
             },
             "properties": {
-                "title": "St. Mark United Methodist Church Cemetery",
-                "notes": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
-                "property3": "911 St Mark Rd"
+                "name": "St. Mark United Methodist Church Cemetery",
+                "reference": "Black Church Cemeteries book, 1977 survey (in library SC 929.5 SC Greenville)",
+                "notes": "911 St Mark Rd"
             }
         },
         {
@@ -2321,9 +2321,9 @@
                 ]
             },
             "properties": {
-                "title": "Staton Family Cemetery",
-                "notes": "#102 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Staton Family Cemetery",
+                "reference": "#102 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2336,9 +2336,9 @@
                 ]
             },
             "properties": {
-                "title": "Stokes (T.H.) Family Cemetery",
-                "notes": "#119 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Stokes (T.H.) Family Cemetery",
+                "reference": "#119 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2351,9 +2351,9 @@
                 ]
             },
             "properties": {
-                "title": "Suddeth Family Cemetery",
-                "notes": "#107 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Suddeth Family Cemetery",
+                "reference": "#107 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2366,9 +2366,9 @@
                 ]
             },
             "properties": {
-                "title": "Talley Family Cemetery",
-                "notes": "#98 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Talley Family Cemetery",
+                "reference": "#98 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2381,9 +2381,9 @@
                 ]
             },
             "properties": {
-                "title": "Taylor-McKinney Family Cemetery",
-                "notes": "#90 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Taylor-McKinney Family Cemetery",
+                "reference": "#90 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2396,9 +2396,9 @@
                 ]
             },
             "properties": {
-                "title": "Terry Creek Pentecostal Holiness Church",
-                "notes": "#20 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Terry Creek Pentecostal Holiness Church",
+                "reference": "#20 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2411,9 +2411,9 @@
                 ]
             },
             "properties": {
-                "title": "Terry Family Cemetery",
-                "notes": "#21 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Terry Family Cemetery",
+                "reference": "#21 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2426,9 +2426,9 @@
                 ]
             },
             "properties": {
-                "title": "Tigerville Baptist Church Cemetery",
-                "notes": "#88 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Tigerville Baptist Church Cemetery",
+                "reference": "#88 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2441,9 +2441,9 @@
                 ]
             },
             "properties": {
-                "title": "Trammell Family Cemetery",
-                "notes": "#29 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Trammell Family Cemetery",
+                "reference": "#29 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2456,9 +2456,9 @@
                 ]
             },
             "properties": {
-                "title": "Travelers Rest Church of the Brethren Cemetery",
-                "notes": "#124 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Travelers Rest Church of the Brethren Cemetery",
+                "reference": "#124 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2471,9 +2471,9 @@
                 ]
             },
             "properties": {
-                "title": "Travelers Rest First Baptist Church Cemetery",
-                "notes": "#131 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Travelers Rest First Baptist Church Cemetery",
+                "reference": "#131 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2486,9 +2486,9 @@
                 ]
             },
             "properties": {
-                "title": "Travelers Rest United Methodist Church Cemetery",
-                "notes": "#132 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Travelers Rest United Methodist Church Cemetery",
+                "reference": "#132 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2501,9 +2501,9 @@
                 ]
             },
             "properties": {
-                "title": "Turner Family Cemetery",
-                "notes": "#34 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Turner Family Cemetery",
+                "reference": "#34 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2516,9 +2516,9 @@
                 ]
             },
             "properties": {
-                "title": "Tyger Baptist Church Cemetery",
-                "notes": "#89 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Tyger Baptist Church Cemetery",
+                "reference": "#89 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2531,9 +2531,9 @@
                 ]
             },
             "properties": {
-                "title": "Unknown Family Cemetery",
-                "notes": "#23 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Unknown Family Cemetery",
+                "reference": "#23 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2546,9 +2546,9 @@
                 ]
             },
             "properties": {
-                "title": "Unknown Family Cemetery",
-                "notes": "#60 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Unknown Family Cemetery",
+                "reference": "#60 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2561,9 +2561,9 @@
                 ]
             },
             "properties": {
-                "title": "Unknown Family Cemetery",
-                "notes": "#63 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Unknown Family Cemetery",
+                "reference": "#63 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2576,9 +2576,9 @@
                 ]
             },
             "properties": {
-                "title": "Unknown Family Cemetery",
-                "notes": "#71 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Unknown Family Cemetery",
+                "reference": "#71 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2591,9 +2591,9 @@
                 ]
             },
             "properties": {
-                "title": "Unknown Family Cemetery",
-                "notes": "#95 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Unknown Family Cemetery",
+                "reference": "#95 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2606,9 +2606,9 @@
                 ]
             },
             "properties": {
-                "title": "Unknown Family Cemetery",
-                "notes": "#115 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Unknown Family Cemetery",
+                "reference": "#115 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2621,9 +2621,9 @@
                 ]
             },
             "properties": {
-                "title": "Waldrop Family Cemetery",
-                "notes": "#5 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Waldrop Family Cemetery",
+                "reference": "#5 in Northern Greenville County Cemeteries book (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2636,9 +2636,9 @@
                 ]
             },
             "properties": {
-                "title": "Washington Baptist Church",
-                "notes": "#152 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": ""
+                "name": "Washington Baptist Church",
+                "reference": "#152 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": ""
             }
         },
         {
@@ -2651,9 +2651,9 @@
                 ]
             },
             "properties": {
-                "title": "William W. Cantrell, Jr. Gravesite",
-                "notes": "#10A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "William W. Cantrell, Jr. Gravesite",
+                "reference": "#10A in Northern Greenville County Cemeteries book, Supplement 2000 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2666,9 +2666,9 @@
                 ]
             },
             "properties": {
-                "title": "Wilson Family Cemetery",
-                "notes": "#148 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
-                "property3": "Make sure you get permission before entering private land."
+                "name": "Wilson Family Cemetery",
+                "reference": "#148 in Northern Greenville County Cemeteries book, 1999 (in library SC 929.5 SC Greenville)",
+                "notes": "Make sure you get permission before entering private land."
             }
         },
         {
@@ -2681,9 +2681,9 @@
                 ]
             },
             "properties": {
-                "title": "Aiken Chapel Baptish Church Cemetery",
-                "notes": "",
-                "property3": "101 Aiken Chapel Rd"
+                "name": "Aiken Chapel Baptish Church Cemetery",
+                "reference": "",
+                "notes": "101 Aiken Chapel Rd"
             }
         },
         {
@@ -2696,9 +2696,9 @@
                 ]
             },
             "properties": {
-                "title": "American Spinning Cemetery",
-                "notes": "aka Sampson Cemetery",
-                "property3": "Fair St"
+                "name": "American Spinning Cemetery",
+                "reference": "aka Sampson Cemetery",
+                "notes": "Fair St"
             }
         },
         {
@@ -2711,9 +2711,9 @@
                 ]
             },
             "properties": {
-                "title": "Antioch Christian Church Cemetery",
-                "notes": "",
-                "property3": "1600 Fork Shoals Rd"
+                "name": "Antioch Christian Church Cemetery",
+                "reference": "",
+                "notes": "1600 Fork Shoals Rd"
             }
         }
     ]

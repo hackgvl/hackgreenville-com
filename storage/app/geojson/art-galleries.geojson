@@ -6,22 +6,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
-                    0
-                ]
-            },
-            "properties": {
-                "title": "",
-                "hours": "",
-                "type": "",
-                "website": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -82.4282965,
                     34.8650056
                 ]

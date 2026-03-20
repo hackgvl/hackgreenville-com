@@ -15,7 +15,7 @@
                 "group": "Northeast Cluster",
                 "program": "International Baccalaureate",
                 "address": "301 Chandler Road, Greer, SC 29651",
-                "website": "https:\/\/www.greenville.k12.sc.us\/ccreek\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/ccreek\/"
             }
         },
         {
@@ -32,7 +32,7 @@
                 "group": "Northeast Cluster",
                 "program": "International Baccalaureate",
                 "address": "3032 E. Gap Creek Road, Greer, SC 29651",
-                "website": "https:\/\/www.greenville.k12.sc.us\/greerms\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/greerms\/"
             }
         },
         {
@@ -49,7 +49,7 @@
                 "group": "Northeast Cluster",
                 "program": "International Baccalaureate",
                 "address": "3000 East Gap Creek Dr., Greer, SC 29651",
-                "website": "https:\/\/www.greenville.k12.sc.us\/greerhs\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/greerhs\/"
             }
         },
         {
@@ -66,7 +66,7 @@
                 "group": "Northwest Cluster",
                 "program": "International Baccalaureate",
                 "address": "1592 Geer Highway, Travelers Rest, SC 29690",
-                "website": "https:\/\/www.greenville.k12.sc.us\/heritage\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/heritage\/"
             }
         },
         {
@@ -83,7 +83,7 @@
                 "group": "Northwest Cluster",
                 "program": "International Baccalaureate",
                 "address": "1606 Geer Highway, Travelers Rest, SC 29690",
-                "website": "https:\/\/www.greenville.k12.sc.us\/northwst\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/northwst\/"
             }
         },
         {
@@ -100,7 +100,7 @@
                 "group": "Northwest Cluster",
                 "program": "International Baccalaureate",
                 "address": "301 North Main St., Travelers Rest, SC 29690",
-                "website": "https:\/\/www.greenville.k12.sc.us\/trest\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/trest\/"
             }
         },
         {
@@ -117,7 +117,7 @@
                 "group": "Southern Cluster",
                 "program": "International Baccalaureate",
                 "address": "916 McKelvey Road, Pelzer, SC 29669",
-                "website": "https:\/\/www.greenville.k12.sc.us\/forksh\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/forksh\/"
             }
         },
         {
@@ -134,7 +134,7 @@
                 "group": "Southern Cluster",
                 "program": "International Baccalaureate",
                 "address": "325 North Flat Rock Road, Piedmont, SC 29673",
-                "website": "https:\/\/www.greenville.k12.sc.us\/wdmontm\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/wdmontm\/"
             }
         },
         {
@@ -151,7 +151,7 @@
                 "group": "Southern Cluster",
                 "program": "International Baccalaureate",
                 "address": "2831 West Georgia Road, Piedmont, SC 29673",
-                "website": "https:\/\/www.greenville.k12.sc.us\/wdmonth\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/wdmonth\/"
             }
         },
         {
@@ -168,7 +168,7 @@
                 "group": "Central Cluster",
                 "program": "International Baccalaureate",
                 "address": "1200 Parkins Mill Road, Greenville, SC 29607",
-                "website": "https:\/\/www.greenville.k12.sc.us\/scollins\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/scollins\/"
             }
         },
         {
@@ -185,7 +185,7 @@
                 "group": "Central Cluster",
                 "program": "International Baccalaureate",
                 "address": "901 Woodruff Road, Greenville, SC 29607",
-                "website": "https:\/\/www.greenville.k12.sc.us\/beck\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/beck\/"
             }
         },
         {
@@ -202,7 +202,7 @@
                 "group": "Central Cluster",
                 "program": "International Baccalaureate",
                 "address": "6630 Frontage at White Horse Rd., Greenville, SC 29605",
-                "website": "https:\/\/www.greenville.k12.sc.us\/shs\/"
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/shs\/"
             }
         }
     ]

@@ -1,174 +1,294 @@
-{ "type": "FeatureCollection",
-  "features": [
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.398367, 34.851596]},
-        "properties": {
-           "owner" : "Coffee Underground",
-           "ssid": "Coffee UnderGround Guest",
-           "passphrase": "",
-           "notes": "Go to counter for a 2-hr Wi-Fi code. Open a webpage and type in the code.",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.397884, 34.851184]},
-        "properties": {
-           "owner" : "Groucho's Deli",
-           "ssid": "groucho's deli",
-           "passphrase": "sandwiches",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.3977403, 34.8515355]},
-        "properties": {
-           "owner" : "Ink & Ivy",
-           "ssid": "Ink&Ivy Public",
-           "passphrase": "",
-           "notes": "No passphrase. Speed test (18.5Mbps down \/ 2.62 Mbps up",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.404279, 34.843707]},
-        "properties": {
-           "owner" : "Mellow Mushroom",
-           "ssid": "Mellow Mushroom",
-           "passphrase": "",
-           "notes": "Open a webpage and accept terms of service.  Non-HTTP ports, like SSH, may be blocked",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.4022339, 34.8462271]},
-        "properties": {
-           "owner" : "O-CHA tea bar",
-           "ssid": "oChaTeaBar-guest",
-           "passphrase": "ocha",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.400347, 34.848704]},
-        "properties": {
-           "owner" : "M. Judson Booksellers",
-           "ssid": "should be obvious ",
-           "passphrase": "yourfavoritebook",
-           "notes": "Same location as Chocolate Moose.",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.398664, 34.850539]},
-        "properties": {
-           "owner" : "Sully's Steamers",
-           "ssid": "Sullys-Public",
-           "passphrase": "bagelman",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.38575, 34.862628]},
-        "properties": {
-           "owner" : "The Community Tap",
-           "ssid": "Community Tap",
-           "passphrase": "BEER&WINE217",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.398455, 34.851368]},
-        "properties": {
-           "owner" : "Trio - A Brick Oven Cafe",
-           "ssid": "trio",
-           "passphrase": "",
-           "notes": "http:\/\/www.triocafe.com\/",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.4002445, 34.8488832]},
-        "properties": {
-           "owner" : "Westin Poinsett Hotel",
-           "ssid": "PublicSpace",
-           "passphrase": "79788",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.396042, 34.850377]},
-        "properties": {
-           "owner" : "Fireforge Crafted Beer",
-           "ssid": "fireforge-friends",
-           "passphrase": "grassroots",
-           "notes": "Throttled to 10Mbps Down - 2Mpbs Up",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.399598, 34.8519689]},
-        "properties": {
-           "owner" : "Methodical Coffee",
-           "ssid": "Methodical Guest",
-           "passphrase": "humblecoffee101",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.369617, 34.829261]},
-        "properties": {
-           "owner" : "Grateful Brew",
-           "ssid": "Grateful Brew Guest",
-           "passphrase": "",
-           "notes": "Ask at counter for 2-hour login code.",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.397332, 34.86132]},
-        "properties": {
-           "owner" : "Liability Brewing Company",
-           "ssid": "LBC",
-           "passphrase": "beerhere",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.3932182, 34.82466904]},
-        "properties": {
-           "owner" : "CAVA",
-           "ssid": "Fresh Greenville",
-           "passphrase": "184cavagrill",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.3895961, 34.8600668]},
-        "properties": {
-           "owner" : "Universal Joint",
-           "ssid": "NETGEAR92",
-           "passphrase": "silkyplanet712",
-           "notes": "",
-           "category" : "guest"
-         }
-    }, 
-      { "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-82.4139756, 34.8532455]},
-        "properties": {
-           "owner" : "The Commons",
-           "ssid": "The Commons Guest 2.4GHz",
-           "passphrase": "thecommonsatwelborn",
-           "notes": "",
-           "category" : "guest"
-         }
-    } 
-  ]
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398367,
+                    34.851596
+                ]
+            },
+            "properties": {
+                "owner": "Coffee Underground",
+                "ssid": "Coffee UnderGround Guest",
+                "passphrase": "",
+                "notes": "Go to counter for a 2-hr Wi-Fi code. Open a webpage and type in the code.",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397884,
+                    34.851184
+                ]
+            },
+            "properties": {
+                "owner": "Groucho's Deli",
+                "ssid": "groucho's deli",
+                "passphrase": "sandwiches",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3977403,
+                    34.8515355
+                ]
+            },
+            "properties": {
+                "owner": "Ink & Ivy",
+                "ssid": "Ink&Ivy Public",
+                "passphrase": "",
+                "notes": "No passphrase. Speed test (18.5Mbps down \/ 2.62 Mbps up",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404279,
+                    34.843707
+                ]
+            },
+            "properties": {
+                "owner": "Mellow Mushroom",
+                "ssid": "Mellow Mushroom",
+                "passphrase": "",
+                "notes": "Open a webpage and accept terms of service.  Non-HTTP ports, like SSH, may be blocked",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4022339,
+                    34.8462271
+                ]
+            },
+            "properties": {
+                "owner": "O-CHA tea bar",
+                "ssid": "oChaTeaBar-guest",
+                "passphrase": "ocha",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400347,
+                    34.848704
+                ]
+            },
+            "properties": {
+                "owner": "M. Judson Booksellers",
+                "ssid": "should be obvious ",
+                "passphrase": "yourfavoritebook",
+                "notes": "Same location as Chocolate Moose.",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398664,
+                    34.850539
+                ]
+            },
+            "properties": {
+                "owner": "Sully's Steamers",
+                "ssid": "Sullys-Public",
+                "passphrase": "bagelman",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38575,
+                    34.862628
+                ]
+            },
+            "properties": {
+                "owner": "The Community Tap",
+                "ssid": "Community Tap",
+                "passphrase": "BEER&WINE217",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398455,
+                    34.851368
+                ]
+            },
+            "properties": {
+                "owner": "Trio - A Brick Oven Cafe",
+                "ssid": "trio",
+                "passphrase": "",
+                "notes": "http:\/\/www.triocafe.com\/",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4002445,
+                    34.8488832
+                ]
+            },
+            "properties": {
+                "owner": "Westin Poinsett Hotel",
+                "ssid": "PublicSpace",
+                "passphrase": "79788",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396042,
+                    34.850377
+                ]
+            },
+            "properties": {
+                "owner": "Fireforge Crafted Beer",
+                "ssid": "fireforge-friends",
+                "passphrase": "grassroots",
+                "notes": "Throttled to 10Mbps Down - 2Mpbs Up",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399598,
+                    34.8519689
+                ]
+            },
+            "properties": {
+                "owner": "Methodical Coffee",
+                "ssid": "Methodical Guest",
+                "passphrase": "humblecoffee101",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.369617,
+                    34.829261
+                ]
+            },
+            "properties": {
+                "owner": "Grateful Brew",
+                "ssid": "Grateful Brew Guest",
+                "passphrase": "",
+                "notes": "Ask at counter for 2-hour login code.",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397332,
+                    34.86132
+                ]
+            },
+            "properties": {
+                "owner": "Liability Brewing Company",
+                "ssid": "LBC",
+                "passphrase": "beerhere",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3932182,
+                    34.82466904
+                ]
+            },
+            "properties": {
+                "owner": "CAVA",
+                "ssid": "Fresh Greenville",
+                "passphrase": "184cavagrill",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3895961,
+                    34.8600668
+                ]
+            },
+            "properties": {
+                "owner": "Universal Joint",
+                "ssid": "NETGEAR92",
+                "passphrase": "silkyplanet712",
+                "notes": "",
+                "category": "guest"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4139756,
+                    34.8532455
+                ]
+            },
+            "properties": {
+                "owner": "The Commons",
+                "ssid": "The Commons Guest 2.4GHz",
+                "passphrase": "thecommonsatwelborn",
+                "notes": "",
+                "category": "guest"
+            }
+        }
+    ]
 }
