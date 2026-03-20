@@ -1,0 +1,4527 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.458346,
+                    34.873733
+                ]
+            },
+            "properties": {
+                "site": "4 Lora Ct",
+                "planting_partner": "",
+                "trees": "4",
+                "species": "nuttall oak, Forest Pansy redbud, October Glory red maple, Bracken's Brown Beauty magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.463199,
+                    34.910539
+                ]
+            },
+            "properties": {
+                "site": "A Childs Haven",
+                "planting_partner": "Certus Bank",
+                "trees": "18",
+                "species": "Carolina sapphire, Autumn Flame red maple, October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4095,
+                    34.8484
+                ]
+            },
+            "properties": {
+                "site": "A.J. Whittenberg Elementary School",
+                "planting_partner": "GE, Greenville Council of Garden Clubs",
+                "trees": "27",
+                "species": "hiromi cherry, pawpaw, serviceberry, persimmon, pear, autumnalis cherry, mulberry, baldcypress, redbud, Forest Pansy redbud, fringetree, gingko",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.30544522,
+                    34.91390426
+                ]
+            },
+            "properties": {
+                "site": "Abigail Springs",
+                "planting_partner": "AFL",
+                "trees": "21",
+                "species": "gingko, Chinese pistache, redbud, crabapple, Little Gem magnolia, Autumn Blaze maple, Red Sunset red maple, Wildfire blackgum, Carolina sapphire, persimmon",
+                "program": "2018 ReLEAF Day, Presented by: Duke Energy, BMW, Schneider Tree Care, Fluor, Greenville Journal, Forum Benefits, Earth Design, Christopher Trucks, Community Tap, AFL, Keys Innovative Solutions, GE, Johnson Controls, Robert M Rogers MD PA, LS3P, KPMG, the McSharry Family, SynTerra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.43927,
+                    34.85611
+                ]
+            },
+            "properties": {
+                "site": "Alexander Elementary School",
+                "planting_partner": "",
+                "trees": "5",
+                "species": "nuttall oak, Gumdrop blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38929,
+                    34.83401
+                ]
+            },
+            "properties": {
+                "site": "Alta Vista",
+                "planting_partner": "",
+                "trees": "32",
+                "species": "white oak, baldcypress, Teddy Bear magnolia, October Glory maple, Cherokee Princess dogwood, Autumn Blaze maple, ginkgo, serviceberry, Forest Pansy redbud, Little Gem magnolia, nuttall oak, Japanese snowbell",
+                "program": "2019 ReLEAF Day, Presented by: Duke Energy, Greenville Journal, Schneider Tree Care, Fluor, BMW, Forum Benefits, Earth Design, Christopher Trucks, Pintail Capitol Partners, Community Tap, Robert M Rogers MD PA, Becky & Bobby Hartness, AFL, Keys Innovative Solutions, Southern Management Corporation, Johnson Controls, Colliers International, Carolina Crafted Construction LLC, DP3 Architects, Arrowood & Arrowood, Harper General Contractors, KPMG, Sunstore Solar Energy Solutions, Furman University, the McSharry Family, McMillan Pazden Smith Architecture, Mary Lou & Lewis Jones, Eric Krichbaum"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.381725,
+                    34.91971
+                ]
+            },
+            "properties": {
+                "site": "Altamont Neighborhood",
+                "planting_partner": "",
+                "trees": "18",
+                "species": "forest pansy redbud, Nellie Stevens holly, teddy bear magnolia, Bracken's Brown Beauty magnolia, little gem magnolia, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.002582,
+                    34.881586
+                ]
+            },
+            "properties": {
+                "site": "Anderson Mill Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "62",
+                "species": "overcup oak, hophornbeam, swamp white oak, Emerald City tulip poplar, Forest Pansy redbud, Duraheat river birch, baldcypress, tulip poplar, red maple, baldcypress, nuttall oak, Brodie cedar, Burkii cedar, trident maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.379497,
+                    34.835363
+                ]
+            },
+            "properties": {
+                "site": "Annies House",
+                "planting_partner": "GE, The Orvis Company",
+                "trees": "98",
+                "species": "Chickasaw plum, American plum, Kieffer pear, persimmon, serviceberry, pawpaw, elderberry, pomegranate, hazelnut, black willow, alder, Fuyu persimmon",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.461892,
+                    34.904644
+                ]
+            },
+            "properties": {
+                "site": "Armstrong Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "7",
+                "species": "Autumn Blaze maple, Red Sunset red maple, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.272883,
+                    34.920416
+                ]
+            },
+            "properties": {
+                "site": "As-Sabeel School",
+                "planting_partner": "",
+                "trees": "35",
+                "species": "Peggy Clarke apricot, crape myrtle, Bracken's Brown Beauty magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3946,
+                    34.8203
+                ]
+            },
+            "properties": {
+                "site": "Augusta Circle Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "3",
+                "species": "fringetree, hornbeam, white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.291,
+                    34.852
+                ]
+            },
+            "properties": {
+                "site": "Bells Crossing Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "1",
+                "species": "willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4558,
+                    34.8806
+                ]
+            },
+            "properties": {
+                "site": "Berea Elementary School",
+                "planting_partner": "Berea Lions Club",
+                "trees": "24",
+                "species": "red maple, shumard oak, nuttall oak, swamp white oak, October Glory red maple, American hornbeam, hophornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.454923,
+                    34.914813
+                ]
+            },
+            "properties": {
+                "site": "Berea Middle School",
+                "planting_partner": "",
+                "trees": "18",
+                "species": "ginkgo, American hornbeam, nuttall oak, white oak, Prairifire crabapple, Emerald arborvitae",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.940571,
+                    34.938574
+                ]
+            },
+            "properties": {
+                "site": "Bethlehem Center",
+                "planting_partner": "",
+                "trees": "2",
+                "species": "\"Santa Rosa\" plum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.31164,
+                    35.03796
+                ]
+            },
+            "properties": {
+                "site": "Blue Ridge Middle School",
+                "planting_partner": "Greer CPW",
+                "trees": "11",
+                "species": "overcup oak, Shawnee Brave baldcypress, Emerald City tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.16766619,
+                    34.89293287
+                ]
+            },
+            "properties": {
+                "site": "BMW Training Facility",
+                "planting_partner": "BMW",
+                "trees": "106",
+                "species": "Eastern red cedar, tulip poplar, loblolly pine, swamp white oak, overcup oak, nuttall oak, winged elm, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.983917,
+                    35.039097
+                ]
+            },
+            "properties": {
+                "site": "Boiling Springs Elementary",
+                "planting_partner": "Noble Tree Foundation; BSA",
+                "trees": "8",
+                "species": "Allee elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.975414,
+                    35.050317
+                ]
+            },
+            "properties": {
+                "site": "Boiling Springs High School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "2",
+                "species": "American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.006154,
+                    35.066647
+                ]
+            },
+            "properties": {
+                "site": "Boiling Springs Middle School",
+                "planting_partner": "Noble Tree Foundation, BMW",
+                "trees": "31",
+                "species": "Natchez crepe myrtle, nuttall oak, overcup oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.309,
+                    34.910532
+                ]
+            },
+            "properties": {
+                "site": "Brook Glenn Elementary School",
+                "planting_partner": "GE",
+                "trees": "29",
+                "species": "blackgum, sugar maple, tulip poplar, London planetree, Bracken's Brown Beauty magnolia, American hornbeam, river birch, Eastern redbud, willow oak, European hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.297036,
+                    34.892276
+                ]
+            },
+            "properties": {
+                "site": "Brushy Creek Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "1",
+                "species": "ginkgo",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4032,
+                    34.8713
+                ]
+            },
+            "properties": {
+                "site": "Brutontown Neighborhood",
+                "planting_partner": "TD Bank, Greenville News, Leadership Greenville, CEMEX, Schneider Tree Care, Bank of America, Hayne Hipp Foundation, Hollingsworth Funds, Duke Energy, Home Depot Foundation, Alliance for Community Trees",
+                "trees": "395",
+                "species": "red maple, Pink Velour crape myrtle, Sioux crape myrtle, Natchez crape myrtle, redbud, dogwood, sawtooth oak, serviceberry, trident maple, willow oak, cherry, red oak, Nellie Stevens holly, nuttall oak, fig, white dogwood, hiromi cherry, October Glory red maple, fringetree, Forest Pansy redbud, Muskogee crape myrtle, Eastern red cedar, plum, Armstrong maple, Prairifire crabapple, Autumn Blaze maple, scarlet oak, white oak, sweetbay magnolia, overcup oak, cryptomeria, carolina sapphire, Emerald City tulip poplar, pawpaw",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.25132,
+                    34.71593
+                ]
+            },
+            "properties": {
+                "site": "Bryson Middle School",
+                "planting_partner": "",
+                "trees": "9",
+                "species": "American hornbeam, Bracken's Brown Beauty magnolia, white oak, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.266889,
+                    34.886584
+                ]
+            },
+            "properties": {
+                "site": "Buena Vista Elementary School",
+                "planting_partner": "",
+                "trees": "27",
+                "species": "red maple, serviceberry, blackgum, willow oak, Eastern red cedar, Little Gem magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38434,
+                    34.837816
+                ]
+            },
+            "properties": {
+                "site": "Caine Halter YMCA",
+                "planting_partner": "",
+                "trees": "13",
+                "species": "Eastern redbud, Carolina silverbell, American holly, American hornbeam, tulip poplar, serviceberry, American beech, Wildfire blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.341956,
+                    34.827102
+                ]
+            },
+            "properties": {
+                "site": "Camperdown Academy",
+                "planting_partner": "",
+                "trees": "41",
+                "species": "loblolly pine, eastern redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398284,
+                    34.840735
+                ]
+            },
+            "properties": {
+                "site": "Cancer Survivors Park",
+                "planting_partner": "Johnson Controls",
+                "trees": "100",
+                "species": "blackgum, Carolina silverbell, serviceberry, witch hazel, Eastern red cedar, American holly, pawpaw, eastern redbud, pignut hickory, sugarberry, sweetgum, tulip poplar, sycamore, white oak, chinquapin oak, swamp chestnut oak, Bracken's Brown Beauty magnolia, river birch, Autumn Blaze maple, sassafras, Forest Pansy redbud, fringetree, Red Sunset red maple, American hornbeam, American beech",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.863729,
+                    35.011742
+                ]
+            },
+            "properties": {
+                "site": "Cannons Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "21",
+                "species": "nutall oak, trident maple, tulip poplar, baldcypress, Eastern redbud, American hornbeam, Red Pointe red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398174,
+                    34.691229
+                ]
+            },
+            "properties": {
+                "site": "Canterbury Neighborhood",
+                "planting_partner": "",
+                "trees": "42",
+                "species": "American holly, Peggy Clarke apricot, Little Gem magnolia, Carolina sapphire",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.198174,
+                    34.937939
+                ]
+            },
+            "properties": {
+                "site": "Canyon Ridge Neighborhood",
+                "planting_partner": "Greer Centennial Lions Club, Greer CPW",
+                "trees": "29",
+                "species": "Carolina sapphire, Forest Pansy redbud, baldcypress, Teddy Bear magnolia, tulip poplar, Little Gem magnolia, white oak, Brackens Brown Beauty magnolia, cryptomeria, fringetree",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.288688,
+                    34.865518
+                ]
+            },
+            "properties": {
+                "site": "Carlyle Pointe Neighborhood",
+                "planting_partner": "",
+                "trees": "37",
+                "species": "okame cherry, river birch, Forest Pansy redbud, October Glory maple, Eastern red cedar, Little Gem magnolia, Carolina sapphire, serviceberry, Autumn Blaze maple, nuttall oak, Nellie Stevens holly, Green Giant arborvitae",
+                "program": "2019 ReLEAF Day, Presented by: Duke Energy, Greenville Journal, Schneider Tree Care, Fluor, BMW, Forum Benefits, Earth Design, Christopher Trucks, Pintail Capitol Partners, Community Tap, Robert M Rogers MD PA, Becky & Bobby Hartness, AFL, Keys Innovative Solutions, Southern Management Corporation, Johnson Controls, Colliers International, Carolina Crafted Construction LLC, DP3 Architects, Arrowood & Arrowood, Harper General Contractors, KPMG, Sunstore Solar Energy Solutions, Furman University, the McSharry Family, McMillan Pazden Smith Architecture, Mary Lou & Lewis Jones, Eric Krichbaum"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442792,
+                    34.813546
+                ]
+            },
+            "properties": {
+                "site": "Carolina High School",
+                "planting_partner": "",
+                "trees": "19",
+                "species": "nuttall oak, tulip poplar, London planetree, Forest Pansy redbud, Nellie Stevens holly, blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41801717,
+                    34.8699474
+                ]
+            },
+            "properties": {
+                "site": "Cedar Lane Road Screen",
+                "planting_partner": "",
+                "trees": "34",
+                "species": "Nellie Stevens holly, Carolina sapphire, Eastern red cedar, Bracken's Brown Beauty magnolia, Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2403,
+                    34.9292
+                ]
+            },
+            "properties": {
+                "site": "Century Park",
+                "planting_partner": "Wildwater, BMW",
+                "trees": "75",
+                "species": "blackgum, serviceberry, sawtooth oak, trident maple, red maple, baldcypress, Eastern red cedar, American holly, nuttall oak, Carolina sapphire, Bracken's Brown Beauty magnolia, Nellie Stevens holly",
+                "program": "2018 ReLEAF Day, Presented by: Duke Energy, BMW, Schneider Tree Care, Fluor, Greenville Journal, Forum Benefits, Earth Design, Christopher Trucks, Community Tap, AFL, Keys Innovative Solutions, GE, Johnson Controls, Robert M Rogers MD PA, LS3P, KPMG, the McSharry Family, SynTerra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.235201,
+                    34.955038
+                ]
+            },
+            "properties": {
+                "site": "Chandler Creek Elementary School",
+                "planting_partner": "Greer CPW, ScanSource",
+                "trees": "30",
+                "species": "tulip poplar, London planetree, red maple, blackgum, river birch, willow oak, nuttall oak, baldcypress, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40291009,
+                    34.80130271
+                ]
+            },
+            "properties": {
+                "site": "Chanticleer Neighborhood",
+                "planting_partner": "",
+                "trees": "8",
+                "species": "gingko, dogwood, blackgum, white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.874977,
+                    35.146348
+                ]
+            },
+            "properties": {
+                "site": "Chesnee Elementary",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "16",
+                "species": "Brackens Brown Beauty' magnolia, American elm, 'Red Rage' blackgum, 'Emerald City' tulip poplar, 'Gold Rush' dawn redwood,  'Exclamation' London planetree",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4007,
+                    34.8554
+                ]
+            },
+            "properties": {
+                "site": "Childrens Museum of the Upstate",
+                "planting_partner": "",
+                "trees": "2",
+                "species": "red maple, deodar cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.395629,
+                    34.849629
+                ]
+            },
+            "properties": {
+                "site": "Christ Church Episcopal Preschool",
+                "planting_partner": "",
+                "trees": "19",
+                "species": "Eastern redbud, red maple, nuttall oak, trident maple, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3486,
+                    34.7952
+                ]
+            },
+            "properties": {
+                "site": "Christ Church Upper School",
+                "planting_partner": "",
+                "trees": "1",
+                "species": "",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.210335,
+                    34.692023
+                ]
+            },
+            "properties": {
+                "site": "City of Fountain Inn",
+                "planting_partner": "",
+                "trees": "1",
+                "species": "white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.795659,
+                    34.678342
+                ]
+            },
+            "properties": {
+                "site": "Clemson Downs Retirement Community",
+                "planting_partner": "",
+                "trees": "20",
+                "species": "October Glory red maples, tulip poplar, baldcypress, cryptomeria, river birch, Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.795667,
+                    34.687403
+                ]
+            },
+            "properties": {
+                "site": "Clemson Elementary School",
+                "planting_partner": "",
+                "trees": "55",
+                "species": "Southern catalpa, red maple, American hornbeam, pignut hickory, sweetbay magnolia, blackgum, swamp white oak, burr oak, sawtooth oak, white oak, overcup oak, Blue Point juniper",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.853968,
+                    34.678077
+                ]
+            },
+            "properties": {
+                "site": "Clemson University Gymnastics",
+                "planting_partner": "Clemson University Athletics",
+                "trees": "50",
+                "species": "pignut hickory, Eastern redbud, Eastern red cedar, hophornbeam, swamp white oak, overcup oak, American elm, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.949373,
+                    34.957734
+                ]
+            },
+            "properties": {
+                "site": "Cleveland Academy",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "11",
+                "species": "sweetbay magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.489807,
+                    34.78169
+                ]
+            },
+            "properties": {
+                "site": "Concrete Primary School",
+                "planting_partner": "Michelin",
+                "trees": "12",
+                "species": "Autumn Blaze maple, white oak, nuttall oak, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.352769,
+                    34.768988
+                ]
+            },
+            "properties": {
+                "site": "Conestee Streetscape",
+                "planting_partner": "TD Bank",
+                "trees": "150",
+                "species": "nuttall oak, Little Gem magnolia, fringetree, October Glory red maple, Autumn Blaze maple, serviceberry, trident maple, Carolina sapphire, Nellie Stevens holly, Forest Pansy redbud, Emerald City tulip poplar, blackgum, beacon oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.976548,
+                    35.149798
+                ]
+            },
+            "properties": {
+                "site": "Cooley Springs-Fingerville Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "24",
+                "species": "Little Gem magnolia, Bracken's Brown Beauty magnolia, river birch, white oak, nuttall oak, baldcypress, trident maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.285789,
+                    34.914148
+                ]
+            },
+            "properties": {
+                "site": "Corey Burns Park",
+                "planting_partner": "Southwest Airlines",
+                "trees": "10",
+                "species": "swamp white oak, pecan, burr oak, magnolia, Eastern red cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.819329,
+                    35.025596
+                ]
+            },
+            "properties": {
+                "site": "Cowpens Elementary",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "4",
+                "species": "nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.200114,
+                    34.94435
+                ]
+            },
+            "properties": {
+                "site": "Creekside Neighborhood",
+                "planting_partner": "",
+                "trees": "133",
+                "species": "Carolina sapphire, serviceberry, swamp white oak, Eastern redbud, American hornbeam, yellowwood, Emerald City tulip poplar, Brodie cedar, October Glory red maple, Bracken Brown's Beauty magnolia, baldcypress, hophornbeam, Little Gem magnolia, Teddy Bear magnolia, Santa Rose plum, Pink Lady apple, Methley plum, Fuyu persimmon, Brown Turkey fig",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.222442,
+                    34.962209
+                ]
+            },
+            "properties": {
+                "site": "Crestview Elementary School",
+                "planting_partner": "",
+                "trees": "9",
+                "species": "white oak, nuttall oak, willow oak, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.312,
+                    35.053
+                ]
+            },
+            "properties": {
+                "site": "David Jackson Park",
+                "planting_partner": "",
+                "trees": "24",
+                "species": "red maple, nuttall oak, Eastern redbud, yoshino cherry, dogwood, willow oak, baldcypress, Little Gem magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.296507,
+                    34.884613
+                ]
+            },
+            "properties": {
+                "site": "Del Norte Neighborhood Floodplain Reforestation",
+                "planting_partner": "Brasfield & Gorrie, Pintail Capital Partners, BMW",
+                "trees": "308",
+                "species": "white oak, American holly, baldcypress, blackgum, serviceberry, dogwood, red maple, zelkova, pignut hickory, shagbark hickory, sweetbay magnolia, American beech, tulip poplar, swamp white oak, overcup oak, nuttall oak, cherrybark oak, chestnut oak, river birch, scarlet oak, Eastern red cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42733344,
+                    35.12793708
+                ]
+            },
+            "properties": {
+                "site": "Dividing Waters Road North Saluda Reforestation",
+                "planting_partner": "Save Our Saluda, Greenville Water",
+                "trees": "850",
+                "species": "red maple, river birch, fringetree, tulip poplar, blackgum, sycamore, swamp white oak, overcup oak, swamp chestnut oak, cherrybark oak, American elm, pawpaw",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.968424,
+                    34.847232
+                ]
+            },
+            "properties": {
+                "site": "Dorman High School",
+                "planting_partner": "Noble Tree Foundation, BMW",
+                "trees": "100",
+                "species": "river birch, sycamore, overcup oak, basswood, tulip poplar, fringetree, dogwood, white oak, pignut hickory, shagbark hickory, swamp white oak, bur oak, nuttall oak, swamp chestnut oak, blackgum, shumard oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.974323,
+                    34.855169
+                ]
+            },
+            "properties": {
+                "site": "Dorman High School Freshman Campus",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "109",
+                "species": "Brodie' cedar, 'Burkii' cedar, Eastern red cedar, loblolly pine, hophornbeam, nuttall oak, river birch, 'Emerald City' tulip poplar, 'Gold Rush' dawn redwood, 'Beacon' oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.899238,
+                    34.974428
+                ]
+            },
+            "properties": {
+                "site": "Drayton Mills Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "8",
+                "species": "Halka ginkgo, Afterburner black tupelo, swamp white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4191,
+                    34.8245
+                ]
+            },
+            "properties": {
+                "site": "Dunean Neighborhood",
+                "planting_partner": "",
+                "trees": "57",
+                "species": "Carolina silverbell, persimmon, October Glory red maple, Brandywine red maple, Forest Pansy redbud, hiromi cherry, trident maple, red maple, willow oak, fringetree, Red Sunset red maple, sawtooth oak, Alta magnolia, Little Gem magnolia, American holly, Eastern redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.371132,
+                    34.857772
+                ]
+            },
+            "properties": {
+                "site": "East North Street Academy",
+                "planting_partner": "Michelin, Greenville Council of Garden Clubs",
+                "trees": "41",
+                "species": "fringetree, Eastern redbud, yoshino cherry, serviceberry, baldcypress, blackgum, trident maple, okame cherry, Granny Smith apple, Methley plum, Gala apple, Santa Rosa plum, dogwood, overcup oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.261737,
+                    34.906086
+                ]
+            },
+            "properties": {
+                "site": "East Riverside Park",
+                "planting_partner": "BMW",
+                "trees": "49",
+                "species": "nuttall oak, Autumn Blaze maple, willow oak, river birch, American hornbeam, Nellie Stevens holly, Carolina silverbell, tulip poplar",
+                "program": "2019 ReLEAF Day, Presented by: Duke Energy, Greenville Journal, Schneider Tree Care, Fluor, BMW, Forum Benefits, Earth Design, Christopher Trucks, Pintail Capitol Partners, Community Tap, Robert M Rogers MD PA, Becky & Bobby Hartness, AFL, Keys Innovative Solutions, Southern Management Corporation, Johnson Controls, Colliers International, Carolina Crafted Construction LLC, DP3 Architects, Arrowood & Arrowood, Harper General Contractors, KPMG, Sunstore Solar Energy Solutions, Furman University, the McSharry Family, McMillan Pazden Smith Architecture, Mary Lou & Lewis Jones, Eric Krichbaum"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.389017,
+                    34.64884
+                ]
+            },
+            "properties": {
+                "site": "Ellen Woodside Elementary School",
+                "planting_partner": "Michelin",
+                "trees": "48",
+                "species": "serviceberry, redbud, fringetree, Peggy Clarke apricot, trident maple, nuttall oak, apple, plum, okame cherry, Eastern red cedar, crape myrtle, Little Gem magnolia, nuttall oak, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.902937,
+                    34.9121
+                ]
+            },
+            "properties": {
+                "site": "EP Todd Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "4",
+                "species": "nuttall oak, bald cypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.011769,
+                    34.948842
+                ]
+            },
+            "properties": {
+                "site": "Fairforest Middle",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "18",
+                "species": "swamp white oak, 'Red Rage' blackgum, 'Emerald City' tulip poplar, hophornbeam, nuttall oak, eastern redbud, 'Brackens Brown Beauty' magnolia, cryptomeria",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3578,
+                    34.8861
+                ]
+            },
+            "properties": {
+                "site": "Fine Arts Center",
+                "planting_partner": "",
+                "trees": "24",
+                "species": "overcup oak, trident maple, autumnalis cherry, fringetree",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.346601,
+                    34.882388
+                ]
+            },
+            "properties": {
+                "site": "First Christian Church of Greenville",
+                "planting_partner": "",
+                "trees": "5",
+                "species": "tulip poplar, blackgum, riverbirch",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.371091,
+                    34.849279
+                ]
+            },
+            "properties": {
+                "site": "Flying Rabbit Adventures",
+                "planting_partner": "Flying Rabbit Adventure Park",
+                "trees": "94",
+                "species": "riverbirch, pignut hickory, shagbark hickory, fringetree, dogwood, white ash, green ash, blackgum, sycamore, white oak, swamp white oak, bur oak, swamp chestnut oak, nuttall oak, cherrybark oak, shumard oak, basswood, white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.312034,
+                    34.618631
+                ]
+            },
+            "properties": {
+                "site": "Fork Shoals Elementary School",
+                "planting_partner": "",
+                "trees": "12",
+                "species": "blackgum, nuttall oak, red maple, Tupelo Tower blackgum, tulip poplar, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.200226,
+                    34.693054
+                ]
+            },
+            "properties": {
+                "site": "Fountain Inn Downtown",
+                "planting_partner": "",
+                "trees": "37",
+                "species": "Princeton elm, fringetree, shumard oak, Bosque elm, willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.211,
+                    34.693
+                ]
+            },
+            "properties": {
+                "site": "Fountain Inn Elementary School",
+                "planting_partner": "Greenville County",
+                "trees": "91",
+                "species": "overcup oak, blackgum, dogwood, serviceberry, purple smoke tree, Carolina sapphire, Eastern red cedar, sourwood, 'Little Gem' magnolia, Eastern redbud, 'Duraheat' river birch, tulip poplar, American hornbeam, nuttall oak, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.221678,
+                    34.702084
+                ]
+            },
+            "properties": {
+                "site": "Fountain Inn Municipal Cemetary",
+                "planting_partner": "",
+                "trees": "41",
+                "species": "hiromi cherry, red maple, tulip poplar, Bracken's Brown Beauty magnolia, ginkgo, allee elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.439436,
+                    34.84551
+                ]
+            },
+            "properties": {
+                "site": "Freetown Neighborhood",
+                "planting_partner": "Home Depot Foundation, Alliance for Community Trees, Hollingsworth Funds",
+                "trees": "98",
+                "species": "fig, plum, Bartlett pear, pin oak, red maple, redbud, Pink Velour crape myrtle, European hornbeam, willow oak, trident maple, serviceberry, hiromi cherry, overcup oak, October Glory red maple, Forest Pansy redbud, Peggy Clarke apricot, okame cherry, fringetree, autumn blaze maple, Carolina sapphire, dogwood, pecan, Carolina silverbell, ginkgo, Prairifire crabapple, Teddy Bear magnolia, blackgum, Little Gem magnolia",
+                "program": "2018 ReLEAF Day, Presented by: Duke Energy, BMW, Schneider Tree Care, Fluor, Greenville Journal, Forum Benefits, Earth Design, Christopher Trucks, Community Tap, AFL, Keys Innovative Solutions, GE, Johnson Controls, Robert M Rogers MD PA, LS3P, KPMG, the McSharry Family, SynTerra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.445328,
+                    34.918943
+                ]
+            },
+            "properties": {
+                "site": "Furman Child Development Center",
+                "planting_partner": "",
+                "trees": "2",
+                "species": "Little Gem magnolia, Eastern redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.438252,
+                    34.921505
+                ]
+            },
+            "properties": {
+                "site": "Furman University",
+                "planting_partner": "Furman Greenbelt students",
+                "trees": "103",
+                "species": "kousa dogwood, Autumn Blaze maple, overcup oak, burr oak, American beech, Legacy sugar maple, Brandywine red maple, October Glory red maple, crimson spire oak, nuttall oak, American dogwood, Acoma crape myrtle, cherry, Japanese snowbell, weeping cherry, shumard oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.94593,
+                    34.8558
+                ]
+            },
+            "properties": {
+                "site": "Gable Middle School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "23",
+                "species": "Eastern red cedar, cryptomeria, Afterburner blackgum, Emerald City tulip poplar, white oak, nuttall oak, Duraheat river birch",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4249,
+                    34.9739
+                ]
+            },
+            "properties": {
+                "site": "Gateway Elementary School",
+                "planting_partner": "",
+                "trees": "24",
+                "species": "nuttall oak, trident maple, red maple, blackgum, tulip poplar, willow oak, red maple, blackgum, London planetree, Skinny Genes oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.422,
+                    34.97
+                ]
+            },
+            "properties": {
+                "site": "Gateway Park",
+                "planting_partner": "Hollingsworth Funds",
+                "trees": "20",
+                "species": "willow oak, red maple, red oak, Natchez crape myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3791,
+                    34.8616
+                ]
+            },
+            "properties": {
+                "site": "Genesis Homes Neighborhood",
+                "planting_partner": "",
+                "trees": "12",
+                "species": "overcup oak, Eastern redbud, fringetree, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4628,
+                    34.9645
+                ]
+            },
+            "properties": {
+                "site": "George I Theisen YMCA",
+                "planting_partner": "Johnson Controls",
+                "trees": "47",
+                "species": "October Glory red maple, deodar cedar, zelkova, peach, native cherry, apple, plum, fig, Red Sunset red maple, Autumn Blaze maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.359997,
+                    34.85818
+                ]
+            },
+            "properties": {
+                "site": "Green Charter Middle School",
+                "planting_partner": "",
+                "trees": "3",
+                "species": "2 Eastern redbud, 1 October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.301648,
+                    34.855246
+                ]
+            },
+            "properties": {
+                "site": "Green Charter School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "8",
+                "species": "hiromi cherry, purple-leaf plum, Forest Pansy redbud, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.807505,
+                    34.684305
+                ]
+            },
+            "properties": {
+                "site": "Green Crescent Trail",
+                "planting_partner": "Friends of Green Crescent",
+                "trees": "25",
+                "species": "overcup oak, tulip poplar, American hornbeam, hophornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.300111,
+                    34.758982
+                ]
+            },
+            "properties": {
+                "site": "Greenbriar Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "3",
+                "species": "nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4018,
+                    34.8848
+                ]
+            },
+            "properties": {
+                "site": "Greenville County Animal Care",
+                "planting_partner": "Greenville County Public Works, Brasfield & Gorrie",
+                "trees": "55",
+                "species": "willow oak, cherry, red maple, holly, magnolia, redbud, tulip poplar, Little Gem magnolia, basswood, nuttall oak, October Glory red maple, Red Rage blackgum, nuttall oak, swamp white oak",
+                "program": "Legacy Tree Memorials"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4071,
+                    34.8399
+                ]
+            },
+            "properties": {
+                "site": "Greenville High School",
+                "planting_partner": "",
+                "trees": "23",
+                "species": "serviceberry, Eastern redbud, fringetree, white oak, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.369425,
+                    34.858344
+                ]
+            },
+            "properties": {
+                "site": "Greenville Middle Academy",
+                "planting_partner": "",
+                "trees": "3",
+                "species": "nuttall oak, Bracken's Brown Beauty magnolia, Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.34428,
+                    34.864435
+                ]
+            },
+            "properties": {
+                "site": "Greenville Montessouri",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "4",
+                "species": "red maple, sugar maple, okame cherry, autumnalis cherry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.474758,
+                    34.900451
+                ]
+            },
+            "properties": {
+                "site": "Greenville Tech Northwest",
+                "planting_partner": "",
+                "trees": "1008",
+                "species": "loblolly pine, shortleaf pine, pawpaw, chestnut",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.388366,
+                    34.846288
+                ]
+            },
+            "properties": {
+                "site": "Greenville Zoo",
+                "planting_partner": "",
+                "trees": "33",
+                "species": "Eastern red cedar, Eastern redbud, red maple, Madison dogwood, blackgum, winged elm, spruce pine, Virginia pine, sycamore, swamp white oak, red buckeye, basswood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.230872,
+                    34.983223
+                ]
+            },
+            "properties": {
+                "site": "Greer High School",
+                "planting_partner": "",
+                "trees": "12",
+                "species": "Eastern redbud, tulip poplar, ginkgo",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.299053,
+                    34.964088
+                ]
+            },
+            "properties": {
+                "site": "Greer Middle College Charter High School",
+                "planting_partner": "",
+                "trees": "30",
+                "species": "October Glory red maple, tulip poplar, Eastern red cedar, deodar cedar, Forest Pansy redbud, Bracken's Brown Beauty magnolia, white oak, ginkgo, nuttall oak, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2345,
+                    34.9819
+                ]
+            },
+            "properties": {
+                "site": "Greer Middle School",
+                "planting_partner": "",
+                "trees": "26",
+                "species": "Eastern red cedar, blackgum, serviceberry, Forest Pansy redbud, Red Sunset red maple, fringetree",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.414944,
+                    34.758326
+                ]
+            },
+            "properties": {
+                "site": "Grove Elementary School",
+                "planting_partner": "",
+                "trees": "29",
+                "species": "trident maple, Eastern redbud, serviceberry, October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4191,
+                    34.8722
+                ]
+            },
+            "properties": {
+                "site": "Habitat 4 Humanity",
+                "planting_partner": "",
+                "trees": "3",
+                "species": "crabapple, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.722522,
+                    34.925297
+                ]
+            },
+            "properties": {
+                "site": "Hagood Mill",
+                "planting_partner": "",
+                "trees": "13",
+                "species": "American hornbeam, blackgum, overcup oak, river birch, red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3456661,
+                    35.0019194
+                ]
+            },
+            "properties": {
+                "site": "Heidelberg Materials",
+                "planting_partner": "Heidelberg Materials",
+                "trees": "450",
+                "species": "nutall oak, red maple, blackgum, Eatsern redbud, witch hazel, American hornbeam, perisiman, Eastern red cedar, American holly, water oak, willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.005728,
+                    35.005267
+                ]
+            },
+            "properties": {
+                "site": "Hendrix Elementary School (replacement)",
+                "planting_partner": "",
+                "trees": "1",
+                "species": "Autumn Blaze' red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373917,
+                    34.89736
+                ]
+            },
+            "properties": {
+                "site": "Herdklotz Park",
+                "planting_partner": "AFL",
+                "trees": "26",
+                "species": "October Glory red maple, blackgum, Legacy sugar maple, Autumn Flame red maple, Emerald City tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373755,
+                    34.8373
+                ]
+            },
+            "properties": {
+                "site": "Heritage Community",
+                "planting_partner": "Southern Management Corporation (SMC)",
+                "trees": "23",
+                "species": "shumard oak, American hornbeam, Eastern redbud, Prairifire crabapple, Presidential Gold ginkgo, nuttall oak, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.942363,
+                    34.937328
+                ]
+            },
+            "properties": {
+                "site": "Highland Neighborhood",
+                "planting_partner": "AKA",
+                "trees": "1",
+                "species": "serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.023823,
+                    34.985998
+                ]
+            },
+            "properties": {
+                "site": "High Point Academy",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "30",
+                "species": "overcup oak, nuttall oak, swamp white oak, red maple, blackgum, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.255065,
+                    34.754533
+                ]
+            },
+            "properties": {
+                "site": "Hillcrest Middle School",
+                "planting_partner": "Fluor",
+                "trees": "26",
+                "species": "Forest Pansy redbud, shumard, willow oak, gingko, tulip poplar, blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.430137,
+                    34.832503
+                ]
+            },
+            "properties": {
+                "site": "Hollis Academy",
+                "planting_partner": "Fluor",
+                "trees": "20",
+                "species": "nuttall oak, Autumn Blaze maple, tulip poplar, Little Gem magnolia, London planetree, overcup oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.752169,
+                    34.97237
+                ]
+            },
+            "properties": {
+                "site": "Holly Springs Center",
+                "planting_partner": "",
+                "trees": "12",
+                "species": "American hornbeam, blackgum, overcup oak, red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36795718,
+                    34.8801436
+                ]
+            },
+            "properties": {
+                "site": "Holmes Park",
+                "planting_partner": "Fluor",
+                "trees": "41",
+                "species": "Forest Pansy' redbud, 'Little Gem' magnolia, nuttall oak, Eastern red cedar, tulip poplar, 'Afterburner' blackgum, serviceberry, American hornbeam, white oak, shumard oak, swamp white oak, river birch",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.943036,
+                    34.95595
+                ]
+            },
+            "properties": {
+                "site": "Hub City Farmers Market",
+                "planting_partner": "",
+                "trees": "2",
+                "species": "Little Gem magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.390555,
+                    34.807575
+                ]
+            },
+            "properties": {
+                "site": "Hughes Academy",
+                "planting_partner": "AFL, BDO, Hughes PTA",
+                "trees": "29",
+                "species": "ginkgo, nuttall oak, Bracken's Brown Beauty magnolia, European hornbeam, London planetree, yoshino cherry, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.239,
+                    34.705
+                ]
+            },
+            "properties": {
+                "site": "I-385 and Harrison Bridge Road",
+                "planting_partner": "Spinx, Prisma Health",
+                "trees": "50",
+                "species": "Nellie Stevens holly, willow oak, white oak, tulip poplar, red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.356,
+                    34.72
+                ]
+            },
+            "properties": {
+                "site": "Idlewild Park",
+                "planting_partner": "Hollingsworth Funds",
+                "trees": "29",
+                "species": "tulip poplar, willow oak, Natchez crape myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.005728,
+                    35.005267
+                ]
+            },
+            "properties": {
+                "site": "James H Hendrix Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "24",
+                "species": "Autumn Blaze maple, river birch, tulip poplar, Bracken's Brown Beauty magnolia, nuttall oak, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.980848,
+                    34.94648
+                ]
+            },
+            "properties": {
+                "site": "Jessie S Bobo Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "31",
+                "species": "Shawnee Brave baldcypress, American hornbeam, Emerald City tulip poplar, Autumn Blaze maple, Legacy sugar maple, trident maple, Bracken's Brown Beauty magnolia, Little Gem magnolia, Princeton elm, Eastern red cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.336,
+                    34.807
+                ]
+            },
+            "properties": {
+                "site": "JL Mann High School",
+                "planting_partner": "McMillan Pazdan Smith, Cemex, Triangle Construction, JL Mann Student Council",
+                "trees": "108",
+                "species": "red maple, river birch, sugar maple, white pine, serviceberry, trident maple, overcup oak, nuttall oak, willow oak, Eastern redbud, purple smoke tree, Little Gem magnolia, red maple, white oak, baldcypress, Chinese fringetree, red oak, Bracken's Brown Beauty magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.407912,
+                    34.83642
+                ]
+            },
+            "properties": {
+                "site": "Juanita Butler Community Center",
+                "planting_partner": "including Reedy River Rotary Club and MOCOM",
+                "trees": "16",
+                "species": "Forest Pansy' redbud, black tupelo, hophornbeam, shumard oak, 'Little Gem' magnolia, cryptomeria",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.239693,
+                    34.928841
+                ]
+            },
+            "properties": {
+                "site": "Kids Planet Century Park",
+                "planting_partner": "ScanSource",
+                "trees": "32",
+                "species": "trident maple, swamp white oak, blackgum, American hornbeam, eastern redbud, tulip poplar, yellowwood, sassafras, hophornbeam, Emerald City' tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3983,
+                    34.8571
+                ]
+            },
+            "properties": {
+                "site": "Kilgore Lewis House",
+                "planting_partner": "",
+                "trees": "1",
+                "species": "red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.347701,
+                    34.773228
+                ]
+            },
+            "properties": {
+                "site": "Lake Conestee Nature Park",
+                "planting_partner": "",
+                "trees": "624",
+                "species": "river birch, sugarberry, redbud, dogwood, Eastern red cedar, tulip poplar, blackgum, cherrybark oak, persimmon, black walnut, swamp tupelo, sycamore, wild black cherry, swamp chestnut oak, basswood, fringetree, hornbeam, hophornbeam, white oak, Northern red oak, pignut hickory, shagbark hickory, serviceberry, water tupelo, scarlet oak, sassafras, baldcypress, red maple, sawtooth oak, American beech, buttonbush, elderberry, shagbark hickory, black walnut, willow oak, cherrybark oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.358937,
+                    34.787556
+                ]
+            },
+            "properties": {
+                "site": "Lake Conestee Nature Preserve",
+                "planting_partner": "Conestee Nature Preserve",
+                "trees": "100",
+                "species": "river birch, American hornbeam, sycamore, overcup oak, swamp chestnut oak, nuttall oak, baldcypress, basswood, winged elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.344555,
+                    34.881624
+                ]
+            },
+            "properties": {
+                "site": "Lake Forest Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "2",
+                "species": "red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.887062,
+                    34.932068
+                ]
+            },
+            "properties": {
+                "site": "Lake Keowee Toxaway State Park",
+                "planting_partner": "",
+                "trees": "6",
+                "species": "white oak, swamp white oak, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.430695,
+                    34.773513
+                ]
+            },
+            "properties": {
+                "site": "Lakeside Park",
+                "planting_partner": "TD Bank, Amazon",
+                "trees": "144",
+                "species": "Eastern red cedar, scarlet oak, pin oak, Autumn Blaze red maple, American persimmon, trident maple, Carolina silverbell, American chestnut, Afterburner blackgum, nuttall oak, willow oak, shumard oak, Bracken's Brown Beauty magnolia, tulip poplar, Forest Pansy redbud, swamp white oak, Carolina sapphire, Amber Glow dawn redwood, Little Gem magnolia, baldcypress, swamp white oak, white oak, hornbeam, river birch",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.431076,
+                    34.771002
+                ]
+            },
+            "properties": {
+                "site": "Lakeside Park Bike Trail",
+                "planting_partner": "UGATA",
+                "trees": "11",
+                "species": "serviceberry, Forest Pansy redbud, hophornbeam, tulip poplar, swamp white oak, October Glory maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.432008,
+                    34.887325
+                ]
+            },
+            "properties": {
+                "site": "Lakeview Middle School",
+                "planting_partner": "Foster Victor, Forum Benefits",
+                "trees": "23",
+                "species": "tulip poplar, baldcypress, Prairifire crabapple, October Glory red maple, white oak, Bracken's Brown Beauty magnolia, blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.205662,
+                    34.815927
+                ]
+            },
+            "properties": {
+                "site": "Laurel Grove Neighborhood",
+                "planting_partner": "",
+                "trees": "37",
+                "species": "Bosque elm, allee elm, basswood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.353178,
+                    34.784427
+                ]
+            },
+            "properties": {
+                "site": "LEAD Academy",
+                "planting_partner": "Sharpescape",
+                "trees": "29",
+                "species": "Prairifire crabapple, Teddy Bear magnolia, Little Gem magnolia, October Glory red maple, white oak, nuttall oak, river birch, baldcypress, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373,
+                    34.881
+                ]
+            },
+            "properties": {
+                "site": "League Academy Middle School",
+                "planting_partner": "SCFC, Earth Design",
+                "trees": "15",
+                "species": "dogwood, river birch, Eastern redbud, sweetbay magnolia, blackgum, serviceberry, red cedar, yaupon holly, baldcypress, Washington hawthorne, October Glory red maple, fringetree",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.408244,
+                    34.853917
+                ]
+            },
+            "properties": {
+                "site": "Legacy Charter Elementary School",
+                "planting_partner": "Leadership Greenville",
+                "trees": "36",
+                "species": "trident maple, Natchez crape myrtle, Little Gem magnolia, Eastern red cedar, nuttall oak, Eastern redbud, October Glory red maple, overcup oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.426065,
+                    34.858878
+                ]
+            },
+            "properties": {
+                "site": "Legacy Charter Parker School",
+                "planting_partner": "",
+                "trees": "30",
+                "species": "overcup oak,  Savannah holly, Bracken's Brown Beauty magnolia, Emerald arborvitae, beacon oak, Little Gem magnolia, white oak, Prairifire crabapple, Forest Pansy redbud, willow oak, Shawnee Brave baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.304,
+                    34.954
+                ]
+            },
+            "properties": {
+                "site": "Lincoln Park",
+                "planting_partner": "Hollingsworth Funds",
+                "trees": "18",
+                "species": "tulip poplar, willow oak, red maple, deodar cedar, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.97169,
+                    34.98886
+                ]
+            },
+            "properties": {
+                "site": "Lone Oak Elementary School",
+                "planting_partner": "Noble Tree Foundation, Sage Automotive Interiors",
+                "trees": "24",
+                "species": "white oak, nuttall oak, swamp white oak, American hornbeam, hophornbeam, Afterburner blackgum, Little Gem magnolia, river birch",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.412052,
+                    34.834021
+                ]
+            },
+            "properties": {
+                "site": "Long Branch Baptist Church",
+                "planting_partner": "",
+                "trees": "25",
+                "species": "sycamore, black tupelo, river birch, baldcypress, deodar cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.014616,
+                    34.961903
+                ]
+            },
+            "properties": {
+                "site": "Master Skills Center",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "15",
+                "species": "Carolina saphire, Little Gem Magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3056,
+                    34.7794
+                ]
+            },
+            "properties": {
+                "site": "Mauldin Cultural Center",
+                "planting_partner": "Trees SC",
+                "trees": "3",
+                "species": "ginkgo",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.275125,
+                    34.804175
+                ]
+            },
+            "properties": {
+                "site": "Mauldin Middle School",
+                "planting_partner": "Michelin",
+                "trees": "18",
+                "species": "baldcypress, Legacy sugar maple, overcup oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.300883,
+                    34.781574
+                ]
+            },
+            "properties": {
+                "site": "Mauldin Montessori",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "6",
+                "species": "Bracken's Brown Beauty magnolia, Autumn Blaze red maple, nuttall oak, Natchez crape myrtle, Forest Pansy redbud, sugar maple, willow oak, red maple, okame cherry, Peggy Clark apricot",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.274787,
+                    34.792343
+                ]
+            },
+            "properties": {
+                "site": "Mauldin Streetscape",
+                "planting_partner": "",
+                "trees": "11",
+                "species": "willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.856006,
+                    35.08679
+                ]
+            },
+            "properties": {
+                "site": "Mayo Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "33",
+                "species": "Brackens Brown Beauty magnolia, swamp white oak, hophornbeam, serviceberry, Emerald City tulip poplar, Carolina sapphire, Afterburner blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.312174,
+                    34.709407
+                ]
+            },
+            "properties": {
+                "site": "McCall Hospice House",
+                "planting_partner": "Hessie Morah Garden Club",
+                "trees": "7",
+                "species": "tulip poplar, shumard oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.897338,
+                    34.956727
+                ]
+            },
+            "properties": {
+                "site": "McCracken Middle School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "12",
+                "species": "Forest Pansy redbud, Burkii cedar, Brodie cedar, Carolina sapphire, fringetree, Kwanzan cherry,  Aeryn trident maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.394232,
+                    34.857209
+                ]
+            },
+            "properties": {
+                "site": "McPherson Park",
+                "planting_partner": "City of Greenville",
+                "trees": "50",
+                "species": "Eastern redbud, dogwood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.193067,
+                    34.810442
+                ]
+            },
+            "properties": {
+                "site": "MESA Soccer Complex",
+                "planting_partner": "Johnson Controls, Generations Youth",
+                "trees": "53",
+                "species": "overcup oak, shumard oak, blackgum, nuttall oak, blackgum, sawtooth oak, Peggy Clarke apricot, Autumn Blaze red maple, London planetree, tulip poplar, nuttall oak, Wildfire blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.377497,
+                    34.882798
+                ]
+            },
+            "properties": {
+                "site": "Meyer Center",
+                "planting_partner": "",
+                "trees": "4",
+                "species": "red maple, allee elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5311127,
+                    35.0503955
+                ]
+            },
+            "properties": {
+                "site": "Middle Saluda River Reforestation at Tilly Road",
+                "planting_partner": "Save Our Saluda",
+                "trees": "471",
+                "species": "red maple, smooth alder, black gum, American hornbeam, fringetree, cottonwood, willow oak, American elm, cherrybark oak, honeylocust, shumard oak, pawpaw",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.319918,
+                    34.876805
+                ]
+            },
+            "properties": {
+                "site": "Mitchell Rd Elementary School",
+                "planting_partner": "",
+                "trees": "17",
+                "species": "American hornbeam, October Glory red maple, nuttall oak, Bracken's Brown Beauty magnolia, Autumn Blaze maple, chestnut oak, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.425887,
+                    34.867275
+                ]
+            },
+            "properties": {
+                "site": "Monaghan Neighborhood",
+                "planting_partner": "Fluor, TD Bank",
+                "trees": "190",
+                "species": "Autumn Blaze maple, fringetree, October Glory red maple, Nellie Stevens holly, Carolina silverbell, okame cherry, Eastern redbud, trident maple, fig, Carolina sapphire, hiromi cherry, Forest Pansy redbud, Peggy Clarke apricot, plum, autumnalis cherry, red maple, nuttall oak, ginkgo, crabapple, Eastern red cedar, American holly, Red Sunset maple, Little Gem magnolia, shumard oak, serviceberry, blackgum, Catawba crape myrtle, Japanese snowbell, Emerald arborvitae, Prairifire crabapple, dogwood",
+                "program": "2018 ReLEAF Day, Presented by: Duke Energy, BMW, Schneider Tree Care, Fluor, Greenville Journal, Forum Benefits, Earth Design, Christopher Trucks, Community Tap, AFL, Keys Innovative Solutions, GE, Johnson Controls, Robert M Rogers MD PA, LS3P, KPMG, the McSharry Family, SynTerra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.426206,
+                    34.867487
+                ]
+            },
+            "properties": {
+                "site": "Monaghan Textile Heritage Park",
+                "planting_partner": "Southern Management Corporation, Fluor",
+                "trees": "38",
+                "species": "allee elm, overcup oak, shumard oak, serviceberry, swamp white oak, baldcypress, redbud, trident maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2412,
+                    34.8002
+                ]
+            },
+            "properties": {
+                "site": "Monarch Elementary School",
+                "planting_partner": "",
+                "trees": "44",
+                "species": "Green Giant arborvitae, October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.436377,
+                    34.868257
+                ]
+            },
+            "properties": {
+                "site": "Monaview Elementary School",
+                "planting_partner": "Southern Management Corporation, Arbor Day Foundation, Meritage Homes",
+                "trees": "64",
+                "species": "tulip poplar, willow oak, blackgum, Prairifire crabapple, Forest Pansy redbud, Bracken's Brown Beauty magnolia, Red Sunset red maple, nuttall oak, London planetree, river birch, serviceberry, Little Gem magnolia, Emerald City tulip poplar, serviceberry, swamp white oak, Afterburner blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.392523,
+                    34.775782
+                ]
+            },
+            "properties": {
+                "site": "Mount Pleasant Community Center",
+                "planting_partner": "",
+                "trees": "8",
+                "species": "white oak, nuttall oak, American hornbeam, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.344989,
+                    34.84853
+                ]
+            },
+            "properties": {
+                "site": "Mountain Goat Climbing Gym",
+                "planting_partner": "",
+                "trees": "2",
+                "species": "crape myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.345176,
+                    34.993654
+                ]
+            },
+            "properties": {
+                "site": "Mountain View Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "52",
+                "species": "serviceberry, blackgum, Oklahoma redbud, Sun Valley red maple, baldcypress, Green Giant arborvitae, overcup oak, Heritage river birch, nuttall oak, October Glory red maple, Red Sunset red maple, tulip poplar, London planetree, blackgum, red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2399,
+                    34.9456
+                ]
+            },
+            "properties": {
+                "site": "Needmore Neighborhood",
+                "planting_partner": "Home Depot",
+                "trees": "69",
+                "species": "pomegranite, Atago Asian pear, 20th Century Asian pear, American plum, pawpaw, Verns Brown Turkey fig, wilson pawpaw, Mango pawpaw, Wells pawpaw, Eastern redbud, serviceberry, red maple, trident maple, yoshino cherry, overcup oak, Japanese maple, hiromi cherry, red maple, Natchez crape myrtle, Tuscarora crape myrtle, Muskogee crape myrtle, plum, Peggy Clarke apricot, hiromi cherry, trident maple, apple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.282591,
+                    34.701833
+                ]
+            },
+            "properties": {
+                "site": "Neely Farms Neighborhood",
+                "planting_partner": "",
+                "trees": "36",
+                "species": "allee elm, autumn blaze red maple, blackgum, nuttall oak, London planetree, redbud, baldcypress, sycamore, chestnut oak, serviceberry, Bracken's Brown Beauty magnolia, Princeton Sentry ginkgo, Merlot redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.288211,
+                    34.769849
+                ]
+            },
+            "properties": {
+                "site": "New Hope Baptist Church",
+                "planting_partner": "",
+                "trees": "37",
+                "species": "nuttall oak, Forest Pansy redbud, sericeberry, Carolina sapphire, Red Sunset red maple, leyland cypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.415747,
+                    34.856591
+                ]
+            },
+            "properties": {
+                "site": "Newtown Park",
+                "planting_partner": "Prisma",
+                "trees": "12",
+                "species": "hophornbeam, tulip poplar, swamp white oak, serviceberry, blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396758,
+                    34.866761
+                ]
+            },
+            "properties": {
+                "site": "North Main Nature Trail",
+                "planting_partner": "",
+                "trees": "25",
+                "species": "tulip poplar, red maple, white oak, red oak, chestnut oak, sycamore, Forest Pansy redbud, American hornbeam, hophornbeam, Bracken's Brown Beauty magnolia, Eastern red cedar, American holly",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.385733,
+                    34.873043
+                ]
+            },
+            "properties": {
+                "site": "North Main Neighborhood",
+                "planting_partner": "ScanSource",
+                "trees": "34",
+                "species": "white oak, Carolina silverbell, October Glory red maple, ginkgo, willow oak, autumn blaze maple, Japanese snowbell, Rising Sun redbud, overcup oak, Nellie Stevens holly, serviceberry, Forest Pansy redbud, baldcypress, fringetree, Teddy Bear magnolia, Little Gem magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.464977,
+                    35.036287
+                ]
+            },
+            "properties": {
+                "site": "North Saluda Reforestation at Bates Crossing",
+                "planting_partner": "Save Our Saluda",
+                "trees": "23",
+                "species": "red maple, river birch, cherrybark oak, swamp chestnut oak, willow oak, American Elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.360569,
+                    34.885655
+                ]
+            },
+            "properties": {
+                "site": "Northside Circle Reforestation",
+                "planting_partner": "BMW",
+                "trees": "100",
+                "species": "overcup oak, American elm, swamp chestnut oak, sycamore, river birch, red maple, sweetbay magnolia, swamp white oak, bald cypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.423256,
+                    34.892403
+                ]
+            },
+            "properties": {
+                "site": "Northwest Crescent Child Center",
+                "planting_partner": "",
+                "trees": "5",
+                "species": "October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.475913,
+                    34.997776
+                ]
+            },
+            "properties": {
+                "site": "Northwest Middle School",
+                "planting_partner": "Johnson Controls",
+                "trees": "21",
+                "species": "London planetree, nuttall oak, Prairifire crabapple, tulip poplar, Bracken's Brown Beauty magnolia, deodar cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.473825,
+                    34.902607
+                ]
+            },
+            "properties": {
+                "site": "Northwest Park",
+                "planting_partner": "TD Bank",
+                "trees": "75",
+                "species": "tulip poplar, American hornbeam, white oak, sweetbay magnolia, allee elm, Forest Pansy redbud, Autumn Blaze maple, serviceberry, shumard oak, American yellowwood, willow oak, beacon oak, Green Gable blackgum, Little Gem magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.285704,
+                    34.84454
+                ]
+            },
+            "properties": {
+                "site": "Oak Grove Lake Park",
+                "planting_partner": "Johnson Controls",
+                "trees": "79",
+                "species": "weeping willow, baldcypress, nuttall oak, overcup oak, Forest Pansy redbud, American hornbeam, white oak, sassafras, Eastern red cedar, swamp white oak, 'Afterburner' blackgum, tulip poplar, blackgum, river birch, shumard oak, serviceberry, Eastern hophornbeam, redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.232715,
+                    34.826862
+                ]
+            },
+            "properties": {
+                "site": "Oakview Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "38",
+                "species": "red maple, sugar maple, Chinquapin oak, overcup oak, Autumn Blaze maple, witch hazel, sourwood, swamp chestnut oak, swamp white oak, tulip poplar, Forest Pansy, redbud, American beech, blackgum, sugarberry, scarlet oak, baldcypress, sweetbay magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.76801,
+                    34.903715
+                ]
+            },
+            "properties": {
+                "site": "Pacolet Elementary",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "4",
+                "species": "eastern redbud, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.362844,
+                    34.906733
+                ]
+            },
+            "properties": {
+                "site": "Paris Elementary",
+                "planting_partner": "",
+                "trees": "6",
+                "species": "Brackens Brown Beauty' magnolia, American hornbeam, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36401,
+                    34.908732
+                ]
+            },
+            "properties": {
+                "site": "Paris Elementary School",
+                "planting_partner": "GE",
+                "trees": "26",
+                "species": "red maple, nuttall oak, American beech, tulip poplar, sourwood, blackgum, witch hazel, American holly, Eastern red cedar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.368137,
+                    34.927614
+                ]
+            },
+            "properties": {
+                "site": "Paris Mountain State Park",
+                "planting_partner": "",
+                "trees": "4",
+                "species": "American chestnut",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.862496,
+                    34.825357
+                ]
+            },
+            "properties": {
+                "site": "Pauline-Glenn Springs Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "50",
+                "species": "white oak, baldcypress, hophornbeam, nuttall oak, river birch, 'Bracken's Brown Beauty' magnolia, blackgum, tulip poplar, ginkgo, 'Red Rage' blackgum, 'Little Gem' magnolia, shumard oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2992,
+                    34.885
+                ]
+            },
+            "properties": {
+                "site": "Pavilion Recreation Complex",
+                "planting_partner": "GE",
+                "trees": "58",
+                "species": "October Glory red maple, tulip poplar, Brown Turkey fig, nuttall oak, willow oak, Chinese pistache, overcup oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.31473,
+                    34.854998
+                ]
+            },
+            "properties": {
+                "site": "Pelham Road Baptist Church",
+                "planting_partner": "",
+                "trees": "6",
+                "species": "white oak, Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.311589,
+                    34.857117
+                ]
+            },
+            "properties": {
+                "site": "Pelham Road Elementary School",
+                "planting_partner": "Johnson Controls",
+                "trees": "31",
+                "species": "Prairifire crabapple, October Glory red maple, nuttall oak, American hornbeam, Little Gem magnolia, Eastern redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2331,
+                    34.852931
+                ]
+            },
+            "properties": {
+                "site": "Perrins Park",
+                "planting_partner": "",
+                "trees": "11",
+                "species": "Carolina silverbell, blackgum, okame cherry, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4068,
+                    34.6902
+                ]
+            },
+            "properties": {
+                "site": "Piedmont Athletic Complex",
+                "planting_partner": "",
+                "trees": "19",
+                "species": "willow oak, red maple, Eastern redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.465474,
+                    34.698977
+                ]
+            },
+            "properties": {
+                "site": "Piedmont Neighborhood",
+                "planting_partner": "",
+                "trees": "40",
+                "species": "American hornbeam, Bracken Brown's Beauty magnolia, Burkii cedar, Carolina Sapphire, Radicans cryptomeria, ginkgo, Little Gem magnolia, nuttall oak, October Glory red maple, Eastern redbud, serviceberry, Teddy Bear magnolia, tulip poplar, yellowwood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.909537,
+                    34.944258
+                ]
+            },
+            "properties": {
+                "site": "Pine Street Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "4",
+                "species": "Halka ginkgo, Afterburner blackgum, Eastern hophornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3909,
+                    34.8877
+                ]
+            },
+            "properties": {
+                "site": "Piney Mountain Park",
+                "planting_partner": "",
+                "trees": "20",
+                "species": "October Glory red maple, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.290582,
+                    34.851731
+                ]
+            },
+            "properties": {
+                "site": "Pittman Park",
+                "planting_partner": "Hollingsworth Funds",
+                "trees": "47",
+                "species": "crape myrtle, red maple, willow oak, red oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2824,
+                    34.7319
+                ]
+            },
+            "properties": {
+                "site": "Plain Elementary School",
+                "planting_partner": "",
+                "trees": "54",
+                "species": "Autumnalis cherry, fig, pecan, Autumn Blaze maple, October Glory maple, Eastern red cedar, plum, pawpaw, Stuart pecan, Candy pecan, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4114,
+                    34.8691
+                ]
+            },
+            "properties": {
+                "site": "Poe Mill Neighborhood",
+                "planting_partner": "",
+                "trees": "149",
+                "species": "Oklahoma redbud, serviceberry, dogwood, trident maple, Carolina silverbell, frinegtree, Autumn Blaze maple, shumard oak, Forest Pansy redbud, Little Gem magnolia, Peggy Clarke apricot, Emerald Green arborvitae, hophornbeam, Teddy Bear magnolia, Natchex crepe myrtle, October Glory maple, Eastern redbud, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.437,
+                    34.95
+                ]
+            },
+            "properties": {
+                "site": "Poinsett Park",
+                "planting_partner": "Hollingsworth Funds",
+                "trees": "20",
+                "species": "willow oak, red maple, shumard oak, crape myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.488418,
+                    34.797874
+                ]
+            },
+            "properties": {
+                "site": "Powdersville Schools",
+                "planting_partner": "",
+                "trees": "39",
+                "species": "Allee elm, Princeton Sentry ginkgo, Prairifire crabapple, nuttall oak, London planetree, Red Sunset red maple, blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.493047,
+                    35.018008
+                ]
+            },
+            "properties": {
+                "site": "Railroad Creek Reforestation",
+                "planting_partner": "Save Our Saluda, Entercom",
+                "trees": "281",
+                "species": "pawpaw, river birch, sugarberry, Eastern redbud, persimmon, sycamore, cottonwood, overcup oak, swamp chestnut oak, cherrybark oak, mockernut hickory, blackgum, basswood, catalpa, hazel alder, water hickory, swamp tupelo, American elm, red maple, tulip poplar, swamp white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2991,
+                    34.6398
+                ]
+            },
+            "properties": {
+                "site": "Ralph Chandler Middle School",
+                "planting_partner": "",
+                "trees": "19",
+                "species": "red maple, Eastern redbud, Little Gem magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.996308,
+                    34.836145
+                ]
+            },
+            "properties": {
+                "site": "RD Anderson Applied Tech Center",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "28",
+                "species": "Aeryn trident maple, Forest Pansy redbud, Emerald City tulip poplar, hophornbeam, 6 October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.54571,
+                    35.115673
+                ]
+            },
+            "properties": {
+                "site": "River Falls Rd",
+                "planting_partner": "Save Our Saluda",
+                "trees": "87",
+                "species": "pawpaw, redbud, fringetree, American beech, willow oak, shumard oak, American elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3518,
+                    34.7407
+                ]
+            },
+            "properties": {
+                "site": "Robert E. Cashion Elementary School",
+                "planting_partner": "GE, Farm Bureau*, ThinkUp Consulting",
+                "trees": "78",
+                "species": "red maple, Eastern redbud, Little Gem magnolia, blackgum, serviceberry, nuttall oak, Peggy Clarke apricot, Red Sunset red maple, London planetree, deodar cedar, European hornbeam, tulip poplar, ginkgo, Prairifire crabapple, Forest Pansy redbud, Chinese pistache, baldcypress, swamp white oak, Duraheat river birch, October Glory maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.622277,
+                    34.509037
+                ]
+            },
+            "properties": {
+                "site": "Rocky River Nature Park",
+                "planting_partner": "Anderson University, Upstate Forever",
+                "trees": "450",
+                "species": "red maple, river birch, willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.95942,
+                    34.87592
+                ]
+            },
+            "properties": {
+                "site": "Roebuck Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "43",
+                "species": "Afterburner blackgum, baldcypress, Emerald City tulip poplar, Eastern red cedar, Bracken's Brown Beauty magnolia, white oak, shumard oak, river birch, trident maple, October Glory red maple, Natchez crepe myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.31283,
+                    34.841314
+                ]
+            },
+            "properties": {
+                "site": "Roper Mountain Science Center",
+                "planting_partner": "Greenville Council of Garden Clubs, Trees SC, Clemson Extension",
+                "trees": "71",
+                "species": "Eastern redbud, serviceberry, American chestnut, chestnut oak, willow oak, red oak, nuttall oak, October Glory red maple, Red Sunset red maple, red maple, pawpaw, sugarberry, American beech, shagbark hickory, dogwood, persimmon, fringetree, tulip poplar, blackgum, white oak, shumard oak, baldcypress, basswood, American hornbeam",
+                "program": "Tree Keepers"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.209,
+                    34.774
+                ]
+            },
+            "properties": {
+                "site": "Rudolph Gordon Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "34",
+                "species": "willow oak, red maple, American hornbeam, Prairifire crabapple, October Glory red maple, nuttall oak, Shawnee Brave baldcypress, Forest Pansy redbud, Bracken's Brown Beauty magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.944418,
+                    34.961874
+                ]
+            },
+            "properties": {
+                "site": "Ruth's Gleanings",
+                "planting_partner": "",
+                "trees": "3",
+                "species": "Gold plum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.457337,
+                    34.838473
+                ]
+            },
+            "properties": {
+                "site": "Saluda Bluffs Neighborhood",
+                "planting_partner": "",
+                "trees": "19",
+                "species": "Prairifire crabapple, Forest Pansy redbud, Carolina sapphire, October Glory red maple, Tuscarora crape myrtle, European hornbeam, allee elm",
+                "program": "2018 ReLEAF Day, Presented by: Duke Energy, BMW, Schneider Tree Care, Fluor, Greenville Journal, Forum Benefits, Earth Design, Christopher Trucks, Community Tap, AFL, Keys Innovative Solutions, GE, Johnson Controls, Robert M Rogers MD PA, LS3P, KPMG, the McSharry Family, SynTerra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.415999,
+                    34.887347
+                ]
+            },
+            "properties": {
+                "site": "Sans Souci Community Garden",
+                "planting_partner": "",
+                "trees": "29",
+                "species": "pawpaw, persimmon, fig, black cherry, apple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.415882,
+                    34.883856
+                ]
+            },
+            "properties": {
+                "site": "Sans Souci Neighborhood",
+                "planting_partner": "",
+                "trees": "21",
+                "species": "fringetree, American hornbeam, Cherokee Princess dogwood, Teddy Bear magnolia, Forest Pansy redbud, Autumn Blaze maple, river birch, serviceberry, Little Gem magnolia, Bracken's Brown Beauty magnolia, Eastern red cedar, Japanese snowbell, Carolina silverbell, overcup oak",
+                "program": "2019 ReLEAF Day, Presented by: Duke Energy, Greenville Journal, Schneider Tree Care, Fluor, BMW, Forum Benefits, Earth Design, Christopher Trucks, Pintail Capitol Partners, Community Tap, Robert M Rogers MD PA, Becky & Bobby Hartness, AFL, Keys Innovative Solutions, Southern Management Corporation, Johnson Controls, Colliers International, Carolina Crafted Construction LLC, DP3 Architects, Arrowood & Arrowood, Harper General Contractors, KPMG, Sunstore Solar Energy Solutions, Furman University, the McSharry Family, McMillan Pazden Smith Architecture, Mary Lou & Lewis Jones, Eric Krichbaum"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.415714,
+                    34.89267
+                ]
+            },
+            "properties": {
+                "site": "Sans Souci Neighborhood Floodplain Reforestation",
+                "planting_partner": "SummitMedia, Bank of America",
+                "trees": "6",
+                "species": "blackgum, winged elm, overcup oak, nuttall oak, river birch, American elm, pignut hickory, sweetbay magnolia, sugarberry, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3649,
+                    34.8139
+                ]
+            },
+            "properties": {
+                "site": "Sara Collins Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "3",
+                "species": "red maple, October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.365,
+                    34.907
+                ]
+            },
+            "properties": {
+                "site": "Sevier Middle School",
+                "planting_partner": "",
+                "trees": "15",
+                "species": "fringetree, American holly, Eastern red cedar, pear, plum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.310527,
+                    34.855171
+                ]
+            },
+            "properties": {
+                "site": "Shadow Way Neighborhood",
+                "planting_partner": "",
+                "trees": "29",
+                "species": "fringetree, serviceberry, Nellie Stevens holly, Cherokee Brave dogwood, Autumn Blaze maple, October Glory maple, Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401881,
+                    34.782187
+                ]
+            },
+            "properties": {
+                "site": "Shady Oak Baptist Church",
+                "planting_partner": "",
+                "trees": "1",
+                "species": "nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.952068,
+                    35.028584
+                ]
+            },
+            "properties": {
+                "site": "Shoally Creek Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "10",
+                "species": "Afterburner blackgum, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.27,
+                    34.744
+                ]
+            },
+            "properties": {
+                "site": "Simpsonville Elementary School",
+                "planting_partner": "",
+                "trees": "9",
+                "species": "white oak, red oak, sugar maple, willow oak, chinquapin oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2656,
+                    35.0448
+                ]
+            },
+            "properties": {
+                "site": "Skyland Elementary School",
+                "planting_partner": "BMW, Greer Centennial Lions Club, Taylors Lions Club, Blue Ridge Lions Club",
+                "trees": "56",
+                "species": "red maple, October Glory red maple, hiromi cherry, Forest Pansy redbud, nuttall oak, Emerald City tulip poplar, overcup oak, blackgum, Tuscarora crape myrtle, Peggy Clark apricot, sourwood, Carolina silverbell, white oak, American hornbeam, baldcypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.497626,
+                    35.023057
+                ]
+            },
+            "properties": {
+                "site": "Slater-Marietta Elementary School",
+                "planting_partner": "",
+                "trees": "25",
+                "species": "nuttall oak, kousa dogwood, Brandywine red maple, Legacy sugar maple, serviceberry, tulip poplar, river birch, blackgum, hiromi cherry, willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.368879,
+                    34.852972
+                ]
+            },
+            "properties": {
+                "site": "Solutions Residential Center",
+                "planting_partner": "",
+                "trees": "6",
+                "species": "European hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41175285,
+                    34.86315243
+                ]
+            },
+            "properties": {
+                "site": "Southernside Neighborhood",
+                "planting_partner": "TD Bank",
+                "trees": "57",
+                "species": "redbud, American hornbeam, serviceberry, blackgum, Brodie cedar, baldcypress, overcup oak, hophornbeam, tulip poplar, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.876999,
+                    34.978367
+                ]
+            },
+            "properties": {
+                "site": "Spartanburg High School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "46",
+                "species": "Amber Glow dawn redwood, American hornbeam, blackgum, Exclamation London planetree, Princeton elm, Emerald City tulip poplar, October Glory red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.441588,
+                    34.962348
+                ]
+            },
+            "properties": {
+                "site": "Spring Park Inn",
+                "planting_partner": "Foothills Rotary Club",
+                "trees": "27",
+                "species": "Carolina silverbell, catalpa, sassafras, white oak, October Glory red maple, flowering dogwood, yellowwood, Eastern red cedar, American hornbeam, serviceberry, shumard oak, fringetree, Autumn Blaze maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.417803,
+                    34.847752
+                ]
+            },
+            "properties": {
+                "site": "St Anthony's Catholic Church",
+                "planting_partner": "",
+                "trees": "24",
+                "species": "Red Sunset red maple, tulip poplar, allee elm, fringetree, plum, kousa dogwood, Red Point red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4247,
+                    34.842
+                ]
+            },
+            "properties": {
+                "site": "St Francis Community Garden",
+                "planting_partner": "",
+                "trees": "16",
+                "species": "hiromi cherry, pawpaw, serviceberry, persimmon, pear, autumnalis cherry, mulberry, baldcypress, redbud, Forest Pansy redbud, fringetree, gingko",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.381,
+                    34.898
+                ]
+            },
+            "properties": {
+                "site": "St. James Episcopal Church",
+                "planting_partner": "",
+                "trees": "1",
+                "species": "Red Sunset red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44281001,
+                    34.80490201
+                ]
+            },
+            "properties": {
+                "site": "Staunton Bridge Community Center",
+                "planting_partner": "",
+                "trees": "12",
+                "species": "Princeton elm, nuttall oak, allee elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42,
+                    34.8352
+                ]
+            },
+            "properties": {
+                "site": "Sterling Neighborhood",
+                "planting_partner": "",
+                "trees": "19",
+                "species": "pear, persimmon, fig, pomegranate, trident maple, crape myrtle, deodar cedar, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.418863,
+                    34.841922
+                ]
+            },
+            "properties": {
+                "site": "Sterling \/ West End Neighborhood",
+                "planting_partner": "",
+                "trees": "33",
+                "species": "American hornbeam, baldcypress, Forest Pansy redbud, hophornbeam, Little Gem magnolia, Natchez crepe myrtle, nuttall oak, October Glory red maple, Radicans cryptomeria, Eastern redbud, river birch, serviceberry, swamp white oak, Teddy Bear magnolia, yellowwood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.370283,
+                    34.836585
+                ]
+            },
+            "properties": {
+                "site": "Sterling School Charles Townes Gifted Center",
+                "planting_partner": "Sage Automotive Interiors",
+                "trees": "28",
+                "species": "white oak, red oak, red maple, trident maple, Forest Pansy redbud, okame cherry, tulip poplar",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396965,
+                    34.864854
+                ]
+            },
+            "properties": {
+                "site": "Stone Academy",
+                "planting_partner": "Jacobs",
+                "trees": "4",
+                "species": "Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41,
+                    34.693
+                ]
+            },
+            "properties": {
+                "site": "Sue Cleveland Elementary School",
+                "planting_partner": "Greenville Council of Garden Clubs",
+                "trees": "2",
+                "species": "red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.017414,
+                    35.051264
+                ]
+            },
+            "properties": {
+                "site": "Sugar Ridge Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "8",
+                "species": "Emerald City tulip poplar, swamp white oak, Afterburner blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.406911,
+                    34.831924
+                ]
+            },
+            "properties": {
+                "site": "Sullivan Neighborwoods",
+                "planting_partner": "",
+                "trees": "21",
+                "species": "red maple, redbud, Peggy Clarke apricot, blackgum, sawtooth oak, nuttall oak, ginkgo",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.383284,
+                    34.875504
+                ]
+            },
+            "properties": {
+                "site": "Summit Drive Elementary School",
+                "planting_partner": "",
+                "trees": "4",
+                "species": "nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.427197,
+                    34.877316
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Blue Ridge",
+                "planting_partner": "Timberlab",
+                "trees": "10",
+                "species": "5 Autumn Blaze red maple, 5 Duraheat river birch",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.378786,
+                    34.833079
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail First Baptist",
+                "planting_partner": "NAI Earle Furman, Friends of the Reedy River",
+                "trees": "132",
+                "species": "hophornbeam, pawpaw, 'Red Sunset' red maple, 'Autumn Blaze' maple, sassafras, Carolina silverbell, witch hazel, London planetree, shumard oak, blackgum, dogwood, river birch, redbud, serviceberry, fringetree, swamp chestnut oak, sugarberry, cherrybark oak, American beech, American elm, red maple, pignut hickory, overcup oak, 'October Glory' red maple",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442619,
+                    34.938486
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Furman (Duncan Chapel)",
+                "planting_partner": "The Furman Co",
+                "trees": "9",
+                "species": "allee elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.444904,
+                    34.923938
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Furman Facilities (Duncan Chapel)",
+                "planting_partner": "Nexus",
+                "trees": "46",
+                "species": "hophornbeam, redbud, Carolina sapphire, 'Little Gem' magnolia, cryptomeria, 'Burkii' cedar, 'October Glory' red maple, American hornbeam",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.356686,
+                    34.844831
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Keith Drive",
+                "planting_partner": "Soda City Spas, Meritage Homes, Arbor Day Foundation",
+                "trees": "35",
+                "species": "overcup oak, European hornbeam, Forest Pansy redbud, nuttall oak",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.438472,
+                    34.888667
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Lakeview Link",
+                "planting_partner": "Foothills Rotary Club, Bike Walk Greenville",
+                "trees": "24",
+                "species": "American hornbeam, baldcypress, fringetree, serviceberry, sweetbay magnolia, silky dogwood, Forest Pansy redbud",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.421904,
+                    34.868302
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Monaghan Mill",
+                "planting_partner": "GE, Prisma Health, ScanSource",
+                "trees": "90",
+                "species": "October Glory red maple, scarlet oak, American beech, witch hazel, European hornbeam, yellowwood, blackgum, ginkgo, baldcypress, nuttall oak, Autumn Blaze maple, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44,
+                    34.8932
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Railcar",
+                "planting_partner": "Leadership Greenville, TD Bank, FUEL, Sage Automotive Interiors, ScanSource",
+                "trees": "175",
+                "species": "Natchez crape myrtle, nuttall oak, October Glory red maple, witch hazel, blackgum, serviceberry, redbud, red maple, Forest Pansy redbud, hazlenut, Peggy Clarke apricot, purple leaf plum, China Snow fringetree, Arnolds Promise witch hazel, pawpaw, Autumn Blaze maple, American hornbeam, sweetbay magnolia, baldcypress, fringetree, silky dogwood",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442818,
+                    34.944723
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Reedy River Baptist Church",
+                "planting_partner": "",
+                "trees": "6",
+                "species": "October Glory red maple",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.421047,
+                    34.863209
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Republic Locomotive",
+                "planting_partner": "AFL",
+                "trees": "29",
+                "species": "Bracken Brown's Beauty magnolia, Red Sunset red maple, American witch hazel, tulip poplar, European hornbeam, Legacy sugar maple, Eastern red cedar, persimmon, pear, plum, fig",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.446359,
+                    34.97137
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail TR",
+                "planting_partner": "Foothills Rotary Club, Johnson Controls",
+                "trees": "71",
+                "species": "serviceberry, Carolina silverbell, beacon oak, Golden Desert ash, overcup oak, blackgum, tulip poplar, scarlet oak, crabapple, Princeton elm, serviceberry, American hornbeam, Forest Pansy redbud, Wildfire blackgum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.443134,
+                    34.902054
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbit Trail Watkins Bridge Rd",
+                "planting_partner": "Fluor",
+                "trees": "22",
+                "species": "swamp white oak, tulip poplar, American hornbeam, red maple",
+                "program": "Shade the Rabbit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442619,
+                    34.938486
+                ]
+            },
+            "properties": {
+                "site": "Swamp Rabbitt Trail Roe Ford Rd",
+                "planting_partner": "AFL",
+                "trees": "55",
+                "species": "Natchez crape myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.328007,
+                    34.931649
+                ]
+            },
+            "properties": {
+                "site": "Taylors Elementary School",
+                "planting_partner": "",
+                "trees": "31",
+                "species": "red maple, blackgum, fringetree, serviceberry, nuttall, Autumn Blaze maple, river birch, trident maple, bald cypress, tulip poplar, swamp white oak, Eastern redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.281354,
+                    34.919806
+                ]
+            },
+            "properties": {
+                "site": "Taylors Mill",
+                "planting_partner": "",
+                "trees": "25",
+                "species": "serviceberry, American holly, Autumn Blaze maple, fringetree",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.446163,
+                    35.126483
+                ]
+            },
+            "properties": {
+                "site": "Terry Creek Reforestation",
+                "planting_partner": "Save Our Saluda",
+                "trees": "110",
+                "species": "red maple, river birch, swamp chestnut oak, willow, American elm, hazel alder,  elderberry, American snowbell",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.444188,
+                    35.123022
+                ]
+            },
+            "properties": {
+                "site": "Terry Creek Reforestation",
+                "planting_partner": "Save Our Saluda",
+                "trees": "310",
+                "species": "red maple, river birch, fringetree, tulip poplar, blackgum, sycamore, swamp white oak, overcup oak, swamp chestnut oak, cherrbark oak, shumard oak, American elm, pawpaw, water oak, willow oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442774,
+                    35.121516
+                ]
+            },
+            "properties": {
+                "site": "Terry Creek Reforestation",
+                "planting_partner": "Save Our Saluda",
+                "trees": "229",
+                "species": "pawpaw, shumard oak, red maple, smooth alder, blackgum, American hornbeam, fringetree, cottonwood, cherrybark oak, willow oak, American elm",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.408631,
+                    34.794386
+                ]
+            },
+            "properties": {
+                "site": "Thomas Kerns Elementary School",
+                "planting_partner": "",
+                "trees": "33",
+                "species": "white oak, red oak, ginkgo, blackgum, Little Gem magnolia, sawtooth oak, shumard oak, October Glory red maple, Bracken's Brown Beauty magnolia, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.445429,
+                    34.954695
+                ]
+            },
+            "properties": {
+                "site": "Trailblazer Park",
+                "planting_partner": "TD Bank",
+                "trees": "90",
+                "species": "serviceberry, nuttall oak, Eastern red cedar, Autumn Blaze maple, Tupelo Tower blackgum, hophornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4502,
+                    34.9711
+                ]
+            },
+            "properties": {
+                "site": "Travelers Rest High School",
+                "planting_partner": "GE",
+                "trees": "45",
+                "species": "fringetree, blackgum, serviceberry, redbud, green ash, Eastern red cedar, deodar cedar, Shawnee Brave baldcypress, Bracken's Brown Beauty magnolia, nuttall oak, tulip poplar, ginkgo, pawpaw, Forest Pansy redbud",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.403807,
+                    34.861857
+                ]
+            },
+            "properties": {
+                "site": "Triune Mercy Center",
+                "planting_partner": "",
+                "trees": "3",
+                "species": "fig",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.106613,
+                    34.872311
+                ]
+            },
+            "properties": {
+                "site": "Tyger River Park",
+                "planting_partner": "Trees SC, Clemson Extension",
+                "trees": "",
+                "species": "",
+                "program": "Tree Keepers"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38652,
+                    34.797404
+                ]
+            },
+            "properties": {
+                "site": "Unique Kidz at Davis Academy",
+                "planting_partner": "GE",
+                "trees": "9",
+                "species": "fringetree, serviceberry, October Glory red maple, Teddy Bear magnolia, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.284458,
+                    34.788156
+                ]
+            },
+            "properties": {
+                "site": "Upstate Circle of Friends",
+                "planting_partner": "GE",
+                "trees": "20",
+                "species": "fig, nuttall oak, overcup oak, blackgum, sassafras, Carolina silverbell, American holly",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.455248,
+                    35.107368
+                ]
+            },
+            "properties": {
+                "site": "Upstate Forever Memorial Property",
+                "planting_partner": "",
+                "trees": "",
+                "species": "nuttall oak, swamp white oak, red maple, tulip poplar",
+                "program": "Legacy Tree Memorials"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.97155,
+                    34.999199
+                ]
+            },
+            "properties": {
+                "site": "USC Upstate",
+                "planting_partner": "",
+                "trees": "6",
+                "species": "chinkapin oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.389335,
+                    34.904184
+                ]
+            },
+            "properties": {
+                "site": "UU World of Children",
+                "planting_partner": "",
+                "trees": "12",
+                "species": "Eastern redbud, Chinese pistache, American hornbeam, persimmon, pawpaw",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.970061,
+                    35.057973
+                ]
+            },
+            "properties": {
+                "site": "Vadumar Park",
+                "planting_partner": "BMW",
+                "trees": "39",
+                "species": "American hornbeam, 'Autumn Brilliance' serviceberry, Carolina sapphire, swamp white oak, 'Gold Rush' dawn redwood, 'Afterburner' blackgum, 'October Glory' red maple, shumard oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.277579,
+                    34.696403
+                ]
+            },
+            "properties": {
+                "site": "Verdmont Neighborhood",
+                "planting_partner": "",
+                "trees": "21",
+                "species": "autumnalis cherry, Eastern redbud, American holly, red maple, zelkova",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.223163,
+                    34.934956
+                ]
+            },
+            "properties": {
+                "site": "Victor Park",
+                "planting_partner": "AFL, Greer CPW",
+                "trees": "21",
+                "species": "October Glory red maple, Natchez crape myrtle",
+                "program": "2019 ReLEAF Day, Presented by: Duke Energy, Greenville Journal, Schneider Tree Care, Fluor, BMW, Forum Benefits, Earth Design, Christopher Trucks, Pintail Capitol Partners, Community Tap, Robert M Rogers MD PA, Becky & Bobby Hartness, AFL, Keys Innovative Solutions, Southern Management Corporation, Johnson Controls, Colliers International, Carolina Crafted Construction LLC, DP3 Architects, Arrowood & Arrowood, Harper General Contractors, KPMG, Sunstore Solar Energy Solutions, Furman University, the McSharry Family, McMillan Pazden Smith Architecture, Mary Lou & Lewis Jones, Eric Krichbaum"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44232,
+                    34.903727
+                ]
+            },
+            "properties": {
+                "site": "Vinson and Plano Dr",
+                "planting_partner": "",
+                "trees": "100",
+                "species": "overcup oak, American elm, swamp chestnut oak, sycamore, river birch, red maple, sweetbay magnolia, swamp white oak, bald cypress",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.367338,
+                    34.814104
+                ]
+            },
+            "properties": {
+                "site": "Washington Center",
+                "planting_partner": "Fluor",
+                "trees": "56",
+                "species": "Tuscarora crape myrtle, Forest Pansy redbud, fringetree, Red Sunset red maple, nuttall oak, serviceberry, chestnut oak, tulip poplar, Autumn Blaze maple, hophornbeam, Bracken's Brown Beauty magnolia, Muskogee crape myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397918,
+                    34.879435
+                ]
+            },
+            "properties": {
+                "site": "Washington Heights Neighborhood",
+                "planting_partner": "",
+                "trees": "42",
+                "species": "Little Gem magnolia, Red Sunset red maple, serviceberry, Peggy Clarke apricot, fringetree, Nellie Stevens holly",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.443787,
+                    34.828993
+                ]
+            },
+            "properties": {
+                "site": "Welcome Park",
+                "planting_partner": "TD Bank",
+                "trees": "95",
+                "species": "pawpaw, blackgum, American holly, sourwood, Forest Pansy redbud, serviceberry, fringetree, red oak, sycamore, baldcypress, American hornbeam, shumard oak, Wildfire blackgum, nuttall oak, white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.423339,
+                    34.849744
+                ]
+            },
+            "properties": {
+                "site": "West Greenville Neighborhood",
+                "planting_partner": "TD Bank, Meritage Homes, Arbor Day Foundation, BMW, Reedy River Rotary, Enterprise Mobility",
+                "trees": "153",
+                "species": "serviceberry, Eastern redbud, American hornbeam, Bracken Brown's Beauty magnolia, fringetree, yellowwood, Teddy Bear magnolia, nuttall oak, Little Gem magnolia, Afterburner blackgum, October Glory red maple, Emerald City tulip poplar, Forest Pansy redbud, baldcypress, hophornbeam, cryptomeria, ginkgo, sweetbay magnolia, Natchez crepe myrtle",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.003727,
+                    34.925763
+                ]
+            },
+            "properties": {
+                "site": "West View Elementary School",
+                "planting_partner": "SAGE, Noble Tree Foundation",
+                "trees": "31",
+                "species": "white oak, overcup oak, scarlet oak, Emerald City tulip poplar, Kay magnolia, Little Gem magnolia, Eastern red cedar, American hornbeam",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.447592,
+                    34.942174
+                ]
+            },
+            "properties": {
+                "site": "White Horse Academy",
+                "planting_partner": "",
+                "trees": "20",
+                "species": "fig, pawpaw, Asian persimmon, hazelnut, plum",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.91642,
+                    34.998385
+                ]
+            },
+            "properties": {
+                "site": "Whitlock Flexible Learning Center",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "4",
+                "species": "Eastern hophornbeam, ginkgo, Red Rage blackgum, yellowwood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.246,
+                    34.8976
+                ]
+            },
+            "properties": {
+                "site": "Woodland Elementary School",
+                "planting_partner": "GE",
+                "trees": "23",
+                "species": "red maple, blackgum, okame cherry, Peggy Clark apricot, trident maple, Forest Pansy redbud, Little Gem magnolia, serviceberry",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.964988,
+                    34.930079
+                ]
+            },
+            "properties": {
+                "site": "Woodland Heights Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "12",
+                "species": "Aeryn trident maple, Emerald City tulip poplar, Kindred Spirit oak, bur oak, basswood, Persian ironwood",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.407355,
+                    34.693466
+                ]
+            },
+            "properties": {
+                "site": "Woodmont Middle School",
+                "planting_partner": "",
+                "trees": "35",
+                "species": "Red Sunset red maple, Little Gem magnolia, chestnut oak, American hornbeam, willow oak, Bracken's Brown Beauty magnolia",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.016107,
+                    34.731235
+                ]
+            },
+            "properties": {
+                "site": "Woodruff Elementary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "8",
+                "species": "yellowwood, baldcypress, Emerald City tulip poplar, swamp white oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.012579,
+                    34.731992
+                ]
+            },
+            "properties": {
+                "site": "Woodruff Primary School",
+                "planting_partner": "Noble Tree Foundation",
+                "trees": "8",
+                "species": "swamp white oak, hophornbeam, nuttall oak",
+                "program": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.094513,
+                    34.678532
+                ]
+            },
+            "properties": {
+                "site": "Yousef Mefleh Memorial Fields",
+                "planting_partner": "",
+                "trees": "20",
+                "species": "Natchez crepe myrtle, hophornbeam, American hornbeam, swamp white oak, tulip poplar",
+                "program": ""
+            }
+        }
+    ]
+}

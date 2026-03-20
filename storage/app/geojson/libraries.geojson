@@ -1,0 +1,209 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4019625,
+                    34.8570546
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Hughes Main Library",
+                "": "Downtown",
+                "address": "25 Heritage Green Place Greenville, SC 29601",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.439872,
+                    34.8159946
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Anderson Road",
+                "": "West",
+                "address": "2625 Anderson Road Greenville, SC 29611",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3781819,
+                    34.8040368
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Augusta Road",
+                "": "Ramsey Family",
+                "address": "100 Lydia Street Greenville, SC 29605",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4596013,
+                    34.9212412
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Berea",
+                "": "Sarah Dobey Jones",
+                "address": "111 N Hwy 25 Bypass Greenville, SC 29617",
+                "access": "Curbside Only"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2034361,
+                    34.6958465
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Fountain Inn",
+                "": "Kerry Ann Younts Culp",
+                "address": "311 N Main Street Fountain Inn, SC 29644",
+                "access": "Curbside Only"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2478732,
+                    34.9402752
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Greer",
+                "": "Jean M. Smith",
+                "address": "505 Pennsylvania Avenue Greer, SC 29650",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3265601,
+                    34.7758749
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Mauldin",
+                "": "W. Jack Greer",
+                "address": "800 W Butler Road Greenville, SC 29607",
+                "access": "Curbside Only"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2999491,
+                    34.8570154
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Pelham Road",
+                "": "F.W. Symmes",
+                "address": "1508 Pelham Road Greenville, SC 29615",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2601434,
+                    34.7480126
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Simpsonville",
+                "": "Hendricks",
+                "address": "626 NE Main Street Simpsonville, SC 29681",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3082204,
+                    34.9201733
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Taylors",
+                "": "Burdette",
+                "address": "316 W Main Street Taylors, SC 29687",
+                "access": "Curbside Only"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4407168,
+                    34.969873
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Travelers Rest",
+                "": "Sargent",
+                "address": "17 Center Street Travelers Rest, SC 29690",
+                "access": "Open"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2222907,
+                    34.808087
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Simpsonville",
+                "": "Five Forks",
+                "address": "104 Sunnydale Drive\nSimpsonville, SC 29681",
+                "access": "Curbside Only"
+            }
+        }
+    ]
+}

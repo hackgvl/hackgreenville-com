@@ -1,0 +1,200 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44149,
+                    34.971477
+                ]
+            },
+            "properties": {
+                "title": "Gateway Park",
+                "notes": "115 Henderson Dr., Travelers Rest, SC 29690",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, BIKE SKILLS FLOW PARK, FOOTBALL, MOUNTAIN BIKING, PLAYGROUND, TENNIS"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.336644,
+                    34.868996
+                ]
+            },
+            "properties": {
+                "title": "Butler Springs Park",
+                "notes": "301 Butler Springs Rd., Greenville, SC 29615",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, PLAYGROUND, SHELTER, TENNIS, WALKING TRAIL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442819,
+                    34.859255
+                ]
+            },
+            "properties": {
+                "title": "Westside Park",
+                "notes": "2700 W. Blue Ridge Drive, Greenville, SC 29611",
+                "amenities:": "AQUATIC COMPLEX, ATHLETIC FIELDS, BASEBALL, PLAYGROUND, SHELTER"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.492846,
+                    35.027071
+                ]
+            },
+            "properties": {
+                "title": "Slater-White Park",
+                "notes": "8 Slater Rd, Slater, SC 29661",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.49788,
+                    35.021458
+                ]
+            },
+            "properties": {
+                "title": "Jimi Turner Park (Slater-Marietta)",
+                "notes": "210 Baker Cir., Slater 29661",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.434945,
+                    34.844153
+                ]
+            },
+            "properties": {
+                "title": "Shoeless Joe Jackson Memorial Park",
+                "notes": "406 West Ave., Greenville, SC 29611",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, PLAYGROUND, SHELTER"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.349657,
+                    34.778245
+                ]
+            },
+            "properties": {
+                "title": "Conestee Park",
+                "notes": "840 Mauldin Road, Greenville, SC 29607",
+                "amenities:": "BASEBALL, DOG PARK, PLAYGROUND, SHELTER, TOURNAMENT FACILITY, WALKING TRAIL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.303895,
+                    34.954254
+                ]
+            },
+            "properties": {
+                "title": "Lincoln Park",
+                "notes": "169 Harnitha Lane, Taylors, SC 29687",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, BASKETBALL, PLAYGROUND, SHELTER, WALKING TRAIL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.428989,
+                    34.77242
+                ]
+            },
+            "properties": {
+                "title": "Lakeside Park",
+                "notes": "1500 Piedmont Highway, Piedmont, SC 29673",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, BASKETBALL, FOOTBALL, PLAYGROUND, SAND VOLLEYBALL, SHELTER, TOURNAMENT FACILITY, WALKING TRAIL, WATERPARK"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.46721,
+                    34.895043
+                ]
+            },
+            "properties": {
+                "title": "Northwest Park",
+                "notes": "8109 White Horse Rd., Greenville, SC 29617",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, FOOTBALL, PLAYGROUND, SHELTER, SOCCER, TOURNAMENT FACILITY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.312219,
+                    35.052487
+                ]
+            },
+            "properties": {
+                "title": "David Jackson Park",
+                "notes": "25 Fowler Rd., Taylors, SC 29687",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, PLAYGROUND, TOURNAMENT FACILITY, WALKING TRAIL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.283382,
+                    34.913355
+                ]
+            },
+            "properties": {
+                "title": "Corey Burns Park",
+                "notes": "201 Boling Ct., Taylors, SC 29687",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, TOURNAMENT FACILITY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.349028,
+                    34.592085
+                ]
+            },
+            "properties": {
+                "title": "Loretta C. Wood Park",
+                "notes": "10270 Augusta Rd., Pelzer, SC 29699",
+                "amenities:": "ATHLETIC FIELDS, BASEBALL, PLAYGROUND, WALKING TRAIL"
+            }
+        }
+    ]
+}

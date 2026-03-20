@@ -1,0 +1,277 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2765316,
+                    34.7371911
+                ]
+            },
+            "properties": {
+                "name": "Soundbox Tavern (CLOSED)",
+                "address": "507 W. Georgia Rd., Simpsonville, SC 29680",
+                "website": "",
+                "hours": "Monday - Friday, 3:30 pm - 2 am.  Saturday, 2 pm - 2 am.  Sunday, 2 pm - 12 am."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3610597,
+                    34.852634
+                ]
+            },
+            "properties": {
+                "name": "Gottrocks (CLOSED)",
+                "address": "200 Eisenhower Dr., Greenville, SC 29607",
+                "website": "",
+                "hours": "Monday - Friday, 4 pm - 2 am.  Saturday and Sunday, 6 pm - 2 am."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4027468,
+                    34.8469641
+                ]
+            },
+            "properties": {
+                "name": "Blues Boulevard Jazz",
+                "address": "300 River St #203, Greenville, SC 29601",
+                "website": "http:\/\/bluesboulevardjazzgreenville.com\/",
+                "hours": "Tuesday - Saturday, 6 pm - Until (kitchen hours: Tuesday - Thursday, 6 pm - 10 pm, Friday and Saturday, 6 pm - 11 pm).  Monday-Wednesday, available for special events."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4055076,
+                    34.84430575
+                ]
+            },
+            "properties": {
+                "name": "Smileys on the Roxx",
+                "address": "734 South Main Street Greenville, SC 29601",
+                "website": "https:\/\/smileysroxx.com\/greenville-downtown-smileys-on-the-roxx-music-lineup",
+                "hours": "Mon, Tue, Wed, Thur, Fri - 4:00 PM - 2:00 AM\nSun, Sat -11:00 AM - 2:00 AM"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2300857,
+                    34.722284
+                ]
+            },
+            "properties": {
+                "name": "Heritage Park Amphitheatre",
+                "address": "861 SE Main St, Simpsonville, SC 29681",
+                "website": "http:\/\/heritageparkamphitheatre.com\/",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3648402,
+                    34.8427918
+                ]
+            },
+            "properties": {
+                "name": "Radio Room",
+                "address": "28 Liberty Lane Greenville, SC 29607",
+                "website": "http:\/\/www.radioroomgreenville.com\/",
+                "hours": "Hours vary based on event. Generally opens at 6 PM - Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397622,
+                    34.85194
+                ]
+            },
+            "properties": {
+                "name": "Jack n' Diane's Dualing Pianos",
+                "address": "115 N. Brown Street, Greenville, SC 29601",
+                "website": "http:\/\/www.jackndianes.com",
+                "hours": "Thursday - Saturday, 7 pm - 2 am."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401372,
+                    34.84759
+                ]
+            },
+            "properties": {
+                "name": "The Peace Center",
+                "address": "300 South Main Street, Greenville, SC 29601",
+                "website": "http:\/\/www.peacecenter.org\/",
+                "hours": "Box office hours - Monday - Saturday, 10 am - 6 pm."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4189103,
+                    34.9024145
+                ]
+            },
+            "properties": {
+                "name": "J & M Pumphouse",
+                "address": "2640 Poinsett Highway, Greenville, SC 29609",
+                "website": "https:\/\/jmpumphouse.com",
+                "hours": "Sunday - Saturday: 5pm - 2am"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391657,
+                    34.853432
+                ]
+            },
+            "properties": {
+                "name": "Bon Secours Wellness Arena",
+                "address": "650 N Academy St, Greenville, SC 29601",
+                "website": "http:\/\/www.bonsecoursarena.com\/",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4286516,
+                    34.8470359
+                ]
+            },
+            "properties": {
+                "name": "Tipsy Music Pub (CLOSED)",
+                "address": "1237 Pendleton St, Greenville, SC 29611",
+                "website": "",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2993561,
+                    34.8243354
+                ]
+            },
+            "properties": {
+                "name": "The Firmament (CLOSED)",
+                "address": "5 Market Point Dr, Greenville, SC 29607",
+                "website": "",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2249644,
+                    34.9386589
+                ]
+            },
+            "properties": {
+                "name": "The Spinning Jenny (CLOSED - Oct 2023)",
+                "address": "107 Cannon St, Greer, SC 29651",
+                "website": "",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39613082,
+                    34.8502583
+                ]
+            },
+            "properties": {
+                "name": "Swanson's Warehouse",
+                "address": "12 N Irvine St, Greenville, SC 29601",
+                "website": "http:\/\/www.swansonswarehouse.com",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42865606,
+                    34.83591096
+                ]
+            },
+            "properties": {
+                "name": "The Foundry at Judson Mill",
+                "address": "701 Easley Bridge Rd Unit 6030, Greenville, SC 29611",
+                "website": "https:\/\/www.foundrygvl.com",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3979045,
+                    34.8514415
+                ]
+            },
+            "properties": {
+                "name": "Cowboy Up",
+                "address": "17 Coffee Street, Greenville, SC 29601",
+                "website": "https:\/\/www.facebook.com\/cowboyupsaloongv\/",
+                "hours": "Hours vary based on event. Check website for details."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39589005,
+                    34.8501757
+                ]
+            },
+            "properties": {
+                "name": "Fireforge Crafted Beer",
+                "address": "311 East Washington St Greenville, SC 29601",
+                "website": "https:\/\/fireforge.beer\/live-music\/",
+                "hours": "Bluegrass Jam on Tuesdays. Live Music on Fridays\nCheck website for details."
+            }
+        }
+    ]
+}

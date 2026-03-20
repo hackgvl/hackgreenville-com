@@ -42,14 +42,13 @@ class LabsController extends Controller
                         'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md',
                         'linkType' => 'github',
                     ],
+                    [
+                        'name' => __('Map Layers API'),
+                        'description' => __('Public API for Upstate location data'),
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/MAP_LAYERS_API.md',
+                        'linkType' => 'github',
+                    ],
                 ],
-            ],
-            [
-                'name' => __('Map Layers API'),
-                'description' => __('Public API for Upstate location data'),
-                'link' => 'https://github.com/hackgvl/OpenData/blob/master/MAPS_API.md',
-                'linkType' => 'github',
-                'status' => 'active',
             ],
             [
                 'name' => __('Open Map Data Multi Layers Demo'),

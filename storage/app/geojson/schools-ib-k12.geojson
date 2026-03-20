@@ -1,0 +1,209 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.236548,
+                    34.955186
+                ]
+            },
+            "properties": {
+                "title": "Chandler Creek Elementary",
+                "group": "Northeast Cluster",
+                "program": "International Baccalaureate",
+                "address": "301 Chandler Road, Greer, SC 29651",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/ccreek\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.23462,
+                    34.981658
+                ]
+            },
+            "properties": {
+                "title": "Greer Middle",
+                "group": "Northeast Cluster",
+                "program": "International Baccalaureate",
+                "address": "3032 E. Gap Creek Road, Greer, SC 29651",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/greerms\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.231521,
+                    34.982087
+                ]
+            },
+            "properties": {
+                "title": "Greer High",
+                "group": "Northeast Cluster",
+                "program": "International Baccalaureate",
+                "address": "3000 East Gap Creek Dr., Greer, SC 29651",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/greerhs\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.473687,
+                    34.998838
+                ]
+            },
+            "properties": {
+                "title": "Heritage Elementary",
+                "group": "Northwest Cluster",
+                "program": "International Baccalaureate",
+                "address": "1592 Geer Highway, Travelers Rest, SC 29690",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/heritage\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.476696,
+                    34.999178
+                ]
+            },
+            "properties": {
+                "title": "Northwest Middle",
+                "group": "Northwest Cluster",
+                "program": "International Baccalaureate",
+                "address": "1606 Geer Highway, Travelers Rest, SC 29690",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/northwst\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.450826,
+                    34.970955
+                ]
+            },
+            "properties": {
+                "title": "Travelers Rest High",
+                "group": "Northwest Cluster",
+                "program": "International Baccalaureate",
+                "address": "301 North Main St., Travelers Rest, SC 29690",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/trest\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.312187,
+                    34.618182
+                ]
+            },
+            "properties": {
+                "title": "Fork Shoals Elementary",
+                "group": "Southern Cluster",
+                "program": "International Baccalaureate",
+                "address": "916 McKelvey Road, Pelzer, SC 29669",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/forksh\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.407782,
+                    34.692933
+                ]
+            },
+            "properties": {
+                "title": "Woodmont Middle",
+                "group": "Southern Cluster",
+                "program": "International Baccalaureate",
+                "address": "325 North Flat Rock Road, Piedmont, SC 29673",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/wdmontm\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.359031,
+                    34.688531
+                ]
+            },
+            "properties": {
+                "title": "Woodmont High",
+                "group": "Southern Cluster",
+                "program": "International Baccalaureate",
+                "address": "2831 West Georgia Road, Piedmont, SC 29673",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/wdmonth\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.364903,
+                    34.814888
+                ]
+            },
+            "properties": {
+                "title": "Sara Collins Elementary",
+                "group": "Central Cluster",
+                "program": "International Baccalaureate",
+                "address": "1200 Parkins Mill Road, Greenville, SC 29607",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/scollins\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.321817,
+                    34.837731
+                ]
+            },
+            "properties": {
+                "title": "Beck Academy (Middle)",
+                "group": "Central Cluster",
+                "program": "International Baccalaureate",
+                "address": "901 Woodruff Road, Greenville, SC 29607",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/beck\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404247,
+                    34.796676
+                ]
+            },
+            "properties": {
+                "title": "Southside High",
+                "group": "Central Cluster",
+                "program": "International Baccalaureate",
+                "address": "6630 Frontage at White Horse Rd., Greenville, SC 29605",
+                "school_website": "https:\/\/www.greenville.k12.sc.us\/shs\/"
+            }
+        }
+    ]
+}
