@@ -62,6 +62,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ route('map-layers.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Map Layers
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('contribute') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
                                 Contribute
                             </a>
@@ -83,6 +88,7 @@
                     <x-lucide-external-link class="w-3 h-3"/>
                 </a>
             </li>
+            <x-nav-link route="map-layers.index" class="nav-break:hidden">Map Layers</x-nav-link>
             <x-nav-link route="contribute" class="nav-break:hidden">Contribute</x-nav-link>
             <x-nav-link route="contact" class="nav-break:hidden">Contact</x-nav-link>
         </ul>
