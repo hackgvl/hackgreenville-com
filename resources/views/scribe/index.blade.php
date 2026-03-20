@@ -86,6 +86,12 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-organizations">
                                 <a href="#endpoints-GETapi-v1-organizations">Organizations API v1</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-map-layers">
+                                <a href="#endpoints-GETapi-v1-map-layers">Map Layers API v1</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-map-layers--mapLayer_slug--geojson">
+                                <a href="#endpoints-GETapi-v1-map-layers--mapLayer_slug--geojson">Map Layer GeoJSON</a>
+                            </li>
                                                                         </ul>
                             </ul>
             </div>
@@ -579,7 +585,7 @@ response.json()</code></pre></div>
             &quot;description&quot;: &quot;Aut ex quo iure eos explicabo accusamus. Et qui ipsa itaque autem mollitia.&quot;,
             &quot;url&quot;: &quot;https://kunde.net/est-quaerat-enim-accusantium-alias-magnam.html&quot;,
             &quot;starts_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
-            &quot;ends_at&quot;: &quot;2025-01-01T19:00:00.000000Z&quot;,
+            &quot;ends_at&quot;: &quot;2025-01-01T14:00:00.000000Z&quot;,
             &quot;rsvp_count&quot;: 28,
             &quot;status&quot;: &quot;past&quot;,
             &quot;is_paid&quot;: null,
@@ -1202,6 +1208,415 @@ Must be one of:
 <ul style="list-style-type: square;"><li><code>asc</code></li> <li><code>desc</code></li></ul>
             </div>
                 </form>
+
+                    <h2 id="endpoints-GETapi-v1-map-layers">Map Layers API v1</h2>
+
+<p>
+</p>
+
+<p>This API provides access to community-curated map layer data for the Greenville, SC area.</p>
+<p>Each map layer represents a collection of geographic features (e.g. breweries, parks, trails)
+sourced from community-maintained Google Spreadsheets and served as GeoJSON.</p>
+
+<span id="example-requests-GETapi-v1-map-layers">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "{{ config("app.url") }}/api/v1/map-layers?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "{{ config("app.url") }}/api/v1/map-layers"
+);
+
+const params = {
+    "per_page": "50",
+    "page": "1",
+    "sort_by": "title",
+    "sort_direction": "asc",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '{{ config("app.url") }}/api/v1/map-layers'
+params = {
+  'per_page': '50',
+  'page': '1',
+  'sort_by': 'title',
+  'sort_direction': 'asc',
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-map-layers">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 123,
+            &quot;title&quot;: &quot;architecto eius et&quot;,
+            &quot;slug&quot;: &quot;quos-velit-et-fugiat-sunt-nihil-accusantium-harum&quot;,
+            &quot;description&quot;: &quot;Modi deserunt aut ab provident perspiciatis.&quot;,
+            &quot;center_latitude&quot;: 34.8507,
+            &quot;center_longitude&quot;: -82.3985,
+            &quot;zoom_level&quot;: 10,
+            &quot;geojson_link&quot;: &quot;http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure&quot;,
+            &quot;geojson_url&quot;: &quot;https://dev.sculley.dev/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
+            &quot;contribute_link&quot;: &quot;https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html&quot;,
+            &quot;raw_data_link&quot;: &quot;http://vonrueden.com/&quot;,
+            &quot;maintainers&quot;: [
+                {
+                    &quot;name&quot;: &quot;Vesta Glover&quot;
+                }
+            ],
+            &quot;created_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-01-01T17:00:00.000000Z&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-map-layers" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-map-layers"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-map-layers"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-map-layers" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-map-layers">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-map-layers" data-method="GET"
+      data-path="api/v1/map-layers"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-map-layers', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-map-layers"
+                    onclick="tryItOut('GETapi-v1-map-layers');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-map-layers"
+                    onclick="cancelTryOut('GETapi-v1-map-layers');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-map-layers"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/map-layers</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-map-layers"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-map-layers"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-v1-map-layers"
+               value="50"
+               data-component="query">
+    <br>
+<p>The number of items to show per page. Must be at least 1. Must not be greater than 100. Example: <code>50</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-v1-map-layers"
+               value="1"
+               data-component="query">
+    <br>
+<p>The current page of items to display. Must be at least 1. Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="GETapi-v1-map-layers"
+               value=""
+               data-component="query">
+    <br>
+<p>Filter map layers by title. Must not be greater than 255 characters.</p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_by"                data-endpoint="GETapi-v1-map-layers"
+               value="title"
+               data-component="query">
+    <br>
+<p>Example: <code>title</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>title</code></li> <li><code>updated_at</code></li> <li><code>created_at</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort_direction</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_direction"                data-endpoint="GETapi-v1-map-layers"
+               value="asc"
+               data-component="query">
+    <br>
+<p>Example: <code>asc</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>asc</code></li> <li><code>desc</code></li></ul>
+            </div>
+                </form>
+
+                    <h2 id="endpoints-GETapi-v1-map-layers--mapLayer_slug--geojson">Map Layer GeoJSON</h2>
+
+<p>
+</p>
+
+<p>Returns the raw GeoJSON FeatureCollection for a specific map layer.</p>
+<p>The response is suitable for direct use with mapping libraries like Leaflet, Mapbox, or Google Maps.</p>
+
+<span id="example-requests-GETapi-v1-map-layers--mapLayer_slug--geojson">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "{{ config("app.url") }}/api/v1/map-layers/breweries/geojson" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "{{ config("app.url") }}/api/v1/map-layers/breweries/geojson"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '{{ config("app.url") }}/api/v1/map-layers/breweries/geojson'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-map-layers--mapLayer_slug--geojson">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;type&quot;: &quot;FeatureCollection&quot;,
+    &quot;features&quot;: [
+        {
+            &quot;type&quot;: &quot;Feature&quot;,
+            &quot;geometry&quot;: {
+                &quot;type&quot;: &quot;Point&quot;,
+                &quot;coordinates&quot;: [
+                    -82.3985,
+                    34.8507
+                ]
+            },
+            &quot;properties&quot;: {
+                &quot;title&quot;: &quot;Example Location&quot;
+            }
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404, Not found):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;GeoJSON data not found for this map layer.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-map-layers--mapLayer_slug--geojson" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-map-layers--mapLayer_slug--geojson"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-map-layers--mapLayer_slug--geojson"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-map-layers--mapLayer_slug--geojson" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-map-layers--mapLayer_slug--geojson">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-map-layers--mapLayer_slug--geojson" data-method="GET"
+      data-path="api/v1/map-layers/{mapLayer_slug}/geojson"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-map-layers--mapLayer_slug--geojson', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-map-layers--mapLayer_slug--geojson"
+                    onclick="tryItOut('GETapi-v1-map-layers--mapLayer_slug--geojson');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-map-layers--mapLayer_slug--geojson"
+                    onclick="cancelTryOut('GETapi-v1-map-layers--mapLayer_slug--geojson');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-map-layers--mapLayer_slug--geojson"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/map-layers/{mapLayer_slug}/geojson</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-map-layers--mapLayer_slug--geojson"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-map-layers--mapLayer_slug--geojson"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>mapLayer_slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="mapLayer_slug"                data-endpoint="GETapi-v1-map-layers--mapLayer_slug--geojson"
+               value="breweries"
+               data-component="url">
+    <br>
+<p>The slug of the map layer. Example: <code>breweries</code></p>
+            </div>
+                    </form>
 
             
 

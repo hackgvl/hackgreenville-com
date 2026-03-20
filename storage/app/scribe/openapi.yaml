@@ -458,7 +458,7 @@ paths:
                       description: 'Aut ex quo iure eos explicabo accusamus. Et qui ipsa itaque autem mollitia.'
                       url: 'https://kunde.net/est-quaerat-enim-accusantium-alias-magnam.html'
                       starts_at: '2025-01-01T17:00:00.000000Z'
-                      ends_at: '2025-01-01T19:00:00.000000Z'
+                      ends_at: '2025-01-01T14:00:00.000000Z'
                       rsvp_count: 28
                       status: past
                       is_paid: null
@@ -494,7 +494,7 @@ paths:
                         description: 'Aut ex quo iure eos explicabo accusamus. Et qui ipsa itaque autem mollitia.'
                         url: 'https://kunde.net/est-quaerat-enim-accusantium-alias-magnam.html'
                         starts_at: '2025-01-01T17:00:00.000000Z'
-                        ends_at: '2025-01-01T19:00:00.000000Z'
+                        ends_at: '2025-01-01T14:00:00.000000Z'
                         rsvp_count: 28
                         status: past
                         is_paid: null
@@ -540,7 +540,7 @@ paths:
                           example: '2025-01-01T17:00:00.000000Z'
                         ends_at:
                           type: string
-                          example: '2025-01-01T19:00:00.000000Z'
+                          example: '2025-01-01T14:00:00.000000Z'
                         rsvp_count:
                           type: integer
                           example: 28
@@ -871,3 +871,264 @@ paths:
       tags:
         - Endpoints
       security: []
+  /api/v1/map-layers:
+    get:
+      summary: 'Map Layers API v1'
+      operationId: mapLayersAPIV1
+      description: "This API provides access to community-curated map layer data for the Greenville, SC area.\n\nEach map layer represents a collection of geographic features (e.g. breweries, parks, trails)\nsourced from community-maintained Google Spreadsheets and served as GeoJSON."
+      parameters:
+        -
+          in: query
+          name: per_page
+          description: 'The number of items to show per page. Must be at least 1. Must not be greater than 100.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of items to show per page. Must be at least 1. Must not be greater than 100.'
+            example: 50
+            nullable: true
+        -
+          in: query
+          name: page
+          description: 'The current page of items to display. Must be at least 1.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'The current page of items to display. Must be at least 1.'
+            example: 1
+            nullable: true
+        -
+          in: query
+          name: title
+          description: 'Filter map layers by title. Must not be greater than 255 characters.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter map layers by title. Must not be greater than 255 characters.'
+            example: null
+            nullable: true
+        -
+          in: query
+          name: sort_by
+          description: ''
+          example: title
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: title
+            enum:
+              - title
+              - updated_at
+              - created_at
+            nullable: true
+        -
+          in: query
+          name: sort_direction
+          description: ''
+          example: asc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: asc
+            enum:
+              - asc
+              - desc
+            nullable: true
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 123
+                      title: 'architecto eius et'
+                      slug: quos-velit-et-fugiat-sunt-nihil-accusantium-harum
+                      description: 'Modi deserunt aut ab provident perspiciatis.'
+                      center_latitude: 34.8507
+                      center_longitude: -82.3985
+                      zoom_level: 10
+                      geojson_link: 'http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure'
+                      geojson_url: 'https://dev.sculley.dev/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson'
+                      contribute_link: 'https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html'
+                      raw_data_link: 'http://vonrueden.com/'
+                      maintainers:
+                        -
+                          name: 'Vesta Glover'
+                      created_at: '2025-01-01T17:00:00.000000Z'
+                      updated_at: '2025-01-01T17:00:00.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 123
+                        title: 'architecto eius et'
+                        slug: quos-velit-et-fugiat-sunt-nihil-accusantium-harum
+                        description: 'Modi deserunt aut ab provident perspiciatis.'
+                        center_latitude: 34.8507
+                        center_longitude: -82.3985
+                        zoom_level: 10
+                        geojson_link: 'http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure'
+                        geojson_url: 'https://dev.sculley.dev/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson'
+                        contribute_link: 'https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html'
+                        raw_data_link: 'http://vonrueden.com/'
+                        maintainers:
+                          -
+                            name: 'Vesta Glover'
+                        created_at: '2025-01-01T17:00:00.000000Z'
+                        updated_at: '2025-01-01T17:00:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 123
+                        title:
+                          type: string
+                          example: 'architecto eius et'
+                        slug:
+                          type: string
+                          example: quos-velit-et-fugiat-sunt-nihil-accusantium-harum
+                        description:
+                          type: string
+                          example: 'Modi deserunt aut ab provident perspiciatis.'
+                        center_latitude:
+                          type: number
+                          example: 34.8507
+                        center_longitude:
+                          type: number
+                          example: -82.3985
+                        zoom_level:
+                          type: integer
+                          example: 10
+                        geojson_link:
+                          type: string
+                          example: 'http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure'
+                        geojson_url:
+                          type: string
+                          example: 'https://dev.sculley.dev/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson'
+                        contribute_link:
+                          type: string
+                          example: 'https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html'
+                        raw_data_link:
+                          type: string
+                          example: 'http://vonrueden.com/'
+                        maintainers:
+                          type: array
+                          example:
+                            -
+                              name: 'Vesta Glover'
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: 'Vesta Glover'
+                        created_at:
+                          type: string
+                          example: '2025-01-01T17:00:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2025-01-01T17:00:00.000000Z'
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/map-layers/{mapLayer_slug}/geojson':
+    get:
+      summary: 'Map Layer GeoJSON'
+      operationId: mapLayerGeoJSON
+      description: "Returns the raw GeoJSON FeatureCollection for a specific map layer.\n\nThe response is suitable for direct use with mapping libraries like Leaflet, Mapbox, or Google Maps."
+      parameters: []
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  type: FeatureCollection
+                  features:
+                    -
+                      type: Feature
+                      geometry:
+                        type: Point
+                        coordinates:
+                          - -82.3985
+                          - 34.8507
+                      properties:
+                        title: 'Example Location'
+                properties:
+                  type:
+                    type: string
+                    example: FeatureCollection
+                  features:
+                    type: array
+                    example:
+                      -
+                        type: Feature
+                        geometry:
+                          type: Point
+                          coordinates:
+                            - -82.3985
+                            - 34.8507
+                        properties:
+                          title: 'Example Location'
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          example: Feature
+                        geometry:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              example: Point
+                            coordinates:
+                              type: array
+                              example:
+                                - -82.3985
+                                - 34.8507
+                              items:
+                                type: number
+                        properties:
+                          type: object
+                          properties:
+                            title:
+                              type: string
+                              example: 'Example Location'
+        404:
+          description: 'Not found'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'GeoJSON data not found for this map layer.'
+                properties:
+                  message:
+                    type: string
+                    example: 'GeoJSON data not found for this map layer.'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: mapLayer_slug
+        description: 'The slug of the map layer.'
+        example: breweries
+        required: true
+        schema:
+          type: string
