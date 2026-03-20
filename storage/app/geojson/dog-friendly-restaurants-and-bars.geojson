@@ -1,0 +1,1370 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4021148,
+                    34.850556
+                ]
+            },
+            "properties": {
+                "title": "The Greenville Beer Exchange",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404895,
+                    34.845515
+                ]
+            },
+            "properties": {
+                "title": "Pour Taproom",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4110266,
+                    34.8430278
+                ]
+            },
+            "properties": {
+                "title": "Liberty Tap Room",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3879997,
+                    34.8623373
+                ]
+            },
+            "properties": {
+                "title": "The Community Tap",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4047407,
+                    34.8441925
+                ]
+            },
+            "properties": {
+                "title": "Smoke on the Water",
+                "notes": "1 Augusta St #202, Greenville, SC 29601",
+                "property3": "(864) 232-9091"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4038681,
+                    34.8445937
+                ]
+            },
+            "properties": {
+                "title": "Brazwells Premium Pub",
+                "notes": "631 S Main St, Greenville, SC 29601",
+                "property3": "(864) 568-5053"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4031511,
+                    34.8451744
+                ]
+            },
+            "properties": {
+                "title": "Rainer's",
+                "notes": "610 S Main St, Greenville, SC 29601",
+                "property3": "(864) 232-1753"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4035223,
+                    34.8452398
+                ]
+            },
+            "properties": {
+                "title": "SUBWAY\u00aeRestaurants",
+                "notes": "606-A S Main St, Greenville, SC 29601",
+                "property3": "(864) 603-3334"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.35762,
+                    34.8694933
+                ]
+            },
+            "properties": {
+                "title": "Starbucks",
+                "notes": "550 S Main St #101, Greenville, SC 29601",
+                "property3": "(864) 240-6299"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4004355,
+                    34.848209
+                ]
+            },
+            "properties": {
+                "title": "Grill Marks",
+                "notes": "209 S Main St, Greenville, SC 29601",
+                "property3": "(864) 233-5825"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4012049,
+                    34.8493081
+                ]
+            },
+            "properties": {
+                "title": "Nose Dive",
+                "notes": "116 S Main St, Greenville, SC 29601",
+                "property3": "(864) 373-7300"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4008335,
+                    34.8499985
+                ]
+            },
+            "properties": {
+                "title": "Takosushi",
+                "notes": "34 S Main St, Greenville, SC 29601",
+                "property3": "(864) 271-5055"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3992976,
+                    34.850267
+                ]
+            },
+            "properties": {
+                "title": "Port City Java",
+                "notes": "11 S Main St, Greenville, SC 29601",
+                "property3": "(864) 250-9040"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3995414,
+                    34.8505498
+                ]
+            },
+            "properties": {
+                "title": "Cantinflas Mexican and Vegetarian Cuisine",
+                "notes": "10 S Main St, Greenville, SC 29601",
+                "property3": "(864) 250-1300"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3999068,
+                    34.8506891
+                ]
+            },
+            "properties": {
+                "title": "The Orient on Main",
+                "notes": "4 S Main St, Greenville, SC 29601",
+                "property3": "(864) 787-6241"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3999346,
+                    34.8505734
+                ]
+            },
+            "properties": {
+                "title": "Sticky Fingers Ribhouse",
+                "notes": "1 S Main St, Greenville, SC 29601",
+                "property3": "(864) 331-7427"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3988642,
+                    34.8513218
+                ]
+            },
+            "properties": {
+                "title": "Trio - A Brick Oven Cafe",
+                "notes": "22 N Main St, Greenville, SC 29601",
+                "property3": "(864) 467-1000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3993729,
+                    34.8520172
+                ]
+            },
+            "properties": {
+                "title": "Oakblue Kitchen",
+                "notes": "109 N Main St A, Greenville, SC 29601",
+                "property3": "(864) 520-2578"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4010531,
+                    34.850847
+                ]
+            },
+            "properties": {
+                "title": "Barley's Taproom & Pizzeria",
+                "notes": "25 W Washington St, Greenville, SC 29601",
+                "property3": "(864) 232-3706"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4017392,
+                    34.8507466
+                ]
+            },
+            "properties": {
+                "title": "Luna Rosa Gelato Cafe",
+                "notes": "9 W Washington St, Greenville, SC 29601",
+                "property3": "(864) 241-4040"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400179,
+                    34.849398
+                ]
+            },
+            "properties": {
+                "title": "Jimmy John's",
+                "notes": "141 E McBee Ave, Greenville, SC 29601",
+                "property3": "(864) 235-5775"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4042852,
+                    34.8460939
+                ]
+            },
+            "properties": {
+                "title": "Rick's Deli & Market",
+                "notes": "101 Falls Park Dr, Greenville, SC 29601",
+                "property3": "(864) 312-9060"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4026978,
+                    34.8468905
+                ]
+            },
+            "properties": {
+                "title": "Blues Boulevard Jazz",
+                "notes": "300 River St #203, Greenville, SC 29601",
+                "property3": "(864) 242-2583"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4026825,
+                    34.846426
+                ]
+            },
+            "properties": {
+                "title": "The Lazy Goat",
+                "notes": "170 Riverplace, Greenville, SC 29601",
+                "property3": "(864) 679-5299"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4034925,
+                    34.8465338
+                ]
+            },
+            "properties": {
+                "title": "Papi's Tacos",
+                "notes": "300 River St #123, Greenville, SC 29601",
+                "property3": "(864) 373-7274"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4072082,
+                    34.8420854
+                ]
+            },
+            "properties": {
+                "title": "FunnelDelicious",
+                "notes": "155 Augusta St, Greenville, SC 29601",
+                "property3": "(864) 631-1527"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4070289,
+                    34.8443386
+                ]
+            },
+            "properties": {
+                "title": "Breakwater Restaurant & Bar",
+                "notes": "802 S Main St, Greenville, SC 29601",
+                "property3": "(864) 271-0046"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4072709,
+                    34.8441666
+                ]
+            },
+            "properties": {
+                "title": "Bex Cafe & Juice Bar",
+                "notes": "820 S Main St #104, Greenville, SC 29601",
+                "property3": "(864) 552-1509"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4088267,
+                    34.8436486
+                ]
+            },
+            "properties": {
+                "title": "Mac's Speed Shop",
+                "notes": "930 S Main St, Greenville, SC 29601",
+                "property3": "(864) 239-0286"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.408411,
+                    34.8434571
+                ]
+            },
+            "properties": {
+                "title": "Compadres Mex Grill",
+                "notes": "929 S Main St, Greenville, SC 29601",
+                "property3": "(864) 282-8945"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3997872,
+                    34.8397825
+                ]
+            },
+            "properties": {
+                "title": "Biscuit Head",
+                "notes": "823 S Church St c, Greenville, SC 29601",
+                "property3": "(864) 248-0371"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3966873,
+                    34.8483386
+                ]
+            },
+            "properties": {
+                "title": "Greektown Grille",
+                "notes": "400 E McBee Ave, Greenville, SC 29601",
+                "property3": "(864) 233-5505"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397157,
+                    34.8491371
+                ]
+            },
+            "properties": {
+                "title": "American Burger Company",
+                "notes": "301 E McBee Ave, Greenville, SC 29601",
+                "property3": "(864) 509-0088"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3360578,
+                    34.8531787
+                ]
+            },
+            "properties": {
+                "title": "Copper River Grill",
+                "notes": "775 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 627-0041"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3378519,
+                    34.8504504
+                ]
+            },
+            "properties": {
+                "title": "Panera Bread",
+                "notes": "708 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 987-9931"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3384698,
+                    34.8495549
+                ]
+            },
+            "properties": {
+                "title": "Starbucks",
+                "notes": "649 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 213-9711"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3381212,
+                    34.8485671
+                ]
+            },
+            "properties": {
+                "title": "Jason's Deli",
+                "notes": "824 Woods Crossing Rd, Greenville, SC 29607",
+                "property3": "(864) 284-9870"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3413302,
+                    34.8458719
+                ]
+            },
+            "properties": {
+                "title": "Habiba Indian \/ Mediterranean Restaurant",
+                "notes": "528 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 297-0064"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3419938,
+                    34.8446722
+                ]
+            },
+            "properties": {
+                "title": "Moe's Southwest Grill",
+                "notes": "500 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 288-8085"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3454018,
+                    34.8397479
+                ]
+            },
+            "properties": {
+                "title": "Harbor Inn Seafood Greenville",
+                "notes": "321 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 286-9047"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3451549,
+                    34.8391225
+                ]
+            },
+            "properties": {
+                "title": "Papa's and Beer",
+                "notes": "317 Haywood Rd, Greenville, SC 29607",
+                "property3": "(864) 286-3350"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3496188,
+                    34.8322025
+                ]
+            },
+            "properties": {
+                "title": "Hooters",
+                "notes": "2401 Laurens Rd, Greenville, SC 29607",
+                "property3": "(864) 987-9464"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3095825,
+                    34.83208
+                ]
+            },
+            "properties": {
+                "title": "Freddy's Frozen Custard & Steakburgers",
+                "notes": "1102 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 520-8753"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3071511,
+                    34.8315031
+                ]
+            },
+            "properties": {
+                "title": "McDonald's",
+                "notes": "1111 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 297-1940"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2339146,
+                    34.8080151
+                ]
+            },
+            "properties": {
+                "title": "Napoli Pizzeria",
+                "notes": "2531 Woodruff Rd, Simpsonville, SC 29681",
+                "property3": "(864) 627-0019"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2568256,
+                    34.8200488
+                ]
+            },
+            "properties": {
+                "title": "McDonald's",
+                "notes": "2111 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 234-5518"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2574238,
+                    34.8200842
+                ]
+            },
+            "properties": {
+                "title": "Smoky Dreams Barbecue and Catering",
+                "notes": "2131 Woodruff Rd A, Greenville, SC 29607",
+                "property3": "(864) 627-4227"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2603439,
+                    34.820182
+                ]
+            },
+            "properties": {
+                "title": "Culver's",
+                "notes": "2021 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 991-8803"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2673473,
+                    34.8199526
+                ]
+            },
+            "properties": {
+                "title": "Bruster's Real Ice Cream",
+                "notes": "1850 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 281-7751"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.268122,
+                    34.819534
+                ]
+            },
+            "properties": {
+                "title": "Cook Out",
+                "notes": "1820 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864)-234-8105 "
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.271047,
+                    34.8196087
+                ]
+            },
+            "properties": {
+                "title": "Wayback Burgers",
+                "notes": "1757 Woodruff Rd E, Greenville, SC 29607",
+                "property3": "(864) 626-3300"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2713084,
+                    34.8199749
+                ]
+            },
+            "properties": {
+                "title": "Bruegger's Bagels",
+                "notes": "1717 Woodruff Rd a, Greenville, SC 29607",
+                "property3": "(864) 234-1565"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2731414,
+                    34.8193588
+                ]
+            },
+            "properties": {
+                "title": "House Divided Bar & Grill",
+                "notes": "1659 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 283-6655"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2749415,
+                    34.8195006
+                ]
+            },
+            "properties": {
+                "title": "Wendy's",
+                "notes": "1621 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 234-1377"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2772737,
+                    34.819983
+                ]
+            },
+            "properties": {
+                "title": "The Flat",
+                "notes": "1606 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 520-1522"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2782466,
+                    34.8197963
+                ]
+            },
+            "properties": {
+                "title": "Sonic Drive-In",
+                "notes": "1534 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 234-2598"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2799657,
+                    34.8206006
+                ]
+            },
+            "properties": {
+                "title": "Moe's Southwest Grill",
+                "notes": "1467-F Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 458-8090"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2802322,
+                    34.8208193
+                ]
+            },
+            "properties": {
+                "title": "Starbucks",
+                "notes": "1467 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 254-0232"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2806592,
+                    34.8211928
+                ]
+            },
+            "properties": {
+                "title": "Your Pie",
+                "notes": "1461 Woodruff Rd E, Greenville, SC 29607",
+                "property3": "(864) 288-8988"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2849984,
+                    34.82175
+                ]
+            },
+            "properties": {
+                "title": "JP's 4 Corners",
+                "notes": "1298 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 281-7777"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2884583,
+                    34.8227281
+                ]
+            },
+            "properties": {
+                "title": "Krispy Kreme",
+                "notes": "1217 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 987-5059"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2947132,
+                    34.8249647
+                ]
+            },
+            "properties": {
+                "title": "Tijuana Flats",
+                "notes": "1139 Woodruff Rd Ste. B, Greenville, SC 29607",
+                "property3": "(864) 844-8148"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2983039,
+                    34.8257376
+                ]
+            },
+            "properties": {
+                "title": "La Parrilla Mexican",
+                "notes": "1 Market Point Dr, Greenville, SC 29607",
+                "property3": "(864) 288-2004"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2995556,
+                    34.8261996
+                ]
+            },
+            "properties": {
+                "title": "Chipotle Mexican Grill",
+                "notes": "4 Market Point Dr, Greenville, SC 29607",
+                "property3": "(864) 234-6460"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2990539,
+                    34.8275891
+                ]
+            },
+            "properties": {
+                "title": "Panera Bread",
+                "notes": "1125 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 286-3923"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2990539,
+                    34.8275891
+                ]
+            },
+            "properties": {
+                "title": "Brixx Wood Fired Pizza",
+                "notes": "1125 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 286-1070"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2993137,
+                    34.8277102
+                ]
+            },
+            "properties": {
+                "title": "Cold Stone Creamery",
+                "notes": "1125 Woodruff Rd #1602, Greenville, SC 29607",
+                "property3": "(864) 288-2464"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3040161,
+                    34.8297186
+                ]
+            },
+            "properties": {
+                "title": "Starbucks",
+                "notes": "1130 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 297-7496"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3055153,
+                    34.8306705
+                ]
+            },
+            "properties": {
+                "title": "McDonald's",
+                "notes": "1111 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 297-1940"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.308143,
+                    34.8324124
+                ]
+            },
+            "properties": {
+                "title": "Freddy's Frozen Custard & Steakburgers",
+                "notes": "1102 Woodruff Rd, Greenville, SC 29607",
+                "property3": "(864) 520-8753"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3086169,
+                    34.8332409
+                ]
+            },
+            "properties": {
+                "title": "Babaziki Mediterranean Grill",
+                "notes": "1025 Woodruff Rd D-102, Greenville, SC 29607",
+                "property3": "(864) 288-1120"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3079977,
+                    34.8342835
+                ]
+            },
+            "properties": {
+                "title": "Another Broken Egg Cafe - Greenville",
+                "notes": "1025 Woodruff Rd, Greenville, SC 29067",
+                "property3": "(864) 627-7710"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3115502,
+                    34.8342521
+                ]
+            },
+            "properties": {
+                "title": "Chuy's",
+                "notes": "1034 Woodruff Rd B, Greenville, SC 29607",
+                "property3": "(864) 288-4453"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3299615,
+                    34.8492011
+                ]
+            },
+            "properties": {
+                "title": "Southern Fried Green Tomatoes",
+                "notes": "1175 Woods Crossing Rd #8, Greenville, SC 29607",
+                "property3": "(864) 627-9088"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3299615,
+                    34.8492011
+                ]
+            },
+            "properties": {
+                "title": "Jimmy John's",
+                "notes": "1175 Woods Crossing Rd #1a, Greenville, SC 29607",
+                "property3": "(864) 458-9645"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3288804,
+                    34.8551537
+                ]
+            },
+            "properties": {
+                "title": "TCBY",
+                "notes": "7 Brendan Way, Greenville, SC 29615",
+                "property3": "(864) 297-5683"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2688714,
+                    34.8589105
+                ]
+            },
+            "properties": {
+                "title": "Shuckin' Shack Oyster Bar",
+                "notes": "3620 Pelham Rd #4, Greenville, SC 29615",
+                "property3": "(864) 335-8975"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2688678,
+                    34.8589422
+                ]
+            },
+            "properties": {
+                "title": "Bacon Bros. Public House",
+                "notes": "3620 Pelham Rd, Greenville, SC 29615",
+                "property3": "(864) 297-6000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2668872,
+                    34.8597101
+                ]
+            },
+            "properties": {
+                "title": "Jimmy John's",
+                "notes": "3744 Pelham Rd, Greenville, SC 29615",
+                "property3": "(864) 234-0835"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.264292,
+                    34.8597247
+                ]
+            },
+            "properties": {
+                "title": "Starbucks",
+                "notes": "3915 Pelham Rd, Greenville, SC 29615",
+                "property3": "(864) 627-1138"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2633659,
+                    34.8598091
+                ]
+            },
+            "properties": {
+                "title": "Five Guys",
+                "notes": "3935 Pelham Rd, Greenville, SC 29615",
+                "property3": "(864) 288-3950"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.263373,
+                    34.8603851
+                ]
+            },
+            "properties": {
+                "title": "Firehouse Subs",
+                "notes": "3935 Pelham Rd e, Greenville, SC 29615",
+                "property3": "(864) 297-2535"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2320321,
+                    34.8497121
+                ]
+            },
+            "properties": {
+                "title": "Hans & Franz Biergarten",
+                "notes": "3124 SC-14, Greenville, SC 29615",
+                "property3": "(864) 627-8263"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2307485,
+                    34.852195
+                ]
+            },
+            "properties": {
+                "title": "Salsarita's Fresh Cantina",
+                "notes": "8595 Pelham Rd, Greenville, SC 29615",
+                "property3": "(864) 627-8301"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3576049,
+                    34.8653879
+                ]
+            },
+            "properties": {
+                "title": "Subway",
+                "notes": "939 N Pleasantburg Dr, Greenville, SC 29607",
+                "property3": "(864) 235-4224"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3576013,
+                    34.8666105
+                ]
+            },
+            "properties": {
+                "title": "Sonic Drive-In",
+                "notes": "954 N Pleasantburg Dr, Greenville, SC 29607",
+                "property3": "(864) 239-0678"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3571631,
+                    34.8689906
+                ]
+            },
+            "properties": {
+                "title": "Liquid Highway",
+                "notes": "2407 E North St, Greenville, SC 29615",
+                "property3": "(864) 201-4021"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3564487,
+                    34.8690848
+                ]
+            },
+            "properties": {
+                "title": "Starbucks",
+                "notes": "2431 E North St, Greenville, SC 29615",
+                "property3": "(864) 244-4201"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3579118,
+                    34.8707172
+                ]
+            },
+            "properties": {
+                "title": "Rosalinda Fonda",
+                "notes": "1124 N Pleasantburg Dr, Greenville, SC 29607",
+                "property3": "(864) 292-7002"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.358771,
+                    34.8725857
+                ]
+            },
+            "properties": {
+                "title": "Little Caesars Pizza",
+                "notes": "1174 N Pleasantburg Dr, Greenville, SC 29607",
+                "property3": "(864) 244-4154"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3590482,
+                    34.875872
+                ]
+            },
+            "properties": {
+                "title": "Bucky\u2019s BBQ",
+                "notes": "1326 N Pleasantburg Dr, Greenville, SC 29607",
+                "property3": "(864) 244-5114"
+            }
+        }
+    ]
+}

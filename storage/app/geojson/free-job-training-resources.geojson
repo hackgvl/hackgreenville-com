@@ -1,0 +1,245 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "United Ministries Learning Center",
+                "notes": "GED, Employment",
+                "property3": "503 Vardry St, Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Project Host Culinary Training",
+                "notes": "Culinary School",
+                "property3": "525 S Academy St Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection on Haywood",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "115 Haywood Rd, Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection on Augusta",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "3214-B Augusta Rd Greenville, South Carolina 29605"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection on Blue Ridge Dr.",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "3229 W. Blue Ridge Dr.\nGreenville, South Carolina 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection on Asheville Hwy - Spartanburg",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "1300 Asheville Hwy Spartanburg, South Carolina 29303"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection on Blackstock Rd. - Spartanburg",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "219 E. Blackstock Rd.\nSpartanburg, South Carolina 29301"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection - Simpsonville",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "915 South St, Unit N Simpsonville, South Carolina 29681"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Goodwill Job Connection - Greer",
+                "notes": "Food Service, CDL, Digital Skills, Forklift Operator, Nurse Aide, Retail",
+                "property3": "1333 W. Wade Hampton Blvd.\nGreer, South Carolina 29650"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "SC Works Center - Greenville\/McAlister Square Center",
+                "notes": "Various programs",
+                "property3": "225 S Pleasantburg Dr E-1, Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "SC Works Center - Greer Center\n*Limited Services Available*",
+                "notes": "Various programs",
+                "property3": "202 Victoria Street\nGreer, SC 29651"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Vocational Rehabilitation",
+                "notes": "prepares and assists eligible South Carolinians with disabilities to achieve employment",
+                "property3": "105 Parkins Mill Rd, Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "SC Codes - Greenville",
+                "notes": "Free programming courses",
+                "property3": "411 University Ridge\nGreenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "SC Codes - Spartanburg",
+                "notes": "Free programming courses",
+                "property3": "151 S Church St.\nSpartanburg SC 29306"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Gateway House",
+                "notes": "For people with mental health diagnoses",
+                "property3": "415 Rutherford St, Greenville, SC 29609"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Foothills Family Resources",
+                "notes": "Manufacturing certification",
+                "property3": "3 Main St, Marietta, SC 29661"
+            }
+        }
+    ]
+}

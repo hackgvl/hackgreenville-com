@@ -1,0 +1,275 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.403,
+                    34.8437
+                ]
+            },
+            "properties": {
+                "title": "Arboretum Falls",
+                "notes": "10 Feet",
+                "property3": "0.1 Mile"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5988,
+                    35.12308
+                ]
+            },
+            "properties": {
+                "title": "Ben's Sluice",
+                "notes": "10 Feet",
+                "property3": "1.5 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2985,
+                    34.61156
+                ]
+            },
+            "properties": {
+                "title": "Cedar Shoals",
+                "notes": "12 Feet",
+                "property3": "roadside"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6322,
+                    35.09327
+                ]
+            },
+            "properties": {
+                "title": "Confusion Falls",
+                "notes": "20 Feet",
+                "property3": "2.9 miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6269,
+                    35.12183
+                ]
+            },
+            "properties": {
+                "title": "Dargans Cascade",
+                "notes": "25 Feet",
+                "property3": "3.9 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5377,
+                    35.13964
+                ]
+            },
+            "properties": {
+                "title": "Falls Creek Falls",
+                "notes": "100 Feet",
+                "property3": "1.2 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.594,
+                    35.1246
+                ]
+            },
+            "properties": {
+                "title": "Jones Gap Falls",
+                "notes": "50 Feet",
+                "property3": "1.1 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4,
+                    34.844
+                ]
+            },
+            "properties": {
+                "title": "Lower Reedy River Falls",
+                "notes": "15 Feet",
+                "property3": "0.1 Mile"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.597,
+                    35.07365
+                ]
+            },
+            "properties": {
+                "title": "Lower Wildcat Falls",
+                "notes": "20 Feet",
+                "property3": "roadside"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6315,
+                    35.09488
+                ]
+            },
+            "properties": {
+                "title": "Moonshine Falls",
+                "notes": "40 Feet",
+                "property3": "2.8 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5883,
+                    35.13257
+                ]
+            },
+            "properties": {
+                "title": "Rainbow Falls",
+                "notes": "100 Feet",
+                "property3": "0.5 Mile"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.661,
+                    35.10492
+                ]
+            },
+            "properties": {
+                "title": "Raven Cliff Falls",
+                "notes": "400 Feet",
+                "property3": "2.0 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4013,
+                    34.84468
+                ]
+            },
+            "properties": {
+                "title": "Reedy River Falls",
+                "notes": "40 Feet",
+                "property3": "0.1 Mile"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3931,
+                    34.84312
+                ]
+            },
+            "properties": {
+                "title": "Rock Quarry Falls",
+                "notes": "10 Feet",
+                "property3": "roadside"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6057,
+                    35.08283
+                ]
+            },
+            "properties": {
+                "title": "Slickum Falls",
+                "notes": "75 Feet",
+                "property3": "0.2 Mile"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6085,
+                    35.1231
+                ]
+            },
+            "properties": {
+                "title": "Toll Road Falls",
+                "notes": "12 Feet",
+                "property3": "1.9 Miles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5966,
+                    35.07895
+                ]
+            },
+            "properties": {
+                "title": "Upper Wildcat Falls",
+                "notes": "100 Feet",
+                "property3": "0.4 Mile"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.597,
+                    35.07368
+                ]
+            },
+            "properties": {
+                "title": "Wildcat Branch Falls",
+                "notes": "",
+                "property3": ""
+            }
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4296,
+                    34.8475
+                ]
+            },
+            "properties": {
+                "title": "The Anchorage",
+                "notes": "Corner of Perry Ave. & Lois Ave.",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3655262,
+                    34.8440809
+                ]
+            },
+            "properties": {
+                "title": "The Great Wave off Kanagawa",
+                "notes": "Behind Half-Moon Outfitters",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3944979,
+                    34.8616144
+                ]
+            },
+            "properties": {
+                "title": "Southern Sounds (Josh White & Russ Morin)",
+                "notes": "Corner of W Stone Ave & Main St",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.390538,
+                    34.8605321
+                ]
+            },
+            "properties": {
+                "title": "Office Suites",
+                "notes": "On side of building",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3996311,
+                    34.8620737
+                ]
+            },
+            "properties": {
+                "title": "Be the Change You Want to See in the Neighborhood!",
+                "notes": "painted by Calista Bockenstette",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4038063,
+                    34.8682255
+                ]
+            },
+            "properties": {
+                "title": "Expressions Unlimited",
+                "notes": "On side of building",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4073314,
+                    34.8436432
+                ]
+            },
+            "properties": {
+                "title": "Old Cigar Warehouse (Drink Coca-Cola)",
+                "notes": "On side of building",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4101713,
+                    34.8665497
+                ]
+            },
+            "properties": {
+                "title": "Poe Mill Village",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3940603,
+                    34.8621919
+                ]
+            },
+            "properties": {
+                "title": "Park Scene",
+                "notes": "On side of Rite Aid building",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3994275,
+                    34.8464517
+                ]
+            },
+            "properties": {
+                "title": "Textile Mills Tribute",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4035377,
+                    34.8463698
+                ]
+            },
+            "properties": {
+                "title": "Greenville: Textile Center of the World",
+                "notes": "",
+                "property3": null
+            }
+        }
+    ]
+}

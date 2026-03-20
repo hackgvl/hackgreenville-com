@@ -1,0 +1,192 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2600889,
+                    34.4693268
+                ]
+            },
+            "properties": {
+                "title": "Bio-Way Farm",
+                "address": "197 Bio Way, Ware Shoals, SC  29692",
+                "county": "Laurens",
+                "csa": "YES",
+                "website": "http:\/\/www.biowayfarm.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5694126,
+                    34.906043
+                ]
+            },
+            "properties": {
+                "title": "Greenbrier Farms",
+                "address": "766 Hester Store Road, Easley, SC  29640",
+                "county": "Pickens",
+                "csa": "YES",
+                "website": "http:\/\/www.greenbrierfarms.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.845937,
+                    34.6739645
+                ]
+            },
+            "properties": {
+                "title": "Clemson University Student Organic Farm",
+                "address": "190 Field Station Dr, Clemson, SC  29631",
+                "county": "Anderson",
+                "csa": "YES",
+                "website": "https:\/\/www.clemson.edu\/public\/sustainableag\/soa\/index.html"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.866342,
+                    34.419216
+                ]
+            },
+            "properties": {
+                "title": "Crescent Farm LLC",
+                "address": "3111 SC-56, Clinton, SC  29325",
+                "county": "Laurens",
+                "csa": "YES",
+                "website": "https:\/\/www.crescentfarmsc.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.050924,
+                    34.6357
+                ]
+            },
+            "properties": {
+                "title": "Gibson Farms",
+                "address": "251 N Retreat Rd, Westminster, SC  29693",
+                "county": "Oconee",
+                "csa": "NO",
+                "website": "http:\/\/www.gibsonfarmsorganicbeef.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.0960574,
+                    34.6173885
+                ]
+            },
+            "properties": {
+                "title": "Greenfield Organic Farms",
+                "address": "1056 Greenfield Rd, Westminster, SC  29693",
+                "county": "Oconee",
+                "csa": "NO",
+                "website": "https:\/\/www.facebook.com\/pg\/greenfieldorganicfarms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41111,
+                    34.990407
+                ]
+            },
+            "properties": {
+                "title": "Nature's Peace Garden",
+                "address": "7 Fancy Lane, Travelers Rest, SC  29690",
+                "county": "Greenville",
+                "csa": "NO",
+                "website": "http:\/\/naturespeacegarden.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.476187,
+                    34.9931817
+                ]
+            },
+            "properties": {
+                "title": "Saint Basil Farm",
+                "address": "12965 Old White Horse Rd, Travelers Rest, SC  29690",
+                "county": "Greenville",
+                "csa": "NO",
+                "website": "https:\/\/www.facebook.com\/saintbasilfarm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.256208,
+                    35.014866
+                ]
+            },
+            "properties": {
+                "title": "Carolina Natural Farms",
+                "address": "3755 Ballenger Road, Greer, SC  29651",
+                "county": "Greenville",
+                "csa": "YES",
+                "website": "https:\/\/carolina-natural-farms.homegrowncow.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.457796,
+                    34.551803
+                ]
+            },
+            "properties": {
+                "title": "Barefoot Farms",
+                "address": "293 Murphy Rd, Belton, SC  29627",
+                "county": "Anderson",
+                "csa": "NO",
+                "website": "http:\/\/barefootfarmsofbelton.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.761329,
+                    34.3758989
+                ]
+            },
+            "properties": {
+                "title": "Milky Way Farms",
+                "address": "220 Hidden Hills Rd, Starr, SC  29684",
+                "county": "Anderson",
+                "csa": "NO",
+                "website": "http:\/\/scmilkywayfarm.com\/"
+            }
+        }
+    ]
+}

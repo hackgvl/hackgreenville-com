@@ -1,0 +1,575 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.287369,
+                    34.791634
+                ]
+            },
+            "properties": {
+                "title": "Mauldin Open Air Farmer's Market (near Mauldin HIgh)",
+                "address": "corner of Corn\/Bridges road and Butler Road",
+                "url": "8a-8p except Sun 11a-8p"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.621488,
+                    34.717265
+                ]
+            },
+            "properties": {
+                "title": "Union Farmers Market",
+                "address": "511 E main st, Union, SC",
+                "url": "http:\/\/www.local-farmers-markets.com\/market\/4298\/union\/union-farmers-market"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.942413,
+                    34.956245
+                ]
+            },
+            "properties": {
+                "title": "Hub City Farmers Market",
+                "address": "Northside Harvest Park, 498 Howard Street, Spartanburg, SC",
+                "url": "http:\/\/www.hubcityfm.org\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.0906,
+                    35.051765
+                ]
+            },
+            "properties": {
+                "title": "Inman Fresh Farmers Market",
+                "address": "14 N. Howard Street, Inman, SC",
+                "url": "https:\/\/www.facebook.com\/Inmanfresh"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.804919,
+                    35.016531
+                ]
+            },
+            "properties": {
+                "title": "Cowpens Farmers Market",
+                "address": "5309 S Main St, Cowpens, SC",
+                "url": "https:\/\/www.facebook.com\/CowpensFarmersMarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.197975,
+                    35.18009
+                ]
+            },
+            "properties": {
+                "title": "landrum Farmers Market",
+                "address": "S 562 , S 562, Landrum, SC",
+                "url": "http:\/\/agriculture.sc.gov\/farmers-markets\/landrum-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.030576,
+                    34.734853
+                ]
+            },
+            "properties": {
+                "title": "Woodruff Farmers Market",
+                "address": "300 Cross Anchor Rd, Woodruff, SC",
+                "url": "https:\/\/www.facebook.com\/WoodruffFarmersMarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.605196,
+                    34.830962
+                ]
+            },
+            "properties": {
+                "title": "Easley Farmers Market",
+                "address": "205 N 1st St, Easley, SC",
+                "url": "http:\/\/easleyfarmersmarket.com\/?utm_source=Our+Upstate-Newsletter-9.13.2012-noads&utm_campaign=E-Newsletter&utm_medium=email"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.787642,
+                    34.686129
+                ]
+            },
+            "properties": {
+                "title": "Clemson Farmers Market",
+                "address": "578 Issaqueena Trail, Clemson, SC",
+                "url": "https:\/\/www.facebook.com\/ClemsonFarmersMarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.818553,
+                    34.804342
+                ]
+            },
+            "properties": {
+                "title": "Six Mile Farmers Depot Farmers Market",
+                "address": "102 S. Main Street Six Mile, SC",
+                "url": "http:\/\/www.visitpickenscounty.com\/vendor\/1080\/six-mile-farmers-depot-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.023596,
+                    34.669503
+                ]
+            },
+            "properties": {
+                "title": "Foothills Heritage Market",
+                "address": "2103 Sandier Blv, Seneca, SC",
+                "url": "http:\/\/www.foothillsheritagemarket.org\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.062649,
+                    34.764528
+                ]
+            },
+            "properties": {
+                "title": "Walhalla Farmers Market",
+                "address": "301 E Main St, Walhalla, SC",
+                "url": "https:\/\/www.facebook.com\/walhallafarmersmarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.096245,
+                    34.665833
+                ]
+            },
+            "properties": {
+                "title": "Westminster Farmers Market",
+                "address": "135 E Main St, Westminster, SC",
+                "url": "https:\/\/www.facebook.com\/pages\/Tuesday-Evening-Farmers-Market\/528289293898219?fref=pb&hc_location=profile_browser"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.951431,
+                    34.685028
+                ]
+            },
+            "properties": {
+                "title": "Seneca Famers market",
+                "address": "Main Street, Seneca, SC",
+                "url": "http:\/\/www.seneca.sc.us\/AboutSeneca\/CurrentNews\/tabid\/65\/articleType\/ArticleView\/articleId\/525\/Seneca-Farmers-Market-2015.aspx"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.014399,
+                    34.499262
+                ]
+            },
+            "properties": {
+                "title": "Downtown Laurens Farmers Market",
+                "address": "200 Courthouse Square, Laurens, SC",
+                "url": "http:\/\/mainstreetlaurens.org\/event\/downtown-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.158337,
+                    34.216645
+                ]
+            },
+            "properties": {
+                "title": "Greenwood Farmers market",
+                "address": "1612 SC HWY 72\/221E, Greenwood, SC",
+                "url": "https:\/\/www.facebook.com\/pages\/Greenwood-Farmers-Market\/200675799943630"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.023156,
+                    34.17443
+                ]
+            },
+            "properties": {
+                "title": "Ninety Six Farmers Market",
+                "address": "102 Main St E, Ninety Six, SC",
+                "url": "http:\/\/agriculture.sc.gov\/farmers-markets\/ninety-six-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.163047,
+                    34.190203
+                ]
+            },
+            "properties": {
+                "title": "Greenwood Uptown Market",
+                "address": "220 Maxwell Ave, Greenwood, SC",
+                "url": "http:\/\/www.uptowngreenwood.com\/uptown-market"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.200209,
+                    34.693027
+                ]
+            },
+            "properties": {
+                "title": "GHS Fountain Inn",
+                "address": "102 Depot St, Fountain Inn, SC",
+                "url": "https:\/\/www.fountaininn.org\/special-events.html"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.394,
+                    34.850555
+                ]
+            },
+            "properties": {
+                "title": "TD Saturday Market",
+                "address": "Main St at McBee Ave, Greenville, SC",
+                "url": "http:\/\/www.saturdaymarketlive.com\/pages\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.444432,
+                    34.954918
+                ]
+            },
+            "properties": {
+                "title": "Travelers Rest Farmers Market",
+                "address": "115 Wilhelm Winter St 29690 Travelers Rest",
+                "url": "http:\/\/www.travelersrestfarmersmarket.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.421978,
+                    34.869835
+                ]
+            },
+            "properties": {
+                "title": "Swamp Rabbit Cafe Slow Food Earth Market",
+                "address": "205 Cedar Lane Road, Greenville, SC",
+                "url": "http:\/\/www.slowfoodupstate.com\/earthmarket.htm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.366668,
+                    34.893448
+                ]
+            },
+            "properties": {
+                "title": "Greenville State Farmers Market",
+                "address": "1354 Rutherford Rd, Greenville, SC",
+                "url": "http:\/\/agriculture.sc.gov\/divisions\/agency-services\/state-farmers-markets\/greenville-state-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.28492,
+                    34.919276
+                ]
+            },
+            "properties": {
+                "title": "Taylors Farmers Market",
+                "address": "250 Mill St, Taylors, SC",
+                "url": "http:\/\/www.taylorsfarmersmarket.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.225598,
+                    34.936366
+                ]
+            },
+            "properties": {
+                "title": "Greer Farmers Market",
+                "address": "300 Randall St, Greers, SC",
+                "url": "https:\/\/www.facebook.com\/greerfarmersmarket\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.648019,
+                    35.076347
+                ]
+            },
+            "properties": {
+                "title": "Gaffney Station Farmers Market",
+                "address": "500 North Granard St, Gaffney, SC",
+                "url": "http:\/\/www.getintogaffney.com\/farmers-market"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.764439,
+                    34.984162
+                ]
+            },
+            "properties": {
+                "title": "Cherokee Foothills Organic Farmers Market",
+                "address": "414 HWY 11, Pickens, SC",
+                "url": "http:\/\/omgrownus.wixsite.com\/mysite"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6521,
+                    34.5067
+                ]
+            },
+            "properties": {
+                "title": "Anderson County Farmers Market",
+                "address": "402 N Murray Ave, Anderson, SC",
+                "url": "http:\/\/www.andersoncountysc.org\/farmersmarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.552318,
+                    34.562961
+                ]
+            },
+            "properties": {
+                "title": "Anderson Jockey Lot and Farmers Market",
+                "address": "430 HIghway 29 North, Belton, SC",
+                "url": "http:\/\/www.jockeylot.com\/Contents\/jockeylothome.aspx"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.6521,
+                    34.5067
+                ]
+            },
+            "properties": {
+                "title": "Anderson Area Farm & Food Association",
+                "address": "402 N Murray Ave, Anderson, SC",
+                "url": "https:\/\/www.facebook.com\/Anderson-Area-Farm-Food-Association-431344110224404\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.781101,
+                    34.643124
+                ]
+            },
+            "properties": {
+                "title": "Pendleton Area Farmers Market",
+                "address": "Village Square, Pendleton, SC",
+                "url": "https:\/\/www.facebook.com\/Pendleton-Farmers-Market-123792054302940\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.479751,
+                    34.617142
+                ]
+            },
+            "properties": {
+                "title": "Palmetto Farmers Market",
+                "address": "Williamston Park Springs, Center St, Williamston, SC",
+                "url": "https:\/\/www.facebook.com\/palmettomarket\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.641737,
+                    34.210897
+                ]
+            },
+            "properties": {
+                "title": "Iva Farmers Market",
+                "address": "SC-81 SC-81, Iva, SC",
+                "url": "http:\/\/agriculture.sc.gov\/farmers-markets\/iva-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.496041,
+                    34.526771
+                ]
+            },
+            "properties": {
+                "title": "Belton Farmers Market",
+                "address": "102 Blake St, Belton SC",
+                "url": "http:\/\/agriculture.sc.gov\/farmers-markets\/belton-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.787642,
+                    34.686129
+                ]
+            },
+            "properties": {
+                "title": "Clemson Farmers Market",
+                "address": "578 Issaqueena Trail Clemson, SC",
+                "url": "https:\/\/www.facebook.com\/ClemsonFarmersMarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.379506,
+                    34.178213
+                ]
+            },
+            "properties": {
+                "title": "Abbeville Farmers Market",
+                "address": "Trinity St, Abbeville, SC",
+                "url": "https:\/\/www.facebook.com\/AbbevilleMarket"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.386273,
+                    34.335516
+                ]
+            },
+            "properties": {
+                "title": "Due West Farmers Market",
+                "address": "Hwy 184 & Beluah Street, Abbeville, SC",
+                "url": "http:\/\/agriculture.sc.gov\/farmers-markets\/due-west-farmers-market\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.287369,
+                    34.791634
+                ]
+            },
+            "properties": {
+                "title": "Mauldin Open Air Farmer's Market (near Mauldin High)",
+                "address": "corner of Corn\/Bridges road and Butler Road",
+                "url": "https:\/\/www.facebook.com\/pages\/Mauldin-Open-Air-Market\/143326489047572"
+            }
+        }
+    ]
+}

@@ -1,0 +1,605 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4001,
+                    34.84835
+                ]
+            },
+            "properties": {
+                "title": "Bike Rack at City Hall",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3975,
+                    34.85425
+                ]
+            },
+            "properties": {
+                "title": "NW corner Main\/College",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3984,
+                    34.85152
+                ]
+            },
+            "properties": {
+                "title": "Coffee Underground",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3987,
+                    34.85075
+                ]
+            },
+            "properties": {
+                "title": "NE corner Main\/Washington",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3992,
+                    34.85071
+                ]
+            },
+            "properties": {
+                "title": "Sushi Murisaki (side of)",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3999,
+                    34.85093
+                ]
+            },
+            "properties": {
+                "title": "Barley's Taproom",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3996,
+                    34.84976
+                ]
+            },
+            "properties": {
+                "title": "NW corner of Main\/McBee",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3979,
+                    34.84923
+                ]
+            },
+            "properties": {
+                "title": "Jimmy John's Subs",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3991,
+                    34.84821
+                ]
+            },
+            "properties": {
+                "title": "Connolly's Irish Pub",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4004,
+                    34.84736
+                ]
+            },
+            "properties": {
+                "title": "Greenville News\/ Main Street",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.402,
+                    34.84527
+                ]
+            },
+            "properties": {
+                "title": "Michellin on Main",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4018,
+                    34.84525
+                ]
+            },
+            "properties": {
+                "title": "Spill the Beans",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4021,
+                    34.84499
+                ]
+            },
+            "properties": {
+                "title": "Main Street\/ Falls Park",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4031,
+                    34.84454
+                ]
+            },
+            "properties": {
+                "title": "Main Street",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4088,
+                    34.84276
+                ]
+            },
+            "properties": {
+                "title": "Flour Field\/ Greenville Drive NW",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4075,
+                    34.84162
+                ]
+            },
+            "properties": {
+                "title": "Flour Field\/ Greenville Drive SE",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4,
+                    34.84824
+                ]
+            },
+            "properties": {
+                "title": "GrillMarks",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404,
+                    34.84439
+                ]
+            },
+            "properties": {
+                "title": "Mellow Mushroom \/ Smoke on the Water",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3985,
+                    34.85208
+                ]
+            },
+            "properties": {
+                "title": "Mast General Store",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4084,
+                    34.85278
+                ]
+            },
+            "properties": {
+                "title": "TTR Bikes",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4083,
+                    34.84348
+                ]
+            },
+            "properties": {
+                "title": "Carolina Triathalon",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2552,
+                    34.73688
+                ]
+            },
+            "properties": {
+                "title": "Old Rail Station",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2604,
+                    34.74787
+                ]
+            },
+            "properties": {
+                "title": "Simpsonville Library",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2597,
+                    34.70582
+                ]
+            },
+            "properties": {
+                "title": "Target\/Starbucks",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3012,
+                    34.82607
+                ]
+            },
+            "properties": {
+                "title": "Whole Foods",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2503,
+                    34.74131
+                ]
+            },
+            "properties": {
+                "title": "Simpsonville Park",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4016,
+                    34.85698
+                ]
+            },
+            "properties": {
+                "title": "Greenville Main Library",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3983,
+                    34.85512
+                ]
+            },
+            "properties": {
+                "title": "Landmark Bldg - Parking Garage",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3951,
+                    34.84762
+                ]
+            },
+            "properties": {
+                "title": "McBee Station",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4039,
+                    34.84884
+                ]
+            },
+            "properties": {
+                "title": "Swamp Rabbit Trail @ Linky Stone Park",
+                "notes": "Under Academy St.Bridge",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3058,
+                    34.82925
+                ]
+            },
+            "properties": {
+                "title": "Academy Sports\/Eyes in Motion",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3972,
+                    34.84652
+                ]
+            },
+            "properties": {
+                "title": "Elliot Davis\/ Broad Street",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4035,
+                    34.84127
+                ]
+            },
+            "properties": {
+                "title": "County Square",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4096,
+                    34.82144
+                ]
+            },
+            "properties": {
+                "title": "ISC Building At GMH",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3935,
+                    34.84763
+                ]
+            },
+            "properties": {
+                "title": "Regents Bank",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404,
+                    34.84404
+                ]
+            },
+            "properties": {
+                "title": "Back side of Smoke on the Water and Mellow Mushroom",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4083,
+                    34.85451
+                ]
+            },
+            "properties": {
+                "title": "Post Office",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399365,
+                    34.852059
+                ]
+            },
+            "properties": {
+                "title": "ONE City Plaza \/ Mast General Store",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399446,
+                    34.852138
+                ]
+            },
+            "properties": {
+                "title": "ONE City Plaza \/ Richardson Garage",
+                "notes": "",
+                "More": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399719,
+                    34.851698
+                ]
+            },
+            "properties": {
+                "title": "Aloft Parking Deck",
+                "notes": "Covered. Inside Aloft Parking Deck. Entrance between Bank of America and Aloft buildings in ONE Plaza",
+                "More": null
+            }
+        }
+    ]
+}

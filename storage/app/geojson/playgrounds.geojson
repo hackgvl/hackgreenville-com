@@ -1,0 +1,500 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.331445,
+                    34.829917
+                ]
+            },
+            "properties": {
+                "title": "Legacy Park",
+                "address": "336 Rocky Slope Rd, Greenville, SC 29607",
+                "website": "http:\/\/www.greenvillesc.gov\/Facilities\/Facility\/Details\/Legacy-Park-9"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.352984,
+                    34.780938
+                ]
+            },
+            "properties": {
+                "title": "Conestee Park",
+                "address": "840,Mauldin Road,Greenville,SC 29607",
+                "website": "http:\/\/greenvillerec.com\/parks\/conestee-park\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.350467,
+                    34.844674
+                ]
+            },
+            "properties": {
+                "title": "Runway Park",
+                "address": "21 Airport Rd Ext, Greenville, SC 29607",
+                "website": "http:\/\/www.greenvilledowntownairport.com\/RunwayParkatGMU.html"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.288143,
+                    34.791371
+                ]
+            },
+            "properties": {
+                "title": "Mauldin City Park",
+                "address": "203 Corn Rd, Greenville, SC 29607",
+                "website": "http:\/\/www.cityofmauldin.org\/parks-facilities"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.325161,
+                    34.771841
+                ]
+            },
+            "properties": {
+                "title": "Sunset Park - Miracle League playground.",
+                "address": "211 Fowler Cir, Greenville, SC 29607",
+                "website": "http:\/\/www.cityofmauldin.org\/parks-facilities"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.303719,
+                    34.784731
+                ]
+            },
+            "properties": {
+                "title": "Springfield Park",
+                "address": "129-199 Hyde Cir, Mauldin, SC 29662",
+                "website": "http:\/\/www.cityofmauldin.org\/parks-facilities"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.306644,
+                    34.817495
+                ]
+            },
+            "properties": {
+                "title": "Pineforest Park",
+                "address": "108 Clearfield Rd, Greenville, SC 29607",
+                "website": "http:\/\/www.cityofmauldin.org\/parks-facilities"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.291048,
+                    34.852954
+                ]
+            },
+            "properties": {
+                "title": "Gary L. Pittman Memorial Park",
+                "address": "420 Blacks Rd., Greenville, SC 29615",
+                "website": "http:\/\/greenvillerec.com\/parks\/gary-l-pittman\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.23364,
+                    34.719684
+                ]
+            },
+            "properties": {
+                "title": "Heritage Park",
+                "address": "861 SE Main St, Simpsonville, SC 29681",
+                "website": "http:\/\/heritageparkamphitheatre.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.239339,
+                    34.929055
+                ]
+            },
+            "properties": {
+                "title": "Century Park",
+                "address": "3605 Brushy Creek Rd, Greer, SC 29650",
+                "website": "http:\/\/www.cityofgreer.org\/departments\/century.php"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373378,
+                    34.897645
+                ]
+            },
+            "properties": {
+                "title": "Herdklotz Park",
+                "address": "126 Beverly Rd, Greenville, SC 29609",
+                "website": "http:\/\/greenvillerec.com\/parks\/herdklotz\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.300091,
+                    34.886173
+                ]
+            },
+            "properties": {
+                "title": "Pavilion Recreation Complex-Boundless Playground",
+                "address": "400 Scottswood Road, Taylors, SC 29687",
+                "website": "http:\/\/greenvillerec.com\/parks\/pavilion-recreation-complex\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442341,
+                    34.970141
+                ]
+            },
+            "properties": {
+                "title": "Gateway Park",
+                "address": "115 Henderson Dr., Travelers Rest, SC 29690",
+                "website": "http:\/\/greenvillerec.com\/parks\/gateway-park\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.437376,
+                    34.950834
+                ]
+            },
+            "properties": {
+                "title": "Poinsett Park",
+                "address": "5 Pine Forest Rd. Travelers Rest, SC 29690",
+                "website": "http:\/\/greenvillerec.com\/parks\/poinsett\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391244,
+                    34.887413
+                ]
+            },
+            "properties": {
+                "title": "Piney Mountain Park",
+                "address": "501 Worley Rd., Greenville, SC 29609",
+                "website": "http:\/\/greenvillerec.com\/parks\/piney-mtn\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.302418,
+                    34.953801
+                ]
+            },
+            "properties": {
+                "title": "Lincoln Park",
+                "address": "169 Harnitha Lane, Taylors, SC 29687",
+                "website": "http:\/\/greenvillerec.com\/parks\/lincoln\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.472027,
+                    34.902178
+                ]
+            },
+            "properties": {
+                "title": "Northwest Park",
+                "address": "8109 White Horse Rd., Greenville, SC 29617",
+                "website": "http:\/\/greenvillerec.com\/parks\/greenville-tec\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.311491,
+                    35.052698
+                ]
+            },
+            "properties": {
+                "title": "David Jackson Park",
+                "address": "25 Fowler Rd., Taylors, SC 29687",
+                "website": "http:\/\/greenvillerec.com\/parks\/david-jackson\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.194129,
+                    34.811881
+                ]
+            },
+            "properties": {
+                "title": "MESA Soccer Complex Playground ",
+                "address": "1020 Anderson Ridge Road, Greer, SC 29651",
+                "website": "http:\/\/greenvillerec.com\/parks\/mesa-soccer-complex\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.335998,
+                    34.869048
+                ]
+            },
+            "properties": {
+                "title": "Butler Springs Park",
+                "address": "301 Butler Springs Rd., Greenville, SC 29615",
+                "website": "http:\/\/greenvillerec.com\/parks\/butler-springs-park\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442134,
+                    34.859022
+                ]
+            },
+            "properties": {
+                "title": "Westside Park",
+                "address": "2700 W. Blue Ridge Drive, Greenville, SC 29611",
+                "website": "http:\/\/greenvillerec.com\/parks\/westside-park\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.433992,
+                    34.842378
+                ]
+            },
+            "properties": {
+                "title": "Shoeless Joe Jackson Memorial Park",
+                "address": "406 West Ave., Greenville, SC 29611",
+                "website": "http:\/\/greenvillerec.com\/parks\/shoeless-joe\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.261967,
+                    34.905678
+                ]
+            },
+            "properties": {
+                "title": "East Riverside Park",
+                "address": "1155 S. Suber Road, Greer, SC 29650",
+                "website": "http:\/\/greenvillerec.com\/parks\/east-riverside\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.381176,
+                    34.788675
+                ]
+            },
+            "properties": {
+                "title": "Woodfield Playground",
+                "address": "48 Ridgeway Drive, Greenville, SC 29605",
+                "website": "http:\/\/greenvillerec.com\/parks\/woodfield\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.443844,
+                    34.828954
+                ]
+            },
+            "properties": {
+                "title": "Welcome Park",
+                "address": "10 York Drive, Greenville, SC 29611",
+                "website": "http:\/\/greenvillerec.com\/parks\/welcome\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.420243,
+                    34.873239
+                ]
+            },
+            "properties": {
+                "title": "Verner Springs Park",
+                "address": "4 Old Bleachery Rd., Greenville, SC 29609",
+                "website": "http:\/\/greenvillerec.com\/parks\/verner-springs\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.301891,
+                    34.616644
+                ]
+            },
+            "properties": {
+                "title": "Cedar Falls Playground",
+                "address": "201 Cedar Falls Road, Fountain Inn, SC 29644",
+                "website": "http:\/\/greenvillerec.com\/parks\/cedar-falls\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.303004,
+                    34.744639
+                ]
+            },
+            "properties": {
+                "title": "Southside Park",
+                "address": "417 Baldwin Road, Simpsonville, SC 29680",
+                "website": "http:\/\/greenvillerec.com\/parks\/southside\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.428831,
+                    34.772877
+                ]
+            },
+            "properties": {
+                "title": "Lakeside Park",
+                "address": "1500 Piedmont Highway, Piedmont, SC 29673",
+                "website": "http:\/\/greenvillerec.com\/parks\/lakeside\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.374126,
+                    34.865942
+                ]
+            },
+            "properties": {
+                "title": "Timmons Park Playground",
+                "address": "121 Oxford St, Greenville, SC 29607",
+                "website": "http:\/\/www.greenvillesc.gov\/Facilities\/Facility\/Details\/Timmons-Park-21"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38589,
+                    34.847067
+                ]
+            },
+            "properties": {
+                "title": "Cleveland Park",
+                "address": "150,Cleveland Park dr, Greenville,SC 29601",
+                "website": "http:\/\/www.greenvillesc.gov\/Facilities\/Facility\/Details\/Cleveland-Park-1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36981,
+                    34.927053
+                ]
+            },
+            "properties": {
+                "title": "Paris Mountain StatePark Playground",
+                "address": "2401 State Park Road, Greenville, SC 29609",
+                "website": "http:\/\/southcarolinaparks.com\/parismountain\/introduction.aspx"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.22293,
+                    34.93866
+                ]
+            },
+            "properties": {
+                "title": "Greer City Park",
+                "address": "301 East Poinsett Street Greer, SC 29651",
+                "website": "www.greercitypark.com"
+            }
+        }
+    ]
+}

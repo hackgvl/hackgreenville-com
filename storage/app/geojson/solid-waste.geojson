@@ -1,0 +1,305 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.354274,
+                    35.02984
+                ]
+            },
+            "properties": {
+                "title": "Mountain View Elementary",
+                "notes": "Non-Staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.052285,
+                    35.052285
+                ]
+            },
+            "properties": {
+                "title": "Echo Valley Convenience Center",
+                "notes": "Staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.484053,
+                    34.914178
+                ]
+            },
+            "properties": {
+                "title": "Blackberry Valley Convenience Center",
+                "notes": "Staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.427019,
+                    34.973435
+                ]
+            },
+            "properties": {
+                "title": "Gateway Plaza",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.274701,
+                    35.013239
+                ]
+            },
+            "properties": {
+                "title": "O'Neal Convenience Center",
+                "notes": "Staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.286416,
+                    35.040167
+                ]
+            },
+            "properties": {
+                "title": "Blue Ridge High School",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.275211,
+                    34.773549
+                ]
+            },
+            "properties": {
+                "title": "Brookwood Church",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.313068,
+                    34.84195
+                ]
+            },
+            "properties": {
+                "title": "Roper Mountain @ I-385",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.385705,
+                    34.856309
+                ]
+            },
+            "properties": {
+                "title": "City of Greenville Recycling Center",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.313194,
+                    34.539863
+                ]
+            },
+            "properties": {
+                "title": "Twin Chimney's Landfill",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.235495,
+                    34.928016
+                ]
+            },
+            "properties": {
+                "title": "City of Greer Reycling Center",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.300991,
+                    34.88697
+                ]
+            },
+            "properties": {
+                "title": "Hudson Corner Shopping Center",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.328174,
+                    34.874625
+                ]
+            },
+            "properties": {
+                "title": "Bi-Lo",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.225685,
+                    34.946005
+                ]
+            },
+            "properties": {
+                "title": "J Harley Bonds Career Center",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.423327,
+                    34.678059
+                ]
+            },
+            "properties": {
+                "title": "Piedmont Convenience Center",
+                "notes": "staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.188841,
+                    34.806093
+                ]
+            },
+            "properties": {
+                "title": "Enoree Convenience Center",
+                "notes": "staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.540228,
+                    34.788257
+                ]
+            },
+            "properties": {
+                "title": "Mauldin Public Works",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.251117,
+                    34.739182
+                ]
+            },
+            "properties": {
+                "title": "Simpsonville City Park",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.211302,
+                    34.692843
+                ]
+            },
+            "properties": {
+                "title": "Fountain Inn Elementary",
+                "notes": "non-staffed",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2828,
+                    34.685275
+                ]
+            },
+            "properties": {
+                "title": "Simpsonville Convenience Center",
+                "notes": "staffed",
+                "property3": null
+            }
+        }
+    ]
+}

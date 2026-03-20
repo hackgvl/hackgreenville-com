@@ -1,0 +1,260 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2765316,
+                    34.7371911
+                ]
+            },
+            "properties": {
+                "title": "Soundbox Tavern (CLOSED)",
+                "notes": "507 W. Georgia Rd., Simpsonville, SC 29680",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3610597,
+                    34.852634
+                ]
+            },
+            "properties": {
+                "title": "Gottrocks (CLOSED)",
+                "notes": "200 Eisenhower Dr., Greenville, SC 29607",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4027468,
+                    34.8469641
+                ]
+            },
+            "properties": {
+                "title": "Blues Boulevard Jazz",
+                "notes": "300 River St #203, Greenville, SC 29601",
+                "property3": "http:\/\/bluesboulevardjazzgreenville.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4055076,
+                    34.84430575
+                ]
+            },
+            "properties": {
+                "title": "Smileys on the Roxx",
+                "notes": "734 South Main Street Greenville, SC 29601",
+                "property3": "https:\/\/smileysroxx.com\/greenville-downtown-smileys-on-the-roxx-music-lineup"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2300857,
+                    34.722284
+                ]
+            },
+            "properties": {
+                "title": "Heritage Park Amphitheatre",
+                "notes": "861 SE Main St, Simpsonville, SC 29681",
+                "property3": "http:\/\/heritageparkamphitheatre.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3648402,
+                    34.8427918
+                ]
+            },
+            "properties": {
+                "title": "Radio Room",
+                "notes": "28 Liberty Lane Greenville, SC 29607",
+                "property3": "http:\/\/www.radioroomgreenville.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397622,
+                    34.85194
+                ]
+            },
+            "properties": {
+                "title": "Jack n' Diane's Dualing Pianos",
+                "notes": "115 N. Brown Street, Greenville, SC 29601",
+                "property3": "http:\/\/www.jackndianes.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401372,
+                    34.84759
+                ]
+            },
+            "properties": {
+                "title": "The Peace Center",
+                "notes": "300 South Main Street, Greenville, SC 29601",
+                "property3": "http:\/\/www.peacecenter.org\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4189103,
+                    34.9024145
+                ]
+            },
+            "properties": {
+                "title": "J & M Pumphouse",
+                "notes": "2640 Poinsett Highway, Greenville, SC 29609",
+                "property3": "https:\/\/jmpumphouse.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391657,
+                    34.853432
+                ]
+            },
+            "properties": {
+                "title": "Bon Secours Wellness Arena",
+                "notes": "650 N Academy St, Greenville, SC 29601",
+                "property3": "http:\/\/www.bonsecoursarena.com\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4286516,
+                    34.8470359
+                ]
+            },
+            "properties": {
+                "title": "Tipsy Music Pub (CLOSED)",
+                "notes": "1237 Pendleton St, Greenville, SC 29611",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2993561,
+                    34.8243354
+                ]
+            },
+            "properties": {
+                "title": "The Firmament (CLOSED)",
+                "notes": "5 Market Point Dr, Greenville, SC 29607",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2249644,
+                    34.9386589
+                ]
+            },
+            "properties": {
+                "title": "The Spinning Jenny (CLOSED - Oct 2023)",
+                "notes": "107 Cannon St, Greer, SC 29651",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39613082,
+                    34.8502583
+                ]
+            },
+            "properties": {
+                "title": "Swanson's Warehouse",
+                "notes": "12 N Irvine St, Greenville, SC 29601",
+                "property3": "http:\/\/www.swansonswarehouse.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42865606,
+                    34.83591096
+                ]
+            },
+            "properties": {
+                "title": "The Foundry at Judson Mill",
+                "notes": "701 Easley Bridge Rd Unit 6030, Greenville, SC 29611",
+                "property3": "https:\/\/www.foundrygvl.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3979045,
+                    34.8514415
+                ]
+            },
+            "properties": {
+                "title": "Cowboy Up",
+                "notes": "17 Coffee Street, Greenville, SC 29601",
+                "property3": "https:\/\/www.facebook.com\/cowboyupsaloongv\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39589005,
+                    34.8501757
+                ]
+            },
+            "properties": {
+                "title": "Fireforge Crafted Beer",
+                "notes": "311 East Washington St Greenville, SC 29601",
+                "property3": "https:\/\/fireforge.beer\/live-music\/"
+            }
+        }
+    ]
+}

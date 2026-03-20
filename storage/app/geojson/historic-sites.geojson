@@ -1,0 +1,815 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40721666,
+                    34.84138333
+                ]
+            },
+            "properties": {
+                "title": "\"Shoeless Joe\" Jackson House",
+                "notes": "(Front) \nThis house, built in 1940, was originally 3 mi. SW at 119 E. Wilburn Ave. It was the last home of Joseph Jefferson Wofford \u201a\u00c4\u00faShoeless Joe\u201a\u00c4\u00f9 Jackson (1888-1951), one of the greatest natural hitters in the history of baseball. Jackson, born in Pickens Co., moved to Greenville as a boy. He worked at the Brandon Mill, joined the mill baseball team as a teenager, and was a star long before he made the major leagues in 1908. \n\n(Reverse) \nIn 1911, his first full season, Jackson batted .408. He played for the Philadelphia A\u00ac\u00a5s 1908-10, the Cleveland Naps 1910-15, and the Chicago White Sox 1915-20, with a lifetime average of .356. He helped the White Sox win the 1917 World Series, but he and 7 teammates were banned from baseball for fixing the 1919 Series. This house, where Jackson died in 1951, was moved here in 2006 and opened as a museum in 2008. \n\nErected by the Shoeless Joe Jackson Museum and Baseball Library, 2011",
+                "property3": "23-43"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4091,
+                    34.8416
+                ]
+            },
+            "properties": {
+                "title": "Allen Temple A.M.E. Church (*National Register Site)",
+                "notes": "Allen Temple A.M.E. Church, built 1929-30, is significant as the first A.M.E. church in Greenville.",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398889,
+                    34.848333
+                ]
+            },
+            "properties": {
+                "title": "American Cigar Factory (*National Register Site)",
+                "notes": "The American Cigar Factory was one of the largest brick buildings in Greenville when it was constructed ca. 1902 by the American Improvement Company. This building was one of five factories the American Cigar Company located in the South. Situated in the heart of the central business district, it employed 150 girls and young women when it began production. It is one of the largest brick masonry buildings remaining in the downtown area and reflects the industrial growth of Greenville at the turn of the century. (Listed in the National Register July 1, 1982.)",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Arthur Barnwell House (*National Register Site)",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397775,
+                    34.857953
+                ]
+            },
+            "properties": {
+                "title": "Beth Israel Synagogue ",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.390556,
+                    34.873056
+                ]
+            },
+            "properties": {
+                "title": "Broad Margin",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391667,
+                    34.809722
+                ]
+            },
+            "properties": {
+                "title": "Brushy Creek",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.384167,
+                    34.812778
+                ]
+            },
+            "properties": {
+                "title": "C. Granville Wyche House",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401389,
+                    34.848611
+                ]
+            },
+            "properties": {
+                "title": "Carolina Supply Company",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4,
+                    34.848056
+                ]
+            },
+            "properties": {
+                "title": "Chamber of Commerce Building",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.394444,
+                    34.850833
+                ]
+            },
+            "properties": {
+                "title": "Christ Church (Episcopal) and Churchyard",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401667,
+                    34.863056
+                ]
+            },
+            "properties": {
+                "title": "Col. Elias Earle Historic District",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39693,
+                    34.855333
+                ]
+            },
+            "properties": {
+                "title": "Confederate Armory (1861-1864)",
+                "notes": "Erected on land donated to the state by Vardry McBee for the manufacture of arms for the South Carolina troops in the Confederate service. George W. Morse, superintendent of the works, invented and manufactured a breech-loading carbine pronounced by General Wade Hampton the best that he had seen.\n\nErected 1937 by Greenville Chapter, United Daughters of the Confederacy.",
+                "property3": "23-A05"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400517,
+                    34.84485
+                ]
+            },
+            "properties": {
+                "title": "Cradle of Greenville",
+                "notes": "Near this sign, before the adoption of the Declaration of Independence, Richard Pearis, best known of all Pre-Revolutionary settlers in the surrounding Cherokee Indian nation, established his home with a grist mill and trading post. Around this location grew up the community of Greenville Court House, laid out in 1797, the county seat for Greenville District.\n\nIn marking this site...the \"Cradle of Greenville\"...and building thereon its permanent home, the Citizens and Southern National Bank of South Carolina finds pleasure in this saluting a community widely acclaimed for its commercial, industrial and civic progress spanning the almost two hundred years of its life.\n\nThis plaque is presented to the Greenville Historical Society by the citizens and Southern National Bank of Greenville, South Carolina - 1962",
+                "property3": "23-A06"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.395556,
+                    34.849167
+                ]
+            },
+            "properties": {
+                "title": "Davenport Apartments",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4025,
+                    34.8525
+                ]
+            },
+            "properties": {
+                "title": "Downtown Baptist Church",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.412111,
+                    34.837429
+                ]
+            },
+            "properties": {
+                "title": "E. W. Montgomery Cotton Warehouse",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.406667,
+                    34.863611
+                ]
+            },
+            "properties": {
+                "title": "Earle Town House \n(*National Register Site)",
+                "notes": "The Earle Town House is a distinguished example of a late Georgian dwelling and is one of the few still existing in upper South Carolina, the residence is one of two houses within Greenville remaining from the city\u2019s earliest history. ",
+                "property3": "(source: http:\/\/www.nationalregister.sc.gov\/greenville)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391667,
+                    34.858333
+                ]
+            },
+            "properties": {
+                "title": "East Park Historic District",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401333,
+                    34.845217
+                ]
+            },
+            "properties": {
+                "title": "Falls Place",
+                "notes": "Greenville was a major textile center by the beginning of the twentieth century, and local cotton growers and brokers needed storage places for the harvested cotton. West End banker H.L. Gassaway and Dr. Davis Furman purchased land immediately south of the bridge at Main Street in 1910. In 1913 they erected a fireproof cotton warehouse that was attached to a new heavily-reinforced concrete bridge at the same time. The building housed a soft drink company for many years, and was used as a U.S.O. headquarters, particularly by airmen at Donaldson Air Force Base, during and after World War II. Long referred to as the \"Traxler Building,\" because it was owned by David Traxler, it was renovated in 1985 and is now known as Falls Place.",
+                "property3": "23-A07"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.411111,
+                    34.849167
+                ]
+            },
+            "properties": {
+                "title": "First National Bank",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.394444,
+                    34.852778
+                ]
+            },
+            "properties": {
+                "title": "Fountain Fox Beattie House",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38966666,
+                    34.85711666
+                ]
+            },
+            "properties": {
+                "title": "Fountain Fox Beattie House \/ Greenville Woman's Club",
+                "notes": "(Front) \nThis house, built in 1834, first stood a few blocks south on East North St. It was built by Fountain Fox Beattie (1807 1863), a textile merchant, for his new bride Emily Edgeworth Hamlin. Their son Hamlin Beattie (1835 1914), who founded the National Bank of Greenville in 1872, added wings and elaborate Italianate ornamentation. The house was listed in the National Register of Historic Places in 1974. \n\n(Reverse) \nThe house remained in the Beattie family until 1946, when the city bought the property to widen Church St. When the house was moved to Beattie Place in 1948 it was leased to the women\u00ac\u00a5s organizations of Greenville. The Greenville Woman\u00ac\u00a5s Club officially opened in 1949. The house was moved a second time in 1983 to make room for downtown expansion. Member clubs maintain the house and gardens. \n\nErected by the Greenville Woman\u00ac\u00a5s Club, 1998",
+                "property3": "23-24"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.403367,
+                    34.840133
+                ]
+            },
+            "properties": {
+                "title": "Furman University",
+                "notes": "Established 1825 by the S. C. Baptist Convention, the Furman Academy and Theological Institution opened at Edgefield, 1826, moved to Sumter District, 1829-34, and to Fairfield, 1837-50. Chartered in 1850 as Furman University, it opened in Greenville, 1851, and for over a century, 1852-1958, occupied this site purchased from Vardry McBee. In the summer of 1958, Furman moved to a new campus six miles north of town.\n\nErected by Furman University - 1975",
+                "property3": "23-14"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396667,
+                    34.85
+                ]
+            },
+            "properties": {
+                "title": "Gilfillin and Houston Building",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40075,
+                    34.84898333
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Courthouse",
+                "notes": "GREENVILLE COUNTY COURTHOUSE\n\n\nThis Beaux Arts building, built in 1916-18, was the fourth Greenville County Courthouse, from 1918 to 1950. It was listed in the National Register of Historic Places in 1994. The largest lynching trial in U.S. history was held here May 12-21, 1947. Willie Earle, a young black man accused of assaulting white cabdriver Thomas W. Brown, had been lynched by a white mob on Bramlett Road in Greenville. \n\nTHE WILLIE EARLE LYNCHING TRIAL\n\n\nThe trial of 31 whites, 28 of them cabdrivers, was rare at the time and drew national attention. Though 26 defendants admitted being part of the mob, all defendants were acquitted by an all-white jury. Rebecca West\u00ac\u00a5s \u201a\u00c4\u00faOpera in Greenville,\u201a\u00c4\u00f9 published in The New Yorker on June 14, 1947, interpreted the trial and its aftermath. Widespread outrage over the lynching and the verdict spurred new federal civil rights policies. \n\nErected by the Willie Earle Commemorative Trail Committee, 2010 [2011]",
+                "property3": "23-42"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3974,
+                    34.8523
+                ]
+            },
+            "properties": {
+                "title": "Greenville Elks Lodge",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396389,
+                    34.846389
+                ]
+            },
+            "properties": {
+                "title": "Greenville Gas and Electric Light Company",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401317,
+                    34.8555
+                ]
+            },
+            "properties": {
+                "title": "Greenville Woman's College",
+                "notes": "Established in 1854 by the S. C. Baptist Convention, this institution opened as Greenville Baptist Female College in February 1856, on this site originally donated by Vardry McBee to the Greenville Academies. Its name was changed to Greenville Woman\u00ac\u00a5s College in 1914. It was coordinated with Furman University in 1933, merged with Furman in 1938, and moved in 1961 to the consolidated campus six miles north of town.\n\nErected by Furman University - 1975",
+                "property3": "23-15"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.405833,
+                    34.856111
+                ]
+            },
+            "properties": {
+                "title": "Hampton-Pinckney Historic District",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.390556,
+                    34.876667
+                ]
+            },
+            "properties": {
+                "title": "The Hugh Aiken House \n(*National Register Site) ",
+                "notes": "The Hugh Aiken House possesses architectural significance as one of William \u201cWillie\u201d Riddle Ward\u2019s most distinctive single-family residential designs. The house is a one and one-half story frame residence constructed in 1952. It was designed in 1948 by Ward, a notable Greenville architect, for Hugh K. Aiken, president and treasurer of Piedmont Paint and Manufacturing Company. The house was constructed in the Colonial Revival style on an extensively landscaped lot adjacent to the North Main Street area of Greenville. *Listed in the National Register April 11, 2003.",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401944,
+                    34.851389
+                ]
+            },
+            "properties": {
+                "title": "Imperial Hotel",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3734,
+                    34.862444
+                ]
+            },
+            "properties": {
+                "title": "Isaqueena",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399933,
+                    34.848883
+                ]
+            },
+            "properties": {
+                "title": "Joel Roberts Poinsett",
+                "notes": "(Front) \nBorn in Charleston, S. C., educated in this country and Great Britain, he travelled widely in Europe and Asia before returning to a distinguished career. He served South Carolina in the state legislature, 1816-1820, 1830-1832; and as chairman of the Board of Public Works, 1818-1820. He represented S. C. in Congress 1821-1825, was first American minister to Mexico, 1825-1829, and secretary of war, 1837-1841.\n\n(Reverse) \nPlanter, writer, botanist, diplomat, statesman, Joel R. Poinsett had a summer home near here dividing his time in later life between it and his plantation on the Pee Dee River. He brought the lovely poinsettia to this country from Mexico. His cultural interests and scientific pursuits with this political career earned him the title \"versatile American.\" He died December 12,1851, at Stateburg, S. C., and was buried there at the Church of the Holy Cross.\n\nErected by Greenville County Historical Society - 1968",
+                "property3": "23-11"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398611,
+                    34.847778
+                ]
+            },
+            "properties": {
+                "title": "John Wesley Methodist Episcopal Church",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391944,
+                    34.855
+                ]
+            },
+            "properties": {
+                "title": "Josiah Kilgore House",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.392778,
+                    34.832778
+                ]
+            },
+            "properties": {
+                "title": "Lanneau-Norwood House",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.415556,
+                    34.859167
+                ]
+            },
+            "properties": {
+                "title": "Parker High School Auditorium",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.389722,
+                    34.85
+                ]
+            },
+            "properties": {
+                "title": "Pettigru Street Historic District",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400556,
+                    34.848611
+                ]
+            },
+            "properties": {
+                "title": "Poinsett Hotel",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400267,
+                    34.843783
+                ]
+            },
+            "properties": {
+                "title": "Reedy River Falls Historic Park and Greenway",
+                "notes": "The falls of the Reedy River were a power source for industry, but they were also the town\u00ac\u00a5s chief price in the early nineteenth century. The subject of a Cherokee myth (a brave was said to have thrown himself over the falls because of unrequited love) and of at least five published poems and several noted paintings, the falls became the favorite trysting place for young lovers as well as a resort for visitors and families. Dams above and below the falls created pools where children swam in the summer and skated in the winter. Ministers performed baptisms in them, and entrepreneurs established bath houses (with separate entrances for ladies and gentlemen; towels and soap supplied for twenty-five cents) that made use of the clear river water.",
+                "property3": "23-A08"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401667,
+                    34.846667
+                ]
+            },
+            "properties": {
+                "title": "Reedy River Industrial District",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.394722,
+                    34.855278
+                ]
+            },
+            "properties": {
+                "title": "Richland Cemetery",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.393056,
+                    34.854722
+                ]
+            },
+            "properties": {
+                "title": "Springwood Cemetery",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39905,
+                    34.850603
+                ]
+            },
+            "properties": {
+                "title": "Stradley and Barr Dry Goods Store",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.395278,
+                    34.831667
+                ]
+            },
+            "properties": {
+                "title": "T.Q. Donaldson House",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40301666,
+                    34.8522
+                ]
+            },
+            "properties": {
+                "title": "Textile Hall",
+                "notes": "(Front) \nTextile Hall, built in 1917 to host the annual Southern Textile Exposition, stood on this side until 1992. The first exposition of the Southern Textile Association had been held in Greenville in 1915. Textile Hall, designed by J.E. Sirrine & Co. at a cost of $130,000, was a five-story Renaissance Revival building; its facade featured a limestone tablet bearing the initials \u201a\"STE\" for \"Southern Textile Exposition\" and the words \"Textile Hall\" \n\n(Reverse) \nWhen built, Textile Hall was described as \u201a\" fitting monument to . . . the proper cooperative spirit.\" It hosted the Southern Textile Exposition from 1917 to 1962 and gave Greenville the title \"Textile Center of the South.\" It also hosted many other meetings and special events, such as the annual Southern Textile Basketball Tournament, with teams representing mills across the South. Listed in the National Register of Historic Places in 1980, it was demolished in 1992. \n\nErected by the City of Greenville and the Hampton-Pinckney Neighborhood Association, 2006",
+                "property3": "23-31"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400633,
+                    34.843833
+                ]
+            },
+            "properties": {
+                "title": "The Cherokees",
+                "notes": "Greenville County was Indian Territory before the Revolution. European settlers were forbidden to live here until 1777, when Cherokee Indians were forced to cede this land to the new state. Most of modern day Greenville was hunting land used by the Cherokees, whose main villages were located in modern day Oconee County. A part of the Iroquoian nation, the Cherokee may have set up temporary summer camps along the banks of the Reedy River. In the nineteenth and early twentieth century, Indian artifacts were found along the north bank of the river.",
+                "property3": "23-A10"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399617,
+                    34.848717
+                ]
+            },
+            "properties": {
+                "title": "The Old Record Building",
+                "notes": "In 1820, seventy feet south of this point, \"the old record building\" was erected; it was designed by Robert Mills (1781-1855), famous Charleston architect, designer of the Washington Monument. This building of classic design was county courthouse until 1855; then record building until removed, 1924. John C. Calhoun spoke from its portico on current issues.",
+                "property3": "23-01"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396111,
+                    34.849567
+                ]
+            },
+            "properties": {
+                "title": "U.S. Post Office and Courthouse",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404444,
+                    34.844444
+                ]
+            },
+            "properties": {
+                "title": "West End Commercial Historic District",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.402222,
+                    34.863889
+                ]
+            },
+            "properties": {
+                "title": "Whitehall",
+                "notes": "Built by Henry Middleton on land bought from Elias Earle in 1813, Whitehall served as Middleton\u00ac\u00a5s summer home until 1820 when it was sold to George W. Earle, whose descendants have occupied it ever since. Henry Middleton was son of Arthur Middleton, signer of the Declaration of Independence. He served as governor of South Carolina from 1810 to 1812.\n\nErected by Behethland Butler Chapter, Daughters of the American Revolution - 1964",
+                "property3": "23-08"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.406181,
+                    34.830712
+                ]
+            },
+            "properties": {
+                "title": "William and Harriet Wilkins House",
+                "notes": "",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41231666,
+                    34.83721666
+                ]
+            },
+            "properties": {
+                "title": "Working Benevolent Temple and Professional Building",
+                "notes": "(Front) \nThe Working Benevolent Society Hospital, first known as St. Luke Colored Hospital, was a two-story frame building standing here at the corner of Green Avenue and Jenkins Street. Founded in 1920, it served blacks in Greenville for twenty-eight years. The Working Benevolent Grand Lodge of S.C., at Broad and Fall Streets in Greenville, operated the hospital from 1928 until it closed in 1948. \n\n(Reverse) \nThe hospital, described at its opening as \u201a\u00c4\u00faone of the most modern institutions in the South for colored people,\u201a\u00c4\u00f9 had three wards and twenty-two beds in semi-private and private rooms. Mrs. M.H. Bright was the first superintendent. A registered nurse and a graduate of the Tuskegee Institute, she had been superintendent of the Institute hospital. Most of the superintendents after her were nurses as well. \n\nErected by the Green Avenue Area Civic Association, 2003",
+                "property3": "23-27"
+            }
+        }
+    ]
+}

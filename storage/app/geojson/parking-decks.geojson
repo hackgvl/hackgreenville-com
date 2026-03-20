@@ -1,0 +1,260 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399613,
+                    34.851915
+                ]
+            },
+            "properties": {
+                "title": "Poinsett Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "25 W McBee Avenue",
+                "entrance_streets": "McBee Street or Court Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3997398,
+                    34.8525343
+                ]
+            },
+            "properties": {
+                "title": "Richardson St. Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event. Weekend Non-Event Parking: Free (6pm Friday to Midnight Sunday)",
+                "address": "66 Richardson Street",
+                "entrance_streets": "Richardson Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4007555,
+                    34.8514811
+                ]
+            },
+            "properties": {
+                "title": "ONE City Plaza Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "34 Richardson Street",
+                "entrance_streets": "Richardson Street and West Washington Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3975041,
+                    34.8478097
+                ]
+            },
+            "properties": {
+                "title": "Broad Street Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "135 E Broad Street",
+                "entrance_streets": "McBee Avenue, Falls Street and Broad Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3976095,
+                    34.8496495
+                ]
+            },
+            "properties": {
+                "title": "South Spring Street Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "316 S Spring Street",
+                "entrance_streets": "S Spring Street or Brown Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4032613,
+                    34.8473593
+                ]
+            },
+            "properties": {
+                "title": "Riverplace Garage",
+                "type_of_parking": "bi-level parking deck",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event (note: no event parking during construction)",
+                "address": "300 River Street",
+                "entrance_streets": "River Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4023401,
+                    34.8490284
+                ]
+            },
+            "properties": {
+                "title": "River Street Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "414 River Street",
+                "entrance_streets": "River Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398795,
+                    34.8533641
+                ]
+            },
+            "properties": {
+                "title": "N. Laurens Street Deck",
+                "type_of_parking": "bi-level parking deck",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "210 N Laurens Street",
+                "entrance_streets": "N Laurens Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.395717,
+                    34.8532083
+                ]
+            },
+            "properties": {
+                "title": "Liberty Square Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "65 Beattie Place ",
+                "entrance_streets": "Beattie Street or Elford Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3958001,
+                    34.8531584
+                ]
+            },
+            "properties": {
+                "title": "Commons Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "60 Beattie Place",
+                "entrance_streets": "Beattie Street or Brown Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3934548,
+                    34.8527526
+                ]
+            },
+            "properties": {
+                "title": "Church Street Garage",
+                "type_of_parking": "multi-level parking garage",
+                "cost_of_parking": "$.75\/half hour, $1.50\/hour, $7.50\/day, $6\/events",
+                "address": "320 N Church Street",
+                "entrance_streets": "Church Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4012883,
+                    34.8569715
+                ]
+            },
+            "properties": {
+                "title": "Heritage Green Garage",
+                "type_of_parking": "bi-level parking deck",
+                "cost_of_parking": "first 15 minutes free, $.50\/half hour, $4\/day, free on weekends",
+                "address": "27 Heritage Green Place",
+                "entrance_streets": "Heritage Green Place"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3999932,
+                    34.8510181
+                ]
+            },
+            "properties": {
+                "title": "West Washington Street Deck",
+                "type_of_parking": "Above surface parking lot",
+                "cost_of_parking": "$1\/hour, $7\/daily, normal cost for events, Free (6pm-6am M to F, all weekend)",
+                "address": "101 W Washington Street",
+                "entrance_streets": "W Washington Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4063904,
+                    34.8432151
+                ]
+            },
+            "properties": {
+                "title": "West End Lot",
+                "type_of_parking": "Parking Lot",
+                "cost_of_parking": "first hour free, $1.50\/second hour, $1\/hour, $7.50\/day, $6\/event",
+                "address": "106 Augusta Street",
+                "entrance_streets": "Augusta Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4035942,
+                    34.8407286
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Square",
+                "type_of_parking": "Parking Lot",
+                "cost_of_parking": "$0 (Note: Only open to County Square guests on M-F)",
+                "address": "301 University Ridge",
+                "entrance_streets": "University Ridge or Howe St"
+            }
+        }
+    ]
+}

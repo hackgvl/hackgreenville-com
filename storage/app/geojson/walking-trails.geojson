@@ -1,0 +1,260 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.338838,
+                    34.8690004
+                ]
+            },
+            "properties": {
+                "title": "Butler Springs Park",
+                "notes": "301 Butler Springs Road Greenville, SC 29615",
+                "property3": "Central Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3049986,
+                    34.611611
+                ]
+            },
+            "properties": {
+                "title": "Cedar Falls",
+                "notes": "201 Cedar Falls Road Fountain Inn, SC 29644",
+                "property3": "Southern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.446626,
+                    34.9549224
+                ]
+            },
+            "properties": {
+                "title": "Chico Bolin Park",
+                "notes": "115 Wilhelm Winter Street Travelers Rest, SC 29690",
+                "property3": "Northern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3518508,
+                    34.778249
+                ]
+            },
+            "properties": {
+                "title": "Conestee Park",
+                "notes": "840 Mauldin Road Greenville, SC 29607",
+                "property3": "Southern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.314413,
+                    35.0524914
+                ]
+            },
+            "properties": {
+                "title": "David Jackson Park",
+                "notes": "25 Fowler Road Taylors, SC 29687",
+                "property3": "Northern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.293435,
+                    34.8515616
+                ]
+            },
+            "properties": {
+                "title": "Gary L. Pittman Memorial Park",
+                "notes": "420 Blacks Road Greenville, SC 29615",
+                "property3": "Central Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3669106,
+                    34.7745492
+                ]
+            },
+            "properties": {
+                "title": "Lake Conestee Nature Park",
+                "notes": "601 Fork Shoals Road Greenville, SC 29605",
+                "property3": "Southern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.431183,
+                    34.7724243
+                ]
+            },
+            "properties": {
+                "title": "Lakeside Park",
+                "notes": "1500 Piedmont Highway Piedmont, SC 29673",
+                "property3": "Southern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.306089,
+                    34.9542584
+                ]
+            },
+            "properties": {
+                "title": "Lincoln Park",
+                "notes": "169 Harnitha Lane Taylors, SC 29687",
+                "property3": "Northern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.351222,
+                    34.5920894
+                ]
+            },
+            "properties": {
+                "title": "Loretta C. Wood Park",
+                "notes": "10270 Augusta Road Pelzer, SC 29699",
+                "property3": "Southern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.1969969,
+                    34.8130879
+                ]
+            },
+            "properties": {
+                "title": "Mesa Soccer Complex",
+                "notes": "1020 Anderson Ridge Road Greer, SC 29651",
+                "property3": "Central Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2289375,
+                    34.8567698
+                ]
+            },
+            "properties": {
+                "title": "Pelham Mill Park",
+                "notes": "2770 E Phillips Road Greenville, SC 29615",
+                "property3": "Central Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.403943,
+                    34.6898954
+                ]
+            },
+            "properties": {
+                "title": "Piedmont Athletic Complex",
+                "notes": "150 Woodmont School Road Piedmont, SC 29673",
+                "property3": "Southern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3924219,
+                    34.8882364
+                ]
+            },
+            "properties": {
+                "title": "Piney Mountain Park",
+                "notes": "501 Worley Road Greenville, SC 29609",
+                "property3": "Northern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4817148,
+                    35.084658
+                ]
+            },
+            "properties": {
+                "title": "Pleasant Ridge Park",
+                "notes": "4232 Hwy. 11 Marietta, SC 29661",
+                "property3": "Northern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4438995,
+                    34.9487551
+                ]
+            },
+            "properties": {
+                "title": "Poinsett Park",
+                "notes": "5 Pine Forest Road Travelers Rest, SC 29690",
+                "property3": "Northern Greenville County"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4744728,
+                    34.9317921
+                ]
+            },
+            "properties": {
+                "title": "Riverbend Equestrian Park",
+                "notes": "175 Riverbend Road Greenville, SC 29617",
+                "property3": "Northern Greenville County"
+            }
+        }
+    ]
+}

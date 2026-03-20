@@ -1,0 +1,155 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.385029,
+                    34.847668
+                ]
+            },
+            "properties": {
+                "title": "Greenville Zoo Lot #1",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.387196,
+                    34.846112
+                ]
+            },
+            "properties": {
+                "title": "Greenville Zoo Lot #2",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.386504,
+                    34.842595
+                ]
+            },
+            "properties": {
+                "title": "Lakehurst Lot",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.378859,
+                    34.831632
+                ]
+            },
+            "properties": {
+                "title": "Lower Church Lot",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.379212,
+                    34.831234
+                ]
+            },
+            "properties": {
+                "title": "Upper Church Lot",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.370814,
+                    34.820579
+                ]
+            },
+            "properties": {
+                "title": "Starlanes Lot",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.409854,
+                    34.849176
+                ]
+            },
+            "properties": {
+                "title": "Hudson St. Lot",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42167,
+                    34.870017
+                ]
+            },
+            "properties": {
+                "title": "Swamp Rabbit Cafe and Grocer",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.446169,
+                    34.920362
+                ]
+            },
+            "properties": {
+                "title": "Furman lot",
+                "notes": null,
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.456537,
+                    34.97799
+                ]
+            },
+            "properties": {
+                "title": "Grandview lot",
+                "notes": null,
+                "property3": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,155 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4014,
+                    34.8562
+                ]
+            },
+            "properties": {
+                "title": "Greenville Little Theatre",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4022,
+                    34.8478
+                ]
+            },
+            "properties": {
+                "title": "The Peace Center",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398789,
+                    34.85424
+                ]
+            },
+            "properties": {
+                "title": "Cafe and Then some",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404,
+                    34.8434
+                ]
+            },
+            "properties": {
+                "title": "The Warehouse Theatre",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.402293,
+                    34.849557
+                ]
+            },
+            "properties": {
+                "title": "Centre Stage",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.405669,
+                    34.84208
+                ]
+            },
+            "properties": {
+                "title": "South Carolina Children's Theatre",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.29432,
+                    34.91992
+                ]
+            },
+            "properties": {
+                "title": "The Logos Theatre",
+                "notes": "https:\/\/thelogostheatre.com\/",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.35985637,
+                    34.87687004
+                ]
+            },
+            "properties": {
+                "title": "Bob Jones University Performance Hall",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.43444323,
+                    34.93107094
+                ]
+            },
+            "properties": {
+                "title": "The Playhouse",
+                "notes": "furman.edu",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.30638386,
+                    34.78542185
+                ]
+            },
+            "properties": {
+                "title": "Mauldin Cultural Center",
+                "notes": "mauldinculturalcenter.org",
+                "property3": null
+            }
+        }
+    ]
+}

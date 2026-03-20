@@ -1,0 +1,215 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44012669,
+                    34.89329634
+                ]
+            },
+            "properties": {
+                "title": "Swamp Rabbit Station",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442482,
+                    34.926968
+                ]
+            },
+            "properties": {
+                "title": "Furman",
+                "notes": "Furman trail offshoot",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44100007,
+                    34.96278007
+                ]
+            },
+            "properties": {
+                "title": "Travelers Rest",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44578193,
+                    34.92047276
+                ]
+            },
+            "properties": {
+                "title": "Train Car",
+                "notes": "Slightly off the trail",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41413652,
+                    34.8524958
+                ]
+            },
+            "properties": {
+                "title": "Baseball Fields 1",
+                "notes": "Slightly off the trail",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38555556,
+                    34.84138889
+                ]
+            },
+            "properties": {
+                "title": "Playground 2",
+                "notes": "Near Volleyball Court",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38638889,
+                    34.84055556
+                ]
+            },
+            "properties": {
+                "title": "Dog-Park",
+                "notes": "Inside Location of Old Dog-Park",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38777778,
+                    34.84555556
+                ]
+            },
+            "properties": {
+                "title": "Memorial",
+                "notes": "Near Memorial Monuments",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38583333,
+                    34.84722222
+                ]
+            },
+            "properties": {
+                "title": "Playground 1b",
+                "notes": "Near Large Playground at Entrance",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38277778,
+                    34.84916667
+                ]
+            },
+            "properties": {
+                "title": "Baseball Fields 2",
+                "notes": "Cleveland Park Baseball Field",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38416667,
+                    34.84722222
+                ]
+            },
+            "properties": {
+                "title": "Tennis Court 1",
+                "notes": "Cleveland Park Tennis Court",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38416667,
+                    34.84805556
+                ]
+            },
+            "properties": {
+                "title": "Tennis Court 2",
+                "notes": "Cleveland Park Tennis Court",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.385,
+                    34.84805556
+                ]
+            },
+            "properties": {
+                "title": "Playground 1a",
+                "notes": "Near Large Playground at Entrance",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38733482,
+                    34.84476005
+                ]
+            },
+            "properties": {
+                "title": "Intramural Fields",
+                "notes": "Near Excercise Stations on Trail",
+                "property3": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,313 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4013462,
+                    34.8444786
+                ]
+            },
+            "properties": {
+                "title": "Falls Park on the Reedy",
+                "address": "601 South Main Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3897504,
+                    34.8443263
+                ]
+            },
+            "properties": {
+                "title": "Cleveland Park",
+                "address": "2 Cleveland Park"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3303964,
+                    34.8252374
+                ]
+            },
+            "properties": {
+                "title": "Legacy Park",
+                "address": "320 Rocky Slope Rd"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3999183,
+                    34.8421905
+                ]
+            },
+            "properties": {
+                "title": "Cancer Survivors Park",
+                "address": "24 Cleveland Park"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3526897,
+                    34.8296114
+                ]
+            },
+            "properties": {
+                "title": "Gower Estates Park",
+                "address": "24 Evelyn Ave"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3965276,
+                    34.8570962
+                ]
+            },
+            "properties": {
+                "title": "McPherson Park",
+                "address": "120 E Park Ave"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4057924,
+                    34.8569792
+                ]
+            },
+            "properties": {
+                "title": "Timmons Park",
+                "address": "121 Oxford S"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3697166,
+                    34.880164
+                ]
+            },
+            "properties": {
+                "title": "Holmes Park",
+                "address": "112 holmes park"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3994697,
+                    34.8647744
+                ]
+            },
+            "properties": {
+                "title": "Croft Park",
+                "address": "116 Croft St"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3808267,
+                    34.887196
+                ]
+            },
+            "properties": {
+                "title": "Croftstone Park",
+                "address": "118 Broughton Drive"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3797447,
+                    34.810042
+                ]
+            },
+            "properties": {
+                "title": "Gatlin Park",
+                "address": "2 Sylvan Drive"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.382987,
+                    34.811964
+                ]
+            },
+            "properties": {
+                "title": "Kiwanis Park",
+                "address": "2 Old Augusta Rd"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4058876,
+                    34.8378297
+                ]
+            },
+            "properties": {
+                "title": "Ella Mae Logan Park",
+                "address": "Howe St"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4145319,
+                    34.8512206
+                ]
+            },
+            "properties": {
+                "title": "Mayberry Park",
+                "address": "70 mayberry street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4114987,
+                    34.861092
+                ]
+            },
+            "properties": {
+                "title": "Pinckney Fludd Park",
+                "address": "400 Pinckney Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3852247,
+                    34.857731
+                ]
+            },
+            "properties": {
+                "title": "Railroad Mini Park",
+                "address": "32 Becker Street"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3930227,
+                    34.814498
+                ]
+            },
+            "properties": {
+                "title": "Rockwood Park",
+                "address": "Rockwood Rd. "
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3714307,
+                    34.8452729
+                ]
+            },
+            "properties": {
+                "title": "Skyland Park",
+                "address": "37 Skyland Rd. "
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4035097,
+                    34.834297
+                ]
+            },
+            "properties": {
+                "title": "Tindale Park",
+                "address": "37 Tindale Av."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373285,
+                    34.87418
+                ]
+            },
+            "properties": {
+                "title": "University Park",
+                "address": "101 brookside circle"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4015653,
+                    34.8600059
+                ]
+            },
+            "properties": {
+                "title": "Viola\/Thompson Gardner Park",
+                "address": "218 Viola St "
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4106805,
+                    34.8566279
+                ]
+            },
+            "properties": {
+                "title": "West Washingon Park",
+                "address": "W Washington between Hudson and Mulberry"
+            }
+        }
+    ]
+}

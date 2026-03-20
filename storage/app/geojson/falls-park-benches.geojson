@@ -1,0 +1,950 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39985413,
+                    34.84352362
+                ]
+            },
+            "properties": {
+                "title": "Bench 1",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399789,
+                    34.84326501
+                ]
+            },
+            "properties": {
+                "title": "Bench 2",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39956312,
+                    34.84301676
+                ]
+            },
+            "properties": {
+                "title": "Bench 3",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3994005,
+                    34.84291113
+                ]
+            },
+            "properties": {
+                "title": "Bench 4",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39996547,
+                    34.84339369
+                ]
+            },
+            "properties": {
+                "title": "Bench 5",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40018137,
+                    34.84371021
+                ]
+            },
+            "properties": {
+                "title": "Bench 6",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4002779,
+                    34.84364466
+                ]
+            },
+            "properties": {
+                "title": "Bench 7",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.84363616
+                ]
+            },
+            "properties": {
+                "title": "Bench 9",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40114057,
+                    34.84383461
+                ]
+            },
+            "properties": {
+                "title": "Bench 10",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400857,
+                    34.843887
+                ]
+            },
+            "properties": {
+                "title": "Bench 11",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40064343,
+                    34.84385601
+                ]
+            },
+            "properties": {
+                "title": "Bench 12",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40139981,
+                    34.84398999
+                ]
+            },
+            "properties": {
+                "title": "Bench 13",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40167641,
+                    34.84391016
+                ]
+            },
+            "properties": {
+                "title": "Bench 14",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40237074,
+                    34.8437693
+                ]
+            },
+            "properties": {
+                "title": "Bench 15",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40319211,
+                    34.84363973
+                ]
+            },
+            "properties": {
+                "title": "Bench 16",
+                "notes": "made of stone",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.84397957
+                ]
+            },
+            "properties": {
+                "title": "Bench 17",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40210853,
+                    34.84390973
+                ]
+            },
+            "properties": {
+                "title": "Bench 18",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40221407,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "Bench 19",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40067462,
+                    34.84513223
+                ]
+            },
+            "properties": {
+                "title": "Bench 20",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40071077,
+                    34.84503511
+                ]
+            },
+            "properties": {
+                "title": "Bench 21",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40071044,
+                    34.84500888
+                ]
+            },
+            "properties": {
+                "title": "Bench 22",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.84499548
+                ]
+            },
+            "properties": {
+                "title": "Bench 23",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4006565,
+                    34.8450081
+                ]
+            },
+            "properties": {
+                "title": "Bench 24",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4005153,
+                    34.84484111
+                ]
+            },
+            "properties": {
+                "title": "Bench 25",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40060646,
+                    34.84482512
+                ]
+            },
+            "properties": {
+                "title": "Bench 26",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4006216,
+                    34.84478136
+                ]
+            },
+            "properties": {
+                "title": "Bench 27",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40062904,
+                    34.84475662
+                ]
+            },
+            "properties": {
+                "title": "Bench 28",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40061564,
+                    34.84473711
+                ]
+            },
+            "properties": {
+                "title": "Bench 29",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40053069,
+                    34.84470626
+                ]
+            },
+            "properties": {
+                "title": "Bench 30",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40173969,
+                    34.84489283
+                ]
+            },
+            "properties": {
+                "title": "Bench 31",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40170388,
+                    34.84489369
+                ]
+            },
+            "properties": {
+                "title": "Bench 32",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40150841,
+                    34.84483374
+                ]
+            },
+            "properties": {
+                "title": "Bench 33",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40179404,
+                    -82.40150841
+                ]
+            },
+            "properties": {
+                "title": "Bench 34",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40139608,
+                    34.84424178
+                ]
+            },
+            "properties": {
+                "title": "Bench 35",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40122784,
+                    34.84429598
+                ]
+            },
+            "properties": {
+                "title": "Bench 36",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40159758,
+                    34.84442008
+                ]
+            },
+            "properties": {
+                "title": "Bench 37",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40152008,
+                    34.84455883
+                ]
+            },
+            "properties": {
+                "title": "Bench 38",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40129749,
+                    34.84451234
+                ]
+            },
+            "properties": {
+                "title": "Bench 39",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40140336,
+                    34.84464849
+                ]
+            },
+            "properties": {
+                "title": "Bench 40",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40137127,
+                    34.84552161
+                ]
+            },
+            "properties": {
+                "title": "Bench 41",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.845085
+                ]
+            },
+            "properties": {
+                "title": "Bench 42",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40142189,
+                    34.84534661
+                ]
+            },
+            "properties": {
+                "title": "Bench 43",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40153348,
+                    34.84568356
+                ]
+            },
+            "properties": {
+                "title": "Bench 44",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.845838
+                ]
+            },
+            "properties": {
+                "title": "Bench 45",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401557,
+                    34.845704
+                ]
+            },
+            "properties": {
+                "title": "Bench 46",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401572,
+                    34.845709
+                ]
+            },
+            "properties": {
+                "title": "Bench 47",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401788,
+                    34.845932
+                ]
+            },
+            "properties": {
+                "title": "Bench 48",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.84624801
+                ]
+            },
+            "properties": {
+                "title": "Bench 49",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4021407,
+                    34.84643809
+                ]
+            },
+            "properties": {
+                "title": "Bench 50",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4023556,
+                    34.84659579
+                ]
+            },
+            "properties": {
+                "title": "Bench 51",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.84660787
+                ]
+            },
+            "properties": {
+                "title": "Bench 52",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.402339,
+                    34.846547
+                ]
+            },
+            "properties": {
+                "title": "Bench 53",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4025695,
+                    34.8470448
+                ]
+            },
+            "properties": {
+                "title": "Bench 54",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40282129,
+                    34.84755772
+                ]
+            },
+            "properties": {
+                "title": "Bench 55",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40296547,
+                    34.8478293
+                ]
+            },
+            "properties": {
+                "title": "Bench 56",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40300914,
+                    34.84787088
+                ]
+            },
+            "properties": {
+                "title": "Bench 57",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40204748,
+                    34.84486587
+                ]
+            },
+            "properties": {
+                "title": "Stone Seating",
+                "notes": "Sacred CIrcle",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40140212,
+                    34.84561129
+                ]
+            },
+            "properties": {
+                "title": "Swinging Bench 1",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40150974,
+                    34.84466
+                ]
+            },
+            "properties": {
+                "title": "Swinging Bench 2",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.8438139
+                ]
+            },
+            "properties": {
+                "title": "Swinging Bench 3",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40154489,
+                    34.84399496
+                ]
+            },
+            "properties": {
+                "title": "Swinging Bench 4",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40127738,
+                    34.84392397
+                ]
+            },
+            "properties": {
+                "title": "Swinging Bench 5",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    34.84377872
+                ]
+            },
+            "properties": {
+                "title": "Swinging Bench 6",
+                "notes": "",
+                "property3": null
+            }
+        }
+    ]
+}

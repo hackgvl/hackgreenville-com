@@ -1,0 +1,290 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.313891,
+                    34.961029
+                ]
+            },
+            "properties": {
+                "title": "Jubilee Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.364594,
+                    34.852608
+                ]
+            },
+            "properties": {
+                "title": "Queen Street Baptist",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.520835,
+                    35.423059
+                ]
+            },
+            "properties": {
+                "title": "Rocky Mount Missionary Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.402579,
+                    34.634759
+                ]
+            },
+            "properties": {
+                "title": "Shady Grove Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.342664,
+                    34.737297
+                ]
+            },
+            "properties": {
+                "title": "Union Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.568875,
+                    34.491361
+                ]
+            },
+            "properties": {
+                "title": "Welfare Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.229429,
+                    34.929144
+                ]
+            },
+            "properties": {
+                "title": "Maple Creek Missionary Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.411604,
+                    34.848572
+                ]
+            },
+            "properties": {
+                "title": "Tabernacle Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398527,
+                    34.848154
+                ]
+            },
+            "properties": {
+                "title": "John Wesley United Methodist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.409019,
+                    34.841827
+                ]
+            },
+            "properties": {
+                "title": "Allen Temple A.M.E. Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40737,
+                    34.856473
+                ]
+            },
+            "properties": {
+                "title": "Mattoon Presbyterian",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.377473,
+                    34.843334
+                ]
+            },
+            "properties": {
+                "title": "Nicholtown Missionary Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.35894,
+                    34.713329
+                ]
+            },
+            "properties": {
+                "title": "Reedy Fork Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.208281,
+                    34.943235
+                ]
+            },
+            "properties": {
+                "title": "Cedar Grove Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.642703,
+                    34.495762
+                ]
+            },
+            "properties": {
+                "title": "Royal Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.780725,
+                    34.374386
+                ]
+            },
+            "properties": {
+                "title": "Generostee Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.1968,
+                    34.793288
+                ]
+            },
+            "properties": {
+                "title": "Old Pilgrim Missionary Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.337905,
+                    34.774464
+                ]
+            },
+            "properties": {
+                "title": "Reedy River Missionary Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401033,
+                    34.703737
+                ]
+            },
+            "properties": {
+                "title": "Flat Rock Baptist Church",
+                "notes": "",
+                "property3": null
+            }
+        }
+    ]
+}

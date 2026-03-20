@@ -1,0 +1,185 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4019625,
+                    34.8570546
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Hughes Main Library",
+                "property3": "Downtown"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.439872,
+                    34.8159946
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Anderson Road",
+                "property3": "West"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3781819,
+                    34.8040368
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Augusta Road",
+                "property3": "Ramsey Family"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4596013,
+                    34.9212412
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Berea",
+                "property3": "Sarah Dobey Jones"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2034361,
+                    34.6958465
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Fountain Inn",
+                "property3": "Kerry Ann Younts Culp"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2478732,
+                    34.9402752
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Greer",
+                "property3": "Jean M. Smith"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3265601,
+                    34.7758749
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Mauldin",
+                "property3": "W. Jack Greer"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2999491,
+                    34.8570154
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Pelham Road",
+                "property3": "F.W. Symmes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2601434,
+                    34.7480126
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Simpsonville",
+                "property3": "Hendricks"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3082204,
+                    34.9201733
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Taylors",
+                "property3": "Burdette"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4407168,
+                    34.969873
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Travelers Rest",
+                "property3": "Sargent"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2222907,
+                    34.808087
+                ]
+            },
+            "properties": {
+                "title": "Greenville County Library",
+                "notes": "Simpsonville",
+                "property3": "Five Forks "
+            }
+        }
+    ]
+}

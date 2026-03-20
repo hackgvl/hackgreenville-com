@@ -1,0 +1,110 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400133,
+                    34.848212
+                ]
+            },
+            "properties": {
+                "title": "Greenville City Hall",
+                "notes": "206 S Main St #10 Greenville, SC 29601",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.308584,
+                    34.778709
+                ]
+            },
+            "properties": {
+                "title": "Mauldin City Hall",
+                "notes": "5 E Butler Rd Mauldin, SC 29662",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2556,
+                    34.738363
+                ]
+            },
+            "properties": {
+                "title": "Simpsonville City Hall",
+                "notes": "118 NE Main St Simpsonville, SC 29681",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.200906,
+                    34.694737
+                ]
+            },
+            "properties": {
+                "title": "Fountain Inn City Hall",
+                "notes": "200 N Main St Fountain Inn, SC 29644",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.227002,
+                    34.938644
+                ]
+            },
+            "properties": {
+                "title": "Greer City Hall",
+                "notes": "301 E Poinsett St Greer, SC 29651",
+                "property3": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.931915,
+                    34.957995
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg City Hall",
+                "notes": "145 W Broad St, Spartanburg, SC 29306",
+                "property3": "(864) 596-2019"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.846527,
+                    34.698719
+                ]
+            },
+            "properties": {
+                "title": "Clemson City Hall",
+                "notes": "1250 Tiger Blvd # 1, Clemson, SC 29631",
+                "property3": ""
+            }
+        }
+    ]
+}

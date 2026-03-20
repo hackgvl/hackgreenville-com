@@ -1,0 +1,140 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397667,
+                    34.853167
+                ]
+            },
+            "properties": {
+                "title": "Mr. Mickey",
+                "notes": "By the fountain of a large uptown hotel",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397867,
+                    34.853183
+                ]
+            },
+            "properties": {
+                "title": "Mrs. Minnie",
+                "notes": "Across the street from Mr. Mickey, on a parking barrier",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398767,
+                    34.8515
+                ]
+            },
+            "properties": {
+                "title": "Milkey ",
+                "notes": "South of Piazza Bergamo",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3985,
+                    34.851517
+                ]
+            },
+            "properties": {
+                "title": "Mickey Jr.",
+                "notes": "At the steps of an underground coffee shop",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398783,
+                    34.850983
+                ]
+            },
+            "properties": {
+                "title": "Miss Minnie",
+                "notes": "Up, up and away! Is it a bird, a plane, or Miss Minnie?",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399333,
+                    34.850283
+                ]
+            },
+            "properties": {
+                "title": "Melissa ",
+                "notes": "Just south of Mexican wraps and Chinese cuisine",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399283,
+                    34.850383
+                ]
+            },
+            "properties": {
+                "title": "Mitch ",
+                "notes": "Just below Sticky Fingers @ entrance to Wochovia Plaza",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399717,
+                    34.84935
+                ]
+            },
+            "properties": {
+                "title": "Mifflin ",
+                "notes": "Sitting below wall next to an old corner bank",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399617,
+                    34.848983
+                ]
+            },
+            "properties": {
+                "title": "Uncle Miles",
+                "notes": "If it rains, I hope I don\u2019t get washed away",
+                "property3": null
+            }
+        }
+    ]
+}

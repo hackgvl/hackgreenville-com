@@ -1,0 +1,117 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "",
+                "hours": "",
+                "type": "",
+                "website": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4282965,
+                    34.8650056
+                ]
+            },
+            "properties": {
+                "title": "White Whale Studios",
+                "hours": "By Appointment Only",
+                "type": "Working Studio",
+                "website": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4283228,
+                    34.8456578
+                ]
+            },
+            "properties": {
+                "title": "Art & Light Gallery",
+                "hours": "Tuesday - Friday, 10am-5pm; Saturday 10am-4pm",
+                "type": "",
+                "website": "http:\/\/artandlightgallery.com"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4029319,
+                    34.8563338
+                ]
+            },
+            "properties": {
+                "title": "Greenville Art Museum",
+                "hours": "Wednesday-Saturday, 10am-6pm; Sunday 1pm-5pm",
+                "type": "Museum",
+                "website": "http:\/\/gcma.org\/"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4346087,
+                    34.8470759
+                ]
+            },
+            "properties": {
+                "title": "The Artbomb Studios",
+                "hours": "By Appointment Only",
+                "type": "Working Studio",
+                "website": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.432258,
+                    34.844773
+                ]
+            },
+            "properties": {
+                "title": "Greenville Center for Creative Arts",
+                "hours": "Monday-Friday, 9-5pm; Saturday 11-3pm",
+                "type": "",
+                "website": "https:\/\/artcentergreenville.org"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.43046452,
+                    34.84897554
+                ]
+            },
+            "properties": {
+                "title": "Inchoate Art Gallery",
+                "hours": "See website",
+                "type": "Working Studio",
+                "website": "https:\/\/www.facebook.com\/inchoateartgallery\/"
+            }
+        }
+    ]
+}

@@ -1,0 +1,710 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.327209,
+                    34.813892
+                ]
+            },
+            "properties": {
+                "title": "Clemson CU-ICAR parking lot",
+                "address": "5 Research Dr, Greenville, SC 29607",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.215927,
+                    34.891178
+                ]
+            },
+            "properties": {
+                "title": "Greenville-Spartanburg International Airport - Parking Lot B",
+                "address": "2000 GSP Dr, Greer",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.200539,
+                    34.693466
+                ]
+            },
+            "properties": {
+                "title": "Fountain Inn Chamber of Commerce",
+                "address": "10 Depot St., Fountain Inn",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.257068,
+                    34.705174
+                ]
+            },
+            "properties": {
+                "title": "Spinx",
+                "address": "697 Fairview Rd, Simpsonville",
+                "charger_type": "CHAdeMO DCFC, CCS DCFC\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.388275,
+                    34.727375
+                ]
+            },
+            "properties": {
+                "title": "Spinx",
+                "address": "7495 Augusta Rd, Piedmont",
+                "charger_type": "CHAdeMO DCFC, CCS DCFC\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.469742,
+                    34.740742
+                ]
+            },
+            "properties": {
+                "title": "Ivy Acres RV Park",
+                "address": "201 Ivy Acres Dr., Piedmont",
+                "charger_type": "NEMA 14-50\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.383168,
+                    34.757491
+                ]
+            },
+            "properties": {
+                "title": "South Carolina Technology & Aviation Center",
+                "address": "2 Exchange St, Greenville",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.53879,
+                    34.82677
+                ]
+            },
+            "properties": {
+                "title": "Benson Nissan",
+                "address": "4647 Calhoun Memorial Hwy, Easley",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.440899,
+                    34.966071
+                ]
+            },
+            "properties": {
+                "title": "Upcountry Provisions",
+                "address": "6809 State Park Rd, Travelers Rest\n",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.869766,
+                    34.839649
+                ]
+            },
+            "properties": {
+                "title": "The Happy Berry",
+                "address": "510 Gap Hill Rd, Six Mile",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.21024,
+                    34.94656
+                ]
+            },
+            "properties": {
+                "title": "Nissan of Greer",
+                "address": "14125 E Wade Hampton Blvd, Greer",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.18036,
+                    34.904436
+                ]
+            },
+            "properties": {
+                "title": "BMW Performance Center",
+                "address": "1155 South Carolina 101, Greer",
+                "charger_type": "EV, CCS, DCFC"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.956922,
+                    34.919182
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg Downtown Airport",
+                "address": "500 Ammons Rd., Spartanburg\n",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.909828,
+                    34.940973
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg Public Works Building",
+                "address": "801 Union St, Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.928289,
+                    34.942693
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg Administration",
+                "address": "366 N. Church St., Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.928486,
+                    34.948195
+                ]
+            },
+            "properties": {
+                "title": "Kennedy Street Parking Facility",
+                "address": "160 E. Kennedy St., Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.933434,
+                    34.948265
+                ]
+            },
+            "properties": {
+                "title": "City of Spartanburg City Hall",
+                "address": "145 West Broad St., Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.933549,
+                    34.950301
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg Muni Garage",
+                "address": "111 Magnolia St, Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.931602,
+                    34.952058
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg Municipal Garage",
+                "address": "130 E. Saint John St., Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.933661,
+                    34.953528
+                ]
+            },
+            "properties": {
+                "title": "Spartanburg Marriott",
+                "address": "299 N. Church St., Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.938267,
+                    34.960158
+                ]
+            },
+            "properties": {
+                "title": "Wofford College - Village Center",
+                "address": "429 N. Church St., Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.936425,
+                    34.9724
+                ]
+            },
+            "properties": {
+                "title": "Benson Cadillac Nissan",
+                "address": "I-585 and US 221, Spartanburg",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.952235,
+                    35.00801
+                ]
+            },
+            "properties": {
+                "title": "Spinx",
+                "address": "1504 Boiling Springs Rd, Boiling Springs",
+                "charger_type": "CHAdeMO DCFC, CCS DCFC\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.802387,
+                    34.702019
+                ]
+            },
+            "properties": {
+                "title": "Clemson Area Transit",
+                "address": "200 West Ln, Clemson",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.95208,
+                    34.696495
+                ]
+            },
+            "properties": {
+                "title": "Spinx",
+                "address": "507 By Pass 123 , Seneca",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.041634,
+                    34.667671
+                ]
+            },
+            "properties": {
+                "title": "Blue Ridge Electric Co-op",
+                "address": "2328 Sandifer Boulevard, Westminster",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.686806,
+                    34.558346
+                ]
+            },
+            "properties": {
+                "title": "Kia of Anderson",
+                "address": "4008 Clemson Blvd, Anderson\u200e",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.675819,
+                    34.548478
+                ]
+            },
+            "properties": {
+                "title": "Holiday Inn",
+                "address": "3509 Clemson Blvd, Anderson",
+                "charger_type": "CHAdeMO DCFC, CCS DCFC\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.648636,
+                    34.502579
+                ]
+            },
+            "properties": {
+                "title": "The Bleckley Inn",
+                "address": "151 East Church Street, Anderson",
+                "charger_type": "EV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.393191,
+                    34.85253
+                ]
+            },
+            "properties": {
+                "title": "Church Street Garage",
+                "address": "320 N. Church St Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.394741,
+                    34.853278
+                ]
+            },
+            "properties": {
+                "title": "Liberty Square Garage",
+                "address": "65 Beattie Place Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.396152,
+                    34.852957
+                ]
+            },
+            "properties": {
+                "title": "Commons Garage",
+                "address": "60 Beattie Place Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398577,
+                    34.853423
+                ]
+            },
+            "properties": {
+                "title": "Laurens Street Garage",
+                "address": "210 N Laurens St Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399768,
+                    34.852472
+                ]
+            },
+            "properties": {
+                "title": "Richardson Garage",
+                "address": "66 Richardson St Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400342,
+                    34.850949
+                ]
+            },
+            "properties": {
+                "title": "Washington Street Garage",
+                "address": "101 W Washington St Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.400808,
+                    34.849752
+                ]
+            },
+            "properties": {
+                "title": "Poinsett Garage",
+                "address": "25 W McBee Ave Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401994,
+                    34.84881
+                ]
+            },
+            "properties": {
+                "title": "River Street Garage",
+                "address": "414 River St Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.38736,
+                    34.847242
+                ]
+            },
+            "properties": {
+                "title": "Greenville Zoo",
+                "address": "150 Cleveland Park Dr Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.402841,
+                    34.847124
+                ]
+            },
+            "properties": {
+                "title": "Riverplace Garage",
+                "address": "300 River St Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399896,
+                    34.840916
+                ]
+            },
+            "properties": {
+                "title": "County Square",
+                "address": "301 University Ridge Greenville, SC 29601",
+                "charger_type": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.406653,
+                    34.828056
+                ]
+            },
+            "properties": {
+                "title": "Tesla Supercharging Station",
+                "address": "108 Carolina Point Pkwy, Greenville, SC 29605",
+                "charger_type": "Tesla"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.384138,
+                    34.859671
+                ]
+            },
+            "properties": {
+                "title": "EvGo Charging Station",
+                "address": "1417 E Washington St, Greenville, SC 29607",
+                "charger_type": "CHAdeMO DCFC, CCS\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.416711,
+                    34.822003
+                ]
+            },
+            "properties": {
+                "title": "EvGo Charging Station",
+                "address": "901 Marue Dr, Greenville, SC 29605",
+                "charger_type": "CHAdeMO DCFC, CCS\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.30206,
+                    34.827019
+                ]
+            },
+            "properties": {
+                "title": "Electrify America",
+                "address": "1211 Woodruff Rd, Greenville, SC 29607",
+                "charger_type": "CHAdeMO DCFC, CCS\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.303133,
+                    34.822546
+                ]
+            },
+            "properties": {
+                "title": "Tesla Destination Charger",
+                "address": "31 Market Point Dr, Greenville, SC 29607",
+                "charger_type": "Tesla"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.413792,
+                    34.858472
+                ]
+            },
+            "properties": {
+                "title": "Tesla Destination Charger",
+                "address": "131 Falls St, Greenville, SC 29601",
+                "charger_type": "Tesla"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.413792,
+                    34.858472
+                ]
+            },
+            "properties": {
+                "title": "ChargePoint Charging Station",
+                "address": "8 Webster St, Greenville, SC 29601",
+                "charger_type": "J1772"
+            }
+        }
+    ]
+}

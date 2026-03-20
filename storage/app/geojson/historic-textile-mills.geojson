@@ -1,0 +1,200 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.409752,
+                    34.827399
+                ]
+            },
+            "properties": {
+                "title": "Mills Mill",
+                "notes": "Now The Lofts at Mills Mill",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.431408,
+                    34.844824
+                ]
+            },
+            "properties": {
+                "title": "Brandon Mill",
+                "notes": "Now West Village Lofts at Brandon Mill",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42381,
+                    34.867307
+                ]
+            },
+            "properties": {
+                "title": "Monaghan Mill",
+                "notes": "Now The Lofts of Greenville",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.427373,
+                    34.83642
+                ]
+            },
+            "properties": {
+                "title": "Judson Mill",
+                "notes": "Still in operation by Milliken",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.34822,
+                    34.770179
+                ]
+            },
+            "properties": {
+                "title": "Conestee Mill",
+                "notes": "Part of Lake Conestee Nature Park",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.226637,
+                    34.857073
+                ]
+            },
+            "properties": {
+                "title": "Pelham Mill",
+                "notes": "Burned in 1940. Now a city park.",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42866,
+                    34.852939
+                ]
+            },
+            "properties": {
+                "title": "Woodside Mill",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4128,
+                    34.87073
+                ]
+            },
+            "properties": {
+                "title": "Poe Mill",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40053,
+                    34.84506
+                ]
+            },
+            "properties": {
+                "title": "Camperdown Mill",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40221,
+                    34.84789
+                ]
+            },
+            "properties": {
+                "title": "Huguenot Mill\/Nuckasee",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42213,
+                    34.8274
+                ]
+            },
+            "properties": {
+                "title": "Dunean Mill",
+                "notes": "\"Dunean Mill, chartered in 1911 and opened in 1912, was one of several textile mills owned by Capt. Ellison Adger Smyth (1847-1942), a national leader in the industry for more than 60 years. Dunean was named for the Irish village where Smyth's Adger ancestors lived. The mill, called \"the Million Dollar Mill\" while it was being built by J. E. Sirrine & Company, was an all electric mill with 50,000 spindles and 1,200 looms when it opened, making fine cotton goods. The light gray brick and black mortar of this mill gives it a distinctive look unlike almost any other textile mill of its era. The Dunean Mill village included 585 houses, an elementary school, three churches, a company store, a community building, a gymnasium, and a baseball field. Its Y.M.C.A. was the first in any mill village in S.C. In 1935 the mill switched to rayon and other synthetic fibers. It was for many years a division of J. P. Stevens & Company. \n\nErected 2012 by Dunean Historical Society\"",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42566,
+                    34.88352
+                ]
+            },
+            "properties": {
+                "title": "Union Bleachery",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41161,
+                    34.87396
+                ]
+            },
+            "properties": {
+                "title": "American Spinning Mill",
+                "notes": "300 Hammett St Ext",
+                "property3": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,875 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.464128,
+                    34.991772
+                ]
+            },
+            "properties": {
+                "title": "Tate Road",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.464944,
+                    34.987568
+                ]
+            },
+            "properties": {
+                "title": "rock Quarry Road",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.459135,
+                    34.979549
+                ]
+            },
+            "properties": {
+                "title": "Corner of Church & Bridwell",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.449497,
+                    34.974993
+                ]
+            },
+            "properties": {
+                "title": "Across from Deeco Metals",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.447877,
+                    34.973525
+                ]
+            },
+            "properties": {
+                "title": "Tolar Road",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.445752,
+                    34.970479
+                ]
+            },
+            "properties": {
+                "title": "Henderson Dr. ",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.443666,
+                    34.967534
+                ]
+            },
+            "properties": {
+                "title": "Tandem",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442448,
+                    34.965819
+                ]
+            },
+            "properties": {
+                "title": "  Marthas Hardware",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44175,
+                    34.964773
+                ]
+            },
+            "properties": {
+                "title": " TR Methodist",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0,
+                    0
+                ]
+            },
+            "properties": {
+                "title": "",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.440963,
+                    34.962706
+                ]
+            },
+            "properties": {
+                "title": "Old Bumcombe",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.440465,
+                    34.960719
+                ]
+            },
+            "properties": {
+                "title": "Roe Rd",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.440529,
+                    34.956885
+                ]
+            },
+            "properties": {
+                "title": "Old Buncombe 2",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.440652,
+                    34.953097
+                ]
+            },
+            "properties": {
+                "title": "TR History Museum",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.441996,
+                    34.947909
+                ]
+            },
+            "properties": {
+                "title": "Old Buncomb 3",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.444358,
+                    34.941094
+                ]
+            },
+            "properties": {
+                "title": " Foothills Rd\n\n",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442245,
+                    34.936973
+                ]
+            },
+            "properties": {
+                "title": "Roe Ford",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.442266,
+                    34.934124
+                ]
+            },
+            "properties": {
+                "title": "Carl Kort",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.443838,
+                    34.925438
+                ]
+            },
+            "properties": {
+                "title": "Furman",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.445557,
+                    34.921729
+                ]
+            },
+            "properties": {
+                "title": "Furman 2",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.446099,
+                    34.920394
+                ]
+            },
+            "properties": {
+                "title": "Duncan Chapel",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.446338,
+                    34.915729
+                ]
+            },
+            "properties": {
+                "title": "Engel",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.447518,
+                    34.911486
+                ]
+            },
+            "properties": {
+                "title": "Watkins Bridge",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.44034,
+                    34.893813
+                ]
+            },
+            "properties": {
+                "title": "Sulfer Springs",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42853,
+                    34.878206
+                ]
+            },
+            "properties": {
+                "title": "West Blue Ridge",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.426121,
+                    34.876412
+                ]
+            },
+            "properties": {
+                "title": "Franklin Secret",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.421597,
+                    34.870019
+                ]
+            },
+            "properties": {
+                "title": "Swamp Rabbit Cafe",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42128,
+                    34.868998
+                ]
+            },
+            "properties": {
+                "title": "Hampton",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.421178,
+                    34.866146
+                ]
+            },
+            "properties": {
+                "title": "Greenville Mille",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.420962,
+                    34.860523
+                ]
+            },
+            "properties": {
+                "title": "Railroad Crossing",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.416374,
+                    34.854526
+                ]
+            },
+            "properties": {
+                "title": "Swamp Rabbit Crossfit",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.414013,
+                    34.852384
+                ]
+            },
+            "properties": {
+                "title": "Mayberry Park",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.410225,
+                    34.849646
+                ]
+            },
+            "properties": {
+                "title": "Hudson St",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.406996,
+                    34.848263
+                ]
+            },
+            "properties": {
+                "title": "Westfield",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.403825,
+                    34.848913
+                ]
+            },
+            "properties": {
+                "title": "Linky Stone Park",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40323,
+                    34.8482
+                ]
+            },
+            "properties": {
+                "title": "River Street",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.401744,
+                    34.844827
+                ]
+            },
+            "properties": {
+                "title": "Falls Park",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.392945,
+                    34.841185
+                ]
+            },
+            "properties": {
+                "title": "Cleveland Park",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.391374,
+                    34.840296
+                ]
+            },
+            "properties": {
+                "title": "Woodland Way",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.388178,
+                    34.843638
+                ]
+            },
+            "properties": {
+                "title": "Woodland Way Cir",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.384686,
+                    34.848392
+                ]
+            },
+            "properties": {
+                "title": "Cleveland Park North",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.384954,
+                    34.84119
+                ]
+            },
+            "properties": {
+                "title": "Cleveland Park East",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.381551,
+                    34.837274
+                ]
+            },
+            "properties": {
+                "title": "Baxter",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.386299,
+                    34.836147
+                ]
+            },
+            "properties": {
+                "title": "Mothers Morning Out",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.385435,
+                    34.8345
+                ]
+            },
+            "properties": {
+                "title": "34.834500, -82.385435 Greenville ARP",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.378863,
+                    34.83498
+                ]
+            },
+            "properties": {
+                "title": "Alemeda St",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.380965,
+                    34.83056
+                ]
+            },
+            "properties": {
+                "title": "East Faris",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.379913,
+                    34.828734
+                ]
+            },
+            "properties": {
+                "title": "Riverbend Apartment",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.378504,
+                    34.82653
+                ]
+            },
+            "properties": {
+                "title": "McAlister Rd",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.375474,
+                    34.824089
+                ]
+            },
+            "properties": {
+                "title": "Cleveland Ct",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373374,
+                    34.821811
+                ]
+            },
+            "properties": {
+                "title": "State Credit Union",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.371223,
+                    34.820435
+                ]
+            },
+            "properties": {
+                "title": "Winterberry",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.364214,
+                    34.801615
+                ]
+            },
+            "properties": {
+                "title": "Parkins Mill Rd @ 85",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.364321,
+                    34.798735
+                ]
+            },
+            "properties": {
+                "title": "Mauldin Rd",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36576,
+                    34.783433
+                ]
+            },
+            "properties": {
+                "title": "Churchhill St",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36017,
+                    34.778049
+                ]
+            },
+            "properties": {
+                "title": "Conestee",
+                "notes": "",
+                "property3": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.34919,
+                    34.769826
+                ]
+            },
+            "properties": {
+                "title": "Conestee Stouth",
+                "notes": "",
+                "property3": null
+            }
+        }
+    ]
+}
