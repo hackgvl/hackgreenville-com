@@ -7,6 +7,7 @@ use App\Models\MapLayer;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -128,6 +129,19 @@ class MapLayerResource extends Resource
             ])
             ->filters([])
             ->actions([
+                Tables\Actions\Action::make('sync')
+                    ->label('Sync')
+                    ->icon('heroicon-o-arrow-path')
+                    ->requiresConfirmation()
+                    ->action(function (MapLayer $record) {
+                        $result = app(\App\Services\MapLayerSyncService::class)->sync($record);
+
+                        Notification::make()
+                            ->title($result['success'] ? 'Sync Successful' : 'Sync Failed')
+                            ->body($result['message'])
+                            ->status($result['success'] ? 'success' : 'danger')
+                            ->send();
+                    }),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
