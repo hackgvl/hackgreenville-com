@@ -69,11 +69,11 @@ class EventApiV1Request extends FormRequest
                 'description' => 'The current page of items to display',
             ],
             'start_date' => [
-                'description' => 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations.',
+                'description' => 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](/docs/EVENTS_API.md) for information about event data limitations.',
                 'example' => '2026-01-01',
             ],
             'end_date' => [
-                'description' => 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for information about event data limitations.',
+                'description' => 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](/docs/EVENTS_API.md) for information about event data limitations.',
                 'example' => '2100-12-31',
             ],
             'tags' => [
