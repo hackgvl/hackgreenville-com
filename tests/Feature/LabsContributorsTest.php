@@ -33,6 +33,8 @@ class LabsContributorsTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Want to contribute?');
         $response->assertDontSee('Built by the Community');
+        $response->assertSee('/docs/EVENTS_API.md');
+        $response->assertSee('/docs/ORGS_API.md');
     }
 
     public function test_command_fetches_and_caches_contributors(): void
