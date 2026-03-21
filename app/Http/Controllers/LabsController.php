@@ -33,13 +33,13 @@ class LabsController extends Controller
                     [
                         'name' => __('Events API'),
                         'description' => __('Public API for tech event information'),
-                        'link' => '/docs/EVENTS_API.md',
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md',
                         'linkType' => 'website',
                     ],
                     [
                         'name' => __('Organizations API'),
                         'description' => __('Public API for tech organization data'),
-                        'link' => '/docs/ORGS_API.md',
+                        'link' => 'https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md',
                         'linkType' => 'website',
                     ],
                 ],

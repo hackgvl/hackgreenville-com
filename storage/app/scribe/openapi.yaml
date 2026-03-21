@@ -15,7 +15,7 @@ paths:
     get:
       summary: 'Events API v0'
       operationId: eventsAPIV0
-      description: "This API provides access to event data stored in the HackGreenville database.\n\nPlease see the [Event API docs](/docs/EVENTS_API.md) for more information about the event API."
+      description: "This API provides access to event data stored in the HackGreenville database.\n\nPlease see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for more information about the event API."
       parameters:
         -
           in: query
@@ -166,7 +166,7 @@ paths:
     get:
       summary: 'Organizations API v0'
       operationId: organizationsAPIV0
-      description: "This API provides access to organization data stored in the HackGreenville database.\n\nPlease see the [Organization API docs](/docs/ORGS_API.md) for more information about the organization API."
+      description: "This API provides access to organization data stored in the HackGreenville database.\n\nPlease see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md) for more information about the organization API."
       parameters:
         -
           in: query
@@ -260,7 +260,7 @@ paths:
     get:
       summary: 'Events API v1'
       operationId: eventsAPIV1
-      description: "This API provides access to event data stored in the HackGreenville database.\n\n* Please see the [Event API docs](/docs/EVENTS_API.md) for more information about the event API."
+      description: "This API provides access to event data stored in the HackGreenville database.\n\n* Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for more information about the event API."
       parameters:
         -
           in: query
@@ -287,23 +287,23 @@ paths:
         -
           in: query
           name: start_date
-          description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+          description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
           example: '2026-01-01'
           required: false
           schema:
             type: string
-            description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
+            description: 'The start date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>.'
             example: '2026-01-01'
             nullable: true
         -
           in: query
           name: end_date
-          description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+          description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
           example: '2100-12-31'
           required: false
           schema:
             type: string
-            description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+            description: 'The end date for events filtering (inclusive). Future event data may be limited. Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
             example: '2100-12-31'
             nullable: true
         -
@@ -624,7 +624,7 @@ paths:
     get:
       summary: 'Organizations API v1'
       operationId: organizationsAPIV1
-      description: "This API provides access to organization data stored in the HackGreenville database.\n\n* Please see the [Organization API docs](/docs/ORGS_API.md) for more information about the organization API."
+      description: "This API provides access to organization data stored in the HackGreenville database.\n\n* Please see the [Organization API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md) for more information about the organization API."
       parameters:
         -
           in: query
