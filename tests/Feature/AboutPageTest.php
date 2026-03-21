@@ -11,7 +11,7 @@ class AboutPageTest extends TestCase
         $response = $this->get('/about');
 
         $response->assertOk();
-        $response->assertSee('/docs/ORGS_API.md');
-        $response->assertSee('/docs/EVENTS_API.md');
+        $response->assertSee('<a href="/docs/ORGS_API.md"', false);
+        $response->assertSee('<a href="/docs/EVENTS_API.md"', false);
     }
 }
