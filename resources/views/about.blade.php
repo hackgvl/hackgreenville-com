@@ -83,8 +83,8 @@
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         This website, the
-                        <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md" class="text-primary underline hover:text-blue-600">Organizations API</a>, and
-                        <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md" class="text-primary underline hover:text-blue-600">Events API</a>
+                        <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md" class="text-primary underline hover:text-blue-600">Organizations API</a>, and
+                        <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md" class="text-primary underline hover:text-blue-600">Events API</a>
                         are developed by <a href="/labs" class="text-primary underline hover:text-blue-600">HackGreenville Labs</a>.
                     </p>
                 </div>

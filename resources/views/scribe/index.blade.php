@@ -124,7 +124,7 @@
 </p>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
-<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for more information about the event API.</p>
 
 <span id="example-requests-GETapi-v0-events">
 <blockquote>Example request:</blockquote>
@@ -333,7 +333,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
-<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md">Organization API docs</a> for more information about the organization API.</p>
 
 <span id="example-requests-GETapi-v0-orgs">
 <blockquote>Example request:</blockquote>
@@ -498,7 +498,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
 <ul>
-<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</li>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for more information about the event API.</li>
 </ul>
 
 <span id="example-requests-GETapi-v1-events">
@@ -721,7 +721,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2026-01-01"
                data-component="query">
     <br>
-<p>The start date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
+<p>The start date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -733,7 +733,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2100-12-31"
                data-component="query">
     <br>
-<p>The end date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
+<p>The end date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tags</code></b>&nbsp;&nbsp;
@@ -884,7 +884,7 @@ Must be one of:
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
 <ul>
-<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</li>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md">Organization API docs</a> for more information about the organization API.</li>
 </ul>
 
 <span id="example-requests-GETapi-v1-organizations">
