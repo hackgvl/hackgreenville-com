@@ -232,7 +232,7 @@ yarn dev
 
 #### Import / Seed the Organizations and Events Data
 
-Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](/docs/EVENTS_API.md). Without this step the application will have no data.
+Organization and events data comes from the [Organizations API](/docs/ORGS_API.md) and [Events API](/docs/EVENTS_API.md). Without this step the application will have no data.
 
 ```bash
 php artisan import:events
