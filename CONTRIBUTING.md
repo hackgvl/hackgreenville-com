@@ -232,7 +232,7 @@ yarn dev
 
 #### Import / Seed the Organizations and Events Data
 
-Organization and events data comes from the [Organizations API](https://github.com/hackgvl/OpenData/blob/master/ORGANIZATIONS_API.md) and [Events API](/EVENTS_API.md). Without this step the application will have no data.
+Organization and events data comes from the [Organizations API](/docs/ORGS_API.md) and [Events API](/docs/EVENTS_API.md). Without this step the application will have no data.
 
 ```bash
 php artisan import:events
@@ -382,7 +382,7 @@ Telescope is a Laravel Debugging tool that allows you to see all the requests ma
 
 The Events API's responses are controlled by variables that may limit the data available to calling / consuming applications.
 
-Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/EVENTS_API.md)
+Contact [HackGreenville Labs](https://hackgreenville.com/labs) with any questions about these limits for the [HackGreenville.com Events API](/docs/EVENTS_API.md)
 
 Explanation of the .env defaults
 `EVENT_IMPORTER_MAX_DAYS_IN_PAST=30` would limit the imported events saved in the Event API's database to no more than 30 days in the past
