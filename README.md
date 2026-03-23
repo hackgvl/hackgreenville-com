@@ -1,5 +1,5 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![HackGreenville](https://www.hackgreenville.com/img/logo-v2.png)
@@ -70,6 +70,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/msmahon"><img src="https://avatars.githubusercontent.com/u/6668279?v=4?s=100" width="100px;" alt="Mitchell Mahoney"/><br /><sub><b>Mitchell Mahoney</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=msmahon" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/beetz12"><img src="https://avatars.githubusercontent.com/u/1282474?v=4?s=100" width="100px;" alt="beetz12"/><br /><sub><b>beetz12</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=beetz12" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://jenbauer.carrd.com"><img src="https://avatars.githubusercontent.com/u/43556044?v=4?s=100" width="100px;" alt="Jen Bauer"/><br /><sub><b>Jen Bauer</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3AJenBauer" title="Bug reports">🐛</a> <a href="#userTesting-JenBauer" title="User Testing">📓</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.alexdresko.com"><img src="https://avatars.githubusercontent.com/u/333022?v=4?s=100" width="100px;" alt="Alex Dresko"/><br /><sub><b>Alex Dresko</b></sub></a><br /><a href="https://github.com/hackgvl/hackgreenville-com/commits?author=alexdresko" title="Documentation">📖</a> <a href="https://github.com/hackgvl/hackgreenville-com/issues?q=author%3Aalexdresko" title="Bug reports">🐛</a> <a href="#tool-alexdresko" title="Tools">🔧</a></td>
     </tr>
   </tbody>
 </table>
