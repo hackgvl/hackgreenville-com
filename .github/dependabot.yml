@@ -1,14 +1,51 @@
 version: 2
 updates:
+  # ----------------------------------------------------
+  # Composer – Daily security updates
+  # ----------------------------------------------------
   - package-ecosystem: composer
     directory: "/"
     schedule:
       interval: daily
-    open-pull-requests-limit: 1
+    security-updates-only: true
     versioning-strategy: lockfile-only
+
+  # ----------------------------------------------------
+  # npm – Daily security updates
+  # ----------------------------------------------------
   - package-ecosystem: npm
     directory: "/"
     schedule:
       interval: daily
-    open-pull-requests-limit: 1
+    security-updates-only: true
     versioning-strategy: lockfile-only
+
+  # ----------------------------------------------------
+  # Composer – Weekly grouped non-security updates (Tuesday)
+  # ----------------------------------------------------
+  - package-ecosystem: composer
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: tuesday
+    security-updates-only: false
+    versioning-strategy: lockfile-only
+    groups:
+      composer-all:
+        patterns:
+          - "*"
+
+  # ----------------------------------------------------
+  # npm – Weekly grouped non-security updates (Tuesday)
+  # ----------------------------------------------------
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: tuesday
+    security-updates-only: false
+    versioning-strategy: lockfile-only
+    groups:
+      npm-all:
+        patterns:
+          - "*"
