@@ -4699,16 +4699,16 @@
         },
         {
             "name": "mallardduck/blade-lucide-icons",
-            "version": "1.26.8",
+            "version": "1.26.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mallardduck/blade-lucide-icons.git",
-                "reference": "ebd42a72068328846cd3977ffc18b83d0ca47721"
+                "reference": "b56aac8c1c6d5701eead858b473449550ee94b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/ebd42a72068328846cd3977ffc18b83d0ca47721",
-                "reference": "ebd42a72068328846cd3977ffc18b83d0ca47721",
+                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/b56aac8c1c6d5701eead858b473449550ee94b75",
+                "reference": "b56aac8c1c6d5701eead858b473449550ee94b75",
                 "shasum": ""
             },
             "require": {
@@ -4753,9 +4753,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mallardduck/blade-lucide-icons/issues",
-                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.8"
+                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.11"
             },
-            "time": "2026-03-05T00:22:54+00:00"
+            "time": "2026-03-26T00:26:22+00:00"
         },
         {
             "name": "malzariey/filament-daterangepicker-filter",
