@@ -1,25 +1,8 @@
+# security updates are handled separately via Github settings
+# when 'Dependabot security updates' is enabled under the repo's
+# Settings > Security > Advanced Security
 version: 2
 updates:
-  # ----------------------------------------------------
-  # Composer – Daily security updates
-  # ----------------------------------------------------
-  - package-ecosystem: composer
-    directory: "/"
-    schedule:
-      interval: daily
-    security-updates-only: true
-    versioning-strategy: lockfile-only
-
-  # ----------------------------------------------------
-  # npm – Daily security updates
-  # ----------------------------------------------------
-  - package-ecosystem: npm
-    directory: "/"
-    schedule:
-      interval: daily
-    security-updates-only: true
-    versioning-strategy: lockfile-only
-
   # ----------------------------------------------------
   # Composer – Weekly grouped non-security updates (Tuesday)
   # ----------------------------------------------------
@@ -28,13 +11,11 @@ updates:
     schedule:
       interval: weekly
       day: tuesday
-    security-updates-only: false
     versioning-strategy: lockfile-only
     groups:
       composer-all:
         patterns:
           - "*"
-
   # ----------------------------------------------------
   # npm – Weekly grouped non-security updates (Tuesday)
   # ----------------------------------------------------
@@ -43,7 +24,6 @@ updates:
     schedule:
       interval: weekly
       day: tuesday
-    security-updates-only: false
     versioning-strategy: lockfile-only
     groups:
       npm-all:
