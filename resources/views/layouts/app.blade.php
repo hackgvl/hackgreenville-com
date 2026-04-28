@@ -90,7 +90,7 @@
     @yield('head')
 </head>
 <body>
-<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:px-6 focus:py-3 focus:bg-gray-900 focus:text-white focus:font-semibold focus:no-underline">Skip to main content</a>
+<a href="#main-content" class="sr-only">Skip to main content</a>
 
 <div id="app">
     @include('layouts.top-nav')

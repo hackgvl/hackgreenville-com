@@ -1,0 +1,214 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.27285,
+                    34.98476
+                ]
+            },
+            "properties": {
+                "title": "Lake Cunningham Recreation Facility Pier",
+                "access_name": "Lake Cunningham",
+                "water_body": "Lake",
+                "parking_spaces": "60",
+                "picnic_shelter": "Yes",
+                "restrooms": "Yes",
+                "handicap_accessible": "Yes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.29624,
+                    34.99344
+                ]
+            },
+            "properties": {
+                "title": "J. Verne Smith Recreation Area Bank",
+                "access_name": "Lake Robinson",
+                "water_body": "Lake",
+                "parking_spaces": "35",
+                "picnic_shelter": "Yes",
+                "restrooms": "Yes",
+                "handicap_accessible": "No"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.29576,
+                    34.99401
+                ]
+            },
+            "properties": {
+                "title": "J. Verne Smith Recreation Area Pier",
+                "access_name": "Lake Robinson",
+                "water_body": "Lake",
+                "parking_spaces": "35",
+                "picnic_shelter": "Yes",
+                "restrooms": "Yes",
+                "handicap_accessible": "No"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.28517,
+                    34.84375
+                ]
+            },
+            "properties": {
+                "title": "Oak Grove Lake Bank",
+                "access_name": "Oak Grove Lake",
+                "water_body": "Pond",
+                "parking_spaces": "20",
+                "picnic_shelter": "No",
+                "restrooms": "No",
+                "handicap_accessible": "No"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.48215,
+                    35.08982
+                ]
+            },
+            "properties": {
+                "title": "Pleasant Ridge County Park Bank",
+                "access_name": "Pleasant Ridge County Park",
+                "water_body": "Pond",
+                "parking_spaces": "25",
+                "picnic_shelter": "Yes",
+                "restrooms": "Yes",
+                "handicap_accessible": "No"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.48148,
+                    35.08992
+                ]
+            },
+            "properties": {
+                "title": "Pleasant Ridge County Park Pier",
+                "access_name": "Pleasant Ridge County Park",
+                "water_body": "Pond",
+                "parking_spaces": "25",
+                "picnic_shelter": "Yes",
+                "restrooms": "Yes",
+                "handicap_accessible": "No"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36701,
+                    34.92745
+                ]
+            },
+            "properties": {
+                "title": "Paris Mountain State Park Bank",
+                "access_name": "Paris Mountain State Park Reservoir #2",
+                "water_body": "Pond",
+                "parking_spaces": "20",
+                "picnic_shelter": "Yes",
+                "restrooms": "Yes",
+                "handicap_accessible": "No"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5569259,
+                    34.9406275
+                ]
+            },
+            "properties": {
+                "title": "Laurel and Hardy Fishing Lakes",
+                "access_name": "Laurel and Hardy Fishing Lakes",
+                "water_body": "Lake and Pond",
+                "parking_spaces": "",
+                "picnic_shelter": "",
+                "restrooms": "",
+                "handicap_accessible": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2540177,
+                    34.8940281
+                ]
+            },
+            "properties": {
+                "title": "Cannon's Fishing Lakes",
+                "access_name": "Cannon's Fishing Lakes",
+                "water_body": "Lake",
+                "parking_spaces": "",
+                "picnic_shelter": "",
+                "restrooms": "",
+                "handicap_accessible": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.5062198,
+                    34.8702002
+                ]
+            },
+            "properties": {
+                "title": "Saluda Lake",
+                "access_name": "Saluda Lake",
+                "water_body": "Lake",
+                "parking_spaces": "",
+                "picnic_shelter": "",
+                "restrooms": "",
+                "handicap_accessible": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3930155,
+                    34.9383593
+                ]
+            },
+            "properties": {
+                "title": "Lake Placid",
+                "access_name": "Paris Mountain State Park",
+                "water_body": "Lake",
+                "parking_spaces": "",
+                "picnic_shelter": "",
+                "restrooms": "",
+                "handicap_accessible": ""
+            }
+        }
+    ]
+}

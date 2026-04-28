@@ -1,0 +1,929 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4182316,
+                    35.0230971
+                ]
+            },
+            "properties": {
+                "title": "Kappa Alpha Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.476449,
+                    34.9977641
+                ]
+            },
+            "properties": {
+                "title": "Heritage Elementary Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4530149,
+                    34.9709597
+                ]
+            },
+            "properties": {
+                "title": "Travelers Rest High School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4417819,
+                    34.9520462
+                ]
+            },
+            "properties": {
+                "title": "Kierke-Garden (Vista House)",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.445225,
+                    34.9415151
+                ]
+            },
+            "properties": {
+                "title": "Phoenix Academy Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4340232,
+                    34.9379082
+                ]
+            },
+            "properties": {
+                "title": "Redeemer Presbyterian Community Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4379227,
+                    34.9275332
+                ]
+            },
+            "properties": {
+                "title": "Furman University Farm",
+                "notes": "Urban Farm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4653017,
+                    34.9107284
+                ]
+            },
+            "properties": {
+                "title": "A Child's Haven Garden",
+                "notes": "Non-Profit Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4302192,
+                    34.9096717
+                ]
+            },
+            "properties": {
+                "title": "Duncan Chapel Elementary School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2465579,
+                    34.9202118
+                ]
+            },
+            "properties": {
+                "title": "Greer Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3717735,
+                    34.8864763
+                ]
+            },
+            "properties": {
+                "title": "Miracle Hill Overcomer's Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3880632,
+                    34.8663691
+                ]
+            },
+            "properties": {
+                "title": "North Main Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4062101,
+                    34.8416291
+                ]
+            },
+            "properties": {
+                "title": "FunnelDelicious Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4236254,
+                    34.840376
+                ]
+            },
+            "properties": {
+                "title": "Bon Secours St. Francis Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3904447,
+                    34.8238226
+                ]
+            },
+            "properties": {
+                "title": "Meals on Wheels Community Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3875867,
+                    34.7886734
+                ]
+            },
+            "properties": {
+                "title": "Upstate Circle of Friends Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.251511,
+                    34.739457
+                ]
+            },
+            "properties": {
+                "title": "Simpsonville Harmony Garden",
+                "notes": "Community Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.340317,
+                    34.899284
+                ]
+            },
+            "properties": {
+                "title": "Cornerstone Community Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.344017,
+                    34.882765
+                ]
+            },
+            "properties": {
+                "title": "Aldersgate UMC Community Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.34689,
+                    34.881965
+                ]
+            },
+            "properties": {
+                "title": "First Christian Church Community Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3124906,
+                    34.8694324
+                ]
+            },
+            "properties": {
+                "title": "St. Peter's Episcopal Church Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.403916,
+                    34.861853
+                ]
+            },
+            "properties": {
+                "title": "Triune Mercy Center Community Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.417402,
+                    34.848462
+                ]
+            },
+            "properties": {
+                "title": "St. Anthony of Padua Community Garden",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.43745,
+                    34.834342
+                ]
+            },
+            "properties": {
+                "title": "First Weslyan Church",
+                "notes": "Faith-Based Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2786164,
+                    34.9991773
+                ]
+            },
+            "properties": {
+                "title": "O'Neal Village",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.414417,
+                    34.887578
+                ]
+            },
+            "properties": {
+                "title": "Sans Souci Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.373894,
+                    34.8618449
+                ]
+            },
+            "properties": {
+                "title": "Issaqueena Park Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3798408,
+                    34.8619002
+                ]
+            },
+            "properties": {
+                "title": "Greenline Spartanburg Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4396476,
+                    34.8450694
+                ]
+            },
+            "properties": {
+                "title": "Freetown Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42413,
+                    34.843944
+                ]
+            },
+            "properties": {
+                "title": "Westview Homes",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4129851,
+                    34.8417008
+                ]
+            },
+            "properties": {
+                "title": "West End Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4202663,
+                    34.8352204
+                ]
+            },
+            "properties": {
+                "title": "Odessa St Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4281432,
+                    34.8327718
+                ]
+            },
+            "properties": {
+                "title": "Judson Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4053182,
+                    34.837105
+                ]
+            },
+            "properties": {
+                "title": "Chicora Crest Community Gardens",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4219243,
+                    34.8255256
+                ]
+            },
+            "properties": {
+                "title": "Dunean Historical Society Community Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.378692,
+                    34.841424
+                ]
+            },
+            "properties": {
+                "title": "Nicholtown Historical Garden",
+                "notes": "Neighborhood Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41239,
+                    34.84559
+                ]
+            },
+            "properties": {
+                "title": "Project Host Garden",
+                "notes": "Non-Profit Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3796533,
+                    34.835395
+                ]
+            },
+            "properties": {
+                "title": "Annie's House Garden",
+                "notes": "Non-Profit Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4249192,
+                    34.8287861
+                ]
+            },
+            "properties": {
+                "title": "Serenity Place Garden",
+                "notes": "Non-Profit Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4121342,
+                    34.834178
+                ]
+            },
+            "properties": {
+                "title": "Mill Village Farm (Sullivan Street Farm)",
+                "notes": "Urban Farm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3126664,
+                    34.8400118
+                ]
+            },
+            "properties": {
+                "title": "Heritage Garden at Roper Mountain Living History Farm",
+                "notes": "Urban Farm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.412409,
+                    34.85782
+                ]
+            },
+            "properties": {
+                "title": "GOFO Office Garden",
+                "notes": "Workspace Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4116229,
+                    34.8214951
+                ]
+            },
+            "properties": {
+                "title": "Greenville Medical Roots Garden (USC School of Medicine)",
+                "notes": "Workspace Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3732503,
+                    34.8271333
+                ]
+            },
+            "properties": {
+                "title": "Barton Campus Community Garden (Greenville Technical College)",
+                "notes": "Workspace Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3686693,
+                    34.809018
+                ]
+            },
+            "properties": {
+                "title": "South Pleasntburg Community Garden",
+                "notes": "Workspace Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3221127,
+                    34.8171534
+                ]
+            },
+            "properties": {
+                "title": "Hubbell Lighting Community Garden",
+                "notes": "Workspace Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3103016,
+                    34.9105872
+                ]
+            },
+            "properties": {
+                "title": "Brook Glenn Elementary School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3659223,
+                    34.9067793
+                ]
+            },
+            "properties": {
+                "title": "Sevier Middle School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4157534,
+                    34.8837791
+                ]
+            },
+            "properties": {
+                "title": "Cherrydale Elementary School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4392482,
+                    34.8689189
+                ]
+            },
+            "properties": {
+                "title": "Monaview Elementary School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4140863,
+                    34.8613843
+                ]
+            },
+            "properties": {
+                "title": "Youth Base",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4204383,
+                    34.8608759
+                ]
+            },
+            "properties": {
+                "title": "Legacy Charter Elementary Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4272907,
+                    34.8502274
+                ]
+            },
+            "properties": {
+                "title": "West Greenville High School",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4457838,
+                    34.8210789
+                ]
+            },
+            "properties": {
+                "title": "Welcome Elementary",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4114081,
+                    34.847572
+                ]
+            },
+            "properties": {
+                "title": "A.J. Whittenberg Elementary School",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3731597,
+                    34.8589784
+                ]
+            },
+            "properties": {
+                "title": "East North Academy of Mathematics and Science",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.303607,
+                    34.8557239
+                ]
+            },
+            "properties": {
+                "title": "GREEN Charter School",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2738457,
+                    34.8416941
+                ]
+            },
+            "properties": {
+                "title": "Shannon Forest Christian School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3874941,
+                    34.8358702
+                ]
+            },
+            "properties": {
+                "title": "YMCA of Greenville - Caine Halter",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3967117,
+                    34.8206884
+                ]
+            },
+            "properties": {
+                "title": "Augusta Circle Elementary School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404872,
+                    34.7965
+                ]
+            },
+            "properties": {
+                "title": "Southside High School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3870132,
+                    34.788335
+                ]
+            },
+            "properties": {
+                "title": "Lead Academy Student Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3867078,
+                    34.8043786
+                ]
+            },
+            "properties": {
+                "title": "Pleasant Valley Community Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3049217,
+                    34.7589114
+                ]
+            },
+            "properties": {
+                "title": "Greenbriar Elementary Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2854667,
+                    34.7321234
+                ]
+            },
+            "properties": {
+                "title": "Plain Elementary School Garden",
+                "notes": "Youth Garden"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2362581,
+                    34.8062657
+                ]
+            },
+            "properties": {
+                "title": "Goddard School Garden",
+                "notes": "Youth Garden"
+            }
+        }
+    ]
+}

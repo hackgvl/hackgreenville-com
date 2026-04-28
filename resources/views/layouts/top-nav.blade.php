@@ -56,6 +56,17 @@
                 <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute right-0 top-full pt-1 z-50">
                     <ul class="bg-white rounded-lg shadow-lg border border-gray-200 py-1 min-w-[10rem] list-none pl-0 mb-0">
                         <li>
+                            <a href="https://hackgvl.github.io/open-map-data-multi-layers-demo/" target="_blank" rel="noopener" class="flex items-center gap-1 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Map
+                                <x-lucide-external-link class="w-3 h-3"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('map-layers.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                                Map Layers
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('contribute') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary no-underline transition-colors">
                                 Contribute
                             </a>
@@ -70,6 +81,14 @@
             </li>
 
             {{-- Mobile: more links flat --}}
+            <li class="nav-break:hidden">
+                <a href="https://hackgvl.github.io/open-map-data-multi-layers-demo/" target="_blank" rel="noopener"
+                   class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors text-white/70 hover:text-white">
+                    Map
+                    <x-lucide-external-link class="w-3 h-3"/>
+                </a>
+            </li>
+            <x-nav-link route="map-layers.index" class="nav-break:hidden">Map Layers</x-nav-link>
             <x-nav-link route="contribute" class="nav-break:hidden">Contribute</x-nav-link>
             <x-nav-link route="contact" class="nav-break:hidden">Contact</x-nav-link>
         </ul>
