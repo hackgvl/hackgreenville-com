@@ -27,12 +27,12 @@ class ContactMessage extends Notification implements ShouldQueue
     {
         return (new SlackMessage)
             ->success()
-            ->content('A new contact submission has been received')
+            ->content(':mailbox_with_mail: HG Website Contact Form Request :mailbox_with_mail:')
             ->attachment(function ($attachment) {
                 $attachment->title('Reply via email', url("mailto:{$this->contact}"))
                     ->fields([
                         'Name' => $this->name,
-                        'Contact' => $this->contact,
+                        'Email' => $this->contact,
                         'Message' => $this->message,
                     ]);
             });
