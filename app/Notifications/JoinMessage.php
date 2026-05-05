@@ -49,14 +49,14 @@ class JoinMessage extends Notification implements ShouldQueue
     {
         return (new SlackMessage)
             ->success()
-            ->content('A new sign-up submission has been received')
+            ->content(':traffic_light: Join HG Slack Request :traffic_light:')
             ->attachment(function ($attachment) {
                 $attachment
                     ->fields([
                         'Name' => $this->name,
-                        'Contact' => $this->contact,
+                        'Email to Invite' => $this->contact,
                         'Reason' => $this->reason,
-                        'Url' => $this->url,
+                        'URL' => $this->url,
                     ]);
             });
     }
