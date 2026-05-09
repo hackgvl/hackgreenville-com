@@ -43,6 +43,8 @@
                 <div class="mb-8">
                     <p class="text-lg font-semibold mb-4">The Rules of HackGreenville are simple:</p>
                     <ul class="text-left space-y-4 text-gray-700">
+                        <li><strong>18+ only:</strong> Slack participants must be at least 18 years old.
+                        </li>
                         <li><strong>Everyone agrees to abide by the <a href="{{route('code-of-conduct')}}" target="_blank" class="text-primary hover:underline">Code of Conduct</a></strong>
                           within our Slack and at in-person events.
                             We <a href="{{route('about')}}" target="_blank" class="text-primary hover:underline">exist to nurture personal growth</a>, not to bring people down.

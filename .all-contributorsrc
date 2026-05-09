@@ -225,6 +225,17 @@
         "bug",
         "userTesting"
       ]
+    },
+    {
+      "login": "alexdresko",
+      "name": "Alex Dresko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/333022?v=4",
+      "profile": "http://www.alexdresko.com",
+      "contributions": [
+        "doc",
+        "bug",
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7,
