@@ -60,7 +60,8 @@ class Event extends BaseModel
 
     public function scopeFuture(Builder $query): void
     {
-        $query->where('active_at', '>=', now());
+//        $query->where('expire_at', '>=', now()_);
+        $query->where('expire_at', '>=', now()->startOfDay());
     }
 
     public function url(): string
