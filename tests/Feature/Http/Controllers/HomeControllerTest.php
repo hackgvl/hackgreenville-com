@@ -20,14 +20,17 @@ class HomeControllerTest extends DatabaseTestCase
         Event::factory()->create([
             'event_name' => 'Event 2',
             'active_at' => '2020-01-01 19:00:00',
+            'expire_at' => '2020-01-02 21:00:00',
         ]);
         Event::factory()->create([
             'event_name' => 'Event 1',
             'active_at' => '2020-01-01 18:00:00',
+            'expire_at' => '2020-01-02 20:00:00',
         ]);
         Event::factory()->create([
             'event_name' => 'Event 3',
             'active_at' => '2020-01-02 12:00:00',
+            'expire_at' => '2020-01-02 14:00:00',
         ]);
 
         $response = $this->get(route('home'));
@@ -40,7 +43,8 @@ class HomeControllerTest extends DatabaseTestCase
     {
         Event::factory()->create([
             'event_name' => 'Event 1',
-            'active_at' => '2019-12-31 23:59:59',
+            'active_at' => '2019-12-31 22:00:00',
+            'expire_at' => '2019-12-31 23:00:00',
         ]);
 
         $response = $this->get(route('home'));

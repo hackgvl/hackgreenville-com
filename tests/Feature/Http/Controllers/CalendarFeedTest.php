@@ -226,12 +226,11 @@ class CalendarFeedTest extends DatabaseTestCase
         $event = Event::factory()->create([
             'organization_id' => $organization->id,
             'cancelled_at' => null,
-            'active_at' => now()->subMinute(),
-            'expire_at' => now()->subMinute(),
+            'active_at' => now()->subWeek()->subMinute(),
+            'expire_at' => now()->subWeek(),
         ]);
 
         $first_response = $this->get(route('calendar-feed.show', ['orgs' => $organization->id]));
-
         preg_match('/UID:(.+)/', $first_response->getContent(), $first_match);
 
         $this->assertFalse(isset($first_match[1]));
