@@ -8,7 +8,7 @@ class NoIndexNonProductionTest extends TestCase
 {
     public function test_robots_txt_disallows_all_in_non_production(): void
     {
-        $this->assertContains(app()->environment(), ['testing', 'local']);
+        $this->assertFalse(app()->isProduction());
         $response = $this->get('/robots.txt');
 
         $response->assertOk();
