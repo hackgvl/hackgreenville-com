@@ -15,7 +15,7 @@ class EventTest extends TestCase
         $this->freezeTime();
         $event = Event::factory()->create(['expire_at' => now()]);
 
-        $this->assertTrue(Event::future()->get()->contains($event));
+        $this->assertTrue(Event::ongoingAndFuture()->get()->contains($event));
     }
 
     public function test_scope_ongoing_and_future_includes_events_that_expired_earlier_today(): void
@@ -23,7 +23,7 @@ class EventTest extends TestCase
         $this->freezeTime();
         $event = Event::factory()->create(['expire_at' => now()->startOfDay()]);
 
-        $this->assertTrue(Event::future()->get()->contains($event));
+        $this->assertTrue(Event::ongoingAndFuture()->get()->contains($event));
     }
 
     public function test_scope_ongoing_and_future_includes_multi_day_events_expiring_in_the_future(): void
@@ -31,7 +31,7 @@ class EventTest extends TestCase
         $this->freezeTime();
         $event = Event::factory()->create(['expire_at' => now()->addDays(3)]);
 
-        $this->assertTrue(Event::future()->get()->contains($event));
+        $this->assertTrue(Event::ongoingAndFuture()->get()->contains($event));
     }
 
     public function test_scope_ongoing_and_future_excludes_events_that_expired_yesterday(): void
@@ -39,6 +39,6 @@ class EventTest extends TestCase
         $this->freezeTime();
         $event = Event::factory()->create(['expire_at' => now()->subDay()->endOfDay()]);
 
-        $this->assertFalse(Event::future()->get()->contains($event));
+        $this->assertFalse(Event::ongoingAndFuture()->get()->contains($event));
     }
 }
