@@ -652,9 +652,9 @@ fsevents@~2.3.2, fsevents@~2.3.3:
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 geist@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/geist/-/geist-1.7.0.tgz#ec8af7c444bd07610bd559ea9db1a895cd0d460e"
-  integrity sha512-ZaoiZwkSf0DwwB1ncdLKp+ggAldqxl5L1+SXaNIBGkPAqcu+xjVJLxlf3/S8vLt9UHx1xu5fz3lbzKCj5iOVdQ==
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/geist/-/geist-1.7.1.tgz#8a8d24e2c14751bde65efef3239730e055c1b96c"
+  integrity sha512-XF8DM30ODhDu0Ng5S2kOS8j4ZkG/6z2fKWAiFJA7wG0Hc92ZXgjYLrwbD9bVU4nGVzwboPtG+QtaPGsfgnXLaA==
 
 github-from-package@0.0.0:
   version "0.0.0"
