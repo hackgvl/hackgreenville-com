@@ -58,11 +58,9 @@ class Event extends BaseModel
             ->when( ! $startDate && ! $endDate, fn (Builder $q) => $q->where('active_at', '>=', now()->subDays(config('events-api.default_days'))));
     }
 
-    public function scopeFuture(Builder $query): void
-    {
-        $query->where('active_at', '>=', now());
-    }
-
+    // Include all future events AND current / ongoing events
+    // This avoids currently ongoing, or recently ended, events from
+    // disappearing until the day after they have ended
     public function scopeOngoingAndFuture(Builder $query): void
     {
         $query->where('expire_at', '>=', now()->startOfDay());
