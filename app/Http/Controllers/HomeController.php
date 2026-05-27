@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('index', [
-            'upcoming_events' => Event::future()
+            'upcoming_events' => Event::ongoingAndFuture()
                 ->published()
                 ->with('organization', 'venue')
                 ->oldest('active_at')

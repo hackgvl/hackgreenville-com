@@ -5,7 +5,9 @@
  */
 export function initHeroCanvas(canvas) {
   const ctx = canvas.getContext('2d');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches;
 
   const PARTICLE_COUNT = 60;
   const CONNECT_DISTANCE = 120;
@@ -55,7 +57,7 @@ export function initHeroCanvas(canvas) {
         const dy = p.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < MOUSE_RADIUS && dist > 0) {
-          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * MOUSE_FORCE;
+          const force = ((MOUSE_RADIUS - dist) / MOUSE_RADIUS) * MOUSE_FORCE;
           p.vx += (dx / dist) * force;
           p.vy += (dy / dist) * force;
         }
@@ -91,7 +93,9 @@ export function initHeroCanvas(canvas) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - dist / CONNECT_DISTANCE)})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${
+            0.15 * (1 - dist / CONNECT_DISTANCE)
+          })`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
