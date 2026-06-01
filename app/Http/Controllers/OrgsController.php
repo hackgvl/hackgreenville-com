@@ -27,7 +27,7 @@ class OrgsController extends Controller
                 'events' => function (Builder $query) {
                     $query
                         ->with('organization', 'venue')
-                        ->future()
+                        ->ongoingAndFuture()
                         ->published()
                         ->orderBy('active_at')
                         ->limit(25);

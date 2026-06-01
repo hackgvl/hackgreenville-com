@@ -27,13 +27,13 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "{{ config("app.url") }}";
+        var tryItOutBaseUrl = "http://localhost:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-5.8.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-5.10.0.js") }}"></script>
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-5.8.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-5.10.0.js") }}"></script>
 
 </head>
 
@@ -132,14 +132,14 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
+    --get "http://localhost:8000/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v0/events"
+    "http://localhost:8000/api/v0/events"
 );
 
 const params = {
@@ -165,7 +165,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v0/events'
+url = 'http://localhost:8000/api/v0/events'
 params = {
   'start_date': '2026-01-01',
   'end_date': '2100-12-31',
@@ -341,14 +341,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/orgs" \
+    --get "http://localhost:8000/api/v0/orgs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v0/orgs"
+    "http://localhost:8000/api/v0/orgs"
 );
 
 const headers = {
@@ -367,7 +367,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v0/orgs'
+url = 'http://localhost:8000/api/v0/orgs'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -507,14 +507,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
+    --get "http://localhost:8000/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v1/events"
+    "http://localhost:8000/api/v1/events"
 );
 
 const params = {
@@ -545,7 +545,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v1/events'
+url = 'http://localhost:8000/api/v1/events'
 params = {
   'per_page': '50',
   'page': '1',
@@ -893,14 +893,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "http://localhost:8000/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v1/organizations"
+    "http://localhost:8000/api/v1/organizations"
 );
 
 const params = {
@@ -930,7 +930,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v1/organizations'
+url = 'http://localhost:8000/api/v1/organizations'
 params = {
   'per_page': '50',
   'page': '1',
