@@ -4,11 +4,9 @@ info:
   description: 'Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.'
   version: 1.0.0
 servers:
-  -
-    url: '{{ config("app.url") }}'
+  - url: '{{ config("app.url") }}'
 tags:
-  -
-    name: Endpoints
+  - name: Endpoints
     description: ''
 paths:
   /api/v0/events:
