@@ -1,15 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.app', ['remove_space' => true])
 
 @section('title', 'Tech Organizations near Greenville, SC')
 @section('description', 'A list of tech meetups, code schools, tech conferences / hack-a-thons near Greenville, SC, including inactive organizations.')
 
 @section('content')
-    <div class="max-w-6xl mx-auto px-4 py-8">
+    {{-- Hero --}}
+    <x-hero id="orgs-hero" mode="interactive" canvas-id="orgs-hero-canvas" eyebrow="Community Directory">
+        Local Tech Organizations
 
-        <div class="mb-10">
-            <h1 class="text-3xl font-bold">Local Tech Organizations</h1>
-            <p class="text-gray-500 mt-1 text-sm">Groups, conferences, and programs in the Greenville, SC area</p>
-        </div>
+        <x-slot:subtitle>
+            Groups, conferences, and programs in the Greenville, SC area
+        </x-slot:subtitle>
+    </x-hero>
+
+    <div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
 
         @php
             $activeCategories = $activeOrgs->filter(fn($orgs) => !$orgs->first()->category->isInactive());
@@ -71,4 +75,14 @@
         @endforeach
 
     </div>
+@endsection
+
+@section('js')
+    <script type="module">
+    const canvas = document.getElementById('orgs-hero-canvas');
+    if (canvas) {
+        const { initHeroCanvas } = await window.loadLabsHero();
+        initHeroCanvas(canvas);
+    }
+    </script>
 @endsection

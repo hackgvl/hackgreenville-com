@@ -6,31 +6,20 @@
 @section('content')
     <div id="homepage" class="overflow-x-hidden">
         {{-- Hero --}}
-        <div id="homepage-jumbotron" class="w-full text-white bg-gray-900 relative overflow-hidden min-h-[28rem] sm:min-h-[32rem] flex items-center">
-            <img src="{{ asset('img/hackgreenville-banner.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true"/>
-            <div class="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-gray-900/60 to-gray-900/40 z-[2]"></div>
-            <div class="max-w-6xl mx-auto w-full px-6 sm:px-8 py-16 sm:py-24 relative z-10">
-                <div class="max-w-2xl">
-                    <p class="text-sm sm:text-base font-medium tracking-widest uppercase text-success mb-4 sm:mb-6">Greenville, SC Tech Community</p>
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
-                        Build Stuff.<br class="hidden sm:block"/>
-                        Meet People.<br class="hidden sm:block"/>
-                        Do Cool Things.
-                    </h1>
-                    <p class="text-lg sm:text-xl text-gray-300 mt-5 sm:mt-6 max-w-lg">
-                        Join hundreds of local hackers, makers, and tinkerers sharing meetups, talks, and projects.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-3 mt-8 sm:mt-10">
-                        <a class="inline-block bg-success text-white px-7 py-3.5 rounded-lg text-base font-semibold no-underline hover:bg-green-600 transition-colors" href="/join-slack">
-                            Join Our Slack
-                        </a>
-                        <a class="inline-block bg-white/10 backdrop-blur text-white px-7 py-3.5 rounded-lg text-base font-semibold no-underline hover:bg-white/20 transition-colors border border-white/20" href="{{ route('events.index') }}">
-                            Browse Events
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-hero id="homepage-jumbotron" :image="asset('img/hackgreenville-banner.jpg')" eyebrow="Greenville, SC Tech Community">
+            Build Stuff.<br class="hidden sm:block"/>
+            Meet People.<br class="hidden sm:block"/>
+            Do Cool Things.
+
+            <x-slot:subtitle>
+                Join hundreds of local hackers, makers, and tinkerers sharing meetups, talks, and projects.
+            </x-slot:subtitle>
+
+            <x-slot:actions>
+                <x-button href="/join-slack">Join Our Slack</x-button>
+                <x-button href="{{ route('events.index') }}" variant="ghost">Browse Events</x-button>
+            </x-slot:actions>
+        </x-hero>
 
         {{-- About + Image --}}
         <div class="py-16 sm:py-20">
@@ -40,7 +29,7 @@
                         <img src="{{ url('img/meetup.jpeg') }}" alt="HackGreenville community meetup" class="max-w-full h-auto rounded-lg shadow-md" loading="lazy">
                     </div>
                     <div>
-                        <h2 class="text-2xl sm:text-3xl font-light mb-4">What is HackGreenville?</h2>
+                        <x-section-heading class="mb-4">What is HackGreenville?</x-section-heading>
                         <p class="text-base text-gray-700 leading-relaxed mb-3">
                             HackGreenville is a community of "hackers" in and around Greenville, SC. We exist to foster personal growth through sharing and promoting local tech opportunities.
                         </p>
@@ -56,24 +45,24 @@
         {{-- Upcoming Events --}}
         <div class="bg-gray-50 py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-center text-2xl sm:text-3xl font-light mb-8">
+                <x-section-heading class="mb-8">
                     Upcoming Events
-                </h2>
-                @if ($upcoming_events->isEmpty())
-                    <p class="text-center text-gray-500">
-                        <strong class="font-bold">No</strong> events to display.
-                    </p>
-                @else
-                    <div class="bg-white rounded-lg shadow-xs overflow-hidden divide-y divide-gray-200">
-                        @foreach ($upcoming_events as $event)
-                            @include('events._item', ['event' => $event])
-                        @endforeach
-                    </div>
-                    <div class="text-center mt-6">
-                        <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-blue-700 no-underline transition-colors">
+                    <x-slot:actions>
+                        <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-success hover:text-green-700 no-underline transition-colors">
                             View all events
                             <x-lucide-arrow-right aria-hidden="true" class="w-3.5 h-3.5"/>
                         </a>
+                    </x-slot:actions>
+                </x-section-heading>
+                @if ($upcoming_events->isEmpty())
+                    <p class="text-gray-500">
+                        <strong class="font-bold">No</strong> events to display.
+                    </p>
+                @else
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden divide-y divide-gray-100">
+                        @foreach ($upcoming_events as $event)
+                            @include('events._item', ['event' => $event])
+                        @endforeach
                     </div>
                 @endif
             </div>
@@ -81,24 +70,21 @@
 
         {{-- Get Involved --}}
         <div class="py-16 sm:py-20">
-            <div class="max-w-3xl mx-auto px-4 text-center">
-                <h2 class="text-2xl sm:text-3xl font-light mb-3">Get Involved</h2>
-                <p class="text-base text-gray-600 mb-8 max-w-xl mx-auto">
+            <div class="max-w-6xl mx-auto px-4">
+                <x-cta title="Get Involved">
                     HackGreenville is open source and community-driven. Contribute code, suggest features, or help improve the platform.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://github.com/hackgvl/hackgreenville-com"
-                       rel="noopener"
-                       class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
-                        <x-lucide-github aria-hidden="true" class="w-5 h-5"/>
-                        View on GitHub
-                    </a>
-                    <a href="{{ route('contribute') }}"
-                       class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline text-sm font-medium">
-                        <x-lucide-handshake aria-hidden="true" class="w-5 h-5"/>
-                        Volunteer &amp; Sponsor
-                    </a>
-                </div>
+
+                    <x-slot:actions>
+                        <x-button href="https://github.com/hackgvl/hackgreenville-com" rel="noopener" variant="outline">
+                            <x-lucide-github aria-hidden="true" class="w-5 h-5"/>
+                            View on GitHub
+                        </x-button>
+                        <x-button href="{{ route('contribute') }}" variant="outline">
+                            <x-lucide-handshake aria-hidden="true" class="w-5 h-5"/>
+                            Volunteer &amp; Sponsor
+                        </x-button>
+                    </x-slot:actions>
+                </x-cta>
             </div>
         </div>
     </div>

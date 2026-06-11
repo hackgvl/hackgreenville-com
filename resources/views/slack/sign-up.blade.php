@@ -10,9 +10,9 @@
                 <h1 class="text-3xl font-bold mb-6 text-gray-800">{{ __('Sign up for HackGreenville!') }}</h1>
 
                 <div class="mb-6">
-                    <a href="https://hackgreenville.slack.com" class="inline-block bg-success text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors" rel="nofollow" target="_blank">
+                    <x-button href="https://hackgreenville.slack.com" rel="nofollow" target="_blank">
                         Already Signed Up? Log In to Slack
-                    </a>
+                    </x-button>
                 </div>
 
                 <p class="text-lg text-gray-700 mb-8">
