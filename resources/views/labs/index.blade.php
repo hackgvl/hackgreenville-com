@@ -5,18 +5,13 @@
 
 @section('content')
 	{{-- Hero --}}
-	<div class="bg-primary text-white relative overflow-hidden" id="labs-hero">
-		<canvas id="labs-hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
-		<div class="max-w-6xl mx-auto px-4 py-16 sm:py-20 relative">
-			<div class="max-w-2xl">
-				<p class="text-sm font-medium tracking-widest uppercase text-green-300 mb-4">Open Source</p>
-				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">HackGreenville Labs</h1>
-				<p class="text-lg text-blue-100 leading-relaxed max-w-lg">
-					We build and maintain open source tools and public APIs that power the local tech community. Everything we make is free to use and open to contributors.
-				</p>
-			</div>
-		</div>
-	</div>
+	<x-hero id="labs-hero" mode="interactive" canvas-id="labs-hero-canvas" eyebrow="Open Source">
+		HackGreenville Labs
+
+		<x-slot:subtitle>
+			We build and maintain open source tools and public APIs that power the local tech community. Everything we make is free to use and open to contributors.
+		</x-slot:subtitle>
+	</x-hero>
 
 	{{-- Projects --}}
 	<div class="max-w-6xl mx-auto px-4 py-16 sm:py-20">
@@ -102,15 +97,15 @@
 				</div>
 			@endif
 
-			<div class="flex flex-col sm:flex-row items-center justify-between gap-6 @if($contributors->isNotEmpty()) pt-8 border-t border-gray-200 @endif">
-				<div>
-					<h2 class="text-xl font-semibold mb-1">Want to contribute?</h2>
-					<p class="text-gray-600 text-sm">Join our Slack and hop into <a href="https://hackgreenville.slack.com/channels/hg-labs" target="_blank" rel="noopener" class="font-medium text-gray-900 underline decoration-success/40 hover:decoration-success transition-colors">#hg-labs</a> to get started.</p>
-				</div>
-				<a href="{{ route('join-slack') }}" class="inline-block bg-success text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-green-600 transition-colors whitespace-nowrap">
-					Join Slack
-				</a>
-			</div>
+			<x-cta title="Want to contribute?" :class="$contributors->isNotEmpty() ? 'pt-8 border-t border-gray-200' : ''">
+				Join our Slack and hop into <a href="https://hackgreenville.slack.com/channels/hg-labs" target="_blank" rel="noopener" class="font-medium text-gray-900 underline decoration-success/40 hover:decoration-success transition-colors">#hg-labs</a> to get started.
+
+				<x-slot:actions>
+					<x-button href="{{ route('join-slack') }}" class="whitespace-nowrap">
+						Join Slack
+					</x-button>
+				</x-slot:actions>
+			</x-cta>
 		</div>
 	</div>
 @endsection

@@ -8,6 +8,16 @@
     format('woff2');
 }
 
+/* Geist Mono Variable Font - by Vercel (https://vercel.com/font) */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2')
+    format('woff2');
+}
+
 /* Calendar specific styles */
 #calendar {
   min-height: 800px;
