@@ -6,7 +6,7 @@
 @section('content')
     <div id="homepage" class="overflow-x-hidden">
         {{-- Hero --}}
-        <x-hero id="homepage-jumbotron" :image="asset('img/hackgreenville-banner.jpg')" eyebrow="Upstate SC Tech Community">
+        <x-hero id="homepage-jumbotron" :image="asset('img/hackgreenville-banner.jpg')" image-position="center top" eyebrow="Upstate SC Tech Community">
             Find Your People.<br class="hidden sm:block"/>
             Grow Your Career.<br class="hidden sm:block"/>
             Build the Upstate.
@@ -21,11 +21,12 @@
             </x-slot:actions>
 
             <x-slot:footer>
-                {{-- 15 events/month and 1,800 Slack members are manually maintained --}}
-                <div class="flex flex-col gap-6 sm:flex-row sm:gap-0 sm:divide-x divide-white/15">
-                    <x-stat :value="$stats['orgs']" label="active organizations" class="sm:pr-12"/>
-                    <x-stat :value="15" label="events listed each month" class="sm:px-12"/>
-                    <x-stat :value="1800" label="Slack members" class="sm:pl-12"/>
+                {{-- Individuals and Slack counts come from COMMUNITY_* env vars (config/community.php) --}}
+                <div class="grid grid-cols-2 gap-6 sm:flex sm:gap-0 sm:divide-x divide-white/15">
+                    <x-stat :value="$stats['orgs']" label="active organizations" icon="building" class="sm:pr-12"/>
+                    <x-stat :value="$stats['events_this_month']" label="events this month" icon="calendar-days" class="sm:px-12"/>
+                    @if($stats['active_individuals'])<x-stat :value="$stats['active_individuals']" label="active individuals" icon="user" class="sm:px-12"/>@endif
+                    @if($stats['slack_members'])<x-stat :value="$stats['slack_members']" label="Slack members" class="sm:pl-12"/>@endif
                 </div>
             </x-slot:footer>
         </x-hero>
@@ -55,68 +56,10 @@
                         @endif
                     </div>
                 </div>
-
-                {{-- Tech we cover --}}
-                @php
-                    $techLogos = collect([
-                        'php' => 'PHP',
-                        'ruby' => 'Ruby',
-                        'python' => 'Python',
-                        'laravel' => 'Laravel',
-                        'linux' => 'Linux',
-                        'javascript' => 'JavaScript',
-                        'nodedotjs' => 'Node.js',
-                        'react' => 'React',
-                        'vuedotjs' => 'Vue.js',
-                        'docker' => 'Docker',
-                        'git' => 'Git',
-                        'mysql' => 'MySQL',
-                        'postgresql' => 'PostgreSQL',
-                        'tailwindcss' => 'Tailwind CSS',
-                        'typescript' => 'TypeScript',
-                        'wordpress' => 'WordPress',
-                        'rust' => 'Rust',
-                        'go' => 'Go',
-                        'kotlin' => 'Kotlin',
-                        'swift' => 'Swift',
-                        'flutter' => 'Flutter',
-                        'angular' => 'Angular',
-                        'svelte' => 'Svelte',
-                        'astro' => 'Astro',
-                        'vite' => 'Vite',
-                        'kubernetes' => 'Kubernetes',
-                        'graphql' => 'GraphQL',
-                        'redis' => 'Redis',
-                        'sass' => 'Sass',
-                        'html5' => 'HTML5',
-                        'css' => 'CSS',
-                        'figma' => 'Figma',
-                        'github' => 'GitHub',
-                        'alpinedotjs' => 'Alpine.js',
-                    ]);
-                    $logoPool = $techLogos->slice(10)
-                        ->map(fn ($label, $slug) => ['src' => asset("img/tech/$slug.svg"), 'alt' => $label])
-                        ->values();
-                @endphp
-                <div class="mt-12 sm:mt-16">
-                    <p class="font-mono text-xs tracking-[0.18em] uppercase text-success mb-3">Across the stack</p>
-                    <p class="text-base text-gray-700 leading-relaxed max-w-xl mb-8 text-pretty">
-                        Our groups cover numerous technology and design sectors &mdash; web, mobile, data, DevOps, design systems, open source, and more.
-                    </p>
-                    <div id="tech-logos"
-                         class="grid grid-cols-5 gap-2 sm:gap-3"
-                         aria-hidden="true"
-                         data-pool="{{ $logoPool->toJson() }}">
-                        @foreach ($techLogos->take(10) as $slug => $label)
-                            <div class="flex items-center justify-center h-14 sm:h-20 rounded-xl border border-gray-950/5 bg-gray-50/60">
-                                <img src="{{ asset("img/tech/$slug.svg") }}" alt="{{ $label }}"
-                                     class="h-5 sm:h-8 w-auto max-w-[65%] transition duration-300" loading="lazy"/>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
             </div>
         </div>
+
+        {{-- Tech we cover — removed for now; restore with: x-logo-list (class="pt-0") --}}
 
         {{-- Upcoming Events --}}
         <div class="bg-gray-50 py-16 sm:py-20">
@@ -260,33 +203,6 @@
             });
         }, { threshold: 0.4 });
         counters.forEach((el) => observer.observe(el));
-    }
-
-    const grid = document.getElementById('tech-logos');
-    if (grid && !prefersReducedMotion) {
-        const pool = JSON.parse(grid.dataset.pool);
-        const slots = [...grid.querySelectorAll('img')];
-        const counts = slots.map(() => 0);
-        if (pool.length && slots.length) {
-            setInterval(() => {
-                if (document.hidden) {
-                    return;
-                }
-                const min = Math.min(...counts);
-                const candidates = counts.flatMap((count, i) => count === min ? [i] : []);
-                const slot = candidates[Math.floor(Math.random() * candidates.length)];
-                counts[slot]++;
-                const img = slots[slot];
-                const next = pool.shift();
-                pool.push({ src: img.src, alt: img.alt });
-                img.classList.add('opacity-0', 'translate-y-1', 'scale-95');
-                setTimeout(() => {
-                    img.src = next.src;
-                    img.alt = next.alt;
-                    img.classList.remove('opacity-0', 'translate-y-1', 'scale-95');
-                }, 300);
-            }, 1500);
-        }
     }
     </script>
 @endsection

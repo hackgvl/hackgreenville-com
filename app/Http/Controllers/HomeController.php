@@ -21,6 +21,12 @@ class HomeController extends Controller
                 'orgs' => Org::query()
                     ->whereHas('category', fn ($query) => $query->where('label', '!=', 'Inactive'))
                     ->count(),
+                'events_this_month' => Event::query()
+                    ->published()
+                    ->whereBetween('active_at', [now()->startOfMonth(), now()->endOfMonth()])
+                    ->count(),
+                'active_individuals' => config('community.active_individuals'),
+                'slack_members' => config('community.slack_members'),
             ],
             'categories' => Category::query()
                 ->where('label', '!=', 'Inactive')
