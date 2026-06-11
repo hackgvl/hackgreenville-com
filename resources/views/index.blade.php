@@ -59,8 +59,6 @@
             </div>
         </div>
 
-        {{-- Tech we cover — removed for now; restore with: x-logo-list (class="pt-0") --}}
-
         {{-- Upcoming Events --}}
         <div class="bg-gray-50 py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4">
