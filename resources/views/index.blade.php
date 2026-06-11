@@ -22,11 +22,11 @@
 
             <x-slot:footer>
                 {{-- Individuals and Slack counts come from COMMUNITY_* env vars (config/community.php) --}}
-                <div class="grid grid-cols-2 gap-6 sm:flex sm:gap-0 sm:divide-x divide-white/15">
-                    <x-stat :value="$stats['orgs']" label="active organizations" icon="building" class="sm:pr-12"/>
-                    <x-stat :value="$stats['events_this_month']" label="events this month" icon="calendar-days" class="sm:px-12"/>
-                    @if($stats['active_individuals'])<x-stat :value="$stats['active_individuals']" label="active individuals" icon="user" class="sm:px-12"/>@endif
-                    @if($stats['slack_members'])<x-stat :value="$stats['slack_members']" label="Slack members" class="sm:pl-12"/>@endif
+                <div class="grid grid-cols-2 gap-6 lg:flex lg:gap-0 lg:divide-x divide-white/15">
+                    <x-stat :value="$stats['orgs']" label="active organizations" icon="building" class="lg:pr-12"/>
+                    <x-stat :value="$stats['events_this_month']" label="events this month" icon="calendar-days" class="lg:px-12"/>
+                    @if($stats['active_individuals'])<x-stat :value="$stats['active_individuals']" label="active individuals" icon="user" class="lg:px-12"/>@endif
+                    @if($stats['slack_members'])<x-stat :value="$stats['slack_members']" label="Slack members" class="lg:pl-12"/>@endif
                 </div>
             </x-slot:footer>
         </x-hero>
