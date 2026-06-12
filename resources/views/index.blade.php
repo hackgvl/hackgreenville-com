@@ -123,31 +123,6 @@
                         </div>
                     </a>
                 </div>
-                <a href="{{ route('events.index') }}" class="group mt-4 rounded-2xl bg-gray-50 border border-gray-950/5 flex flex-col sm:flex-row sm:items-center gap-6 p-6 no-underline">
-                    @if ($upcoming_events->isNotEmpty())
-                        <div class="flex gap-2 shrink-0">
-                            @foreach ($upcoming_events->take(3) as $event)
-                                <div class="w-12 rounded-lg border border-gray-950/10 overflow-hidden text-center bg-white">
-                                    <div class="bg-success/10 font-mono text-[0.6875rem] font-medium uppercase tracking-wide text-success py-0.5">
-                                        {{ $event->active_at->format('M') }}
-                                    </div>
-                                    <div class="text-lg font-semibold text-primary tabular-nums py-0.5">
-                                        {{ $event->active_at->format('j') }}
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    @endif
-                    <div class="flex-1">
-                        <p class="font-mono text-xs tracking-[0.14em] uppercase text-success mb-1.5">Events calendar</p>
-                        <div class="flex items-center gap-1.5 text-primary text-lg font-bold tracking-tight">
-                            Find an event or meetup
-                            <x-lucide-arrow-up-right aria-hidden="true" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/>
-                        </div>
-                        <p class="text-gray-600 text-sm mt-1">Browse every upcoming tech event across the Upstate &mdash; list or calendar view.</p>
-                    </div>
-                    <x-lucide-chevron-right aria-hidden="true" class="hidden sm:block w-5 h-5 text-gray-300 group-hover:text-primary transition-colors shrink-0"/>
-                </a>
             </div>
         </div>
 
