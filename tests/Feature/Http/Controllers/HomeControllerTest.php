@@ -52,4 +52,50 @@ class HomeControllerTest extends DatabaseTestCase
         $response->assertStatus(200);
         $response->assertDontSee('Event 1');
     }
+
+    public function test_events_this_month_counts_multi_day_events_spanning_the_month_boundary()
+    {
+        // Conference that started last month but is still running this month
+        Event::factory()->create([
+            'active_at' => '2019-12-31 09:00:00',
+            'expire_at' => '2020-01-01 17:00:00',
+        ]);
+        // Entirely within this month
+        Event::factory()->create([
+            'active_at' => '2020-01-15 18:00:00',
+            'expire_at' => '2020-01-15 21:00:00',
+        ]);
+        // Ended last month
+        Event::factory()->create([
+            'active_at' => '2019-12-30 18:00:00',
+            'expire_at' => '2019-12-30 21:00:00',
+        ]);
+        // Starts next month
+        Event::factory()->create([
+            'active_at' => '2020-02-01 18:00:00',
+            'expire_at' => '2020-02-01 21:00:00',
+        ]);
+
+        $response = $this->get(route('home'));
+
+        $response->assertStatus(200);
+        $this->assertSame(2, $response->viewData('stats')['events_this_month']);
+    }
+
+    public function test_events_this_month_falls_back_to_active_at_when_expire_at_is_missing()
+    {
+        Event::factory()->create([
+            'active_at' => '2020-01-10 18:00:00',
+            'expire_at' => null,
+        ]);
+        Event::factory()->create([
+            'active_at' => '2019-12-30 18:00:00',
+            'expire_at' => null,
+        ]);
+
+        $response = $this->get(route('home'));
+
+        $response->assertStatus(200);
+        $this->assertSame(1, $response->viewData('stats')['events_this_month']);
+    }
 }

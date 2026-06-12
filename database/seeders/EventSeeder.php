@@ -205,6 +205,36 @@ class EventSeeder extends Seeder
                 'is_paid' => true,
             ],
 
+            // Multi-day event currently in progress, for testing that ongoing
+            // events stick around in views until they end (ongoingAndFuture)
+            [
+                'org_slug' => 'carolina-code-conf',
+                'venue_slug' => 'openworks',
+                'name' => 'Upstate Build Weekend',
+                'description' => 'Three days of hands-on hacking with teams across the Upstate. Drop in any time — demos on the final evening.',
+                'starts_at' => ['days' => -1, 'hour' => 9, 'minute' => 0],
+                'ends_at' => ['days' => 1, 'hour' => 17, 'minute' => 0],
+                'service_id' => 'ccc-build-weekend',
+                'uri' => 'https://carolina.codes/build-weekend',
+                'rsvp_count' => 60,
+            ],
+
+            // Multi-day event spanning the previous/current month boundary,
+            // for testing that month-window queries count events by overlap
+            // (ongoingBetween) rather than start date alone
+            [
+                'org_slug' => 'carolina-code-conf',
+                'venue_slug' => 'synergy-mill',
+                'name' => 'Upstate Dev Days',
+                'description' => 'Two-day developer summit with workshops and talks, running from the last day of the month into the first day of the next.',
+                'starts_at' => Carbon::now()->startOfMonth()->subDay()->setTime(9, 0),
+                'ends_at' => Carbon::now()->startOfMonth()->setTime(18, 0),
+                'service_id' => 'ccc-dev-days',
+                'uri' => 'https://carolina.codes/dev-days',
+                'rsvp_count' => 85,
+                'is_paid' => true,
+            ],
+
             // Past event for testing
             [
                 'org_slug' => 'hackgreenville',

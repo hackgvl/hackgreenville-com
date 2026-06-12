@@ -23,7 +23,7 @@ class HomeController extends Controller
                     ->count(),
                 'events_this_month' => Event::query()
                     ->published()
-                    ->whereBetween('active_at', [now()->startOfMonth(), now()->endOfMonth()])
+                    ->ongoingBetween(now()->startOfMonth(), now()->endOfMonth())
                     ->count(),
                 'active_individuals' => config('community.active_individuals'),
                 'slack_members' => config('community.slack_members'),
