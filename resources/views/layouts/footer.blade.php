@@ -6,7 +6,7 @@
             <a href="/" class="text-white no-underline hover:text-white">
                 <span class="text-lg font-bold tracking-tight">HackGreenville</span>
             </a>
-            <p class="text-gray-400 text-sm mt-1">Build stuff. Meet people. Do cool things.</p>
+            <p class="text-gray-400 text-sm mt-1">Connect, Grow, Build.</p>
         </div>
 
         <nav class="grid grid-cols-2 md:grid-cols-4 gap-8" aria-label="Footer">
