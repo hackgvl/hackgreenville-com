@@ -88,7 +88,7 @@
         {{-- Explore the community --}}
         <div class="py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4">
-                <x-section-heading class="mb-8">Explore the community</x-section-heading>
+                <x-section-heading class="mb-8">Explore the Community</x-section-heading>
                 <div class="grid grid-cols-1 md:grid-cols-[6fr_5fr] gap-4">
                     <a href="{{ route('hg-nights.index') }}" class="group relative rounded-2xl overflow-hidden min-h-56 flex items-end no-underline">
                         <img src="{{ asset('img/hg-nights-sm.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true" loading="lazy"/>
