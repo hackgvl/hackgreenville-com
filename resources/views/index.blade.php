@@ -154,7 +154,7 @@
         {{-- Get Involved --}}
         <div class="py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4">
-                <x-cta title="Get Involved">
+                <x-call-to-action title="Get Involved">
                     HackGreenville is open source and community-driven. Contribute code, suggest features, or help improve the platform.
 
                     <x-slot:actions>
@@ -167,7 +167,7 @@
                             Volunteer &amp; Sponsor
                         </x-button>
                     </x-slot:actions>
-                </x-cta>
+                </x-call-to-action>
             </div>
         </div>
     </div>

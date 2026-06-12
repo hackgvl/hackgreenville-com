@@ -156,7 +156,7 @@
 
 	{{-- CTA --}}
 	<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
-		<x-cta title="Want to sponsor or speak?">
+		<x-call-to-action title="Want to sponsor or speak?">
 			Reach out via the contact form or hop into our Slack.
 
 			<x-slot:actions>
@@ -167,6 +167,6 @@
 					Join Slack
 				</x-button>
 			</x-slot:actions>
-		</x-cta>
+		</x-call-to-action>
 	</div>
 @endsection
