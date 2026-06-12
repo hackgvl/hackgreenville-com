@@ -12,7 +12,7 @@
             Build the Upstate.
 
             <x-slot:subtitle>
-                Join hundreds of Upstate hackers, makers, and tinkerers sharing meetups, talks, and projects &mdash; HackGreenville is your guide to getting connected, finding work, and giving back.
+                Join hundreds of Upstate hackers, makers, and tinkerers sharing meetups, talks, and projects &mdash; HackGreenville is your guide to getting connected, personal growth, and giving back.
             </x-slot:subtitle>
 
             <x-slot:actions>
