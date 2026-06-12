@@ -8,7 +8,7 @@
         {{-- Hero --}}
         <x-hero id="homepage-jumbotron" :image="asset('img/hackgreenville-banner.jpg')" image-position="center top" eyebrow="Upstate SC Tech Community">
             Find Your People.<br class="hidden sm:block"/>
-            Grow Your Career.<br class="hidden sm:block"/>
+            Grow Yourself.<br class="hidden sm:block"/>
             Build the Upstate.
 
             <x-slot:subtitle>
