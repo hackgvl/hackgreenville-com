@@ -90,7 +90,7 @@
             <div class="max-w-6xl mx-auto px-4">
                 <x-section-heading class="mb-8">Explore the Community</x-section-heading>
                 <div class="grid grid-cols-1 md:grid-cols-[6fr_5fr] gap-4">
-                    <a href="{{ route('hg-nights.index') }}" class="group relative rounded-2xl overflow-hidden min-h-56 flex items-end no-underline">
+                    <a href="{{ route('hg-nights.index') }}" class="group relative rounded-2xl overflow-hidden min-h-56 flex items-end no-underline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-primary">
                         <img src="{{ asset('img/hg-nights-sm.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true" loading="lazy"/>
                         <div class="absolute inset-0 bg-linear-to-t from-primary/90 via-primary/40 to-primary/10"></div>
                         <div class="relative p-6">
@@ -102,7 +102,7 @@
                             <p class="text-white/80 text-sm mt-1">Short talks, great food, good people.</p>
                         </div>
                     </a>
-                    <a href="{{ route('labs.index') }}" class="group relative rounded-2xl overflow-hidden min-h-56 flex items-end bg-primary no-underline">
+                    <a href="{{ route('labs.index') }}" class="group relative rounded-2xl overflow-hidden min-h-56 flex items-end bg-primary no-underline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-primary">
                         <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute inset-0 w-full h-full opacity-50" preserveAspectRatio="xMidYMid slice">
                             <g stroke="#6d63a8" stroke-width="0.6" fill="none">
                                 <path d="M30 40 L90 70 L150 30 L210 80 L270 50"/>
