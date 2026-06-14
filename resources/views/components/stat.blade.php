@@ -23,7 +23,7 @@
         ])>{{ $suffix }}</span>@endif
     </div>
     <div @class([
-        'text-sm mt-1.5 truncate',
+        'text-sm mt-1.5',
         'text-white/60' => $variant === 'dark',
         'text-gray-500' => $variant !== 'dark',
     ])>{{ $label }}</div>
