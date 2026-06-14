@@ -3,6 +3,7 @@
 namespace Tests\Feature\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Org;
 use Carbon\Carbon;
 use Tests\DatabaseTestCase;
 
@@ -90,6 +91,49 @@ class HomeControllerTest extends DatabaseTestCase
         ]);
         Event::factory()->create([
             'active_at' => '2019-12-30 18:00:00',
+            'expire_at' => null,
+        ]);
+
+        $response = $this->get(route('home'));
+
+        $response->assertStatus(200);
+        $this->assertSame(1, $response->viewData('stats')['events_this_month']);
+    }
+
+    public function test_events_this_month_excludes_cancelled_events()
+    {
+        Event::factory()->create([
+            'active_at' => '2020-01-15 18:00:00',
+            'expire_at' => '2020-01-15 21:00:00',
+        ]);
+        // A cancelled event isn't happening, so it shouldn't pad the count
+        Event::factory()->create([
+            'active_at' => '2020-01-20 18:00:00',
+            'expire_at' => '2020-01-20 21:00:00',
+            'cancelled_at' => '2020-01-05 12:00:00',
+        ]);
+
+        $response = $this->get(route('home'));
+
+        $response->assertStatus(200);
+        $this->assertSame(1, $response->viewData('stats')['events_this_month']);
+    }
+
+    public function test_events_this_month_excludes_events_from_soft_deleted_organizations()
+    {
+        $deletedOrg = Org::factory()->create();
+        $deletedOrg->delete();
+
+        Event::factory()->create([
+            'active_at' => '2020-01-15 18:00:00',
+            'expire_at' => '2020-01-15 21:00:00',
+        ]);
+        // Orphaned by a removed org, so it shouldn't count toward the headline.
+        // Null expire_at keeps it in this month (via the active_at fallback)
+        // but out of the upcoming-events list, which isn't org-filtered.
+        Event::factory()->create([
+            'organization_id' => $deletedOrg->id,
+            'active_at' => '2020-01-20 18:00:00',
             'expire_at' => null,
         ]);
 
