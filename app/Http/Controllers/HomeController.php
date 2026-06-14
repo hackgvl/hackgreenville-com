@@ -37,6 +37,8 @@ class HomeController extends Controller
                     self::STATS_CACHE_SECONDS,
                     fn () => Event::query()
                         ->published()
+                        ->withActiveOrganization()
+                        ->whereNull('cancelled_at')
                         ->ongoingBetween(now()->startOfMonth(), now()->endOfMonth())
                         ->count()
                 ),
