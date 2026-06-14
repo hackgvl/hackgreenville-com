@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     // Homepage aggregates only change via event imports and admin edits,
     // so serve them from the cache instead of querying on every request.
-    private const STATS_CACHE_SECONDS = 60 * 60 * 24 * 3;
+    private const STATS_CACHE_SECONDS = 60 * 60 * 24;
 
     public function index()
     {
