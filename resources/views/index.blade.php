@@ -147,35 +147,3 @@
         </div>
     </div>
 @endsection
-
-@section('js')
-    <script type="module">
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    const counters = document.querySelectorAll('[data-countup]');
-    if (counters.length && !prefersReducedMotion) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-                observer.unobserve(entry.target);
-                const el = entry.target;
-                const target = parseInt(el.dataset.countup, 10);
-                const start = performance.now();
-                const duration = 1200;
-                const tick = (now) => {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    el.textContent = Math.round(target * eased).toLocaleString('en-US');
-                    if (progress < 1) {
-                        requestAnimationFrame(tick);
-                    }
-                };
-                requestAnimationFrame(tick);
-            });
-        }, { threshold: 0.4 });
-        counters.forEach((el) => observer.observe(el));
-    }
-    </script>
-@endsection
