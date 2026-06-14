@@ -13,7 +13,7 @@
         'text-white' => $variant === 'dark',
         'text-primary' => $variant !== 'dark',
     ])>
-        <span data-countup="{{ $value }}">{{ number_format($value) }}</span>@if ($icon)<x-dynamic-component :component="'lucide-' . $icon" aria-hidden="true" @class([
+        <span>{{ number_format($value) }}</span>@if ($icon)<x-dynamic-component :component="'lucide-' . $icon" aria-hidden="true" @class([
             'size-6 shrink-0',
             'text-green-300' => $variant === 'dark',
             'text-success' => $variant !== 'dark',
