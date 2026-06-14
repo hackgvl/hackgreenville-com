@@ -27,7 +27,6 @@ class HomeController extends Controller
                     'home.org-count',
                     self::STATS_CACHE_SECONDS,
                     fn () => Org::query()
-                        ->whereHas('category', fn ($query) => $query->where('label', '!=', 'Inactive'))
                         ->count()
                 ),
                 // Keyed by month so the count rolls over immediately on the
