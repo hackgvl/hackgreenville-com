@@ -307,13 +307,13 @@ paths:
         -
           in: query
           name: tags
-          description: 'The <code>id</code> of an existing record in the tags table.'
+          description: 'Must match an existing stored value.'
           example:
             - 16
           required: false
           schema:
             type: array
-            description: 'The <code>id</code> of an existing record in the tags table.'
+            description: 'Must match an existing stored value.'
             example:
               - 16
             items:
@@ -649,12 +649,12 @@ paths:
         -
           in: query
           name: tags
-          description: 'Filter organizations by tag ID. The <code>id</code> of an existing record in the tags table.'
+          description: 'Filter organizations by tag ID. Must match an existing stored value.'
           example: null
           required: false
           schema:
             type: array
-            description: 'Filter organizations by tag ID. The <code>id</code> of an existing record in the tags table.'
+            description: 'Filter organizations by tag ID. Must match an existing stored value.'
             example: null
             items:
               type: integer
