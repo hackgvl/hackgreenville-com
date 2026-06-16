@@ -1,6 +1,7 @@
 @props([
     'mode' => null,
     'image' => null,
+    'imagePosition' => 'center',
     'eyebrow' => null,
     'canvasId' => 'hero-canvas',
 ])
@@ -13,7 +14,7 @@
 
 <div {{ $attributes->class('w-full text-white bg-primary relative overflow-hidden min-h-[28rem] sm:min-h-[32rem] flex items-center') }}>
     @if ($mode === 'image' && $image)
-        <img src="{{ $image }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true"/>
+        <img src="{{ $image }}" alt="" class="absolute inset-0 w-full h-full object-cover object-(--hero-focal) scale-105" style="--hero-focal: {{ $imagePosition }}" aria-hidden="true"/>
         <div class="absolute inset-0 bg-linear-to-r from-primary/95 via-primary/65 to-primary/35 z-2"></div>
     @elseif ($mode === 'interactive')
         <canvas id="{{ $canvasId }}" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
@@ -38,5 +39,10 @@
                 </div>
             @endisset
         </div>
+        @isset($footer)
+            <div class="mt-12 sm:mt-14 border-t border-white/10 pt-7">
+                {{ $footer }}
+            </div>
+        @endisset
     </div>
 </div>

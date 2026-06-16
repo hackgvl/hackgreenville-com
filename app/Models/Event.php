@@ -66,6 +66,20 @@ class Event extends BaseModel
         $query->where('expire_at', '>=', now()->startOfDay());
     }
 
+    // Events ongoing at any point in the given window, so multi-day events
+    // (e.g. a conference spanning May 31 - June 1) count in every period
+    // they touch, not just the one containing their start date.
+    // A null expire_at falls back to treating the event as ending at active_at.
+    public function scopeOngoingBetween(Builder $query, Carbon $start, Carbon $end): void
+    {
+        $query
+            ->where('active_at', '<=', $end)
+            ->where(function (Builder $q) use ($start) {
+                $q->where('expire_at', '>=', $start)
+                    ->orWhere(fn (Builder $q2) => $q2->whereNull('expire_at')->where('active_at', '>=', $start));
+            });
+    }
+
     public function url(): string
     {
         return $this->uri;

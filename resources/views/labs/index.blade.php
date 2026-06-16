@@ -97,7 +97,7 @@
 				</div>
 			@endif
 
-			<x-cta title="Want to contribute?" :class="$contributors->isNotEmpty() ? 'pt-8 border-t border-gray-200' : ''">
+			<x-call-to-action title="Want to contribute?" :class="$contributors->isNotEmpty() ? 'pt-8 border-t border-gray-200' : ''">
 				Join our Slack and hop into <a href="https://hackgreenville.slack.com/channels/hg-labs" target="_blank" rel="noopener" class="font-medium text-gray-900 underline decoration-success/40 hover:decoration-success transition-colors">#hg-labs</a> to get started.
 
 				<x-slot:actions>
@@ -105,7 +105,7 @@
 						Join Slack
 					</x-button>
 				</x-slot:actions>
-			</x-cta>
+			</x-call-to-action>
 		</div>
 	</div>
 @endsection
