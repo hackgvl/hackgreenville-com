@@ -31,9 +31,9 @@
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-5.10.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-5.11.0.js") }}"></script>
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-5.10.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-5.11.0.js") }}"></script>
 
 </head>
 
@@ -747,7 +747,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                name="tags[1]"                data-endpoint="GETapi-v1-events"
                data-component="query">
     <br>
-<p>The <code>id</code> of an existing record in the tags table.</p>
+<p>Must match an existing stored value.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -1087,7 +1087,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                name="tags[1]"                data-endpoint="GETapi-v1-organizations"
                data-component="query">
     <br>
-<p>Filter organizations by tag ID. The <code>id</code> of an existing record in the tags table.</p>
+<p>Filter organizations by tag ID. Must match an existing stored value.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;

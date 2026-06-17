@@ -45,7 +45,7 @@
 
         {{-- Header --}}
         <div class="mb-10">
-            <h1 class="text-3xl font-bold">Upcoming Events</h1>
+            <x-section-heading :level="1">Upcoming Events</x-section-heading>
             <p class="text-gray-500 mt-1 text-sm">
                 Aggregated from meetup groups, conferences, and community organizations across the Greenville, SC area
             </p>
@@ -73,11 +73,11 @@
         </div>
 
         {{-- Events list --}}
-        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
             @foreach($months as $month => $events)
                 <div class="events" data-date="{{ $month }}">
                     <div class="flex items-center gap-3 px-4 sm:px-6 py-3 bg-gray-50/80 border-b border-gray-200">
-                        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">{{ $month }}</h2>
+                        <h2 class="font-mono text-xs font-bold text-success uppercase tracking-widest whitespace-nowrap">{{ $month }}</h2>
                         <div class="h-px bg-gray-200 flex-1"></div>
                         <span class="text-xs text-gray-300 font-medium tabular-nums">{{ $events->count() }}</span>
                     </div>

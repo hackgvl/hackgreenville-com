@@ -6,7 +6,7 @@
             <a href="/" class="text-white no-underline hover:text-white">
                 <span class="text-lg font-bold tracking-tight">HackGreenville</span>
             </a>
-            <p class="text-gray-400 text-sm mt-1">Build stuff. Meet people. Do cool things.</p>
+            <p class="text-gray-400 text-sm mt-1">Connect, Grow, Build.</p>
         </div>
 
         <nav class="grid grid-cols-2 md:grid-cols-4 gap-8" aria-label="Footer">
@@ -41,6 +41,10 @@
                     <li><a href="/join-slack" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-slack aria-hidden="true" class="w-3.5 h-3.5"/> Join Slack</a></li>
                     <li><a href="https://hackgreenville.slack.com" rel="noreferrer noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-slack aria-hidden="true" class="w-3.5 h-3.5"/> Log In to Slack<span class="sr-only"> (opens in new tab)</span></a></li>
                     <li><a href="https://www.meetup.com/hack-greenville/" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-users-round aria-hidden="true" class="w-3.5 h-3.5"/> Meetup<span class="sr-only"> (opens in new tab)</span></a></li>
+                    <li><a href="https://luma.com/hackgvl" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-sparkle aria-hidden="true" class="w-3.5 h-3.5"/> Luma<span class="sr-only"> (opens in new tab)</span></a></li>
+                    <li><a href="https://www.linkedin.com/company/hackgreenville/" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-linkedin aria-hidden="true" class="w-3.5 h-3.5"/> LinkedIn<span class="sr-only"> (opens in new tab)</span></a></li>
+                    <li><a href="https://www.instagram.com/hackgvl/" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-instagram aria-hidden="true" class="w-3.5 h-3.5"/> Instagram<span class="sr-only"> (opens in new tab)</span></a></li>
+                    <li><a href="https://x.com/hackgvl" rel="nofollow noopener" target="_blank" class="text-gray-300 hover:text-white no-underline inline-flex items-center gap-1.5 transition-colors"><x-lucide-twitter aria-hidden="true" class="w-3.5 h-3.5"/> X / Twitter<span class="sr-only"> (opens in new tab)</span></a></li>
                 </ul>
             </div>
 
