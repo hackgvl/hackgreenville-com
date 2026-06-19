@@ -374,8 +374,8 @@ Telescope is a Laravel Debugging tool that allows you to see all the requests ma
 
 - The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
 - The .env.ci and .env.testing are used for test suite checks for:
-  - _.env.ci_ | Github Actions running `php artisan test --env=ci` against MySQL in the test container.
-  - _.env.testing_ | fast, local running `php artisan test` against SQLite on dev.
+  - _.env.ci_ | Github Actions runs of `php artisan test --env=ci` against MySQL in the test container.
+  - _.env.testing_ | fast, local runs of `php artisan test` against SQLite on dev.
 - Be sure to clear the configuration cache after any changes to .env using `php artisan config:clear && php artisan config:cache`
 - Additional defaults may be as defined in _config/app.php_
 - Debugging can be enabled in development by setting `TELESCOPE_ENABLED=TRUE` in your local `.env`
