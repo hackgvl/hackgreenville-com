@@ -186,9 +186,6 @@ Run the following script to install dependencies, run database migrations, and r
 sh scripts/handle-deploy-update.sh
 ```
 
-The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
-BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
-
 #### Generate App Key
 
 Once the app is running, run the following command to generate your [app encryption key](https://laravel.com/docs/10.x/encryption):
@@ -361,7 +358,7 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 
 - Run `php artisan` to see a full list of availabe commands.
 - The API explorer can be viewed at http://localhost/docs/api and can be recompiled with `php artisan scribe:generate`
-- Running tests `php artisan test`
+- Running tests `php artisan test` - By default, Laravel tests run independent of database seeders, but you can explicitly enable them within a test, if needed.
 - Refreshing events from the remote API: `php artisan import:events`
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
@@ -408,9 +405,14 @@ The Meetup OAuth client private key file can be stored anywhere on your machine.
 # Admin Panel
 
 - The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
-- After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
 - To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
-- See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
+- User management can be achieved through Artisan commands.
+  - Commands are defined in app/Console/Commands/ and can be viewed using `php artisan list app:user`, such as:
+  - `php artisan app:user:create <email> <first_name> <last_name>`
+  - `php artisan app:user:activate <email>`
+  - `php artisan app:user:deactivate <email>`
+  - `php artisan app:user:delete <email>`
+  - `php artisan app:user:reset-password <email>`
 - Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages).
 
 # Synchronizing Your Fork with the Latest Development Code Changes
