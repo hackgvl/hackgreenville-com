@@ -980,8 +980,7 @@ paths:
                         contribute_link: 'https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html'
                         raw_data_link: 'http://vonrueden.com/'
                         maintainers:
-                          -
-                            name: 'Vesta Glover'
+                          - name: 'Vesta Glover'
                         created_at: '2025-01-01T17:00:00.000000Z'
                         updated_at: '2025-01-01T17:00:00.000000Z'
                     items:
@@ -1023,8 +1022,7 @@ paths:
                         maintainers:
                           type: array
                           example:
-                            -
-                              name: 'Vesta Glover'
+                            - name: 'Vesta Glover'
                           items:
                             type: object
                             properties:

@@ -1224,14 +1224,14 @@ sourced from community-maintained Google Spreadsheets and served as GeoJSON.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/map-layers?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "http://localhost:8000/api/v1/map-layers?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v1/map-layers"
+    "http://localhost:8000/api/v1/map-layers"
 );
 
 const params = {
@@ -1259,7 +1259,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v1/map-layers'
+url = 'http://localhost:8000/api/v1/map-layers'
 params = {
   'per_page': '50',
   'page': '1',
@@ -1460,14 +1460,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/map-layers/breweries/geojson" \
+    --get "http://localhost:8000/api/v1/map-layers/breweries/geojson" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v1/map-layers/breweries/geojson"
+    "http://localhost:8000/api/v1/map-layers/breweries/geojson"
 );
 
 const headers = {
@@ -1486,7 +1486,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v1/map-layers/breweries/geojson'
+url = 'http://localhost:8000/api/v1/map-layers/breweries/geojson'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
