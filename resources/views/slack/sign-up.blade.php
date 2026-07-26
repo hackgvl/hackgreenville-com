@@ -10,9 +10,9 @@
                 <h1 class="text-3xl font-bold mb-6 text-gray-800">{{ __('Sign up for HackGreenville!') }}</h1>
 
                 <div class="mb-6">
-                    <a href="https://hackgreenville.slack.com" class="inline-block bg-success text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors" rel="nofollow" target="_blank">
+                    <x-button href="https://hackgreenville.slack.com" rel="nofollow" target="_blank">
                         Already Signed Up? Log In to Slack
-                    </a>
+                    </x-button>
                 </div>
 
                 <p class="text-lg text-gray-700 mb-8">
@@ -43,6 +43,8 @@
                 <div class="mb-8">
                     <p class="text-lg font-semibold mb-4">The Rules of HackGreenville are simple:</p>
                     <ul class="text-left space-y-4 text-gray-700">
+                        <li><strong>18+ only:</strong> Slack participants must be at least 18 years old.
+                        </li>
                         <li><strong>Everyone agrees to abide by the <a href="{{route('code-of-conduct')}}" target="_blank" class="text-primary hover:underline">Code of Conduct</a></strong>
                           within our Slack and at in-person events.
                             We <a href="{{route('about')}}" target="_blank" class="text-primary hover:underline">exist to nurture personal growth</a>, not to bring people down.

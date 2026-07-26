@@ -2,7 +2,7 @@
 
 <li>
     <a href="{{ route($route) }}"
-       class="block py-3 nav-break:py-2 px-4 nav-break:px-2 text-sm font-medium no-underline transition-colors text-center nav-break:text-left {{ Route::is($route) ? 'text-white font-semibold' : 'text-white/70 hover:text-white' }} {{ $class }}">
+       class="block py-2.5 nav-break:py-2 px-3 text-base nav-break:text-sm font-medium no-underline rounded-lg transition-colors {{ Route::is($route) ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5' }} {{ $class }}">
         {{ $slot }}
     </a>
 </li>

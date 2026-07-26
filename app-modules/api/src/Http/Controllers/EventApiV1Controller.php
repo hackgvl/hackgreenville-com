@@ -15,7 +15,7 @@ class EventApiV1Controller extends Controller
      *
      * This API provides access to event data stored in the HackGreenville database.
      *
-     * * Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md) for more information about the event API.
+     * * Please see the [Event API docs](https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md) for more information about the event API.
      *
      * @apiResource HackGreenville\Api\Resources\Events\V1\EventCollection
      * @apiResourceModel App\Models\Event states=forDocumentation

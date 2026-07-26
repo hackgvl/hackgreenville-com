@@ -3,8 +3,27 @@
 return [
     [
         'date' => '2026-02',
+        'label' => 'May 2026',
+        'theme' => 'Rice to Meet You    ',
+        'recap_url' => 'https://www.meetup.com/hack-greenville/events/314545011/',
+        'videos_url' => 'https://www.youtube.com/@HackGreenville/playlists',
+        'sponsor' => 'RefactorGVL',
+        'sponsor_url' => 'https://refactorgvl.com',
+        'sponsor_logo' => 'refactorgvl-logo.svg',
+        'host' => 'OpenWorks Coworking',
+        'host_url' => 'https://joinopenworks.com',
+        'video_by' => 'Synergy Mill Makerspace',
+        'video_by_url' => 'https://synergymill.com',
+        'speakers' => [
+            ['name' => 'Joey Loman', 'title' => 'Origin Stories Series: Synergy Mill', 'url' => 'https://www.youtube.com/watch?v=_RUTRPx7cQI&list=PL8vFrjH8DfOE9SVEzIRi87DgLhpx-UFIj&index=2'],
+            ['name' => 'Jason Morhardt', 'title' => 'Hold My Beer While I Do This', 'url' => 'https://www.youtube.com/watch?v=1XLQkYYncXY&list=PL8vFrjH8DfOE9SVEzIRi87DgLhpx-UFIj'],
+            ['name' => 'Ben Acord, Eric Anderson, Robert Roskam', 'title' => 'Privacy Tips and Trick', 'url' => 'https://www.youtube.com/watch?v=GGJHA5Z3beg&list=PL8vFrjH8DfOE9SVEzIRi87DgLhpx-UFIj&index=3'],
+        ],
+    ],
+    [
+        'date' => '2026-02',
         'label' => 'Feb 2026',
-        'theme' => 'Hackin\' Ball G - An Asian A-fare\'',
+        'theme' => 'Hackin\' Ball G - An Asian A-fare',
         'recap_url' => 'https://www.meetup.com/hack-greenville/events/313138324/',
         'videos_url' => 'https://www.youtube.com/@HackGreenville/playlists',
         'sponsor' => 'Chipp.ai',
@@ -24,7 +43,7 @@ return [
     [
         'date' => '2025-10',
         'label' => 'Oct 2025',
-        'theme' => '"Medi-verse" Mediterranean & Greek',
+        'theme' => 'Medi-verse Mediterranean & Greek',
         'recap_url' => 'https://www.meetup.com/hack-greenville/events/310839956/',
         'videos_url' => 'https://www.youtube.com/@HackGreenville/playlists',
         'sponsor' => 'Blue Ridge Consultants',

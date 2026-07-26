@@ -5,31 +5,22 @@
 
 @section('content')
 	{{-- Hero --}}
-	<div class="relative bg-gray-900 text-white overflow-hidden min-h-[24rem] sm:min-h-[28rem] flex items-center">
-		<img src="{{ asset('img/hg-nights-sm.jpg') }}" alt="" class="absolute inset-0 w-full h-full object-cover object-center scale-105" aria-hidden="true" loading="eager"/>
-		<div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/40 z-[2]"></div>
-		<div class="max-w-6xl mx-auto w-full px-4 sm:px-6 py-16 sm:py-20 relative z-10">
-			<div class="max-w-2xl">
-				<p class="text-sm font-medium tracking-widest uppercase text-green-400 mb-4">Quarterly Community Event</p>
-				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">HackGreenville Nights</h1>
-				<p class="text-lg text-gray-300 leading-relaxed max-w-lg mb-8">
-					A gathering of Greenville's tech, hacker, tinkerer, maker, and DIY community. Great food, short talks, and good people.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-3">
-					<a href="https://www.meetup.com/hack-greenville/"
-					   rel="noopener" target="_blank"
-					   class="inline-block bg-success text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-green-600 transition-colors">
-						Join our Meetup Group
-					</a>
-					<a href="https://forms.gle/oz4vDwrwG9c4h5Bo6"
-					   rel="nofollow noopener" target="_blank"
-					   class="inline-block bg-white/10 backdrop-blur text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-white/20 transition-colors border border-white/20">
-						Submit a Talk
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	<x-hero :image="asset('img/hg-nights-sm.jpg')" eyebrow="Quarterly Community Event">
+		HackGreenville Nights
+
+		<x-slot:subtitle>
+			A gathering of Greenville's tech, hacker, tinkerer, maker, and DIY community. Great food, short talks, and good people.
+		</x-slot:subtitle>
+
+		<x-slot:actions>
+			<x-button href="https://www.meetup.com/hack-greenville/" rel="noopener" target="_blank">
+				Join our Meetup Group
+			</x-button>
+			<x-button href="https://forms.gle/oz4vDwrwG9c4h5Bo6" rel="nofollow noopener" target="_blank" variant="ghost">
+				Submit a Talk
+			</x-button>
+		</x-slot:actions>
+	</x-hero>
 
 	{{-- Submit a Talk + Get Involved --}}
 	<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
@@ -165,19 +156,17 @@
 
 	{{-- CTA --}}
 	<div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
-		<div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-			<div>
-				<h2 class="text-xl font-semibold mb-1">Want to sponsor or speak?</h2>
-				<p class="text-gray-600 text-sm">Reach out via the contact form or hop into our Slack.</p>
-			</div>
-			<div class="flex items-center gap-3">
-				<a href="{{ route('contact') }}" class="inline-block border border-gray-200 text-gray-800 px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:border-gray-300 hover:bg-gray-50 transition-colors whitespace-nowrap">
+		<x-call-to-action title="Want to sponsor or speak?">
+			Reach out via the contact form or hop into our Slack.
+
+			<x-slot:actions>
+				<x-button href="{{ route('contact') }}" variant="outline" class="whitespace-nowrap">
 					Contact Us
-				</a>
-				<a href="{{ route('join-slack') }}" class="inline-block bg-success text-white px-6 py-3 rounded-lg text-sm font-semibold no-underline hover:bg-green-600 transition-colors whitespace-nowrap">
+				</x-button>
+				<x-button href="{{ route('join-slack') }}" class="whitespace-nowrap">
 					Join Slack
-				</a>
-			</div>
-		</div>
+				</x-button>
+			</x-slot:actions>
+		</x-call-to-action>
 	</div>
 @endsection

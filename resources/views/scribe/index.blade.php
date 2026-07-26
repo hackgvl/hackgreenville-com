@@ -27,13 +27,13 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "{{ config("app.url") }}";
+        var tryItOutBaseUrl = "http://localhost:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-5.8.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-5.11.0.js") }}"></script>
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-5.8.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-5.11.0.js") }}"></script>
 
 </head>
 
@@ -130,7 +130,7 @@
 </p>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
-<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for more information about the event API.</p>
 
 <span id="example-requests-GETapi-v0-events">
 <blockquote>Example request:</blockquote>
@@ -138,14 +138,14 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
+    --get "http://localhost:8000/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v0/events"
+    "http://localhost:8000/api/v0/events"
 );
 
 const params = {
@@ -171,7 +171,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v0/events'
+url = 'http://localhost:8000/api/v0/events'
 params = {
   'start_date': '2026-01-01',
   'end_date': '2100-12-31',
@@ -339,7 +339,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
-<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</p>
+<p>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md">Organization API docs</a> for more information about the organization API.</p>
 
 <span id="example-requests-GETapi-v0-orgs">
 <blockquote>Example request:</blockquote>
@@ -347,14 +347,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v0/orgs" \
+    --get "http://localhost:8000/api/v0/orgs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v0/orgs"
+    "http://localhost:8000/api/v0/orgs"
 );
 
 const headers = {
@@ -373,7 +373,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v0/orgs'
+url = 'http://localhost:8000/api/v0/orgs'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -504,7 +504,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <p>This API provides access to event data stored in the HackGreenville database.</p>
 <ul>
-<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for more information about the event API.</li>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for more information about the event API.</li>
 </ul>
 
 <span id="example-requests-GETapi-v1-events">
@@ -513,14 +513,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
+    --get "http://localhost:8000/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v1/events"
+    "http://localhost:8000/api/v1/events"
 );
 
 const params = {
@@ -551,7 +551,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v1/events'
+url = 'http://localhost:8000/api/v1/events'
 params = {
   'per_page': '50',
   'page': '1',
@@ -727,7 +727,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2026-01-01"
                data-component="query">
     <br>
-<p>The start date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
+<p>The start date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date before or equal to <code>end_date</code>. Example: <code>2026-01-01</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
@@ -739,7 +739,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="2100-12-31"
                data-component="query">
     <br>
-<p>The end date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
+<p>The end date for events filtering (inclusive). Future event data may be limited. Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/EVENTS_API.md">Event API docs</a> for information about event data limitations. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2100-12-31</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>tags</code></b>&nbsp;&nbsp;
@@ -753,7 +753,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                name="tags[1]"                data-endpoint="GETapi-v1-events"
                data-component="query">
     <br>
-<p>The <code>id</code> of an existing record in the tags table.</p>
+<p>Must match an existing stored value.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -890,7 +890,7 @@ Must be one of:
 
 <p>This API provides access to organization data stored in the HackGreenville database.</p>
 <ul>
-<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/ORGS_API.md">Organization API docs</a> for more information about the organization API.</li>
+<li>Please see the <a href="https://github.com/hackgvl/hackgreenville-com/blob/develop/docs/ORGS_API.md">Organization API docs</a> for more information about the organization API.</li>
 </ul>
 
 <span id="example-requests-GETapi-v1-organizations">
@@ -899,14 +899,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "http://localhost:8000/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "{{ config("app.url") }}/api/v1/organizations"
+    "http://localhost:8000/api/v1/organizations"
 );
 
 const params = {
@@ -936,7 +936,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = '{{ config("app.url") }}/api/v1/organizations'
+url = 'http://localhost:8000/api/v1/organizations'
 params = {
   'per_page': '50',
   'page': '1',
@@ -1093,7 +1093,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                name="tags[1]"                data-endpoint="GETapi-v1-organizations"
                data-component="query">
     <br>
-<p>Filter organizations by tag ID. The <code>id</code> of an existing record in the tags table.</p>
+<p>Filter organizations by tag ID. Must match an existing stored value.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
