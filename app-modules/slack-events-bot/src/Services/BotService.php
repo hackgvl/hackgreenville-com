@@ -167,7 +167,7 @@ class BotService
             }
 
             if ($spilloverUnsafe) {
-                throw new UnsafeMessageSpilloverException;
+                throw new UnsafeMessageSpilloverException();
             }
 
             if ( ! $existingMsgDetail) {
