@@ -19,7 +19,7 @@ class DatabaseServiceTest extends DatabaseTestCase
     {
         parent::setUp();
 
-        $this->databaseService = new DatabaseService;
+        $this->databaseService = new DatabaseService();
     }
 
     #[Test]

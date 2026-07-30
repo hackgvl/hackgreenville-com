@@ -25,7 +25,7 @@ class ContactMessage extends Notification implements ShouldQueue
 
     public function toSlack($notifiable): SlackMessage
     {
-        return (new SlackMessage)
+        return (new SlackMessage())
             ->success()
             ->content(':mailbox_with_mail: HG Website Contact Form Request :mailbox_with_mail:')
             ->attachment(function ($attachment) {
