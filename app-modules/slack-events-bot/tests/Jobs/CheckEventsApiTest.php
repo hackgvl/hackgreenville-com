@@ -25,7 +25,7 @@ class CheckEventsApiTest extends DatabaseTestCase
 
     public function test_job_has_retry_configuration()
     {
-        $job = new CheckEventsApi;
+        $job = new CheckEventsApi();
 
         $this->assertEquals(3, $job->tries);
         $this->assertEquals(2, $job->maxExceptions);

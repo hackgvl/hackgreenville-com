@@ -13,7 +13,7 @@ class SlackWorkspaceTest extends TestCase
     #[Test]
     public function it_encrypts_access_token_on_set()
     {
-        $workspace = new SlackWorkspace;
+        $workspace = new SlackWorkspace();
         $plainTextToken = 'fake-token-abcdefghijklmnopqrstuvwxyz';
         $workspace->access_token = $plainTextToken;
 
@@ -26,7 +26,7 @@ class SlackWorkspaceTest extends TestCase
     #[Test]
     public function it_decrypts_access_token_on_get()
     {
-        $workspace = new SlackWorkspace;
+        $workspace = new SlackWorkspace();
         $plainTextToken = 'fake-token-abcdefghijklmnopqrstuvwxyz';
         $encryptedToken = Crypt::encryptString($plainTextToken);
 
@@ -42,7 +42,7 @@ class SlackWorkspaceTest extends TestCase
     {
         $invalidToken = 'not-a-valid-encrypted-string';
 
-        $workspace = new SlackWorkspace;
+        $workspace = new SlackWorkspace();
         $workspace->setRawAttributes([
             'access_token' => $invalidToken,
             'team_id' => 'T12345',

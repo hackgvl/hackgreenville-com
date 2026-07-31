@@ -30,7 +30,7 @@ class JoinMessageRequest extends FormRequest
             'reason' => 'required|max:5000',
             'url' => 'nullable|url',
             'rules' => 'required|accepted',
-            'cf-turnstile-response' => ['required', new Turnstile]
+            'cf-turnstile-response' => ['required', new Turnstile()]
         ];
     }
 

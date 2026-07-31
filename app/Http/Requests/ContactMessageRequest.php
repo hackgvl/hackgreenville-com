@@ -28,7 +28,7 @@ class ContactMessageRequest extends FormRequest
             'name' => 'required|max:255',
             'contact' => 'required|email:rfc,dns',
             'message' => 'required|max:5000',
-            'cf-turnstile-response' => ['required', new Turnstile]
+            'cf-turnstile-response' => ['required', new Turnstile()]
         ];
     }
 
