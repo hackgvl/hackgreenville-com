@@ -70,6 +70,18 @@ class MapLayerApiV1Test extends TestCase
         $response->assertJsonCount(2, 'data');
     }
 
+    public function test_can_filter_map_layers_by_exact_slug(): void
+    {
+        MapLayer::factory()->create(['title' => 'Breweries', 'slug' => 'breweries']);
+        MapLayer::factory()->create(['title' => 'Craft Breweries', 'slug' => 'craft-breweries']);
+
+        $response = $this->getJson('/api/v1/map-layers?slug=breweries');
+
+        $response->assertStatus(200);
+        $response->assertJsonCount(1, 'data');
+        $response->assertJsonPath('data.0.slug', 'breweries');
+    }
+
     public function test_can_sort_map_layers(): void
     {
         MapLayer::factory()->create(['title' => 'Waterfalls']);

@@ -369,9 +369,15 @@
                                     "disabled": false
                                 },
                                 {
+                                    "key": "slug",
+                                    "value": "",
+                                    "description": "Return the single map layer matching this exact slug. Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
                                     "key": "title",
                                     "value": "",
-                                    "description": "Filter map layers by title. Must not be greater than 255 characters.",
+                                    "description": "Filter map layers by a partial, case-insensitive title match. Must not be greater than 255 characters.",
                                     "disabled": true
                                 },
                                 {
@@ -387,7 +393,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/map-layers?per_page=50&page=1&title=&sort_by=title&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/map-layers?per_page=50&page=1&slug=&title=&sort_by=title&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [

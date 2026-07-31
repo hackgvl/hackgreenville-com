@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\MapLayer;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use JsonException;
 use League\Csv\Reader;
 use RuntimeException;
 use Throwable;
@@ -20,13 +21,18 @@ class MapLayerSyncService
     {
         try {
             $geojson = $this->fetchGeoJson($layer);
+            // JSON_THROW_ON_ERROR guards against writing a broken file if the
+            // structure ever contains something json_encode can't serialize.
+            $encoded = json_encode($geojson, JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
+        } catch (JsonException $e) {
+            return ['success' => false, 'message' => "Failed to encode GeoJSON: {$e->getMessage()}"];
         } catch (Throwable $e) {
             return ['success' => false, 'message' => $e->getMessage()];
         }
 
         $path = 'geojson/' . basename($layer->slug) . '.geojson';
 
-        Storage::disk('local')->put($path, json_encode($geojson, JSON_PRETTY_PRINT));
+        Storage::disk('local')->put($path, $encoded);
 
         $count = count($geojson['features'] ?? []);
 
@@ -80,8 +86,16 @@ class MapLayerSyncService
 
         $data = $response->json();
 
+        if ( ! is_array($data)) {
+            throw new RuntimeException('Invalid GeoJSON: response was not valid JSON.');
+        }
+
         if ( ! isset($data['type']) || $data['type'] !== 'FeatureCollection') {
             throw new RuntimeException('Invalid GeoJSON: missing FeatureCollection type.');
+        }
+
+        if ( ! isset($data['features']) || ! is_array($data['features'])) {
+            throw new RuntimeException('Invalid GeoJSON: missing or malformed features array.');
         }
 
         return $data;
@@ -117,6 +131,15 @@ class MapLayerSyncService
                 continue;
             }
 
+            $lat = (float) $lat;
+            $lng = (float) $lng;
+
+            // Skip rows whose coordinates fall outside valid lat/lng ranges,
+            // which usually means a typo or swapped columns in the spreadsheet.
+            if ($lat < -90 || $lat > 90 || $lng < -180 || $lng > 180) {
+                continue;
+            }
+
             $properties = [];
             foreach ($record as $key => $value) {
                 if (in_array($key, ['Latitude', 'Longitude'], true)) {
@@ -131,7 +154,7 @@ class MapLayerSyncService
                 'type' => 'Feature',
                 'geometry' => [
                     'type' => 'Point',
-                    'coordinates' => [(float) $lng, (float) $lat],
+                    'coordinates' => [$lng, $lat],
                 ],
                 'properties' => $properties,
             ];

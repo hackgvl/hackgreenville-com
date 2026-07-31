@@ -1405,6 +1405,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The current page of items to display. Must be at least 1. Example: <code>1</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="slug"                data-endpoint="GETapi-v1-map-layers"
+               value=""
+               data-component="query">
+    <br>
+<p>Return the single map layer matching this exact slug. Must not be greater than 255 characters.</p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -1414,7 +1426,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="query">
     <br>
-<p>Filter map layers by title. Must not be greater than 255 characters.</p>
+<p>Filter map layers by a partial, case-insensitive title match. Must not be greater than 255 characters.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
@@ -1446,7 +1458,45 @@ Must be one of:
             </div>
                 </form>
 
-                    <h2 id="endpoints-GETapi-v1-map-layers--mapLayer_slug--geojson">Map Layer GeoJSON</h2>
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>geojson_link</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>The remote/origin source URL the layer's GeoJSON is synced from (may be null when the layer is built from a spreadsheet). This is the upstream source, not the HackGreenville-hosted file.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>geojson_url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>The HackGreenville-hosted endpoint that serves this layer's GeoJSON FeatureCollection. Consumers should read GeoJSON from here, not from geojson_link.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>raw_data_link</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>The remote spreadsheet (CSV) the GeoJSON is generated from when no geojson_link is set.</p>
+                    </div>
+                                    </details>
+        </div>
+                        <h2 id="endpoints-GETapi-v1-map-layers--mapLayer_slug--geojson">Map Layer GeoJSON</h2>
 
 <p>
 </p>

@@ -33,12 +33,10 @@ class EventApiV1Controller extends Controller
                 });
             })
             ->when($request->filled('name'), function (Builder $query) use ($request) {
-                $name = str_replace(['!', '%', '_'], ['!!', '!%', '!_'], $request->input('name'));
-                $query->whereRaw("event_name LIKE ? ESCAPE '!'", ['%' . $name . '%']);
+                $query->whereLikeContains('event_name', $request->input('name'));
             })
             ->when($request->filled('org_name'), function (Builder $query) use ($request) {
-                $orgName = str_replace(['!', '%', '_'], ['!!', '!%', '!_'], $request->input('org_name'));
-                $query->whereRaw("group_name LIKE ? ESCAPE '!'", ['%' . $orgName . '%']);
+                $query->whereLikeContains('group_name', $request->input('org_name'));
             })
             ->when($request->filled('service'), function (Builder $query) use ($request) {
                 $query->where('service', $request->input('service'));
@@ -51,8 +49,7 @@ class EventApiV1Controller extends Controller
             })
             ->when($request->filled('venue_city'), function (Builder $query) use ($request) {
                 $query->whereHas('venue', function (Builder $query) use ($request) {
-                    $city = str_replace(['!', '%', '_'], ['!!', '!%', '!_'], $request->input('venue_city'));
-                    $query->whereRaw("city LIKE ? ESCAPE '!'", ['%' . $city . '%']);
+                    $query->whereLikeContains('city', $request->input('venue_city'));
                 });
             })
             ->when($request->filled('venue_state'), function (Builder $query) use ($request) {

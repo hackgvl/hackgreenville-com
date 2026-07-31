@@ -65,15 +65,19 @@ class MapLayerResource extends Resource
                     ->columns(2)
                     ->schema([
                         Forms\Components\TextInput::make('geojson_link')
-                            ->label('GeoJSON Link')
-                            ->url()
-                            ->maxLength(255),
-
-                        Forms\Components\TextInput::make('contribute_link')
+                            ->label('GeoJSON Source Link (remote)')
+                            ->helperText('The remote/origin URL that already serves GeoJSON (e.g. County ArcGIS or an external source). Sync fetches from here. This is NOT the HG-hosted geojson_url the API exposes.')
                             ->url()
                             ->maxLength(255),
 
                         Forms\Components\TextInput::make('raw_data_link')
+                            ->label('Raw Data Link (CSV)')
+                            ->helperText('The remote spreadsheet CSV export. Used to build GeoJSON when no GeoJSON Source Link is set.')
+                            ->url()
+                            ->maxLength(255),
+
+                        Forms\Components\TextInput::make('contribute_link')
+                            ->helperText('Public link where people can contribute to or edit this layer\'s data.')
                             ->url()
                             ->maxLength(255),
                     ]),

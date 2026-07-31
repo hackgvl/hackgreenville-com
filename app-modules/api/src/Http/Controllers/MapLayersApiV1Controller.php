@@ -20,13 +20,19 @@ class MapLayersApiV1Controller extends Controller
      *
      * @apiResource HackGreenville\Api\Resources\MapLayers\V1\MapLayerCollection
      * @apiResourceModel App\Models\MapLayer states=forDocumentation
+     *
+     * @responseField data[].geojson_link string The remote/origin source URL the layer's GeoJSON is synced from (may be null when the layer is built from a spreadsheet). This is the upstream source, not the HackGreenville-hosted file.
+     * @responseField data[].geojson_url string The HackGreenville-hosted endpoint that serves this layer's GeoJSON FeatureCollection. Consumers should read GeoJSON from here, not from geojson_link.
+     * @responseField data[].raw_data_link string The remote spreadsheet (CSV) the GeoJSON is generated from when no geojson_link is set.
      */
     public function __invoke(MapLayersApiV1Request $request)
     {
         $query = MapLayer::query()
+            ->when($request->filled('slug'), function (Builder $query) use ($request) {
+                $query->where('slug', $request->input('slug'));
+            })
             ->when($request->filled('title'), function (Builder $query) use ($request) {
-                $title = str_replace(['!', '%', '_'], ['!!', '!%', '!_'], $request->input('title'));
-                $query->whereRaw("title LIKE ? ESCAPE '!'", ['%' . $title . '%']);
+                $query->whereLikeContains('title', $request->input('title'));
             })
             ->when($request->filled('sort_by'), function (Builder $query) use ($request) {
                 $sortDirection = $request->input('sort_direction') === 'desc' ? 'desc' : 'asc';

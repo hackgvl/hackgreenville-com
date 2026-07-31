@@ -175,6 +175,49 @@ class MapLayerSyncServiceTest extends DatabaseTestCase
         $this->assertStringContainsString('Invalid GeoJSON', $result['message']);
     }
 
+    public function test_sync_skips_rows_with_out_of_range_coordinates(): void
+    {
+        $layer = MapLayer::factory()->create([
+            'slug' => 'out-of-range',
+            'geojson_link' => null,
+            'raw_data_link' => 'https://example.com/data.csv',
+        ]);
+
+        Http::fake([
+            'example.com/*' => Http::response(
+                "Latitude,Longitude,Title\n34.85,-82.40,Valid\n200,-82.40,Bad Latitude\n34.85,-500,Bad Longitude",
+                200
+            ),
+        ]);
+
+        $result = $this->service->sync($layer);
+
+        $this->assertTrue($result['success']);
+        $this->assertStringContainsString('1 features', $result['message']);
+
+        $geojson = json_decode(Storage::disk('local')->get('geojson/out-of-range.geojson'), true);
+        $this->assertCount(1, $geojson['features']);
+        $this->assertEquals('Valid', $geojson['features'][0]['properties']['title']);
+    }
+
+    public function test_sync_fails_when_geojson_has_no_features_array(): void
+    {
+        $layer = MapLayer::factory()->create([
+            'slug' => 'no-features',
+            'geojson_link' => 'https://example.com/points.geojson',
+        ]);
+
+        Http::fake([
+            'example.com/*' => Http::response(['type' => 'FeatureCollection'], 200),
+        ]);
+
+        $result = $this->service->sync($layer);
+
+        $this->assertFalse($result['success']);
+        $this->assertStringContainsString('features array', $result['message']);
+        Storage::disk('local')->assertMissing('geojson/no-features.geojson');
+    }
+
     public function test_sync_all_returns_results_for_each_layer(): void
     {
         MapLayer::factory()->create([

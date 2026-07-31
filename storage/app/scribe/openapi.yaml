@@ -899,13 +899,24 @@ paths:
             nullable: true
         -
           in: query
-          name: title
-          description: 'Filter map layers by title. Must not be greater than 255 characters.'
+          name: slug
+          description: 'Return the single map layer matching this exact slug. Must not be greater than 255 characters.'
           example: null
           required: false
           schema:
             type: string
-            description: 'Filter map layers by title. Must not be greater than 255 characters.'
+            description: 'Return the single map layer matching this exact slug. Must not be greater than 255 characters.'
+            example: null
+            nullable: true
+        -
+          in: query
+          name: title
+          description: 'Filter map layers by a partial, case-insensitive title match. Must not be greater than 255 characters.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter map layers by a partial, case-insensitive title match. Must not be greater than 255 characters.'
             example: null
             nullable: true
         -

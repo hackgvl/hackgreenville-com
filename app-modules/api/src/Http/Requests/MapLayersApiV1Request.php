@@ -17,6 +17,7 @@ class MapLayersApiV1Request extends FormRequest
         return [
             'per_page' => ['nullable', 'integer', 'min:1', 'max:100'],
             'page' => ['nullable', 'integer', 'min:1'],
+            'slug' => ['nullable', 'string', 'max:255'],
             'title' => ['nullable', 'string', 'max:255'],
             'sort_by' => [
                 'nullable',
@@ -49,7 +50,8 @@ class MapLayersApiV1Request extends FormRequest
                 'example' => 1,
                 'description' => 'The current page of items to display',
             ],
-            'title' => ['example' => null, 'description' => 'Filter map layers by title'],
+            'slug' => ['example' => null, 'description' => 'Return the single map layer matching this exact slug'],
+            'title' => ['example' => null, 'description' => 'Filter map layers by a partial, case-insensitive title match'],
             'sort_by' => ['example' => 'title'],
             'sort_direction' => ['example' => 'asc'],
         ];
