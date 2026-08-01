@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\Storage;
 use JsonException;
 use League\Csv\Reader;
 use RuntimeException;
+use stdClass;
+use Swaggest\JsonSchema\InvalidValue;
+use Swaggest\JsonSchema\Schema;
 use Throwable;
 
 class MapLayerSyncService
 {
+    private static ?Schema $geoJsonSchema = null;
+
     /**
      * Sync a single map layer's geojson file from its remote data source.
      *
@@ -21,6 +26,7 @@ class MapLayerSyncService
     {
         try {
             $geojson = $this->fetchGeoJson($layer);
+            $this->assertValidGeoJson($geojson);
             // JSON_THROW_ON_ERROR guards against writing a broken file if the
             // structure ever contains something json_encode can't serialize.
             $encoded = json_encode($geojson, JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
@@ -34,7 +40,7 @@ class MapLayerSyncService
 
         Storage::disk('local')->put($path, $encoded);
 
-        $count = count($geojson['features'] ?? []);
+        $count = count($geojson->features ?? []);
 
         return ['success' => true, 'message' => "Synced {$count} features."];
     }
@@ -55,7 +61,7 @@ class MapLayerSyncService
         return $results;
     }
 
-    private function fetchGeoJson(MapLayer $layer): array
+    private function fetchGeoJson(MapLayer $layer): stdClass
     {
         // Prefer geojson_link if available (already in geojson format)
         if ($layer->geojson_link) {
@@ -70,7 +76,7 @@ class MapLayerSyncService
         throw new RuntimeException("No data source configured (needs geojson_link or raw_data_link).");
     }
 
-    private function fetchFromGeoJsonLink(string $url): array
+    private function fetchFromGeoJsonLink(string $url): stdClass
     {
         $response = Http::timeout(30)->get($url);
 
@@ -84,24 +90,19 @@ class MapLayerSyncService
             throw new RuntimeException('GeoJSON endpoint returned HTML instead of JSON — the source may be unavailable.');
         }
 
-        $data = $response->json();
+        // Decode to objects (not associative arrays) so empty JSON objects such
+        // as `"properties": {}` survive as objects rather than collapsing to `[]`,
+        // which would fail structural validation and corrupt the stored file.
+        $data = json_decode($body);
 
-        if ( ! is_array($data)) {
-            throw new RuntimeException('Invalid GeoJSON: response was not valid JSON.');
-        }
-
-        if ( ! isset($data['type']) || $data['type'] !== 'FeatureCollection') {
-            throw new RuntimeException('Invalid GeoJSON: missing FeatureCollection type.');
-        }
-
-        if ( ! isset($data['features']) || ! is_array($data['features'])) {
-            throw new RuntimeException('Invalid GeoJSON: missing or malformed features array.');
+        if ( ! $data instanceof stdClass) {
+            throw new RuntimeException('Invalid GeoJSON: response was not a JSON object.');
         }
 
         return $data;
     }
 
-    private function fetchFromCsvLink(string $url): array
+    private function fetchFromCsvLink(string $url): stdClass
     {
         $response = Http::timeout(30)->get($url);
 
@@ -140,19 +141,19 @@ class MapLayerSyncService
                 continue;
             }
 
-            $properties = [];
+            $properties = new stdClass;
             foreach ($record as $key => $value) {
                 if (in_array($key, ['Latitude', 'Longitude'], true)) {
                     continue;
                 }
 
                 $propertyName = str_replace(' ', '_', mb_strtolower(mb_trim($key)));
-                $properties[$propertyName] = mb_trim($value);
+                $properties->{$propertyName} = mb_trim($value);
             }
 
-            $features[] = [
+            $features[] = (object) [
                 'type' => 'Feature',
-                'geometry' => [
+                'geometry' => (object) [
                     'type' => 'Point',
                     'coordinates' => [$lng, $lat],
                 ],
@@ -160,9 +161,33 @@ class MapLayerSyncService
             ];
         }
 
-        return [
+        return (object) [
             'type' => 'FeatureCollection',
             'features' => $features,
         ];
+    }
+
+    /**
+     * Validate the assembled GeoJSON against the bundled RFC 7946 schema.
+     *
+     * @throws RuntimeException when the structure is not valid GeoJSON
+     */
+    private function assertValidGeoJson(stdClass $geojson): void
+    {
+        try {
+            $this->geoJsonSchema()->in($geojson);
+        } catch (InvalidValue $e) {
+            throw new RuntimeException('Invalid GeoJSON: ' . $e->getMessage());
+        }
+    }
+
+    private function geoJsonSchema(): Schema
+    {
+        if (self::$geoJsonSchema === null) {
+            $definition = json_decode(file_get_contents(__DIR__ . '/geojson-schema.json'));
+            self::$geoJsonSchema = Schema::import($definition);
+        }
+
+        return self::$geoJsonSchema;
     }
 }

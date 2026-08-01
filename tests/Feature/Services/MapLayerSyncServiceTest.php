@@ -214,8 +214,62 @@ class MapLayerSyncServiceTest extends DatabaseTestCase
         $result = $this->service->sync($layer);
 
         $this->assertFalse($result['success']);
-        $this->assertStringContainsString('features array', $result['message']);
+        $this->assertStringContainsString('Invalid GeoJSON', $result['message']);
         Storage::disk('local')->assertMissing('geojson/no-features.geojson');
+    }
+
+    public function test_sync_fails_when_geojson_feature_has_malformed_geometry(): void
+    {
+        $layer = MapLayer::factory()->create([
+            'slug' => 'bad-geometry',
+            'geojson_link' => 'https://example.com/points.geojson',
+        ]);
+
+        // A Point whose coordinates are non-numeric is structurally invalid
+        // GeoJSON — the lightweight type check would have let this through.
+        Http::fake([
+            'example.com/*' => Http::response([
+                'type' => 'FeatureCollection',
+                'features' => [
+                    [
+                        'type' => 'Feature',
+                        'geometry' => ['type' => 'Point', 'coordinates' => ['nope', 'nope']],
+                        'properties' => ['title' => 'Broken'],
+                    ],
+                ],
+            ], 200),
+        ]);
+
+        $result = $this->service->sync($layer);
+
+        $this->assertFalse($result['success']);
+        $this->assertStringContainsString('Invalid GeoJSON', $result['message']);
+        Storage::disk('local')->assertMissing('geojson/bad-geometry.geojson');
+    }
+
+    public function test_sync_preserves_empty_properties_as_json_object(): void
+    {
+        $layer = MapLayer::factory()->create([
+            'slug' => 'empty-props',
+            'geojson_link' => 'https://example.com/points.geojson',
+        ]);
+
+        Http::fake([
+            'example.com/*' => Http::response(
+                '{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.4,34.85]},"properties":{}}]}',
+                200,
+                ['Content-Type' => 'application/json']
+            ),
+        ]);
+
+        $result = $this->service->sync($layer);
+
+        $this->assertTrue($result['success']);
+
+        // Empty properties must round-trip as a JSON object ({}), not an array ([]),
+        // otherwise the stored file would no longer be valid GeoJSON.
+        $raw = Storage::disk('local')->get('geojson/empty-props.geojson');
+        $this->assertStringContainsString('"properties": {}', $raw);
     }
 
     public function test_sync_all_returns_results_for_each_layer(): void
