@@ -1,0 +1,131 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397667,
+                    34.853167
+                ]
+            },
+            "properties": {
+                "mouse": "Mr. Mickey",
+                "hint": "By the fountain of a large uptown hotel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.397867,
+                    34.853183
+                ]
+            },
+            "properties": {
+                "mouse": "Mrs. Minnie",
+                "hint": "Across the street from Mr. Mickey, on a parking barrier"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398767,
+                    34.8515
+                ]
+            },
+            "properties": {
+                "mouse": "Milkey",
+                "hint": "South of Piazza Bergamo"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3985,
+                    34.851517
+                ]
+            },
+            "properties": {
+                "mouse": "Mickey Jr.",
+                "hint": "At the steps of an underground coffee shop"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.398783,
+                    34.850983
+                ]
+            },
+            "properties": {
+                "mouse": "Miss Minnie",
+                "hint": "Up, up and away! Is it a bird, a plane, or Miss Minnie?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399333,
+                    34.850283
+                ]
+            },
+            "properties": {
+                "mouse": "Melissa",
+                "hint": "Just south of Mexican wraps and Chinese cuisine"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399283,
+                    34.850383
+                ]
+            },
+            "properties": {
+                "mouse": "Mitch",
+                "hint": "Just below Sticky Fingers @ entrance to Wochovia Plaza"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399717,
+                    34.84935
+                ]
+            },
+            "properties": {
+                "mouse": "Mifflin",
+                "hint": "Sitting below wall next to an old corner bank"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399617,
+                    34.848983
+                ]
+            },
+            "properties": {
+                "mouse": "Uncle Miles",
+                "hint": "If it rains, I hope I don\u2019t get washed away"
+            }
+        }
+    ]
+}

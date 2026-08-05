@@ -1,0 +1,533 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399678,
+                    34.852022
+                ]
+            },
+            "properties": {
+                "title": "OpenWorks",
+                "focus": "Member-run cowork and meetup space w\/ 24\/7 access and affordable options",
+                "url": "https:\/\/joinopenworks.com",
+                "address": "101 N Main Street, Suite 302 (3rd floor) Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.431936,
+                    34.844284
+                ]
+            },
+            "properties": {
+                "title": "Atlas Local",
+                "focus": "Technology, design, and business",
+                "url": "http:\/\/atlaslocal.com",
+                "address": "25 Draper Street (within Brandon Mill) Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.39885018,
+                    34.85141886
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Endeavor",
+                "focus": "(CLOSED) Marketing-focused",
+                "url": "",
+                "address": "1 N Main Street, 4th floor Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.429741,
+                    34.847754
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Textile Hall",
+                "focus": "Social entrepreneurs",
+                "url": "",
+                "address": "582 Perry Ave Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.34302731,
+                    34.84861582
+                ]
+            },
+            "properties": {
+                "title": "Synergy Mill",
+                "focus": "Makerspace",
+                "url": "https:\/\/synergymill.com",
+                "address": "31 Cessna Ct, Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.414783,
+                    34.849439
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Brickyard Greenville",
+                "focus": "(CLOSED) Early Stage Startup, Emerging Growth Company, and Entrepreneur Community Space",
+                "url": "",
+                "address": "400 Birnie Street Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.423414,
+                    34.8431
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Serendipity Labs",
+                "focus": "(CLOSED) (converted to Venture X Greenville - Plush Mills)",
+                "url": "",
+                "address": "200 Easley Bridge Rd, Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3969947,
+                    34.8529614
+                ]
+            },
+            "properties": {
+                "title": "Regus Noma Square",
+                "focus": "Virutal offices, daily pricing",
+                "url": "https:\/\/www.regus.com\/en-us\/united-states\/south-carolina\/greenville\/noma-tower-2162",
+                "address": "220 North Main Street, Suite 500, Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2286668,
+                    34.936673
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Insight Onsite Coworking",
+                "focus": "(CLOSED) Coworking in Greer",
+                "url": "",
+                "address": "228 Trade Street Greer, SC 29651"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4007448,
+                    34.846387
+                ]
+            },
+            "properties": {
+                "title": "Spaces Falls Tower",
+                "focus": "Global office, coworking, and meeting room brand",
+                "url": "https:\/\/www.spacesworks.com\/greenville\/falls-tower\/",
+                "address": "423 S. Main St 1st & 2nd Floor Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.380627,
+                    34.774988
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) The CoLab",
+                "focus": "(CLOSED) Daily passes, desks, offices, paid conference space near I-85",
+                "url": "https:\/\/www.facebook.com\/thecolabgreenville\/",
+                "address": "1 McNeese Dr. Greenville, SC 29605"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.4231434,
+                    34.8433321
+                ]
+            },
+            "properties": {
+                "title": "Venture X Greenville - Plush Mills",
+                "focus": "Coworking, Virtual Office, Event Space",
+                "url": "https:\/\/venturex.com\/locations\/south-carolina\/greenville-plush-mills\/",
+                "address": "141 Traction Street Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41499081,
+                    34.85290021
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) ComRADery \/ The Wheel House",
+                "focus": "(CLOSED) Coworking Space attached to the RADICAL marketing company space . Previously called The Wheelhouse",
+                "url": "",
+                "address": "25 Delano Dr UNIT A, Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.2424698,
+                    34.9530485
+                ]
+            },
+            "properties": {
+                "title": "Bellamore",
+                "focus": "Our co-sharing space is a functional 1,000 square foot room designed for productivity.",
+                "url": "https:\/\/www.thebellamore.com\/corporate",
+                "address": "552 Memorial Drive Extension, Greer, SC"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3694571,
+                    34.845582
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) \u00c9leos Coworking",
+                "focus": "(CLOSED) Merged into Harbor. Non-profit with community development such as tutoring, mentoring, bible study, career readiness.",
+                "url": "https:\/\/eleosgvl.org\/co-op\/",
+                "address": "1220 B Laurens Road, Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.3685143,
+                    34.8435616
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Nectar",
+                "focus": "Women and gender expansive folx",
+                "url": "https:\/\/www.nectarcommunity.com\/",
+                "address": "219 W Antrim Dr Suite #G, Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.404833,
+                    34.874809
+                ]
+            },
+            "properties": {
+                "title": "Flywheel",
+                "focus": "Coworking with startup acceleration resources within the Crescent Startup Community development.",
+                "url": "https:\/\/www.flywheelgreenvillesc.com\/coworking-greenville\/",
+                "address": "Poinsett Highway and Hammett St. Extension, Greenville, SC"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42728463,
+                    34.83650615
+                ]
+            },
+            "properties": {
+                "title": "Jud Hub",
+                "focus": "Nonprofits, social entrepreneurs, & mission-driven companies",
+                "url": "https:\/\/judhub.com\/",
+                "address": "701 Easley Bridge Road Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.277918,
+                    34.794294
+                ]
+            },
+            "properties": {
+                "title": "The Worx at Bridgeway Station",
+                "focus": "Collaborative environment for entrepreneurs, small businesses, and hybrid workers.",
+                "url": "https:\/\/www.theworxatbridgeway.com",
+                "address": "520 BridgeWay Blvd Simpsonville, SC 29680"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399986,
+                    34.849312
+                ]
+            },
+            "properties": {
+                "title": "THRIVE | Coworking",
+                "focus": "Coworking, Virtual Office, Event Space",
+                "url": "https:\/\/workatthrive.com\/greenville\/",
+                "address": "104 S Main St, Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.41527442,
+                    34.85309671
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Social House",
+                "focus": "(CLOSED) Cozy lounge and multi-purpose work & play space beside the Swamp Rabbit Trail and across from The Commons and Unity Park.  ",
+                "url": "",
+                "address": "25 Delano Dr UNIT A, Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.40866424,
+                    34.84439914
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Conrad",
+                "focus": "(CLOSED) Started and closed in 2014-2015",
+                "url": "",
+                "address": "508 Rhett St. Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.28482596,
+                    34.91994754
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Wrk Grp",
+                "focus": "(CLOSED) Targeted artists and creative types",
+                "url": "",
+                "address": "Taylors Mill, Taylors, SC"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.37573359,
+                    34.86039587
+                ]
+            },
+            "properties": {
+                "title": "Kings Collective",
+                "focus": "Cowork space, photo studio, & sound stage for video and photography",
+                "url": "https:\/\/www.kingscollective.space",
+                "address": "1621 E North St Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.93361959,
+                    34.9500065
+                ]
+            },
+            "properties": {
+                "title": "WorkLounge",
+                "focus": "Offering co-working memberships and offices.",
+                "url": "",
+                "address": "128 Magnolia St, Spartanburg, SC 29306"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.93273812,
+                    34.95188495
+                ]
+            },
+            "properties": {
+                "title": "Hub City Underground",
+                "focus": "Dedicated desk options, open seating available, and virtual mail.",
+                "url": "https:\/\/www.themontgomerysuites.com\/co-work-space",
+                "address": "187 N Church St Spartanburg, SC, 29306"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.06326839,
+                    34.76443534
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) 224 A CoWork Space",
+                "focus": "(CLOSED) A creative coworking space.",
+                "url": "http:\/\/224cowork.com",
+                "address": "224 E Main St, Walhalla, SC 29691"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.64971284,
+                    34.50283206
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) ECITY Cowork",
+                "focus": "(CLOSED) Office space for entrepreneurs and small business owners",
+                "url": "https:\/\/www.facebook.com\/ecitycowork",
+                "address": "106 E Benson St, Anderson, SC 29624"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.20009736,
+                    34.69399603
+                ]
+            },
+            "properties": {
+                "title": "(CLOSED) Uphill Cowork",
+                "focus": "(CLOSED) Shared open space for creators.",
+                "url": "http:\/\/www.uphillco.work\/home",
+                "address": "116 N Main St, Fountain Inn, SC 29644"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.42906859,
+                    34.84729949
+                ]
+            },
+            "properties": {
+                "title": "Switchyards - Greenville",
+                "focus": "Work club between a second place\/workplace and third place\/gathering place",
+                "url": "https:\/\/switchyards.com\/greenville",
+                "address": "1263 Pendleton St, Greenville, SC 29611"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.365068,
+                    34.843436
+                ]
+            },
+            "properties": {
+                "title": "Launchpad GVL",
+                "focus": "(PLANNED - 2025) Accelerator focused on early-stage digital companies",
+                "url": "https:\/\/launchpadgvl.com",
+                "address": "22 Liberty Ln, Suite 105 Greenville, SC 29607"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.399356,
+                    34.851129
+                ]
+            },
+            "properties": {
+                "title": "Roam",
+                "focus": "Work, meeting, and event space",
+                "url": "https:\/\/meetatroam.com\/locations-overview\/southcarolina\/",
+                "address": "2 W Washington St, Greenville, SC 29601"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.36393196,
+                    34.84219358
+                ]
+            },
+            "properties": {
+                "title": "Harbor Coworking",
+                "focus": "Supports youth in under-resourced communities as part of Lead Collective",
+                "url": "https:\/\/www.harborcoworking.com",
+                "address": "110 S Pleasantburg Dr, Greenville, SC 29607"
+            }
+        }
+    ]
+}

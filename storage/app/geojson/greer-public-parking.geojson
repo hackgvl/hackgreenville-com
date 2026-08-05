@@ -1,0 +1,125 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.227286,
+                    34.937931
+                ]
+            },
+            "properties": {
+                "title": "N Main & Victoria lot",
+                "parking_spaces": "85",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.227141,
+                    34.93692
+                ]
+            },
+            "properties": {
+                "title": "School Street lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.22551,
+                    34.937566
+                ]
+            },
+            "properties": {
+                "title": "Greer Relief lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.225521,
+                    34.936493
+                ]
+            },
+            "properties": {
+                "title": "Depot North lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.225285,
+                    34.936041
+                ]
+            },
+            "properties": {
+                "title": "Depot South lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.222769,
+                    34.937571
+                ]
+            },
+            "properties": {
+                "title": "City Hall lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.222699,
+                    34.939981
+                ]
+            },
+            "properties": {
+                "title": "Cannon Centre lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.228584,
+                    34.938855
+                ]
+            },
+            "properties": {
+                "title": "Courts Complex lot",
+                "parking_spaces": "",
+                "times_available": "24 hours"
+            }
+        }
+    ]
+}
