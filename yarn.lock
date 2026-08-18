@@ -640,9 +640,9 @@
   integrity sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==
 
 alpinejs@^3.14.9:
-  version "3.15.12"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.15.12.tgz#2ccd224961ba6236ca379c2abbcfa0bfeade07ee"
-  integrity sha512-nJvPAQVNPdZZ0NrExJ/kzQco3ijR8LwvCOadQecllESiqT4NyZ/57sN9V2XyvhlBGAbmlKYgeWZvYdKq99ij/Q==
+  version "3.16.1"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.16.1.tgz#c943232cf429e44c7c065734c62e133c4f83ad6a"
+  integrity sha512-QXcW8MK9JoG8GZ7vCt2cXJlcEPIA7Xk/7IQ1+L2iLp7sXcIxct0PrgidmHzK97gD9QlfUjHXPxujdZ1mC2PYVg==
   dependencies:
     "@vue/reactivity" "~3.1.1"
 
