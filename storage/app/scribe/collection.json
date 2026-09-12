@@ -183,6 +183,12 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "venue_name",
+                                    "value": "",
+                                    "description": "Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. \"openworks\" matches \"Open Works\"). Must not be greater than 255 characters.",
+                                    "disabled": true
+                                },
+                                {
                                     "key": "venue_city",
                                     "value": "",
                                     "description": "Must not be greater than 255 characters.",
@@ -213,7 +219,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags%5B0%5D=16&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags%5B0%5D=16&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_name=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [

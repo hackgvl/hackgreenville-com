@@ -41,6 +41,7 @@ class EventApiV1Request extends FormRequest
                 'min:0',
                 'gte:min_rsvp'
             ],
+            'venue_name' => ['nullable', 'string', 'max:255'],
             'venue_city' => ['nullable', 'string', 'max:255'],
             'venue_state' => ['nullable', 'string', 'size:2'],
             'is_paid' => [
@@ -91,6 +92,10 @@ class EventApiV1Request extends FormRequest
             ],
             'max_rsvp' => [
                 'example' => null,
+            ],
+            'venue_name' => [
+                'example' => null,
+                'description' => 'Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. "openworks" matches "Open Works").',
             ],
             'venue_city' => ['example' => null,],
             'venue_state' => ['example' => null,],

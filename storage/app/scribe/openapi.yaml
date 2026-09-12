@@ -4,11 +4,9 @@ info:
   description: 'Documentation for the HackGreenville API. This API provides access to data stored in the HackGreenville database, such as events, organizations and more.'
   version: 1.0.0
 servers:
-  -
-    url: '{{ config("app.url") }}'
+  - url: '{{ config("app.url") }}'
 tags:
-  -
-    name: Endpoints
+  - name: Endpoints
     description: ''
 paths:
   /api/v0/events:
@@ -373,6 +371,17 @@ paths:
           schema:
             type: integer
             description: 'Must be at least 0.'
+            example: null
+            nullable: true
+        -
+          in: query
+          name: venue_name
+          description: 'Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. "openworks" matches "Open Works"). Must not be greater than 255 characters.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. "openworks" matches "Open Works"). Must not be greater than 255 characters.'
             example: null
             nullable: true
         -
