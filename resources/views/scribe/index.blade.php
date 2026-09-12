@@ -810,6 +810,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Must be at least 0.</p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>venue_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="venue_name"                data-endpoint="GETapi-v1-events"
+               value=""
+               data-component="query">
+    <br>
+<p>Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. "openworks" matches "Open Works"). Must not be greater than 255 characters.</p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>venue_city</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;

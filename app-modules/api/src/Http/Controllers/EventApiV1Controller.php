@@ -47,6 +47,13 @@ class EventApiV1Controller extends Controller
             ->when($request->filled('max_rsvp'), function (Builder $query) use ($request) {
                 $query->where('rsvp_count', '<=', $request->integer('max_rsvp'));
             })
+            ->when($request->filled('venue_name'), function (Builder $query) use ($request) {
+                $normalized = mb_strtolower(str_replace(' ', '', $request->input('venue_name')));
+
+                $query->whereHas('venue', function (Builder $query) use ($normalized) {
+                    $query->whereRaw("LOWER(REPLACE(name, ' ', '')) LIKE ?", ['%' . $normalized . '%']);
+                });
+            })
             ->when($request->filled('venue_city'), function (Builder $query) use ($request) {
                 $query->whereHas('venue', function (Builder $query) use ($request) {
                     $query->where('city', 'like', '%' . $request->input('venue_city') . '%');
