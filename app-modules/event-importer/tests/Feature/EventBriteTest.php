@@ -74,6 +74,7 @@ class EventBriteTest extends DatabaseTestCase
             ->firstOrFail();
 
         $this->assertEquals('SC', $venue->state);
+        $this->assertEquals('fluor-management-center', $venue->slug);
     }
 
     public function test_cancelled_eventbrite_event_is_imported_correctly(): void

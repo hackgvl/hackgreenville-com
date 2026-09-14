@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Venue extends Model
 {
@@ -42,5 +43,20 @@ class Venue extends Model
     public function events()
     {
         return $this->hasMany(Event::class);
+    }
+
+    protected static function booted(): void
+    {
+        static::saving(function (Venue $venue): void {
+            $slug = Str::slug((string) $venue->slug);
+
+            if ($slug === '' && filled($venue->name)) {
+                $slug = Str::slug($venue->name);
+            }
+
+            if ($slug !== '') {
+                $venue->slug = $slug;
+            }
+        });
     }
 }
