@@ -377,14 +377,14 @@ paths:
             nullable: true
         -
           in: query
-          name: venue_name
-          description: 'Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. "openworks" matches "Open Works"). Must not be greater than 255 characters.'
-          example: null
+          name: venue_slug
+          description: 'Filter events by venue slug. Partial match against the stored slug shown on each venue in the response (e.g. "openworks" or "synergy-mill"). Slugs are set in the admin dashboard and generated from the venue name when missing. Must not be greater than 255 characters.'
+          example: openworks
           required: false
           schema:
             type: string
-            description: 'Filter events by venue name. Partial, case-insensitive match that ignores spaces (e.g. "openworks" matches "Open Works"). Must not be greater than 255 characters.'
-            example: null
+            description: 'Filter events by venue slug. Partial match against the stored slug shown on each venue in the response (e.g. "openworks" or "synergy-mill"). Slugs are set in the admin dashboard and generated from the venue name when missing. Must not be greater than 255 characters.'
+            example: openworks
             nullable: true
         -
           in: query
@@ -480,6 +480,7 @@ paths:
                         tags: []
                       venue:
                         name: 'placeat rerum ad in quo'
+                        slug: placeat-rerum-ad-in-quo
                         address: "39134 Heidenreich Shoal Apt. 942\nReubenland, WY 88137-3873"
                         city: Ladariushaven
                         state:
@@ -516,6 +517,7 @@ paths:
                           tags: []
                         venue:
                           name: 'placeat rerum ad in quo'
+                          slug: placeat-rerum-ad-in-quo
                           address: "39134 Heidenreich Shoal Apt. 942\nReubenland, WY 88137-3873"
                           city: Ladariushaven
                           state:
@@ -583,6 +585,9 @@ paths:
                             name:
                               type: string
                               example: 'placeat rerum ad in quo'
+                            slug:
+                              type: string
+                              example: placeat-rerum-ad-in-quo
                             address:
                               type: string
                               example: "39134 Heidenreich Shoal Apt. 942\nReubenland, WY 88137-3873"
