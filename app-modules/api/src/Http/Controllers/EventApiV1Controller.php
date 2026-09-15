@@ -49,6 +49,7 @@ class EventApiV1Controller extends Controller
                 $query->where('rsvp_count', '<=', $request->integer('max_rsvp'));
             })
             ->when($request->filled('venue_slug'), function (Builder $query) use ($request) {
+                // Str::slug() also strips LIKE metacharacters (% and _), so extra wildcard escaping is unnecessary.
                 $normalized = Str::slug($request->input('venue_slug'));
 
                 if ($normalized === '') {
