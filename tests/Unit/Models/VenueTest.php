@@ -3,12 +3,15 @@
 namespace Tests\Unit\Models;
 
 use App\Models\Venue;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class VenueTest extends TestCase
 {
+    use RefreshDatabase;
+
     public static function missingFieldsProvider(): array
     {
         return [
@@ -59,5 +62,40 @@ class VenueTest extends TestCase
         $venue = new Venue($attributes);
 
         $this->assertEquals($expected, $venue->fullAddress());
+    }
+
+    #[Test]
+    public function slug_is_generated_from_name_when_missing(): void
+    {
+        $venue = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => null,
+        ]);
+
+        $this->assertSame('open-works', $venue->slug);
+    }
+
+    #[Test]
+    public function existing_slug_is_preserved_when_name_changes(): void
+    {
+        $venue = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => 'openworks',
+        ]);
+
+        $venue->update(['name' => 'Open Works Downtown']);
+
+        $this->assertSame('openworks', $venue->fresh()->slug);
+    }
+
+    #[Test]
+    public function slug_is_canonicalized_on_save(): void
+    {
+        $venue = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => 'Open Works',
+        ]);
+
+        $this->assertSame('open-works', $venue->slug);
     }
 }
