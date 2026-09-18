@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OrganizationSeeder::class);
         $this->call(VenueSeeder::class);
         $this->call(EventSeeder::class);
+        $this->call(MapLayerSeeder::class);
     }
 }
