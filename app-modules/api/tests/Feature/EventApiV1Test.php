@@ -174,6 +174,146 @@ class EventApiV1Test extends TestCase
         $response->assertJsonPath('data.0.is_paid', null);
     }
 
+    public function test_events_include_venue_slug()
+    {
+        $org = Org::factory()->create();
+        $venue = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => 'openworks',
+        ]);
+
+        Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => $venue->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        $response = $this->getJson('/api/v1/events');
+
+        $response->assertStatus(200);
+        $response->assertJsonPath('data.0.venue.name', 'Open Works');
+        $response->assertJsonPath('data.0.venue.slug', 'openworks');
+    }
+
+    public function test_can_filter_events_by_venue_slug()
+    {
+        $org = Org::factory()->create();
+
+        $matchingEvent = Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'SynergyMill',
+                'slug' => 'synergy-mill',
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'The Commons',
+                'slug' => 'the-commons',
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        $response = $this->getJson('/api/v1/events?venue_slug=synergy');
+
+        $response->assertStatus(200);
+        $response->assertJsonCount(1, 'data');
+        $response->assertJsonPath('data.0.id', $matchingEvent->event_uuid);
+        $response->assertJsonPath('data.0.venue.name', 'SynergyMill');
+        $response->assertJsonPath('data.0.venue.slug', 'synergy-mill');
+    }
+
+    public function test_venue_slug_filter_matches_custom_admin_slug()
+    {
+        $org = Org::factory()->create();
+
+        $openWorksEvent = Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'Open Works',
+                'slug' => 'openworks',
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'The Commons',
+                'slug' => 'the-commons',
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        $response = $this->getJson('/api/v1/events?venue_slug=openworks');
+
+        $response->assertStatus(200);
+        $response->assertJsonCount(1, 'data');
+        $response->assertJsonPath('data.0.id', $openWorksEvent->event_uuid);
+        $response->assertJsonPath('data.0.venue.name', 'Open Works');
+        $response->assertJsonPath('data.0.venue.slug', 'openworks');
+    }
+
+    public function test_venue_slug_filter_normalizes_spaced_names()
+    {
+        $org = Org::factory()->create();
+
+        $openWorksEvent = Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'Open Works',
+                'slug' => null,
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'The Commons',
+                'slug' => 'the-commons',
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        $response = $this->getJson('/api/v1/events?venue_slug=Open%20Works');
+
+        $response->assertStatus(200);
+        $response->assertJsonCount(1, 'data');
+        $response->assertJsonPath('data.0.id', $openWorksEvent->event_uuid);
+        $response->assertJsonPath('data.0.venue.slug', 'open-works');
+    }
+
+    public function test_unslugable_venue_slug_filter_matches_nothing()
+    {
+        $org = Org::factory()->create();
+
+        Event::factory()->create([
+            'organization_id' => $org->id,
+            'venue_id' => Venue::factory()->create([
+                'name' => 'Open Works',
+                'slug' => 'openworks',
+            ])->id,
+            'active_at' => now(),
+            'expire_at' => now()->addDays(1),
+        ]);
+
+        $response = $this->getJson('/api/v1/events?venue_slug=---');
+
+        $response->assertStatus(200);
+        $response->assertJsonCount(0, 'data');
+    }
+
     public function test_deleted_org_events_do_not_show()
     {
         $active_org = Org::factory()->create();

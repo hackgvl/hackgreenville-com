@@ -13,6 +13,7 @@ class VenueResource extends JsonResource
     {
         return [
             'name' => $this->resource->name,
+            'slug' => $this->resource->slug,
             'address' => $this->resource->address,
             'city' => $this->resource->city,
             'state' => [
