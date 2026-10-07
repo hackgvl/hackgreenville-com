@@ -270,7 +270,7 @@ class EventApiV1Test extends TestCase
             'organization_id' => $org->id,
             'venue_id' => Venue::factory()->create([
                 'name' => 'Open Works',
-                'slug' => null,
+                'slug' => 'open-works',
             ])->id,
             'active_at' => now(),
             'expire_at' => now()->addDays(1),

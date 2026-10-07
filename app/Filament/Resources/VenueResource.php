@@ -40,7 +40,7 @@ class VenueResource extends Resource
                     ->afterStateUpdated(function (Set $set, ?string $state): void {
                         $set('slug', filled($state) ? Str::slug($state) : '');
                     })
-                    ->dehydrateStateUsing(fn (?string $state) => filled($state) ? Str::slug($state) : $state)
+                    ->dehydrateStateUsing(fn (?string $state, Get $get): ?string => Venue::normalizeSlug($state, $get('name')))
                     ->helperText('Used as the venue_slug query parameter on GET /api/v1/events. Auto-generated from the name if left blank; you can customize it.'),
                 Forms\Components\TextInput::make('address')
                     ->maxLength(255),

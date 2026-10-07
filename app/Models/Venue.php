@@ -28,6 +28,21 @@ class Venue extends Model
         'lng',
     ];
 
+    /**
+     * Slugify a provided slug, or the venue name when the slug is blank.
+     * Returns null when neither value can be slugified.
+     */
+    public static function normalizeSlug(?string $slug, ?string $name): ?string
+    {
+        $normalized = Str::slug((string) $slug);
+
+        if ($normalized === '' && filled($name)) {
+            $normalized = Str::slug($name);
+        }
+
+        return $normalized !== '' ? $normalized : null;
+    }
+
     public function fullAddress()
     {
         $location = collect([$this->city, $this->state])
@@ -43,20 +58,5 @@ class Venue extends Model
     public function events()
     {
         return $this->hasMany(Event::class);
-    }
-
-    protected static function booted(): void
-    {
-        static::saving(function (Venue $venue): void {
-            $slug = Str::slug((string) $venue->slug);
-
-            if ($slug === '' && filled($venue->name)) {
-                $slug = Str::slug($venue->name);
-            }
-
-            if ($slug !== '') {
-                $venue->slug = $slug;
-            }
-        });
     }
 }
