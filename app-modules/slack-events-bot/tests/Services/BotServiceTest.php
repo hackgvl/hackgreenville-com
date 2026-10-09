@@ -187,7 +187,7 @@ class BotServiceTest extends DatabaseTestCase
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'New message 1', 'blocks' => []], ['text' => 'New message 2', 'blocks' => []]];
         $calendarUrl = route('calendar.index');
-        $linkText = 'Click here to view more events for this week';
+        $linkText = 'View the events calendar';
 
         $workspace = SlackWorkspace::factory()->create();
         $channel = SlackChannel::factory()->create([
@@ -268,7 +268,7 @@ class BotServiceTest extends DatabaseTestCase
             ['text' => 'Updated B', 'blocks' => []],
             ['text' => 'Updated C', 'blocks' => []],
         ];
-        $linkText = 'Click here to view more events for this week';
+        $linkText = 'View the events calendar';
 
         $workspace = SlackWorkspace::factory()->create();
         $channel = SlackChannel::factory()->create([
@@ -373,7 +373,7 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'Updated message', 'blocks' => []], ['text' => 'Second message', 'blocks' => []]];
-        $linkText = 'Click here to view more events for this week';
+        $linkText = 'View the events calendar';
 
         $workspace = SlackWorkspace::factory()->create();
         $channel = SlackChannel::factory()->create([
@@ -417,7 +417,7 @@ class BotServiceTest extends DatabaseTestCase
 
         $week = Carbon::now()->startOfWeek();
         $messages = [['text' => 'Part 1', 'blocks' => []], ['text' => 'Part 2', 'blocks' => []]];
-        $linkText = 'Click here to view more events for this week';
+        $linkText = 'View the events calendar';
 
         $workspace = SlackWorkspace::factory()->create();
         $spillingChannel = SlackChannel::factory()->create([

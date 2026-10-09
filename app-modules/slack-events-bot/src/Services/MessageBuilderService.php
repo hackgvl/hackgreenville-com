@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class MessageBuilderService
 {
-    private const CALENDAR_LINK_TEXT = 'Click here to view more events for this week';
+    private const CALENDAR_LINK_TEXT = 'View the events calendar';
 
     public function __construct(private EventService $eventService)
     {

@@ -158,7 +158,7 @@ class MessageBuilderServiceTest extends DatabaseTestCase
     public function it_caps_overflow_messages_and_links_the_last_one_to_the_calendar()
     {
         $calendarUrl = route('calendar.index');
-        $linkText = 'Click here to view more events for this week';
+        $linkText = 'View the events calendar';
 
         $messages = [
             [

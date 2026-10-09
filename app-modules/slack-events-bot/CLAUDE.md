@@ -20,7 +20,7 @@ Posts weekly HackGreenville event summaries to configured Slack channels, with a
 - **Queue**: Jobs dispatched to the `slack` queue with retry logic (3 tries, backoff [30s, 120s, 300s])
 
 ## Gotchas
-- **Message spillover**: If a week's message count increases but a newer week already has messages posted, the bot does not post additional messages. That would place them after the newer week and break chronological order. It updates the posts that already exist and appends "Click here to view more events for this week" to the last one, linking to `/calendar`.
+- **Message spillover**: If a week's message count increases but a newer week already has messages posted, the bot does not post additional messages. That would place them after the newer week and break chronological order. It updates the posts that already exist and appends "View the events calendar" to the last one, linking to `/calendar`.
 - **Access token encryption**: `SlackWorkspace->access_token` is encrypted with `Crypt::encryptString()` via model accessors. Requires valid `APP_KEY`.
 - **Request signature validation**: All webhook requests validated via `ValidateSlackRequest` middleware (HMAC-SHA256, 5-minute timestamp window). Prevents replay attacks.
 - **Dev command normalization**: `/dev_add_channel` and `/dev_remove_channel` are auto-normalized to `/add_channel` and `/remove_channel` in the controller.
