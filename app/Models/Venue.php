@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Venue extends Model
 {
@@ -26,6 +27,21 @@ class Venue extends Model
         'lat',
         'lng',
     ];
+
+    /**
+     * Slugify a provided slug, or the venue name when the slug is blank.
+     * Returns null when neither value can be slugified.
+     */
+    public static function normalizeSlug(?string $slug, ?string $name): ?string
+    {
+        $normalized = Str::slug((string) $slug);
+
+        if ($normalized === '' && filled($name)) {
+            $normalized = Str::slug($name);
+        }
+
+        return $normalized !== '' ? $normalized : null;
+    }
 
     public function fullAddress()
     {

@@ -41,6 +41,7 @@ class EventApiV1Request extends FormRequest
                 'min:0',
                 'gte:min_rsvp'
             ],
+            'venue_slug' => ['nullable', 'string', 'max:255'],
             'venue_city' => ['nullable', 'string', 'max:255'],
             'venue_state' => ['nullable', 'string', 'size:2'],
             'is_paid' => [
@@ -91,6 +92,10 @@ class EventApiV1Request extends FormRequest
             ],
             'max_rsvp' => [
                 'example' => null,
+            ],
+            'venue_slug' => [
+                'example' => 'openworks',
+                'description' => 'Filter events by venue slug. Partial match against the stored slug shown on each venue in the response (e.g. "openworks" or "synergy-mill"). Slugs are set in the admin dashboard and generated from the venue name when missing.',
             ],
             'venue_city' => ['example' => null,],
             'venue_state' => ['example' => null,],

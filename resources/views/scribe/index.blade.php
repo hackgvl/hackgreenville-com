@@ -507,7 +507,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
+    --get "http://localhost:8000/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;venue_slug=openworks&amp;sort_by=event_name&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -523,6 +523,7 @@ const params = {
     "start_date": "2026-01-01",
     "end_date": "2100-12-31",
     "tags[0]": "16",
+    "venue_slug": "openworks",
     "sort_by": "event_name",
     "sort_direction": "asc",
 };
@@ -552,6 +553,7 @@ params = {
   'start_date': '2026-01-01',
   'end_date': '2100-12-31',
   'tags[0]': '16',
+  'venue_slug': 'openworks',
   'sort_by': 'event_name',
   'sort_direction': 'asc',
 }
@@ -591,6 +593,7 @@ response.json()</code></pre></div>
             },
             &quot;venue&quot;: {
                 &quot;name&quot;: &quot;placeat rerum ad in quo&quot;,
+                &quot;slug&quot;: &quot;placeat-rerum-ad-in-quo&quot;,
                 &quot;address&quot;: &quot;39134 Heidenreich Shoal Apt. 942\nReubenland, WY 88137-3873&quot;,
                 &quot;city&quot;: &quot;Ladariushaven&quot;,
                 &quot;state&quot;: {
@@ -808,6 +811,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="query">
     <br>
 <p>Must be at least 0.</p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>venue_slug</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="venue_slug"                data-endpoint="GETapi-v1-events"
+               value="openworks"
+               data-component="query">
+    <br>
+<p>Filter events by venue slug. Partial match against the stored slug shown on each venue in the response (e.g. "openworks" or "synergy-mill"). Slugs are set in the admin dashboard and generated from the venue name when missing. Must not be greater than 255 characters. Example: <code>openworks</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>venue_city</code></b>&nbsp;&nbsp;
