@@ -5,7 +5,6 @@ namespace HackGreenville\SlackEventsBot\Services;
 use App\Models\Event;
 use Carbon\Carbon;
 use Exception;
-use HackGreenville\SlackEventsBot\Exceptions\UnsafeMessageSpilloverException;
 use HackGreenville\SlackEventsBot\Models\SlackChannel;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
@@ -35,17 +34,6 @@ class BotService
 
             try {
                 $this->syncChannelMessages($channel, $week, $messages, $messageDetails, $existingCountByChannel);
-            } catch (UnsafeMessageSpilloverException $e) {
-                Log::error(
-                    "Cannot update messages: new events caused message count to increase but next week's post already exists. Cannot resize.",
-                    [
-                        'week' => $week->format('m/d/Y'),
-                        'channel' => $slackChannelId,
-                        'existing_count' => $existingCountByChannel[$slackChannelId] ?? 0,
-                        'new_count' => count($messages),
-                    ]
-                );
-                throw $e;
             } catch (Exception $e) {
                 Log::error("Failed to post/update messages for channel {$slackChannelId}, skipping to next channel", [
                     'channel' => $slackChannelId,
@@ -152,6 +140,22 @@ class BotService
         // Check spillover once per channel — the result is constant for all messages
         $spilloverUnsafe = $this->isUnsafeToSpillover($existingCount, count($messages), $week, $slackChannelId);
 
+        if ($spilloverUnsafe) {
+            Log::info(
+                "Week of {$week->format('F j')} in {$slackChannelId} needs more messages than are already posted, " .
+                "but a newer week is already in the channel. Linking the last message to the calendar " .
+                "instead of posting additional messages.",
+                [
+                    'week' => $week->format('m/d/Y'),
+                    'channel' => $slackChannelId,
+                    'existing_count' => $existingCount,
+                    'new_count' => count($messages),
+                ]
+            );
+
+            $messages = $this->messageBuilderService->capMessagesWithCalendarLink($messages, $existingCount);
+        }
+
         foreach ($messages as $msgIdx => $msg) {
             $msgText = $msg['text'];
             $msgBlocks = $msg['blocks'];
@@ -164,10 +168,6 @@ class BotService
                 );
 
                 continue;
-            }
-
-            if ($spilloverUnsafe) {
-                throw new UnsafeMessageSpilloverException();
             }
 
             if ( ! $existingMsgDetail) {
@@ -267,6 +267,9 @@ class BotService
      * When the message count increases (e.g. new events added), we need to post additional
      * Slack messages. However, if a newer week's messages already exist in the channel,
      * appending new messages would place them after the newer week — breaking chronological order.
+     *
+     * When this returns true, the caller updates the posts that already exist and adds a
+     * calendar link to the last one instead of posting more messages.
      */
     private function isUnsafeToSpillover(
         int $existingMessagesLength,

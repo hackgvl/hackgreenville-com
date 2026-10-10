@@ -153,4 +153,76 @@ class MessageBuilderServiceTest extends DatabaseTestCase
         $this->assertCount(2, $result);
         $this->assertStringContainsString('Event 1', $result[0]['text']);
     }
+
+    #[Test]
+    public function it_caps_overflow_messages_and_links_the_last_one_to_the_calendar()
+    {
+        $calendarUrl = route('calendar.index');
+        $linkText = 'View the events calendar';
+
+        $messages = [
+            [
+                'blocks' => [
+                    ['type' => 'header', 'text' => ['type' => 'plain_text', 'text' => 'HackGreenville Events for the week of July 7 - 1 of 3']],
+                    ['type' => 'divider'],
+                ],
+                'text' => "HackGreenville Events for the week of July 7 - 1 of 3\n\n===\n\nEvent A\n\n",
+            ],
+            [
+                'blocks' => [
+                    ['type' => 'header', 'text' => ['type' => 'plain_text', 'text' => 'HackGreenville Events for the week of July 7 - 2 of 3']],
+                    ['type' => 'divider'],
+                ],
+                'text' => "HackGreenville Events for the week of July 7 - 2 of 3\n\n===\n\nSeries - 2 of 4 stays\n\n",
+            ],
+            [
+                'blocks' => [
+                    ['type' => 'header', 'text' => ['type' => 'plain_text', 'text' => 'HackGreenville Events for the week of July 7 - 3 of 3']],
+                    ['type' => 'divider'],
+                ],
+                'text' => "HackGreenville Events for the week of July 7 - 3 of 3\n\n===\n\nEvent C\n\n",
+            ],
+        ];
+
+        $capped = $this->messageBuilderService->capMessagesWithCalendarLink($messages, 2);
+
+        $this->assertCount(2, $capped);
+        $this->assertStringContainsString('HackGreenville Events for the week of July 7 - 1 of 2', $capped[0]['text']);
+        $this->assertStringContainsString('Event A', $capped[0]['text']);
+        $this->assertStringNotContainsString($linkText, $capped[0]['text']);
+        $this->assertSame(
+            'HackGreenville Events for the week of July 7 - 1 of 2',
+            $capped[0]['blocks'][0]['text']['text']
+        );
+
+        $this->assertStringContainsString('HackGreenville Events for the week of July 7 - 2 of 2', $capped[1]['text']);
+        $this->assertStringContainsString('Series - 2 of 4 stays', $capped[1]['text']);
+        $this->assertStringContainsString($linkText . ': ' . $calendarUrl, $capped[1]['text']);
+        $this->assertStringNotContainsString('Event C', $capped[1]['text']);
+        $this->assertSame(
+            'HackGreenville Events for the week of July 7 - 2 of 2',
+            $capped[1]['blocks'][0]['text']['text']
+        );
+
+        $lastBlock = $capped[1]['blocks'][array_key_last($capped[1]['blocks'])];
+        $this->assertSame('section', $lastBlock['type']);
+        $this->assertSame('mrkdwn', $lastBlock['text']['type']);
+        $this->assertSame('<' . $calendarUrl . '|' . $linkText . '>', $lastBlock['text']['text']);
+
+        $this->assertSame(
+            'HackGreenville Events for the week of July 7 - 1 of 3',
+            $messages[0]['blocks'][0]['text']['text']
+        );
+    }
+
+    #[Test]
+    public function it_leaves_messages_unchanged_when_they_already_fit()
+    {
+        $messages = [
+            ['blocks' => [], 'text' => 'Only message'],
+        ];
+
+        $this->assertSame($messages, $this->messageBuilderService->capMessagesWithCalendarLink($messages, 1));
+        $this->assertSame($messages, $this->messageBuilderService->capMessagesWithCalendarLink($messages, 0));
+    }
 }
