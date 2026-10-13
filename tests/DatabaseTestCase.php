@@ -11,8 +11,14 @@ class DatabaseTestCase extends TestCase
 {
     use RefreshDatabase;
 
-    // Get the text content of an element by its data-testid attribute.
-    // If the attribute is not found, returns null.
+    /**
+     * Get the text content of an element by its data-testid attribute.
+     * If the attribute is not found, returns null.
+     *
+     * @param TestResponse $response
+     * @param string $testId
+     * @return string|null
+     */
     protected function textOfTestId(TestResponse $response, string $testId): string | null
     {
         $dom = new DOMDocument();
