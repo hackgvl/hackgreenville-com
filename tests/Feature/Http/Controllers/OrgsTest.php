@@ -13,7 +13,7 @@ class OrgsTest extends DatabaseTestCase
     {
         // Arrange
         $inactive_org = Org::factory()->create([
-            'status' => OrganizationStatus::InActive,
+            'status' => OrganizationStatus::Inactive,
             'inactive_at' => null,
         ]);
 
@@ -29,7 +29,7 @@ class OrgsTest extends DatabaseTestCase
     {
         // Arrange
         $inactive_org = Org::factory()->create([
-            'status' => OrganizationStatus::InActive,
+            'status' => OrganizationStatus::Inactive,
             'inactive_at' => '2026-08-01',
         ]);
 
@@ -60,7 +60,7 @@ class OrgsTest extends DatabaseTestCase
     {
         // Arrange
         $inactive_org = Org::factory()->create([
-            'status' => OrganizationStatus::InActive,
+            'status' => OrganizationStatus::Inactive,
         ]);
 
         // Act
@@ -90,7 +90,7 @@ class OrgsTest extends DatabaseTestCase
     {
         // Arrange
         $inactive_org = Org::factory()->create([
-            'status' => OrganizationStatus::InActive,
+            'status' => OrganizationStatus::Inactive,
         ]);
         $event = Event::factory()->create([
             'organization_id' => $inactive_org->id,
