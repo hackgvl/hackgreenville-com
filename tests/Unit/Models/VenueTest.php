@@ -107,4 +107,33 @@ class VenueTest extends TestCase
         $this->assertSame('openworks', $custom->fresh()->slug);
         $this->assertNull($blank->fresh()->slug);
     }
+
+    #[Test]
+    public function slug_backfill_uses_normalize_slug(): void
+    {
+        $custom = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => 'openworks',
+        ]);
+        $canonicalized = Venue::factory()->create([
+            'name' => 'Something Else',
+            'slug' => 'Open Works',
+        ]);
+        $generated = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => null,
+        ]);
+        $unslugifiable = Venue::factory()->create([
+            'name' => '!!!',
+            'slug' => '---',
+        ]);
+
+        $migration = require database_path('migrations/2026_09_14_000000_backfill_venue_slugs.php');
+        $migration->up();
+
+        $this->assertSame('openworks', $custom->fresh()->slug);
+        $this->assertSame('open-works', $canonicalized->fresh()->slug);
+        $this->assertSame('open-works', $generated->fresh()->slug);
+        $this->assertSame('---', $unslugifiable->fresh()->slug);
+    }
 }

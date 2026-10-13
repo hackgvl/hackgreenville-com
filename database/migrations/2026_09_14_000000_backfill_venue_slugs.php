@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\Venue;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
-return new class () extends Migration {
+return new class extends Migration {
     public function up(): void
     {
         $venues = DB::table('venues')
@@ -13,13 +13,9 @@ return new class () extends Migration {
             ->get(['id', 'name', 'slug']);
 
         foreach ($venues as $venue) {
-            $slug = Str::slug((string) $venue->slug);
+            $slug = Venue::normalizeSlug($venue->slug, $venue->name);
 
-            if ($slug === '') {
-                $slug = Str::slug($venue->name);
-            }
-
-            if ($slug === '' || $slug === $venue->slug) {
+            if ($slug === null || $slug === $venue->slug) {
                 continue;
             }
 
