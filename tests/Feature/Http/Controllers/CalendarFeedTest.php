@@ -24,7 +24,7 @@ class CalendarFeedTest extends DatabaseTestCase
 
         $inactive_org = Org::factory()->create([
             'title' => 'Inactive Org',
-            'status' => OrganizationStatus::InActive,
+            'status' => OrganizationStatus::Inactive,
         ]);
 
         $this->get(route('calendar-feed.index'))
