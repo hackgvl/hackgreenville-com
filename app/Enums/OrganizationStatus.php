@@ -8,13 +8,13 @@ enum OrganizationStatus: string implements HasLabel
 {
     case Active = 'active';
 
-    case InActive = 'inactive';
+    case Inactive = 'inactive';
 
     public function getLabel(): ?string
     {
         return match ($this) {
             self::Active => 'Active',
-            self::InActive => 'In Active',
+            self::Inactive => 'Inactive',
         };
     }
 }
