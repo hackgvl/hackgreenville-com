@@ -2,6 +2,8 @@
 
 namespace Tests;
 
+use DOMDocument;
+use DOMXPath;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\TestResponse;
 
@@ -13,10 +15,10 @@ class DatabaseTestCase extends TestCase
     // If the attribute is not found, returns null.
     protected function textOfTestId(TestResponse $response, string $testId): string | null
     {
-        $dom = new \DOMDocument();
+        $dom = new DOMDocument();
         @$dom->loadHTML($response->getContent());
 
-        $node = (new \DOMXPath($dom))
+        $node = (new DOMXPath($dom))
             ->query("//*[@data-testid='{$testId}']")
             ->item(0);
 
