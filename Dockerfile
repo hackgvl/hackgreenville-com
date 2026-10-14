@@ -57,9 +57,13 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/laravel-scheduler && \
     chmod +x /etc/s6-overlay/s6-rc.d/laravel-scheduler/run && \
     # Set service type to longrun
     echo 'longrun' > /etc/s6-overlay/s6-rc.d/laravel-scheduler/type && \
-    # Add to user bundle so it starts automatically
-    mkdir -p /etc/s6-overlay/s6-rc.d/user/contents.d && \
-    touch /etc/s6-overlay/s6-rc.d/user/contents.d/laravel-scheduler
+    # Register on the user bundle so it starts automatically.
+    # s6-overlay 3.2.3.2+ (serversideup/php v5) reads
+    # /etc/s6-overlay/user-bundles.d. Do not create s6-rc.d/user:
+    # rc.init then tries to write that bundle's type file at runtime as
+    # www-data, gets "Permission denied", and stops the container.
+    mkdir -p /etc/s6-overlay/user-bundles.d/user/contents.d && \
+    touch /etc/s6-overlay/user-bundles.d/user/contents.d/laravel-scheduler
 
 # Create S6 oneshot service for deploy init tasks (runs once on container start)
 RUN mkdir -p /etc/s6-overlay/s6-rc.d/deploy-init && \
@@ -67,7 +71,8 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/deploy-init && \
     printf '#!/command/with-contenv bash\ncd /var/www/html\nexec php artisan deploy:railway\n' \
         > /etc/s6-overlay/s6-rc.d/deploy-init/up && \
     chmod +x /etc/s6-overlay/s6-rc.d/deploy-init/up && \
-    touch /etc/s6-overlay/s6-rc.d/user/contents.d/deploy-init
+    mkdir -p /etc/s6-overlay/user-bundles.d/user/contents.d && \
+    touch /etc/s6-overlay/user-bundles.d/user/contents.d/deploy-init
 
 EXPOSE 8080
 
