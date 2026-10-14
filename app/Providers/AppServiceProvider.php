@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
 
             if ($view = $paths['blade'] ?? null) {
                 file_put_contents($view, str_replace(
-                    '@{{ config("app.url") }}',
+                    config("scribe.base_url"),
                     '{{ config("app.url") }}',
                     file_get_contents($view),
                 ));
