@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Knuckles\Scribe\Scribe;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,21 @@ class AppServiceProvider extends ServiceProvider
         Event::listen(UserCreated::class, EmailNewUser::class);
 
         $this->registerQueryMacros();
+
+        Scribe::afterGenerating(function (array $paths) {
+
+            // Scribe renders Blade in base_url for code samples but not for the introductory paragraph,
+            // so the escaped `@{{ ... }}` from config/scribe.php survives there. Unescape it
+            // so the Base URL resolves per environment like the rest of the page.
+
+            if ($view = $paths['blade'] ?? null) {
+                file_put_contents($view, str_replace(
+                    config("scribe.base_url"),
+                    '{{ config("app.url") }}',
+                    file_get_contents($view),
+                ));
+            }
+        });
     }
 
     public function register(): void

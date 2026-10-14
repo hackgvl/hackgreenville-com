@@ -5,7 +5,7 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "{{ config(\"app.url\") }}"
+            "value": "@{{ config(\"app.url\") }}"
         }
     ],
     "info": {

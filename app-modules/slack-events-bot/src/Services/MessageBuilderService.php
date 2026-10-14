@@ -8,6 +8,8 @@ use Illuminate\Support\Collection;
 
 class MessageBuilderService
 {
+    private const CALENDAR_LINK_TEXT = 'View the events calendar';
+
     public function __construct(private EventService $eventService)
     {
     }
@@ -85,6 +87,35 @@ class MessageBuilderService
     }
 
     /**
+     * Keep only the messages already posted for this week, and append a calendar
+     * link to the last one.
+     *
+     * Posting anything beyond the existing posts would land after a newer week's
+     * messages and break channel order. Events that do not fit stay on the calendar.
+     *
+     * @param array<int, array{blocks: array<int, array<string, mixed>>, text: string}> $messages
+     * @return array<int, array{blocks: array<int, array<string, mixed>>, text: string}>
+     */
+    public function capMessagesWithCalendarLink(array $messages, int $existingCount): array
+    {
+        if ($existingCount < 1 || $existingCount >= count($messages)) {
+            return $messages;
+        }
+
+        $kept = array_values(array_slice($messages, 0, $existingCount));
+        $total = count($kept);
+
+        foreach ($kept as $index => $message) {
+            $kept[$index] = $this->normalizeChunkHeader($message, $index + 1, $total);
+        }
+
+        $lastIndex = $total - 1;
+        $kept[$lastIndex] = $this->appendCalendarLink($kept[$lastIndex]);
+
+        return $kept;
+    }
+
+    /**
      * Builds the header block and text for a Slack message.
      *
      * @param Carbon $weekStart The start of the week.
@@ -138,6 +169,55 @@ class MessageBuilderService
             'text' => $text,
             'text_length' => mb_strlen($text),
         ];
+    }
+
+    /**
+     * @param array{blocks: array<int, array<string, mixed>>, text: string} $message
+     * @return array{blocks: array<int, array<string, mixed>>, text: string}
+     */
+    private function normalizeChunkHeader(array $message, int $index, int $total): array
+    {
+        $message['text'] = $this->rewriteChunkLabel($message['text'], $index, $total);
+
+        if (($message['blocks'][0]['type'] ?? null) === 'header') {
+            $headerText = $message['blocks'][0]['text']['text'] ?? '';
+            $message['blocks'][0]['text']['text'] = $this->rewriteChunkLabel($headerText, $index, $total);
+        }
+
+        return $message;
+    }
+
+    private function rewriteChunkLabel(string $text, int $index, int $total): string
+    {
+        $rewritten = preg_replace_callback(
+            '/HackGreenville Events for the week of .+? - \d+ of \d+/',
+            fn (array $matches) => preg_replace('/\d+ of \d+$/', $index . ' of ' . $total, $matches[0]),
+            $text,
+            1
+        );
+
+        return $rewritten ?? $text;
+    }
+
+    /**
+     * @param array{blocks: array<int, array<string, mixed>>, text: string} $message
+     * @return array{blocks: array<int, array<string, mixed>>, text: string}
+     */
+    private function appendCalendarLink(array $message): array
+    {
+        $url = route('calendar.index');
+
+        $message['blocks'][] = [
+            'type' => 'section',
+            'text' => [
+                'type' => 'mrkdwn',
+                'text' => '<' . $url . '|' . self::CALENDAR_LINK_TEXT . '>',
+            ],
+        ];
+
+        $message['text'] = mb_rtrim($message['text'], "\n") . "\n\n" . self::CALENDAR_LINK_TEXT . ': ' . $url;
+
+        return $message;
     }
 
 }

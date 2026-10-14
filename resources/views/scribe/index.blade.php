@@ -27,7 +27,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost:8000";
+        var tryItOutBaseUrl = "{{ config("app.url") }}";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -138,14 +138,14 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
+    --get "{{ config("app.url") }}/api/v0/events?start_date=2026-01-01&amp;end_date=2100-12-31" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v0/events"
+    "{{ config("app.url") }}/api/v0/events"
 );
 
 const params = {
@@ -171,7 +171,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/v0/events'
+url = '{{ config("app.url") }}/api/v0/events'
 params = {
   'start_date': '2026-01-01',
   'end_date': '2100-12-31',
@@ -347,14 +347,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v0/orgs" \
+    --get "{{ config("app.url") }}/api/v0/orgs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v0/orgs"
+    "{{ config("app.url") }}/api/v0/orgs"
 );
 
 const headers = {
@@ -373,7 +373,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/v0/orgs'
+url = '{{ config("app.url") }}/api/v0/orgs'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -513,14 +513,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
+    --get "{{ config("app.url") }}/api/v1/events?per_page=50&amp;page=1&amp;start_date=2026-01-01&amp;end_date=2100-12-31&amp;tags[]=16&amp;sort_by=event_name&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/events"
+    "{{ config("app.url") }}/api/v1/events"
 );
 
 const params = {
@@ -551,7 +551,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/v1/events'
+url = '{{ config("app.url") }}/api/v1/events'
 params = {
   'per_page': '50',
   'page': '1',
@@ -899,14 +899,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "{{ config("app.url") }}/api/v1/organizations?per_page=50&amp;page=1&amp;established_from=&amp;established_to=&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations"
+    "{{ config("app.url") }}/api/v1/organizations"
 );
 
 const params = {
@@ -936,7 +936,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/v1/organizations'
+url = '{{ config("app.url") }}/api/v1/organizations'
 params = {
   'per_page': '50',
   'page': '1',
@@ -1224,14 +1224,14 @@ sourced from community-maintained Google Spreadsheets and served as GeoJSON.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/map-layers?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
+    --get "{{ config("app.url") }}/api/v1/map-layers?per_page=50&amp;page=1&amp;sort_by=title&amp;sort_direction=asc" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/map-layers"
+    "{{ config("app.url") }}/api/v1/map-layers"
 );
 
 const params = {
@@ -1259,7 +1259,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/v1/map-layers'
+url = '{{ config("app.url") }}/api/v1/map-layers'
 params = {
   'per_page': '50',
   'page': '1',
@@ -1293,7 +1293,7 @@ response.json()</code></pre></div>
             &quot;center_longitude&quot;: -82.3985,
             &quot;zoom_level&quot;: 10,
             &quot;geojson_remote_link&quot;: &quot;http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure&quot;,
-            &quot;geojson_local_url&quot;: &quot;http://localhost:8000/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
+            &quot;geojson_local_url&quot;: &quot;{{ config("app.url") }}/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
             &quot;contribute_link&quot;: &quot;https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html&quot;,
             &quot;raw_data_link&quot;: &quot;http://vonrueden.com/&quot;,
             &quot;maintainers&quot;: [
@@ -1510,14 +1510,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/map-layers/breweries/geojson" \
+    --get "{{ config("app.url") }}/api/v1/map-layers/breweries/geojson" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/map-layers/breweries/geojson"
+    "{{ config("app.url") }}/api/v1/map-layers/breweries/geojson"
 );
 
 const headers = {
@@ -1536,7 +1536,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/v1/map-layers/breweries/geojson'
+url = '{{ config("app.url") }}/api/v1/map-layers/breweries/geojson'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
