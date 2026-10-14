@@ -22,7 +22,7 @@ class OrgTest extends DatabaseTestCase
     public function test_scope_active_does_not_pull_inactive_organization()
     {
         $org = Org::factory()->create([
-            'status' => OrganizationStatus::InActive
+            'status' => OrganizationStatus::Inactive
         ]);
 
         $result = Org::query()->active()->first();
