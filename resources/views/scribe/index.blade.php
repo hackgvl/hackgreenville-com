@@ -1293,7 +1293,7 @@ response.json()</code></pre></div>
             &quot;center_longitude&quot;: -82.3985,
             &quot;zoom_level&quot;: 10,
             &quot;geojson_remote_link&quot;: &quot;http://www.cruickshank.com/adipisci-quidem-nostrum-qui-commodi-incidunt-iure&quot;,
-            &quot;geojson_local_url&quot;: &quot;{{ config("app.url") }}/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
+            &quot;geojson_local_url&quot;: &quot;http://localhost:8000/api/v1/map-layers/quos-velit-et-fugiat-sunt-nihil-accusantium-harum/geojson&quot;,
             &quot;contribute_link&quot;: &quot;https://mclaughlin.com/ipsum-nostrum-omnis-autem-et-consequatur-aut-dolores-enim.html&quot;,
             &quot;raw_data_link&quot;: &quot;http://vonrueden.com/&quot;,
             &quot;maintainers&quot;: [
