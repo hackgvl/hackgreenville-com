@@ -11,7 +11,7 @@
       - [Running the Database](#running-the-database)
       - [Installing Dependencies and Seeding Database](#installing-dependencies-and-seeding-database)
       - [Generate App Key](#generate-app-key)
-      - [Starting the Web Application](#starting-the-web-application)
+  - [Quick Start](#quick-start)
       - [Import / Seed the Organizations and Events Data](#import--seed-the-organizations-and-events-data)
     - [Option 2 - Run via VS Code and GitHub Codespaces Dev Container](#option-2---run-via-vs-code-and-github-codespaces-dev-container)
     - [Option 3 - Run via Docker \& Laravel Sail](#option-3---run-via-docker--laravel-sail)
@@ -327,7 +327,7 @@ docker exec -d hackgreenville yarn dev
 
 #### Troubleshooting
 
-If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP`.
+If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP` and `WWWUSER`.
 I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
 
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
