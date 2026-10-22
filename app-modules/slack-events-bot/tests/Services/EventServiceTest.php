@@ -17,7 +17,7 @@ class EventServiceTest extends DatabaseTestCase
     {
         parent::setUp();
 
-        $this->eventService = new EventService;
+        $this->eventService = new EventService();
     }
 
     #[Test]

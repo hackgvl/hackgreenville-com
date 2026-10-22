@@ -39,7 +39,7 @@ class SlackEventsBotServiceProvider extends ServiceProvider
         // Schedule tasks
         $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
             $schedule->command('slack:delete-old-messages')->daily();
-            $schedule->job(new CheckEventsApi)->hourly();
+            $schedule->job(new CheckEventsApi())->hourly();
         });
     }
 }

@@ -11,7 +11,7 @@
       - [Running the Database](#running-the-database)
       - [Installing Dependencies and Seeding Database](#installing-dependencies-and-seeding-database)
       - [Generate App Key](#generate-app-key)
-      - [Starting the Web Application](#starting-the-web-application)
+  - [Quick Start](#quick-start)
       - [Import / Seed the Organizations and Events Data](#import--seed-the-organizations-and-events-data)
     - [Option 2 - Run via VS Code and GitHub Codespaces Dev Container](#option-2---run-via-vs-code-and-github-codespaces-dev-container)
     - [Option 3 - Run via Docker \& Laravel Sail](#option-3---run-via-docker--laravel-sail)
@@ -186,9 +186,6 @@ Run the following script to install dependencies, run database migrations, and r
 sh scripts/handle-deploy-update.sh
 ```
 
-The database migrations will generate a default user *admin@admin.com* with a password of _admin_ and fill the states table.
-BE SURE TO CHANGE OR REMOVE THIS DEFAULT ADMIN ACCOUNT AND PASSWORD outside of localhost development
-
 #### Generate App Key
 
 Once the app is running, run the following command to generate your [app encryption key](https://laravel.com/docs/10.x/encryption):
@@ -330,7 +327,7 @@ docker exec -d hackgreenville yarn dev
 
 #### Troubleshooting
 
-If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP`.
+If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP` and `WWWUSER`.
 I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
 
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
@@ -361,7 +358,7 @@ docker exec "hackgreenville" /bin/bash -c "php artisan import:events"
 
 - Run `php artisan` to see a full list of availabe commands.
 - The API explorer can be viewed at http://localhost/docs/api and can be recompiled with `php artisan scribe:generate`
-- Running tests `php artisan test`
+- Running tests `php artisan test` - By default, Laravel tests run independent of database seeders, but you can explicitly enable them within a test, if needed.
 - Refreshing events from the remote API: `php artisan import:events`
 - Run database migrations: `php artisan migrate --seed`
 - Completely erase and rebuild the database: [Danger Zone] `php artisan migrate:fresh --seed` [/Danger Zone]
@@ -373,7 +370,9 @@ Telescope is a Laravel Debugging tool that allows you to see all the requests ma
 # Environment Variables
 
 - The sample .env.example OR .env.docker is used as a template for new projects. A .env file must exist based on one of these files, based on how the app is running (Native or Docker)
-- The .env.ci and .env.testing are used for their respective tasks.
+- The .env.ci and .env.testing are used for test suite checks for:
+  - _.env.ci_ | Github Actions runs of `php artisan test --env=ci` against MySQL in the test container.
+  - _.env.testing_ | fast, local runs of `php artisan test` against SQLite on dev.
 - Be sure to clear the configuration cache after any changes to .env using `php artisan config:clear && php artisan config:cache`
 - Additional defaults may be as defined in _config/app.php_
 - Debugging can be enabled in development by setting `TELESCOPE_ENABLED=TRUE` in your local `.env`
@@ -406,9 +405,14 @@ The Meetup OAuth client private key file can be stored anywhere on your machine.
 # Admin Panel
 
 - The admin panel is built in [Filament](https://filamentphp.com/docs/3.x/panels/resources/getting-started).
-- After [seeding the DB](#interacting-with-your-running-app), you'll have a default set of login credentials of admin@admin.com, so BE SURE TO CHANGE THE PASSWORD
 - To view the admin panel routes / path , run: `artisan route:list --name=filament`, or find the configured value in the [.env](#environment-variables).
-- See the [initial PR](https://github.com/hackgvl/hackgreenville-com/pull/231) for more usage notes
+- User management can be achieved through Artisan commands.
+  - Commands are defined in app/Console/Commands/ and can be viewed using `php artisan list app:user`, such as:
+  - `php artisan app:user:create <email> <first_name> <last_name>`
+  - `php artisan app:user:activate <email>`
+  - `php artisan app:user:deactivate <email>`
+  - `php artisan app:user:delete <email>`
+  - `php artisan app:user:reset-password <email>`
 - Filament provides commands for generating [CRUD resources](https://filamentphp.com/docs/3.x/panels/resources/getting-started) and [individual pages](https://filamentphp.com/docs/3.x/panels/pages).
 
 # Synchronizing Your Fork with the Latest Development Code Changes

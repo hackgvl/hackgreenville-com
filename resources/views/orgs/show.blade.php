@@ -42,11 +42,13 @@
             <div class="flex items-center gap-3 flex-wrap mb-1">
                 <h1 class="text-3xl font-bold text-gray-900">{{ $org->title }}</h1>
                 @if(!$org->isActive())
-                    <span class="inline-block text-gray-400 text-xs font-semibold border border-gray-300 px-2 py-0.5 rounded">Inactive</span>
+                    <span data-testid="org-inactive-badge" class="inline-block text-xs font-semibold uppercase tracking-wide bg-amber-100 text-amber-800 border border-amber-300 px-2 py-0.5 rounded">
+                        Inactive{{ $org->inactive_at ? ' as of ' . $org->inactive_at->year : '' }}
+                    </span>
                 @endif
             </div>
             <p class="text-sm text-gray-500">
-                {{ $org->focus_area }} &middot; {{ $org->city }} &middot; Est. {{ $org->established_at->year }}@if($org->inactive_at) &middot; Inactive {{ $org->inactive_at->year }}@endif
+                {{ $org->focus_area }} &middot; {{ $org->city }} &middot; Est. {{ $org->established_at->year }}
             </p>
         </div>
 
@@ -87,20 +89,22 @@
                     <span class="text-gray-500 sm:w-36 shrink-0">Type</span>
                     <span class="text-gray-700">{{ $org->organization_type }}</span>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center py-2.5 gap-1 sm:gap-4">
-                    <span class="text-gray-500 sm:w-36 shrink-0">Subscribe</span>
-                    <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="text-gray-500 hover:text-primary no-underline inline-flex items-center gap-1.5 transition-colors">
-                        <x-lucide-rss aria-hidden="true" class="w-3.5 h-3.5"/> Calendar feed
-                    </a>
-                </div>
+                @if($org->isActive())
+                    <div class="flex flex-col sm:flex-row sm:items-center py-2.5 gap-1 sm:gap-4">
+                        <span data-testid="org-calendar-feed-subscribe-link" class="text-gray-500 sm:w-36 shrink-0">Subscribe</span>
+                        <a href="{{ route('calendar-feed.index', ['orgs' => $org->id]) }}" class="text-gray-500 hover:text-primary no-underline inline-flex items-center gap-1.5 transition-colors">
+                            <x-lucide-rss aria-hidden="true" class="w-3.5 h-3.5"/> Calendar feed
+                        </a>
+                    </div>
+                @endif
             </div>
         </section>
 
         {{-- Upcoming Events --}}
-        @if($org->events->isNotEmpty())
+        @if($org->events->isNotEmpty() && $org->isActive())
             <section>
                 <div class="flex items-center gap-3 mb-4">
-                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Upcoming Events</h2>
+                    <h2 data-testid="org-upcoming-events" class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">Upcoming Events</h2>
                     <div class="h-px bg-gray-200 flex-1"></div>
                     <span class="text-xs text-gray-300 font-medium tabular-nums">{{ $org->events->count() }}</span>
                 </div>

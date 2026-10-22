@@ -47,7 +47,7 @@ class JoinMessage extends Notification implements ShouldQueue
      */
     public function toSlack($notifiable)
     {
-        return (new SlackMessage)
+        return (new SlackMessage())
             ->success()
             ->content(':traffic_light: Join HG Slack Request :traffic_light:')
             ->attachment(function ($attachment) {
