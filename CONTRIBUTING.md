@@ -245,37 +245,20 @@ See [VS Code + GitHub Codespaces Dev Container documentation](https://github.com
 
 </details>
 
-### Option 3 - Run via Docker & Laravel Sail
+### Option 3 - Run via Docker
 
-<details><summary>Docker / Laravel Sail Details</summary>
+<details><summary>Docker Details</summary>
 
 The Docker setup of this project should only be done for advanced users, or if needed for runtime compatibility issues.
+
+Local Docker uses the `development` stage of the project's root `Dockerfile`, the same image production is built from, minus the production-only startup tasks. Your checkout is mounted into the container, so code changes show up without rebuilding.
 
 #### Copying Docker Environment Variables
 
 First, you need to make a copy of the `.env.docker` file and rename it to `.env` at the
 project root. This can be accomplished by running `cp .env.docker .env` from the project root.
 
-#### Installing the Dockerfile
-
-To run the Docker container for the web application, you'll need to generate the Laravel Sail docker files. You can generate the Laravel Sail docker files with either of the two options:
-
-##### Option A: Using Composer
-
-If you have `composer` installed on your machine, you can run the following script to install the application dependencies, including Laravel Sail.
-
-```bash
-composer install
-```
-
-##### Option B: Installing with Laravel Sail
-
-If you do not have `composer` installed on your machine, you can install Laravel Sail directly using the following scripts:
-
-```bash
-mkdir -p vendor/laravel
-git clone https://github.com/laravel/sail.git vendor/laravel/sail/
-```
+Then set `USER_ID` and `GROUP_ID` in `.env` to the output of `id -u` and `id -g`, so files the container writes into your checkout are owned by you. On macOS these are usually `501` and `20`.
 
 #### Running the Docker Services
 
@@ -285,9 +268,17 @@ To run the Docker services, run Docker Compose from the root directory:
 docker-compose -f docker-compose.local.yml up --build
 ```
 
-#### Conditional: Install Application Dependencies
+The site is served at [http://localhost](http://localhost). Set `APP_PORT` in `.env` to use a different host port.
 
-If you followed `Option B` on the `Installing the Dockerfile` step, you'll need to run `composer install` on the web application Docker container to install the rest of the application dependencies. This can be done by running the following:
+To pick up a new release of the base image (for example, a PHP security patch), rebuild with `--pull`:
+
+```bash
+docker-compose -f docker-compose.local.yml build --pull
+```
+
+#### Install Application Dependencies
+
+Install the PHP dependencies inside the web application container:
 
 ```bash
 docker exec -it hackgreenville composer install
@@ -327,8 +318,8 @@ docker exec -d hackgreenville yarn dev
 
 #### Troubleshooting
 
-If you get file permission errors, please make sure permissions are set the UID `1337` and the GUID specified in `.env` by `WWWGROUP` and `WWWUSER`.
-I.e. if there are errors opening the log file, run `sudo chown -R 1337:www-data storage/`, if `www-data` is the group specified by `WWWGROUP` in `.env`.
+If you get file permission errors, make sure `USER_ID` and `GROUP_ID` in `.env` match `id -u` and `id -g`, then rebuild with `docker-compose -f docker-compose.local.yml up --build`.
+Files created by an earlier container with different IDs can be reclaimed with `sudo chown -R "$(id -u):$(id -g)" storage/ bootstrap/cache/`.
 
 If you run into "The Mix manifest does not exist", then run `docker exec -it hackgreenville php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` and `docker exec -it hackgreenville npm run dev`.
 

@@ -1,0 +1,41 @@
+# Keeps local-only files out of the Docker build context, so an image built
+# from a working checkout matches one built from a clean clone (as Railway does).
+
+# Secrets: production gets these from environment variables, never the image
+.env
+.env.*
+*.pem
+/storage/*.key
+
+# Rebuilt inside the image by composer install / yarn install / yarn build
+/vendor
+/app-modules/*/vendor
+/node_modules
+/public/build
+/public/hot
+/public/storage
+
+# Local Docker volumes
+/mysql
+/redis
+
+# Local runtime state; keep the .gitignore files so the directories still exist
+/bootstrap/cache/*.php
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/database/database.sqlite*
+/.scribe
+/.phpunit.result.cache
+
+# Version control, CI, editor, and OS files
+/.git
+/.github
+/.idea
+/.vscode
+.DS_Store
+*.log
