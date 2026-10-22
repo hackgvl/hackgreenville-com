@@ -7,6 +7,7 @@ use App\Models\Event;
 use HackGreenville\Api\Http\Requests\EventApiV1Request;
 use HackGreenville\Api\Resources\Events\V1\EventCollection;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 
 class EventApiV1Controller extends Controller
 {
@@ -46,6 +47,18 @@ class EventApiV1Controller extends Controller
             })
             ->when($request->filled('max_rsvp'), function (Builder $query) use ($request) {
                 $query->where('rsvp_count', '<=', $request->integer('max_rsvp'));
+            })
+            ->when($request->filled('venue_slug'), function (Builder $query) use ($request) {
+                // Str::slug() also strips LIKE metacharacters (% and _), so extra wildcard escaping is unnecessary.
+                $normalized = Str::slug($request->input('venue_slug'));
+
+                if ($normalized === '') {
+                    return $query->whereRaw('0 = 1');
+                }
+
+                $query->whereHas('venue', function (Builder $query) use ($normalized) {
+                    $query->whereLike('slug', '%' . $normalized . '%');
+                });
             })
             ->when($request->filled('venue_city'), function (Builder $query) use ($request) {
                 $query->whereHas('venue', function (Builder $query) use ($request) {

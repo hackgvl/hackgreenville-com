@@ -22,10 +22,30 @@ class VenueData extends Data
     ) {
     }
 
+    /**
+     * Reuse a venue with this name, or with the slug derived from this name.
+     *
+     * Address and coordinates are stored only when creating a venue. Matching
+     * on the full address created a new row whenever lat/lng or street
+     * formatting drifted. A custom admin slug still matches through the name.
+     */
     public function resolveVenue(): Venue
     {
-        return Venue::updateOrCreate([
+        $slug = Venue::normalizeSlug(null, $this->name);
+
+        $existing = Venue::query()->where('name', $this->name)->orderBy('id')->first();
+
+        if ( ! $existing && $slug !== null) {
+            $existing = Venue::query()->where('slug', $slug)->orderBy('id')->first();
+        }
+
+        if ($existing) {
+            return $existing;
+        }
+
+        return Venue::create([
             'name' => $this->name,
+            'slug' => $slug,
             'address' => $this->address,
             'zipcode' => $this->zip,
             'city' => $this->city,
