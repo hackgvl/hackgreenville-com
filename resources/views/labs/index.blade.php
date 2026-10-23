@@ -54,15 +54,22 @@
 						<div class="border-t border-gray-100 bg-gray-50/50">
 							@foreach($project->children as $child)
 								@php $child = (object) $child; @endphp
-								<a href="{{ $child->link }}" rel="noopener" target="_blank"
-								   class="group flex items-center gap-3 px-5 py-3 pl-[4.25rem] hover:bg-blue-50/40 transition-colors no-underline border-b border-gray-100 last:border-b-0">
-									<div class="flex-1 min-w-0">
-										<span class="text-sm text-gray-700 font-medium group-hover:text-primary transition-colors">{{ $child->name }}</span>
-										<span class="text-gray-500 mx-1.5">&middot;</span>
-										<span class="text-sm text-gray-500">{{ $child->description }}</span>
-									</div>
-									<x-lucide-arrow-up-right aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 group-hover:text-primary shrink-0 transition-colors"/>
-								</a>
+								<div class="border-b border-gray-100 last:border-b-0">
+									<a href="{{ $child->link }}" rel="noopener" target="_blank"
+									   class="group flex items-center gap-3 px-5 py-3 pl-[4.25rem] hover:bg-blue-50/40 transition-colors no-underline">
+										<div class="flex-1 min-w-0">
+											<span class="text-sm text-gray-700 font-medium group-hover:text-primary transition-colors">{{ $child->name }}</span>
+											<span class="text-gray-500 mx-1.5">&middot;</span>
+											<span class="text-sm text-gray-500">{{ $child->description }}</span>
+										</div>
+										<x-lucide-arrow-up-right aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 group-hover:text-primary shrink-0 transition-colors"/>
+									</a>
+									@if (! empty($child->installUrl))
+										<div class="px-5 pb-3 pl-[4.25rem]">
+											@include('slack-events-bot::add-to-slack', ['url' => $child->installUrl])
+										</div>
+									@endif
+								</div>
 							@endforeach
 						</div>
 					@endif
