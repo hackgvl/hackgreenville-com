@@ -86,21 +86,21 @@ class SlackWorkspaceTest extends DatabaseTestCase
     {
         Log::spy();
 
-        $valid = new SlackWorkspace;
+        $valid = new SlackWorkspace();
         $valid->setRawAttributes([
             'access_token' => Crypt::encryptString('xoxb-ok'),
             'team_id' => 'T_OK',
         ]);
         $this->assertSame('xoxb-ok', $valid->access_token);
 
-        $empty = new SlackWorkspace;
+        $empty = new SlackWorkspace();
         $empty->setRawAttributes([
             'access_token' => '',
             'team_id' => 'T_EMPTY',
         ]);
         $this->assertNull($empty->access_token);
 
-        $missing = new SlackWorkspace;
+        $missing = new SlackWorkspace();
         $missing->setRawAttributes([
             'access_token' => null,
             'team_id' => 'T_NULL',
