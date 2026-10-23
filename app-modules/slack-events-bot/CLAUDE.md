@@ -21,7 +21,7 @@ Posts weekly HackGreenville event summaries to configured Slack channels, with a
 
 ## Gotchas
 - **Message spillover**: If a week's message count increases but a newer week already has messages posted, the bot does not post additional messages. That would place them after the newer week and break chronological order. It updates the posts that already exist and appends "View the events calendar" to the last one, linking to `/calendar`.
-- **Access token encryption**: `SlackWorkspace->access_token` is encrypted with `Crypt::encryptString()` via model accessors. Requires valid `APP_KEY`.
+- **Access token encryption**: `SlackWorkspace->access_token` is encrypted with `Crypt::encryptString()` via model accessors. If the ciphertext cannot be decrypted, reads return null and the bot skips that workspace. The saved ciphertext is left in place. `/slack/install` overwrites it with a new token.
 - **Request signature validation**: All webhook requests validated via `ValidateSlackRequest` middleware (HMAC-SHA256, 5-minute timestamp window). Prevents replay attacks.
 - **Dev command normalization**: `/dev_add_channel` and `/dev_remove_channel` are auto-normalized to `/add_channel` and `/remove_channel` in the controller.
 - **Next week posting**: Next week's events are posted 5 days early (starting Tuesday), not at the start of that week.

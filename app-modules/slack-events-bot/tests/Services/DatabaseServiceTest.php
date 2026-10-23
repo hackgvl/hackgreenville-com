@@ -8,6 +8,8 @@ use HackGreenville\SlackEventsBot\Models\SlackCooldown;
 use HackGreenville\SlackEventsBot\Models\SlackMessage;
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\DatabaseTestCase;
 
@@ -19,7 +21,7 @@ class DatabaseServiceTest extends DatabaseTestCase
     {
         parent::setUp();
 
-        $this->databaseService = new DatabaseService();
+        $this->databaseService = new DatabaseService;
     }
 
     #[Test]
@@ -460,5 +462,34 @@ class DatabaseServiceTest extends DatabaseTestCase
         // Retrieve the updated workspace to check the decrypted token
         $retrievedUpdatedWorkspace = SlackWorkspace::where('team_id', 'T123')->first();
         $this->assertEquals('xoxb-updated-token', $retrievedUpdatedWorkspace->access_token);
+    }
+
+    #[Test]
+    public function it_overwrites_an_undecryptable_workspace_token_on_reinstall(): void
+    {
+        DB::table('slack_workspaces')->insert([
+            'team_id' => 'T123',
+            'team_name' => 'Old Team',
+            'access_token' => 'not-a-valid-encrypted-string',
+            'bot_user_id' => 'BOLD',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $workspace = $this->databaseService->createOrUpdateWorkspace([
+            'team' => [
+                'id' => 'T123',
+                'name' => 'Reinstalled Team',
+            ],
+            'access_token' => 'xoxb-reinstalled-token',
+            'bot_user_id' => 'BNEW',
+        ]);
+
+        $rawToken = DB::table('slack_workspaces')->where('team_id', 'T123')->value('access_token');
+
+        $this->assertSame('xoxb-reinstalled-token', $workspace->access_token);
+        $this->assertNotSame('not-a-valid-encrypted-string', $rawToken);
+        $this->assertSame('xoxb-reinstalled-token', Crypt::decryptString($rawToken));
+        $this->assertSame(1, SlackWorkspace::where('team_id', 'T123')->count());
     }
 }

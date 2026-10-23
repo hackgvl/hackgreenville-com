@@ -3,6 +3,7 @@
 namespace HackGreenville\SlackEventsBot\Models;
 
 use HackGreenville\SlackEventsBot\Database\Factories\SlackWorkspaceFactory;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Crypt;
@@ -23,10 +24,22 @@ class SlackWorkspace extends Model
 
     /**
      * Decrypt the access token when getting it.
+     *
+     * Ciphertext from another APP_KEY raises "The MAC is invalid." Return null
+     * and leave the row alone so a reinstall can overwrite it, and so restoring
+     * the previous APP_KEY can still decrypt it.
      */
-    public function getAccessTokenAttribute(string $value): string
+    public function getAccessTokenAttribute(?string $value): ?string
     {
-        return Crypt::decryptString($value);
+        if ($value === null || $value === '') {
+            return null;
+        }
+
+        try {
+            return Crypt::decryptString($value);
+        } catch (DecryptException) {
+            return null;
+        }
     }
 
     protected static function newFactory()
