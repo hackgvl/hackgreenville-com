@@ -5,11 +5,11 @@ namespace HackGreenville\SlackEventsBot\Http\Controllers;
 use HackGreenville\SlackEventsBot\Jobs\CheckEventsApi;
 use HackGreenville\SlackEventsBot\Services\AuthService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
+use HackGreenville\SlackEventsBot\Services\InstallService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 class SlackController
 {
@@ -19,21 +19,11 @@ class SlackController
     ) {
     }
 
-    public function install()
+    public function install(InstallService $installService)
     {
-        $state = Str::random(40);
-        session(['slack_oauth_state' => $state]);
-
-        $clientId = config('slack-events-bot.client_id');
-        $scopes = implode(',', config('slack-events-bot.scopes'));
-
-        $url = "https://slack.com/oauth/v2/authorize?" . http_build_query([
-            'client_id' => $clientId,
-            'scope' => $scopes,
-            'state' => $state,
-        ]);
-
-        return response(view('slack-events-bot::install', ['url' => $url]));
+        return response(view('slack-events-bot::install', [
+            'url' => $installService->authorizationUrl(),
+        ]));
     }
 
     public function auth(Request $request): Response

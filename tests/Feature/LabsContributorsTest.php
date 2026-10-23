@@ -35,6 +35,25 @@ class LabsContributorsTest extends TestCase
         $response->assertDontSee('Built by the Community');
     }
 
+    public function test_labs_page_embeds_slack_install_button(): void
+    {
+        config()->set('slack-events-bot.client_id', 'test_client_id');
+        config()->set('slack-events-bot.scopes', ['commands', 'chat:write']);
+
+        $response = $this->get('/labs');
+
+        $response->assertOk();
+        $response->assertSeeInOrder([
+            'Slack Events Bot',
+            'https://slack.com/oauth/v2/authorize?',
+            'client_id=test_client_id',
+            'Add to Slack',
+            'https://platform.slack-edge.com/img/add_to_slack.png',
+        ], false);
+        $response->assertSee('state=' . session('slack_oauth_state'), false);
+        $response->assertSessionHas('slack_oauth_state');
+    }
+
     public function test_command_fetches_and_caches_contributors(): void
     {
         $this->fakeGitHub(['hackgreenville-com', 'OpenData'], [
