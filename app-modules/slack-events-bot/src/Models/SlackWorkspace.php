@@ -7,6 +7,7 @@ use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 class SlackWorkspace extends Model
 {
@@ -38,6 +39,11 @@ class SlackWorkspace extends Model
         try {
             return Crypt::decryptString($value);
         } catch (DecryptException) {
+            // Info stays out of the Slack log webhook, which records warning and above.
+            Log::info('Slack workspace access token could not be decrypted.', [
+                'team_id' => $this->team_id,
+            ]);
+
             return null;
         }
     }

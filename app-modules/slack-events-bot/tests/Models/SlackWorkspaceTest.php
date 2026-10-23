@@ -5,6 +5,7 @@ namespace HackGreenville\SlackEventsBot\Tests\Models;
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\DatabaseTestCase;
 
@@ -58,6 +59,8 @@ class SlackWorkspaceTest extends DatabaseTestCase
             'access_token' => 'not-a-valid-encrypted-string',
         ]);
 
+        Log::spy();
+
         $loaded = SlackWorkspace::query()->findOrFail($workspace->id);
 
         $this->assertNull($loaded->access_token);
@@ -65,6 +68,48 @@ class SlackWorkspaceTest extends DatabaseTestCase
             'not-a-valid-encrypted-string',
             DB::table('slack_workspaces')->where('id', $workspace->id)->value('access_token')
         );
+
+        Log::shouldHaveReceived('info')->once()->withArgs(function (string $message, array $context) use ($workspace) {
+            $payload = $message . json_encode($context);
+
+            return $message === 'Slack workspace access token could not be decrypted.'
+                && ($context['team_id'] ?? null) === $workspace->team_id
+                && ! array_key_exists('access_token', $context)
+                && ! str_contains($payload, 'not-a-valid-encrypted-string');
+        });
+        Log::shouldNotHaveReceived('warning');
+        Log::shouldNotHaveReceived('error');
+    }
+
+    #[Test]
+    public function it_does_not_log_a_decryption_failure_for_a_valid_null_or_empty_token(): void
+    {
+        Log::spy();
+
+        $valid = new SlackWorkspace;
+        $valid->setRawAttributes([
+            'access_token' => Crypt::encryptString('xoxb-ok'),
+            'team_id' => 'T_OK',
+        ]);
+        $this->assertSame('xoxb-ok', $valid->access_token);
+
+        $empty = new SlackWorkspace;
+        $empty->setRawAttributes([
+            'access_token' => '',
+            'team_id' => 'T_EMPTY',
+        ]);
+        $this->assertNull($empty->access_token);
+
+        $missing = new SlackWorkspace;
+        $missing->setRawAttributes([
+            'access_token' => null,
+            'team_id' => 'T_NULL',
+        ]);
+        $this->assertNull($missing->access_token);
+
+        Log::shouldNotHaveReceived('info');
+        Log::shouldNotHaveReceived('warning');
+        Log::shouldNotHaveReceived('error');
     }
 
     #[Test]
