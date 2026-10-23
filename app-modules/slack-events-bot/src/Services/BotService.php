@@ -33,6 +33,10 @@ class BotService
             }
 
             try {
+                if ($this->skipWithoutAccessToken($channel)) {
+                    continue;
+                }
+
                 $this->syncChannelMessages($channel, $week, $messages, $messageDetails, $existingCountByChannel);
             } catch (Exception $e) {
                 Log::error("Failed to post/update messages for channel {$slackChannelId}, skipping to next channel", [
@@ -88,6 +92,10 @@ class BotService
 
         foreach ($messagesToDelete as $message) {
             if ($this->removeIfOrphaned($message->channel)) {
+                continue;
+            }
+
+            if ($this->skipWithoutAccessToken($message->channel)) {
                 continue;
             }
 
@@ -257,6 +265,22 @@ class BotService
         $slackChannelId = $channel->slack_channel_id;
         Log::warning("Channel {$slackChannelId} has no associated workspace. Deleting orphaned channel.");
         $this->databaseService->removeChannel($slackChannelId);
+
+        return true;
+    }
+
+    /**
+     * Skip a channel whose workspace token is missing.
+     *
+     * Reading the token clears ciphertext the current APP_KEY cannot decrypt.
+     */
+    private function skipWithoutAccessToken(SlackChannel $channel): bool
+    {
+        if (filled($channel->workspace?->access_token)) {
+            return false;
+        }
+
+        Log::info("Channel {$channel->slack_channel_id} has no Slack access token. Reinstall the Slack app to resume posting.");
 
         return true;
     }

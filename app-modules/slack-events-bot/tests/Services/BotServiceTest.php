@@ -9,6 +9,7 @@ use HackGreenville\SlackEventsBot\Models\SlackMessage;
 use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use HackGreenville\SlackEventsBot\Services\BotService;
 use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -534,5 +535,50 @@ class BotServiceTest extends DatabaseTestCase
             'message' => 'New message',
             'message_timestamp' => '789.012',
         ]);
+    }
+
+    public function test_post_or_update_messages_resets_undecryptable_token_and_skips_that_channel(): void
+    {
+        Log::spy();
+
+        $week = Carbon::now()->startOfWeek();
+        $messages = [['text' => 'New message', 'blocks' => []]];
+
+        $badWorkspace = SlackWorkspace::factory()->create();
+        DB::table('slack_workspaces')->where('id', $badWorkspace->id)->update([
+            'access_token' => 'not-a-valid-encrypted-string',
+        ]);
+        SlackChannel::factory()->create([
+            'slack_channel_id' => 'C_BAD',
+            'slack_workspace_id' => $badWorkspace->id,
+        ]);
+
+        $goodWorkspace = SlackWorkspace::factory()->create();
+        SlackChannel::factory()->create([
+            'slack_channel_id' => 'C_OK',
+            'slack_workspace_id' => $goodWorkspace->id,
+        ]);
+
+        Http::fake([
+            'https://slack.com/api/chat.postMessage' => Http::response(['ok' => true, 'ts' => '789.012'], 200),
+        ]);
+
+        $this->botService->postOrUpdateMessages($week, $messages);
+
+        Http::assertSent(fn (Request $request) => $request->url() === 'https://slack.com/api/chat.postMessage'
+                && $request['channel'] === 'C_OK');
+        Http::assertNotSent(fn (Request $request) => ($request['channel'] ?? null) === 'C_BAD');
+
+        $this->assertSame(
+            'not-a-valid-encrypted-string',
+            DB::table('slack_workspaces')->where('id', $badWorkspace->id)->value('access_token')
+        );
+        $this->assertDatabaseHas('slack_messages', [
+            'message' => 'New message',
+            'message_timestamp' => '789.012',
+        ]);
+
+        Log::shouldHaveReceived('info')
+            ->withArgs(fn ($message) => Str::contains($message, 'Channel C_BAD has no Slack access token'));
     }
 }
