@@ -90,7 +90,7 @@
 										<x-lucide-external-link aria-hidden="true" class="w-3 h-3"/>
 										Recap
 									</a>
-									@if($event->videos_url)
+									@if(!empty($event->videos_url))
 										<a href="{{ $event->videos_url }}" rel="noopener" target="_blank"
 										   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors no-underline">
 											<x-lucide-play aria-hidden="true" class="w-3 h-3"/>
@@ -105,21 +105,25 @@
 							   class="inline-flex items-center gap-3 px-3 py-2 rounded-md border border-gray-100 no-underline hover:border-gray-200 hover:bg-gray-50 transition-colors group mb-4">
 								<span class="text-[0.65rem] font-medium uppercase tracking-wide text-gray-500">Sponsor</span>
 								@if($event->sponsor_logo)
-									<img src="{{ asset('img/sponsors/' . $event->sponsor_logo) }}" alt="{{ $event->sponsor }}" class="h-6 w-auto max-w-[100px] object-contain" loading="lazy"/>
+									<img src="{{ asset('img/sponsors/' . $event->sponsor_logo) }}" alt="{{ $event->sponsor }}" class="h-6 w-auto max-w-[120px] object-contain" loading="lazy"/>
 								@else
 									<span class="text-sm font-semibold text-gray-700 group-hover:text-primary transition-colors">{{ $event->sponsor }}</span>
 								@endif
 							</a>
 
 							{{-- Credits --}}
-							<div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+							<div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500">
 								@if($event->host)
+									<x-lucide-building aria-hidden="true" class="w-3 h-3"/>
 									<span>Hosted by <a href="{{ $event->host_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->host }}</a></span>
 								@endif
+                                |
 								@if($event->video_by)
-									<span>Video by <a href="{{ $event->video_by_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->video_by }}</a></span>
+									<x-lucide-clapperboard aria-hidden="true" class="w-3 h-3"/>
+                                    <span>Video by <a href="{{ $event->video_by_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->video_by }}</a></span>
 								@endif
 							</div>
+
 						</div>
 
 						{{-- Speakers --}}
@@ -127,18 +131,18 @@
 							@foreach($event->speakers as $speaker)
 								@php $speaker = (object) $speaker; @endphp
 								<div class="flex items-start gap-3 px-5 sm:px-6 py-2.5 border-b border-gray-50 last:border-b-0 group {{ isset($speaker->url) ? 'hover:bg-blue-50/30' : '' }}">
-									<x-lucide-mic aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-1"/>
+									<x-lucide-lectern aria-hidden="true" class="w-3.5 h-3.5 text-gray-300 shrink-0 mt-1"/>
 									<div class="flex-1 min-w-0 text-sm">
 										<span class="text-gray-500">{{ $speaker->name }}</span>
 										<span class="text-gray-300 mx-1">&mdash;</span>
-										@if(isset($speaker->url))
+										@if(!empty($speaker->url))
 											<a href="{{ $speaker->url }}" rel="noopener" target="_blank"
 											   class="text-gray-700 hover:text-primary no-underline transition-colors"><em>{{ $speaker->title }}</em></a>
 										@else
 											<em class="text-gray-600">{{ $speaker->title }}</em>
 										@endif
 									</div>
-									@if(isset($speaker->url))
+									@if(!empty($speaker->url))
 										<a href="{{ $speaker->url }}" rel="noopener" target="_blank"
 										   class="text-gray-200 group-hover:text-red-500 shrink-0 mt-1 transition-colors"
 										   aria-label="Watch {{ $speaker->title }} on YouTube">
