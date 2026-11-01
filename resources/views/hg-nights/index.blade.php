@@ -117,7 +117,9 @@
 									<x-lucide-building aria-hidden="true" class="w-3 h-3"/>
 									<span>Hosted by <a href="{{ $event->host_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->host }}</a></span>
 								@endif
-                                |
+								@if($event->host && $event->video_by)
+                                        |
+								@endif
 								@if($event->video_by)
 									<x-lucide-clapperboard aria-hidden="true" class="w-3 h-3"/>
                                     <span>Video by <a href="{{ $event->video_by_url }}" rel="noopener" target="_blank" class="text-gray-500 hover:text-primary no-underline transition-colors">{{ $event->video_by }}</a></span>
