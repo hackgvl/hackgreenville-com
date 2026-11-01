@@ -172,7 +172,7 @@ return [
         'videos_url' => null,
         'sponsor' => 'Simply Binary',
         'sponsor_url' => 'https://www.simplybinary.com',
-        'sponsor_logo' => 'simply-binary.png',
+        'sponsor_logo' => 'simply-binary.svg',
         'host' => 'OpenWorks Coworking',
         'host_url' => 'https://joinopenworks.com',
         'video_by' => null,
