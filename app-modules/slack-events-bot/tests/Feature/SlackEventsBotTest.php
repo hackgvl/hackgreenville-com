@@ -14,6 +14,7 @@ use HackGreenville\SlackEventsBot\Services\EventService;
 use HackGreenville\SlackEventsBot\Services\MessageBuilderService;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Session;
@@ -109,6 +110,46 @@ class SlackEventsBotTest extends DatabaseTestCase
         $this->assertEquals('T123', $workspace->team_id);
         $this->assertEquals('Test Team', $workspace->team_name);
         $this->assertEquals('xoxb-test-token', $workspace->access_token);
+    }
+
+    public function test_auth_route_overwrites_undecryptable_access_token(): void
+    {
+        DB::table('slack_workspaces')->insert([
+            'team_id' => 'T123',
+            'team_name' => 'Old Team',
+            'access_token' => 'not-a-valid-encrypted-string',
+            'bot_user_id' => 'BOLD',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $code = 'test_code';
+        $state = uniqid('slack_', true);
+        Session::put('slack_oauth_state', $state);
+
+        Http::fake([
+            'https://slack.com/api/oauth.v2.access' => Http::response([
+                'ok' => true,
+                'access_token' => 'xoxb-test-token',
+                'team' => ['id' => 'T123', 'name' => 'Test Team'],
+                'authed_user' => ['id' => 'U123'],
+                'bot_user_id' => 'BU123',
+            ], 200),
+        ]);
+
+        $response = $this->get("/slack/auth?code={$code}&state={$state}");
+
+        $response->assertStatus(200);
+        $response->assertSee('The HackGreenville API bot has been installed successfully!');
+
+        $workspace = SlackWorkspace::where('team_id', 'T123')->first();
+        $this->assertNotNull($workspace);
+        $this->assertSame('xoxb-test-token', $workspace->access_token);
+        $this->assertSame(1, SlackWorkspace::where('team_id', 'T123')->count());
+        $this->assertNotSame(
+            'not-a-valid-encrypted-string',
+            DB::table('slack_workspaces')->where('team_id', 'T123')->value('access_token')
+        );
     }
 
     /**
@@ -238,6 +279,36 @@ class SlackEventsBotTest extends DatabaseTestCase
         $response->assertSee('You must be a workspace admin in order to run `/add_channel`');
         $this->assertDatabaseMissing('slack_channels', [
             'slack_channel_id' => $channelId,
+        ]);
+    }
+
+    public function test_add_and_remove_channel_with_undecryptable_token_ask_for_reinstall(): void
+    {
+        $workspace = SlackWorkspace::factory()->create(['team_id' => 'T123']);
+        DB::table('slack_workspaces')->where('id', $workspace->id)->update([
+            'access_token' => 'not-a-valid-encrypted-string',
+        ]);
+
+        $this->authService->shouldReceive('isAdmin')->never();
+
+        foreach (['/add_channel', '/remove_channel'] as $command) {
+            $response = $this->postJson('/slack/events', [
+                'team_id' => 'T123',
+                'channel_id' => 'C123',
+                'user_id' => 'U1',
+                'command' => $command,
+            ]);
+
+            $response->assertOk();
+            $response->assertSee('Install the app again at /slack/install');
+        }
+
+        $this->assertSame(
+            'not-a-valid-encrypted-string',
+            DB::table('slack_workspaces')->where('id', $workspace->id)->value('access_token')
+        );
+        $this->assertDatabaseMissing('slack_channels', [
+            'slack_channel_id' => 'C123',
         ]);
     }
 

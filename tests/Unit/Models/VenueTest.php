@@ -3,12 +3,15 @@
 namespace Tests\Unit\Models;
 
 use App\Models\Venue;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class VenueTest extends TestCase
 {
+    use RefreshDatabase;
+
     public static function missingFieldsProvider(): array
     {
         return [
@@ -59,5 +62,78 @@ class VenueTest extends TestCase
         $venue = new Venue($attributes);
 
         $this->assertEquals($expected, $venue->fullAddress());
+    }
+
+    #[Test]
+    public function normalize_slug_uses_the_name_when_the_slug_is_blank(): void
+    {
+        $this->assertSame('open-works', Venue::normalizeSlug(null, 'Open Works'));
+        $this->assertSame('open-works', Venue::normalizeSlug('   ', 'Open Works'));
+    }
+
+    #[Test]
+    public function normalize_slug_keeps_a_custom_slug(): void
+    {
+        $this->assertSame('openworks', Venue::normalizeSlug('openworks', 'Open Works'));
+    }
+
+    #[Test]
+    public function normalize_slug_canonicalizes_a_provided_slug(): void
+    {
+        $this->assertSame('open-works', Venue::normalizeSlug('Open Works', 'Something Else'));
+    }
+
+    #[Test]
+    public function normalize_slug_returns_null_when_neither_value_can_be_slugified(): void
+    {
+        $this->assertNull(Venue::normalizeSlug(null, '!!!'));
+        $this->assertNull(Venue::normalizeSlug('---', '!!!'));
+    }
+
+    #[Test]
+    public function saving_does_not_rewrite_a_slug(): void
+    {
+        $custom = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => 'openworks',
+        ]);
+        $blank = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => null,
+        ]);
+
+        $custom->update(['name' => 'Open Works Downtown']);
+
+        $this->assertSame('openworks', $custom->fresh()->slug);
+        $this->assertNull($blank->fresh()->slug);
+    }
+
+    #[Test]
+    public function slug_backfill_uses_normalize_slug(): void
+    {
+        $custom = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => 'openworks',
+        ]);
+        $canonicalized = Venue::factory()->create([
+            'name' => 'Something Else',
+            'slug' => 'Open Works',
+        ]);
+        $generated = Venue::factory()->create([
+            'name' => 'Open Works',
+            'slug' => null,
+        ]);
+        $unslugifiable = Venue::factory()->create([
+            'name' => '!!!',
+            'slug' => '---',
+        ]);
+
+        $migration = require database_path('migrations/2026_09_14_000000_backfill_venue_slugs.php');
+        $migration->up();
+
+        $this->assertSame('openworks', $custom->fresh()->slug);
+        $this->assertSame('open-works', $canonicalized->fresh()->slug);
+        $this->assertSame('open-works', $generated->fresh()->slug);
+        $this->assertSame('---', $unslugifiable->fresh()->slug);
     }
 }

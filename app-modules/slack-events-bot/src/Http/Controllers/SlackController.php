@@ -3,13 +3,14 @@
 namespace HackGreenville\SlackEventsBot\Http\Controllers;
 
 use HackGreenville\SlackEventsBot\Jobs\CheckEventsApi;
+use HackGreenville\SlackEventsBot\Models\SlackWorkspace;
 use HackGreenville\SlackEventsBot\Services\AuthService;
 use HackGreenville\SlackEventsBot\Services\DatabaseService;
+use HackGreenville\SlackEventsBot\Services\InstallService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 class SlackController
 {
@@ -19,21 +20,11 @@ class SlackController
     ) {
     }
 
-    public function install()
+    public function install(InstallService $installService)
     {
-        $state = Str::random(40);
-        session(['slack_oauth_state' => $state]);
-
-        $clientId = config('slack-events-bot.client_id');
-        $scopes = implode(',', config('slack-events-bot.scopes'));
-
-        $url = "https://slack.com/oauth/v2/authorize?" . http_build_query([
-            'client_id' => $clientId,
-            'scope' => $scopes,
-            'state' => $state,
-        ]);
-
-        return response(view('slack-events-bot::install', ['url' => $url]));
+        return response(view('slack-events-bot::install', [
+            'url' => $installService->authorizationUrl(),
+        ]));
     }
 
     public function auth(Request $request): Response
@@ -109,6 +100,23 @@ class SlackController
         return response('', 200);
     }
 
+    /**
+     * A token sealed with another APP_KEY cannot be used for users.info.
+     * Tell the caller to reinstall instead of throwing.
+     */
+    private function reinstallResponse(string $teamId): ?Response
+    {
+        $workspace = SlackWorkspace::query()->where('team_id', $teamId)->first();
+
+        if ($workspace === null || filled($workspace->access_token)) {
+            return null;
+        }
+
+        Log::info('Slack command needs a reinstall', ['team_id' => $teamId]);
+
+        return response('The Slack app token can no longer be read. Install the app again at /slack/install, then retry this command.');
+    }
+
     private function handleSlashCommand(array $payload): Response
     {
         Log::info('Handling slash command', ['payload' => $payload]);
@@ -134,6 +142,9 @@ class SlackController
         switch ($command) {
             case '/add_channel':
                 Log::info('Executing /add_channel command', ['user_id' => $userId, 'channel_id' => $channelId]);
+                if ($reinstall = $this->reinstallResponse($teamId)) {
+                    return $reinstall;
+                }
                 if ( ! $this->authService->isAdmin($userId, $teamId)) {
                     Log::warning('/add_channel failed: user is not an admin', ['user_id' => $userId]);
                     return response('You must be a workspace admin in order to run `/add_channel`');
@@ -149,6 +160,9 @@ class SlackController
 
             case '/remove_channel':
                 Log::info('Executing /remove_channel command', ['user_id' => $userId, 'channel_id' => $channelId]);
+                if ($reinstall = $this->reinstallResponse($teamId)) {
+                    return $reinstall;
+                }
                 if ( ! $this->authService->isAdmin($userId, $teamId)) {
                     Log::warning('/remove_channel failed: user is not an admin', ['user_id' => $userId]);
                     return response('You must be a workspace admin in order to run `/remove_channel`');

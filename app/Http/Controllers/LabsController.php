@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use HackGreenville\SlackEventsBot\Services\InstallService;
 use Illuminate\Support\Facades\Cache;
 
 class LabsController extends Controller
 {
-    public function index()
+    public function index(InstallService $installService)
     {
         $remove_space = true;
         $contributors = Cache::get('github_contributors', collect());
@@ -29,6 +30,7 @@ class LabsController extends Controller
                         'description' => __('Automated weekly tech event notifications in Slack'),
                         'link' => 'https://github.com/hackgvl/hackgreenville-com/tree/develop/app-modules/slack-events-bot',
                         'linkType' => 'github',
+                        'installUrl' => $installService->authorizationUrl(),
                     ],
                     [
                         'name' => __('Events API'),
