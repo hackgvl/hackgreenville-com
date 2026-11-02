@@ -183,6 +183,12 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "venue_slug",
+                                    "value": "openworks",
+                                    "description": "Filter events by venue slug. Partial match against the stored slug shown on each venue in the response (e.g. \"openworks\" or \"synergy-mill\"). Slugs are set in the admin dashboard and generated from the venue name when missing. Must not be greater than 255 characters.",
+                                    "disabled": false
+                                },
+                                {
                                     "key": "venue_city",
                                     "value": "",
                                     "description": "Must not be greater than 255 characters.",
@@ -213,7 +219,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags%5B0%5D=16&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
+                            "raw": "{{baseUrl}}\/api\/v1\/events?per_page=50&page=1&start_date=2026-01-01&end_date=2100-12-31&tags%5B0%5D=16&name=&org_name=&service=&min_rsvp=&max_rsvp=&venue_slug=openworks&venue_city=&venue_state=&is_paid=&sort_by=event_name&sort_direction=asc"
                         },
                         "method": "GET",
                         "header": [
@@ -236,7 +242,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"3f5d74c8-7495-3f45-bd67-0e0ddb6401b8\",\"name\":\"Eius et animi quos velit et.\",\"description\":\"Aut ex quo iure eos explicabo accusamus. Et qui ipsa itaque autem mollitia.\",\"url\":\"https:\\\/\\\/kunde.net\\\/est-quaerat-enim-accusantium-alias-magnam.html\",\"starts_at\":\"2025-01-01T17:00:00.000000Z\",\"ends_at\":\"2025-01-01T19:00:00.000000Z\",\"rsvp_count\":28,\"status\":\"past\",\"is_paid\":null,\"organization\":{\"id\":123,\"name\":\"Mrs. Justina Gaylord tech group!!!\",\"url\":\"quis\",\"tags\":[]},\"venue\":{\"name\":\"placeat rerum ad in quo\",\"address\":\"39134 Heidenreich Shoal Apt. 942\\nReubenland, WY 88137-3873\",\"city\":\"Ladariushaven\",\"state\":{\"code\":\"MT\",\"name\":\"MT\"},\"zipcode\":\"30525-7075\",\"country\":\"EH\",\"location\":{\"latitude\":\"24.605096\",\"longitude\":\"153.784749\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"3\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\"}]}",
+                            "body": "{\"data\":[{\"id\":\"3f5d74c8-7495-3f45-bd67-0e0ddb6401b8\",\"name\":\"Eius et animi quos velit et.\",\"description\":\"Aut ex quo iure eos explicabo accusamus. Et qui ipsa itaque autem mollitia.\",\"url\":\"https:\\\/\\\/kunde.net\\\/est-quaerat-enim-accusantium-alias-magnam.html\",\"starts_at\":\"2025-01-01T17:00:00.000000Z\",\"ends_at\":\"2025-01-01T19:00:00.000000Z\",\"rsvp_count\":28,\"status\":\"past\",\"is_paid\":null,\"organization\":{\"id\":123,\"name\":\"Mrs. Justina Gaylord tech group!!!\",\"url\":\"quis\",\"tags\":[]},\"venue\":{\"name\":\"placeat rerum ad in quo\",\"slug\":\"placeat-rerum-ad-in-quo\",\"address\":\"39134 Heidenreich Shoal Apt. 942\\nReubenland, WY 88137-3873\",\"city\":\"Ladariushaven\",\"state\":{\"code\":\"MT\",\"name\":\"MT\"},\"zipcode\":\"30525-7075\",\"country\":\"EH\",\"location\":{\"latitude\":\"24.605096\",\"longitude\":\"153.784749\"}},\"service\":{\"name\":\"eventbrite\",\"id\":\"3\"},\"created_at\":\"2025-01-01T17:00:00.000000Z\",\"updated_at\":\"2025-01-01T17:00:00.000000Z\"}]}",
                             "name": ""
                         }
                     ]
