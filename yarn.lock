@@ -743,9 +743,9 @@ fsevents@~2.3.2, fsevents@~2.3.3:
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 geist@^1.7.0:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/geist/-/geist-1.8.2.tgz#ac47e74c63556223d852267c24270981f487c120"
-  integrity sha512-fRF4sbJ9qcCxPb35cVtKBAwYlTt1IbU9nkbPi0a+xyZqPIjCJ2BY8ekGhx6/SGSZKrR7/UuL57r/eeDQ1Xy11g==
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/geist/-/geist-1.9.0.tgz#92d2fb4e428355b195973bc69ccf10b53a9ae877"
+  integrity sha512-uxiyxH5PaKDaK2//ln06NxJEz5gc6771BTwSs1YFgNnASGtp1SYD3VZShSIijvlNwDjMgHnzqye4MmIUTspEzw==
 
 graceful-fs@^4.2.4:
   version "4.2.11"
