@@ -1,0 +1,116 @@
+{
+  "entries": [
+    {
+      "api_id": "calev-address-only-1",
+      "event": {
+        "api_id": "evt-address-only-1",
+        "calendar_api_id": "cal-address-only",
+        "end_at": "2020-06-02T01:30:00.000Z",
+        "name": "Alt. Computing Club",
+        "start_at": "2020-06-01T23:30:00.000Z",
+        "timezone": "America/New_York",
+        "url": "sv5z3450",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "region": "South Carolina",
+          "address": "31 Cessna Ct suite b",
+          "country": "United States",
+          "place_id": "place-cessna",
+          "country_code": "US",
+          "full_address": "31 Cessna Ct suite b, Greenville, SC 29607, USA",
+          "region_short": "SC"
+        },
+        "coordinate": {
+          "longitude": -82.3431733,
+          "latitude": 34.8484931
+        }
+      },
+      "calendar": {
+        "api_id": "cal-address-only",
+        "description_short": "Address only, no venue name",
+        "name": "Alt Computing Club"
+      },
+      "guest_count": 0,
+      "is_manager": true,
+      "platform": "luma"
+    },
+    {
+      "api_id": "calev-address-only-2",
+      "event": {
+        "api_id": "evt-address-only-2",
+        "calendar_api_id": "cal-address-only",
+        "end_at": "2020-06-09T01:30:00.000Z",
+        "name": "Alt. Computing Club",
+        "start_at": "2020-06-08T23:30:00.000Z",
+        "timezone": "America/New_York",
+        "url": "lugmpjpb",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "region": "South Carolina",
+          "address": "31 Cessna Ct suite b",
+          "country": "United States",
+          "place_id": "place-cessna",
+          "country_code": "US",
+          "full_address": "31 Cessna Ct suite b, Greenville, SC 29607, USA",
+          "region_short": "SC"
+        },
+        "coordinate": {
+          "longitude": -82.3431733,
+          "latitude": 34.8484931
+        }
+      },
+      "calendar": {
+        "api_id": "cal-address-only",
+        "description_short": "Address only, no venue name",
+        "name": "Alt Computing Club"
+      },
+      "guest_count": 0,
+      "is_manager": true,
+      "platform": "luma"
+    },
+    {
+      "api_id": "calev-multiline",
+      "event": {
+        "api_id": "evt-multiline",
+        "calendar_api_id": "cal-address-only",
+        "end_at": "2020-06-16T00:00:00.000Z",
+        "name": "HackGreenville Nights",
+        "start_at": "2020-06-15T22:00:00.000Z",
+        "timezone": "America/New_York",
+        "url": "openworks1",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "region": "South Carolina",
+          "address": "OpenWorks Coworking",
+          "country": "United States",
+          "place_id": "place-openworks",
+          "country_code": "US",
+          "full_address": "OpenWorks Coworking, Third Floor, 101 N Main St #302, Greenville, SC 29601, USA",
+          "region_short": "SC"
+        },
+        "coordinate": {
+          "longitude": -82.399678,
+          "latitude": 34.852022
+        }
+      },
+      "calendar": {
+        "api_id": "cal-address-only",
+        "description_short": "Venue name plus an extra address line",
+        "name": "HackGreenville"
+      },
+      "guest_count": 3,
+      "is_manager": true,
+      "platform": "luma"
+    }
+  ],
+  "has_more": false
+}

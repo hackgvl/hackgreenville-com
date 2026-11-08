@@ -97,6 +97,57 @@ class VenueDataTest extends DatabaseTestCase
         $this->assertSame(1, Venue::query()->count());
     }
 
+    public function test_blank_name_does_not_reuse_another_unnamed_venue(): void
+    {
+        $unnamed = Venue::factory()->create([
+            'name' => '',
+            'slug' => null,
+            'address' => '101 N Main St',
+            'city' => 'Greenville',
+            'state' => 'SC',
+            'zipcode' => '29601',
+            'lat' => '34.8516838',
+            'lng' => '-82.3998468',
+        ]);
+
+        $resolved = $this->venueData('', '31 Cessna Ct suite b', 34.8484931, -82.3431733)->resolveVenue();
+
+        $this->assertFalse($unnamed->is($resolved));
+        $this->assertSame('', $unnamed->fresh()->name);
+        $this->assertSame('101 N Main St', $unnamed->fresh()->address);
+        $this->assertSame('31 Cessna Ct suite b', $resolved->name);
+        $this->assertSame('31-cessna-ct-suite-b', $resolved->slug);
+        $this->assertSame('31 Cessna Ct suite b', $resolved->address);
+        $this->assertSame('Greenville', $resolved->city);
+        $this->assertSame('SC', $resolved->state);
+        $this->assertSame('29601', $resolved->zipcode);
+        $this->assertEquals(34.8484931, $resolved->lat);
+        $this->assertEquals(-82.3431733, $resolved->lng);
+        $this->assertSame(2, Venue::query()->count());
+
+        $again = $this->venueData('   ', '31 Cessna Ct suite b', 1.0, 2.0)->resolveVenue();
+
+        $this->assertTrue($resolved->is($again));
+        $this->assertEquals(34.8484931, $again->fresh()->lat);
+        $this->assertSame(2, Venue::query()->count());
+    }
+
+    public function test_blank_name_does_not_match_a_named_venue_at_the_same_street(): void
+    {
+        $named = Venue::factory()->create([
+            'name' => 'OpenWorks',
+            'slug' => 'openworks',
+            'address' => '101 N Main St',
+        ]);
+
+        $resolved = $this->venueData('', '101 N Main St')->resolveVenue();
+
+        $this->assertFalse($named->is($resolved));
+        $this->assertSame('101 N Main St', $resolved->name);
+        $this->assertSame('101-n-main-st', $resolved->slug);
+        $this->assertSame(2, Venue::query()->count());
+    }
+
     public function test_unslugable_names_do_not_share_a_blank_slug(): void
     {
         $first = $this->venueData('!!!')->resolveVenue();

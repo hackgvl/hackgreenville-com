@@ -68,9 +68,9 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
+        $parsed = $this->parseLumaFullAddress($data['event']['geo_address_info']['full_address']);
 
-        if (count($parts) < 4) {
+        if ($parsed === null) {
             Log::debug('Luma - Not enough address data', [
                 'data' => $data,
             ]);
@@ -79,24 +79,14 @@ class LumaHandler extends AbstractEventHandler
         }
 
         try {
-            // Handle addresses with or without a location name prefix
-            if (count($parts) === 4) {
-                $name = '';
-                array_unshift($parts, null);
-            } else {
-                $name = $parts[0];
-            }
-
-            $stateZip = explode(' ', $parts[3]);
-
             return VenueData::from([
                 'id' => $data['event']['geo_address_info']['place_id'],
-                'name' => $name,
-                'address' => $parts[1],
-                'city' => $parts[2],
-                'state' => $stateZip[0],
-                'zip' => $stateZip[1],
-                'country' => mb_substr($parts[4], 0, 2),
+                'name' => $parsed['name'],
+                'address' => $parsed['address'],
+                'city' => $parsed['city'],
+                'state' => $parsed['state'],
+                'zip' => $parsed['zip'],
+                'country' => $parsed['country'],
                 'lon' => $data['event']['coordinate']['longitude'],
                 'lat' => $data['event']['coordinate']['latitude'],
             ]);
@@ -115,5 +105,55 @@ class LumaHandler extends AbstractEventHandler
             ->collect('entries')
             ->filter(fn (array $event) => $event['platform'] === 'luma' && $event['is_manager'] === true)
             ->values();
+    }
+
+    /**
+     * Split a Google-style Luma address.
+     *
+     * The tail is always city, state zip, country. A place name is present
+     * only when the organizer entered one, in which case it is the first
+     * component and any lines between it and the city belong to the street.
+     * With no place name, the street is used as the venue name.
+     *
+     * @return array{name: string, address: string, city: string, state: string, zip: ?string, country: string}|null
+     */
+    private function parseLumaFullAddress(string $fullAddress): ?array
+    {
+        $parts = explode(', ', $fullAddress);
+
+        if (count($parts) < 4) {
+            return null;
+        }
+
+        $country = mb_substr((string) array_pop($parts), 0, 2);
+        $stateZip = explode(' ', (string) array_pop($parts));
+        $city = (string) array_pop($parts);
+        $state = $stateZip[0] ?? '';
+        $zip = $stateZip[1] ?? null;
+
+        if ($city === '' || $state === '' || $parts === []) {
+            return null;
+        }
+
+        if (count($parts) === 1) {
+            $name = $parts[0];
+            $address = $parts[0];
+        } else {
+            $name = (string) array_shift($parts);
+            $address = implode(', ', $parts);
+        }
+
+        if (mb_trim($name) === '' || mb_trim($address) === '') {
+            return null;
+        }
+
+        return [
+            'name' => $name,
+            'address' => $address,
+            'city' => $city,
+            'state' => $state,
+            'zip' => $zip,
+            'country' => $country,
+        ];
     }
 }
