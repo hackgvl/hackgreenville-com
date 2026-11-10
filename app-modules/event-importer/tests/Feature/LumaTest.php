@@ -122,10 +122,10 @@ class LumaTest extends DatabaseTestCase
         $this->assertNull($event);
     }
 
-    public function test_address_without_a_venue_name_does_not_match_an_unnamed_venue(): void
+    public function test_real_gvl_game_devs_addresses_use_the_parsed_fields(): void
     {
         Http::fake([
-            LumaHandler::$LUMA_API_BASE_URL . '/calendar/get-items?calendar_api_id=cal-address-only&period=future&pagination_limit=50' => Http::response($this->apiResponse('response-address-only.json')),
+            LumaHandler::$LUMA_API_BASE_URL . '/calendar/get-items?calendar_api_id=cal-D6zd3wYHOTe4hXl&period=future&pagination_limit=50' => Http::response($this->apiResponse('response-gvl-game-devs.json')),
         ]);
 
         $unnamed = Venue::factory()->create([
@@ -142,36 +142,34 @@ class LumaTest extends DatabaseTestCase
 
         Org::factory()->create([
             'service' => EventServices::Luma->value,
-            'service_api_key' => 'cal-address-only',
+            'service_api_key' => 'cal-D6zd3wYHOTe4hXl',
         ]);
 
         $this->artisan(ImportEventsCommand::class);
         $this->artisan(ImportEventsCommand::class);
 
-        $first = Event::query()->where('service_id', 'evt-address-only-1')->firstOrFail();
-        $second = Event::query()->where('service_id', 'evt-address-only-2')->firstOrFail();
-        $named = Event::query()->where('service_id', 'evt-multiline')->firstOrFail();
+        $named = Event::query()->where('service_id', 'evt-s5BZ4W5NbLSiR0E')->firstOrFail();
+        $streetOnly = Event::query()->where('service_id', 'evt-kxhmuNG9mRkOetF')->firstOrFail();
 
-        $this->assertFalse($unnamed->is($first->venue));
-        $this->assertTrue($first->venue->is($second->venue));
-        $this->assertSame('31 Cessna Ct suite b', $first->venue->name);
-        $this->assertSame('31-cessna-ct-suite-b', $first->venue->slug);
-        $this->assertSame('31 Cessna Ct suite b', $first->venue->address);
-        $this->assertSame('Greenville', $first->venue->city);
-        $this->assertSame('SC', $first->venue->state);
-        $this->assertSame('29607', $first->venue->zipcode);
-        $this->assertSame('US', $first->venue->country);
-        $this->assertEquals('34.8484931', $first->venue->lat);
-        $this->assertEquals('-82.3431733', $first->venue->lng);
-
-        $this->assertSame('OpenWorks Coworking', $named->venue->name);
-        $this->assertSame('Third Floor, 101 N Main St #302', $named->venue->address);
+        $this->assertSame('SynergyMill', $named->venue->name);
+        $this->assertSame('synergymill', $named->venue->slug);
+        $this->assertSame('31 Cessna Ct Ste B', $named->venue->address);
         $this->assertSame('Greenville', $named->venue->city);
         $this->assertSame('SC', $named->venue->state);
-        $this->assertSame('29601', $named->venue->zipcode);
+        $this->assertSame('29607', $named->venue->zipcode);
         $this->assertSame('US', $named->venue->country);
-        $this->assertEquals('34.852022', $named->venue->lat);
-        $this->assertEquals('-82.399678', $named->venue->lng);
+        $this->assertEquals('34.8484931', $named->venue->lat);
+        $this->assertEquals('-82.3431733', $named->venue->lng);
+
+        $this->assertFalse($unnamed->is($streetOnly->venue));
+        $this->assertFalse($named->venue->is($streetOnly->venue));
+        $this->assertSame('31 Cessna Ct', $streetOnly->venue->name);
+        $this->assertSame('31-cessna-ct', $streetOnly->venue->slug);
+        $this->assertSame('31 Cessna Ct', $streetOnly->venue->address);
+        $this->assertSame('Greenville', $streetOnly->venue->city);
+        $this->assertSame('SC', $streetOnly->venue->state);
+        $this->assertSame('29607', $streetOnly->venue->zipcode);
+        $this->assertSame('US', $streetOnly->venue->country);
 
         $this->assertSame('', $unnamed->fresh()->name);
         $this->assertSame('101 N Main St', $unnamed->fresh()->address);

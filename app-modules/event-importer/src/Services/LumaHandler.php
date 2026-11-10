@@ -8,7 +8,6 @@ use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -50,13 +49,8 @@ class LumaHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        // No Address information
+        // Virtual events omit geo_address_info. has_access stays false for both offline and online events.
         if (null === $data['event']['geo_address_info']) {
-            return null;
-        }
-
-        // Virtual Event
-        if (Arr::get($data['event'], 'virtual_info.has_access', false)) {
             return null;
         }
 

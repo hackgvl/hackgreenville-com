@@ -1,0 +1,109 @@
+{
+  "entries": [
+    {
+      "api_id": "calev-AgMGxkXG7gxNIte",
+      "event": {
+        "api_id": "evt-s5BZ4W5NbLSiR0E",
+        "calendar_api_id": "cal-D6zd3wYHOTe4hXl",
+        "end_at": "2026-10-28T00:30:00.000Z",
+        "name": "GVL Game Devs",
+        "start_at": "2026-10-27T22:30:00.000Z",
+        "timezone": "America/New_York",
+        "url": "ru50tbxn",
+        "location_type": "offline",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "type": "google",
+          "region": "South Carolina",
+          "address": "SynergyMill",
+          "country": "United States",
+          "place_id": "ChIJ8fulZrQxWIgR8PpSefWe8t0",
+          "localized": null,
+          "city_state": "Greenville, SC",
+          "description": "***Free Parking***",
+          "sublocality": null,
+          "country_code": "US",
+          "full_address": "SynergyMill, 31 Cessna Ct Ste B, Greenville, SC 29607, USA",
+          "region_short": "SC",
+          "short_address": "31 Cessna Ct Ste B, Greenville",
+          "place_coordinate": {
+            "latitude": 34.8484931,
+            "longitude": -82.34317329999999
+          },
+          "apple_maps_place_id": "I9BEC17763FC84469",
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": -82.34317329999999,
+          "latitude": 34.8484931
+        }
+      },
+      "calendar": {
+        "api_id": "cal-D6zd3wYHOTe4hXl",
+        "description_short": "Greenville Game Devs is a group that focuses on supporting game developers at all skill levels in the upstate SC area. We meet to discuss various range of topics in Game Development. Join us!",
+        "name": "GVL Game Devs"
+      },
+      "guest_count": 3,
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved"
+    },
+    {
+      "api_id": "calev-sZlKDAogQal5Rdo",
+      "event": {
+        "api_id": "evt-kxhmuNG9mRkOetF",
+        "calendar_api_id": "cal-D6zd3wYHOTe4hXl",
+        "end_at": "2026-08-26T00:30:00.000Z",
+        "name": "GVL Game Devs",
+        "start_at": "2026-08-25T22:30:00.000Z",
+        "timezone": "America/New_York",
+        "url": "56chnb2j",
+        "location_type": "offline",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "type": "google",
+          "region": "South Carolina",
+          "address": "31 Cessna Ct",
+          "country": "United States",
+          "place_id": "ChIJu2y13PguWIgR8fcwvNjYBBA",
+          "localized": null,
+          "city_state": "Greenville, SC",
+          "description": "***Free Parking***",
+          "sublocality": null,
+          "country_code": "US",
+          "full_address": "31 Cessna Ct, Greenville, SC 29607, USA",
+          "region_short": "SC",
+          "short_address": "31 Cessna Ct, Greenville",
+          "place_coordinate": {
+            "latitude": 34.8484931,
+            "longitude": -82.34317329999999
+          },
+          "apple_maps_place_id": null,
+          "mode": "shown"
+        },
+        "geo_address_visibility": "public",
+        "coordinate": {
+          "longitude": -82.34317329999999,
+          "latitude": 34.8484931
+        }
+      },
+      "calendar": {
+        "api_id": "cal-D6zd3wYHOTe4hXl",
+        "description_short": "Greenville Game Devs is a group that focuses on supporting game developers at all skill levels in the upstate SC area. We meet to discuss various range of topics in Game Development. Join us!",
+        "name": "GVL Game Devs"
+      },
+      "guest_count": 9,
+      "is_manager": true,
+      "platform": "luma",
+      "status": "approved"
+    }
+  ],
+  "has_more": false
+}

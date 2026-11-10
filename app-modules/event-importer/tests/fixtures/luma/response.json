@@ -36,6 +36,13 @@
           "full_address": "Furman University, 3300 Poinsett Hwy, Greenville, SC 29613, USA",
           "region_short": "SC",
           "short_address": "3300 Poinsett Hwy, Greenville",
+          "localized": null,
+          "sublocality": null,
+          "apple_maps_place_id": null,
+          "place_coordinate": {
+            "latitude": 34.9274688,
+            "longitude": -82.4400666
+          },
           "mode": "shown"
         },
         "geo_address_visibility": "public",
@@ -154,7 +161,7 @@
         "end_at": "2025-07-17T00:30:00.000Z",
         "event_type": "independent",
         "hide_rsvp": false,
-        "location_type": "offline",
+        "location_type": "meet",
         "name": "Alt.Computing Club - OpenWorks Edition!",
         "one_to_one": true,
         "recurrence_id": null,
@@ -166,21 +173,9 @@
         "visibility": "public",
         "waitlist_enabled": false,
         "virtual_info": {
-          "has_access": true
+          "has_access": false
         },
-        "geo_address_info": {
-          "city": "Greenville",
-          "type": "google",
-          "region": "South Carolina",
-          "address": "101 N Main St",
-          "country": "United States",
-          "place_id": "ChIJX3m3G84xWIgR4IcXdl-tQcw",
-          "city_state": "Greenville, South Carolina",
-          "description": "",
-          "country_code": "US",
-          "full_address": "101 N Main St, Greenville, SC 29601, USA",
-          "mode": "shown"
-        },
+        "geo_address_info": null,
         "geo_address_visibility": "public",
         "coordinate": {
           "longitude": -82.3998468,
