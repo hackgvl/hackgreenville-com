@@ -8,7 +8,6 @@ use HackGreenville\EventImporter\Data\EventData;
 use HackGreenville\EventImporter\Data\VenueData;
 use HackGreenville\EventImporter\Services\Concerns\AbstractEventHandler;
 use Illuminate\Http\Client\Response;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -50,17 +49,13 @@ class LumaHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        // No Address information
         if (null === $data['event']['geo_address_info']) {
             return null;
         }
 
-        // Virtual Event
-        if (Arr::get($data['event'], 'virtual_info.has_access', false)) {
-            return null;
-        }
+        $info = $data['event']['geo_address_info'];
 
-        if ( ! isset($data['event']['geo_address_info']['full_address'])) {
+        if ( ! isset($info['full_address']) || mb_trim((string) $info['full_address']) === '') {
             Log::debug('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
@@ -68,9 +63,9 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        $parts = explode(', ', $data['event']['geo_address_info']['full_address']);
+        $parsed = $this->venueFromGeoAddressInfo($info);
 
-        if (count($parts) < 4) {
+        if ($parsed === null) {
             Log::debug('Luma - Not enough address data', [
                 'data' => $data,
             ]);
@@ -79,24 +74,14 @@ class LumaHandler extends AbstractEventHandler
         }
 
         try {
-            // Handle addresses with or without a location name prefix
-            if (count($parts) === 4) {
-                $name = '';
-                array_unshift($parts, null);
-            } else {
-                $name = $parts[0];
-            }
-
-            $stateZip = explode(' ', $parts[3]);
-
             return VenueData::from([
-                'id' => $data['event']['geo_address_info']['place_id'],
-                'name' => $name,
-                'address' => $parts[1],
-                'city' => $parts[2],
-                'state' => $stateZip[0],
-                'zip' => $stateZip[1],
-                'country' => mb_substr($parts[4], 0, 2),
+                'id' => (string) ($info['place_id'] ?? ''),
+                'name' => $parsed['name'],
+                'address' => $parsed['address'],
+                'city' => $parsed['city'],
+                'state' => $parsed['state'],
+                'zip' => $parsed['zip'],
+                'country' => $parsed['country'],
                 'lon' => $data['event']['coordinate']['longitude'],
                 'lat' => $data['event']['coordinate']['latitude'],
             ]);
@@ -115,5 +100,142 @@ class LumaHandler extends AbstractEventHandler
             ->collect('entries')
             ->filter(fn (array $event) => $event['platform'] === 'luma' && $event['is_manager'] === true)
             ->values();
+    }
+
+    /**
+     * Map Luma's parsed geo_address_info onto a venue.
+     *
+     * address is the place name, or the street when the organizer did not
+     * enter a name. short_address is the street plus a trailing city. Zip is
+     * only present in full_address. Older events omit short_address,
+     * region_short, or country_code, and those values fall back to full_address.
+     *
+     * @param  array<string, mixed>  $info
+     * @return array{name: string, address: ?string, city: string, state: string, zip: ?string, country: string}|null
+     */
+    private function venueFromGeoAddressInfo(array $info): ?array
+    {
+        $fullAddress = (string) $info['full_address'];
+        $city = mb_trim((string) ($info['city'] ?? ''));
+        $name = mb_trim((string) ($info['address'] ?? ''));
+        $tail = $this->parseFullAddressTail($fullAddress);
+
+        $state = mb_trim((string) ($info['region_short'] ?? ''));
+
+        if ($state === '') {
+            $state = $tail['state'];
+        }
+
+        $country = mb_trim((string) ($info['country_code'] ?? ''));
+
+        if ($country === '') {
+            $country = $tail['country'];
+        }
+
+        $street = $this->streetFromGeoAddress($info, $city, $name, $fullAddress);
+
+        if ($name === '') {
+            $name = $street ?? '';
+        }
+
+        if ($name === '' || $city === '' || $state === '') {
+            return null;
+        }
+
+        return [
+            'name' => $name,
+            'address' => $street,
+            'city' => $city,
+            'state' => $state,
+            'zip' => $tail['zip'],
+            'country' => $country !== '' ? $country : 'US',
+        ];
+    }
+
+    /**
+     * @param  array<string, mixed>  $info
+     */
+    private function streetFromGeoAddress(array $info, string $city, string $venueName, string $fullAddress): ?string
+    {
+        $short = mb_trim((string) ($info['short_address'] ?? ''));
+
+        if ($short !== '') {
+            return $this->stripTrailingCity($short, $city);
+        }
+
+        return $this->streetFromFullAddress($fullAddress, $venueName, $city);
+    }
+
+    private function stripTrailingCity(string $short, string $city): ?string
+    {
+        if ($city !== '') {
+            $suffix = ', ' . $city;
+
+            if (str_ends_with($short, $suffix)) {
+                $short = mb_trim(mb_substr($short, 0, mb_strlen($short) - mb_strlen($suffix)));
+            } elseif (mb_strtolower($short) === mb_strtolower($city)) {
+                return null;
+            }
+        }
+
+        return $short === '' ? null : $short;
+    }
+
+    private function streetFromFullAddress(string $fullAddress, string $venueName, string $city): ?string
+    {
+        $parts = explode(', ', $fullAddress);
+
+        if (count($parts) < 3) {
+            return null;
+        }
+
+        array_pop($parts);
+        array_pop($parts);
+
+        if ($city !== '' && $parts !== [] && end($parts) === $city) {
+            array_pop($parts);
+        }
+
+        if ($parts === []) {
+            return null;
+        }
+
+        if (count($parts) > 1 && $parts[0] === $venueName) {
+            array_shift($parts);
+        }
+
+        $street = implode(', ', $parts);
+
+        if ($street === '' || ($city !== '' && mb_strtolower($street) === mb_strtolower($city))) {
+            return null;
+        }
+
+        return $street;
+    }
+
+    /**
+     * @return array{state: string, zip: ?string, country: string}
+     */
+    private function parseFullAddressTail(string $fullAddress): array
+    {
+        $parts = explode(', ', $fullAddress);
+        $empty = ['state' => '', 'zip' => null, 'country' => ''];
+
+        if (count($parts) < 2) {
+            return $empty;
+        }
+
+        $countryToken = (string) array_pop($parts);
+        $stateZip = explode(' ', (string) array_pop($parts));
+        $country = match (mb_strtoupper($countryToken)) {
+            'USA', 'US' => 'US',
+            default => mb_substr($countryToken, 0, 2),
+        };
+
+        return [
+            'state' => $stateZip[0] ?? '',
+            'zip' => $stateZip[1] ?? null,
+            'country' => $country,
+        ];
     }
 }

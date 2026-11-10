@@ -1,0 +1,112 @@
+{
+  "entries": [
+    {
+      "api_id": "calev-missing-parsed",
+      "event": {
+        "api_id": "evt-missing-parsed",
+        "calendar_api_id": "cal-parsed-fallbacks",
+        "end_at": "2020-06-02T00:00:00.000Z",
+        "name": "Upstate Ruby Pizza Social",
+        "start_at": "2020-06-01T22:00:00.000Z",
+        "timezone": "America/New_York",
+        "url": "pangaea1",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "type": "google",
+          "region": "South Carolina",
+          "address": "Pangaea Brewing",
+          "country": "United States",
+          "place_id": "place-pangaea",
+          "country_code": "US",
+          "full_address": "Pangaea Brewing, 115 Welborn St Suite A, Greenville, SC 29601, USA"
+        },
+        "coordinate": {
+          "longitude": -82.3991,
+          "latitude": 34.8472
+        }
+      },
+      "calendar": {
+        "description_short": "Older payload without short_address or region_short"
+      },
+      "guest_count": 4,
+      "is_manager": true,
+      "platform": "luma"
+    },
+    {
+      "api_id": "calev-city-only",
+      "event": {
+        "api_id": "evt-city-only",
+        "calendar_api_id": "cal-parsed-fallbacks",
+        "end_at": "2020-06-09T00:00:00.000Z",
+        "name": "Grok Conf Happy Hour",
+        "start_at": "2020-06-08T22:00:00.000Z",
+        "timezone": "America/New_York",
+        "url": "cityonly1",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "type": "google",
+          "region": "South Carolina",
+          "address": "Greenville",
+          "country": "United States",
+          "place_id": "place-greenville",
+          "full_address": "Greenville, SC, USA",
+          "short_address": "Greenville"
+        },
+        "coordinate": {
+          "longitude": -82.394,
+          "latitude": 34.8526
+        }
+      },
+      "calendar": {
+        "description_short": "City pin with no street or zip"
+      },
+      "guest_count": 2,
+      "is_manager": true,
+      "platform": "luma"
+    },
+    {
+      "api_id": "calev-short-extra",
+      "event": {
+        "api_id": "evt-short-extra",
+        "calendar_api_id": "cal-parsed-fallbacks",
+        "end_at": "2020-06-16T01:00:00.000Z",
+        "name": "Pixel Pushers",
+        "start_at": "2020-06-15T22:30:00.000Z",
+        "timezone": "America/New_York",
+        "url": "flywheel1",
+        "virtual_info": {
+          "has_access": false
+        },
+        "geo_address_info": {
+          "city": "Greenville",
+          "type": "google",
+          "region": "South Carolina",
+          "address": "Flywheel Coworking Greenville",
+          "country": "United States",
+          "place_id": "place-flywheel",
+          "country_code": "US",
+          "full_address": "Flywheel Coworking Greenville, 25 Goldsmith St, Greenville, SC 29609, USA",
+          "region_short": "SC",
+          "short_address": "Furman Innovation Lab, 25 Goldsmith St, Greenville"
+        },
+        "coordinate": {
+          "longitude": -82.4052515,
+          "latitude": 34.8747441
+        }
+      },
+      "calendar": {
+        "description_short": "short_address includes a building line full_address omits"
+      },
+      "guest_count": 8,
+      "is_manager": true,
+      "platform": "luma"
+    }
+  ],
+  "has_more": false
+}
