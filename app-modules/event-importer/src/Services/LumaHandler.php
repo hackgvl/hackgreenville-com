@@ -99,6 +99,8 @@ class LumaHandler extends AbstractEventHandler
                 'country' => mb_substr($parts[4], 0, 2),
                 'lon' => $data['event']['coordinate']['longitude'],
                 'lat' => $data['event']['coordinate']['latitude'],
+                'googlePlaceId' => $data['event']['geo_address_info']['place_id'] ?? null,
+                'appleMapsPlaceId' => $data['event']['geo_address_info']['apple_maps_place_id'] ?? null,
             ]);
         } catch (Throwable $exception) {
             Log::debug('Luma - Unable to parse address.', [

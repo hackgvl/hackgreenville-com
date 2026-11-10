@@ -26,6 +26,8 @@ class Venue extends Model
         'country',
         'lat',
         'lng',
+        'google_place_id',
+        'apple_maps_place_id',
     ];
 
     /**
