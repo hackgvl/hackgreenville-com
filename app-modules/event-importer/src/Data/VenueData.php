@@ -28,12 +28,26 @@ class VenueData extends Data
      * Address and coordinates are stored only when creating a venue. Matching
      * on the full address created a new row whenever lat/lng or street
      * formatting drifted. A custom admin slug still matches through the name.
+     *
+     * A blank name is not an identity. Luma leaves the place name empty when
+     * the organizer enters only a street, and matching that empty name reused
+     * the oldest unnamed venue. The street is used as the name instead.
      */
     public function resolveVenue(): Venue
     {
-        $slug = Venue::normalizeSlug(null, $this->name);
+        $name = $this->name;
 
-        $existing = Venue::query()->where('name', $this->name)->orderBy('id')->first();
+        if (mb_trim($name) === '') {
+            $name = mb_trim((string) $this->address);
+        }
+
+        $slug = Venue::normalizeSlug(null, $name);
+
+        $existing = null;
+
+        if ($name !== '') {
+            $existing = Venue::query()->where('name', $name)->orderBy('id')->first();
+        }
 
         if ( ! $existing && $slug !== null) {
             $existing = Venue::query()->where('slug', $slug)->orderBy('id')->first();
@@ -44,7 +58,7 @@ class VenueData extends Data
         }
 
         return Venue::create([
-            'name' => $this->name,
+            'name' => $name,
             'slug' => $slug,
             'address' => $this->address,
             'zipcode' => $this->zip,

@@ -6,7 +6,7 @@ return [
         'label' => 'Oct 2026',
         'theme' => 'Pep-per Yourself',
         'recap_url' => 'https://www.meetup.com/hack-greenville/events/316772138/',
-        'videos_url' => '',
+        'videos_url' => 'https://www.youtube.com/playlist?list=PLHnkMPx-nr30',
         'sponsor' => 'Simpliphy',
         'sponsor_url' => 'https://simpliphy.com',
         'sponsor_logo' => 'simpliphy.svg',
@@ -15,9 +15,9 @@ return [
         'video_by' => 'Synergy Mill Makerspace',
         'video_by_url' => 'https://synergymill.com',
         'speakers' => [
-            ['name' => 'Bennett Meares', 'title' => 'Getting Rusty With Python', 'url' => ''],
-            ['name' => 'Brian Kennedy', 'title' => 'Doing IaC the GitOps Way with CrossPlane', 'url' => ''],
-            ['name' => 'Pamela Wood Browne', 'title' => '"Origin Stories" Series', 'url' => ''],
+            ['name' => 'Bennett Meares', 'title' => 'Getting Rusty With Python', 'url' => 'https://www.youtube.com/watch?v=nmYAQUrmiYY&list=PLHnkMPx-nr30'],
+            ['name' => 'Brian Kennedy', 'title' => 'Doing IaC the GitOps Way with CrossPlane', 'url' => 'https://www.youtube.com/watch?v=X36K7LzMrc0&list=PLHnkMPx-nr30'],
+            ['name' => 'Pamela Wood Browne', 'title' => '"Origin Stories" Series', 'url' => 'https://www.youtube.com/watch?v=TunNJDwtSzc&list=PLHnkMPx-nr30'],
         ],
     ],
     [
