@@ -345,7 +345,7 @@ class VenueDataTest extends DatabaseTestCase
      */
     private function captureVenueLogs(): ArrayObject
     {
-        $logged = new ArrayObject;
+        $logged = new ArrayObject();
 
         Log::listen(function (MessageLogged $message) use ($logged) {
             if ($message->message === 'Event import created a venue') {
