@@ -49,7 +49,6 @@ class LumaHandler extends AbstractEventHandler
 
     protected function mapIntoVenueData(array $data): ?VenueData
     {
-        // Virtual events omit geo_address_info. has_access stays false for both offline and online events.
         if (null === $data['event']['geo_address_info']) {
             return null;
         }
