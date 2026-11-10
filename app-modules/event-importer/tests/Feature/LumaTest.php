@@ -179,6 +179,44 @@ class LumaTest extends DatabaseTestCase
         $this->assertSame(3, Venue::query()->count());
     }
 
+    public function test_parsed_luma_fields_fill_the_venue_and_fall_back_when_omitted(): void
+    {
+        Http::fake([
+            LumaHandler::$LUMA_API_BASE_URL . '/calendar/get-items?calendar_api_id=cal-parsed-fallbacks&period=future&pagination_limit=50' => Http::response($this->apiResponse('response-parsed-fallbacks.json')),
+        ]);
+
+        Org::factory()->create([
+            'service' => EventServices::Luma->value,
+            'service_api_key' => 'cal-parsed-fallbacks',
+        ]);
+
+        $this->artisan(ImportEventsCommand::class);
+
+        $fallback = Event::query()->where('service_id', 'evt-missing-parsed')->firstOrFail();
+        $this->assertSame('Pangaea Brewing', $fallback->venue->name);
+        $this->assertSame('115 Welborn St Suite A', $fallback->venue->address);
+        $this->assertSame('Greenville', $fallback->venue->city);
+        $this->assertSame('SC', $fallback->venue->state);
+        $this->assertSame('29601', $fallback->venue->zipcode);
+        $this->assertSame('US', $fallback->venue->country);
+
+        $cityOnly = Event::query()->where('service_id', 'evt-city-only')->firstOrFail();
+        $this->assertSame('Greenville', $cityOnly->venue->name);
+        $this->assertNull($cityOnly->venue->address);
+        $this->assertSame('Greenville', $cityOnly->venue->city);
+        $this->assertSame('SC', $cityOnly->venue->state);
+        $this->assertNull($cityOnly->venue->zipcode);
+        $this->assertSame('US', $cityOnly->venue->country);
+
+        $extraLine = Event::query()->where('service_id', 'evt-short-extra')->firstOrFail();
+        $this->assertSame('Flywheel Coworking Greenville', $extraLine->venue->name);
+        $this->assertSame('Furman Innovation Lab, 25 Goldsmith St', $extraLine->venue->address);
+        $this->assertSame('Greenville', $extraLine->venue->city);
+        $this->assertSame('SC', $extraLine->venue->state);
+        $this->assertSame('29609', $extraLine->venue->zipcode);
+        $this->assertSame('US', $extraLine->venue->country);
+    }
+
     protected function apiResponse(string $file): string
     {
         return file_get_contents(__DIR__ . '/../fixtures/luma/' . $file);

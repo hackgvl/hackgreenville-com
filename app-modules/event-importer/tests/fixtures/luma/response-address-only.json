@@ -21,7 +21,8 @@
           "place_id": "place-cessna",
           "country_code": "US",
           "full_address": "31 Cessna Ct suite b, Greenville, SC 29607, USA",
-          "region_short": "SC"
+          "region_short": "SC",
+          "short_address": "31 Cessna Ct suite b, Greenville"
         },
         "coordinate": {
           "longitude": -82.3431733,
@@ -58,7 +59,8 @@
           "place_id": "place-cessna",
           "country_code": "US",
           "full_address": "31 Cessna Ct suite b, Greenville, SC 29607, USA",
-          "region_short": "SC"
+          "region_short": "SC",
+          "short_address": "31 Cessna Ct suite b, Greenville"
         },
         "coordinate": {
           "longitude": -82.3431733,
@@ -95,7 +97,8 @@
           "place_id": "place-openworks",
           "country_code": "US",
           "full_address": "OpenWorks Coworking, Third Floor, 101 N Main St #302, Greenville, SC 29601, USA",
-          "region_short": "SC"
+          "region_short": "SC",
+          "short_address": "Third Floor, 101 N Main St #302, Greenville"
         },
         "coordinate": {
           "longitude": -82.399678,

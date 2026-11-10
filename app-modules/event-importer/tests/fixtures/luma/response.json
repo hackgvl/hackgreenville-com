@@ -34,6 +34,8 @@
           "description": "",
           "country_code": "US",
           "full_address": "Furman University, 3300 Poinsett Hwy, Greenville, SC 29613, USA",
+          "region_short": "SC",
+          "short_address": "3300 Poinsett Hwy, Greenville",
           "mode": "shown"
         },
         "geo_address_visibility": "public",

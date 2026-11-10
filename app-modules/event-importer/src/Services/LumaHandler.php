@@ -60,7 +60,9 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        if ( ! isset($data['event']['geo_address_info']['full_address'])) {
+        $info = $data['event']['geo_address_info'];
+
+        if ( ! isset($info['full_address']) || mb_trim((string) $info['full_address']) === '') {
             Log::debug('Luma - Missing Full Address', [
                 'data' => $data,
             ]);
@@ -68,7 +70,7 @@ class LumaHandler extends AbstractEventHandler
             return null;
         }
 
-        $parsed = $this->parseLumaFullAddress($data['event']['geo_address_info']['full_address']);
+        $parsed = $this->venueFromGeoAddressInfo($info);
 
         if ($parsed === null) {
             Log::debug('Luma - Not enough address data', [
@@ -80,7 +82,7 @@ class LumaHandler extends AbstractEventHandler
 
         try {
             return VenueData::from([
-                'id' => $data['event']['geo_address_info']['place_id'],
+                'id' => (string) ($info['place_id'] ?? ''),
                 'name' => $parsed['name'],
                 'address' => $parsed['address'],
                 'city' => $parsed['city'],
@@ -108,51 +110,138 @@ class LumaHandler extends AbstractEventHandler
     }
 
     /**
-     * Split a Google-style Luma address.
+     * Map Luma's parsed geo_address_info onto a venue.
      *
-     * The tail is always city, state zip, country. A place name is present
-     * only when the organizer entered one, in which case it is the first
-     * component and any lines between it and the city belong to the street.
-     * With no place name, the street is used as the venue name.
+     * address is the place name, or the street when the organizer did not
+     * enter a name. short_address is the street plus a trailing city. Zip is
+     * only present in full_address. Older events omit short_address,
+     * region_short, or country_code, and those values fall back to full_address.
      *
-     * @return array{name: string, address: string, city: string, state: string, zip: ?string, country: string}|null
+     * @param  array<string, mixed>  $info
+     * @return array{name: string, address: ?string, city: string, state: string, zip: ?string, country: string}|null
      */
-    private function parseLumaFullAddress(string $fullAddress): ?array
+    private function venueFromGeoAddressInfo(array $info): ?array
     {
-        $parts = explode(', ', $fullAddress);
+        $fullAddress = (string) $info['full_address'];
+        $city = mb_trim((string) ($info['city'] ?? ''));
+        $name = mb_trim((string) ($info['address'] ?? ''));
+        $tail = $this->parseFullAddressTail($fullAddress);
 
-        if (count($parts) < 4) {
-            return null;
+        $state = mb_trim((string) ($info['region_short'] ?? ''));
+
+        if ($state === '') {
+            $state = $tail['state'];
         }
 
-        $country = mb_substr((string) array_pop($parts), 0, 2);
-        $stateZip = explode(' ', (string) array_pop($parts));
-        $city = (string) array_pop($parts);
-        $state = $stateZip[0] ?? '';
-        $zip = $stateZip[1] ?? null;
+        $country = mb_trim((string) ($info['country_code'] ?? ''));
 
-        if ($city === '' || $state === '' || $parts === []) {
-            return null;
+        if ($country === '') {
+            $country = $tail['country'];
         }
 
-        if (count($parts) === 1) {
-            $name = $parts[0];
-            $address = $parts[0];
-        } else {
-            $name = (string) array_shift($parts);
-            $address = implode(', ', $parts);
+        $street = $this->streetFromGeoAddress($info, $city, $name, $fullAddress);
+
+        if ($name === '') {
+            $name = $street ?? '';
         }
 
-        if (mb_trim($name) === '' || mb_trim($address) === '') {
+        if ($name === '' || $city === '' || $state === '') {
             return null;
         }
 
         return [
             'name' => $name,
-            'address' => $address,
+            'address' => $street,
             'city' => $city,
             'state' => $state,
-            'zip' => $zip,
+            'zip' => $tail['zip'],
+            'country' => $country !== '' ? $country : 'US',
+        ];
+    }
+
+    /**
+     * @param  array<string, mixed>  $info
+     */
+    private function streetFromGeoAddress(array $info, string $city, string $venueName, string $fullAddress): ?string
+    {
+        $short = mb_trim((string) ($info['short_address'] ?? ''));
+
+        if ($short !== '') {
+            return $this->stripTrailingCity($short, $city);
+        }
+
+        return $this->streetFromFullAddress($fullAddress, $venueName, $city);
+    }
+
+    private function stripTrailingCity(string $short, string $city): ?string
+    {
+        if ($city !== '') {
+            $suffix = ', ' . $city;
+
+            if (str_ends_with($short, $suffix)) {
+                $short = mb_trim(mb_substr($short, 0, mb_strlen($short) - mb_strlen($suffix)));
+            } elseif (mb_strtolower($short) === mb_strtolower($city)) {
+                return null;
+            }
+        }
+
+        return $short === '' ? null : $short;
+    }
+
+    private function streetFromFullAddress(string $fullAddress, string $venueName, string $city): ?string
+    {
+        $parts = explode(', ', $fullAddress);
+
+        if (count($parts) < 3) {
+            return null;
+        }
+
+        array_pop($parts);
+        array_pop($parts);
+
+        if ($city !== '' && $parts !== [] && end($parts) === $city) {
+            array_pop($parts);
+        }
+
+        if ($parts === []) {
+            return null;
+        }
+
+        if (count($parts) > 1 && $parts[0] === $venueName) {
+            array_shift($parts);
+        }
+
+        $street = implode(', ', $parts);
+
+        if ($street === '' || ($city !== '' && mb_strtolower($street) === mb_strtolower($city))) {
+            return null;
+        }
+
+        return $street;
+    }
+
+    /**
+     * @return array{state: string, zip: ?string, country: string}
+     */
+    private function parseFullAddressTail(string $fullAddress): array
+    {
+        $parts = explode(', ', $fullAddress);
+        $empty = ['state' => '', 'zip' => null, 'country' => ''];
+
+        if (count($parts) < 2) {
+            return $empty;
+        }
+
+        $countryToken = (string) array_pop($parts);
+        $stateZip = explode(' ', (string) array_pop($parts));
+        $country = match (mb_strtoupper($countryToken)) {
+            'USA', 'US' => 'US',
+            default => mb_substr($countryToken, 0, 2),
+        };
+
+        return [
+            'state' => $stateZip[0] ?? '',
+            'zip' => $stateZip[1] ?? null,
             'country' => $country,
         ];
     }
