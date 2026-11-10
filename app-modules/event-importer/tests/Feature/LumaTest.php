@@ -65,6 +65,8 @@ class LumaTest extends DatabaseTestCase
         $this->assertEquals('US', $venue->country);
         $this->assertEquals('34.9274688', $venue->lat);
         $this->assertEquals('-82.4400666', $venue->lng);
+        $this->assertSame('ChIJBw5xX6UzWIgRhg86-lkSG1s', $venue->google_place_id);
+        $this->assertSame('I9BEC17763FC84469', $venue->apple_maps_place_id);
 
         // Virtual Event
         $event2 = Event::query()
