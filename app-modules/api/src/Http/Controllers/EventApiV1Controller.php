@@ -36,6 +36,9 @@ class EventApiV1Controller extends Controller
             ->when($request->filled('name'), function (Builder $query) use ($request) {
                 $query->where('event_name', 'like', '%' . $request->input('name') . '%');
             })
+            ->when($request->filled('org_id'), function (Builder $query) use ($request) {
+                $query->where('organization_id', 'like', '%' . $request->input('org_id') . '%');
+            })
             ->when($request->filled('org_name'), function (Builder $query) use ($request) {
                 $query->where('group_name', 'like', '%' . $request->input('org_name') . '%');
             })
