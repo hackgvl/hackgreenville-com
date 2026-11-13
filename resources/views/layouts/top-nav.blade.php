@@ -34,11 +34,26 @@
 
             {{-- More dropdown (desktop) --}}
             <x-nav-dropdown label="More" align="right">
+                <li>
+                    <a href="https://hackgvl.github.io/open-map-data-multi-layers-demo/" target="_blank" rel="noopener" class="flex items-center gap-1 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 hover:text-primary no-underline transition-colors">
+                        Map
+                        <x-lucide-external-link class="w-3 h-3"/>
+                    </a>
+                </li>
+                <x-nav-dropdown-link route="map-layers.index">Map Layers</x-nav-dropdown-link>
                 <x-nav-dropdown-link route="contribute">Contribute</x-nav-dropdown-link>
                 <x-nav-dropdown-link route="contact">Contact</x-nav-dropdown-link>
             </x-nav-dropdown>
 
             {{-- Mobile: more links flat --}}
+            <li class="nav-break:hidden">
+                <a href="https://hackgvl.github.io/open-map-data-multi-layers-demo/" target="_blank" rel="noopener"
+                   class="flex items-center gap-1 py-2 px-2 text-sm font-medium no-underline transition-colors text-white/70 hover:text-white">
+                    Map
+                    <x-lucide-external-link class="w-3 h-3"/>
+                </a>
+            </li>
+            <x-nav-link route="map-layers.index" class="nav-break:hidden">Map Layers</x-nav-link>
             <x-nav-link route="contribute" class="nav-break:hidden">Contribute</x-nav-link>
             <x-nav-link route="contact" class="nav-break:hidden">Contact</x-nav-link>
         </ul>
