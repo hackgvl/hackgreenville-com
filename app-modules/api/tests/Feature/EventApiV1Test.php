@@ -348,7 +348,7 @@ class EventApiV1Test extends TestCase
             'organization_id' => $org_2->id,
         ]);
 
-        $this->getJson('/api/v1/events?org_id=' . $org_1->id .'')
+        $this->getJson('/api/v1/events?org_id=' . $org_1->id . '')
             ->assertSessionDoesntHaveErrors()
             ->assertStatus(200)
             ->assertSeeText($org_1_event->event_name)
@@ -359,7 +359,7 @@ class EventApiV1Test extends TestCase
     {
         $non_existent_org_id = 9999;
 
-        $this->getJson('/api/v1/events?org_id=' . $non_existent_org_id .'')
+        $this->getJson('/api/v1/events?org_id=' . $non_existent_org_id . '')
             ->assertUnprocessable()
             ->assertJsonValidationErrors(['org_id' => 'The selected organization does not exist.']);
     }
