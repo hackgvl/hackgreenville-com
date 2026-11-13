@@ -335,4 +335,32 @@ class EventApiV1Test extends TestCase
             ->assertSeeText($active_event->event_name);
 
     }
+
+    public function test_events_org_id_filter_matches_correct_org()
+    {
+        $org_1 = Org::factory()->create();
+        $org_2 = Org::factory()->create();
+
+        $org_1_event = Event::factory()->create([
+            'organization_id' => $org_1->id,
+        ]);
+        $org_2_event = Event::factory()->create([
+            'organization_id' => $org_2->id,
+        ]);
+
+        $this->getJson('/api/v1/events?org_id=' . $org_1->id .'')
+            ->assertSessionDoesntHaveErrors()
+            ->assertStatus(200)
+            ->assertSeeText($org_1_event->event_name)
+            ->assertDontSeeText($org_2_event->event_name);
+    }
+
+    public function test_events_org_id_filter_errors_on_non_existent_org()
+    {
+        $non_existent_org_id = 9999;
+
+        $this->getJson('/api/v1/events?org_id=' . $non_existent_org_id .'')
+            ->assertUnprocessable()
+            ->assertJsonValidationErrors(['org_id' => 'The selected organization does not exist.']);
+    }
 }
