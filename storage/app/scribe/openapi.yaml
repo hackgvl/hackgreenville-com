@@ -333,13 +333,24 @@ paths:
             nullable: true
         -
           in: query
+          name: org_id
+          description: 'The ID of the organization associated with the event (the "organization.id" property). Must match an existing stored value.'
+          example: null
+          required: false
+          schema:
+            type: integer
+            description: 'The ID of the organization associated with the event (the "organization.id" property). Must match an existing stored value.'
+            example: null
+            nullable: true
+        -
+          in: query
           name: org_name
-          description: 'The name of the organization associated with the event (the "group_name" property). Must not be greater than 255 characters.'
+          description: 'The name of the organization associated with the event (the "organization.name" property). Must not be greater than 255 characters.'
           example: null
           required: false
           schema:
             type: string
-            description: 'The name of the organization associated with the event (the "group_name" property). Must not be greater than 255 characters.'
+            description: 'The name of the organization associated with the event (the "organization.name" property). Must not be greater than 255 characters.'
             example: null
             nullable: true
         -
