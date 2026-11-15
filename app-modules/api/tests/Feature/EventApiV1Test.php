@@ -355,6 +355,29 @@ class EventApiV1Test extends TestCase
             ->assertDontSeeText($org_2_event->event_name);
     }
 
+    public function test_events_org_id_filter_matches_on_exact_id()
+    {
+        $org_1 = Org::factory()->create([
+            'id' => 9999,
+        ]);
+        $org_2 = Org::factory()->create([
+            'id' => 999,
+        ]);
+
+        $org_1_event = Event::factory()->create([
+            'organization_id' => $org_1->id,
+        ]);
+        $org_2_event = Event::factory()->create([
+            'organization_id' => $org_2->id,
+        ]);
+
+        $this->getJson('/api/v1/events?org_id=' . 999 .'')
+            ->assertSessionDoesntHaveErrors()
+            ->assertStatus(200)
+            ->assertDontSeeText($org_1_event->event_name)
+            ->assertSeeText($org_2_event->event_name);
+    }
+
     public function test_events_org_id_filter_errors_on_non_existent_org()
     {
         $non_existent_org_id = 9999;
