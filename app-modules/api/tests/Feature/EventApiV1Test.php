@@ -371,7 +371,7 @@ class EventApiV1Test extends TestCase
             'organization_id' => $org_2->id,
         ]);
 
-        $this->getJson('/api/v1/events?org_id=' . 999 .'')
+        $this->getJson('/api/v1/events?org_id=' . 999 . '')
             ->assertSessionDoesntHaveErrors()
             ->assertStatus(200)
             ->assertDontSeeText($org_1_event->event_name)
