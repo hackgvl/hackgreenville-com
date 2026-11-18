@@ -30,7 +30,8 @@
         "ryangjchandler/laravel-cloudflare-turnstile": "^3.0",
         "sebdesign/artisan-cloudflare": "^2.8",
         "spatie/icalendar-generator": "^2.9",
-        "spatie/laravel-data": "*"
+        "spatie/laravel-data": "*",
+        "swaggest/json-schema": "^0.12.43"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",

@@ -24,7 +24,7 @@ abstract class ApiResource extends JsonResource
         return $resource->id;
     }
 
-    private function isRunningScribe()
+    protected function isRunningScribe()
     {
         $args = [];
 

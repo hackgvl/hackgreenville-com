@@ -34,13 +34,13 @@ class EventApiV1Controller extends Controller
                 });
             })
             ->when($request->filled('name'), function (Builder $query) use ($request) {
-                $query->where('event_name', 'like', '%' . $request->input('name') . '%');
+                $query->whereLikeContains('event_name', $request->input('name'));
             })
             ->when($request->filled('org_id'), function (Builder $query) use ($request) {
                 $query->where('organization_id', $request->integer('org_id'));
             })
             ->when($request->filled('org_name'), function (Builder $query) use ($request) {
-                $query->where('group_name', 'like', '%' . $request->input('org_name') . '%');
+                $query->whereLikeContains('group_name', $request->input('org_name'));
             })
             ->when($request->filled('service'), function (Builder $query) use ($request) {
                 $query->where('service', $request->input('service'));
@@ -65,7 +65,7 @@ class EventApiV1Controller extends Controller
             })
             ->when($request->filled('venue_city'), function (Builder $query) use ($request) {
                 $query->whereHas('venue', function (Builder $query) use ($request) {
-                    $query->where('city', 'like', '%' . $request->input('venue_city') . '%');
+                    $query->whereLikeContains('city', $request->input('venue_city'));
                 });
             })
             ->when($request->filled('venue_state'), function (Builder $query) use ($request) {
