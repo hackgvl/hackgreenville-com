@@ -1,4 +1,7 @@
-FROM serversideup/php:8.5-fpm-nginx
+############################################
+# Base: shared by local development and production
+############################################
+FROM serversideup/php:8.5-fpm-nginx AS base
 
 # Install additional packages
 USER root
@@ -13,6 +16,30 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 USER www-data
 
 WORKDIR /var/www/html
+
+############################################
+# Development: used by docker-compose. Code is bind-mounted rather than
+# baked in, and the production-only s6 services below are left out.
+############################################
+FROM base AS development
+
+# Match www-data to the host user so files written to the bind mount
+# (vendor/, node_modules/, storage/) are owned by you on the host.
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
+USER root
+RUN install-php-extensions pcov \
+    && docker-php-serversideup-set-id www-data ${USER_ID}:${GROUP_ID} \
+    && docker-php-serversideup-set-file-permissions --owner ${USER_ID}:${GROUP_ID} --service nginx
+
+USER www-data
+
+############################################
+# Production: built by Railway. Keep this stage last so a plain
+# `docker build` (no --target) produces it.
+############################################
+FROM base AS production
 
 # Copy package files first for better caching
 COPY --chown=www-data:www-data package.json yarn.lock ./
